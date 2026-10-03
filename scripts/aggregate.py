@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
+import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any, Dict, List
@@ -13,6 +15,16 @@ from common import ROOT_DIR, export_stage_files, extract_node_links_from_text, s
 
 CONFIG_FILE = ROOT_DIR / "config" / "sources.json"
 OUTPUT_DIR = ROOT_DIR / "output" / "raw"
+
+
+def fetch_remote_url(url: str, timeout: int = 5) -> str:
+    """Safely fetch remote HTTP subscription URL content."""
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return resp.read().decode("utf-8", errors="ignore")
+    except Exception:
+        return ""
 
 
 def parse_clash_yaml_file(file_path: Path) -> List[Dict[str, Any]]:
@@ -64,7 +76,16 @@ def scan_single_source(source: dict) -> tuple[dict, list[dict]]:
                 elif file.endswith((".txt", ".json", ".md", ".sub", ".link")):
                     try:
                         content = file_path.read_text(encoding="utf-8", errors="ignore")
-                        nodes.extend(extract_node_links_from_text(content))
+                        # Extract direct node links (vmess://, vless://, ss://, etc.)
+                        extracted = extract_node_links_from_text(content)
+                        nodes.extend(extracted)
+
+                        # Extract embedded http/https subscription URLs from markdown/txt
+                        urls = re.findall(r"https?://[^\s\"'\)>]+\.(?:yaml|yml|txt|sub)", content)
+                        for url in urls[:5]:
+                            res_text = fetch_remote_url(url)
+                            if res_text:
+                                nodes.extend(extract_node_links_from_text(res_text))
                     except Exception:
                         pass
 
