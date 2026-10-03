@@ -1,4 +1,4 @@
-name: Index Pipeline - 全阶段处理
+name: Index Pipeline - 主流处理 (Index 1-2-3-5)
 
 on:
   push:
@@ -13,7 +13,7 @@ env:
 
 jobs:
   pipeline:
-    name: 全流程处理流水线
+    name: 主流程处理 (Index 1-2-3-5)
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -53,15 +53,12 @@ jobs:
       - name: Index 5 - Mihomo 204 实测 (HTTP 204 Verified)
         run: python scripts/verified.py
 
-      - name: Index 4 - Socket 端口探针 (Socket Probe)
-        run: python scripts/socket_probe.py
-
-      - name: 提交并推送处理结果
+      - name: 提交并推送生产订阅结果
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add output/
           if ! git diff --cached --quiet; then
-            git commit -m "chore: [Auto Pipeline] All stages 0-5 completed & output synced"
+            git commit -m "chore: [Primary Pipeline] Stages 1-2-3-5 output updated"
             git push origin HEAD:master || echo "Push skipped"
           fi

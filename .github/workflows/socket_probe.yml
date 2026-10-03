@@ -1,0 +1,40 @@
+name: Index 4 - Socket 端口探针独立分支 (Socket Probe)
+
+on:
+  workflow_dispatch:      # Independent Manual Trigger Only
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  socket-probe:
+    name: 独立 Index 4 端口探针
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 配置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: 安装 Python 依赖
+        run: pip install -r requirements.txt
+
+      - name: 运行 Index 4 端口探针
+        run: python scripts/socket_probe.py
+
+      - name: 提交并推送 Index 4 探针结果
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/socket/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: [Index 4] Socket TCP/TLS/QUIC probe report updated"
+            git push origin HEAD:master || echo "Push skipped"
+          fi
