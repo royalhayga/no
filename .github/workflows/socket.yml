@@ -1,0 +1,40 @@
+name: Stage 4 - Socket TCP/TLS/QUIC Handshake Probe
+
+on:
+  workflow_run:
+    workflows: ["Stage 3 - Multi-DNS Health & GFW Pollution Filter"]
+    types:
+      - completed
+  workflow_dispatch:      # Manual trigger
+
+jobs:
+  stage4-socket:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Stage 4 Socket Probe
+        run: python scripts/socket.py
+
+      - name: Commit and Push Stage 4 Output
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/socket/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: [Stage 4] Socket TCP/TLS/QUIC probe completed"
+            git push origin HEAD:master || git push origin HEAD:main || echo "Push skipped"
+          fi

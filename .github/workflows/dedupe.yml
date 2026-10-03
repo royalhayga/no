@@ -1,0 +1,40 @@
+name: Stage 2 - Fingerprint Deduplication & Alias Analysis
+
+on:
+  workflow_run:
+    workflows: ["Stage 1 - Multi-Source Local Aggregation"]
+    types:
+      - completed
+  workflow_dispatch:      # Manual trigger
+
+jobs:
+  stage2-dedupe:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Stage 2 Deduplication
+        run: python scripts/dedupe.py
+
+      - name: Commit and Push Stage 2 Output
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/deduped/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: [Stage 2] SHA256 fingerprint deduplication & alias report completed"
+            git push origin HEAD:master || git push origin HEAD:main || echo "Push skipped"
+          fi
