@@ -43,5 +43,5 @@ jobs:
           git add output/
           if ! git diff --cached --quiet; then
             git commit -m "chore: [Index 5] Mihomo real 204 outbound verification completed & subscriptions synced"
-            git push origin HEAD:master || git push origin HEAD:main || echo "Push skipped"
+            git push origin HEAD:main || echo "Push skipped"
           fi
