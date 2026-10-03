@@ -105,9 +105,8 @@ async def probe_endpoint(node: Dict[str, Any], timeout: float = 3.0) -> bool:
         return await probe_tcp_endpoint(host, port, use_tls=use_tls, sni=sni, timeout=timeout)
 
 
-async def batch_probe_nodes(nodes: List[Dict[str, Any]], concurrency: int = 64, timeout: float = 3.0) -> List[Dict[str, Any]]:
+async def batch_probe_nodes(nodes: List[Dict[str, Any]], concurrency: int = 128, timeout: float = 3.0) -> List[Dict[str, Any]]:
     """Probe all endpoints with deduplicated endpoint cache."""
-    # Deduplicate endpoint checks: key = server:port:proto:tls
     endpoint_results: Dict[str, bool] = {}
 
     unique_endpoints = {}
@@ -138,17 +137,17 @@ async def batch_probe_nodes(nodes: List[Dict[str, Any]], concurrency: int = 64, 
 
 
 def main() -> int:
-    print("=== Stage 4: Socket TCP / TLS / QUIC Handshake Probe ===")
+    print("=== Stage 4: High-Concurrency Socket TCP / TLS / QUIC Handshake Probe ===")
     nodes_file = INPUT_DIR / "nodes.txt"
     if not nodes_file.exists():
-        print(f"Error: Input file {nodes_file} not found. Run Stage 3 (scripts/dns.py) first.")
+        print(f"Error: Input file {nodes_file} not found. Run Stage 3 (scripts/dns_check.py) first.")
         return 1
 
     content = nodes_file.read_text(encoding="utf-8")
     nodes = extract_node_links_from_text(content)
     print(f"Loaded {len(nodes)} nodes from Stage 3.")
 
-    alive_nodes = asyncio.run(batch_probe_nodes(nodes, concurrency=64, timeout=3.0))
+    alive_nodes = asyncio.run(batch_probe_nodes(nodes, concurrency=128, timeout=3.0))
 
     # Export all 5 standard format files to output/socket/
     export_stage_files(

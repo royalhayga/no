@@ -3,7 +3,7 @@ from __future__ import annotations
 import asyncio
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Set
+from typing import Any, Dict, List, Set, Tuple
 
 import dns.asyncresolver
 import dns.resolver
@@ -63,7 +63,6 @@ async def check_domain_dns_health(domain: str) -> Tuple[bool, str]:
     Check domain health across Domestic DNS (AliDNS/DNSPod) vs Foreign DNS (Cloudflare/Google).
     Returns (is_healthy, reason).
     """
-    # If domain is an IP address, pass directly
     if domain.replace(".", "").isdigit():
         if is_gfw_poisoned_ip(domain):
             return False, "Bogon/Poisoned IP"
@@ -72,38 +71,38 @@ async def check_domain_dns_health(domain: str) -> Tuple[bool, str]:
     domestic_ips = await query_dns(domain, DOMESTIC_DNS)
     foreign_ips = await query_dns(domain, FOREIGN_DNS)
 
-    # 1. Domestic DNS failed while foreign DNS succeeded -> Blocked/Unresolvable in mainland China
     if not domestic_ips and foreign_ips:
-        return False, "Domestic DNS Failed (Blocked/Unresolvable in China)"
+        return False, "Domestic DNS Failed (Blocked in China)"
 
-    # 2. Check for GFW poisoned IPs in domestic resolution
     for ip in domestic_ips:
         if is_gfw_poisoned_ip(ip):
-            return False, f"Domestic DNS Poisoned (Returned GFW Fake IP {ip})"
+            return False, f"Domestic DNS Poisoned ({ip})"
 
-    # 3. If domestic DNS returned valid non-poisoned IPs -> Healthy
     if domestic_ips:
-        return True, "Valid Domestic Resolution"
+        return True, "Valid Resolution"
 
-    # If foreign DNS also failed -> Dead domain
     if not foreign_ips:
-        return False, "Domain Unresolvable Globally"
+        return False, "Unresolvable Globally"
 
     return True, "Passed DNS Check"
 
 
-async def filter_dns_nodes(nodes: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Filter nodes based on multi-DNS resolution health."""
+async def filter_dns_nodes(nodes: List[Dict[str, Any]], concurrency: int = 100) -> List[Dict[str, Any]]:
+    """Filter nodes with 100-way concurrent async DNS resolution."""
     valid_nodes = []
-
-    # Deduplicate domain check calls
     domain_status: Dict[str, Tuple[bool, str]] = {}
     unique_domains = list({n.get("server", "") for n in nodes if n.get("server")})
 
-    print(f"Resolving & verifying {len(unique_domains)} unique domains across AliDNS, DNSPod, Cloudflare DNS...")
+    print(f"Resolving {len(unique_domains)} unique domains with {concurrency}-worker async concurrency...")
+    semaphore = asyncio.Semaphore(concurrency)
 
-    for domain in unique_domains:
-        domain_status[domain] = await check_domain_dns_health(domain)
+    async def sem_check(domain: str):
+        async with semaphore:
+            res = await check_domain_dns_health(domain)
+            domain_status[domain] = res
+
+    tasks = [sem_check(d) for d in unique_domains]
+    await asyncio.gather(*tasks)
 
     filtered_count = 0
     for n in nodes:
@@ -119,7 +118,7 @@ async def filter_dns_nodes(nodes: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
 
 def main() -> int:
-    print("=== Stage 3: Multi-DNS GFW Pollution & Blocking Filter ===")
+    print("=== Stage 3: High-Concurrency Multi-DNS GFW Pollution & Blocking Filter ===")
     nodes_file = INPUT_DIR / "nodes.txt"
     if not nodes_file.exists():
         print(f"Error: Input file {nodes_file} not found. Run Stage 2 (scripts/dedupe.py) first.")
@@ -129,7 +128,7 @@ def main() -> int:
     nodes = extract_node_links_from_text(content)
     print(f"Loaded {len(nodes)} nodes from Stage 2.")
 
-    valid_nodes = asyncio.run(filter_dns_nodes(nodes))
+    valid_nodes = asyncio.run(filter_dns_nodes(nodes, concurrency=100))
 
     # Export all 5 standard format files to output/dns/
     export_stage_files(

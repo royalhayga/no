@@ -3,12 +3,13 @@ from __future__ import annotations
 import json
 import os
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any, Dict, List
 
 import yaml
 
-from common import ROOT_DIR, extract_node_links_from_text, export_stage_files, sanitize_node
+from common import ROOT_DIR, export_stage_files, extract_node_links_from_text, sanitize_node
 
 CONFIG_FILE = ROOT_DIR / "config" / "sources.json"
 OUTPUT_DIR = ROOT_DIR / "output" / "raw"
@@ -46,35 +47,33 @@ def parse_clash_yaml_file(file_path: Path) -> List[Dict[str, Any]]:
     return nodes
 
 
-def scan_local_repository(repo_path: Path) -> List[Dict[str, Any]]:
-    """Recursively scan a local ref/ repository directory for all node files."""
+def scan_single_source(source: dict) -> tuple[dict, list[dict]]:
+    """Scan a single repository source concurrently."""
+    sname = source.get("name")
+    spath = ROOT_DIR / source.get("path")
     nodes = []
-    if not repo_path.exists():
-        return nodes
 
-    for root, _, files in os.walk(repo_path):
-        # Ignore git metadata
-        if ".git" in root:
-            continue
-        for file in files:
-            file_path = Path(root) / file
-            if file.endswith((".yaml", ".yml")):
-                yaml_nodes = parse_clash_yaml_file(file_path)
-                nodes.extend(yaml_nodes)
+    if spath.exists():
+        for root, _, files in os.walk(spath):
+            if ".git" in root:
+                continue
+            for file in files:
+                file_path = Path(root) / file
+                if file.endswith((".yaml", ".yml")):
+                    nodes.extend(parse_clash_yaml_file(file_path))
+                elif file.endswith((".txt", ".json", ".md", ".sub", ".link")):
+                    try:
+                        content = file_path.read_text(encoding="utf-8", errors="ignore")
+                        nodes.extend(extract_node_links_from_text(content))
+                    except Exception:
+                        pass
 
-            # Text / Base64 / JSON / Markdown files
-            if file.endswith((".txt", ".json", ".md", ".sub", ".link")):
-                try:
-                    text_content = file_path.read_text(encoding="utf-8", errors="ignore")
-                    extracted = extract_node_links_from_text(text_content)
-                    nodes.extend(extracted)
-                except Exception:
-                    pass
-    return nodes
+    stat = {"source": sname, "path": str(spath), "found_nodes": len(nodes)}
+    return stat, nodes
 
 
 def main() -> int:
-    print("=== Stage 1: Local Multi-Source Repository Aggregation ===")
+    print("=== Stage 1: Parallel Multi-Source Repository Aggregation ===")
     if not CONFIG_FILE.exists():
         print(f"Error: Config file {CONFIG_FILE} not found.")
         return 1
@@ -85,19 +84,14 @@ def main() -> int:
     all_raw_nodes: List[Dict[str, Any]] = []
     source_stats = []
 
-    for source in sources:
-        sname = source.get("name")
-        spath = ROOT_DIR / source.get("path")
-
-        repo_nodes = scan_local_repository(spath)
-        all_raw_nodes.extend(repo_nodes)
-
-        source_stats.append({
-            "source": sname,
-            "path": str(spath),
-            "found_nodes": len(repo_nodes)
-        })
-        print(f"[{sname}] Scanned '{spath}' -> Found {len(repo_nodes)} nodes")
+    print(f"Scanning {len(sources)} repositories in parallel with 16 workers...")
+    with ThreadPoolExecutor(max_workers=16) as executor:
+        futures = {executor.submit(scan_single_source, src): src for src in sources}
+        for future in as_completed(futures):
+            stat, nodes = future.result()
+            all_raw_nodes.extend(nodes)
+            source_stats.append(stat)
+            print(f"  [+] [{stat['source']}] Found {len(nodes)} nodes")
 
     print(f"Stage 1 Total Raw Aggregated Nodes: {len(all_raw_nodes)}")
 
