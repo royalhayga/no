@@ -4,12 +4,20 @@ import base64
 import hashlib
 import json
 import re
+import sys
 import urllib.parse
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 import yaml
+
+# Ensure unbuffered real-time stdout logging for GitHub Actions
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(line_buffering=True)
+    except Exception:
+        pass
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 

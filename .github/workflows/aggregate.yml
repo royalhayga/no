@@ -8,6 +8,9 @@ on:
     - cron: '0 */6 * * *'  # Runs every 6 hours
   workflow_dispatch:      # Manual trigger
 
+env:
+  PYTHONUNBUFFERED: "1"   # Real-time unbuffered log output
+
 jobs:
   pipeline:
     name: 全流程处理流水线
@@ -47,11 +50,11 @@ jobs:
       - name: Index 3 - 三 DNS 墙检测 (DNS Check)
         run: python scripts/dns_check.py
 
-      - name: Index 4 - Socket 端口探针 (Socket Probe)
-        run: python scripts/socket_probe.py
-
       - name: Index 5 - Mihomo 204 实测 (HTTP 204 Verified)
         run: python scripts/verified.py
+
+      - name: Index 4 - Socket 端口探针 (Socket Probe)
+        run: python scripts/socket_probe.py
 
       - name: 提交并推送处理结果
         run: |
