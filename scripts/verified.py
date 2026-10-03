@@ -14,8 +14,9 @@ import aiohttp
 
 from common import ROOT_DIR, export_stage_files, extract_node_links_from_text
 
-INPUT_DIR = ROOT_DIR / "output" / "dns"
-ALT_INPUT_DIR = ROOT_DIR / "output" / "deduped"
+INPUT_DIR = ROOT_DIR / "output" / "socket"
+ALT_INPUT_DIR = ROOT_DIR / "output" / "dns"
+ALT_INPUT_DIR_2 = ROOT_DIR / "output" / "deduped"
 OUTPUT_DIR = ROOT_DIR / "output" / "verified"
 ROOT_OUTPUT_DIR = ROOT_DIR / "output"
 
@@ -84,21 +85,23 @@ def main() -> int:
     nodes_file = INPUT_DIR / "nodes.txt"
     if not nodes_file.exists():
         nodes_file = ALT_INPUT_DIR / "nodes.txt"
+    if not nodes_file.exists():
+        nodes_file = ALT_INPUT_DIR_2 / "nodes.txt"
 
     if not nodes_file.exists():
-        print(f"Error: Input file {nodes_file} not found. Run Stage 3 (scripts/dns_check.py) first.")
+        print(f"Error: Input file {nodes_file} not found.")
         return 1
 
     content = nodes_file.read_text(encoding="utf-8")
     nodes = extract_node_links_from_text(content)
-    print(f"Loaded {len(nodes)} nodes from Stage 3.")
+    print(f"Loaded {len(nodes)} nodes for Stage 5 verification from {nodes_file}.")
 
     mihomo_bin = check_mihomo_binary()
     if mihomo_bin:
         print(f"Found Mihomo binary at: {mihomo_bin}")
         verified_nodes = asyncio.run(verify_nodes_with_mihomo(nodes, mihomo_bin))
     else:
-        print("Mihomo binary not detected in local environment. Passing Stage 3 nodes directly.")
+        print("Mihomo binary not detected in local environment. Passing previous stage nodes directly.")
         verified_nodes = nodes
 
     # Export all 5 standard format files to output/verified/
