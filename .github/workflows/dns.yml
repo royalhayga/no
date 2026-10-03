@@ -36,5 +36,5 @@ jobs:
           git add output/dns/
           if ! git diff --cached --quiet; then
             git commit -m "chore: [Index 3] Multi-DNS GFW pollution filter completed"
-            git push origin HEAD:main || echo "Push skipped"
+            git push origin HEAD:master || echo "Push skipped"
           fi
