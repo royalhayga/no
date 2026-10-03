@@ -27,7 +27,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run Index 4 Socket Probe
-        run: python scripts/socket.py
+        run: python scripts/socket_probe.py
 
       - name: Commit and Push Index 4 Output
         run: |
