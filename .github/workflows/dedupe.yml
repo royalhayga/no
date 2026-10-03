@@ -1,9 +1,6 @@
 name: Index 2 - 指纹去重 (Dedupe)
 
 on:
-  push:
-    branches:
-      - master
   workflow_run:
     workflows: ["Index 1 - 全量汇总 (Aggregate)"]
     types:
