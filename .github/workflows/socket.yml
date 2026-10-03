@@ -1,6 +1,9 @@
 name: Index 4 - Socket 端口探针 (Socket Probe)
 
 on:
+  push:
+    branches:
+      - master
   workflow_run:
     workflows: ["Index 3 - 三 DNS 墙检测 (DNS Check)"]
     types:
