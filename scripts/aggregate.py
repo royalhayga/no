@@ -8,7 +8,7 @@ from typing import Any, Dict, List
 
 import yaml
 
-from common import ROOT_DIR, extract_node_links_from_text, export_stage_files, parse_vmess, parse_vless, parse_ss, parse_trojan, parse_hysteria2
+from common import ROOT_DIR, extract_node_links_from_text, export_stage_files, sanitize_node
 
 CONFIG_FILE = ROOT_DIR / "config" / "sources.json"
 OUTPUT_DIR = ROOT_DIR / "output" / "raw"
@@ -38,7 +38,9 @@ def parse_clash_yaml_file(file_path: Path) -> List[Dict[str, Any]]:
                     "sni": str(proxy.get("servername", proxy.get("sni", ""))).strip(),
                     "raw_proxy_dict": proxy
                 }
-                nodes.append(node)
+                sanitized = sanitize_node(node)
+                if sanitized:
+                    nodes.append(sanitized)
     except Exception:
         pass
     return nodes

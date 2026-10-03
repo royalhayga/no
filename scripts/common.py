@@ -14,6 +14,49 @@ import yaml
 ROOT_DIR = Path(__file__).resolve().parents[1]
 
 
+def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """
+    Sanitize and disinfect node data ("去毒"与安全净化):
+    1. Strip HTML tags, control chars, and malicious script injection from node name/remark.
+    2. Filter out invalid, empty, or internal/bogon server addresses (127.0.0.1, 10.x, 192.168.x, 0.0.0.0, etc.).
+    3. Validate port numbers (1-65535).
+    """
+    if not isinstance(node, dict):
+        return None
+
+    server = str(node.get("server", "")).strip().rstrip(".")
+    if not server or server.lower() in ["localhost", "0.0.0.0", "127.0.0.1"]:
+        return None
+
+    # Internal BOGON IP check
+    if server.startswith(("10.", "192.168.", "169.254.")):
+        return None
+    if server.startswith("172."):
+        try:
+            second_octet = int(server.split(".")[1])
+            if 16 <= second_octet <= 31:
+                return None
+        except Exception:
+            pass
+
+    try:
+        port = int(node.get("port", 0))
+        if not (1 <= port <= 65535):
+            return None
+        node["port"] = port
+    except Exception:
+        return None
+
+    # Sanitize node name / remark (remove HTML tags and control chars)
+    raw_name = str(node.get("name", "Node")).strip()
+    clean_name = re.sub(r"<[^>]+>", "", raw_name)  # Remove HTML tags
+    clean_name = re.sub(r"[\r\n\t\x00-\x1f]", " ", clean_name).strip()  # Remove control chars
+    node["name"] = clean_name or "Node"
+    node["server"] = server
+
+    return node
+
+
 def safe_base64_decode(data: str) -> str:
     """Safely decode standard and URL-safe Base64 strings with auto padding."""
     if not data:
@@ -265,7 +308,9 @@ def extract_node_links_from_text(text: str) -> List[Dict[str, Any]]:
                 parsed_node = parse_hysteria2(link)
 
             if parsed_node:
-                nodes.append(parsed_node)
+                sanitized = sanitize_node(parsed_node)
+                if sanitized:
+                    nodes.append(sanitized)
     return nodes
 
 
