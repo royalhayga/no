@@ -1,14 +1,14 @@
-name: Stage 5 - Mihomo Real Outbound 204 Verification
+name: Index 5 - Mihomo 204 实测 (HTTP 204 Verified)
 
 on:
   workflow_run:
-    workflows: ["Stage 4 - Socket TCP/TLS/QUIC Handshake Probe"]
+    workflows: ["Index 4 - Socket 端口探针 (Socket Probe)"]
     types:
       - completed
   workflow_dispatch:      # Manual trigger
 
 jobs:
-  stage5-verified:
+  index5-verified:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -33,15 +33,15 @@ jobs:
           chmod +x mihomo-linux-amd64-v1.18.0
           sudo mv mihomo-linux-amd64-v1.18.0 /usr/local/bin/mihomo
 
-      - name: Run Stage 5 Mihomo 204 Verification
+      - name: Run Index 5 Mihomo 204 Verification
         run: python scripts/verified.py
 
-      - name: Commit and Push Final Stage 5 & Production Output
+      - name: Commit and Push Final Index 5 & Production Output
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add output/
           if ! git diff --cached --quiet; then
-            git commit -m "chore: [Stage 5] Mihomo real 204 outbound verification completed & subscriptions synced"
+            git commit -m "chore: [Index 5] Mihomo real 204 outbound verification completed & subscriptions synced"
             git push origin HEAD:master || git push origin HEAD:main || echo "Push skipped"
           fi

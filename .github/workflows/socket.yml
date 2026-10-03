@@ -1,14 +1,14 @@
-name: Stage 4 - Socket TCP/TLS/QUIC Handshake Probe
+name: Index 4 - Socket 端口探针 (Socket Probe)
 
 on:
   workflow_run:
-    workflows: ["Stage 3 - Multi-DNS Health & GFW Pollution Filter"]
+    workflows: ["Index 3 - 三 DNS 墙检测 (DNS Check)"]
     types:
       - completed
   workflow_dispatch:      # Manual trigger
 
 jobs:
-  stage4-socket:
+  index4-socket:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -26,15 +26,15 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      - name: Run Stage 4 Socket Probe
+      - name: Run Index 4 Socket Probe
         run: python scripts/socket.py
 
-      - name: Commit and Push Stage 4 Output
+      - name: Commit and Push Index 4 Output
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add output/socket/
           if ! git diff --cached --quiet; then
-            git commit -m "chore: [Stage 4] Socket TCP/TLS/QUIC probe completed"
+            git commit -m "chore: [Index 4] Socket TCP/TLS/QUIC probe completed"
             git push origin HEAD:master || git push origin HEAD:main || echo "Push skipped"
           fi

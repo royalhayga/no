@@ -1,14 +1,14 @@
-name: Stage 2 - Fingerprint Deduplication & Alias Analysis
+name: Index 2 - 指纹去重 (Dedupe)
 
 on:
   workflow_run:
-    workflows: ["Stage 1 - Multi-Source Local Aggregation"]
+    workflows: ["Index 1 - 全量汇总 (Aggregate)"]
     types:
       - completed
   workflow_dispatch:      # Manual trigger
 
 jobs:
-  stage2-dedupe:
+  index2-dedupe:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -26,15 +26,15 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      - name: Run Stage 2 Deduplication
+      - name: Run Index 2 Deduplication
         run: python scripts/dedupe.py
 
-      - name: Commit and Push Stage 2 Output
+      - name: Commit and Push Index 2 Output
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add output/deduped/
           if ! git diff --cached --quiet; then
-            git commit -m "chore: [Stage 2] SHA256 fingerprint deduplication & alias report completed"
+            git commit -m "chore: [Index 2] SHA256 fingerprint deduplication & alias report completed"
             git push origin HEAD:master || git push origin HEAD:main || echo "Push skipped"
           fi
