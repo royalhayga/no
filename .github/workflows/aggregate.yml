@@ -1,6 +1,9 @@
 name: Index 1 - 全量汇总 (Aggregate)
 
 on:
+  push:
+    branches:
+      - master
   schedule:
     - cron: '0 */6 * * *'  # Runs every 6 hours
   workflow_dispatch:      # Manual trigger
