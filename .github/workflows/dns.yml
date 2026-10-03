@@ -27,7 +27,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run Index 3 Multi-DNS Filter
-        run: python scripts/dns.py
+        run: python scripts/dns_check.py
 
       - name: Commit and Push Index 3 Output
         run: |
