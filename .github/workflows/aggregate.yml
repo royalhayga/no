@@ -28,6 +28,13 @@ jobs:
       - name: 安装 Python 依赖
         run: pip install -r requirements.txt
 
+      - name: 安装 Mihomo (Clash Meta) 内核
+        run: |
+          wget -q https://github.com/MetaCubeX/mihomo/releases/download/v1.18.0/mihomo-linux-amd64-v1.18.0.gz
+          gunzip mihomo-linux-amd64-v1.18.0.gz
+          chmod +x mihomo-linux-amd64-v1.18.0
+          sudo mv mihomo-linux-amd64-v1.18.0 /usr/local/bin/mihomo
+
       - name: Stage 0 - 克隆/同步所有 28 个参考仓库
         run: python scripts/clone_repos.py
 
@@ -43,7 +50,7 @@ jobs:
       - name: Index 4 - Socket 端口探针 (Socket Probe)
         run: python scripts/socket_probe.py
 
-      - name: Index 5 - 出海实测与最终导出 (Verified)
+      - name: Index 5 - Mihomo 204 实测 (HTTP 204 Verified)
         run: python scripts/verified.py
 
       - name: 提交并推送处理结果
