@@ -1,4 +1,4 @@
-name: Index 1 - 全量汇总 (Aggregate)
+name: Index Pipeline - 全阶段自动处理流水线
 
 on:
   push:
@@ -10,10 +10,8 @@ on:
 
 jobs:
   index1-aggregate:
+    name: Index 1 - 全量汇总 (Aggregate)
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -27,15 +25,152 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      - name: Run Index 1 Aggregation
+      - name: Run Index 1
         run: python scripts/aggregate.py
 
-      - name: Commit and Push Index 1 Output
+      - name: Upload Output Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-data
+          path: output/
+
+  index2-dedupe:
+    name: Index 2 - 指纹去重 (Dedupe)
+    needs: index1-aggregate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download Output Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: output-data
+          path: output/
+
+      - name: Run Index 2
+        run: python scripts/dedupe.py
+
+      - name: Upload Output Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-data
+          path: output/
+
+  index3-dns:
+    name: Index 3 - 三 DNS 墙检测 (DNS Check)
+    needs: index2-dedupe
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download Output Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: output-data
+          path: output/
+
+      - name: Run Index 3
+        run: python scripts/dns_check.py
+
+      - name: Upload Output Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-data
+          path: output/
+
+  index4-socket:
+    name: Index 4 - Socket 端口探针 (Socket Probe)
+    needs: index3-dns
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download Output Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: output-data
+          path: output/
+
+      - name: Run Index 4
+        run: python scripts/socket_probe.py
+
+      - name: Upload Output Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-data
+          path: output/
+
+  index5-verified:
+    name: Index 5 - Mihomo 204 实测 (HTTP 204 Verified)
+    needs: index4-socket
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Mihomo (Clash Meta) Binary
+        run: |
+          wget -q https://github.com/MetaCubeX/mihomo/releases/download/v1.18.0/mihomo-linux-amd64-v1.18.0.gz
+          gunzip mihomo-linux-amd64-v1.18.0.gz
+          chmod +x mihomo-linux-amd64-v1.18.0
+          sudo mv mihomo-linux-amd64-v1.18.0 /usr/local/bin/mihomo
+
+      - name: Download Output Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: output-data
+          path: output/
+
+      - name: Run Index 5
+        run: python scripts/verified.py
+
+      - name: Commit and Push All Final Index Outputs
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add output/raw/
+          git add output/
           if ! git diff --cached --quiet; then
-            git commit -m "chore: [Index 1] Multi-source raw nodes aggregated"
+            git commit -m "chore: [Index Pipeline] All stages 1-5 completed & output synced"
             git push origin HEAD:master || echo "Push skipped"
           fi
