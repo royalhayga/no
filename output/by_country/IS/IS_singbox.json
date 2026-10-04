@@ -1,0 +1,51 @@
+{
+  "outbounds": [
+    {
+      "tag": "🌐 IS-01",
+      "type": "vless",
+      "server": "89.147.109.212",
+      "server_port": 443,
+      "uuid": "36af4874-d6a3-4f7c-82a7-1cb724961b52"
+    },
+    {
+      "tag": "🌐 IS-02",
+      "type": "shadowsocks",
+      "server": "89.147.109.212",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ߦwfۏzվv"
+    },
+    {
+      "tag": "🌐 IS-03",
+      "type": "shadowsocks",
+      "server": "89.147.109.212",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ߦwfۏzվv"
+    },
+    {
+      "tag": "🌐 IS-04",
+      "type": "shadowsocks",
+      "server": "89.147.109.212",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ߦwfۏzվv"
+    },
+    {
+      "tag": "🌐 IS-05",
+      "type": "shadowsocks",
+      "server": "89.147.109.212",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ߦwfۏzվv"
+    },
+    {
+      "tag": "🌐 IS-06",
+      "type": "shadowsocks",
+      "server": "89.147.109.212",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ߦwfۏzվv"
+    }
+  ]
+}

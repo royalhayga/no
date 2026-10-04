@@ -1,0 +1,607 @@
+{
+  "outbounds": [
+    {
+      "tag": "🌐 UA-01",
+      "type": "vless",
+      "server": "5.34.182.23",
+      "server_port": 443,
+      "uuid": "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    },
+    {
+      "tag": "🌐 UA-02",
+      "type": "vless",
+      "server": "173.242.63.235",
+      "server_port": 8443,
+      "uuid": "fdc48be3-a615-41ac-8bd1-ed844c931048"
+    },
+    {
+      "tag": "🌐 UA-03",
+      "type": "vless",
+      "server": "104.143.223.69",
+      "server_port": 2085,
+      "uuid": "f68a9fd4-16c7-46d1-b17c-0a4b224cc00d"
+    },
+    {
+      "tag": "🌐 UA-04",
+      "type": "vless",
+      "server": "104.143.223.71",
+      "server_port": 2085,
+      "uuid": "3f654175-4f83-47ec-8ce2-f2bf0d160b27"
+    },
+    {
+      "tag": "🌐 UA-05",
+      "type": "vless",
+      "server": "141.105.130.102",
+      "server_port": 443,
+      "uuid": "9ce4c9e2-1dcc-abe8-9abf-9bf8bc1269f6"
+    },
+    {
+      "tag": "🌐 UA-06",
+      "type": "vless",
+      "server": "193.238.153.15",
+      "server_port": 443,
+      "uuid": "40cfbd0a-f133-4174-8e03-ab0e587e1099"
+    },
+    {
+      "tag": "🌐 UA-07",
+      "type": "vless",
+      "server": "173.242.63.235",
+      "server_port": 8443,
+      "uuid": "fdc48be3-a615-41ac-8bd1-ed844c931048"
+    },
+    {
+      "tag": "🌐 UA-08",
+      "type": "vless",
+      "server": "130.0.234.197",
+      "server_port": 48905,
+      "uuid": "3e4d70e5-7ec9-48f9-a4e0-48c44c6063fd"
+    },
+    {
+      "tag": "🌐 UA-09",
+      "type": "vless",
+      "server": "104.143.223.230",
+      "server_port": 2085,
+      "uuid": "9bb5dd4e-bd32-4bdb-a60d-9368433f3885"
+    },
+    {
+      "tag": "🌐 UA-10",
+      "type": "vless",
+      "server": "104.143.223.59",
+      "server_port": 2085,
+      "uuid": "c86adb2a-24a4-475b-9276-1e389951a8a7"
+    },
+    {
+      "tag": "🌐 UA-11",
+      "type": "vless",
+      "server": "141.105.130.102",
+      "server_port": 443,
+      "uuid": "9ce4c9e2-1dcc-abe8-9abf-9bf8bc1269f6"
+    },
+    {
+      "tag": "🌐 UA-12",
+      "type": "vless",
+      "server": "104.245.242.4",
+      "server_port": 993,
+      "uuid": "526d2855-c7d1-ecf3-e4f8-5a75f77d5bb3"
+    },
+    {
+      "tag": "🌐 UA-13",
+      "type": "vless",
+      "server": "104.245.240.4",
+      "server_port": 443,
+      "uuid": "2bb8b13c-b3f0-2552-da05-d0929bfb36db"
+    },
+    {
+      "tag": "🌐 UA-14",
+      "type": "shadowsocks",
+      "server": "5.34.182.23",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "m8M^s5uo_"
+    },
+    {
+      "tag": "🌐 UA-15",
+      "type": "shadowsocks",
+      "server": "173.242.63.235",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "}8kyVuy8wN<"
+    },
+    {
+      "tag": "🌐 UA-16",
+      "type": "shadowsocks",
+      "server": "104.143.223.69",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "\u001axק;uo^Ѯ\u001bn\u001csM"
+    },
+    {
+      "tag": "🌐 UA-17",
+      "type": "shadowsocks",
+      "server": "104.143.223.71",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "^7㷜Ƕfzѽ"
+    },
+    {
+      "tag": "🌐 UA-18",
+      "type": "shadowsocks",
+      "server": "141.105.130.102",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Ǹs׶\u001cimv"
+    },
+    {
+      "tag": "🌐 UA-19",
+      "type": "shadowsocks",
+      "server": "193.238.153.15",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "G\u001fm\u001a]^7i\u001eO}"
+    },
+    {
+      "tag": "🌐 UA-20",
+      "type": "shadowsocks",
+      "server": "173.242.63.235",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "}8kyVuy8wN<"
+    },
+    {
+      "tag": "🌐 UA-21",
+      "type": "shadowsocks",
+      "server": "130.0.234.197",
+      "server_port": 48905,
+      "method": "aes-256-gcm",
+      "password": "G=k8δw"
+    },
+    {
+      "tag": "🌐 UA-22",
+      "type": "shadowsocks",
+      "server": "104.143.223.230",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "u\u001em[k\u001d~}9"
+    },
+    {
+      "tag": "🌐 UA-23",
+      "type": "shadowsocks",
+      "server": "104.143.223.59",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "sΚuۆ[nukƻ"
+    },
+    {
+      "tag": "🌐 UA-24",
+      "type": "shadowsocks",
+      "server": "141.105.130.102",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Ǹs׶\u001cimv"
+    },
+    {
+      "tag": "🌐 UA-25",
+      "type": "shadowsocks",
+      "server": "104.245.242.4",
+      "server_port": 993,
+      "method": "aes-256-gcm",
+      "password": "nysuy{"
+    },
+    {
+      "tag": "🌐 UA-26",
+      "type": "shadowsocks",
+      "server": "104.245.240.4",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ٶo]ow۞vu9wOvߧ["
+    },
+    {
+      "tag": "🌐 UA-27",
+      "type": "shadowsocks",
+      "server": "5.34.182.23",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "m8M^s5uo_"
+    },
+    {
+      "tag": "🌐 UA-28",
+      "type": "shadowsocks",
+      "server": "173.242.63.235",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "}8kyVuy8wN<"
+    },
+    {
+      "tag": "🌐 UA-29",
+      "type": "shadowsocks",
+      "server": "104.143.223.69",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "\u001axק;uo^Ѯ\u001bn\u001csM"
+    },
+    {
+      "tag": "🌐 UA-30",
+      "type": "shadowsocks",
+      "server": "104.143.223.71",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "^7㷜Ƕfzѽ"
+    },
+    {
+      "tag": "🌐 UA-31",
+      "type": "shadowsocks",
+      "server": "141.105.130.102",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Ǹs׶\u001cimv"
+    },
+    {
+      "tag": "🌐 UA-32",
+      "type": "shadowsocks",
+      "server": "193.238.153.15",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "G\u001fm\u001a]^7i\u001eO}"
+    },
+    {
+      "tag": "🌐 UA-33",
+      "type": "shadowsocks",
+      "server": "173.242.63.235",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "}8kyVuy8wN<"
+    },
+    {
+      "tag": "🌐 UA-34",
+      "type": "shadowsocks",
+      "server": "130.0.234.197",
+      "server_port": 48905,
+      "method": "aes-256-gcm",
+      "password": "G=k8δw"
+    },
+    {
+      "tag": "🌐 UA-35",
+      "type": "shadowsocks",
+      "server": "104.143.223.230",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "u\u001em[k\u001d~}9"
+    },
+    {
+      "tag": "🌐 UA-36",
+      "type": "shadowsocks",
+      "server": "104.143.223.59",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "sΚuۆ[nukƻ"
+    },
+    {
+      "tag": "🌐 UA-37",
+      "type": "shadowsocks",
+      "server": "141.105.130.102",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Ǹs׶\u001cimv"
+    },
+    {
+      "tag": "🌐 UA-38",
+      "type": "shadowsocks",
+      "server": "104.245.242.4",
+      "server_port": 993,
+      "method": "aes-256-gcm",
+      "password": "nysuy{"
+    },
+    {
+      "tag": "🌐 UA-39",
+      "type": "shadowsocks",
+      "server": "104.245.240.4",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ٶo]ow۞vu9wOvߧ["
+    },
+    {
+      "tag": "🌐 UA-40",
+      "type": "shadowsocks",
+      "server": "5.34.182.23",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "m8M^s5uo_"
+    },
+    {
+      "tag": "🌐 UA-41",
+      "type": "shadowsocks",
+      "server": "173.242.63.235",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "}8kyVuy8wN<"
+    },
+    {
+      "tag": "🌐 UA-42",
+      "type": "shadowsocks",
+      "server": "104.143.223.69",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "\u001axק;uo^Ѯ\u001bn\u001csM"
+    },
+    {
+      "tag": "🌐 UA-43",
+      "type": "shadowsocks",
+      "server": "104.143.223.71",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "^7㷜Ƕfzѽ"
+    },
+    {
+      "tag": "🌐 UA-44",
+      "type": "shadowsocks",
+      "server": "141.105.130.102",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Ǹs׶\u001cimv"
+    },
+    {
+      "tag": "🌐 UA-45",
+      "type": "shadowsocks",
+      "server": "193.238.153.15",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "G\u001fm\u001a]^7i\u001eO}"
+    },
+    {
+      "tag": "🌐 UA-46",
+      "type": "shadowsocks",
+      "server": "173.242.63.235",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "}8kyVuy8wN<"
+    },
+    {
+      "tag": "🌐 UA-47",
+      "type": "shadowsocks",
+      "server": "130.0.234.197",
+      "server_port": 48905,
+      "method": "aes-256-gcm",
+      "password": "G=k8δw"
+    },
+    {
+      "tag": "🌐 UA-48",
+      "type": "shadowsocks",
+      "server": "104.143.223.230",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "u\u001em[k\u001d~}9"
+    },
+    {
+      "tag": "🌐 UA-49",
+      "type": "shadowsocks",
+      "server": "104.143.223.59",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "sΚuۆ[nukƻ"
+    },
+    {
+      "tag": "🌐 UA-50",
+      "type": "shadowsocks",
+      "server": "141.105.130.102",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Ǹs׶\u001cimv"
+    },
+    {
+      "tag": "🌐 UA-51",
+      "type": "shadowsocks",
+      "server": "104.245.242.4",
+      "server_port": 993,
+      "method": "aes-256-gcm",
+      "password": "nysuy{"
+    },
+    {
+      "tag": "🌐 UA-52",
+      "type": "shadowsocks",
+      "server": "104.245.240.4",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ٶo]ow۞vu9wOvߧ["
+    },
+    {
+      "tag": "🌐 UA-53",
+      "type": "shadowsocks",
+      "server": "5.34.182.23",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "m8M^s5uo_"
+    },
+    {
+      "tag": "🌐 UA-54",
+      "type": "shadowsocks",
+      "server": "173.242.63.235",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "}8kyVuy8wN<"
+    },
+    {
+      "tag": "🌐 UA-55",
+      "type": "shadowsocks",
+      "server": "104.143.223.69",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "\u001axק;uo^Ѯ\u001bn\u001csM"
+    },
+    {
+      "tag": "🌐 UA-56",
+      "type": "shadowsocks",
+      "server": "104.143.223.71",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "^7㷜Ƕfzѽ"
+    },
+    {
+      "tag": "🌐 UA-57",
+      "type": "shadowsocks",
+      "server": "141.105.130.102",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Ǹs׶\u001cimv"
+    },
+    {
+      "tag": "🌐 UA-58",
+      "type": "shadowsocks",
+      "server": "193.238.153.15",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "G\u001fm\u001a]^7i\u001eO}"
+    },
+    {
+      "tag": "🌐 UA-59",
+      "type": "shadowsocks",
+      "server": "173.242.63.235",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "}8kyVuy8wN<"
+    },
+    {
+      "tag": "🌐 UA-60",
+      "type": "shadowsocks",
+      "server": "130.0.234.197",
+      "server_port": 48905,
+      "method": "aes-256-gcm",
+      "password": "G=k8δw"
+    },
+    {
+      "tag": "🌐 UA-61",
+      "type": "shadowsocks",
+      "server": "104.143.223.230",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "u\u001em[k\u001d~}9"
+    },
+    {
+      "tag": "🌐 UA-62",
+      "type": "shadowsocks",
+      "server": "104.143.223.59",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "sΚuۆ[nukƻ"
+    },
+    {
+      "tag": "🌐 UA-63",
+      "type": "shadowsocks",
+      "server": "141.105.130.102",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Ǹs׶\u001cimv"
+    },
+    {
+      "tag": "🌐 UA-64",
+      "type": "shadowsocks",
+      "server": "104.245.242.4",
+      "server_port": 993,
+      "method": "aes-256-gcm",
+      "password": "nysuy{"
+    },
+    {
+      "tag": "🌐 UA-65",
+      "type": "shadowsocks",
+      "server": "104.245.240.4",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ٶo]ow۞vu9wOvߧ["
+    },
+    {
+      "tag": "🌐 UA-66",
+      "type": "shadowsocks",
+      "server": "5.34.182.23",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "m8M^s5uo_"
+    },
+    {
+      "tag": "🌐 UA-67",
+      "type": "shadowsocks",
+      "server": "173.242.63.235",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "}8kyVuy8wN<"
+    },
+    {
+      "tag": "🌐 UA-68",
+      "type": "shadowsocks",
+      "server": "104.143.223.69",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "\u001axק;uo^Ѯ\u001bn\u001csM"
+    },
+    {
+      "tag": "🌐 UA-69",
+      "type": "shadowsocks",
+      "server": "104.143.223.71",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "^7㷜Ƕfzѽ"
+    },
+    {
+      "tag": "🌐 UA-70",
+      "type": "shadowsocks",
+      "server": "141.105.130.102",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Ǹs׶\u001cimv"
+    },
+    {
+      "tag": "🌐 UA-71",
+      "type": "shadowsocks",
+      "server": "193.238.153.15",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "G\u001fm\u001a]^7i\u001eO}"
+    },
+    {
+      "tag": "🌐 UA-72",
+      "type": "shadowsocks",
+      "server": "130.0.234.197",
+      "server_port": 48905,
+      "method": "aes-256-gcm",
+      "password": "G=k8δw"
+    },
+    {
+      "tag": "🌐 UA-73",
+      "type": "shadowsocks",
+      "server": "104.143.223.230",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "u\u001em[k\u001d~}9"
+    },
+    {
+      "tag": "🌐 UA-74",
+      "type": "shadowsocks",
+      "server": "104.143.223.59",
+      "server_port": 2085,
+      "method": "aes-256-gcm",
+      "password": "sΚuۆ[nukƻ"
+    },
+    {
+      "tag": "🌐 UA-75",
+      "type": "shadowsocks",
+      "server": "104.245.242.4",
+      "server_port": 993,
+      "method": "aes-256-gcm",
+      "password": "nysuy{"
+    },
+    {
+      "tag": "🌐 UA-76",
+      "type": "shadowsocks",
+      "server": "104.245.240.4",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ٶo]ow۞vu9wOvߧ["
+    },
+    {
+      "tag": "🌐 UA-77",
+      "type": "shadowsocks",
+      "server": "104.245.240.8",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "mww}yW9n{"
+    }
+  ]
+}

@@ -1,0 +1,568 @@
+{
+  "outbounds": [
+    {
+      "tag": "🌐 MD-01",
+      "type": "vless",
+      "server": "143.246.223.149",
+      "server_port": 443,
+      "uuid": "f495298f-2bdb-4fd8-9ac9-5dd33d1b482a"
+    },
+    {
+      "tag": "🌐 MD-02",
+      "type": "vless",
+      "server": "89.35.14.31",
+      "server_port": 443,
+      "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
+    },
+    {
+      "tag": "🌐 MD-03",
+      "type": "vless",
+      "server": "89.35.14.33",
+      "server_port": 443,
+      "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
+    },
+    {
+      "tag": "🌐 MD-04",
+      "type": "vless",
+      "server": "217.156.66.91",
+      "server_port": 443,
+      "uuid": "06f364d4-3d0c-4c60-84e9-a3009f1b0050"
+    },
+    {
+      "tag": "🌐 MD-05",
+      "type": "vless",
+      "server": "89.35.14.32",
+      "server_port": 443,
+      "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
+    },
+    {
+      "tag": "🌐 MD-06",
+      "type": "vless",
+      "server": "85.120.216.178",
+      "server_port": 443,
+      "uuid": "a704443d-655e-4d9f-8ce6-12eeb17a9a08"
+    },
+    {
+      "tag": "🌐 MD-07",
+      "type": "vless",
+      "server": "31.59.36.132",
+      "server_port": 443,
+      "uuid": "457ebbd7-2059-4288-b7dd-dd3b7628bf45"
+    },
+    {
+      "tag": "🌐 MD-08",
+      "type": "vless",
+      "server": "mori-md.failspace.top",
+      "server_port": 443,
+      "uuid": "cd3bb7d9-7df3-4644-ac05-c260990ac277"
+    },
+    {
+      "tag": "🌐 MD-09",
+      "type": "vless",
+      "server": "md2.univesalsrv.com",
+      "server_port": 443,
+      "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
+    },
+    {
+      "tag": "🌐 MD-10",
+      "type": "vless",
+      "server": "hapatronik.vodniki.monster",
+      "server_port": 443,
+      "uuid": "f495298f-2bdb-4fd8-9ac9-5dd33d1b482a"
+    },
+    {
+      "tag": "🌐 MD-11",
+      "type": "vless",
+      "server": "md3.univesalsrv.com",
+      "server_port": 443,
+      "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
+    },
+    {
+      "tag": "🌐 MD-12",
+      "type": "vless",
+      "server": "md4.univesalsrv.com",
+      "server_port": 443,
+      "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
+    },
+    {
+      "tag": "🌐 MD-13",
+      "type": "shadowsocks",
+      "server": "143.246.223.149",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "y\u001fٷ[|=w[͚"
+    },
+    {
+      "tag": "🌐 MD-14",
+      "type": "shadowsocks",
+      "server": "89.35.14.31",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-15",
+      "type": "shadowsocks",
+      "server": "89.35.14.33",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-16",
+      "type": "shadowsocks",
+      "server": "217.156.66.91",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ӧx\u001cδk}4[Nt"
+    },
+    {
+      "tag": "🌐 MD-17",
+      "type": "shadowsocks",
+      "server": "89.35.14.32",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-18",
+      "type": "shadowsocks",
+      "server": "85.120.216.178",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "k8^_Ǻgo^<"
+    },
+    {
+      "tag": "🌐 MD-19",
+      "type": "shadowsocks",
+      "server": "31.59.36.132",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "m{N}o<o]uﭼm9"
+    },
+    {
+      "tag": "🌐 MD-20",
+      "type": "shadowsocks",
+      "server": "mori-md.failspace.top",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "qo}8i9sn\u001asn"
+    },
+    {
+      "tag": "🌐 MD-21",
+      "type": "shadowsocks",
+      "server": "md2.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-22",
+      "type": "shadowsocks",
+      "server": "hapatronik.vodniki.monster",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "y\u001fٷ[|=w[͚"
+    },
+    {
+      "tag": "🌐 MD-23",
+      "type": "shadowsocks",
+      "server": "md3.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-24",
+      "type": "shadowsocks",
+      "server": "md4.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-25",
+      "type": "shadowsocks",
+      "server": "143.246.223.149",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "y\u001fٷ[|=w[͚"
+    },
+    {
+      "tag": "🌐 MD-26",
+      "type": "shadowsocks",
+      "server": "89.35.14.31",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-27",
+      "type": "shadowsocks",
+      "server": "89.35.14.33",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-28",
+      "type": "shadowsocks",
+      "server": "217.156.66.91",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ӧx\u001cδk}4[Nt"
+    },
+    {
+      "tag": "🌐 MD-29",
+      "type": "shadowsocks",
+      "server": "89.35.14.32",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-30",
+      "type": "shadowsocks",
+      "server": "85.120.216.178",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "k8^_Ǻgo^<"
+    },
+    {
+      "tag": "🌐 MD-31",
+      "type": "shadowsocks",
+      "server": "31.59.36.132",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "m{N}o<o]uﭼm9"
+    },
+    {
+      "tag": "🌐 MD-32",
+      "type": "shadowsocks",
+      "server": "mori-md.failspace.top",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "qo}8i9sn\u001asn"
+    },
+    {
+      "tag": "🌐 MD-33",
+      "type": "shadowsocks",
+      "server": "md2.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-34",
+      "type": "shadowsocks",
+      "server": "hapatronik.vodniki.monster",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "y\u001fٷ[|=w[͚"
+    },
+    {
+      "tag": "🌐 MD-35",
+      "type": "shadowsocks",
+      "server": "md3.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-36",
+      "type": "shadowsocks",
+      "server": "md4.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-37",
+      "type": "shadowsocks",
+      "server": "143.246.223.149",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "y\u001fٷ[|=w[͚"
+    },
+    {
+      "tag": "🌐 MD-38",
+      "type": "shadowsocks",
+      "server": "89.35.14.31",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-39",
+      "type": "shadowsocks",
+      "server": "89.35.14.33",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-40",
+      "type": "shadowsocks",
+      "server": "217.156.66.91",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ӧx\u001cδk}4[Nt"
+    },
+    {
+      "tag": "🌐 MD-41",
+      "type": "shadowsocks",
+      "server": "89.35.14.32",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-42",
+      "type": "shadowsocks",
+      "server": "85.120.216.178",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "k8^_Ǻgo^<"
+    },
+    {
+      "tag": "🌐 MD-43",
+      "type": "shadowsocks",
+      "server": "31.59.36.132",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "m{N}o<o]uﭼm9"
+    },
+    {
+      "tag": "🌐 MD-44",
+      "type": "shadowsocks",
+      "server": "mori-md.failspace.top",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "qo}8i9sn\u001asn"
+    },
+    {
+      "tag": "🌐 MD-45",
+      "type": "shadowsocks",
+      "server": "md2.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-46",
+      "type": "shadowsocks",
+      "server": "hapatronik.vodniki.monster",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "y\u001fٷ[|=w[͚"
+    },
+    {
+      "tag": "🌐 MD-47",
+      "type": "shadowsocks",
+      "server": "md3.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-48",
+      "type": "shadowsocks",
+      "server": "md4.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-49",
+      "type": "shadowsocks",
+      "server": "143.246.223.149",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "y\u001fٷ[|=w[͚"
+    },
+    {
+      "tag": "🌐 MD-50",
+      "type": "shadowsocks",
+      "server": "89.35.14.31",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-51",
+      "type": "shadowsocks",
+      "server": "89.35.14.33",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-52",
+      "type": "shadowsocks",
+      "server": "217.156.66.91",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ӧx\u001cδk}4[Nt"
+    },
+    {
+      "tag": "🌐 MD-53",
+      "type": "shadowsocks",
+      "server": "89.35.14.32",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-54",
+      "type": "shadowsocks",
+      "server": "85.120.216.178",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "k8^_Ǻgo^<"
+    },
+    {
+      "tag": "🌐 MD-55",
+      "type": "shadowsocks",
+      "server": "31.59.36.132",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "m{N}o<o]uﭼm9"
+    },
+    {
+      "tag": "🌐 MD-56",
+      "type": "shadowsocks",
+      "server": "mori-md.failspace.top",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "qo}8i9sn\u001asn"
+    },
+    {
+      "tag": "🌐 MD-57",
+      "type": "shadowsocks",
+      "server": "md2.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-58",
+      "type": "shadowsocks",
+      "server": "hapatronik.vodniki.monster",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "y\u001fٷ[|=w[͚"
+    },
+    {
+      "tag": "🌐 MD-59",
+      "type": "shadowsocks",
+      "server": "md3.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-60",
+      "type": "shadowsocks",
+      "server": "md4.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-61",
+      "type": "shadowsocks",
+      "server": "143.246.223.149",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "y\u001fٷ[|=w[͚"
+    },
+    {
+      "tag": "🌐 MD-62",
+      "type": "shadowsocks",
+      "server": "89.35.14.31",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-63",
+      "type": "shadowsocks",
+      "server": "89.35.14.33",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-64",
+      "type": "shadowsocks",
+      "server": "217.156.66.91",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ӧx\u001cδk}4[Nt"
+    },
+    {
+      "tag": "🌐 MD-65",
+      "type": "shadowsocks",
+      "server": "89.35.14.32",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-66",
+      "type": "shadowsocks",
+      "server": "85.120.216.178",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "k8^_Ǻgo^<"
+    },
+    {
+      "tag": "🌐 MD-67",
+      "type": "shadowsocks",
+      "server": "31.59.36.132",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "m{N}o<o]uﭼm9"
+    },
+    {
+      "tag": "🌐 MD-68",
+      "type": "shadowsocks",
+      "server": "mori-md.failspace.top",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "qo}8i9sn\u001asn"
+    },
+    {
+      "tag": "🌐 MD-69",
+      "type": "shadowsocks",
+      "server": "md2.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-70",
+      "type": "shadowsocks",
+      "server": "hapatronik.vodniki.monster",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "y\u001fٷ[|=w[͚"
+    },
+    {
+      "tag": "🌐 MD-71",
+      "type": "shadowsocks",
+      "server": "md3.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 MD-72",
+      "type": "shadowsocks",
+      "server": "md4.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    }
+  ]
+}
