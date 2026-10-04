@@ -1,0 +1,51 @@
+{
+  "outbounds": [
+    {
+      "tag": "🌐 BZ-01",
+      "type": "vless",
+      "server": "45.131.211.30",
+      "server_port": 8880,
+      "uuid": "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    },
+    {
+      "tag": "🌐 BZ-02",
+      "type": "shadowsocks",
+      "server": "45.131.211.30",
+      "server_port": 8880,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    },
+    {
+      "tag": "🌐 BZ-03",
+      "type": "shadowsocks",
+      "server": "45.131.211.30",
+      "server_port": 8880,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    },
+    {
+      "tag": "🌐 BZ-04",
+      "type": "shadowsocks",
+      "server": "45.131.211.30",
+      "server_port": 8880,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    },
+    {
+      "tag": "🌐 BZ-05",
+      "type": "shadowsocks",
+      "server": "45.131.211.30",
+      "server_port": 8880,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    },
+    {
+      "tag": "🌐 BZ-06",
+      "type": "shadowsocks",
+      "server": "45.131.211.30",
+      "server_port": 8880,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    }
+  ]
+}
