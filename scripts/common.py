@@ -380,9 +380,9 @@ def reconstruct_node_link(node: Dict[str, Any]) -> str:
     return f"{ntype}://{server}:{port}#{name}"
 
 
-def export_stage_files(output_dir: Path, nodes: List[Dict[str, Any]], stage_title: str, extra_data: Dict[str, Any] = None) -> None:
+def export_stage_files(output_dir: Path, nodes: List[Dict[str, Any]], stage_title: str, extra_data: Dict[str, Any] = None, max_nodes_per_file: int = 50000) -> None:
     """
-    Export all 5 standard formats to output_dir:
+    Export all 5 standard formats to output_dir with safety cap to avoid GitHub 100MB file limit.
     1. nodes.txt (Plaintext links)
     2. sub.txt (Base64 subscription)
     3. clash.yaml (Clash / Mihomo configuration)
@@ -391,8 +391,11 @@ def export_stage_files(output_dir: Path, nodes: List[Dict[str, Any]], stage_titl
     """
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    # Safety cap: limit max nodes written to single file so size stays < 40MB (GitHub limit is 100MB)
+    capped_nodes = nodes[:max_nodes_per_file] if len(nodes) > max_nodes_per_file else nodes
+
     # 1. Plaintext node links
-    raw_links = [reconstruct_node_link(n) for n in nodes]
+    raw_links = [reconstruct_node_link(n) for n in capped_nodes]
     nodes_txt_content = "\n".join(raw_links)
     (output_dir / "nodes.txt").write_text(nodes_txt_content, encoding="utf-8")
 
@@ -402,7 +405,7 @@ def export_stage_files(output_dir: Path, nodes: List[Dict[str, Any]], stage_titl
 
     # 3. Clash YAML configuration
     clash_proxies = []
-    for idx, n in enumerate(nodes):
+    for idx, n in enumerate(capped_nodes):
         proxy = {
             "name": n.get("name") or f"Node-{idx+1}",
             "type": n.get("type", "ss"),
@@ -459,7 +462,7 @@ def export_stage_files(output_dir: Path, nodes: List[Dict[str, Any]], stage_titl
 
     # 4. Sing-box JSON configuration
     singbox_outbounds = []
-    for idx, n in enumerate(nodes):
+    for idx, n in enumerate(capped_nodes):
         outbound = {
             "tag": n.get("name") or f"Node-{idx+1}",
             "type": n.get("type", "shadowsocks"),
