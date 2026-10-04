@@ -1,6 +1,6 @@
-# 🌐 TVTV - 自动化节点聚合、去重、三 DNS 墙检测与 204 出海实测系统
+# 🌐 TVTV - 自动化节点聚合、去重、三 DNS 墙检测、204 实测与按国家地区划分系统
 
-本项目是一个基于 **GitHub Actions** 的自动化节点处理与订阅净化平台。系统将节点流转拆分为 **5 个独立递进的阶段 (Index / Stage)**，每个阶段均包含独立的 GitHub Action 工作流与独立的格式导出目录。
+本项目是一个基于 **GitHub Actions** 的自动化节点处理与订阅净化平台。系统将节点流转拆分为 **6 个独立递进的阶段 (Index / Stage)**，每个阶段均包含独立的格式导出目录。
 
 ---
 
@@ -13,19 +13,33 @@
 - `singbox.json`：Sing-box / NekoBox 订阅配置
 - `summary.json`：数据统计摘要
 
-| 阶段 | Actions 工作流配置文件 | 对应的 Python 脚本 | 输出规范目录 | 说明 |
-| :--- | :--- | :--- | :--- | :--- |
-| **阶段一：汇总** | `.github/workflows/aggregate.yml` | `scripts/aggregate.py` | `output/raw/` | 扫描 `ref/` 目录下 28 个开源仓库全量文件，保留所有原始节点 |
-| **阶段二：去重** | `.github/workflows/dedupe.yml` | `scripts/dedupe.py` | `output/deduped/` | 按传输属性生成 SHA256 哈希指纹主去重，并生成 `alias_report.json` 别名碰撞报告 |
-| **阶段三：DNS** | `.github/workflows/dns.yml` | `scripts/dns.py` | `output/dns/` | 对比阿里 `223.5.5.5`、DNSPod `119.29.29.29` 与 Cloudflare `1.1.1.1`，剔除 GFW 假 IP 污染与域名阻断 |
-| **阶段四：Socket** | `.github/workflows/socket.yml` | `scripts/socket.py` | `output/socket/` | 高并发 TCP 建连、TLS 握手及 QUIC RFC 9000 Initial 探针，剔除死端口节点 |
-| **阶段五：204实测** | `.github/workflows/verified.yml` | `scripts/verified.py` | `output/verified/`<br>(及 `output/` 根目录) | 在 GitHub Actions 中拉起 **Mihomo (Clash Meta)** 内核，发包至 `generate_204` 测试真实翻墙能力 |
+| 阶段 | 对应的 Python 脚本 | 输出规范目录 | 说明 |
+| :--- | :--- | :--- | :--- |
+| **Index 1：汇总** | `scripts/aggregate.py` | `output/raw/` | 扫描 `ref/` 目录下 28 个开源仓库全量文件，保留所有原始节点 |
+| **Index 2：去重** | `scripts/dedupe.py` | `output/deduped/` | 按传输属性生成 SHA256 哈希指纹主去重，并生成 `alias_report.json` 别名碰撞报告 |
+| **Index 3：DNS** | `scripts/dns_check.py` | `output/dns/` | 对比阿里 `223.5.5.5`、DNSPod `119.29.29.29` 与 Cloudflare `1.1.1.1`，剔除 GFW 假 IP 污染与域名阻断 |
+| **Index 4：Socket** | `scripts/socket_probe.py` | `output/socket/` | 高并发 TCP 建连、TLS 握手及 QUIC RFC 9000 Initial 探针，剔除死端口节点 |
+| **Index 5：204实测** | `scripts/verified.py` | `output/verified/`<br>(及 `output/` 根目录) | 在 GitHub Actions 中拉起 **Mihomo (Clash Meta)** 内核，发包至 `generate_204` 测试真实翻墙能力 |
+| **Index 6：分国家/地区** | `scripts/country_split.py` | `output/by_country/` | 自动解析节点 IP 的 GeoIP 地理位置，按国家/地区拆分为独立子目录（包含完整全套格式） |
 
 ---
 
-## 🚀 最终生产订阅链接 (Stage 5 最终可用)
+## 🌍 按国家/地区分流订阅链接 (`output/by_country/`)
 
-推送至 GitHub 仓库后，即可使用以下链接引入客户端：
+支持按国家/地区单独订阅特定节点的链接（如仅订阅香港节点、仅订阅日本节点等）：
+
+- 🇭🇰 **香港节点 (HK)**: `https://raw.githubusercontent.com/<user>/<repo>/master/output/by_country/HK/clash.yaml`
+- 🇯🇵 **日本节点 (JP)**: `https://raw.githubusercontent.com/<user>/<repo>/master/output/by_country/JP/clash.yaml`
+- 🇺🇸 **美国节点 (US)**: `https://raw.githubusercontent.com/<user>/<repo>/master/output/by_country/US/clash.yaml`
+- 🇸🇬 **新加坡节点 (SG)**: `https://raw.githubusercontent.com/<user>/<repo>/master/output/by_country/SG/clash.yaml`
+- 🇹🇼 **台湾节点 (TW)**: `https://raw.githubusercontent.com/<user>/<repo>/master/output/by_country/TW/clash.yaml`
+- 🇰🇷 **韩国节点 (KR)**: `https://raw.githubusercontent.com/<user>/<repo>/master/output/by_country/KR/clash.yaml`
+- 🇬🇧 **英国节点 (UK)**: `https://raw.githubusercontent.com/<user>/<repo>/master/output/by_country/UK/clash.yaml`
+- 🇩🇪 **德国节点 (DE)**: `https://raw.githubusercontent.com/<user>/<repo>/master/output/by_country/DE/clash.yaml`
+
+---
+
+## 🚀 最终生产汇总订阅链接 (全节点可用)
 
 | 类型 | 订阅 URL 地址 |
 | :--- | :--- |
