@@ -10,11 +10,10 @@
     },
     {
       "tag": "🇧🇷 BR-02",
-      "type": "vmess",
-      "server": "89.39.161.157",
+      "type": "vless",
+      "server": "185.133.35.45",
       "server_port": 443,
-      "uuid": "03fcc618-b93d-6796-6aed-8a38c975d581",
-      "security": "auto"
+      "uuid": "794f9f41-92c9-4a78-8ffc-1f82cb48a4e2"
     },
     {
       "tag": "🇧🇷 BR-03",
@@ -26,23 +25,24 @@
     {
       "tag": "🇧🇷 BR-04",
       "type": "vless",
-      "server": "157.151.4.93",
-      "server_port": 443,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64"
+      "server": "185.133.35.140",
+      "server_port": 80,
+      "uuid": "f9255507-1b65-433f-bfd8-193b35e068e2"
     },
     {
       "tag": "🇧🇷 BR-05",
       "type": "vless",
-      "server": "35.199.90.53",
-      "server_port": 443,
-      "uuid": "e9c2ed7f-79ab-40a8-8910-24468f5da712"
-    },
-    {
-      "tag": "🇧🇷 BR-06",
-      "type": "vless",
       "server": "23.251.55.216",
       "server_port": 443,
       "uuid": "c396fa08-e07a-459b-b894-389456fd6a82"
+    },
+    {
+      "tag": "🇧🇷 BR-06",
+      "type": "shadowsocks",
+      "server": "185.133.35.45",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "5g=6q<k"
     },
     {
       "tag": "🇧🇷 BR-07",
@@ -55,26 +55,26 @@
     {
       "tag": "🇧🇷 BR-08",
       "type": "shadowsocks",
-      "server": "157.151.4.93",
-      "server_port": 443,
+      "server": "185.133.35.140",
+      "server_port": 80,
       "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
+      "password": "ݹ;վ}m|ߗǶ"
     },
     {
       "tag": "🇧🇷 BR-09",
-      "type": "shadowsocks",
-      "server": "35.199.90.53",
-      "server_port": 443,
-      "method": "{6y֛Ftێ",
-      "password": "]kv"
-    },
-    {
-      "tag": "🇧🇷 BR-10",
       "type": "shadowsocks",
       "server": "23.251.55.216",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "sz}<{N[oxx6"
+    },
+    {
+      "tag": "🇧🇷 BR-10",
+      "type": "shadowsocks",
+      "server": "185.133.35.45",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "5g=6q<k"
     },
     {
       "tag": "🇧🇷 BR-11",
@@ -87,26 +87,26 @@
     {
       "tag": "🇧🇷 BR-12",
       "type": "shadowsocks",
-      "server": "157.151.4.93",
-      "server_port": 443,
+      "server": "185.133.35.140",
+      "server_port": 80,
       "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
+      "password": "ݹ;վ}m|ߗǶ"
     },
     {
       "tag": "🇧🇷 BR-13",
-      "type": "shadowsocks",
-      "server": "35.199.90.53",
-      "server_port": 443,
-      "method": "{6y֛Ftێ",
-      "password": "]kv"
-    },
-    {
-      "tag": "🇧🇷 BR-14",
       "type": "shadowsocks",
       "server": "23.251.55.216",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "sz}<{N[oxx6"
+    },
+    {
+      "tag": "🇧🇷 BR-14",
+      "type": "shadowsocks",
+      "server": "185.133.35.45",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "5g=6q<k"
     },
     {
       "tag": "🇧🇷 BR-15",
@@ -119,26 +119,26 @@
     {
       "tag": "🇧🇷 BR-16",
       "type": "shadowsocks",
-      "server": "157.151.4.93",
-      "server_port": 443,
+      "server": "185.133.35.140",
+      "server_port": 80,
       "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
+      "password": "ݹ;վ}m|ߗǶ"
     },
     {
       "tag": "🇧🇷 BR-17",
-      "type": "shadowsocks",
-      "server": "35.199.90.53",
-      "server_port": 443,
-      "method": "{6y֛Ftێ",
-      "password": "]kv"
-    },
-    {
-      "tag": "🇧🇷 BR-18",
       "type": "shadowsocks",
       "server": "23.251.55.216",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "sz}<{N[oxx6"
+    },
+    {
+      "tag": "🇧🇷 BR-18",
+      "type": "shadowsocks",
+      "server": "185.133.35.45",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "5g=6q<k"
     },
     {
       "tag": "🇧🇷 BR-19",
@@ -151,26 +151,26 @@
     {
       "tag": "🇧🇷 BR-20",
       "type": "shadowsocks",
-      "server": "157.151.4.93",
-      "server_port": 443,
+      "server": "185.133.35.140",
+      "server_port": 80,
       "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
+      "password": "ݹ;վ}m|ߗǶ"
     },
     {
       "tag": "🇧🇷 BR-21",
-      "type": "shadowsocks",
-      "server": "35.199.90.53",
-      "server_port": 443,
-      "method": "{6y֛Ftێ",
-      "password": "]kv"
-    },
-    {
-      "tag": "🇧🇷 BR-22",
       "type": "shadowsocks",
       "server": "23.251.55.216",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "sz}<{N[oxx6"
+    },
+    {
+      "tag": "🇧🇷 BR-22",
+      "type": "shadowsocks",
+      "server": "185.133.35.45",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "5g=6q<k"
     },
     {
       "tag": "🇧🇷 BR-23",
@@ -183,26 +183,26 @@
     {
       "tag": "🇧🇷 BR-24",
       "type": "shadowsocks",
-      "server": "157.151.4.93",
-      "server_port": 443,
+      "server": "185.133.35.140",
+      "server_port": 80,
       "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
+      "password": "ݹ;վ}m|ߗǶ"
     },
     {
       "tag": "🇧🇷 BR-25",
-      "type": "shadowsocks",
-      "server": "35.199.90.53",
-      "server_port": 443,
-      "method": "{6y֛Ftێ",
-      "password": "]kv"
-    },
-    {
-      "tag": "🇧🇷 BR-26",
       "type": "shadowsocks",
       "server": "23.251.55.216",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "sz}<{N[oxx6"
+    },
+    {
+      "tag": "🇧🇷 BR-26",
+      "type": "shadowsocks",
+      "server": "185.133.35.21",
+      "server_port": 2052,
+      "method": "aes-256-gcm",
+      "password": "gwMo\\]mykw\u001b{"
     },
     {
       "tag": "🇧🇷 BR-27",
@@ -211,13 +211,6 @@
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "m{N}o<o]uﭼm9"
-    },
-    {
-      "tag": "🇧🇷 BR-28",
-      "type": "trojan",
-      "server": "185.133.35.22",
-      "server_port": 443,
-      "password": "MiTiVPN"
     }
   ]
 }
