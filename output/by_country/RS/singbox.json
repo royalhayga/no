@@ -3,79 +3,81 @@
     {
       "tag": "🌐 RS-01",
       "type": "vless",
-      "server": "150.40.126.22",
-      "server_port": 443,
-      "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
+      "server": "130.49.163.54",
+      "server_port": 8443,
+      "uuid": "04c808e2-0b59-47b0-a54b-32fc7ef1c902"
     },
     {
       "tag": "🌐 RS-02",
-      "type": "vless",
-      "server": "150.40.126.21",
-      "server_port": 443,
-      "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
-    },
-    {
-      "tag": "🌐 RS-03",
       "type": "vless",
       "server": "150.40.126.18",
       "server_port": 443,
       "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
     },
     {
+      "tag": "🌐 RS-03",
+      "type": "vless",
+      "server": "150.40.126.22",
+      "server_port": 443,
+      "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
+    },
+    {
       "tag": "🌐 RS-04",
       "type": "vless",
-      "server": "150.40.126.24",
+      "server": "150.40.126.21",
       "server_port": 443,
       "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
     },
     {
       "tag": "🌐 RS-05",
       "type": "vless",
-      "server": "rs4.univesalsrv.com",
+      "server": "rs3.univesalsrv.com",
       "server_port": 443,
       "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
     },
     {
       "tag": "🌐 RS-06",
       "type": "vless",
-      "server": "rs3.univesalsrv.com",
+      "server": "rs1.univesalsrv.com",
       "server_port": 443,
       "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
     },
     {
       "tag": "🌐 RS-07",
       "type": "vless",
-      "server": "rs5.univesalsrv.com",
+      "server": "rs4.univesalsrv.com",
       "server_port": 443,
       "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
     },
     {
       "tag": "🌐 RS-08",
       "type": "vless",
-      "server": "rs1.univesalsrv.com",
-      "server_port": 443,
-      "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
-    },
-    {
-      "tag": "🌐 RS-09",
-      "type": "vless",
-      "server": "rs2.univesalsrv.com",
-      "server_port": 443,
-      "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
-    },
-    {
-      "tag": "🌐 RS-10",
-      "type": "vless",
       "server": "185.48.250.113",
       "server_port": 8443,
       "uuid": "51a0af77-a60c-4d9b-81a4-f50e1b38d90b"
     },
     {
-      "tag": "🌐 RS-11",
+      "tag": "🌐 RS-09",
       "type": "vless",
-      "server": "150.40.126.19",
+      "server": "rs3.univesalsrv.com",
       "server_port": 443,
       "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be"
+    },
+    {
+      "tag": "🌐 RS-10",
+      "type": "shadowsocks",
+      "server": "130.49.163.54",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "Ӈ<ǶѾ}k\u001bgs6"
+    },
+    {
+      "tag": "🌐 RS-11",
+      "type": "shadowsocks",
+      "server": "150.40.126.18",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
     },
     {
       "tag": "🌐 RS-12",
@@ -96,7 +98,7 @@
     {
       "tag": "🌐 RS-14",
       "type": "shadowsocks",
-      "server": "150.40.126.18",
+      "server": "rs3.univesalsrv.com",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "Z[m_o"
@@ -104,7 +106,7 @@
     {
       "tag": "🌐 RS-15",
       "type": "shadowsocks",
-      "server": "150.40.126.24",
+      "server": "rs1.univesalsrv.com",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "Z[m_o"
@@ -120,15 +122,15 @@
     {
       "tag": "🌐 RS-17",
       "type": "shadowsocks",
-      "server": "rs3.univesalsrv.com",
-      "server_port": 443,
+      "server": "185.48.250.113",
+      "server_port": 8443,
       "method": "aes-256-gcm",
-      "password": "Z[m_o"
+      "password": "Vik\u001c[V\u001eսw\u001b"
     },
     {
       "tag": "🌐 RS-18",
       "type": "shadowsocks",
-      "server": "rs5.univesalsrv.com",
+      "server": "rs3.univesalsrv.com",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "Z[m_o"
@@ -136,15 +138,15 @@
     {
       "tag": "🌐 RS-19",
       "type": "shadowsocks",
-      "server": "rs1.univesalsrv.com",
-      "server_port": 443,
+      "server": "130.49.163.54",
+      "server_port": 8443,
       "method": "aes-256-gcm",
-      "password": "Z[m_o"
+      "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
       "tag": "🌐 RS-20",
       "type": "shadowsocks",
-      "server": "rs2.univesalsrv.com",
+      "server": "150.40.126.18",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "Z[m_o"
@@ -152,15 +154,15 @@
     {
       "tag": "🌐 RS-21",
       "type": "shadowsocks",
-      "server": "185.48.250.113",
-      "server_port": 8443,
+      "server": "150.40.126.22",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "Vik\u001c[V\u001eսw\u001b"
+      "password": "Z[m_o"
     },
     {
       "tag": "🌐 RS-22",
       "type": "shadowsocks",
-      "server": "150.40.126.19",
+      "server": "150.40.126.21",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "Z[m_o"
@@ -168,7 +170,7 @@
     {
       "tag": "🌐 RS-23",
       "type": "shadowsocks",
-      "server": "150.40.126.22",
+      "server": "rs3.univesalsrv.com",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "Z[m_o"
@@ -176,7 +178,7 @@
     {
       "tag": "🌐 RS-24",
       "type": "shadowsocks",
-      "server": "150.40.126.21",
+      "server": "rs1.univesalsrv.com",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "Z[m_o"
@@ -184,7 +186,7 @@
     {
       "tag": "🌐 RS-25",
       "type": "shadowsocks",
-      "server": "150.40.126.18",
+      "server": "rs4.univesalsrv.com",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "Z[m_o"
@@ -192,15 +194,15 @@
     {
       "tag": "🌐 RS-26",
       "type": "shadowsocks",
-      "server": "150.40.126.24",
-      "server_port": 443,
+      "server": "185.48.250.113",
+      "server_port": 8443,
       "method": "aes-256-gcm",
-      "password": "Z[m_o"
+      "password": "Vik\u001c[V\u001eսw\u001b"
     },
     {
       "tag": "🌐 RS-27",
       "type": "shadowsocks",
-      "server": "rs4.univesalsrv.com",
+      "server": "rs3.univesalsrv.com",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "Z[m_o"
@@ -208,69 +210,13 @@
     {
       "tag": "🌐 RS-28",
       "type": "shadowsocks",
-      "server": "rs3.univesalsrv.com",
-      "server_port": 443,
+      "server": "130.49.163.54",
+      "server_port": 8443,
       "method": "aes-256-gcm",
-      "password": "Z[m_o"
+      "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
       "tag": "🌐 RS-29",
-      "type": "shadowsocks",
-      "server": "rs5.univesalsrv.com",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-30",
-      "type": "shadowsocks",
-      "server": "rs1.univesalsrv.com",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-31",
-      "type": "shadowsocks",
-      "server": "rs2.univesalsrv.com",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-32",
-      "type": "shadowsocks",
-      "server": "185.48.250.113",
-      "server_port": 8443,
-      "method": "aes-256-gcm",
-      "password": "Vik\u001c[V\u001eսw\u001b"
-    },
-    {
-      "tag": "🌐 RS-33",
-      "type": "shadowsocks",
-      "server": "150.40.126.19",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-34",
-      "type": "shadowsocks",
-      "server": "150.40.126.22",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-35",
-      "type": "shadowsocks",
-      "server": "150.40.126.21",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-36",
       "type": "shadowsocks",
       "server": "150.40.126.18",
       "server_port": 443,
@@ -278,71 +224,7 @@
       "password": "Z[m_o"
     },
     {
-      "tag": "🌐 RS-37",
-      "type": "shadowsocks",
-      "server": "150.40.126.24",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-38",
-      "type": "shadowsocks",
-      "server": "rs4.univesalsrv.com",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-39",
-      "type": "shadowsocks",
-      "server": "rs3.univesalsrv.com",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-40",
-      "type": "shadowsocks",
-      "server": "rs5.univesalsrv.com",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-41",
-      "type": "shadowsocks",
-      "server": "rs1.univesalsrv.com",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-42",
-      "type": "shadowsocks",
-      "server": "rs2.univesalsrv.com",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-43",
-      "type": "shadowsocks",
-      "server": "185.48.250.113",
-      "server_port": 8443,
-      "method": "aes-256-gcm",
-      "password": "Vik\u001c[V\u001eսw\u001b"
-    },
-    {
-      "tag": "🌐 RS-44",
-      "type": "shadowsocks",
-      "server": "150.40.126.19",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-45",
+      "tag": "🌐 RS-30",
       "type": "shadowsocks",
       "server": "150.40.126.22",
       "server_port": 443,
@@ -350,12 +232,132 @@
       "password": "Z[m_o"
     },
     {
-      "tag": "🌐 RS-46",
+      "tag": "🌐 RS-31",
       "type": "shadowsocks",
       "server": "150.40.126.21",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 RS-32",
+      "type": "shadowsocks",
+      "server": "rs3.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 RS-33",
+      "type": "shadowsocks",
+      "server": "rs1.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 RS-34",
+      "type": "shadowsocks",
+      "server": "rs4.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 RS-35",
+      "type": "shadowsocks",
+      "server": "185.48.250.113",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "Vik\u001c[V\u001eսw\u001b"
+    },
+    {
+      "tag": "🌐 RS-36",
+      "type": "shadowsocks",
+      "server": "rs3.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 RS-37",
+      "type": "shadowsocks",
+      "server": "130.49.163.54",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "Ӈ<ǶѾ}k\u001bgs6"
+    },
+    {
+      "tag": "🌐 RS-38",
+      "type": "shadowsocks",
+      "server": "150.40.126.18",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 RS-39",
+      "type": "shadowsocks",
+      "server": "150.40.126.22",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 RS-40",
+      "type": "shadowsocks",
+      "server": "150.40.126.21",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 RS-41",
+      "type": "shadowsocks",
+      "server": "rs3.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 RS-42",
+      "type": "shadowsocks",
+      "server": "rs1.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 RS-43",
+      "type": "shadowsocks",
+      "server": "rs4.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 RS-44",
+      "type": "shadowsocks",
+      "server": "185.48.250.113",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "Vik\u001c[V\u001eսw\u001b"
+    },
+    {
+      "tag": "🌐 RS-45",
+      "type": "shadowsocks",
+      "server": "rs3.univesalsrv.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Z[m_o"
+    },
+    {
+      "tag": "🌐 RS-46",
+      "type": "shadowsocks",
+      "server": "130.49.163.54",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
       "tag": "🌐 RS-47",
@@ -368,7 +370,7 @@
     {
       "tag": "🌐 RS-48",
       "type": "shadowsocks",
-      "server": "150.40.126.24",
+      "server": "150.40.126.22",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "Z[m_o"
@@ -376,7 +378,7 @@
     {
       "tag": "🌐 RS-49",
       "type": "shadowsocks",
-      "server": "rs4.univesalsrv.com",
+      "server": "150.40.126.21",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "Z[m_o"
@@ -392,7 +394,7 @@
     {
       "tag": "🌐 RS-51",
       "type": "shadowsocks",
-      "server": "rs5.univesalsrv.com",
+      "server": "rs1.univesalsrv.com",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "Z[m_o"
@@ -400,7 +402,7 @@
     {
       "tag": "🌐 RS-52",
       "type": "shadowsocks",
-      "server": "rs1.univesalsrv.com",
+      "server": "rs4.univesalsrv.com",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "Z[m_o"
@@ -408,114 +410,10 @@
     {
       "tag": "🌐 RS-53",
       "type": "shadowsocks",
-      "server": "rs2.univesalsrv.com",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-54",
-      "type": "shadowsocks",
       "server": "185.48.250.113",
       "server_port": 8443,
       "method": "aes-256-gcm",
       "password": "Vik\u001c[V\u001eսw\u001b"
-    },
-    {
-      "tag": "🌐 RS-55",
-      "type": "shadowsocks",
-      "server": "150.40.126.19",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-56",
-      "type": "shadowsocks",
-      "server": "150.40.126.22",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-57",
-      "type": "shadowsocks",
-      "server": "150.40.126.21",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-58",
-      "type": "shadowsocks",
-      "server": "150.40.126.18",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-59",
-      "type": "shadowsocks",
-      "server": "150.40.126.24",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-60",
-      "type": "shadowsocks",
-      "server": "rs4.univesalsrv.com",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-61",
-      "type": "shadowsocks",
-      "server": "rs3.univesalsrv.com",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-62",
-      "type": "shadowsocks",
-      "server": "rs5.univesalsrv.com",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-63",
-      "type": "shadowsocks",
-      "server": "rs1.univesalsrv.com",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-64",
-      "type": "shadowsocks",
-      "server": "rs2.univesalsrv.com",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
-    },
-    {
-      "tag": "🌐 RS-65",
-      "type": "shadowsocks",
-      "server": "185.48.250.113",
-      "server_port": 8443,
-      "method": "aes-256-gcm",
-      "password": "Vik\u001c[V\u001eսw\u001b"
-    },
-    {
-      "tag": "🌐 RS-66",
-      "type": "shadowsocks",
-      "server": "150.40.126.19",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Z[m_o"
     }
   ]
 }

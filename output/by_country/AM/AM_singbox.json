@@ -3,54 +3,57 @@
     {
       "tag": "🌐 AM-01",
       "type": "vless",
-      "server": "77.91.68.70",
-      "server_port": 55983,
-      "uuid": "f667a096-5231-4cfb-8759-92bb32473139"
-    },
-    {
-      "tag": "🌐 AM-02",
-      "type": "vless",
-      "server": "77.91.68.70",
-      "server_port": 55983,
-      "uuid": "f667a096-5231-4cfb-8759-92bb32473139"
-    },
-    {
-      "tag": "🌐 AM-03",
-      "type": "vless",
-      "server": "2.56.207.67",
-      "server_port": 443,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64"
-    },
-    {
-      "tag": "🌐 AM-04",
-      "type": "vless",
       "server": "91.198.108.211",
       "server_port": 2053,
       "uuid": "51a0af77-a60c-4d9b-81a4-f50e1b38d90b"
     },
     {
+      "tag": "🌐 AM-02",
+      "type": "shadowsocks",
+      "server": "91.198.108.211",
+      "server_port": 2053,
+      "method": "aes-256-gcm",
+      "password": "Vik\u001c[V\u001eսw\u001b"
+    },
+    {
+      "tag": "🌐 AM-03",
+      "type": "shadowsocks",
+      "server": "91.198.108.211",
+      "server_port": 2053,
+      "method": "aes-256-gcm",
+      "password": "Vik\u001c[V\u001eսw\u001b"
+    },
+    {
+      "tag": "🌐 AM-04",
+      "type": "shadowsocks",
+      "server": "91.198.108.211",
+      "server_port": 2053,
+      "method": "aes-256-gcm",
+      "password": "Vik\u001c[V\u001eսw\u001b"
+    },
+    {
       "tag": "🌐 AM-05",
       "type": "shadowsocks",
-      "server": "77.91.68.70",
-      "server_port": 55983,
-      "method": "aes-256-gcm",
-      "password": "kOzm}fn;]"
+      "server": "am-ip.nxralns.com",
+      "server_port": 100,
+      "method": "Ӿ",
+      "password": "im{㞞m\u001a}wW"
     },
     {
       "tag": "🌐 AM-06",
       "type": "shadowsocks",
-      "server": "77.91.68.70",
-      "server_port": 55983,
+      "server": "91.198.108.211",
+      "server_port": 2053,
       "method": "aes-256-gcm",
-      "password": "kOzm}fn;]"
+      "password": "Vik\u001c[V\u001eսw\u001b"
     },
     {
       "tag": "🌐 AM-07",
       "type": "shadowsocks",
-      "server": "2.56.207.67",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
+      "server": "am-ip.nxralns.com",
+      "server_port": 100,
+      "method": "Ӿ",
+      "password": "im{㞞m\u001a}wW"
     },
     {
       "tag": "🌐 AM-08",
@@ -63,130 +66,10 @@
     {
       "tag": "🌐 AM-09",
       "type": "shadowsocks",
-      "server": "77.91.68.70",
-      "server_port": 55983,
-      "method": "aes-256-gcm",
-      "password": "kOzm}fn;]"
-    },
-    {
-      "tag": "🌐 AM-10",
-      "type": "shadowsocks",
-      "server": "77.91.68.70",
-      "server_port": 55983,
-      "method": "aes-256-gcm",
-      "password": "kOzm}fn;]"
-    },
-    {
-      "tag": "🌐 AM-11",
-      "type": "shadowsocks",
-      "server": "2.56.207.67",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
-    },
-    {
-      "tag": "🌐 AM-12",
-      "type": "shadowsocks",
-      "server": "91.198.108.211",
-      "server_port": 2053,
-      "method": "aes-256-gcm",
-      "password": "Vik\u001c[V\u001eսw\u001b"
-    },
-    {
-      "tag": "🌐 AM-13",
-      "type": "shadowsocks",
-      "server": "77.91.68.70",
-      "server_port": 55983,
-      "method": "aes-256-gcm",
-      "password": "kOzm}fn;]"
-    },
-    {
-      "tag": "🌐 AM-14",
-      "type": "shadowsocks",
-      "server": "77.91.68.70",
-      "server_port": 55983,
-      "method": "aes-256-gcm",
-      "password": "kOzm}fn;]"
-    },
-    {
-      "tag": "🌐 AM-15",
-      "type": "shadowsocks",
-      "server": "2.56.207.67",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
-    },
-    {
-      "tag": "🌐 AM-16",
-      "type": "shadowsocks",
-      "server": "91.198.108.211",
-      "server_port": 2053,
-      "method": "aes-256-gcm",
-      "password": "Vik\u001c[V\u001eսw\u001b"
-    },
-    {
-      "tag": "🌐 AM-17",
-      "type": "shadowsocks",
-      "server": "77.91.68.70",
-      "server_port": 55983,
-      "method": "aes-256-gcm",
-      "password": "kOzm}fn;]"
-    },
-    {
-      "tag": "🌐 AM-18",
-      "type": "shadowsocks",
-      "server": "77.91.68.70",
-      "server_port": 55983,
-      "method": "aes-256-gcm",
-      "password": "kOzm}fn;]"
-    },
-    {
-      "tag": "🌐 AM-19",
-      "type": "shadowsocks",
-      "server": "2.56.207.67",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
-    },
-    {
-      "tag": "🌐 AM-20",
-      "type": "shadowsocks",
-      "server": "91.198.108.211",
-      "server_port": 2053,
-      "method": "aes-256-gcm",
-      "password": "Vik\u001c[V\u001eսw\u001b"
-    },
-    {
-      "tag": "🌐 AM-21",
-      "type": "shadowsocks",
-      "server": "77.91.68.70",
-      "server_port": 55983,
-      "method": "aes-256-gcm",
-      "password": "kOzm}fn;]"
-    },
-    {
-      "tag": "🌐 AM-22",
-      "type": "shadowsocks",
-      "server": "2.56.207.67",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
-    },
-    {
-      "tag": "🌐 AM-23",
-      "type": "shadowsocks",
-      "server": "91.198.108.211",
-      "server_port": 2053,
-      "method": "aes-256-gcm",
-      "password": "Vik\u001c[V\u001eսw\u001b"
-    },
-    {
-      "tag": "🌐 AM-24",
-      "type": "shadowsocks",
-      "server": "91.195.254.34",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "׶}\u001eoo[mM4M4"
+      "server": "am-ip.nxralns.com",
+      "server_port": 100,
+      "method": "Ӿ",
+      "password": "im{㞞m\u001a}wW"
     }
   ]
 }
