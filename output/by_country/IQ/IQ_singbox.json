@@ -3,23 +3,24 @@
     {
       "tag": "🌐 IQ-01",
       "type": "vless",
-      "server": "193.56.135.233",
+      "server": "193.56.135.137",
       "server_port": 9543,
       "uuid": "ff6d2dda-7b90-404e-9951-34b3124bfdfa"
     },
     {
       "tag": "🌐 IQ-02",
       "type": "vless",
-      "server": "193.56.135.137",
+      "server": "193.56.135.233",
       "server_port": 9543,
       "uuid": "ff6d2dda-7b90-404e-9951-34b3124bfdfa"
     },
     {
       "tag": "🌐 IQ-03",
-      "type": "vless",
-      "server": "193.56.135.212",
+      "type": "shadowsocks",
+      "server": "193.56.135.137",
       "server_port": 9543,
-      "uuid": "ff6d2dda-7b90-404e-9951-34b3124bfdfa"
+      "method": "aes-256-gcm",
+      "password": "}ZtN\u001eu߆n\u001b}"
     },
     {
       "tag": "🌐 IQ-04",
@@ -40,7 +41,7 @@
     {
       "tag": "🌐 IQ-06",
       "type": "shadowsocks",
-      "server": "193.56.135.212",
+      "server": "193.56.135.233",
       "server_port": 9543,
       "method": "aes-256-gcm",
       "password": "}ZtN\u001eu߆n\u001b}"
@@ -48,7 +49,7 @@
     {
       "tag": "🌐 IQ-07",
       "type": "shadowsocks",
-      "server": "193.56.135.233",
+      "server": "193.56.135.137",
       "server_port": 9543,
       "method": "aes-256-gcm",
       "password": "}ZtN\u001eu߆n\u001b}"
@@ -56,7 +57,7 @@
     {
       "tag": "🌐 IQ-08",
       "type": "shadowsocks",
-      "server": "193.56.135.137",
+      "server": "193.56.135.233",
       "server_port": 9543,
       "method": "aes-256-gcm",
       "password": "}ZtN\u001eu߆n\u001b}"
@@ -64,7 +65,7 @@
     {
       "tag": "🌐 IQ-09",
       "type": "shadowsocks",
-      "server": "193.56.135.212",
+      "server": "193.56.135.137",
       "server_port": 9543,
       "method": "aes-256-gcm",
       "password": "}ZtN\u001eu߆n\u001b}"
@@ -88,55 +89,7 @@
     {
       "tag": "🌐 IQ-12",
       "type": "shadowsocks",
-      "server": "193.56.135.212",
-      "server_port": 9543,
-      "method": "aes-256-gcm",
-      "password": "}ZtN\u001eu߆n\u001b}"
-    },
-    {
-      "tag": "🌐 IQ-13",
-      "type": "shadowsocks",
       "server": "193.56.135.233",
-      "server_port": 9543,
-      "method": "aes-256-gcm",
-      "password": "}ZtN\u001eu߆n\u001b}"
-    },
-    {
-      "tag": "🌐 IQ-14",
-      "type": "shadowsocks",
-      "server": "193.56.135.137",
-      "server_port": 9543,
-      "method": "aes-256-gcm",
-      "password": "}ZtN\u001eu߆n\u001b}"
-    },
-    {
-      "tag": "🌐 IQ-15",
-      "type": "shadowsocks",
-      "server": "193.56.135.212",
-      "server_port": 9543,
-      "method": "aes-256-gcm",
-      "password": "}ZtN\u001eu߆n\u001b}"
-    },
-    {
-      "tag": "🌐 IQ-16",
-      "type": "shadowsocks",
-      "server": "193.56.135.233",
-      "server_port": 9543,
-      "method": "aes-256-gcm",
-      "password": "}ZtN\u001eu߆n\u001b}"
-    },
-    {
-      "tag": "🌐 IQ-17",
-      "type": "shadowsocks",
-      "server": "193.56.135.137",
-      "server_port": 9543,
-      "method": "aes-256-gcm",
-      "password": "}ZtN\u001eu߆n\u001b}"
-    },
-    {
-      "tag": "🌐 IQ-18",
-      "type": "shadowsocks",
-      "server": "193.56.135.212",
       "server_port": 9543,
       "method": "aes-256-gcm",
       "password": "}ZtN\u001eu߆n\u001b}"

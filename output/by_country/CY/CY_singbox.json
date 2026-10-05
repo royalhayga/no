@@ -10,10 +10,11 @@
     },
     {
       "tag": "🌐 CY-02",
-      "type": "vless",
-      "server": "77.75.199.30",
-      "server_port": 8880,
-      "uuid": "6202b230-417c-4d8e-b624-0f71afa9c75d"
+      "type": "vmess",
+      "server": "154.92.9.81",
+      "server_port": 80,
+      "uuid": "dd41b5cb-b72e-4a8c-c75a-3ecc928d6eb3",
+      "security": "auto"
     },
     {
       "tag": "🌐 CY-03",
@@ -32,17 +33,16 @@
     {
       "tag": "🌐 CY-05",
       "type": "vless",
-      "server": "194.55.166.65",
-      "server_port": 2087,
-      "uuid": "04c808e2-0b59-47b0-a54b-32fc7ef1c902"
+      "server": "195.85.59.155",
+      "server_port": 2082,
+      "uuid": "b0a63ba3-6cb0-48de-a19d-12babdb0ba4d"
     },
     {
       "tag": "🌐 CY-06",
-      "type": "shadowsocks",
-      "server": "77.75.199.30",
-      "server_port": 8880,
-      "method": "aes-256-gcm",
-      "password": "m6om^\u001eois]"
+      "type": "vless",
+      "server": "194.55.166.65",
+      "server_port": 2087,
+      "uuid": "04c808e2-0b59-47b0-a54b-32fc7ef1c902"
     },
     {
       "tag": "🌐 CY-07",
@@ -63,18 +63,18 @@
     {
       "tag": "🌐 CY-09",
       "type": "shadowsocks",
-      "server": "194.55.166.65",
-      "server_port": 2087,
+      "server": "195.85.59.155",
+      "server_port": 2082,
       "method": "aes-256-gcm",
-      "password": "Ӈ<ǶѾ}k\u001bgs6"
+      "password": "oFݶ^k_]fmm"
     },
     {
       "tag": "🌐 CY-10",
       "type": "shadowsocks",
-      "server": "77.75.199.30",
-      "server_port": 8880,
+      "server": "194.55.166.65",
+      "server_port": 2087,
       "method": "aes-256-gcm",
-      "password": "m6om^\u001eois]"
+      "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
       "tag": "🌐 CY-11",
@@ -95,18 +95,18 @@
     {
       "tag": "🌐 CY-13",
       "type": "shadowsocks",
-      "server": "194.55.166.65",
-      "server_port": 2087,
+      "server": "195.85.59.155",
+      "server_port": 2082,
       "method": "aes-256-gcm",
-      "password": "Ӈ<ǶѾ}k\u001bgs6"
+      "password": "oFݶ^k_]fmm"
     },
     {
       "tag": "🌐 CY-14",
       "type": "shadowsocks",
-      "server": "77.75.199.30",
-      "server_port": 8880,
+      "server": "194.55.166.65",
+      "server_port": 2087,
       "method": "aes-256-gcm",
-      "password": "m6om^\u001eois]"
+      "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
       "tag": "🌐 CY-15",
@@ -127,18 +127,18 @@
     {
       "tag": "🌐 CY-17",
       "type": "shadowsocks",
-      "server": "194.55.166.65",
-      "server_port": 2087,
+      "server": "195.85.59.155",
+      "server_port": 2082,
       "method": "aes-256-gcm",
-      "password": "Ӈ<ǶѾ}k\u001bgs6"
+      "password": "oFݶ^k_]fmm"
     },
     {
       "tag": "🌐 CY-18",
       "type": "shadowsocks",
-      "server": "77.75.199.30",
-      "server_port": 8880,
+      "server": "194.55.166.65",
+      "server_port": 2087,
       "method": "aes-256-gcm",
-      "password": "m6om^\u001eois]"
+      "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
       "tag": "🌐 CY-19",
@@ -159,18 +159,18 @@
     {
       "tag": "🌐 CY-21",
       "type": "shadowsocks",
-      "server": "194.55.166.65",
-      "server_port": 2087,
+      "server": "195.85.59.155",
+      "server_port": 2082,
       "method": "aes-256-gcm",
-      "password": "Ӈ<ǶѾ}k\u001bgs6"
+      "password": "oFݶ^k_]fmm"
     },
     {
       "tag": "🌐 CY-22",
       "type": "shadowsocks",
-      "server": "77.75.199.30",
-      "server_port": 8880,
+      "server": "194.55.166.65",
+      "server_port": 2087,
       "method": "aes-256-gcm",
-      "password": "m6om^\u001eois]"
+      "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
       "tag": "🌐 CY-23",
@@ -187,6 +187,21 @@
       "server_port": 2096,
       "method": "aes-256-gcm",
       "password": "oyߞ\u001ckg;on<ut߮z"
+    },
+    {
+      "tag": "🌐 CY-25",
+      "type": "shadowsocks",
+      "server": "195.85.59.155",
+      "server_port": 2082,
+      "method": "aes-256-gcm",
+      "password": "oFݶ^k_]fmm"
+    },
+    {
+      "tag": "🌐 CY-26",
+      "type": "trojan",
+      "server": "195.133.93.81",
+      "server_port": 443,
+      "password": "3723507166611775488"
     }
   ]
 }
