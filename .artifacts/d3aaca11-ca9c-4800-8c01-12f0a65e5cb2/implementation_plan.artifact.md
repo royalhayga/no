@@ -1,136 +1,91 @@
-# GitHub Actions 多阶段节点处理与去重分支检测试验方案
+# 双层架构 (私有节点 + 爬虫分国负载均衡) Clash 模版合成方案
 
-十分抱歉之前理解偏误！根据您的指示，对系统架构进行两项关键修正：
-
-1. **绝对离线/纯本地扫描原则**：取消所有运行时在线 API/HTTP 动态请求。节点资源**仅从本地已克隆的 `ref/` 目录下 28 个仓库文件**中进行读取扫描。
-2. **阶段二 (去重) 双过程与分支检测**：
-   - **主过程 (2.1)**：按核心传输属性 `SHA256(protocol, server, port, credential, path/sni)` 计算哈希指纹。**完全排除节点名称/备注的影响**，确保“同一节点被改名”也能被精准识别并去重。
-   - **分支检测过程 (2.2)**：新增端点碰撞与别名潜在重复分支检测，专门排查共享相同 `server + port`（同一台服务器节点）的潜在重复项，生成独立的评估报告 `output/deduped/alias_report.json`，不影响主流水线 1~5 的正常运行。
+本方案完全响应您的需求，在 Clash 规则模版合成引擎（`scripts/template_engine.py`）中设计 **“私有顶级节点防护” 与 “爬虫节点分国负载均衡 (Load-Balance) 兜底” 的双层架构**。
 
 ---
 
-## 一、系统整体架构与多工作流逻辑图
+## 一、双层架构设计理念 (Private vs Crawled Node Decoupling)
 
 ```mermaid
 flowchart TD
-    subgraph WF1 ["1. 工作流: .github/workflows/aggregate.yml"]
-        A1[触发阶段一] --> B1[运行 scripts/aggregate.py]
-        B1 -->|仅扫描本地 ref/ 28个克隆仓库文件| C1["输出目录: output/raw/
-        ├── nodes.txt (全量明文)
-        ├── sub.txt (Base64)
-        ├── clash.yaml
-        ├── singbox.json
-        └── summary.json"]
+    subgraph Layer1 ["第一层：顶级私有节点 (Clean IP / 核心干活/AI)"]
+        P1["模版原生私有节点: 手机 / reality funo / JPreality / 39515 / reality / tourism / test"]
+        P1 -->|保持独立, 绝对禁止加入爬虫公用池| Sel1["策略组最高优先级: 手动选择/独享使用"]
     end
 
-    C1 -. 自动触发下一个 .-> WF2
-
-    subgraph WF2 ["2. 工作流: .github/workflows/dedupe.yml"]
-        A2[读取 output/raw/] --> B2[运行 scripts/dedupe.py]
-
-        B2 --> B2_1["主过程 2.1: 哈希指纹去重
-        (排除节点名称, 按 server/port/pwd 去重)"]
-        B2 --> B2_2["分支过程 2.2: 别名/同 Server 碰撞检测
-        (排查相同 server+port 的潜在重复)"]
-
-        B2_1 --> C2["输出目录: output/deduped/
-        ├── nodes.txt
-        ├── sub.txt
-        ├── clash.yaml
-        ├── singbox.json
-        ├── summary.json
-        └── alias_report.json (分支检测报告)"]
+    subgraph Layer2 ["第二层：爬虫公用节点 (海量/流媒体/TVBox/下载)"]
+        C1["爬虫提炼过关节点"] --> C2[按 GeoIP 划分为国家分组]
+        C2 -->|香港节点| LB_HK["🇭🇰 香港-负载均衡 (load-balance) & 自动选优 (url-test)"]
+        C2 -->|日本节点| LB_JP["🇯🇵 日本-负载均衡 (load-balance) & 自动选优 (url-test)"]
+        C2 -->|美国节点| LB_US["🇺🇸 美国-负载均衡 (load-balance) & 自动选优 (url-test)"]
+        C2 -->|新加坡节点| LB_SG["🇸🇬 新加坡-负载均衡 (load-balance) & 自动选优 (url-test)"]
+        C2 -->|全量爬虫节点| LB_ALL["🌐 全球-全节点负载均衡 (全量兜底做流量并发)"]
     end
 
-    C2 -. 自动触发下一个 .-> WF3
-
-    subgraph WF3 ["3. 工作流: .github/workflows/dns.yml"]
-        A3[读取 output/deduped/] --> B3[运行 scripts/dns.py]
-        B3 --> C3["输出目录: output/dns/
-        ├── nodes.txt
-        ├── sub.txt
-        ├── clash.yaml
-        ├── singbox.json
-        └── summary.json"]
-    end
-
-    C3 -. 自动触发下一个 .-> WF4
-
-    subgraph WF4 ["4. 工作流: .github/workflows/socket.yml"]
-        A4[读取 output/dns/] --> B4[运行 scripts/socket.py]
-        B4 --> C4["输出目录: output/socket/
-        ├── nodes.txt
-        ├── sub.txt
-        ├── clash.yaml
-        ├── singbox.json
-        └── summary.json"]
-    end
-
-    C4 -. 自动触发下一个 .-> WF5
-
-    subgraph WF5 ["5. 工作流: .github/workflows/verified.yml"]
-        A5[读取 output/socket/] --> B5[运行 scripts/verified.py]
-        B5 --> C5["输出目录: output/verified/ & output/ 根目录
-        ├── nodes.txt
-        ├── sub.txt
-        ├── clash.yaml
-        ├── singbox.json
-        └── summary.json"]
-    end
+    Sel1 --> G["各业务策略组 (YouTube, OpenAI, TVBox, 影视, 漏网之鱼)"]
+    LB_HK --> G
+    LB_JP --> G
+    LB_US --> G
+    LB_SG --> G
+    LB_ALL --> G
 ```
 
 ---
 
-## 二、阶段二 (去重) 两个过程的技术实现
+## 二、策略组 (Proxy Groups) 动态构建细则
 
-### 过程 2.1：哈希指纹主去重算法 (解决改名重复问题)
-- **核心逻辑**：
-  $$\text{Fingerprint} = \text{SHA256}(\text{Protocol} + \text{Server/IP} + \text{Port} + \text{UUID/Password} + \text{Path/SNI} + \text{PublicKey})$$
-- **关键细节**：在计算指纹时，**故意忽略节点的 Name / Remark / Title**。
-  - 示例：节点 A 名字为 `"香港01免费"`，节点 B 名字为 `"HK-VIP-Fast"`，若其底层连接地址与密码完全一致，指纹计算结果完全一致，直接被合并为一个节点。
+### 1. 分国负载均衡组 (Per-Country Load Balance)
+对每个 GeoIP 国家分组，**仅使用爬虫抓取的节点**构建两个高可用策略组：
+- **`🇭🇰 香港-负载均衡`**：
+  - `type: load-balance`, `strategy: round-robin`, `url: http://www.gstatic.com/generate_204`, `interval: 300`
+  - 成员：仅包含爬虫提取的香港节点，实现多节点流量自动分摊。
+- **`🇭🇰 香港-自动选优`**：
+  - `type: url-test`, `url: http://www.gstatic.com/generate_204`, `interval: 300`
+  - 成员：仅包含爬虫提取的香港节点，自动挑选最低延迟节点。
 
-### 过程 2.2：分支过程 (同 Server/IP 端点碰撞检测)
-- **核心逻辑**：
-  - 检索所有节点中共享相同 `server + port`（即指向同一台机器及对应端口）但使用了不同协议包装或微调参数的节点。
-  - 生成 `output/deduped/alias_report.json` 详细报告，标明哪些节点可能是“同一台服务器的不同别名/不同包装”。
-  - 该检测仅作为独立报告输出，**不会影响主流水线的正常走向**。
+类似地，自动为 `🇯🇵 日本`、`🇺🇸 美国`、`🇸🇬 新加坡`、`🇹🇼 台湾`、`🇰🇷 韩国`、`🇬🇧 英国`、`🇩🇪 德国` 构建对应的负载均衡组。
 
----
-
-## 三、5 个阶段规范目录与输出文件总览
-
-| 处理阶段 | Actions 工作流 | 执行 Python 脚本 | 输出规范目录 | 目录包含的全格式文件列表 |
-| :--- | :--- | :--- | :--- | :--- |
-| **阶段一：汇总** | `.github/workflows/aggregate.yml` | `scripts/aggregate.py` | `output/raw/` | `nodes.txt`<br>`sub.txt`<br>`clash.yaml`<br>`singbox.json`<br>`summary.json` |
-| **阶段二：去重** | `.github/workflows/dedupe.yml` | `scripts/dedupe.py` | `output/deduped/` | `nodes.txt`<br>`sub.txt`<br>`clash.yaml`<br>`singbox.json`<br>`summary.json`<br>`alias_report.json` (分支碰撞报告) |
-| **阶段三：DNS** | `.github/workflows/dns.yml` | `scripts/dns.py` | `output/dns/` | `nodes.txt`<br>`sub.txt`<br>`clash.yaml`<br>`singbox.json`<br>`summary.json` |
-| **阶段四：Socket** | `.github/workflows/socket.yml` | `scripts/socket.py` | `output/socket/` | `nodes.txt`<br>`sub.txt`<br>`clash.yaml`<br>`singbox.json`<br>`summary.json` |
-| **阶段五：204实测** | `.github/workflows/verified.yml` | `scripts/verified.py` | `output/verified/`<br>(及 `output/` 根目录) | `nodes.txt`<br>`sub.txt`<br>`clash.yaml`<br>`singbox.json`<br>`summary.json` |
+### 2. 全球全节点兜底负载均衡组 (Global Fallback Load Balance)
+- **`🌐 全球-全节点负载均衡`**：
+  - `type: load-balance`, `strategy: round-robin`, `url: http://www.gstatic.com/generate_204`, `interval: 300`
+  - 成员：包含**所有爬虫提取的节点**。当所有单国负载均衡均不可用时，作为全量并发兜底。
+- **`⚡ 全球-全节点自动选优`**：
+  - `type: url-test`，包含所有爬虫节点。
 
 ---
 
-## 四、拟新建文件清单
+## 三、业务策略组层级与私有节点保护
 
-### 1. 配置文件 (`config/sources.json`)
-注册本地 28 个 `ref/` 仓库的路径映射，仅用于本地文件扫描。
+对于模版中的所有业务策略组（如 `▶️ YouTube`、`🟢 OpenAI`、`✈️ Telegram`、`🍿 Netflix`、`📺 TVBox代理`、`📥 私有下载/BT` 等），其成员排列严格遵循：
 
-### 2. 核心 Python 脚本
-- #### [NEW] [scripts/aggregate.py](file:///C:/Users/Ngokel/Desktop/en/example/tvtv/scripts/aggregate.py) (纯本地扫描)
-- #### [NEW] [scripts/dedupe.py](file:///C:/Users/Ngokel/Desktop/en/example/tvtv/scripts/dedupe.py) (含过程2.1哈希去重与过程2.2别名碰撞分支检测)
-- #### [NEW] [scripts/dns.py](file:///C:/Users/Ngokel/Desktop/en/example/tvtv/scripts/dns.py)
-- #### [NEW] [scripts/socket.py](file:///C:/Users/Ngokel/Desktop/en/example/tvtv/scripts/socket.py)
-- #### [NEW] [scripts/verified.py](file:///C:/Users/Ngokel/Desktop/en/example/tvtv/scripts/verified.py)
-- #### [NEW] [scripts/common.py](file:///C:/Users/Ngokel/Desktop/en/example/tvtv/scripts/common.py)
+1. **最高优先级**：您的顶级私有节点 (`"手机"`, `"reality funo"`, `"JPreality"`, `"39515"`, `"reality"`, `"tourism"`, `"test"`)
+2. **第二优先级**：主选择组 `PROXY`
+3. **第三优先级**：单国负载均衡组 (`🇭🇰 香港-负载均衡`, `🇯🇵 日本-负载均衡`, `🇺🇸 美国-负载均衡` ...)
+4. **第四优先级**：全球全节点负载均衡组 (`🌐 全球-全节点负载均衡`)
+5. **保底兜底**：`DIRECT`, `REJECT`
 
-### 3. GitHub Actions 工作流
-- #### [NEW] [.github/workflows/aggregate.yml](file:///C:/Users/Ngokel/Desktop/en/example/tvtv/.github/workflows/aggregate.yml)
-- #### [NEW] [.github/workflows/dedupe.yml](file:///C:/Users/Ngokel/Desktop/en/example/tvtv/.github/workflows/dedupe.yml)
-- #### [NEW] [.github/workflows/dns.yml](file:///C:/Users/Ngokel/Desktop/en/example/tvtv/.github/workflows/dns.yml)
-- #### [NEW] [.github/workflows/socket.yml](file:///C:/Users/Ngokel/Desktop/en/example/tvtv/.github/workflows/socket.yml)
-- #### [NEW] [.github/workflows/verified.yml](file:///C:/Users/Ngokel/Desktop/en/example/tvtv/.github/workflows/verified.yml)
+> [!IMPORTANT]
+> **私有节点隔离原则**：私有节点仅作为高级直选选项出现，**绝不写入**任何爬虫节点的 `load-balance`（负载均衡）或 `url-test`（自动测速）公用池中，确保私有节点的干净 IP 不会被爬虫流量稀释或污染。
+
+---
+
+## 四、拟新建与修改的文件清单
+
+### 1. 模版文件
+- #### [NEW] [config/rules_template.yaml](file:///C:/Users/Ngokel/Desktop/en/example/tvtv/config/rules_template.yaml)
+  - 包含您的 `Untitled-1.yaml` 规则模板。
+
+### 2. 模版合成脚本
+- #### [NEW] [scripts/template_engine.py](file:///C:/Users/Ngokel/Desktop/en/example/tvtv/scripts/template_engine.py)
+  - 实现私有节点保护 + 爬虫节点分国负载均衡构建 + 全规则注入合成。
+
+### 3. 工作流整合
+- #### [MODIFY] [.github/workflows/aggregate.yml](file:///C:/Users/Ngokel/Desktop/en/example/tvtv/.github/workflows/aggregate.yml)
+  - 在全流程末端运行 `python scripts/template_engine.py` 并提交生成成果。
 
 ---
 
 ## 五、验证与测试计划
-1. **纯本地读取测试**：在未连接网络状态下测试 `scripts/aggregate.py`，验证其仅对 `ref/` 28个本地文件夹扫描提取。
-2. **同节点不同名字去重测试**：构造两个底层连接信息完全一致但名字不同的节点（如 `"HK-01"` 与 `"香港极速"`），验证过程 2.1 能精准将其识别为同一个节点合并，同时验证过程 2.2 在 `alias_report.json` 中记录对应碰撞分析。
+
+1. **语法校验**：验证合成的 `clash.yaml` 能在 Clash Verge/Meta 客户端中无错加载，并正确识别 `type: load-balance` 策略组。
+2. **隔离性验证**：检查 `🇭🇰 香港-负载均衡` 与 `🌐 全球-全节点负载均衡` 策略组列表，确认绝对**不包含**用户的私有节点。
