@@ -199,4 +199,4 @@ def merge_template_and_nodes() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(merge_template_and_nodes())
