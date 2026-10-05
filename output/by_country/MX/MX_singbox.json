@@ -3,9 +3,9 @@
     {
       "tag": "🌐 MX-01",
       "type": "vless",
-      "server": "131.196.253.141",
-      "server_port": 443,
-      "uuid": "0575005f-0ba9-4d6d-85e0-4a6a8cbafc1b"
+      "server": "ul-mexico1.09vpn.com",
+      "server_port": 8443,
+      "uuid": "a6d20e79-d326-42c1-bc20-f4cecc6dc42d"
     },
     {
       "tag": "🌐 MX-02",
@@ -23,27 +23,26 @@
     },
     {
       "tag": "🌐 MX-04",
-      "type": "shadowsocks",
+      "type": "vless",
       "server": "131.196.253.141",
       "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ӞN_Ѷޝᮚ}["
+      "uuid": "0575005f-0ba9-4d6d-85e0-4a6a8cbafc1b"
     },
     {
       "tag": "🌐 MX-05",
+      "type": "shadowsocks",
+      "server": "ul-mexico1.09vpn.com",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "kvw}g5mʹ\u001eqΝs"
+    },
+    {
+      "tag": "🌐 MX-06",
       "type": "shadowsocks",
       "server": "34.51.23.2",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "5\u001e~k]}s|ٷ}"
-    },
-    {
-      "tag": "🌐 MX-06",
-      "type": "shadowsocks",
-      "server": "131.196.253.141",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ӞN_Ѷޝᮚ}["
     },
     {
       "tag": "🌐 MX-07",
@@ -56,34 +55,34 @@
     {
       "tag": "🌐 MX-08",
       "type": "shadowsocks",
-      "server": "34.51.23.2",
+      "server": "131.196.253.141",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "5\u001e~k]}s|ٷ}"
+      "password": "ӞN_Ѷޝᮚ}["
     },
     {
       "tag": "🌐 MX-09",
       "type": "shadowsocks",
-      "server": "131.196.253.141",
-      "server_port": 443,
+      "server": "ul-mexico1.09vpn.com",
+      "server_port": 8443,
       "method": "aes-256-gcm",
-      "password": "ӞN_Ѷޝᮚ}["
+      "password": "kvw}g5mʹ\u001eqΝs"
     },
     {
       "tag": "🌐 MX-10",
-      "type": "shadowsocks",
-      "server": "131.196.253.141",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ӞN_Ѷޝᮚ}["
-    },
-    {
-      "tag": "🌐 MX-11",
       "type": "shadowsocks",
       "server": "34.51.23.2",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "5\u001e~k]}s|ٷ}"
+    },
+    {
+      "tag": "🌐 MX-11",
+      "type": "shadowsocks",
+      "server": "131.196.253.141",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ӞN_Ѷޝᮚ}["
     },
     {
       "tag": "🌐 MX-12",
@@ -96,10 +95,10 @@
     {
       "tag": "🌐 MX-13",
       "type": "shadowsocks",
-      "server": "131.196.253.141",
-      "server_port": 443,
+      "server": "ul-mexico1.09vpn.com",
+      "server_port": 8443,
       "method": "aes-256-gcm",
-      "password": "ӞN_Ѷޝᮚ}["
+      "password": "kvw}g5mʹ\u001eqΝs"
     },
     {
       "tag": "🌐 MX-14",
@@ -120,18 +119,18 @@
     {
       "tag": "🌐 MX-16",
       "type": "shadowsocks",
-      "server": "147.78.1.234",
-      "server_port": 16673,
-      "method": "aes-128-gcm",
-      "password": "67c57ae584eecd70396fcd7ca7521130"
-    },
-    {
-      "tag": "🌐 MX-17",
-      "type": "shadowsocks",
       "server": "131.196.253.141",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "ӞN_Ѷޝᮚ}["
+    },
+    {
+      "tag": "🌐 MX-17",
+      "type": "shadowsocks",
+      "server": "ul-mexico1.09vpn.com",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "kvw}g5mʹ\u001eqΝs"
     },
     {
       "tag": "🌐 MX-18",
@@ -140,6 +139,46 @@
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "5\u001e~k]}s|ٷ}"
+    },
+    {
+      "tag": "🌐 MX-19",
+      "type": "shadowsocks",
+      "server": "131.196.253.141",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ӞN_Ѷޝᮚ}["
+    },
+    {
+      "tag": "🌐 MX-20",
+      "type": "shadowsocks",
+      "server": "131.196.253.141",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ӞN_Ѷޝᮚ}["
+    },
+    {
+      "tag": "🌐 MX-21",
+      "type": "shadowsocks",
+      "server": "ul-mexico1.09vpn.com",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "kvw}g5mʹ\u001eqΝs"
+    },
+    {
+      "tag": "🌐 MX-22",
+      "type": "shadowsocks",
+      "server": "34.51.23.2",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "5\u001e~k]}s|ٷ}"
+    },
+    {
+      "tag": "🌐 MX-23",
+      "type": "shadowsocks",
+      "server": "131.196.253.141",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ӞN_Ѷޝᮚ}["
     }
   ]
 }

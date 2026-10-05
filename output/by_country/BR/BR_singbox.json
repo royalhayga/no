@@ -11,89 +11,111 @@
     {
       "tag": "🇧🇷 BR-02",
       "type": "vless",
-      "server": "147.45.116.19",
-      "server_port": 443,
-      "uuid": "454431fc-71e2-42b1-b375-5b55dd06666a"
+      "server": "185.133.35.140",
+      "server_port": 80,
+      "uuid": "f9255507-1b65-433f-bfd8-193b35e068e2"
     },
     {
       "tag": "🇧🇷 BR-03",
-      "type": "shadowsocks",
-      "server": "147.45.116.19",
+      "type": "vless",
+      "server": "23.251.55.216",
       "server_port": 443,
-      "method": "8WWfo~yu",
-      "password": "뮚"
+      "uuid": "c396fa08-e07a-459b-b894-389456fd6a82"
     },
     {
       "tag": "🇧🇷 BR-04",
       "type": "shadowsocks",
-      "server": "147.45.116.19",
-      "server_port": 443,
-      "method": "8WWfo~yu",
-      "password": "뮚"
+      "server": "185.133.35.140",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "ݹ;վ}m|ߗǶ"
     },
     {
       "tag": "🇧🇷 BR-05",
       "type": "shadowsocks",
-      "server": "br.monkora.org",
+      "server": "23.251.55.216",
       "server_port": 443,
-      "method": "8WWfo~yu",
-      "password": "뮚"
+      "method": "aes-256-gcm",
+      "password": "sz}<{N[oxx6"
     },
     {
       "tag": "🇧🇷 BR-06",
       "type": "shadowsocks",
-      "server": "147.45.116.19",
-      "server_port": 443,
-      "method": "8WWfo~yu",
-      "password": "뮚"
+      "server": "185.133.35.140",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "ݹ;վ}m|ߗǶ"
     },
     {
       "tag": "🇧🇷 BR-07",
       "type": "shadowsocks",
-      "server": "br.monkora.org",
+      "server": "23.251.55.216",
       "server_port": 443,
-      "method": "8WWfo~yu",
-      "password": "뮚"
+      "method": "aes-256-gcm",
+      "password": "sz}<{N[oxx6"
     },
     {
       "tag": "🇧🇷 BR-08",
       "type": "shadowsocks",
-      "server": "147.45.116.19",
-      "server_port": 443,
-      "method": "8WWfo~yu",
-      "password": "뮚"
+      "server": "185.133.35.140",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "ݹ;վ}m|ߗǶ"
     },
     {
       "tag": "🇧🇷 BR-09",
       "type": "shadowsocks",
-      "server": "br.monkora.org",
+      "server": "23.251.55.216",
       "server_port": 443,
-      "method": "8WWfo~yu",
-      "password": "뮚"
+      "method": "aes-256-gcm",
+      "password": "sz}<{N[oxx6"
     },
     {
       "tag": "🇧🇷 BR-10",
       "type": "shadowsocks",
-      "server": "147.45.116.19",
-      "server_port": 443,
-      "method": "8WWfo~yu",
-      "password": "뮚"
+      "server": "185.133.35.140",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "ݹ;վ}m|ߗǶ"
     },
     {
       "tag": "🇧🇷 BR-11",
       "type": "shadowsocks",
-      "server": "185.133.35.21",
-      "server_port": 2052,
+      "server": "23.251.55.216",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "gwMo\\]mykw\u001b{"
+      "password": "sz}<{N[oxx6"
     },
     {
       "tag": "🇧🇷 BR-12",
+      "type": "shadowsocks",
+      "server": "185.133.35.140",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "ݹ;վ}m|ߗǶ"
+    },
+    {
+      "tag": "🇧🇷 BR-13",
+      "type": "shadowsocks",
+      "server": "23.251.55.216",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "sz}<{N[oxx6"
+    },
+    {
+      "tag": "🇧🇷 BR-14",
       "type": "shadowsocks",
       "server": "31.59.142.45",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "m{N}o<o]uﭼm9"
+    },
+    {
+      "tag": "🇧🇷 BR-15",
+      "type": "trojan",
+      "server": "185.133.35.22",
+      "server_port": 443,
+      "password": "MiTiVPN"
     }
   ]
 }

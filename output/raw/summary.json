@@ -1,14 +1,13 @@
 {
   "stage": "Stage 1 - Raw Aggregation",
-  "generated_at": "2026-10-05T13:36:24.790558+00:00",
-  "total_nodes": 486156,
+  "generated_at": "2026-10-05T16:24:33.291713+00:00",
+  "total_nodes": 464908,
   "protocol_breakdown": {
-    "vless": 208063,
-    "ss": 184646,
-    "vmess": 22909,
-    "tuic": 4,
-    "trojan": 56842,
-    "hysteria2": 13692
+    "trojan": 55214,
+    "vless": 199371,
+    "ss": 175847,
+    "vmess": 22192,
+    "hysteria2": 12284
   },
   "extra": {
     "sources": [
@@ -28,9 +27,9 @@
         "found_nodes": 0
       },
       {
-        "source": "free-nodes-sr",
-        "path": "/home/runner/work/tvtv/tvtv/ref/free-nodes-sr",
-        "found_nodes": 1
+        "source": "fanqiang",
+        "path": "/home/runner/work/tvtv/tvtv/ref/fanqiang",
+        "found_nodes": 0
       },
       {
         "source": "tolinkshare2.github.io",
@@ -38,28 +37,23 @@
         "found_nodes": 0
       },
       {
-        "source": "fanqiang",
-        "path": "/home/runner/work/tvtv/tvtv/ref/fanqiang",
-        "found_nodes": 0
+        "source": "free-nodes-sr",
+        "path": "/home/runner/work/tvtv/tvtv/ref/free-nodes-sr",
+        "found_nodes": 1
       },
       {
         "source": "share-daily_node",
         "path": "/home/runner/work/tvtv/tvtv/ref/node",
-        "found_nodes": 26
+        "found_nodes": 25
       },
       {
         "source": "Free-servers",
         "path": "/home/runner/work/tvtv/tvtv/ref/Free-servers",
-        "found_nodes": 509
+        "found_nodes": 489
       },
       {
         "source": "globe-probe",
         "path": "/home/runner/work/tvtv/tvtv/ref/globe-probe",
-        "found_nodes": 0
-      },
-      {
-        "source": "FreeProxies",
-        "path": "/home/runner/work/tvtv/tvtv/ref/FreeProxies",
         "found_nodes": 0
       },
       {
@@ -68,14 +62,9 @@
         "found_nodes": 0
       },
       {
-        "source": "fee-based",
-        "path": "/home/runner/work/tvtv/tvtv/ref/fee-based",
+        "source": "FreeProxies",
+        "path": "/home/runner/work/tvtv/tvtv/ref/FreeProxies",
         "found_nodes": 0
-      },
-      {
-        "source": "proxypool",
-        "path": "/home/runner/work/tvtv/tvtv/ref/proxypool",
-        "found_nodes": 235
       },
       {
         "source": "jichang",
@@ -85,7 +74,17 @@
       {
         "source": "FreeSubsCheck",
         "path": "/home/runner/work/tvtv/tvtv/ref/FreeSubsCheck",
-        "found_nodes": 2044
+        "found_nodes": 2020
+      },
+      {
+        "source": "proxypool",
+        "path": "/home/runner/work/tvtv/tvtv/ref/proxypool",
+        "found_nodes": 251
+      },
+      {
+        "source": "fee-based",
+        "path": "/home/runner/work/tvtv/tvtv/ref/fee-based",
+        "found_nodes": 0
       },
       {
         "source": "toml66l_fanqiang",
@@ -103,6 +102,11 @@
         "found_nodes": 6
       },
       {
+        "source": "daily_free_vpn",
+        "path": "/home/runner/work/tvtv/tvtv/ref/daily_free_vpn",
+        "found_nodes": 5117
+      },
+      {
         "source": "v2rayfree",
         "path": "/home/runner/work/tvtv/tvtv/ref/v2rayfree",
         "found_nodes": 1907
@@ -116,11 +120,6 @@
         "source": "vpngate",
         "path": "/home/runner/work/tvtv/tvtv/ref/vpngate",
         "found_nodes": 15825
-      },
-      {
-        "source": "daily_free_vpn",
-        "path": "/home/runner/work/tvtv/tvtv/ref/daily_free_vpn",
-        "found_nodes": 26336
       },
       {
         "source": "AutoScrapeFreeNodes",
