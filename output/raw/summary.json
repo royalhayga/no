@@ -1,21 +1,16 @@
 {
   "stage": "Stage 1 - Raw Aggregation",
-  "generated_at": "2026-10-06T11:52:01.844925+00:00",
-  "total_nodes": 512226,
+  "generated_at": "2026-10-06T12:17:22.250497+00:00",
+  "total_nodes": 496942,
   "protocol_breakdown": {
-    "vmess": 23388,
-    "ss": 195767,
-    "vless": 220136,
-    "trojan": 58423,
-    "hysteria2": 14512
+    "vmess": 23356,
+    "vless": 212224,
+    "ss": 189085,
+    "trojan": 57944,
+    "hysteria2": 14333
   },
   "extra": {
     "sources": [
-      {
-        "source": "latest_jichang",
-        "path": "/home/runner/work/tvtv/tvtv/ref/latest_jichang",
-        "found_nodes": 0
-      },
       {
         "source": "tolinkshare2.github.io",
         "path": "/home/runner/work/tvtv/tvtv/ref/tolinkshare2.github.io",
@@ -27,8 +22,8 @@
         "found_nodes": 0
       },
       {
-        "source": "fanqiang",
-        "path": "/home/runner/work/tvtv/tvtv/ref/fanqiang",
+        "source": "latest_jichang",
+        "path": "/home/runner/work/tvtv/tvtv/ref/latest_jichang",
         "found_nodes": 0
       },
       {
@@ -37,9 +32,9 @@
         "found_nodes": 0
       },
       {
-        "source": "free-nodes-sr",
-        "path": "/home/runner/work/tvtv/tvtv/ref/free-nodes-sr",
-        "found_nodes": 0
+        "source": "Free-servers",
+        "path": "/home/runner/work/tvtv/tvtv/ref/Free-servers",
+        "found_nodes": 502
       },
       {
         "source": "share-daily_node",
@@ -47,9 +42,14 @@
         "found_nodes": 17
       },
       {
-        "source": "Free-servers",
-        "path": "/home/runner/work/tvtv/tvtv/ref/Free-servers",
-        "found_nodes": 505
+        "source": "fanqiang",
+        "path": "/home/runner/work/tvtv/tvtv/ref/fanqiang",
+        "found_nodes": 0
+      },
+      {
+        "source": "free-nodes-sr",
+        "path": "/home/runner/work/tvtv/tvtv/ref/free-nodes-sr",
+        "found_nodes": 0
       },
       {
         "source": "globe-probe",
@@ -62,23 +62,18 @@
         "found_nodes": 0
       },
       {
-        "source": "fee-based",
-        "path": "/home/runner/work/tvtv/tvtv/ref/fee-based",
-        "found_nodes": 0
-      },
-      {
-        "source": "jichang",
-        "path": "/home/runner/work/tvtv/tvtv/ref/jichang",
-        "found_nodes": 0
-      },
-      {
         "source": "proxypool",
         "path": "/home/runner/work/tvtv/tvtv/ref/proxypool",
         "found_nodes": 203
       },
       {
-        "source": "toml66l_fanqiang",
-        "path": "/home/runner/work/tvtv/tvtv/ref/toml66l_fanqiang",
+        "source": "FreeSubsCheck",
+        "path": "/home/runner/work/tvtv/tvtv/ref/FreeSubsCheck",
+        "found_nodes": 2006
+      },
+      {
+        "source": "fee-based",
+        "path": "/home/runner/work/tvtv/tvtv/ref/fee-based",
         "found_nodes": 0
       },
       {
@@ -87,9 +82,9 @@
         "found_nodes": 0
       },
       {
-        "source": "FreeSubsCheck",
-        "path": "/home/runner/work/tvtv/tvtv/ref/FreeSubsCheck",
-        "found_nodes": 2006
+        "source": "jichang",
+        "path": "/home/runner/work/tvtv/tvtv/ref/jichang",
+        "found_nodes": 0
       },
       {
         "source": "SubCrawler",
@@ -102,6 +97,11 @@
         "found_nodes": 504
       },
       {
+        "source": "toml66l_fanqiang",
+        "path": "/home/runner/work/tvtv/tvtv/ref/toml66l_fanqiang",
+        "found_nodes": 0
+      },
+      {
         "source": "v2rayfree",
         "path": "/home/runner/work/tvtv/tvtv/ref/v2rayfree",
         "found_nodes": 1883
@@ -109,17 +109,17 @@
       {
         "source": "dljdsjq",
         "path": "/home/runner/work/tvtv/tvtv/ref/dljdsjq",
-        "found_nodes": 67556
+        "found_nodes": 68963
+      },
+      {
+        "source": "daily_free_vpn",
+        "path": "/home/runner/work/tvtv/tvtv/ref/daily_free_vpn",
+        "found_nodes": 18324
       },
       {
         "source": "vpngate",
         "path": "/home/runner/work/tvtv/tvtv/ref/vpngate",
         "found_nodes": 15731
-      },
-      {
-        "source": "daily_free_vpn",
-        "path": "/home/runner/work/tvtv/tvtv/ref/daily_free_vpn",
-        "found_nodes": 35012
       },
       {
         "source": "NiceVPN",
