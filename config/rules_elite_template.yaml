@@ -105,7 +105,7 @@ proxy-groups:
       - DIRECT
       - PROXY
 
-  # 核心高频业务策略组 (精简版剔除冷门小众品牌)
+  # 核心高频业务策略组 (含 Pinterest 与 Vimeo)
   - name: ▶️ YouTube
     type: select
     proxies:
@@ -139,6 +139,22 @@ proxy-groups:
       - REJECT
 
   - name: 🐦 Twitter / X
+    type: select
+    proxies:
+      - PROXY
+      - "手机"
+      - DIRECT
+      - REJECT
+
+  - name: 📌 Pinterest
+    type: select
+    proxies:
+      - PROXY
+      - "手机"
+      - DIRECT
+      - REJECT
+
+  - name: 📹 Vimeo
     type: select
     proxies:
       - PROXY
@@ -259,6 +275,20 @@ rule-providers:
     path: ./ruleset/Twitter.yaml
     interval: 21600
 
+  Pinterest:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Pinterest/Pinterest.yaml"
+    path: ./ruleset/Pinterest.yaml
+    interval: 21600
+
+  Vimeo:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Vimeo/Vimeo.yaml"
+    path: ./ruleset/Vimeo.yaml
+    interval: 21600
+
   Netflix:
     type: http
     behavior: classical
@@ -328,6 +358,8 @@ rules:
   - RULE-SET,OpenAI,🟢 OpenAI / AI
   - RULE-SET,Telegram,✈️ Telegram
   - RULE-SET,Twitter,🐦 Twitter / X
+  - RULE-SET,Pinterest,📌 Pinterest
+  - RULE-SET,Vimeo,📹 Vimeo
   - RULE-SET,Netflix,🍿 流媒体/Netflix
   - RULE-SET,GitHub,🐙 GitHub / Docker
   - RULE-SET,Apple,🍎 Apple
