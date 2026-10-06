@@ -332,6 +332,7 @@ rule-providers:
 
 # ==================== 3. 精简 Elite 路由规则 ====================
 rules:
+  - DOMAIN,umail.eu.org,DIRECT
   - IP-CIDR,45.159.51.56/32,DIRECT,no-resolve
   - IP-CIDR,104.243.24.216/32,DIRECT,no-resolve
   - IP-CIDR,104.225.233.178/32,DIRECT,no-resolve
