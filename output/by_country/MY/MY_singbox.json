@@ -2,22 +2,6 @@
   "outbounds": [
     {
       "tag": "🌐 MY-01",
-      "type": "vmess",
-      "server": "47.250.135.244",
-      "server_port": 10000,
-      "uuid": "aedc66b8-99d7-4a21-8310-61870e7f870d",
-      "security": "auto"
-    },
-    {
-      "tag": "🌐 MY-02",
-      "type": "vmess",
-      "server": "47.250.135.244",
-      "server_port": 10000,
-      "uuid": "aedc66b8-99d7-4a21-8310-61870e7f870d",
-      "security": "auto"
-    },
-    {
-      "tag": "🌐 MY-03",
       "type": "shadowsocks",
       "server": "47.250.212.59",
       "server_port": 2053,
@@ -25,12 +9,19 @@
       "password": "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
     },
     {
-      "tag": "🌐 MY-04",
+      "tag": "🌐 MY-02",
       "type": "shadowsocks",
       "server": "202.155.10.162",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "εs\u001e[mv\u001f}㭽"
+    },
+    {
+      "tag": "🌐 MY-03",
+      "type": "trojan",
+      "server": "96.126.190.148",
+      "server_port": 443,
+      "password": "019a8c1f-3d28-74e8-8a8e-40045d7ec77f"
     }
   ]
 }

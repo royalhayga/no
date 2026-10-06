@@ -2,50 +2,11 @@
   "outbounds": [
     {
       "tag": "🌐 MX-01",
-      "type": "vless",
-      "server": "131.196.253.141",
-      "server_port": 443,
-      "uuid": "0575005f-0ba9-4d6d-85e0-4a6a8cbafc1b"
-    },
-    {
-      "tag": "🌐 MX-02",
       "type": "shadowsocks",
-      "server": "131.196.253.141",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ӞN_Ѷޝᮚ}["
-    },
-    {
-      "tag": "🌐 MX-03",
-      "type": "shadowsocks",
-      "server": "131.196.253.141",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ӞN_Ѷޝᮚ}["
-    },
-    {
-      "tag": "🌐 MX-04",
-      "type": "shadowsocks",
-      "server": "131.196.253.141",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ӞN_Ѷޝᮚ}["
-    },
-    {
-      "tag": "🌐 MX-05",
-      "type": "shadowsocks",
-      "server": "131.196.253.141",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ӞN_Ѷޝᮚ}["
-    },
-    {
-      "tag": "🌐 MX-06",
-      "type": "shadowsocks",
-      "server": "131.196.253.141",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ӞN_Ѷޝᮚ}["
+      "server": "147.78.1.234",
+      "server_port": 16673,
+      "method": "aes-128-gcm",
+      "password": "67c57ae584eecd70396fcd7ca7521130"
     }
   ]
 }

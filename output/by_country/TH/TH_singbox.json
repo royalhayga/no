@@ -11,97 +11,88 @@
     {
       "tag": "🌐 TH-02",
       "type": "vless",
+      "server": "103.86.49.57",
+      "server_port": 80,
+      "uuid": "3c52e091-6714-4915-949f-2149fe69951b"
+    },
+    {
+      "tag": "🌐 TH-03",
+      "type": "vless",
       "server": "18.172.202.92",
       "server_port": 80,
       "uuid": "19668b6f-e215-41e6-8102-b8d29fb5b8ae"
     },
     {
-      "tag": "🌐 TH-03",
+      "tag": "🌐 TH-04",
       "type": "vless",
-      "server": "18.239.134.69",
-      "server_port": 80,
-      "uuid": "de27291c-15a9-4256-9ba7-ad517569877e"
+      "server": "165.154.247.187",
+      "server_port": 2053,
+      "uuid": "e4f229c9-bd67-45d4-873b-b85a43a2be54"
     },
     {
-      "tag": "🌐 TH-04",
+      "tag": "🌐 TH-05",
       "type": "vless",
       "server": "103.224.84.70",
       "server_port": 443,
       "uuid": "d6ff02be-7772-4a4e-b0a5-40ef180e58c4"
     },
     {
-      "tag": "🌐 TH-05",
-      "type": "vless",
-      "server": "18.239.134.69",
-      "server_port": 80,
-      "uuid": "f55ce6cc-3f6b-40fc-9e3b-abe26db17009"
-    },
-    {
       "tag": "🌐 TH-06",
-      "type": "shadowsocks",
-      "server": "18.172.202.92",
+      "type": "vless",
+      "server": "45.144.165.11",
       "server_port": 80,
-      "method": "aes-256-gcm",
-      "password": "޺{myW]6ovoƞ"
+      "uuid": "FREE"
     },
     {
       "tag": "🌐 TH-07",
       "type": "shadowsocks",
-      "server": "18.239.134.69",
+      "server": "103.86.49.57",
       "server_port": 80,
       "method": "aes-256-gcm",
-      "password": "u\\זnziu"
+      "password": "v{Ouxy_^=}["
     },
     {
       "tag": "🌐 TH-08",
       "type": "shadowsocks",
-      "server": "103.224.84.70",
-      "server_port": 443,
+      "server": "18.172.202.92",
+      "server_port": 80,
       "method": "aes-256-gcm",
-      "password": "wf\u001eoFG\u001e8"
+      "password": "޺{myW]6ovoƞ"
     },
     {
       "tag": "🌐 TH-09",
       "type": "shadowsocks",
-      "server": "18.239.134.69",
-      "server_port": 80,
+      "server": "165.154.247.187",
+      "server_port": 2053,
       "method": "aes-256-gcm",
-      "password": "\\{\u001cGiM="
+      "password": "{=m޻xoZvmx"
     },
     {
       "tag": "🌐 TH-10",
       "type": "shadowsocks",
-      "server": "18.172.202.92",
-      "server_port": 80,
+      "server": "103.224.84.70",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "޺{myW]6ovoƞ"
+      "password": "wf\u001eoFG\u001e8"
     },
     {
       "tag": "🌐 TH-11",
       "type": "shadowsocks",
-      "server": "18.239.134.69",
+      "server": "45.144.165.11",
       "server_port": 80,
       "method": "aes-256-gcm",
-      "password": "u\\זnziu"
+      "password": "\u0015\u0011\u0004"
     },
     {
       "tag": "🌐 TH-12",
       "type": "shadowsocks",
-      "server": "103.224.84.70",
-      "server_port": 443,
+      "server": "103.86.49.57",
+      "server_port": 80,
       "method": "aes-256-gcm",
-      "password": "wf\u001eoFG\u001e8"
+      "password": "v{Ouxy_^=}["
     },
     {
       "tag": "🌐 TH-13",
-      "type": "shadowsocks",
-      "server": "18.239.134.69",
-      "server_port": 80,
-      "method": "aes-256-gcm",
-      "password": "\\{\u001cGiM="
-    },
-    {
-      "tag": "🌐 TH-14",
       "type": "shadowsocks",
       "server": "18.172.202.92",
       "server_port": 80,
@@ -109,15 +100,15 @@
       "password": "޺{myW]6ovoƞ"
     },
     {
-      "tag": "🌐 TH-15",
+      "tag": "🌐 TH-14",
       "type": "shadowsocks",
-      "server": "18.239.134.69",
-      "server_port": 80,
+      "server": "165.154.247.187",
+      "server_port": 2053,
       "method": "aes-256-gcm",
-      "password": "u\\זnziu"
+      "password": "{=m޻xoZvmx"
     },
     {
-      "tag": "🌐 TH-16",
+      "tag": "🌐 TH-15",
       "type": "shadowsocks",
       "server": "103.224.84.70",
       "server_port": 443,
@@ -125,12 +116,20 @@
       "password": "wf\u001eoFG\u001e8"
     },
     {
-      "tag": "🌐 TH-17",
+      "tag": "🌐 TH-16",
       "type": "shadowsocks",
-      "server": "18.239.134.69",
+      "server": "45.144.165.11",
       "server_port": 80,
       "method": "aes-256-gcm",
-      "password": "\\{\u001cGiM="
+      "password": "\u0015\u0011\u0004"
+    },
+    {
+      "tag": "🌐 TH-17",
+      "type": "shadowsocks",
+      "server": "103.86.49.57",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "v{Ouxy_^=}["
     },
     {
       "tag": "🌐 TH-18",
@@ -143,10 +142,10 @@
     {
       "tag": "🌐 TH-19",
       "type": "shadowsocks",
-      "server": "18.239.134.69",
-      "server_port": 80,
+      "server": "165.154.247.187",
+      "server_port": 2053,
       "method": "aes-256-gcm",
-      "password": "u\\זnziu"
+      "password": "{=m޻xoZvmx"
     },
     {
       "tag": "🌐 TH-20",
@@ -159,13 +158,29 @@
     {
       "tag": "🌐 TH-21",
       "type": "shadowsocks",
-      "server": "18.239.134.69",
-      "server_port": 80,
+      "server": "x.nl.vpnpplvpn.top",
+      "server_port": 8008,
       "method": "aes-256-gcm",
-      "password": "\\{\u001cGiM="
+      "password": "q\u001fﭽyGVk\u001dW"
     },
     {
       "tag": "🌐 TH-22",
+      "type": "shadowsocks",
+      "server": "45.144.165.11",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "\u0015\u0011\u0004"
+    },
+    {
+      "tag": "🌐 TH-23",
+      "type": "shadowsocks",
+      "server": "103.86.49.57",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "v{Ouxy_^=}["
+    },
+    {
+      "tag": "🌐 TH-24",
       "type": "shadowsocks",
       "server": "18.172.202.92",
       "server_port": 80,
@@ -173,15 +188,15 @@
       "password": "޺{myW]6ovoƞ"
     },
     {
-      "tag": "🌐 TH-23",
+      "tag": "🌐 TH-25",
       "type": "shadowsocks",
-      "server": "18.239.134.69",
-      "server_port": 80,
+      "server": "165.154.247.187",
+      "server_port": 2053,
       "method": "aes-256-gcm",
-      "password": "u\\זnziu"
+      "password": "{=m޻xoZvmx"
     },
     {
-      "tag": "🌐 TH-24",
+      "tag": "🌐 TH-26",
       "type": "shadowsocks",
       "server": "103.224.84.70",
       "server_port": 443,
@@ -189,20 +204,76 @@
       "password": "wf\u001eoFG\u001e8"
     },
     {
-      "tag": "🌐 TH-25",
+      "tag": "🌐 TH-27",
       "type": "shadowsocks",
-      "server": "43.133.110.81",
-      "server_port": 443,
+      "server": "x.nl.vpnpplvpn.top",
+      "server_port": 8008,
       "method": "aes-256-gcm",
-      "password": "뮺ouk9Gov"
+      "password": "q\u001fﭽyGVk\u001dW"
     },
     {
-      "tag": "🌐 TH-26",
+      "tag": "🌐 TH-28",
       "type": "shadowsocks",
-      "server": "18.239.134.69",
+      "server": "45.144.165.11",
       "server_port": 80,
       "method": "aes-256-gcm",
-      "password": "\\{\u001cGiM="
+      "password": "\u0015\u0011\u0004"
+    },
+    {
+      "tag": "🌐 TH-29",
+      "type": "shadowsocks",
+      "server": "103.86.49.57",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "v{Ouxy_^=}["
+    },
+    {
+      "tag": "🌐 TH-30",
+      "type": "shadowsocks",
+      "server": "18.172.202.92",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "޺{myW]6ovoƞ"
+    },
+    {
+      "tag": "🌐 TH-31",
+      "type": "shadowsocks",
+      "server": "165.154.247.187",
+      "server_port": 2053,
+      "method": "aes-256-gcm",
+      "password": "{=m޻xoZvmx"
+    },
+    {
+      "tag": "🌐 TH-32",
+      "type": "shadowsocks",
+      "server": "103.224.84.70",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "wf\u001eoFG\u001e8"
+    },
+    {
+      "tag": "🌐 TH-33",
+      "type": "shadowsocks",
+      "server": "x.nl.vpnpplvpn.top",
+      "server_port": 8008,
+      "method": "aes-256-gcm",
+      "password": "q\u001fﭽyGVk\u001dW"
+    },
+    {
+      "tag": "🌐 TH-34",
+      "type": "shadowsocks",
+      "server": "45.144.165.11",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "\u0015\u0011\u0004"
+    },
+    {
+      "tag": "🌐 TH-35",
+      "type": "shadowsocks",
+      "server": "45.144.165.11",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "O8w^g\u001dkMz\u001fۭ]߆"
     }
   ]
 }
