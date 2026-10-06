@@ -80,23 +80,6 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-  # TVBox 直连与代理
-  - name: 📺 国内影视
-    type: select
-    proxies:
-      - DIRECT
-      - PROXY
-      - "手机"
-      - REJECT
-
-  - name: 📺 TVBox代理
-    type: select
-    proxies:
-      - PROXY
-      - "手机"
-      - DIRECT
-      - REJECT
-
   # 广告拦截
   - name: 🛑 广告拦截
     type: select
@@ -217,144 +200,144 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-# ==================== 2. 精简 Elite 规则集 ====================
+# ==================== 2. 精炼 Elite 规则集 (.mrs 格式) ====================
 rule-providers:
   reject:
     type: http
     behavior: domain
-    url: "https://testingcf.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
-    path: ./ruleset/reject.yaml
-    interval: 21600
-
-  tvbox_cn:
-    type: http
-    behavior: classical
-    url: "https://testingcf.jsdelivr.net/gh/haygcao/tvbox-master-aggregator@main/clash_rules_direct.yaml"
-    path: ./ruleset/tvbox_cn.yaml
-    interval: 21600
-
-  tvbox_proxy:
-    type: http
-    behavior: classical
-    url: "https://raw.githubusercontent.com/haygcao/tvbox-master-aggregator/refs/heads/main/clash_rules_proxy.yaml"
-    path: ./ruleset/tvbox_proxy.yaml
-    interval: 21600
+    format: mrs
+    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/category-ads-all.mrs"
+    path: ./ruleset/reject.mrs
+    interval: 86400
 
   YouTube:
     type: http
-    behavior: classical
-    url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml"
-    path: ./ruleset/YouTube.yaml
-    interval: 21600
+    behavior: domain
+    format: mrs
+    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/youtube.mrs"
+    path: ./ruleset/YouTube.mrs
+    interval: 86400
 
   Google:
     type: http
-    behavior: classical
-    url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml"
-    path: ./ruleset/Google.yaml
-    interval: 21600
+    behavior: domain
+    format: mrs
+    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/google.mrs"
+    path: ./ruleset/Google.mrs
+    interval: 86400
 
   OpenAI:
     type: http
-    behavior: classical
-    url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml"
-    path: ./ruleset/OpenAI.yaml
-    interval: 21600
+    behavior: domain
+    format: mrs
+    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/openai.mrs"
+    path: ./ruleset/OpenAI.mrs
+    interval: 86400
 
   Telegram:
     type: http
-    behavior: classical
-    url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram.yaml"
-    path: ./ruleset/Telegram.yaml
-    interval: 21600
+    behavior: domain
+    format: mrs
+    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/telegram.mrs"
+    path: ./ruleset/Telegram.mrs
+    interval: 86400
 
   Twitter:
     type: http
-    behavior: classical
-    url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Twitter/Twitter.yaml"
-    path: ./ruleset/Twitter.yaml
-    interval: 21600
+    behavior: domain
+    format: mrs
+    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/twitter.mrs"
+    path: ./ruleset/Twitter.mrs
+    interval: 86400
 
   Pinterest:
     type: http
-    behavior: classical
-    url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Pinterest/Pinterest.yaml"
-    path: ./ruleset/Pinterest.yaml
-    interval: 21600
+    behavior: domain
+    format: mrs
+    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/pinterest.mrs"
+    path: ./ruleset/Pinterest.mrs
+    interval: 86400
 
   Vimeo:
     type: http
-    behavior: classical
-    url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Vimeo/Vimeo.yaml"
-    path: ./ruleset/Vimeo.yaml
-    interval: 21600
+    behavior: domain
+    format: mrs
+    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/vimeo.mrs"
+    path: ./ruleset/Vimeo.mrs
+    interval: 86400
 
   Netflix:
     type: http
-    behavior: classical
-    url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Netflix/Netflix.yaml"
-    path: ./ruleset/Netflix.yaml
-    interval: 21600
+    behavior: domain
+    format: mrs
+    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/netflix.mrs"
+    path: ./ruleset/Netflix.mrs
+    interval: 86400
 
   GitHub:
     type: http
-    behavior: classical
-    url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml"
-    path: ./ruleset/GitHub.yaml
-    interval: 21600
+    behavior: domain
+    format: mrs
+    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/github.mrs"
+    path: ./ruleset/GitHub.mrs
+    interval: 86400
 
   Microsoft:
     type: http
-    behavior: classical
-    url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml"
-    path: ./ruleset/Microsoft.yaml
-    interval: 21600
+    behavior: domain
+    format: mrs
+    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/microsoft.mrs"
+    path: ./ruleset/Microsoft.mrs
+    interval: 86400
 
   Apple:
     type: http
-    behavior: classical
-    url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Apple/Apple.yaml"
-    path: ./ruleset/Apple.yaml
-    interval: 21600
+    behavior: domain
+    format: mrs
+    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/apple.mrs"
+    path: ./ruleset/Apple.mrs
+    interval: 86400
 
   Steam:
     type: http
-    behavior: classical
-    url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml"
-    path: ./ruleset/Steam.yaml
-    interval: 21600
+    behavior: domain
+    format: mrs
+    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/steam.mrs"
+    path: ./ruleset/Steam.mrs
+    interval: 86400
 
   proxy_domain:
     type: http
     behavior: domain
-    url: "https://testingcf.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
-    path: ./ruleset/proxy_domain.yaml
-    interval: 21600
+    format: mrs
+    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/geolocation-!cn.mrs"
+    path: ./ruleset/proxy_domain.mrs
+    interval: 86400
 
   direct:
     type: http
     behavior: domain
-    url: "https://testingcf.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
-    path: ./ruleset/direct.yaml
-    interval: 21600
+    format: mrs
+    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/cn.mrs"
+    path: ./ruleset/direct.mrs
+    interval: 86400
 
   cncidr:
     type: http
     behavior: ipcidr
-    url: "https://testingcf.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt"
-    path: ./ruleset/cncidr.yaml
-    interval: 21600
+    format: mrs
+    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/cn.mrs"
+    path: ./ruleset/cncidr.mrs
+    interval: 86400
 
 # ==================== 3. 精简 Elite 路由规则 ====================
 rules:
   - IP-CIDR,45.159.51.56/32,DIRECT,no-resolve
   - IP-CIDR,104.243.24.216/32,DIRECT,no-resolve
   - IP-CIDR,104.225.233.178/32,DIRECT,no-resolve
-  - RULE-SET,tvbox_cn,📺 国内影视
   - RULE-SET,reject,🛑 广告拦截
   - RULE-SET,YouTube,▶️ YouTube
   - RULE-SET,Google,🌐 Google
-  - RULE-SET,tvbox_proxy,📺 TVBox代理
   - RULE-SET,OpenAI,🟢 OpenAI / AI
   - RULE-SET,Telegram,✈️ Telegram
   - RULE-SET,Twitter,🐦 Twitter / X
@@ -367,6 +350,6 @@ rules:
   - RULE-SET,Steam,🎮 Steam / 游戏
   - RULE-SET,proxy_domain,PROXY
   - RULE-SET,direct,DIRECT
-  - RULE-SET,cncidr,DIRECT
-  - GEOIP,CN,DIRECT
+  - RULE-SET,cncidr,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT,no-resolve
   - MATCH,🐟 漏网之鱼
