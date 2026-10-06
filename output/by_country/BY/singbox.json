@@ -3,9 +3,9 @@
     {
       "tag": "🌐 BY-01",
       "type": "vless",
-      "server": "185.179.82.201",
+      "server": "144.31.129.2",
       "server_port": 443,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64"
+      "uuid": "91eb52ec-e3f5-4ab9-90da-43104995aef7"
     },
     {
       "tag": "🌐 BY-02",
@@ -30,26 +30,27 @@
     },
     {
       "tag": "🌐 BY-05",
-      "type": "vless",
-      "server": "by.x8lab.org",
+      "type": "shadowsocks",
+      "server": "144.31.129.2",
       "server_port": 443,
-      "uuid": "c6af0348-6835-4bf0-88a5-7e77bc56458f"
+      "method": "aes-256-gcm",
+      "password": "Wg{wGZ}tyi"
     },
     {
       "tag": "🌐 BY-06",
-      "type": "shadowsocks",
-      "server": "185.179.82.201",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
-    },
-    {
-      "tag": "🌐 BY-07",
       "type": "shadowsocks",
       "server": "87.252.237.219",
       "server_port": 8443,
       "method": "s",
       "password": "G=\u001ckg\u001aoW["
+    },
+    {
+      "tag": "🌐 BY-07",
+      "type": "shadowsocks",
+      "server": "95.130.84.36",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "6woZyw8kn^"
     },
     {
       "tag": "🌐 BY-08",
@@ -62,69 +63,45 @@
     {
       "tag": "🌐 BY-09",
       "type": "shadowsocks",
-      "server": "95.130.84.36",
-      "server_port": 8443,
+      "server": "144.31.129.2",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "6woZyw8kn^"
+      "password": "Wg{wGZ}tyi"
     },
     {
       "tag": "🌐 BY-10",
       "type": "shadowsocks",
-      "server": "by.x8lab.org",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s~<ƹmz"
+      "server": "87.252.237.219",
+      "server_port": 8443,
+      "method": "s",
+      "password": "G=\u001ckg\u001aoW["
     },
     {
       "tag": "🌐 BY-11",
       "type": "shadowsocks",
-      "server": "185.179.82.201",
-      "server_port": 443,
+      "server": "95.130.84.36",
+      "server_port": 8443,
       "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
+      "password": "6woZyw8kn^"
     },
     {
       "tag": "🌐 BY-12",
       "type": "shadowsocks",
-      "server": "87.252.237.219",
+      "server": "95.130.84.36",
       "server_port": 8443,
-      "method": "s",
-      "password": "G=\u001ckg\u001aoW["
+      "method": "aes-256-gcm",
+      "password": "6woZyw8kn^"
     },
     {
       "tag": "🌐 BY-13",
       "type": "shadowsocks",
-      "server": "95.130.84.36",
-      "server_port": 8443,
+      "server": "144.31.129.2",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "6woZyw8kn^"
+      "password": "Wg{wGZ}tyi"
     },
     {
       "tag": "🌐 BY-14",
-      "type": "shadowsocks",
-      "server": "95.130.84.36",
-      "server_port": 8443,
-      "method": "aes-256-gcm",
-      "password": "6woZyw8kn^"
-    },
-    {
-      "tag": "🌐 BY-15",
-      "type": "shadowsocks",
-      "server": "by.x8lab.org",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s~<ƹmz"
-    },
-    {
-      "tag": "🌐 BY-16",
-      "type": "shadowsocks",
-      "server": "185.179.82.201",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
-    },
-    {
-      "tag": "🌐 BY-17",
       "type": "shadowsocks",
       "server": "87.252.237.219",
       "server_port": 8443,
@@ -132,12 +109,36 @@
       "password": "G=\u001ckg\u001aoW["
     },
     {
-      "tag": "🌐 BY-18",
+      "tag": "🌐 BY-15",
       "type": "shadowsocks",
       "server": "95.130.84.36",
       "server_port": 8443,
       "method": "aes-256-gcm",
       "password": "6woZyw8kn^"
+    },
+    {
+      "tag": "🌐 BY-16",
+      "type": "shadowsocks",
+      "server": "95.130.84.36",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "6woZyw8kn^"
+    },
+    {
+      "tag": "🌐 BY-17",
+      "type": "shadowsocks",
+      "server": "144.31.129.2",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Wg{wGZ}tyi"
+    },
+    {
+      "tag": "🌐 BY-18",
+      "type": "shadowsocks",
+      "server": "87.252.237.219",
+      "server_port": 8443,
+      "method": "s",
+      "password": "G=\u001ckg\u001aoW["
     },
     {
       "tag": "🌐 BY-19",
@@ -150,18 +151,18 @@
     {
       "tag": "🌐 BY-20",
       "type": "shadowsocks",
-      "server": "by.x8lab.org",
-      "server_port": 443,
+      "server": "95.130.84.36",
+      "server_port": 8443,
       "method": "aes-256-gcm",
-      "password": "s~<ƹmz"
+      "password": "6woZyw8kn^"
     },
     {
       "tag": "🌐 BY-21",
       "type": "shadowsocks",
-      "server": "185.179.82.201",
+      "server": "144.31.129.2",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
+      "password": "Wg{wGZ}tyi"
     },
     {
       "tag": "🌐 BY-22",
@@ -178,54 +179,6 @@
       "server_port": 8443,
       "method": "aes-256-gcm",
       "password": "6woZyw8kn^"
-    },
-    {
-      "tag": "🌐 BY-24",
-      "type": "shadowsocks",
-      "server": "95.130.84.36",
-      "server_port": 8443,
-      "method": "aes-256-gcm",
-      "password": "6woZyw8kn^"
-    },
-    {
-      "tag": "🌐 BY-25",
-      "type": "shadowsocks",
-      "server": "by.x8lab.org",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s~<ƹmz"
-    },
-    {
-      "tag": "🌐 BY-26",
-      "type": "shadowsocks",
-      "server": "185.179.82.201",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
-    },
-    {
-      "tag": "🌐 BY-27",
-      "type": "shadowsocks",
-      "server": "87.252.237.219",
-      "server_port": 8443,
-      "method": "s",
-      "password": "G=\u001ckg\u001aoW["
-    },
-    {
-      "tag": "🌐 BY-28",
-      "type": "shadowsocks",
-      "server": "95.130.84.36",
-      "server_port": 8443,
-      "method": "aes-256-gcm",
-      "password": "6woZyw8kn^"
-    },
-    {
-      "tag": "🌐 BY-29",
-      "type": "shadowsocks",
-      "server": "by.x8lab.org",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s~<ƹmz"
     }
   ]
 }

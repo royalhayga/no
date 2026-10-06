@@ -2,50 +2,58 @@
   "outbounds": [
     {
       "tag": "🌐 PH-01",
-      "type": "vless",
-      "server": "61.245.11.164",
-      "server_port": 443,
-      "uuid": "0dc1fc26-b8e9-4296-9870-0996de3c2333"
+      "type": "vmess",
+      "server": "120.28.10.46",
+      "server_port": 80,
+      "uuid": "ecba5b33-f768-4d8a-b004-b29e8e5c676f",
+      "security": "auto"
     },
     {
       "tag": "🌐 PH-02",
-      "type": "shadowsocks",
-      "server": "61.245.11.164",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "5}ͺoǽozzu}"
+      "type": "vless",
+      "server": "61.245.11.28",
+      "server_port": 9090,
+      "uuid": "Channel:telegram:TurboConfigs"
     },
     {
       "tag": "🌐 PH-03",
       "type": "shadowsocks",
-      "server": "61.245.11.164",
-      "server_port": 443,
+      "server": "61.245.11.28",
+      "server_port": 9090,
       "method": "aes-256-gcm",
-      "password": "5}ͺoǽozzu}"
+      "password": "\u0016mzW\nߊ"
     },
     {
       "tag": "🌐 PH-04",
       "type": "shadowsocks",
-      "server": "61.245.11.164",
-      "server_port": 443,
+      "server": "61.245.11.28",
+      "server_port": 9090,
       "method": "aes-256-gcm",
-      "password": "5}ͺoǽozzu}"
+      "password": "\u0016mzW\nߊ"
     },
     {
       "tag": "🌐 PH-05",
       "type": "shadowsocks",
-      "server": "61.245.11.164",
-      "server_port": 443,
+      "server": "61.245.11.28",
+      "server_port": 9090,
       "method": "aes-256-gcm",
-      "password": "5}ͺoǽozzu}"
+      "password": "\u0016mzW\nߊ"
     },
     {
       "tag": "🌐 PH-06",
       "type": "shadowsocks",
-      "server": "61.245.11.164",
-      "server_port": 443,
+      "server": "61.245.11.28",
+      "server_port": 9090,
       "method": "aes-256-gcm",
-      "password": "5}ͺoǽozzu}"
+      "password": "\u0016mzW\nߊ"
+    },
+    {
+      "tag": "🌐 PH-07",
+      "type": "shadowsocks",
+      "server": "61.245.11.28",
+      "server_port": 9090,
+      "method": "aes-256-gcm",
+      "password": "\u0016mzW\nߊ"
     }
   ]
 }
