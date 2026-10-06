@@ -2,13 +2,67 @@
   "outbounds": [
     {
       "tag": "🌐 SC-01",
+      "type": "vless",
+      "server": "45.130.125.50",
+      "server_port": 8880,
+      "uuid": "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    },
+    {
+      "tag": "🌐 SC-02",
+      "type": "shadowsocks",
+      "server": "45.130.125.50",
+      "server_port": 8880,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    },
+    {
+      "tag": "🌐 SC-03",
+      "type": "shadowsocks",
+      "server": "45.130.125.50",
+      "server_port": 8880,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    },
+    {
+      "tag": "🌐 SC-04",
+      "type": "shadowsocks",
+      "server": "45.130.125.50",
+      "server_port": 8880,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    },
+    {
+      "tag": "🌐 SC-05",
+      "type": "shadowsocks",
+      "server": "45.130.125.50",
+      "server_port": 8880,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    },
+    {
+      "tag": "🌐 SC-06",
+      "type": "shadowsocks",
+      "server": "45.130.125.50",
+      "server_port": 8880,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    },
+    {
+      "tag": "🌐 SC-07",
+      "type": "trojan",
+      "server": "45.130.125.160",
+      "server_port": 443,
+      "password": "humanity"
+    },
+    {
+      "tag": "🌐 SC-08",
       "type": "trojan",
       "server": "45.130.125.158",
       "server_port": 443,
       "password": "humanity"
     },
     {
-      "tag": "🌐 SC-02",
+      "tag": "🌐 SC-09",
       "type": "trojan",
       "server": "45.130.125.160",
       "server_port": 443,

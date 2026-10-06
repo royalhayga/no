@@ -2,84 +2,92 @@
   "outbounds": [
     {
       "tag": "🇧🇷 BR-01",
+      "type": "vmess",
+      "server": "89.39.161.157",
+      "server_port": 443,
+      "uuid": "03fcc618-b93d-6796-6aed-8a38c975d581",
+      "security": "auto"
+    },
+    {
+      "tag": "🇧🇷 BR-02",
       "type": "vless",
       "server": "147.45.116.19",
       "server_port": 443,
       "uuid": "454431fc-71e2-42b1-b375-5b55dd06666a"
     },
     {
-      "tag": "🇧🇷 BR-02",
+      "tag": "🇧🇷 BR-03",
       "type": "vless",
       "server": "23.251.55.216",
       "server_port": 443,
       "uuid": "c396fa08-e07a-459b-b894-389456fd6a82"
     },
     {
-      "tag": "🇧🇷 BR-03",
+      "tag": "🇧🇷 BR-04",
       "type": "shadowsocks",
       "server": "147.45.116.19",
       "server_port": 443,
       "method": "8WWfo~yu",
       "password": "뮚"
-    },
-    {
-      "tag": "🇧🇷 BR-04",
-      "type": "shadowsocks",
-      "server": "23.251.55.216",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "sz}<{N[oxx6"
     },
     {
       "tag": "🇧🇷 BR-05",
       "type": "shadowsocks",
-      "server": "147.45.116.19",
+      "server": "23.251.55.216",
       "server_port": 443,
-      "method": "8WWfo~yu",
-      "password": "뮚"
+      "method": "aes-256-gcm",
+      "password": "sz}<{N[oxx6"
     },
     {
       "tag": "🇧🇷 BR-06",
       "type": "shadowsocks",
-      "server": "23.251.55.216",
+      "server": "147.45.116.19",
       "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "sz}<{N[oxx6"
+      "method": "8WWfo~yu",
+      "password": "뮚"
     },
     {
       "tag": "🇧🇷 BR-07",
       "type": "shadowsocks",
-      "server": "147.45.116.19",
+      "server": "23.251.55.216",
       "server_port": 443,
-      "method": "8WWfo~yu",
-      "password": "뮚"
+      "method": "aes-256-gcm",
+      "password": "sz}<{N[oxx6"
     },
     {
       "tag": "🇧🇷 BR-08",
       "type": "shadowsocks",
-      "server": "23.251.55.216",
+      "server": "147.45.116.19",
       "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "sz}<{N[oxx6"
+      "method": "8WWfo~yu",
+      "password": "뮚"
     },
     {
       "tag": "🇧🇷 BR-09",
       "type": "shadowsocks",
-      "server": "147.45.116.19",
+      "server": "23.251.55.216",
       "server_port": 443,
-      "method": "8WWfo~yu",
-      "password": "뮚"
+      "method": "aes-256-gcm",
+      "password": "sz}<{N[oxx6"
     },
     {
       "tag": "🇧🇷 BR-10",
       "type": "shadowsocks",
+      "server": "147.45.116.19",
+      "server_port": 443,
+      "method": "8WWfo~yu",
+      "password": "뮚"
+    },
+    {
+      "tag": "🇧🇷 BR-11",
+      "type": "shadowsocks",
       "server": "23.251.55.216",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "sz}<{N[oxx6"
     },
     {
-      "tag": "🇧🇷 BR-11",
+      "tag": "🇧🇷 BR-12",
       "type": "shadowsocks",
       "server": "147.45.116.19",
       "server_port": 443,
@@ -87,7 +95,7 @@
       "password": "뮚"
     },
     {
-      "tag": "🇧🇷 BR-12",
+      "tag": "🇧🇷 BR-13",
       "type": "shadowsocks",
       "server": "23.251.55.216",
       "server_port": 443,
@@ -95,7 +103,7 @@
       "password": "sz}<{N[oxx6"
     },
     {
-      "tag": "🇧🇷 BR-13",
+      "tag": "🇧🇷 BR-14",
       "type": "shadowsocks",
       "server": "31.59.142.45",
       "server_port": 443,
