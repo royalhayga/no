@@ -3,17 +3,17 @@
     {
       "tag": "🇰🇷 KR-01",
       "type": "vmess",
-      "server": "146.56.112.110",
-      "server_port": 8888,
-      "uuid": "e7c302f3-90d6-42dd-9d7d-94a3683a3707",
+      "server": "140.238.2.250",
+      "server_port": 443,
+      "uuid": "41a7089a-040b-4538-8b8d-010902405bde",
       "security": "auto"
     },
     {
       "tag": "🇰🇷 KR-02",
       "type": "vmess",
-      "server": "217.142.138.61",
-      "server_port": 80,
-      "uuid": "ac1b933d-afff-4487-93ef-f57130a55dff",
+      "server": "146.56.112.110",
+      "server_port": 8888,
+      "uuid": "e7c302f3-90d6-42dd-9d7d-94a3683a3707",
       "security": "auto"
     },
     {
@@ -26,52 +26,51 @@
     },
     {
       "tag": "🇰🇷 KR-04",
-      "type": "vmess",
-      "server": "217.142.138.61",
-      "server_port": 80,
-      "uuid": "ac1b933d-afff-4487-93ef-f57130a55dff",
-      "security": "auto"
+      "type": "vless",
+      "server": "47.80.19.173",
+      "server_port": 2053,
+      "uuid": "319d5ffb-57e8-4bbd-ac0c-5d55d0c253de"
     },
     {
       "tag": "🇰🇷 KR-05",
       "type": "vless",
-      "server": "3.39.4.109",
-      "server_port": 18967,
-      "uuid": "814bd064-544d-4255-a070-5705c03f6da9"
+      "server": "47.80.19.173",
+      "server_port": 2053,
+      "uuid": "319d5ffb-57e8-4bbd-ac0c-5d55d0c253de"
     },
     {
       "tag": "🇰🇷 KR-06",
       "type": "vless",
-      "server": "161.118.153.136",
-      "server_port": 443,
-      "uuid": "f49d04d6-aaa7-4013-b323-bc35b78230db"
-    },
-    {
-      "tag": "🇰🇷 KR-07",
-      "type": "vless",
       "server": "3.39.4.109",
       "server_port": 18967,
       "uuid": "814bd064-544d-4255-a070-5705c03f6da9"
     },
     {
-      "tag": "🇰🇷 KR-08",
+      "tag": "🇰🇷 KR-07",
       "type": "vless",
       "server": "3.39.4.109",
       "server_port": 13672,
       "uuid": "814bd064-544d-4255-a070-5705c03f6da9"
     },
     {
-      "tag": "🇰🇷 KR-09",
+      "tag": "🇰🇷 KR-08",
       "type": "vless",
       "server": "151.245.106.49",
       "server_port": 2053,
       "uuid": "a2de9567-9646-45a9-a410-7303a43bdb6c"
     },
     {
-      "tag": "🇰🇷 KR-10",
+      "tag": "🇰🇷 KR-09",
       "type": "vless",
       "server": "3.39.4.109",
       "server_port": 13672,
+      "uuid": "814bd064-544d-4255-a070-5705c03f6da9"
+    },
+    {
+      "tag": "🇰🇷 KR-10",
+      "type": "vless",
+      "server": "3.39.4.109",
+      "server_port": 18967,
       "uuid": "814bd064-544d-4255-a070-5705c03f6da9"
     },
     {
@@ -98,44 +97,44 @@
     {
       "tag": "🇰🇷 KR-14",
       "type": "vless",
-      "server": "129.154.198.48",
+      "server": "64.110.70.64",
       "server_port": 443,
-      "uuid": "2cd6ed0f-636e-4e6c-9449-5a263d7a0fa5"
+      "uuid": "eeb6823c-b926-4ea2-866a-5542edd26e59"
     },
     {
       "tag": "🇰🇷 KR-15",
       "type": "vless",
-      "server": "175.195.149.58",
-      "server_port": 10280,
-      "uuid": "8638521a-7d64-4ad0-9112-83aa1fc19867"
+      "server": "146.56.187.1",
+      "server_port": 8443,
+      "uuid": "eeb6823c-b926-4ea2-866a-5542edd26e59"
     },
     {
       "tag": "🇰🇷 KR-16",
       "type": "vless",
-      "server": "144.24.73.232",
+      "server": "158.247.199.106",
       "server_port": 443,
       "uuid": "eeb6823c-b926-4ea2-866a-5542edd26e59"
     },
     {
       "tag": "🇰🇷 KR-17",
       "type": "vless",
-      "server": "158.179.174.225",
-      "server_port": 36364,
-      "uuid": "14b02e2a-8930-4afb-8412-ea4a4954ca5b"
+      "server": "43.108.48.169",
+      "server_port": 40701,
+      "uuid": "cdb7d825-9892-4d6f-80b8-7add83159dac"
     },
     {
       "tag": "🇰🇷 KR-18",
       "type": "vless",
-      "server": "132.145.84.148",
-      "server_port": 39567,
-      "uuid": "b65f4df7-f6af-42b2-877a-cef33f21675e"
+      "server": "144.24.73.232",
+      "server_port": 443,
+      "uuid": "eeb6823c-b926-4ea2-866a-5542edd26e59"
     },
     {
       "tag": "🇰🇷 KR-19",
       "type": "vless",
-      "server": "220.126.33.117",
-      "server_port": 29999,
-      "uuid": "26524cce-d514-4014-a426-365fb266a14d"
+      "server": "158.180.71.69",
+      "server_port": 443,
+      "uuid": "eeb6823c-b926-4ea2-866a-5542edd26e59"
     },
     {
       "tag": "🇰🇷 KR-20",
@@ -147,16 +146,16 @@
     {
       "tag": "🇰🇷 KR-21",
       "type": "vless",
-      "server": "175.195.149.58",
-      "server_port": 10280,
-      "uuid": "8638521a-7d64-4ad0-9112-83aa1fc19867"
+      "server": "220.71.172.2",
+      "server_port": 16034,
+      "uuid": "169f3aa8-6b52-4f3e-83d2-f96bac71e503"
     },
     {
       "tag": "🇰🇷 KR-22",
       "type": "vless",
-      "server": "220.71.172.2",
-      "server_port": 16034,
-      "uuid": "169f3aa8-6b52-4f3e-83d2-f96bac71e503"
+      "server": "59.31.107.42",
+      "server_port": 13720,
+      "uuid": "26524cce-d514-4014-a426-365fb266a14d"
     },
     {
       "tag": "🇰🇷 KR-23",
@@ -175,159 +174,202 @@
     {
       "tag": "🇰🇷 KR-25",
       "type": "vless",
+      "server": "146.56.135.196",
+      "server_port": 443,
+      "uuid": "40af9131-d540-448a-bc56-5bba147a1dc3"
+    },
+    {
+      "tag": "🇰🇷 KR-26",
+      "type": "vless",
       "server": "158.247.209.57",
       "server_port": 443,
       "uuid": "eeb6823c-b926-4ea2-866a-5542edd26e59"
     },
     {
-      "tag": "🇰🇷 KR-26",
+      "tag": "🇰🇷 KR-27",
       "type": "vless",
       "server": "158.247.240.138",
       "server_port": 443,
       "uuid": "ab61daa1-b7fb-486e-8946-b1da9a444685"
     },
     {
-      "tag": "🇰🇷 KR-27",
+      "tag": "🇰🇷 KR-28",
+      "type": "vless",
+      "server": "43.155.187.201",
+      "server_port": 443,
+      "uuid": "981fca81-5be1-41f8-ac9b-d138e8109943"
+    },
+    {
+      "tag": "🇰🇷 KR-29",
       "type": "vless",
       "server": "123.111.169.70",
       "server_port": 2083,
       "uuid": "9e3132b8-b595-444a-833a-2de44789f9d7"
     },
     {
-      "tag": "🇰🇷 KR-28",
+      "tag": "🇰🇷 KR-30",
       "type": "vless",
       "server": "158.247.222.168",
       "server_port": 443,
       "uuid": "37665857-8b6e-4daa-8231-3e2927221558"
     },
     {
-      "tag": "🇰🇷 KR-29",
+      "tag": "🇰🇷 KR-31",
       "type": "vless",
       "server": "158.247.253.111",
       "server_port": 8443,
       "uuid": "eeb6823c-b926-4ea2-866a-5542edd26e59"
     },
     {
-      "tag": "🇰🇷 KR-30",
+      "tag": "🇰🇷 KR-32",
       "type": "vless",
       "server": "158.247.253.111",
       "server_port": 2087,
       "uuid": "9e3132b8-b595-444a-833a-2de44789f9d7"
     },
     {
-      "tag": "🇰🇷 KR-31",
+      "tag": "🇰🇷 KR-33",
+      "type": "vless",
+      "server": "158.247.224.240",
+      "server_port": 443,
+      "uuid": "ab61daa1-b7fb-486e-8946-b1da9a444685"
+    },
+    {
+      "tag": "🇰🇷 KR-34",
       "type": "vless",
       "server": "132.145.91.181",
       "server_port": 8443,
       "uuid": "ce069292-c8bf-40dd-a6b1-87818a1e64e9"
     },
     {
-      "tag": "🇰🇷 KR-32",
+      "tag": "🇰🇷 KR-35",
       "type": "vless",
       "server": "130.94.30.252",
       "server_port": 443,
       "uuid": "58c14e54-6db0-46fb-a1fb-8f3184197d94"
     },
     {
-      "tag": "🇰🇷 KR-33",
+      "tag": "🇰🇷 KR-36",
       "type": "vless",
       "server": "131.186.25.156",
       "server_port": 2087,
       "uuid": "eeb6823c-b926-4ea2-866a-5542edd26e59"
     },
     {
-      "tag": "🇰🇷 KR-34",
+      "tag": "🇰🇷 KR-37",
       "type": "vless",
       "server": "47.80.57.116",
       "server_port": 443,
       "uuid": "51a0af77-a60c-4d9b-81a4-f50e1b38d90b"
     },
     {
-      "tag": "🇰🇷 KR-35",
+      "tag": "🇰🇷 KR-38",
       "type": "vless",
       "server": "123.111.169.70",
       "server_port": 8443,
       "uuid": "51a0af77-a60c-4d9b-81a4-f50e1b38d90b"
     },
     {
-      "tag": "🇰🇷 KR-36",
+      "tag": "🇰🇷 KR-39",
       "type": "vless",
-      "server": "221.158.4.230",
-      "server_port": 18853,
-      "uuid": "26524cce-d514-4014-a426-365fb266a14d"
+      "server": "158.247.199.106",
+      "server_port": 443,
+      "uuid": "eeb6823c-b926-4ea2-866a-5542edd26e59"
     },
     {
-      "tag": "🇰🇷 KR-37",
+      "tag": "🇰🇷 KR-40",
+      "type": "vless",
+      "server": "158.180.71.69",
+      "server_port": 443,
+      "uuid": "890cb407-0d00-4337-9e5d-b4df06a1635c"
+    },
+    {
+      "tag": "🇰🇷 KR-41",
       "type": "vless",
       "server": "151.245.106.49",
       "server_port": 2053,
       "uuid": "a5a82872-616b-49f6-a40a-6a54feeb5dd0"
     },
     {
-      "tag": "🇰🇷 KR-38",
+      "tag": "🇰🇷 KR-42",
+      "type": "vless",
+      "server": "kr1.miyazono-kaori.com",
+      "server_port": 443,
+      "uuid": "5838e02b-d60f-43e0-a63c-d03d0c85c7c8"
+    },
+    {
+      "tag": "🇰🇷 KR-43",
       "type": "vless",
       "server": "27.102.138.74",
       "server_port": 443,
       "uuid": "0861c7f8-1d0e-491b-bbd2-584ffc324629"
     },
     {
-      "tag": "🇰🇷 KR-39",
-      "type": "shadowsocks",
-      "server": "3.39.4.109",
-      "server_port": 18967,
-      "method": "aes-256-gcm",
-      "password": "^\u001bwN\u001dnykN9sMֽ"
-    },
-    {
-      "tag": "🇰🇷 KR-40",
-      "type": "shadowsocks",
-      "server": "161.118.153.136",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "]ӇziMwo}mo6G["
-    },
-    {
-      "tag": "🇰🇷 KR-41",
-      "type": "shadowsocks",
-      "server": "3.39.4.109",
-      "server_port": 18967,
-      "method": "aes-256-gcm",
-      "password": "^\u001bwN\u001dnykN9sMֽ"
-    },
-    {
-      "tag": "🇰🇷 KR-42",
-      "type": "shadowsocks",
-      "server": "3.39.4.109",
-      "server_port": 13672,
-      "method": "aes-256-gcm",
-      "password": "^\u001bwN\u001dnykN9sMֽ"
-    },
-    {
-      "tag": "🇰🇷 KR-43",
-      "type": "shadowsocks",
-      "server": "151.245.106.49",
-      "server_port": 2053,
-      "method": "kg^",
-      "password": "㖽kt}7ku"
-    },
-    {
       "tag": "🇰🇷 KR-44",
       "type": "shadowsocks",
-      "server": "3.39.4.109",
-      "server_port": 13672,
+      "server": "47.80.19.173",
+      "server_port": 2053,
       "method": "aes-256-gcm",
-      "password": "^\u001bwN\u001dnykN9sMֽ"
+      "password": "_]緼i\u001cywG6w^"
     },
     {
       "tag": "🇰🇷 KR-45",
       "type": "shadowsocks",
+      "server": "47.80.19.173",
+      "server_port": 2053,
+      "method": "aes-256-gcm",
+      "password": "_]緼i\u001cywG6w^"
+    },
+    {
+      "tag": "🇰🇷 KR-46",
+      "type": "shadowsocks",
+      "server": "3.39.4.109",
+      "server_port": 18967,
+      "method": "aes-256-gcm",
+      "password": "^\u001bwN\u001dnykN9sMֽ"
+    },
+    {
+      "tag": "🇰🇷 KR-47",
+      "type": "shadowsocks",
+      "server": "3.39.4.109",
+      "server_port": 13672,
+      "method": "aes-256-gcm",
+      "password": "^\u001bwN\u001dnykN9sMֽ"
+    },
+    {
+      "tag": "🇰🇷 KR-48",
+      "type": "shadowsocks",
       "server": "151.245.106.49",
       "server_port": 2053,
       "method": "kg^",
       "password": "㖽kt}7ku"
     },
     {
-      "tag": "🇰🇷 KR-46",
+      "tag": "🇰🇷 KR-49",
+      "type": "shadowsocks",
+      "server": "3.39.4.109",
+      "server_port": 13672,
+      "method": "aes-256-gcm",
+      "password": "^\u001bwN\u001dnykN9sMֽ"
+    },
+    {
+      "tag": "🇰🇷 KR-50",
+      "type": "shadowsocks",
+      "server": "3.39.4.109",
+      "server_port": 18967,
+      "method": "aes-256-gcm",
+      "password": "^\u001bwN\u001dnykN9sMֽ"
+    },
+    {
+      "tag": "🇰🇷 KR-51",
+      "type": "shadowsocks",
+      "server": "151.245.106.49",
+      "server_port": 2053,
+      "method": "kg^",
+      "password": "㖽kt}7ku"
+    },
+    {
+      "tag": "🇰🇷 KR-52",
       "type": "shadowsocks",
       "server": "158.247.209.57",
       "server_port": 443,
@@ -335,7 +377,7 @@
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-47",
+      "tag": "🇰🇷 KR-53",
       "type": "shadowsocks",
       "server": "146.56.161.138",
       "server_port": 443,
@@ -343,23 +385,39 @@
       "password": "q{Z5Ӎyy"
     },
     {
-      "tag": "🇰🇷 KR-48",
+      "tag": "🇰🇷 KR-54",
       "type": "shadowsocks",
-      "server": "129.154.198.48",
+      "server": "64.110.70.64",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "zy\u001f~=孺"
+      "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-49",
+      "tag": "🇰🇷 KR-55",
       "type": "shadowsocks",
-      "server": "175.195.149.58",
-      "server_port": 10280,
+      "server": "146.56.187.1",
+      "server_port": 8443,
       "method": "aes-256-gcm",
-      "password": "mZ޸t]vv5λ"
+      "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-50",
+      "tag": "🇰🇷 KR-56",
+      "type": "shadowsocks",
+      "server": "158.247.199.106",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-57",
+      "type": "shadowsocks",
+      "server": "43.108.48.169",
+      "server_port": 40701,
+      "method": "aes-256-gcm",
+      "password": "qw͹vޟF]}y֜"
+    },
+    {
+      "tag": "🇰🇷 KR-58",
       "type": "shadowsocks",
       "server": "144.24.73.232",
       "server_port": 443,
@@ -367,73 +425,9 @@
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-51",
-      "type": "shadowsocks",
-      "server": "158.179.174.225",
-      "server_port": 36364,
-      "method": "aes-256-gcm",
-      "password": "׆vy\u001axq["
-    },
-    {
-      "tag": "🇰🇷 KR-52",
-      "type": "shadowsocks",
-      "server": "132.145.84.148",
-      "server_port": 39567,
-      "method": "aes-256-gcm",
-      "password": "o_fq^"
-    },
-    {
-      "tag": "🇰🇷 KR-53",
-      "type": "shadowsocks",
-      "server": "220.126.33.117",
-      "server_port": 29999,
-      "method": "aes-256-gcm",
-      "password": "ۮv\u001ewxMxk߮_onk^"
-    },
-    {
-      "tag": "🇰🇷 KR-54",
-      "type": "shadowsocks",
-      "server": "152.67.211.114",
-      "server_port": 58337,
-      "method": "aes-256-gcm",
-      "password": "m6om^\u001eois]"
-    },
-    {
-      "tag": "🇰🇷 KR-55",
-      "type": "shadowsocks",
-      "server": "175.195.149.58",
-      "server_port": 10280,
-      "method": "aes-256-gcm",
-      "password": "mZ޸t]vv5λ"
-    },
-    {
-      "tag": "🇰🇷 KR-56",
-      "type": "shadowsocks",
-      "server": "220.71.172.2",
-      "server_port": 16034,
-      "method": "aes-256-gcm",
-      "password": "ׯ_ݦvwvޛi{7"
-    },
-    {
-      "tag": "🇰🇷 KR-57",
-      "type": "shadowsocks",
-      "server": "140.245.75.37",
-      "server_port": 627,
-      "method": "aes-256-gcm",
-      "password": "M4M4M4M4M4M4M4M4"
-    },
-    {
-      "tag": "🇰🇷 KR-58",
-      "type": "shadowsocks",
-      "server": "146.56.106.51",
-      "server_port": 56271,
-      "method": "aes-256-gcm",
-      "password": "M4M4M4M4M4M4M4M4"
-    },
-    {
       "tag": "🇰🇷 KR-59",
       "type": "shadowsocks",
-      "server": "158.247.209.57",
+      "server": "158.180.71.69",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "ymoݺ6yv}"
@@ -441,293 +435,85 @@
     {
       "tag": "🇰🇷 KR-60",
       "type": "shadowsocks",
+      "server": "152.67.211.114",
+      "server_port": 58337,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    },
+    {
+      "tag": "🇰🇷 KR-61",
+      "type": "shadowsocks",
+      "server": "220.71.172.2",
+      "server_port": 16034,
+      "method": "aes-256-gcm",
+      "password": "ׯ_ݦvwvޛi{7"
+    },
+    {
+      "tag": "🇰🇷 KR-62",
+      "type": "shadowsocks",
+      "server": "59.31.107.42",
+      "server_port": 13720,
+      "method": "aes-256-gcm",
+      "password": "ۮv\u001ewxMxk߮_onk^"
+    },
+    {
+      "tag": "🇰🇷 KR-63",
+      "type": "shadowsocks",
+      "server": "140.245.75.37",
+      "server_port": 627,
+      "method": "aes-256-gcm",
+      "password": "M4M4M4M4M4M4M4M4"
+    },
+    {
+      "tag": "🇰🇷 KR-64",
+      "type": "shadowsocks",
+      "server": "146.56.106.51",
+      "server_port": 56271,
+      "method": "aes-256-gcm",
+      "password": "M4M4M4M4M4M4M4M4"
+    },
+    {
+      "tag": "🇰🇷 KR-65",
+      "type": "shadowsocks",
+      "server": "146.56.135.196",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "F]w4\u001amz׎7"
+    },
+    {
+      "tag": "🇰🇷 KR-66",
+      "type": "shadowsocks",
+      "server": "158.247.209.57",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-67",
+      "type": "shadowsocks",
       "server": "158.247.240.138",
       "server_port": 443,
       "method": "iuoΞ",
       "password": "oWZ89"
     },
     {
-      "tag": "🇰🇷 KR-61",
-      "type": "shadowsocks",
-      "server": "123.111.169.70",
-      "server_port": 2083,
-      "method": "aes-256-gcm",
-      "password": "foy\u001a}׸={"
-    },
-    {
-      "tag": "🇰🇷 KR-62",
-      "type": "shadowsocks",
-      "server": "158.247.222.168",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "߾{֚m۽מ|"
-    },
-    {
-      "tag": "🇰🇷 KR-63",
-      "type": "shadowsocks",
-      "server": "158.247.253.111",
-      "server_port": 8443,
-      "method": "aes-256-gcm",
-      "password": "ymoݺ6yv}"
-    },
-    {
-      "tag": "🇰🇷 KR-64",
-      "type": "shadowsocks",
-      "server": "158.247.253.111",
-      "server_port": 2087,
-      "method": "aes-256-gcm",
-      "password": "foy\u001a}׸={"
-    },
-    {
-      "tag": "🇰🇷 KR-65",
-      "type": "shadowsocks",
-      "server": "132.145.91.181",
-      "server_port": 8443,
-      "method": "q",
-      "password": "ovsG]k5^뇽"
-    },
-    {
-      "tag": "🇰🇷 KR-66",
-      "type": "shadowsocks",
-      "server": "130.94.30.252",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "5xkW}x"
-    },
-    {
-      "tag": "🇰🇷 KR-67",
-      "type": "shadowsocks",
-      "server": "131.186.25.156",
-      "server_port": 2087,
-      "method": "aes-256-gcm",
-      "password": "ymoݺ6yv}"
-    },
-    {
       "tag": "🇰🇷 KR-68",
       "type": "shadowsocks",
-      "server": "47.80.57.116",
+      "server": "43.155.187.201",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "Vik\u001c[V\u001eսw\u001b"
+      "password": "_q5巵Wi[w]{t7"
     },
     {
       "tag": "🇰🇷 KR-69",
       "type": "shadowsocks",
       "server": "123.111.169.70",
-      "server_port": 8443,
-      "method": "aes-256-gcm",
-      "password": "Vik\u001c[V\u001eսw\u001b"
-    },
-    {
-      "tag": "🇰🇷 KR-70",
-      "type": "shadowsocks",
-      "server": "221.158.4.230",
-      "server_port": 18853,
-      "method": "aes-256-gcm",
-      "password": "ۮv\u001ewxMxk߮_onk^"
-    },
-    {
-      "tag": "🇰🇷 KR-71",
-      "type": "shadowsocks",
-      "server": "151.245.106.49",
-      "server_port": 2053,
-      "method": "aes-256-gcm",
-      "password": "k^k\u001ax}t"
-    },
-    {
-      "tag": "🇰🇷 KR-72",
-      "type": "shadowsocks",
-      "server": "27.102.138.74",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "εs\u001e[mv\u001f}㭽"
-    },
-    {
-      "tag": "🇰🇷 KR-73",
-      "type": "shadowsocks",
-      "server": "3.39.4.109",
-      "server_port": 18967,
-      "method": "aes-256-gcm",
-      "password": "^\u001bwN\u001dnykN9sMֽ"
-    },
-    {
-      "tag": "🇰🇷 KR-74",
-      "type": "shadowsocks",
-      "server": "161.118.153.136",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "]ӇziMwo}mo6G["
-    },
-    {
-      "tag": "🇰🇷 KR-75",
-      "type": "shadowsocks",
-      "server": "3.39.4.109",
-      "server_port": 18967,
-      "method": "aes-256-gcm",
-      "password": "^\u001bwN\u001dnykN9sMֽ"
-    },
-    {
-      "tag": "🇰🇷 KR-76",
-      "type": "shadowsocks",
-      "server": "3.39.4.109",
-      "server_port": 13672,
-      "method": "aes-256-gcm",
-      "password": "^\u001bwN\u001dnykN9sMֽ"
-    },
-    {
-      "tag": "🇰🇷 KR-77",
-      "type": "shadowsocks",
-      "server": "151.245.106.49",
-      "server_port": 2053,
-      "method": "kg^",
-      "password": "㖽kt}7ku"
-    },
-    {
-      "tag": "🇰🇷 KR-78",
-      "type": "shadowsocks",
-      "server": "3.39.4.109",
-      "server_port": 13672,
-      "method": "aes-256-gcm",
-      "password": "^\u001bwN\u001dnykN9sMֽ"
-    },
-    {
-      "tag": "🇰🇷 KR-79",
-      "type": "shadowsocks",
-      "server": "151.245.106.49",
-      "server_port": 2053,
-      "method": "kg^",
-      "password": "㖽kt}7ku"
-    },
-    {
-      "tag": "🇰🇷 KR-80",
-      "type": "shadowsocks",
-      "server": "158.247.209.57",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ymoݺ6yv}"
-    },
-    {
-      "tag": "🇰🇷 KR-81",
-      "type": "shadowsocks",
-      "server": "146.56.161.138",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "q{Z5Ӎyy"
-    },
-    {
-      "tag": "🇰🇷 KR-82",
-      "type": "shadowsocks",
-      "server": "129.154.198.48",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "zy\u001f~=孺"
-    },
-    {
-      "tag": "🇰🇷 KR-83",
-      "type": "shadowsocks",
-      "server": "175.195.149.58",
-      "server_port": 10280,
-      "method": "aes-256-gcm",
-      "password": "mZ޸t]vv5λ"
-    },
-    {
-      "tag": "🇰🇷 KR-84",
-      "type": "shadowsocks",
-      "server": "144.24.73.232",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ymoݺ6yv}"
-    },
-    {
-      "tag": "🇰🇷 KR-85",
-      "type": "shadowsocks",
-      "server": "158.179.174.225",
-      "server_port": 36364,
-      "method": "aes-256-gcm",
-      "password": "׆vy\u001axq["
-    },
-    {
-      "tag": "🇰🇷 KR-86",
-      "type": "shadowsocks",
-      "server": "132.145.84.148",
-      "server_port": 39567,
-      "method": "aes-256-gcm",
-      "password": "o_fq^"
-    },
-    {
-      "tag": "🇰🇷 KR-87",
-      "type": "shadowsocks",
-      "server": "220.126.33.117",
-      "server_port": 29999,
-      "method": "aes-256-gcm",
-      "password": "ۮv\u001ewxMxk߮_onk^"
-    },
-    {
-      "tag": "🇰🇷 KR-88",
-      "type": "shadowsocks",
-      "server": "152.67.211.114",
-      "server_port": 58337,
-      "method": "aes-256-gcm",
-      "password": "m6om^\u001eois]"
-    },
-    {
-      "tag": "🇰🇷 KR-89",
-      "type": "shadowsocks",
-      "server": "175.195.149.58",
-      "server_port": 10280,
-      "method": "aes-256-gcm",
-      "password": "mZ޸t]vv5λ"
-    },
-    {
-      "tag": "🇰🇷 KR-90",
-      "type": "shadowsocks",
-      "server": "220.71.172.2",
-      "server_port": 16034,
-      "method": "aes-256-gcm",
-      "password": "ׯ_ݦvwvޛi{7"
-    },
-    {
-      "tag": "🇰🇷 KR-91",
-      "type": "shadowsocks",
-      "server": "140.245.75.37",
-      "server_port": 627,
-      "method": "aes-256-gcm",
-      "password": "M4M4M4M4M4M4M4M4"
-    },
-    {
-      "tag": "🇰🇷 KR-92",
-      "type": "shadowsocks",
-      "server": "146.56.106.51",
-      "server_port": 56271,
-      "method": "aes-256-gcm",
-      "password": "M4M4M4M4M4M4M4M4"
-    },
-    {
-      "tag": "🇰🇷 KR-93",
-      "type": "shadowsocks",
-      "server": "158.247.209.57",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ymoݺ6yv}"
-    },
-    {
-      "tag": "🇰🇷 KR-94",
-      "type": "shadowsocks",
-      "server": "158.247.240.138",
-      "server_port": 443,
-      "method": "iuoΞ",
-      "password": "oWZ89"
-    },
-    {
-      "tag": "🇰🇷 KR-95",
-      "type": "shadowsocks",
-      "server": "123.111.169.70",
       "server_port": 2083,
       "method": "aes-256-gcm",
       "password": "foy\u001a}׸={"
     },
     {
-      "tag": "🇰🇷 KR-96",
+      "tag": "🇰🇷 KR-70",
       "type": "shadowsocks",
       "server": "158.247.222.168",
       "server_port": 443,
@@ -735,7 +521,7 @@
       "password": "߾{֚m۽מ|"
     },
     {
-      "tag": "🇰🇷 KR-97",
+      "tag": "🇰🇷 KR-71",
       "type": "shadowsocks",
       "server": "158.247.253.111",
       "server_port": 8443,
@@ -743,7 +529,7 @@
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-98",
+      "tag": "🇰🇷 KR-72",
       "type": "shadowsocks",
       "server": "158.247.253.111",
       "server_port": 2087,
@@ -751,7 +537,15 @@
       "password": "foy\u001a}׸={"
     },
     {
-      "tag": "🇰🇷 KR-99",
+      "tag": "🇰🇷 KR-73",
+      "type": "shadowsocks",
+      "server": "158.247.224.240",
+      "server_port": 443,
+      "method": "iuoΞ",
+      "password": "oWZ89"
+    },
+    {
+      "tag": "🇰🇷 KR-74",
       "type": "shadowsocks",
       "server": "132.145.91.181",
       "server_port": 8443,
@@ -759,7 +553,7 @@
       "password": "ovsG]k5^뇽"
     },
     {
-      "tag": "🇰🇷 KR-100",
+      "tag": "🇰🇷 KR-75",
       "type": "shadowsocks",
       "server": "130.94.30.252",
       "server_port": 443,
@@ -767,7 +561,7 @@
       "password": "5xkW}x"
     },
     {
-      "tag": "🇰🇷 KR-101",
+      "tag": "🇰🇷 KR-76",
       "type": "shadowsocks",
       "server": "131.186.25.156",
       "server_port": 2087,
@@ -775,7 +569,7 @@
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-102",
+      "tag": "🇰🇷 KR-77",
       "type": "shadowsocks",
       "server": "47.80.57.116",
       "server_port": 443,
@@ -783,7 +577,7 @@
       "password": "Vik\u001c[V\u001eսw\u001b"
     },
     {
-      "tag": "🇰🇷 KR-103",
+      "tag": "🇰🇷 KR-78",
       "type": "shadowsocks",
       "server": "123.111.169.70",
       "server_port": 8443,
@@ -791,15 +585,23 @@
       "password": "Vik\u001c[V\u001eսw\u001b"
     },
     {
-      "tag": "🇰🇷 KR-104",
+      "tag": "🇰🇷 KR-79",
       "type": "shadowsocks",
-      "server": "221.158.4.230",
-      "server_port": 18853,
+      "server": "158.247.199.106",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "ۮv\u001ewxMxk߮_onk^"
+      "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-105",
+      "tag": "🇰🇷 KR-80",
+      "type": "shadowsocks",
+      "server": "158.180.71.69",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "o;4}]o_Ӧ~\\"
+    },
+    {
+      "tag": "🇰🇷 KR-81",
       "type": "shadowsocks",
       "server": "151.245.106.49",
       "server_port": 2053,
@@ -807,7 +609,15 @@
       "password": "k^k\u001ax}t"
     },
     {
-      "tag": "🇰🇷 KR-106",
+      "tag": "🇰🇷 KR-82",
+      "type": "shadowsocks",
+      "server": "kr1.miyazono-kaori.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "{Mw\u001fwkwM9s<"
+    },
+    {
+      "tag": "🇰🇷 KR-83",
       "type": "shadowsocks",
       "server": "27.102.138.74",
       "server_port": 443,
@@ -815,7 +625,23 @@
       "password": "εs\u001e[mv\u001f}㭽"
     },
     {
-      "tag": "🇰🇷 KR-107",
+      "tag": "🇰🇷 KR-84",
+      "type": "shadowsocks",
+      "server": "47.80.19.173",
+      "server_port": 2053,
+      "method": "aes-256-gcm",
+      "password": "_]緼i\u001cywG6w^"
+    },
+    {
+      "tag": "🇰🇷 KR-85",
+      "type": "shadowsocks",
+      "server": "47.80.19.173",
+      "server_port": 2053,
+      "method": "aes-256-gcm",
+      "password": "_]緼i\u001cywG6w^"
+    },
+    {
+      "tag": "🇰🇷 KR-86",
       "type": "shadowsocks",
       "server": "3.39.4.109",
       "server_port": 18967,
@@ -823,15 +649,31 @@
       "password": "^\u001bwN\u001dnykN9sMֽ"
     },
     {
-      "tag": "🇰🇷 KR-108",
+      "tag": "🇰🇷 KR-87",
       "type": "shadowsocks",
-      "server": "161.118.153.136",
-      "server_port": 443,
+      "server": "3.39.4.109",
+      "server_port": 13672,
       "method": "aes-256-gcm",
-      "password": "]ӇziMwo}mo6G["
+      "password": "^\u001bwN\u001dnykN9sMֽ"
     },
     {
-      "tag": "🇰🇷 KR-109",
+      "tag": "🇰🇷 KR-88",
+      "type": "shadowsocks",
+      "server": "151.245.106.49",
+      "server_port": 2053,
+      "method": "kg^",
+      "password": "㖽kt}7ku"
+    },
+    {
+      "tag": "🇰🇷 KR-89",
+      "type": "shadowsocks",
+      "server": "3.39.4.109",
+      "server_port": 13672,
+      "method": "aes-256-gcm",
+      "password": "^\u001bwN\u001dnykN9sMֽ"
+    },
+    {
+      "tag": "🇰🇷 KR-90",
       "type": "shadowsocks",
       "server": "3.39.4.109",
       "server_port": 18967,
@@ -839,15 +681,7 @@
       "password": "^\u001bwN\u001dnykN9sMֽ"
     },
     {
-      "tag": "🇰🇷 KR-110",
-      "type": "shadowsocks",
-      "server": "3.39.4.109",
-      "server_port": 13672,
-      "method": "aes-256-gcm",
-      "password": "^\u001bwN\u001dnykN9sMֽ"
-    },
-    {
-      "tag": "🇰🇷 KR-111",
+      "tag": "🇰🇷 KR-91",
       "type": "shadowsocks",
       "server": "151.245.106.49",
       "server_port": 2053,
@@ -855,23 +689,7 @@
       "password": "㖽kt}7ku"
     },
     {
-      "tag": "🇰🇷 KR-112",
-      "type": "shadowsocks",
-      "server": "3.39.4.109",
-      "server_port": 13672,
-      "method": "aes-256-gcm",
-      "password": "^\u001bwN\u001dnykN9sMֽ"
-    },
-    {
-      "tag": "🇰🇷 KR-113",
-      "type": "shadowsocks",
-      "server": "151.245.106.49",
-      "server_port": 2053,
-      "method": "kg^",
-      "password": "㖽kt}7ku"
-    },
-    {
-      "tag": "🇰🇷 KR-114",
+      "tag": "🇰🇷 KR-92",
       "type": "shadowsocks",
       "server": "158.247.209.57",
       "server_port": 443,
@@ -879,7 +697,7 @@
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-115",
+      "tag": "🇰🇷 KR-93",
       "type": "shadowsocks",
       "server": "146.56.161.138",
       "server_port": 443,
@@ -887,23 +705,39 @@
       "password": "q{Z5Ӎyy"
     },
     {
-      "tag": "🇰🇷 KR-116",
+      "tag": "🇰🇷 KR-94",
       "type": "shadowsocks",
-      "server": "129.154.198.48",
+      "server": "64.110.70.64",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "zy\u001f~=孺"
+      "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-117",
+      "tag": "🇰🇷 KR-95",
       "type": "shadowsocks",
-      "server": "175.195.149.58",
-      "server_port": 10280,
+      "server": "146.56.187.1",
+      "server_port": 8443,
       "method": "aes-256-gcm",
-      "password": "mZ޸t]vv5λ"
+      "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-118",
+      "tag": "🇰🇷 KR-96",
+      "type": "shadowsocks",
+      "server": "158.247.199.106",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-97",
+      "type": "shadowsocks",
+      "server": "43.108.48.169",
+      "server_port": 40701,
+      "method": "aes-256-gcm",
+      "password": "qw͹vޟF]}y֜"
+    },
+    {
+      "tag": "🇰🇷 KR-98",
       "type": "shadowsocks",
       "server": "144.24.73.232",
       "server_port": 443,
@@ -911,31 +745,15 @@
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-119",
+      "tag": "🇰🇷 KR-99",
       "type": "shadowsocks",
-      "server": "158.179.174.225",
-      "server_port": 36364,
+      "server": "158.180.71.69",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "׆vy\u001axq["
+      "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-120",
-      "type": "shadowsocks",
-      "server": "132.145.84.148",
-      "server_port": 39567,
-      "method": "aes-256-gcm",
-      "password": "o_fq^"
-    },
-    {
-      "tag": "🇰🇷 KR-121",
-      "type": "shadowsocks",
-      "server": "220.126.33.117",
-      "server_port": 29999,
-      "method": "aes-256-gcm",
-      "password": "ۮv\u001ewxMxk߮_onk^"
-    },
-    {
-      "tag": "🇰🇷 KR-122",
+      "tag": "🇰🇷 KR-100",
       "type": "shadowsocks",
       "server": "152.67.211.114",
       "server_port": 58337,
@@ -943,15 +761,7 @@
       "password": "m6om^\u001eois]"
     },
     {
-      "tag": "🇰🇷 KR-123",
-      "type": "shadowsocks",
-      "server": "175.195.149.58",
-      "server_port": 10280,
-      "method": "aes-256-gcm",
-      "password": "mZ޸t]vv5λ"
-    },
-    {
-      "tag": "🇰🇷 KR-124",
+      "tag": "🇰🇷 KR-101",
       "type": "shadowsocks",
       "server": "220.71.172.2",
       "server_port": 16034,
@@ -959,7 +769,15 @@
       "password": "ׯ_ݦvwvޛi{7"
     },
     {
-      "tag": "🇰🇷 KR-125",
+      "tag": "🇰🇷 KR-102",
+      "type": "shadowsocks",
+      "server": "59.31.107.42",
+      "server_port": 13720,
+      "method": "aes-256-gcm",
+      "password": "ۮv\u001ewxMxk߮_onk^"
+    },
+    {
+      "tag": "🇰🇷 KR-103",
       "type": "shadowsocks",
       "server": "140.245.75.37",
       "server_port": 627,
@@ -967,7 +785,7 @@
       "password": "M4M4M4M4M4M4M4M4"
     },
     {
-      "tag": "🇰🇷 KR-126",
+      "tag": "🇰🇷 KR-104",
       "type": "shadowsocks",
       "server": "146.56.106.51",
       "server_port": 56271,
@@ -975,7 +793,15 @@
       "password": "M4M4M4M4M4M4M4M4"
     },
     {
-      "tag": "🇰🇷 KR-127",
+      "tag": "🇰🇷 KR-105",
+      "type": "shadowsocks",
+      "server": "146.56.135.196",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "F]w4\u001amz׎7"
+    },
+    {
+      "tag": "🇰🇷 KR-106",
       "type": "shadowsocks",
       "server": "158.247.209.57",
       "server_port": 443,
@@ -983,7 +809,7 @@
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-128",
+      "tag": "🇰🇷 KR-107",
       "type": "shadowsocks",
       "server": "158.247.240.138",
       "server_port": 443,
@@ -991,7 +817,15 @@
       "password": "oWZ89"
     },
     {
-      "tag": "🇰🇷 KR-129",
+      "tag": "🇰🇷 KR-108",
+      "type": "shadowsocks",
+      "server": "43.155.187.201",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "_q5巵Wi[w]{t7"
+    },
+    {
+      "tag": "🇰🇷 KR-109",
       "type": "shadowsocks",
       "server": "123.111.169.70",
       "server_port": 2083,
@@ -999,7 +833,7 @@
       "password": "foy\u001a}׸={"
     },
     {
-      "tag": "🇰🇷 KR-130",
+      "tag": "🇰🇷 KR-110",
       "type": "shadowsocks",
       "server": "158.247.222.168",
       "server_port": 443,
@@ -1007,7 +841,7 @@
       "password": "߾{֚m۽מ|"
     },
     {
-      "tag": "🇰🇷 KR-131",
+      "tag": "🇰🇷 KR-111",
       "type": "shadowsocks",
       "server": "158.247.253.111",
       "server_port": 8443,
@@ -1015,7 +849,7 @@
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-132",
+      "tag": "🇰🇷 KR-112",
       "type": "shadowsocks",
       "server": "158.247.253.111",
       "server_port": 2087,
@@ -1023,7 +857,15 @@
       "password": "foy\u001a}׸={"
     },
     {
-      "tag": "🇰🇷 KR-133",
+      "tag": "🇰🇷 KR-113",
+      "type": "shadowsocks",
+      "server": "158.247.224.240",
+      "server_port": 443,
+      "method": "iuoΞ",
+      "password": "oWZ89"
+    },
+    {
+      "tag": "🇰🇷 KR-114",
       "type": "shadowsocks",
       "server": "132.145.91.181",
       "server_port": 8443,
@@ -1031,7 +873,7 @@
       "password": "ovsG]k5^뇽"
     },
     {
-      "tag": "🇰🇷 KR-134",
+      "tag": "🇰🇷 KR-115",
       "type": "shadowsocks",
       "server": "130.94.30.252",
       "server_port": 443,
@@ -1039,143 +881,183 @@
       "password": "5xkW}x"
     },
     {
-      "tag": "🇰🇷 KR-135",
+      "tag": "🇰🇷 KR-116",
       "type": "shadowsocks",
       "server": "131.186.25.156",
       "server_port": 2087,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-117",
+      "type": "shadowsocks",
+      "server": "47.80.57.116",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Vik\u001c[V\u001eսw\u001b"
+    },
+    {
+      "tag": "🇰🇷 KR-118",
+      "type": "shadowsocks",
+      "server": "123.111.169.70",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "Vik\u001c[V\u001eսw\u001b"
+    },
+    {
+      "tag": "🇰🇷 KR-119",
+      "type": "shadowsocks",
+      "server": "158.247.199.106",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-120",
+      "type": "shadowsocks",
+      "server": "158.180.71.69",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "o;4}]o_Ӧ~\\"
+    },
+    {
+      "tag": "🇰🇷 KR-121",
+      "type": "shadowsocks",
+      "server": "151.245.106.49",
+      "server_port": 2053,
+      "method": "aes-256-gcm",
+      "password": "k^k\u001ax}t"
+    },
+    {
+      "tag": "🇰🇷 KR-122",
+      "type": "shadowsocks",
+      "server": "kr1.miyazono-kaori.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "{Mw\u001fwkwM9s<"
+    },
+    {
+      "tag": "🇰🇷 KR-123",
+      "type": "shadowsocks",
+      "server": "27.102.138.74",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "εs\u001e[mv\u001f}㭽"
+    },
+    {
+      "tag": "🇰🇷 KR-124",
+      "type": "shadowsocks",
+      "server": "47.80.19.173",
+      "server_port": 2053,
+      "method": "aes-256-gcm",
+      "password": "_]緼i\u001cywG6w^"
+    },
+    {
+      "tag": "🇰🇷 KR-125",
+      "type": "shadowsocks",
+      "server": "47.80.19.173",
+      "server_port": 2053,
+      "method": "aes-256-gcm",
+      "password": "_]緼i\u001cywG6w^"
+    },
+    {
+      "tag": "🇰🇷 KR-126",
+      "type": "shadowsocks",
+      "server": "3.39.4.109",
+      "server_port": 18967,
+      "method": "aes-256-gcm",
+      "password": "^\u001bwN\u001dnykN9sMֽ"
+    },
+    {
+      "tag": "🇰🇷 KR-127",
+      "type": "shadowsocks",
+      "server": "3.39.4.109",
+      "server_port": 13672,
+      "method": "aes-256-gcm",
+      "password": "^\u001bwN\u001dnykN9sMֽ"
+    },
+    {
+      "tag": "🇰🇷 KR-128",
+      "type": "shadowsocks",
+      "server": "151.245.106.49",
+      "server_port": 2053,
+      "method": "kg^",
+      "password": "㖽kt}7ku"
+    },
+    {
+      "tag": "🇰🇷 KR-129",
+      "type": "shadowsocks",
+      "server": "3.39.4.109",
+      "server_port": 13672,
+      "method": "aes-256-gcm",
+      "password": "^\u001bwN\u001dnykN9sMֽ"
+    },
+    {
+      "tag": "🇰🇷 KR-130",
+      "type": "shadowsocks",
+      "server": "3.39.4.109",
+      "server_port": 18967,
+      "method": "aes-256-gcm",
+      "password": "^\u001bwN\u001dnykN9sMֽ"
+    },
+    {
+      "tag": "🇰🇷 KR-131",
+      "type": "shadowsocks",
+      "server": "151.245.106.49",
+      "server_port": 2053,
+      "method": "kg^",
+      "password": "㖽kt}7ku"
+    },
+    {
+      "tag": "🇰🇷 KR-132",
+      "type": "shadowsocks",
+      "server": "158.247.209.57",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-133",
+      "type": "shadowsocks",
+      "server": "146.56.161.138",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "q{Z5Ӎyy"
+    },
+    {
+      "tag": "🇰🇷 KR-134",
+      "type": "shadowsocks",
+      "server": "64.110.70.64",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-135",
+      "type": "shadowsocks",
+      "server": "146.56.187.1",
+      "server_port": 8443,
       "method": "aes-256-gcm",
       "password": "ymoݺ6yv}"
     },
     {
       "tag": "🇰🇷 KR-136",
       "type": "shadowsocks",
-      "server": "47.80.57.116",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Vik\u001c[V\u001eսw\u001b"
-    },
-    {
-      "tag": "🇰🇷 KR-137",
-      "type": "shadowsocks",
-      "server": "123.111.169.70",
-      "server_port": 8443,
-      "method": "aes-256-gcm",
-      "password": "Vik\u001c[V\u001eսw\u001b"
-    },
-    {
-      "tag": "🇰🇷 KR-138",
-      "type": "shadowsocks",
-      "server": "221.158.4.230",
-      "server_port": 18853,
-      "method": "aes-256-gcm",
-      "password": "ۮv\u001ewxMxk߮_onk^"
-    },
-    {
-      "tag": "🇰🇷 KR-139",
-      "type": "shadowsocks",
-      "server": "151.245.106.49",
-      "server_port": 2053,
-      "method": "aes-256-gcm",
-      "password": "k^k\u001ax}t"
-    },
-    {
-      "tag": "🇰🇷 KR-140",
-      "type": "shadowsocks",
-      "server": "27.102.138.74",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "εs\u001e[mv\u001f}㭽"
-    },
-    {
-      "tag": "🇰🇷 KR-141",
-      "type": "shadowsocks",
-      "server": "3.39.4.109",
-      "server_port": 18967,
-      "method": "aes-256-gcm",
-      "password": "^\u001bwN\u001dnykN9sMֽ"
-    },
-    {
-      "tag": "🇰🇷 KR-142",
-      "type": "shadowsocks",
-      "server": "161.118.153.136",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "]ӇziMwo}mo6G["
-    },
-    {
-      "tag": "🇰🇷 KR-143",
-      "type": "shadowsocks",
-      "server": "3.39.4.109",
-      "server_port": 18967,
-      "method": "aes-256-gcm",
-      "password": "^\u001bwN\u001dnykN9sMֽ"
-    },
-    {
-      "tag": "🇰🇷 KR-144",
-      "type": "shadowsocks",
-      "server": "3.39.4.109",
-      "server_port": 13672,
-      "method": "aes-256-gcm",
-      "password": "^\u001bwN\u001dnykN9sMֽ"
-    },
-    {
-      "tag": "🇰🇷 KR-145",
-      "type": "shadowsocks",
-      "server": "151.245.106.49",
-      "server_port": 2053,
-      "method": "kg^",
-      "password": "㖽kt}7ku"
-    },
-    {
-      "tag": "🇰🇷 KR-146",
-      "type": "shadowsocks",
-      "server": "3.39.4.109",
-      "server_port": 13672,
-      "method": "aes-256-gcm",
-      "password": "^\u001bwN\u001dnykN9sMֽ"
-    },
-    {
-      "tag": "🇰🇷 KR-147",
-      "type": "shadowsocks",
-      "server": "151.245.106.49",
-      "server_port": 2053,
-      "method": "kg^",
-      "password": "㖽kt}7ku"
-    },
-    {
-      "tag": "🇰🇷 KR-148",
-      "type": "shadowsocks",
-      "server": "158.247.209.57",
+      "server": "158.247.199.106",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-149",
+      "tag": "🇰🇷 KR-137",
       "type": "shadowsocks",
-      "server": "146.56.161.138",
-      "server_port": 443,
+      "server": "43.108.48.169",
+      "server_port": 40701,
       "method": "aes-256-gcm",
-      "password": "q{Z5Ӎyy"
+      "password": "qw͹vޟF]}y֜"
     },
     {
-      "tag": "🇰🇷 KR-150",
-      "type": "shadowsocks",
-      "server": "129.154.198.48",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "zy\u001f~=孺"
-    },
-    {
-      "tag": "🇰🇷 KR-151",
-      "type": "shadowsocks",
-      "server": "175.195.149.58",
-      "server_port": 10280,
-      "method": "aes-256-gcm",
-      "password": "mZ޸t]vv5λ"
-    },
-    {
-      "tag": "🇰🇷 KR-152",
+      "tag": "🇰🇷 KR-138",
       "type": "shadowsocks",
       "server": "144.24.73.232",
       "server_port": 443,
@@ -1183,31 +1065,15 @@
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-153",
+      "tag": "🇰🇷 KR-139",
       "type": "shadowsocks",
-      "server": "158.179.174.225",
-      "server_port": 36364,
+      "server": "158.180.71.69",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "׆vy\u001axq["
+      "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-154",
-      "type": "shadowsocks",
-      "server": "132.145.84.148",
-      "server_port": 39567,
-      "method": "aes-256-gcm",
-      "password": "o_fq^"
-    },
-    {
-      "tag": "🇰🇷 KR-155",
-      "type": "shadowsocks",
-      "server": "220.126.33.117",
-      "server_port": 29999,
-      "method": "aes-256-gcm",
-      "password": "ۮv\u001ewxMxk߮_onk^"
-    },
-    {
-      "tag": "🇰🇷 KR-156",
+      "tag": "🇰🇷 KR-140",
       "type": "shadowsocks",
       "server": "152.67.211.114",
       "server_port": 58337,
@@ -1215,15 +1081,7 @@
       "password": "m6om^\u001eois]"
     },
     {
-      "tag": "🇰🇷 KR-157",
-      "type": "shadowsocks",
-      "server": "175.195.149.58",
-      "server_port": 10280,
-      "method": "aes-256-gcm",
-      "password": "mZ޸t]vv5λ"
-    },
-    {
-      "tag": "🇰🇷 KR-158",
+      "tag": "🇰🇷 KR-141",
       "type": "shadowsocks",
       "server": "220.71.172.2",
       "server_port": 16034,
@@ -1231,7 +1089,15 @@
       "password": "ׯ_ݦvwvޛi{7"
     },
     {
-      "tag": "🇰🇷 KR-159",
+      "tag": "🇰🇷 KR-142",
+      "type": "shadowsocks",
+      "server": "59.31.107.42",
+      "server_port": 13720,
+      "method": "aes-256-gcm",
+      "password": "ۮv\u001ewxMxk߮_onk^"
+    },
+    {
+      "tag": "🇰🇷 KR-143",
       "type": "shadowsocks",
       "server": "140.245.75.37",
       "server_port": 627,
@@ -1239,7 +1105,7 @@
       "password": "M4M4M4M4M4M4M4M4"
     },
     {
-      "tag": "🇰🇷 KR-160",
+      "tag": "🇰🇷 KR-144",
       "type": "shadowsocks",
       "server": "146.56.106.51",
       "server_port": 56271,
@@ -1247,7 +1113,15 @@
       "password": "M4M4M4M4M4M4M4M4"
     },
     {
-      "tag": "🇰🇷 KR-161",
+      "tag": "🇰🇷 KR-145",
+      "type": "shadowsocks",
+      "server": "146.56.135.196",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "F]w4\u001amz׎7"
+    },
+    {
+      "tag": "🇰🇷 KR-146",
       "type": "shadowsocks",
       "server": "158.247.209.57",
       "server_port": 443,
@@ -1255,7 +1129,7 @@
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-162",
+      "tag": "🇰🇷 KR-147",
       "type": "shadowsocks",
       "server": "158.247.240.138",
       "server_port": 443,
@@ -1263,7 +1137,15 @@
       "password": "oWZ89"
     },
     {
-      "tag": "🇰🇷 KR-163",
+      "tag": "🇰🇷 KR-148",
+      "type": "shadowsocks",
+      "server": "43.155.187.201",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "_q5巵Wi[w]{t7"
+    },
+    {
+      "tag": "🇰🇷 KR-149",
       "type": "shadowsocks",
       "server": "123.111.169.70",
       "server_port": 2083,
@@ -1271,7 +1153,7 @@
       "password": "foy\u001a}׸={"
     },
     {
-      "tag": "🇰🇷 KR-164",
+      "tag": "🇰🇷 KR-150",
       "type": "shadowsocks",
       "server": "158.247.222.168",
       "server_port": 443,
@@ -1279,7 +1161,7 @@
       "password": "߾{֚m۽מ|"
     },
     {
-      "tag": "🇰🇷 KR-165",
+      "tag": "🇰🇷 KR-151",
       "type": "shadowsocks",
       "server": "158.247.253.111",
       "server_port": 8443,
@@ -1287,7 +1169,7 @@
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-166",
+      "tag": "🇰🇷 KR-152",
       "type": "shadowsocks",
       "server": "158.247.253.111",
       "server_port": 2087,
@@ -1295,7 +1177,15 @@
       "password": "foy\u001a}׸={"
     },
     {
-      "tag": "🇰🇷 KR-167",
+      "tag": "🇰🇷 KR-153",
+      "type": "shadowsocks",
+      "server": "158.247.224.240",
+      "server_port": 443,
+      "method": "iuoΞ",
+      "password": "oWZ89"
+    },
+    {
+      "tag": "🇰🇷 KR-154",
       "type": "shadowsocks",
       "server": "132.145.91.181",
       "server_port": 8443,
@@ -1303,7 +1193,7 @@
       "password": "ovsG]k5^뇽"
     },
     {
-      "tag": "🇰🇷 KR-168",
+      "tag": "🇰🇷 KR-155",
       "type": "shadowsocks",
       "server": "130.94.30.252",
       "server_port": 443,
@@ -1311,7 +1201,7 @@
       "password": "5xkW}x"
     },
     {
-      "tag": "🇰🇷 KR-169",
+      "tag": "🇰🇷 KR-156",
       "type": "shadowsocks",
       "server": "131.186.25.156",
       "server_port": 2087,
@@ -1319,7 +1209,7 @@
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-170",
+      "tag": "🇰🇷 KR-157",
       "type": "shadowsocks",
       "server": "47.80.57.116",
       "server_port": 443,
@@ -1327,7 +1217,7 @@
       "password": "Vik\u001c[V\u001eսw\u001b"
     },
     {
-      "tag": "🇰🇷 KR-171",
+      "tag": "🇰🇷 KR-158",
       "type": "shadowsocks",
       "server": "123.111.169.70",
       "server_port": 8443,
@@ -1335,15 +1225,23 @@
       "password": "Vik\u001c[V\u001eսw\u001b"
     },
     {
-      "tag": "🇰🇷 KR-172",
+      "tag": "🇰🇷 KR-159",
       "type": "shadowsocks",
-      "server": "221.158.4.230",
-      "server_port": 18853,
+      "server": "158.247.199.106",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "ۮv\u001ewxMxk߮_onk^"
+      "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-173",
+      "tag": "🇰🇷 KR-160",
+      "type": "shadowsocks",
+      "server": "158.180.71.69",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "o;4}]o_Ӧ~\\"
+    },
+    {
+      "tag": "🇰🇷 KR-161",
       "type": "shadowsocks",
       "server": "151.245.106.49",
       "server_port": 2053,
@@ -1351,7 +1249,15 @@
       "password": "k^k\u001ax}t"
     },
     {
-      "tag": "🇰🇷 KR-174",
+      "tag": "🇰🇷 KR-162",
+      "type": "shadowsocks",
+      "server": "kr1.miyazono-kaori.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "{Mw\u001fwkwM9s<"
+    },
+    {
+      "tag": "🇰🇷 KR-163",
       "type": "shadowsocks",
       "server": "27.102.138.74",
       "server_port": 443,
@@ -1359,7 +1265,23 @@
       "password": "εs\u001e[mv\u001f}㭽"
     },
     {
-      "tag": "🇰🇷 KR-175",
+      "tag": "🇰🇷 KR-164",
+      "type": "shadowsocks",
+      "server": "47.80.19.173",
+      "server_port": 2053,
+      "method": "aes-256-gcm",
+      "password": "_]緼i\u001cywG6w^"
+    },
+    {
+      "tag": "🇰🇷 KR-165",
+      "type": "shadowsocks",
+      "server": "47.80.19.173",
+      "server_port": 2053,
+      "method": "aes-256-gcm",
+      "password": "_]緼i\u001cywG6w^"
+    },
+    {
+      "tag": "🇰🇷 KR-166",
       "type": "shadowsocks",
       "server": "3.39.4.109",
       "server_port": 18967,
@@ -1367,23 +1289,311 @@
       "password": "^\u001bwN\u001dnykN9sMֽ"
     },
     {
-      "tag": "🇰🇷 KR-176",
+      "tag": "🇰🇷 KR-167",
       "type": "shadowsocks",
-      "server": "161.118.153.136",
+      "server": "3.39.4.109",
+      "server_port": 13672,
+      "method": "aes-256-gcm",
+      "password": "^\u001bwN\u001dnykN9sMֽ"
+    },
+    {
+      "tag": "🇰🇷 KR-168",
+      "type": "shadowsocks",
+      "server": "151.245.106.49",
+      "server_port": 2053,
+      "method": "kg^",
+      "password": "㖽kt}7ku"
+    },
+    {
+      "tag": "🇰🇷 KR-169",
+      "type": "shadowsocks",
+      "server": "3.39.4.109",
+      "server_port": 13672,
+      "method": "aes-256-gcm",
+      "password": "^\u001bwN\u001dnykN9sMֽ"
+    },
+    {
+      "tag": "🇰🇷 KR-170",
+      "type": "shadowsocks",
+      "server": "3.39.4.109",
+      "server_port": 18967,
+      "method": "aes-256-gcm",
+      "password": "^\u001bwN\u001dnykN9sMֽ"
+    },
+    {
+      "tag": "🇰🇷 KR-171",
+      "type": "shadowsocks",
+      "server": "151.245.106.49",
+      "server_port": 2053,
+      "method": "kg^",
+      "password": "㖽kt}7ku"
+    },
+    {
+      "tag": "🇰🇷 KR-172",
+      "type": "shadowsocks",
+      "server": "158.247.209.57",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "]ӇziMwo}mo6G["
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-173",
+      "type": "shadowsocks",
+      "server": "146.56.161.138",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "q{Z5Ӎyy"
+    },
+    {
+      "tag": "🇰🇷 KR-174",
+      "type": "shadowsocks",
+      "server": "64.110.70.64",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-175",
+      "type": "shadowsocks",
+      "server": "146.56.187.1",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-176",
+      "type": "shadowsocks",
+      "server": "158.247.199.106",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
     },
     {
       "tag": "🇰🇷 KR-177",
       "type": "shadowsocks",
-      "server": "ce1fc2d8.krkt.hkssip.com",
-      "server_port": 49642,
+      "server": "43.108.48.169",
+      "server_port": 40701,
       "method": "aes-256-gcm",
-      "password": "ac9c0a7b"
+      "password": "qw͹vޟF]}y֜"
     },
     {
       "tag": "🇰🇷 KR-178",
+      "type": "shadowsocks",
+      "server": "144.24.73.232",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-179",
+      "type": "shadowsocks",
+      "server": "158.180.71.69",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-180",
+      "type": "shadowsocks",
+      "server": "152.67.211.114",
+      "server_port": 58337,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    },
+    {
+      "tag": "🇰🇷 KR-181",
+      "type": "shadowsocks",
+      "server": "220.71.172.2",
+      "server_port": 16034,
+      "method": "aes-256-gcm",
+      "password": "ׯ_ݦvwvޛi{7"
+    },
+    {
+      "tag": "🇰🇷 KR-182",
+      "type": "shadowsocks",
+      "server": "59.31.107.42",
+      "server_port": 13720,
+      "method": "aes-256-gcm",
+      "password": "ۮv\u001ewxMxk߮_onk^"
+    },
+    {
+      "tag": "🇰🇷 KR-183",
+      "type": "shadowsocks",
+      "server": "140.245.75.37",
+      "server_port": 627,
+      "method": "aes-256-gcm",
+      "password": "M4M4M4M4M4M4M4M4"
+    },
+    {
+      "tag": "🇰🇷 KR-184",
+      "type": "shadowsocks",
+      "server": "146.56.106.51",
+      "server_port": 56271,
+      "method": "aes-256-gcm",
+      "password": "M4M4M4M4M4M4M4M4"
+    },
+    {
+      "tag": "🇰🇷 KR-185",
+      "type": "shadowsocks",
+      "server": "146.56.135.196",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "F]w4\u001amz׎7"
+    },
+    {
+      "tag": "🇰🇷 KR-186",
+      "type": "shadowsocks",
+      "server": "158.247.209.57",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-187",
+      "type": "shadowsocks",
+      "server": "158.247.240.138",
+      "server_port": 443,
+      "method": "iuoΞ",
+      "password": "oWZ89"
+    },
+    {
+      "tag": "🇰🇷 KR-188",
+      "type": "shadowsocks",
+      "server": "43.155.187.201",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "_q5巵Wi[w]{t7"
+    },
+    {
+      "tag": "🇰🇷 KR-189",
+      "type": "shadowsocks",
+      "server": "123.111.169.70",
+      "server_port": 2083,
+      "method": "aes-256-gcm",
+      "password": "foy\u001a}׸={"
+    },
+    {
+      "tag": "🇰🇷 KR-190",
+      "type": "shadowsocks",
+      "server": "158.247.222.168",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "߾{֚m۽מ|"
+    },
+    {
+      "tag": "🇰🇷 KR-191",
+      "type": "shadowsocks",
+      "server": "158.247.253.111",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-192",
+      "type": "shadowsocks",
+      "server": "158.247.253.111",
+      "server_port": 2087,
+      "method": "aes-256-gcm",
+      "password": "foy\u001a}׸={"
+    },
+    {
+      "tag": "🇰🇷 KR-193",
+      "type": "shadowsocks",
+      "server": "158.247.224.240",
+      "server_port": 443,
+      "method": "iuoΞ",
+      "password": "oWZ89"
+    },
+    {
+      "tag": "🇰🇷 KR-194",
+      "type": "shadowsocks",
+      "server": "132.145.91.181",
+      "server_port": 8443,
+      "method": "q",
+      "password": "ovsG]k5^뇽"
+    },
+    {
+      "tag": "🇰🇷 KR-195",
+      "type": "shadowsocks",
+      "server": "130.94.30.252",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "5xkW}x"
+    },
+    {
+      "tag": "🇰🇷 KR-196",
+      "type": "shadowsocks",
+      "server": "131.186.25.156",
+      "server_port": 2087,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-197",
+      "type": "shadowsocks",
+      "server": "47.80.57.116",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Vik\u001c[V\u001eսw\u001b"
+    },
+    {
+      "tag": "🇰🇷 KR-198",
+      "type": "shadowsocks",
+      "server": "123.111.169.70",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "Vik\u001c[V\u001eսw\u001b"
+    },
+    {
+      "tag": "🇰🇷 KR-199",
+      "type": "shadowsocks",
+      "server": "158.247.199.106",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-200",
+      "type": "shadowsocks",
+      "server": "158.180.71.69",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "o;4}]o_Ӧ~\\"
+    },
+    {
+      "tag": "🇰🇷 KR-201",
+      "type": "shadowsocks",
+      "server": "151.245.106.49",
+      "server_port": 2053,
+      "method": "aes-256-gcm",
+      "password": "k^k\u001ax}t"
+    },
+    {
+      "tag": "🇰🇷 KR-202",
+      "type": "shadowsocks",
+      "server": "kr1.miyazono-kaori.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "{Mw\u001fwkwM9s<"
+    },
+    {
+      "tag": "🇰🇷 KR-203",
+      "type": "shadowsocks",
+      "server": "27.102.138.74",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "εs\u001e[mv\u001f}㭽"
+    },
+    {
+      "tag": "🇰🇷 KR-204",
+      "type": "shadowsocks",
+      "server": "47.80.19.173",
+      "server_port": 2053,
+      "method": "aes-256-gcm",
+      "password": "_]緼i\u001cywG6w^"
+    },
+    {
+      "tag": "🇰🇷 KR-205",
       "type": "shadowsocks",
       "server": "141.164.45.187",
       "server_port": 2376,
@@ -1391,7 +1601,15 @@
       "password": "faBAoD54k87UJG7"
     },
     {
-      "tag": "🇰🇷 KR-179",
+      "tag": "🇰🇷 KR-206",
+      "type": "shadowsocks",
+      "server": "3.39.4.109",
+      "server_port": 18967,
+      "method": "aes-256-gcm",
+      "password": "^\u001bwN\u001dnykN9sMֽ"
+    },
+    {
+      "tag": "🇰🇷 KR-207",
       "type": "shadowsocks",
       "server": "3.39.4.109",
       "server_port": 13672,
@@ -1399,7 +1617,7 @@
       "password": "^\u001bwN\u001dnykN9sMֽ"
     },
     {
-      "tag": "🇰🇷 KR-180",
+      "tag": "🇰🇷 KR-208",
       "type": "shadowsocks",
       "server": "211.178.105.134",
       "server_port": 6123,
@@ -1407,7 +1625,7 @@
       "password": "qwerREWQ@@"
     },
     {
-      "tag": "🇰🇷 KR-181",
+      "tag": "🇰🇷 KR-209",
       "type": "shadowsocks",
       "server": "151.245.106.49",
       "server_port": 2053,
@@ -1415,7 +1633,7 @@
       "password": "㖽kt}7ku"
     },
     {
-      "tag": "🇰🇷 KR-182",
+      "tag": "🇰🇷 KR-210",
       "type": "shadowsocks",
       "server": "141.164.45.187",
       "server_port": 8008,
@@ -1423,7 +1641,7 @@
       "password": "XKFKl2rULjIp74"
     },
     {
-      "tag": "🇰🇷 KR-183",
+      "tag": "🇰🇷 KR-211",
       "type": "shadowsocks",
       "server": "141.164.45.187",
       "server_port": 8119,
@@ -1431,7 +1649,7 @@
       "password": "cdBIDV42DCwnfIN"
     },
     {
-      "tag": "🇰🇷 KR-184",
+      "tag": "🇰🇷 KR-212",
       "type": "shadowsocks",
       "server": "141.164.45.187",
       "server_port": 8091,
@@ -1439,7 +1657,7 @@
       "password": "PCnnH6SQSnfoS27"
     },
     {
-      "tag": "🇰🇷 KR-185",
+      "tag": "🇰🇷 KR-213",
       "type": "shadowsocks",
       "server": "141.164.45.187",
       "server_port": 5001,
@@ -1447,7 +1665,7 @@
       "password": "Y6R9pAtvxxzmGC"
     },
     {
-      "tag": "🇰🇷 KR-186",
+      "tag": "🇰🇷 KR-214",
       "type": "shadowsocks",
       "server": "141.164.45.187",
       "server_port": 5498,
@@ -1455,7 +1673,7 @@
       "password": "lGqs95QkFHo2NV"
     },
     {
-      "tag": "🇰🇷 KR-187",
+      "tag": "🇰🇷 KR-215",
       "type": "shadowsocks",
       "server": "141.164.45.187",
       "server_port": 9090,
@@ -1463,7 +1681,7 @@
       "password": "Y6R9pAtvxxzmGC"
     },
     {
-      "tag": "🇰🇷 KR-188",
+      "tag": "🇰🇷 KR-216",
       "type": "shadowsocks",
       "server": "141.164.45.187",
       "server_port": 6697,
@@ -1471,7 +1689,7 @@
       "password": "TEzjfAYq2IjtuoS"
     },
     {
-      "tag": "🇰🇷 KR-189",
+      "tag": "🇰🇷 KR-217",
       "type": "shadowsocks",
       "server": "141.164.45.187",
       "server_port": 9101,
@@ -1479,7 +1697,7 @@
       "password": "e4FCWrgpkji3QY"
     },
     {
-      "tag": "🇰🇷 KR-190",
+      "tag": "🇰🇷 KR-218",
       "type": "shadowsocks",
       "server": "141.164.45.187",
       "server_port": 8000,
@@ -1487,7 +1705,7 @@
       "password": "KixLvKzwjekG00rm"
     },
     {
-      "tag": "🇰🇷 KR-191",
+      "tag": "🇰🇷 KR-219",
       "type": "shadowsocks",
       "server": "141.164.45.187",
       "server_port": 6679,
@@ -1495,7 +1713,7 @@
       "password": "TEzjfAYq2IjtuoS"
     },
     {
-      "tag": "🇰🇷 KR-192",
+      "tag": "🇰🇷 KR-220",
       "type": "shadowsocks",
       "server": "141.164.45.187",
       "server_port": 7002,
@@ -1503,7 +1721,7 @@
       "password": "RexnBgU7EV5ADxG"
     },
     {
-      "tag": "🇰🇷 KR-193",
+      "tag": "🇰🇷 KR-221",
       "type": "shadowsocks",
       "server": "158.247.209.57",
       "server_port": 443,
@@ -1511,7 +1729,7 @@
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-194",
+      "tag": "🇰🇷 KR-222",
       "type": "shadowsocks",
       "server": "146.56.161.138",
       "server_port": 443,
@@ -1519,23 +1737,39 @@
       "password": "q{Z5Ӎyy"
     },
     {
-      "tag": "🇰🇷 KR-195",
+      "tag": "🇰🇷 KR-223",
       "type": "shadowsocks",
-      "server": "129.154.198.48",
+      "server": "64.110.70.64",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "zy\u001f~=孺"
+      "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-196",
+      "tag": "🇰🇷 KR-224",
       "type": "shadowsocks",
-      "server": "175.195.149.58",
-      "server_port": 10280,
+      "server": "146.56.187.1",
+      "server_port": 8443,
       "method": "aes-256-gcm",
-      "password": "mZ޸t]vv5λ"
+      "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-197",
+      "tag": "🇰🇷 KR-225",
+      "type": "shadowsocks",
+      "server": "158.247.199.106",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ymoݺ6yv}"
+    },
+    {
+      "tag": "🇰🇷 KR-226",
+      "type": "shadowsocks",
+      "server": "43.108.48.169",
+      "server_port": 40701,
+      "method": "aes-256-gcm",
+      "password": "qw͹vޟF]}y֜"
+    },
+    {
+      "tag": "🇰🇷 KR-227",
       "type": "shadowsocks",
       "server": "144.24.73.232",
       "server_port": 443,
@@ -1543,15 +1777,15 @@
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-198",
+      "tag": "🇰🇷 KR-228",
       "type": "shadowsocks",
-      "server": "158.179.174.225",
-      "server_port": 36364,
+      "server": "158.180.71.69",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "׆vy\u001axq["
+      "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-199",
+      "tag": "🇰🇷 KR-229",
       "type": "shadowsocks",
       "server": "211.174.113.172",
       "server_port": 49642,
@@ -1559,7 +1793,7 @@
       "password": "ac9c0a7b"
     },
     {
-      "tag": "🇰🇷 KR-200",
+      "tag": "🇰🇷 KR-230",
       "type": "shadowsocks",
       "server": "141.164.45.187",
       "server_port": 7001,
@@ -1567,23 +1801,7 @@
       "password": "RexnBgU7EV5ADxG"
     },
     {
-      "tag": "🇰🇷 KR-201",
-      "type": "shadowsocks",
-      "server": "132.145.84.148",
-      "server_port": 39567,
-      "method": "aes-256-gcm",
-      "password": "o_fq^"
-    },
-    {
-      "tag": "🇰🇷 KR-202",
-      "type": "shadowsocks",
-      "server": "220.126.33.117",
-      "server_port": 29999,
-      "method": "aes-256-gcm",
-      "password": "ۮv\u001ewxMxk߮_onk^"
-    },
-    {
-      "tag": "🇰🇷 KR-203",
+      "tag": "🇰🇷 KR-231",
       "type": "shadowsocks",
       "server": "152.67.211.114",
       "server_port": 58337,
@@ -1591,7 +1809,7 @@
       "password": "m6om^\u001eois]"
     },
     {
-      "tag": "🇰🇷 KR-204",
+      "tag": "🇰🇷 KR-232",
       "type": "shadowsocks",
       "server": "220.71.172.2",
       "server_port": 16034,
@@ -1599,7 +1817,15 @@
       "password": "ׯ_ݦvwvޛi{7"
     },
     {
-      "tag": "🇰🇷 KR-205",
+      "tag": "🇰🇷 KR-233",
+      "type": "shadowsocks",
+      "server": "59.31.107.42",
+      "server_port": 13720,
+      "method": "aes-256-gcm",
+      "password": "ۮv\u001ewxMxk߮_onk^"
+    },
+    {
+      "tag": "🇰🇷 KR-234",
       "type": "shadowsocks",
       "server": "140.245.75.37",
       "server_port": 627,
@@ -1607,7 +1833,7 @@
       "password": "M4M4M4M4M4M4M4M4"
     },
     {
-      "tag": "🇰🇷 KR-206",
+      "tag": "🇰🇷 KR-235",
       "type": "shadowsocks",
       "server": "146.56.106.51",
       "server_port": 56271,
@@ -1615,7 +1841,15 @@
       "password": "M4M4M4M4M4M4M4M4"
     },
     {
-      "tag": "🇰🇷 KR-207",
+      "tag": "🇰🇷 KR-236",
+      "type": "shadowsocks",
+      "server": "146.56.135.196",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "F]w4\u001amz׎7"
+    },
+    {
+      "tag": "🇰🇷 KR-237",
       "type": "shadowsocks",
       "server": "158.247.240.138",
       "server_port": 443,
@@ -1623,7 +1857,15 @@
       "password": "oWZ89"
     },
     {
-      "tag": "🇰🇷 KR-208",
+      "tag": "🇰🇷 KR-238",
+      "type": "shadowsocks",
+      "server": "43.155.187.201",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "_q5巵Wi[w]{t7"
+    },
+    {
+      "tag": "🇰🇷 KR-239",
       "type": "shadowsocks",
       "server": "123.111.169.70",
       "server_port": 2083,
@@ -1631,7 +1873,7 @@
       "password": "foy\u001a}׸={"
     },
     {
-      "tag": "🇰🇷 KR-209",
+      "tag": "🇰🇷 KR-240",
       "type": "shadowsocks",
       "server": "158.247.222.168",
       "server_port": 443,
@@ -1639,7 +1881,7 @@
       "password": "߾{֚m۽מ|"
     },
     {
-      "tag": "🇰🇷 KR-210",
+      "tag": "🇰🇷 KR-241",
       "type": "shadowsocks",
       "server": "158.247.253.111",
       "server_port": 8443,
@@ -1647,7 +1889,7 @@
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-211",
+      "tag": "🇰🇷 KR-242",
       "type": "shadowsocks",
       "server": "158.247.253.111",
       "server_port": 2087,
@@ -1655,7 +1897,15 @@
       "password": "foy\u001a}׸={"
     },
     {
-      "tag": "🇰🇷 KR-212",
+      "tag": "🇰🇷 KR-243",
+      "type": "shadowsocks",
+      "server": "158.247.224.240",
+      "server_port": 443,
+      "method": "iuoΞ",
+      "password": "oWZ89"
+    },
+    {
+      "tag": "🇰🇷 KR-244",
       "type": "shadowsocks",
       "server": "132.145.91.181",
       "server_port": 8443,
@@ -1663,7 +1913,7 @@
       "password": "ovsG]k5^뇽"
     },
     {
-      "tag": "🇰🇷 KR-213",
+      "tag": "🇰🇷 KR-245",
       "type": "shadowsocks",
       "server": "130.94.30.252",
       "server_port": 443,
@@ -1671,7 +1921,7 @@
       "password": "5xkW}x"
     },
     {
-      "tag": "🇰🇷 KR-214",
+      "tag": "🇰🇷 KR-246",
       "type": "shadowsocks",
       "server": "131.186.25.156",
       "server_port": 2087,
@@ -1679,7 +1929,7 @@
       "password": "ymoݺ6yv}"
     },
     {
-      "tag": "🇰🇷 KR-215",
+      "tag": "🇰🇷 KR-247",
       "type": "shadowsocks",
       "server": "47.80.57.116",
       "server_port": 443,
@@ -1687,7 +1937,7 @@
       "password": "Vik\u001c[V\u001eսw\u001b"
     },
     {
-      "tag": "🇰🇷 KR-216",
+      "tag": "🇰🇷 KR-248",
       "type": "shadowsocks",
       "server": "123.111.169.70",
       "server_port": 8443,
@@ -1695,15 +1945,15 @@
       "password": "Vik\u001c[V\u001eսw\u001b"
     },
     {
-      "tag": "🇰🇷 KR-217",
+      "tag": "🇰🇷 KR-249",
       "type": "shadowsocks",
-      "server": "221.158.4.230",
-      "server_port": 18853,
+      "server": "158.180.71.69",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "ۮv\u001ewxMxk߮_onk^"
+      "password": "o;4}]o_Ӧ~\\"
     },
     {
-      "tag": "🇰🇷 KR-218",
+      "tag": "🇰🇷 KR-250",
       "type": "shadowsocks",
       "server": "151.245.106.49",
       "server_port": 2053,
@@ -1711,7 +1961,15 @@
       "password": "k^k\u001ax}t"
     },
     {
-      "tag": "🇰🇷 KR-219",
+      "tag": "🇰🇷 KR-251",
+      "type": "shadowsocks",
+      "server": "kr1.miyazono-kaori.com",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "{Mw\u001fwkwM9s<"
+    },
+    {
+      "tag": "🇰🇷 KR-252",
       "type": "shadowsocks",
       "server": "27.102.138.74",
       "server_port": 443,
@@ -1719,7 +1977,7 @@
       "password": "εs\u001e[mv\u001f}㭽"
     },
     {
-      "tag": "🇰🇷 KR-220",
+      "tag": "🇰🇷 KR-253",
       "type": "shadowsocks",
       "server": "140.238.5.75",
       "server_port": 13644,
@@ -1727,7 +1985,7 @@
       "password": "ۮv\u001ewxMxk߮_onk^"
     },
     {
-      "tag": "🇰🇷 KR-221",
+      "tag": "🇰🇷 KR-254",
       "type": "shadowsocks",
       "server": "141.164.45.187",
       "server_port": 8888,
@@ -1735,7 +1993,15 @@
       "password": "Y6R9pAtvxxzmGC"
     },
     {
-      "tag": "🇰🇷 KR-222",
+      "tag": "🇰🇷 KR-255",
+      "type": "shadowsocks",
+      "server": "183.99.227.24",
+      "server_port": 26257,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    },
+    {
+      "tag": "🇰🇷 KR-256",
       "type": "shadowsocks",
       "server": "125.137.186.50",
       "server_port": 18852,
@@ -1743,7 +2009,15 @@
       "password": "ۮv\u001ewxMxk߮_onk^"
     },
     {
-      "tag": "🇰🇷 KR-223",
+      "tag": "🇰🇷 KR-257",
+      "type": "shadowsocks",
+      "server": "121.159.68.210",
+      "server_port": 11434,
+      "method": "aes-256-gcm",
+      "password": "ۮv\u001ewxMxk߮_onk^"
+    },
+    {
+      "tag": "🇰🇷 KR-258",
       "type": "shadowsocks",
       "server": "218.157.145.120",
       "server_port": 18853,
@@ -1751,7 +2025,7 @@
       "password": "ۮv\u001ewxMxk߮_onk^"
     },
     {
-      "tag": "🇰🇷 KR-224",
+      "tag": "🇰🇷 KR-259",
       "type": "shadowsocks",
       "server": "61.85.1.77",
       "server_port": 12150,
@@ -1759,7 +2033,23 @@
       "password": "z79Gٷ\u001a嶷\u001ak7"
     },
     {
-      "tag": "🇰🇷 KR-225",
+      "tag": "🇰🇷 KR-260",
+      "type": "shadowsocks",
+      "server": "146.56.108.27",
+      "server_port": 36666,
+      "method": "aes-256-gcm",
+      "password": "fwuZi<uv||"
+    },
+    {
+      "tag": "🇰🇷 KR-261",
+      "type": "shadowsocks",
+      "server": "121.128.161.235",
+      "server_port": 10002,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    },
+    {
+      "tag": "🇰🇷 KR-262",
       "type": "shadowsocks",
       "server": "119.205.235.58",
       "server_port": 443,
@@ -1767,158 +2057,82 @@
       "password": "o;4}]o_Ӧ~\\"
     },
     {
-      "tag": "🇰🇷 KR-226",
+      "tag": "🇰🇷 KR-263",
+      "type": "shadowsocks",
+      "server": "101.33.75.233",
+      "server_port": 39738,
+      "method": "aes-256-gcm",
+      "password": "w{ݷ<V㦻FݻӮ^w}"
+    },
+    {
+      "tag": "🇰🇷 KR-264",
       "type": "trojan",
       "server": "3.39.225.215",
       "server_port": 443,
       "password": "UX82473651"
     },
     {
-      "tag": "🇰🇷 KR-227",
+      "tag": "🇰🇷 KR-265",
       "type": "trojan",
       "server": "3.35.207.188",
       "server_port": 443,
       "password": "UX82473651"
     },
     {
-      "tag": "🇰🇷 KR-228",
+      "tag": "🇰🇷 KR-266",
+      "type": "trojan",
+      "server": "13.125.197.117",
+      "server_port": 443,
+      "password": "UX82473651"
+    },
+    {
+      "tag": "🇰🇷 KR-267",
       "type": "trojan",
       "server": "3.34.131.153",
       "server_port": 443,
       "password": "UX82473651"
     },
     {
-      "tag": "🇰🇷 KR-229",
-      "type": "trojan",
-      "server": "3.35.168.225",
-      "server_port": 443,
-      "password": "UX82473651"
-    },
-    {
-      "tag": "🇰🇷 KR-230",
+      "tag": "🇰🇷 KR-268",
       "type": "trojan",
       "server": "13.125.69.162",
       "server_port": 443,
       "password": "UX82473651"
     },
     {
-      "tag": "🇰🇷 KR-231",
+      "tag": "🇰🇷 KR-269",
       "type": "trojan",
-      "server": "123.140.124.25",
-      "server_port": 2053,
-      "password": "96983eb4-c8f1-316e-ab00-500014ed3d8b"
+      "server": "154.90.62.70",
+      "server_port": 56127,
+      "password": "p5jTPcffLgi4gaNOJd2KUTb9YEPBBD5B"
     },
     {
-      "tag": "🇰🇷 KR-232",
+      "tag": "🇰🇷 KR-270",
+      "type": "trojan",
+      "server": "3.34.6.217",
+      "server_port": 443,
+      "password": "xxoo"
+    },
+    {
+      "tag": "🇰🇷 KR-271",
       "type": "trojan",
       "server": "3.34.131.153",
       "server_port": 443,
       "password": "UX82473651"
     },
     {
-      "tag": "🇰🇷 KR-233",
+      "tag": "🇰🇷 KR-272",
       "type": "trojan",
       "server": "132.145.91.181",
       "server_port": 8443,
       "password": "eeb6823c-b926-4ea2-866a-5542edd26e59"
     },
     {
-      "tag": "🇰🇷 KR-234",
-      "type": "trojan",
-      "server": "eminent-dogfish.rooster465.autos",
-      "server_port": 443,
-      "password": "CF68213490"
-    },
-    {
-      "tag": "🇰🇷 KR-235",
-      "type": "trojan",
-      "server": "definite-ladybird.rooster465.autos",
-      "server_port": 443,
-      "password": "CF68213490"
-    },
-    {
-      "tag": "🇰🇷 KR-236",
-      "type": "trojan",
-      "server": "musical-manatee.rooster465.autos",
-      "server_port": 443,
-      "password": "CF68213490"
-    },
-    {
-      "tag": "🇰🇷 KR-237",
-      "type": "trojan",
-      "server": "221.158.4.230",
-      "server_port": 18853,
-      "password": "GKHWMe2R4qwNcNxu6l3KMkdd"
-    },
-    {
-      "tag": "🇰🇷 KR-238",
+      "tag": "🇰🇷 KR-273",
       "type": "trojan",
       "server": "220.118.248.123",
       "server_port": 18001,
       "password": "8r%3C%5B9%27l6hAO%238ZQi"
-    },
-    {
-      "tag": "🇰🇷 KR-239",
-      "type": "trojan",
-      "server": "central-jawfish.rooster465.autos",
-      "server_port": 443,
-      "password": "CF68213490"
-    },
-    {
-      "tag": "🇰🇷 KR-240",
-      "type": "trojan",
-      "server": "evolving-kangaroo.rooster465.autos",
-      "server_port": 443,
-      "password": "WF42809561"
-    },
-    {
-      "tag": "🇰🇷 KR-241",
-      "type": "trojan",
-      "server": "next-turkey.rooster465.autos",
-      "server_port": 443,
-      "password": "ND91608427"
-    },
-    {
-      "tag": "🇰🇷 KR-242",
-      "type": "trojan",
-      "server": "star-kiwi.rooster465.autos",
-      "server_port": 443,
-      "password": "ND91608427"
-    },
-    {
-      "tag": "🇰🇷 KR-243",
-      "type": "trojan",
-      "server": "darling-mongrel.rooster465.autos",
-      "server_port": 443,
-      "password": "CF68213490"
-    },
-    {
-      "tag": "🇰🇷 KR-244",
-      "type": "trojan",
-      "server": "skilled-lioness.rooster465.autos",
-      "server_port": 443,
-      "password": "ND91608427"
-    },
-    {
-      "tag": "🇰🇷 KR-245",
-      "type": "trojan",
-      "server": "social-mutt.rooster465.autos",
-      "server_port": 443,
-      "password": "ND91608427"
-    },
-    {
-      "tag": "🇰🇷 KR-246",
-      "type": "trojan",
-      "server": "internal-peacock.rooster465.autos",
-      "server_port": 443,
-      "password": "NQ26071394"
-    },
-    {
-      "tag": "🇰🇷 KR-247",
-      "type": "trojan",
-      "server": "flexible-titmouse.rooster465.autos",
-      "server_port": 443,
-      "password": "NQ26071394"
     }
   ]
 }

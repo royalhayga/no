@@ -10,133 +10,103 @@
     {
       "tag": "🇦🇺 AU-02",
       "type": "vless",
-      "server": "82.23.146.98",
+      "server": "206.168.133.137",
       "server_port": 443,
-      "uuid": "2d1470a0-fa48-4d3b-8378-b827b744ac00"
+      "uuid": "b82330a7-c64a-46a4-b109-e71b63cb26c4"
     },
     {
       "tag": "🇦🇺 AU-03",
-      "type": "vless",
-      "server": "194.195.123.60",
-      "server_port": 22368,
-      "uuid": "d00d9d18-20cf-4191-be76-6f73d43a27ec"
-    },
-    {
-      "tag": "🇦🇺 AU-04",
       "type": "vless",
       "server": "20.42.228.160",
       "server_port": 443,
       "uuid": "6f995056-7802-4a1d-bff7-61678e626c3f"
     },
     {
-      "tag": "🇦🇺 AU-05",
+      "tag": "🇦🇺 AU-04",
       "type": "vless",
       "server": "52.65.147.229",
       "server_port": 20270,
       "uuid": "5416ef6f-b8e5-48e9-87e4-3d5649b2e3e0"
     },
     {
-      "tag": "🇦🇺 AU-06",
+      "tag": "🇦🇺 AU-05",
       "type": "vless",
-      "server": "156.59.201.182",
-      "server_port": 24442,
-      "uuid": "26524cce-d514-4014-a426-365fb266a14d"
+      "server": "51.161.204.244",
+      "server_port": 443,
+      "uuid": "36e89875-9c53-482b-bc41-d3890e9da176"
     },
     {
-      "tag": "🇦🇺 AU-07",
+      "tag": "🇦🇺 AU-06",
       "type": "vless",
       "server": "103.43.75.82",
       "server_port": 443,
       "uuid": "40af9131-d540-448a-bc56-5bba147a1dc3"
     },
     {
-      "tag": "🇦🇺 AU-08",
+      "tag": "🇦🇺 AU-07",
       "type": "vless",
-      "server": "212.81.47.248",
+      "server": "160.187.110.199",
       "server_port": 443,
-      "uuid": "0861c7f8-1d0e-491b-bbd2-584ffc324629"
+      "uuid": "40af9131-d540-448a-bc56-5bba147a1dc3"
+    },
+    {
+      "tag": "🇦🇺 AU-08",
+      "type": "shadowsocks",
+      "server": "143.42.46.37",
+      "server_port": 25605,
+      "method": "aes-256-gcm",
+      "password": "wM\u001d|G\u001f_umw۷"
     },
     {
       "tag": "🇦🇺 AU-09",
-      "type": "vless",
-      "server": "au1.gsafevpnapi.com",
-      "server_port": 20270,
-      "uuid": "5f82dcfd-cab5-4b71-91c6-8b6fb4f76c55"
+      "type": "shadowsocks",
+      "server": "206.168.133.137",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "oͷFs\u001a㦸o]={[w\u001bۧ8"
     },
     {
       "tag": "🇦🇺 AU-10",
       "type": "shadowsocks",
-      "server": "143.42.46.37",
-      "server_port": 25605,
+      "server": "20.42.228.160",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "wM\u001d|G\u001f_umw۷"
+      "password": "}Nz6]m^"
     },
     {
       "tag": "🇦🇺 AU-11",
       "type": "shadowsocks",
-      "server": "82.23.146.98",
-      "server_port": 443,
+      "server": "52.65.147.229",
+      "server_port": 20270,
       "method": "aes-256-gcm",
-      "password": "xF}<~oͻo8i4"
+      "password": "zyoǹǽz{w"
     },
     {
       "tag": "🇦🇺 AU-12",
       "type": "shadowsocks",
-      "server": "194.195.123.60",
-      "server_port": 22368,
+      "server": "51.161.204.244",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "wM\u001d|G\u001f_umw۷"
+      "password": "ߧw͛m5w=]k^"
     },
     {
       "tag": "🇦🇺 AU-13",
       "type": "shadowsocks",
-      "server": "20.42.228.160",
+      "server": "103.43.75.82",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "}Nz6]m^"
+      "password": "F]w4\u001amz׎7"
     },
     {
       "tag": "🇦🇺 AU-14",
       "type": "shadowsocks",
-      "server": "52.65.147.229",
-      "server_port": 20270,
-      "method": "aes-256-gcm",
-      "password": "zyoǹǽz{w"
-    },
-    {
-      "tag": "🇦🇺 AU-15",
-      "type": "shadowsocks",
-      "server": "156.59.201.182",
-      "server_port": 24442,
-      "method": "aes-256-gcm",
-      "password": "ۮv\u001ewxMxk߮_onk^"
-    },
-    {
-      "tag": "🇦🇺 AU-16",
-      "type": "shadowsocks",
-      "server": "103.43.75.82",
+      "server": "160.187.110.199",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "F]w4\u001amz׎7"
     },
     {
-      "tag": "🇦🇺 AU-17",
-      "type": "shadowsocks",
-      "server": "212.81.47.248",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "εs\u001e[mv\u001f}㭽"
-    },
-    {
-      "tag": "🇦🇺 AU-18",
-      "type": "shadowsocks",
-      "server": "au1.gsafevpnapi.com",
-      "server_port": 20270,
-      "method": "6uqW",
-      "password": "oy"
-    },
-    {
-      "tag": "🇦🇺 AU-19",
+      "tag": "🇦🇺 AU-15",
       "type": "shadowsocks",
       "server": "143.42.46.37",
       "server_port": 25605,
@@ -144,23 +114,15 @@
       "password": "wM\u001d|G\u001f_umw۷"
     },
     {
-      "tag": "🇦🇺 AU-20",
+      "tag": "🇦🇺 AU-16",
       "type": "shadowsocks",
-      "server": "82.23.146.98",
+      "server": "206.168.133.137",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "xF}<~oͻo8i4"
+      "password": "oͷFs\u001a㦸o]={[w\u001bۧ8"
     },
     {
-      "tag": "🇦🇺 AU-21",
-      "type": "shadowsocks",
-      "server": "194.195.123.60",
-      "server_port": 22368,
-      "method": "aes-256-gcm",
-      "password": "wM\u001d|G\u001f_umw۷"
-    },
-    {
-      "tag": "🇦🇺 AU-22",
+      "tag": "🇦🇺 AU-17",
       "type": "shadowsocks",
       "server": "20.42.228.160",
       "server_port": 443,
@@ -168,7 +130,7 @@
       "password": "}Nz6]m^"
     },
     {
-      "tag": "🇦🇺 AU-23",
+      "tag": "🇦🇺 AU-18",
       "type": "shadowsocks",
       "server": "52.65.147.229",
       "server_port": 20270,
@@ -176,15 +138,15 @@
       "password": "zyoǹǽz{w"
     },
     {
-      "tag": "🇦🇺 AU-24",
+      "tag": "🇦🇺 AU-19",
       "type": "shadowsocks",
-      "server": "156.59.201.182",
-      "server_port": 24442,
+      "server": "51.161.204.244",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "ۮv\u001ewxMxk߮_onk^"
+      "password": "ߧw͛m5w=]k^"
     },
     {
-      "tag": "🇦🇺 AU-25",
+      "tag": "🇦🇺 AU-20",
       "type": "shadowsocks",
       "server": "103.43.75.82",
       "server_port": 443,
@@ -192,23 +154,15 @@
       "password": "F]w4\u001amz׎7"
     },
     {
-      "tag": "🇦🇺 AU-26",
+      "tag": "🇦🇺 AU-21",
       "type": "shadowsocks",
-      "server": "212.81.47.248",
+      "server": "160.187.110.199",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "εs\u001e[mv\u001f}㭽"
+      "password": "F]w4\u001amz׎7"
     },
     {
-      "tag": "🇦🇺 AU-27",
-      "type": "shadowsocks",
-      "server": "au1.gsafevpnapi.com",
-      "server_port": 20270,
-      "method": "6uqW",
-      "password": "oy"
-    },
-    {
-      "tag": "🇦🇺 AU-28",
+      "tag": "🇦🇺 AU-22",
       "type": "shadowsocks",
       "server": "143.42.46.37",
       "server_port": 25605,
@@ -216,31 +170,87 @@
       "password": "wM\u001d|G\u001f_umw۷"
     },
     {
-      "tag": "🇦🇺 AU-29",
+      "tag": "🇦🇺 AU-23",
       "type": "shadowsocks",
-      "server": "82.23.146.98",
+      "server": "206.168.133.137",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "xF}<~oͻo8i4"
+      "password": "oͷFs\u001a㦸o]={[w\u001bۧ8"
+    },
+    {
+      "tag": "🇦🇺 AU-24",
+      "type": "shadowsocks",
+      "server": "20.42.228.160",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "}Nz6]m^"
+    },
+    {
+      "tag": "🇦🇺 AU-25",
+      "type": "shadowsocks",
+      "server": "52.65.147.229",
+      "server_port": 20270,
+      "method": "aes-256-gcm",
+      "password": "zyoǹǽz{w"
+    },
+    {
+      "tag": "🇦🇺 AU-26",
+      "type": "shadowsocks",
+      "server": "51.161.204.244",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ߧw͛m5w=]k^"
+    },
+    {
+      "tag": "🇦🇺 AU-27",
+      "type": "shadowsocks",
+      "server": "103.43.75.82",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "F]w4\u001amz׎7"
+    },
+    {
+      "tag": "🇦🇺 AU-28",
+      "type": "shadowsocks",
+      "server": "160.187.110.199",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "F]w4\u001amz׎7"
+    },
+    {
+      "tag": "🇦🇺 AU-29",
+      "type": "shadowsocks",
+      "server": "au1.gsafevpnapi.com",
+      "server_port": 20270,
+      "method": "6uqW",
+      "password": "oy"
     },
     {
       "tag": "🇦🇺 AU-30",
       "type": "shadowsocks",
-      "server": "194.195.123.60",
-      "server_port": 22368,
+      "server": "143.42.46.37",
+      "server_port": 25605,
       "method": "aes-256-gcm",
       "password": "wM\u001d|G\u001f_umw۷"
     },
     {
       "tag": "🇦🇺 AU-31",
       "type": "shadowsocks",
+      "server": "206.168.133.137",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "oͷFs\u001a㦸o]={[w\u001bۧ8"
+    },
+    {
+      "tag": "🇦🇺 AU-32",
+      "type": "shadowsocks",
       "server": "20.42.228.160",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "}Nz6]m^"
     },
     {
-      "tag": "🇦🇺 AU-32",
+      "tag": "🇦🇺 AU-33",
       "type": "shadowsocks",
       "server": "52.65.147.229",
       "server_port": 20270,
@@ -248,15 +258,15 @@
       "password": "zyoǹǽz{w"
     },
     {
-      "tag": "🇦🇺 AU-33",
+      "tag": "🇦🇺 AU-34",
       "type": "shadowsocks",
-      "server": "156.59.201.182",
-      "server_port": 24442,
+      "server": "51.161.204.244",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "ۮv\u001ewxMxk߮_onk^"
+      "password": "ߧw͛m5w=]k^"
     },
     {
-      "tag": "🇦🇺 AU-34",
+      "tag": "🇦🇺 AU-35",
       "type": "shadowsocks",
       "server": "103.43.75.82",
       "server_port": 443,
@@ -264,15 +274,15 @@
       "password": "F]w4\u001amz׎7"
     },
     {
-      "tag": "🇦🇺 AU-35",
+      "tag": "🇦🇺 AU-36",
       "type": "shadowsocks",
-      "server": "212.81.47.248",
+      "server": "160.187.110.199",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "εs\u001e[mv\u001f}㭽"
+      "password": "F]w4\u001amz׎7"
     },
     {
-      "tag": "🇦🇺 AU-36",
+      "tag": "🇦🇺 AU-37",
       "type": "shadowsocks",
       "server": "au1.gsafevpnapi.com",
       "server_port": 20270,
@@ -280,7 +290,7 @@
       "password": "oy"
     },
     {
-      "tag": "🇦🇺 AU-37",
+      "tag": "🇦🇺 AU-38",
       "type": "shadowsocks",
       "server": "143.42.46.37",
       "server_port": 25605,
@@ -288,20 +298,12 @@
       "password": "wM\u001d|G\u001f_umw۷"
     },
     {
-      "tag": "🇦🇺 AU-38",
-      "type": "shadowsocks",
-      "server": "82.23.146.98",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "xF}<~oͻo8i4"
-    },
-    {
       "tag": "🇦🇺 AU-39",
       "type": "shadowsocks",
-      "server": "194.195.123.60",
-      "server_port": 22368,
+      "server": "206.168.133.137",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "wM\u001d|G\u001f_umw۷"
+      "password": "oͷFs\u001a㦸o]={[w\u001bۧ8"
     },
     {
       "tag": "🇦🇺 AU-40",
@@ -322,10 +324,10 @@
     {
       "tag": "🇦🇺 AU-42",
       "type": "shadowsocks",
-      "server": "156.59.201.182",
-      "server_port": 24442,
+      "server": "51.161.204.244",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "ۮv\u001ewxMxk߮_onk^"
+      "password": "ߧw͛m5w=]k^"
     },
     {
       "tag": "🇦🇺 AU-43",
@@ -338,10 +340,10 @@
     {
       "tag": "🇦🇺 AU-44",
       "type": "shadowsocks",
-      "server": "212.81.47.248",
+      "server": "160.187.110.199",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "εs\u001e[mv\u001f}㭽"
+      "password": "F]w4\u001amz׎7"
     },
     {
       "tag": "🇦🇺 AU-45",
@@ -354,93 +356,21 @@
     {
       "tag": "🇦🇺 AU-46",
       "type": "shadowsocks",
-      "server": "143.42.46.37",
-      "server_port": 25605,
-      "method": "aes-256-gcm",
-      "password": "wM\u001d|G\u001f_umw۷"
-    },
-    {
-      "tag": "🇦🇺 AU-47",
-      "type": "shadowsocks",
-      "server": "82.23.146.98",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "xF}<~oͻo8i4"
-    },
-    {
-      "tag": "🇦🇺 AU-48",
-      "type": "shadowsocks",
-      "server": "194.195.123.60",
-      "server_port": 22368,
-      "method": "aes-256-gcm",
-      "password": "wM\u001d|G\u001f_umw۷"
-    },
-    {
-      "tag": "🇦🇺 AU-49",
-      "type": "shadowsocks",
-      "server": "20.42.228.160",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "}Nz6]m^"
-    },
-    {
-      "tag": "🇦🇺 AU-50",
-      "type": "shadowsocks",
-      "server": "52.65.147.229",
-      "server_port": 20270,
-      "method": "aes-256-gcm",
-      "password": "zyoǹǽz{w"
-    },
-    {
-      "tag": "🇦🇺 AU-51",
-      "type": "shadowsocks",
-      "server": "156.59.201.182",
-      "server_port": 24442,
-      "method": "aes-256-gcm",
-      "password": "ۮv\u001ewxMxk߮_onk^"
-    },
-    {
-      "tag": "🇦🇺 AU-52",
-      "type": "shadowsocks",
-      "server": "103.43.75.82",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "F]w4\u001amz׎7"
-    },
-    {
-      "tag": "🇦🇺 AU-53",
-      "type": "shadowsocks",
-      "server": "212.81.47.248",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "εs\u001e[mv\u001f}㭽"
-    },
-    {
-      "tag": "🇦🇺 AU-54",
-      "type": "shadowsocks",
-      "server": "au1.gsafevpnapi.com",
-      "server_port": 20270,
-      "method": "6uqW",
-      "password": "oy"
-    },
-    {
-      "tag": "🇦🇺 AU-55",
-      "type": "shadowsocks",
       "server": "23.230.14.168",
       "server_port": 37750,
       "method": "aes-256-gcm",
       "password": "};5iwg"
     },
     {
-      "tag": "🇦🇺 AU-56",
+      "tag": "🇦🇺 AU-47",
       "type": "shadowsocks",
-      "server": "45.79.238.129",
+      "server": "16.176.42.97",
       "server_port": 443,
-      "method": "chacha20-ietf-poly1305",
-      "password": "YUWX6COLZYmaHlUGiKwDaN"
+      "method": "aes-256-gcm",
+      "password": "շ7Fq㎟o]\u001awo_sZ"
     },
     {
-      "tag": "🇦🇺 AU-57",
+      "tag": "🇦🇺 AU-48",
       "type": "shadowsocks",
       "server": "au1.gsafevpnapi.com",
       "server_port": 20270,
@@ -448,25 +378,11 @@
       "password": "{MzwNy{GxkӇ4\u001df"
     },
     {
-      "tag": "🇦🇺 AU-58",
+      "tag": "🇦🇺 AU-49",
       "type": "trojan",
-      "server": "87.121.33.14",
+      "server": "87.121.33.185",
       "server_port": 443,
-      "password": "JT80563429"
-    },
-    {
-      "tag": "🇦🇺 AU-59",
-      "type": "trojan",
-      "server": "true-pony.rooster465.autos",
-      "server_port": 443,
-      "password": "PD07395842"
-    },
-    {
-      "tag": "🇦🇺 AU-60",
-      "type": "trojan",
-      "server": "national-stingray.rooster465.autos",
-      "server_port": 443,
-      "password": "FH72359861"
+      "password": "AE62539071"
     }
   ]
 }

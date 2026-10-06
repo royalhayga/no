@@ -10,9 +10,9 @@
     {
       "tag": "🌐 AZ-02",
       "type": "vless",
-      "server": "31.43.191.99",
+      "server": "31.43.191.131",
       "server_port": 443,
-      "uuid": "c28ee61d-0d43-4e69-8e6a-6397ed0ffc03"
+      "uuid": "d407defe-cd4f-4d32-a3b1-47c2c813c50d"
     },
     {
       "tag": "🌐 AZ-03",
@@ -23,13 +23,6 @@
     },
     {
       "tag": "🌐 AZ-04",
-      "type": "vless",
-      "server": "az.xelnivo.ir",
-      "server_port": 45642,
-      "uuid": "688fcedc-c730-47fb-9fc0-b5962a38788e"
-    },
-    {
-      "tag": "🌐 AZ-05",
       "type": "shadowsocks",
       "server": "94.20.154.22",
       "server_port": 443,
@@ -37,12 +30,20 @@
       "password": "k};Z㭟kN;iG|m5"
     },
     {
-      "tag": "🌐 AZ-06",
+      "tag": "🌐 AZ-05",
       "type": "shadowsocks",
-      "server": "31.43.191.99",
+      "server": "31.43.191.131",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "so\u001e{]7{y\u001f}7"
+      "password": "w;uq\u001fkv6sws"
+    },
+    {
+      "tag": "🌐 AZ-06",
+      "type": "shadowsocks",
+      "server": "94.20.154.22",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "k};Z㭟kN;iG|m5"
     },
     {
       "tag": "🌐 AZ-07",
@@ -55,10 +56,10 @@
     {
       "tag": "🌐 AZ-08",
       "type": "shadowsocks",
-      "server": "az.xelnivo.ir",
-      "server_port": 45642,
+      "server": "31.43.191.131",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "q\\s4oz٭"
+      "password": "w;uq\u001fkv6sws"
     },
     {
       "tag": "🌐 AZ-09",
@@ -71,13 +72,21 @@
     {
       "tag": "🌐 AZ-10",
       "type": "shadowsocks",
-      "server": "31.43.191.99",
+      "server": "94.20.154.22",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "so\u001e{]7{y\u001f}7"
+      "password": "k};Z㭟kN;iG|m5"
     },
     {
       "tag": "🌐 AZ-11",
+      "type": "shadowsocks",
+      "server": "31.43.191.131",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "w;uq\u001fkv6sws"
+    },
+    {
+      "tag": "🌐 AZ-12",
       "type": "shadowsocks",
       "server": "94.20.154.22",
       "server_port": 443,
@@ -85,28 +94,20 @@
       "password": "k};Z㭟kN;iG|m5"
     },
     {
-      "tag": "🌐 AZ-12",
+      "tag": "🌐 AZ-13",
+      "type": "shadowsocks",
+      "server": "az-ip.nxralns.com",
+      "server_port": 200,
+      "method": "Ӿ",
+      "password": "im{㞞m\u001a}wW"
+    },
+    {
+      "tag": "🌐 AZ-14",
       "type": "shadowsocks",
       "server": "az.xelnivo.ir",
       "server_port": 45642,
       "method": "aes-256-gcm",
       "password": "q\\s4oz٭"
-    },
-    {
-      "tag": "🌐 AZ-13",
-      "type": "shadowsocks",
-      "server": "94.20.154.22",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "k};Z㭟kN;iG|m5"
-    },
-    {
-      "tag": "🌐 AZ-14",
-      "type": "shadowsocks",
-      "server": "31.43.191.99",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "so\u001e{]7{y\u001f}7"
     },
     {
       "tag": "🌐 AZ-15",
@@ -119,10 +120,10 @@
     {
       "tag": "🌐 AZ-16",
       "type": "shadowsocks",
-      "server": "az.xelnivo.ir",
-      "server_port": 45642,
+      "server": "31.43.191.131",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "q\\s4oz٭"
+      "password": "w;uq\u001fkv6sws"
     },
     {
       "tag": "🌐 AZ-17",
@@ -135,21 +136,13 @@
     {
       "tag": "🌐 AZ-18",
       "type": "shadowsocks",
-      "server": "31.43.191.99",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "so\u001e{]7{y\u001f}7"
+      "server": "az-ip.nxralns.com",
+      "server_port": 200,
+      "method": "Ӿ",
+      "password": "im{㞞m\u001a}wW"
     },
     {
       "tag": "🌐 AZ-19",
-      "type": "shadowsocks",
-      "server": "94.20.154.22",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "k};Z㭟kN;iG|m5"
-    },
-    {
-      "tag": "🌐 AZ-20",
       "type": "shadowsocks",
       "server": "az.xelnivo.ir",
       "server_port": 45642,
@@ -157,7 +150,7 @@
       "password": "q\\s4oz٭"
     },
     {
-      "tag": "🌐 AZ-21",
+      "tag": "🌐 AZ-20",
       "type": "shadowsocks",
       "server": "94.20.154.22",
       "server_port": 443,
@@ -165,12 +158,20 @@
       "password": "k};Z㭟kN;iG|m5"
     },
     {
-      "tag": "🌐 AZ-22",
+      "tag": "🌐 AZ-21",
       "type": "shadowsocks",
-      "server": "31.43.191.99",
+      "server": "31.43.191.131",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "so\u001e{]7{y\u001f}7"
+      "password": "w;uq\u001fkv6sws"
+    },
+    {
+      "tag": "🌐 AZ-22",
+      "type": "shadowsocks",
+      "server": "az-ip.nxralns.com",
+      "server_port": 200,
+      "method": "Ӿ",
+      "password": "im{㞞m\u001a}wW"
     },
     {
       "tag": "🌐 AZ-23",
