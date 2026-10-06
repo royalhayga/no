@@ -206,7 +206,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/category-ads-all.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-ads-all.mrs"
     path: ./ruleset/reject.mrs
     interval: 86400
 
@@ -214,7 +214,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/youtube.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/youtube.mrs"
     path: ./ruleset/YouTube.mrs
     interval: 86400
 
@@ -222,7 +222,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/google.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/google.mrs"
     path: ./ruleset/Google.mrs
     interval: 86400
 
@@ -230,7 +230,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/openai.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/openai.mrs"
     path: ./ruleset/OpenAI.mrs
     interval: 86400
 
@@ -238,7 +238,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/telegram.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/telegram.mrs"
     path: ./ruleset/Telegram.mrs
     interval: 86400
 
@@ -246,7 +246,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/twitter.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/twitter.mrs"
     path: ./ruleset/Twitter.mrs
     interval: 86400
 
@@ -254,7 +254,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/pinterest.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/pinterest.mrs"
     path: ./ruleset/Pinterest.mrs
     interval: 86400
 
@@ -262,7 +262,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/vimeo.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/vimeo.mrs"
     path: ./ruleset/Vimeo.mrs
     interval: 86400
 
@@ -270,7 +270,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/netflix.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/netflix.mrs"
     path: ./ruleset/Netflix.mrs
     interval: 86400
 
@@ -278,7 +278,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/github.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/github.mrs"
     path: ./ruleset/GitHub.mrs
     interval: 86400
 
@@ -286,7 +286,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/microsoft.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/microsoft.mrs"
     path: ./ruleset/Microsoft.mrs
     interval: 86400
 
@@ -294,7 +294,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/apple.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/apple.mrs"
     path: ./ruleset/Apple.mrs
     interval: 86400
 
@@ -302,7 +302,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/steam.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/steam.mrs"
     path: ./ruleset/Steam.mrs
     interval: 86400
 
@@ -310,7 +310,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/geolocation-!cn.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/geolocation-!cn.mrs"
     path: ./ruleset/proxy_domain.mrs
     interval: 86400
 
@@ -318,7 +318,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/cn.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/cn.mrs"
     path: ./ruleset/direct.mrs
     interval: 86400
 
@@ -326,7 +326,7 @@ rule-providers:
     type: http
     behavior: ipcidr
     format: mrs
-    url: "https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/cn.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geoip/cn.mrs"
     path: ./ruleset/cncidr.mrs
     interval: 86400
 
