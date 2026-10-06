@@ -4,17 +4,20 @@ import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Set
 
 import yaml
 
 from common import ROOT_DIR, extract_node_links_from_text
 
-TEMPLATE_FILE = ROOT_DIR / "config" / "rules_template.yaml"
+FULL_TEMPLATE_FILE = ROOT_DIR / "config" / "rules_template.yaml"
+ELITE_TEMPLATE_FILE = ROOT_DIR / "config" / "rules_elite_template.yaml"
+
 INPUT_DIR = ROOT_DIR / "output" / "verified"
 ALT_INPUT_DIR = ROOT_DIR / "output" / "dns"
+
 OUTPUT_RULES_CLASH = ROOT_DIR / "output" / "clash_rules.yaml"
-OUTPUT_BY_COUNTRY_RULES_CLASH = ROOT_DIR / "output" / "by_country" / "all_countries_clash_rules.yaml"
+OUTPUT_ELITE_RULES_CLASH = ROOT_DIR / "output" / "clash_elite_rules.yaml"
 
 COUNTRY_FLAGS = {
     "HK": "🇭🇰", "TW": "🇹🇼", "JP": "🇯🇵", "SG": "🇸🇬",
@@ -53,34 +56,16 @@ def build_clash_proxy_dict(node: Dict[str, Any]) -> Dict[str, Any]:
     return proxy
 
 
-def merge_template_and_nodes() -> int:
-    print("=== Master Clash Dynamic Template Engine & Dual Load-Balancing Merger ===", flush=True)
-
-    if not TEMPLATE_FILE.exists():
-        print(f"Error: Template file {TEMPLATE_FILE} not found.", flush=True)
-        return 1
-
-    template_content = TEMPLATE_FILE.read_text(encoding="utf-8")
+def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str, Any]]) -> str:
+    """Build a Clash configuration with 100% duplicate proxy group name prevention."""
+    template_content = template_path.read_text(encoding="utf-8")
     template = yaml.safe_load(template_content)
 
-    # 1. Identify Private Nodes in Template
+    # 1. Identify Private Nodes
     private_proxies = template.get("proxies", [])
     private_proxy_names = [p.get("name") for p in private_proxies if isinstance(p, dict) and p.get("name")]
-    print(f"Preserved {len(private_proxy_names)} Top-Tier Private Nodes: {private_proxy_names}", flush=True)
 
-    # 2. Read Crawled Verified Nodes
-    nodes_file = INPUT_DIR / "nodes.txt"
-    if not nodes_file.exists():
-        nodes_file = ALT_INPUT_DIR / "nodes.txt"
-
-    crawled_nodes = []
-    if nodes_file.exists():
-        content = nodes_file.read_text(encoding="utf-8")
-        crawled_nodes = extract_node_links_from_text(content)
-
-    print(f"Loaded {len(crawled_nodes)} Crawled Verified Nodes.", flush=True)
-
-    # Convert crawled nodes to Clash proxy dicts & group by country
+    # 2. Convert crawled nodes to Clash proxies and group by country
     crawled_clash_proxies = []
     country_groups: Dict[str, List[str]] = {}
 
@@ -89,41 +74,53 @@ def merge_template_and_nodes() -> int:
         crawled_clash_proxies.append(pdict)
         pname = pdict["name"]
 
-        # Infer country code from name flag/code
         code = node.get("country_code", "OTHER")
         if code not in country_groups:
             country_groups[code] = []
         country_groups[code].append(pname)
 
-    # Combine Private Proxies + Crawled Proxies
     combined_proxies = private_proxies + crawled_clash_proxies
     all_crawled_proxy_names = [p["name"] for p in crawled_clash_proxies]
 
-    # 3. Build Per-Country Load Balancing Groups (ONLY CONTAINING CRAWLED NODES!)
+    # Track existing group names to 100% PREVENT DUPLICATE GROUP NAMES!
+    existing_group_names: Set[str] = set()
+    template_proxy_groups = template.get("proxy-groups", [])
+    for g in template_proxy_groups:
+        if isinstance(g, dict) and g.get("name"):
+            existing_group_names.add(g["name"])
+
+    # 3. Build Per-Country Load Balancing Groups
     country_lb_groups = []
     country_lb_group_names = []
 
-    # Global Load-Balancing Fallback Groups
     global_lb_name = "🌐 全球-全节点负载均衡"
     global_auto_name = "⚡ 全球-全节点自动选优"
 
-    global_lb_group = {
-        "name": global_lb_name,
-        "type": "load-balance",
-        "strategy": "round-robin",
-        "url": "http://www.gstatic.com/generate_204",
-        "interval": 300,
-        "proxies": all_crawled_proxy_names if all_crawled_proxy_names else ["DIRECT"]
-    }
-    global_auto_group = {
-        "name": global_auto_name,
-        "type": "url-test",
-        "url": "http://www.gstatic.com/generate_204",
-        "interval": 300,
-        "proxies": all_crawled_proxy_names if all_crawled_proxy_names else ["DIRECT"]
-    }
+    if global_lb_name not in existing_group_names:
+        existing_group_names.add(global_lb_name)
+        global_lb_group = {
+            "name": global_lb_name,
+            "type": "load-balance",
+            "strategy": "round-robin",
+            "url": "http://www.gstatic.com/generate_204",
+            "interval": 300,
+            "proxies": all_crawled_proxy_names if all_crawled_proxy_names else ["DIRECT"]
+        }
+    else:
+        global_lb_group = None
 
-    # Sorted countries by node count
+    if global_auto_name not in existing_group_names:
+        existing_group_names.add(global_auto_name)
+        global_auto_group = {
+            "name": global_auto_name,
+            "type": "url-test",
+            "url": "http://www.gstatic.com/generate_204",
+            "interval": 300,
+            "proxies": all_crawled_proxy_names if all_crawled_proxy_names else ["DIRECT"]
+        }
+    else:
+        global_auto_group = None
+
     sorted_codes = sorted(country_groups.keys(), key=lambda c: len(country_groups[c]), reverse=True)
 
     for code in sorted_codes:
@@ -131,48 +128,53 @@ def merge_template_and_nodes() -> int:
         if not cnodes:
             continue
         flag = COUNTRY_FLAGS.get(code, "🌐")
-        zh_name = COUNTRY_NAMES_ZH.get(code, f"{code}节点")
+        zh_name = COUNTRY_NAMES_ZH.get(code, f"{code}")
 
         lb_group_name = f"{flag} {zh_name}-负载均衡"
         auto_group_name = f"{flag} {zh_name}-自动选优"
 
-        country_lb_group_names.append(lb_group_name)
+        if lb_group_name not in existing_group_names:
+            existing_group_names.add(lb_group_name)
+            country_lb_group_names.append(lb_group_name)
+            country_lb_groups.append({
+                "name": lb_group_name,
+                "type": "load-balance",
+                "strategy": "round-robin",
+                "url": "http://www.gstatic.com/generate_204",
+                "interval": 300,
+                "proxies": cnodes
+            })
 
-        country_lb_groups.append({
-            "name": lb_group_name,
-            "type": "load-balance",
-            "strategy": "round-robin",
-            "url": "http://www.gstatic.com/generate_204",
-            "interval": 300,
-            "proxies": cnodes
-        })
-        country_lb_groups.append({
-            "name": auto_group_name,
-            "type": "url-test",
-            "url": "http://www.gstatic.com/generate_204",
-            "interval": 300,
-            "proxies": cnodes
-        })
+        if auto_group_name not in existing_group_names:
+            existing_group_names.add(auto_group_name)
+            country_lb_groups.append({
+                "name": auto_group_name,
+                "type": "url-test",
+                "url": "http://www.gstatic.com/generate_204",
+                "interval": 300,
+                "proxies": cnodes
+            })
 
     # 4. Inject into Template Proxy Groups
-    template_proxy_groups = template.get("proxy-groups", [])
-
     for group in template_proxy_groups:
         gname = group.get("name")
-
         if gname == "PROXY":
             group["proxies"] = private_proxy_names + [global_auto_name, global_lb_name] + country_lb_group_names + ["DIRECT", "REJECT"]
         elif gname == "📺 TVBox代理":
-            # TVBox 100% uses Load Balancing first!
             group["proxies"] = [global_lb_name, global_auto_name] + country_lb_group_names + private_proxy_names + ["DIRECT", "REJECT"]
         else:
-            # All other business groups (YouTube, OpenAI, Telegram, Netflix, etc.)
             group["proxies"] = private_proxy_names + ["PROXY", global_auto_name, global_lb_name] + country_lb_group_names + ["DIRECT", "REJECT"]
 
-    # Insert global & country load balancing groups into template proxy-groups
-    all_generated_proxy_groups = [template_proxy_groups[0], global_lb_group, global_auto_group] + country_lb_groups + template_proxy_groups[1:]
+    # Assemble all generated proxy groups cleanly
+    generated_extra_groups = []
+    if global_lb_group:
+        generated_extra_groups.append(global_lb_group)
+    if global_auto_group:
+        generated_extra_groups.append(global_auto_group)
+    generated_extra_groups.extend(country_lb_groups)
 
-    # 5. Assemble Final Master Clash Config
+    all_generated_proxy_groups = [template_proxy_groups[0]] + generated_extra_groups + template_proxy_groups[1:]
+
     final_config = {
         "mixed-port": template.get("mixed-port", 7890),
         "allow-lan": template.get("allow-lan", True),
@@ -187,16 +189,38 @@ def merge_template_and_nodes() -> int:
         "rules": template.get("rules", [])
     }
 
-    final_yaml_content = f"# Generated by TVTV Dynamic Template Merger Engine at {datetime.now(timezone.utc).isoformat()}\n" + yaml.safe_dump(final_config, allow_unicode=True, sort_keys=False)
+    return f"# Generated by TVTV Dynamic Template Merger Engine at {datetime.now(timezone.utc).isoformat()}\n" + yaml.safe_dump(final_config, allow_unicode=True, sort_keys=False)
 
-    # Write decoupled output to output/clash_rules.yaml & output/by_country/all_countries_clash_rules.yaml
-    OUTPUT_RULES_CLASH.write_text(final_yaml_content, encoding="utf-8")
-    OUTPUT_BY_COUNTRY_RULES_CLASH.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT_BY_COUNTRY_RULES_CLASH.write_text(final_yaml_content, encoding="utf-8")
 
-    print(f"Successfully generated Master Rule-Merged Clash Config to {OUTPUT_RULES_CLASH}!", flush=True)
+def main() -> int:
+    print("=== Master Clash Dynamic Template Engine (Full & Elite Rulesets) ===", flush=True)
+
+    # Read Crawled Verified Nodes
+    nodes_file = INPUT_DIR / "nodes.txt"
+    if not nodes_file.exists():
+        nodes_file = ALT_INPUT_DIR / "nodes.txt"
+
+    crawled_nodes = []
+    if nodes_file.exists():
+        content = nodes_file.read_text(encoding="utf-8")
+        crawled_nodes = extract_node_links_from_text(content)
+
+    print(f"Loaded {len(crawled_nodes)} Crawled Verified Nodes.", flush=True)
+
+    # 1. Build Full Ruleset Version (clash_rules.yaml)
+    if FULL_TEMPLATE_FILE.exists():
+        full_yaml = build_merged_clash_config(FULL_TEMPLATE_FILE, crawled_nodes)
+        OUTPUT_RULES_CLASH.write_text(full_yaml, encoding="utf-8")
+        print(f"Successfully generated Full Ruleset Clash Config -> {OUTPUT_RULES_CLASH}", flush=True)
+
+    # 2. Build Elite Ruleset Version (clash_elite_rules.yaml)
+    if ELITE_TEMPLATE_FILE.exists():
+        elite_yaml = build_merged_clash_config(ELITE_TEMPLATE_FILE, crawled_nodes)
+        OUTPUT_ELITE_RULES_CLASH.write_text(elite_yaml, encoding="utf-8")
+        print(f"Successfully generated Elite Streamlined Clash Config -> {OUTPUT_ELITE_RULES_CLASH}", flush=True)
+
     return 0
 
 
 if __name__ == "__main__":
-    sys.exit(merge_template_and_nodes())
+    sys.exit(main())
