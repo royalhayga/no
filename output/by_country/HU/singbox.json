@@ -10,23 +10,23 @@
     {
       "tag": "🌐 HU-02",
       "type": "vless",
-      "server": "95.164.10.50",
-      "server_port": 443,
-      "uuid": "a13df940-020c-465f-bc89-ee5279b5cd6a"
-    },
-    {
-      "tag": "🌐 HU-03",
-      "type": "vless",
       "server": "37.221.210.113",
       "server_port": 443,
       "uuid": "0250424c-ae75-4b6b-890f-3fe26fae36c3"
     },
     {
+      "tag": "🌐 HU-03",
+      "type": "vless",
+      "server": "217.13.104.154",
+      "server_port": 443,
+      "uuid": "74b6eee7-898d-4f32-9987-a035210ec5e2"
+    },
+    {
       "tag": "🌐 HU-04",
       "type": "vless",
-      "server": "217.13.104.148",
+      "server": "217.13.105.1",
       "server_port": 443,
-      "uuid": "b5c74983-8400-4fb3-81a7-d5b3ab559537"
+      "uuid": "cf35aef1-cf24-488f-a952-3bfd14c15b48"
     },
     {
       "tag": "🌐 HU-05",
@@ -38,68 +38,40 @@
     {
       "tag": "🌐 HU-06",
       "type": "vless",
-      "server": "217.13.104.149",
-      "server_port": 443,
-      "uuid": "74b6eee7-898d-4f32-9987-a035210ec5e2"
-    },
-    {
-      "tag": "🌐 HU-07",
-      "type": "vless",
-      "server": "185.187.72.117",
-      "server_port": 443,
-      "uuid": "47ab09c5-b2cc-441f-b5e5-6782b722d3ee"
-    },
-    {
-      "tag": "🌐 HU-08",
-      "type": "vless",
-      "server": "155.117.137.174",
+      "server": "155.117.137.58",
       "server_port": 443,
       "uuid": "9480871a-3843-441c-9b83-aa8c5c96b209"
     },
     {
-      "tag": "🌐 HU-09",
+      "tag": "🌐 HU-07",
       "type": "vless",
       "server": "155.117.137.166",
       "server_port": 443,
       "uuid": "9480871a-3843-441c-9b83-aa8c5c96b209"
     },
     {
-      "tag": "🌐 HU-10",
+      "tag": "🌐 HU-08",
       "type": "vless",
       "server": "155.117.137.60",
       "server_port": 443,
       "uuid": "9480871a-3843-441c-9b83-aa8c5c96b209"
     },
     {
+      "tag": "🌐 HU-09",
+      "type": "vless",
+      "server": "155.117.137.160",
+      "server_port": 443,
+      "uuid": "ccdce320-7eef-4815-8edb-c599987c2279"
+    },
+    {
+      "tag": "🌐 HU-10",
+      "type": "vless",
+      "server": "155.117.137.103",
+      "server_port": 443,
+      "uuid": "9480871a-3843-441c-9b83-aa8c5c96b209"
+    },
+    {
       "tag": "🌐 HU-11",
-      "type": "vless",
-      "server": "155.117.137.182",
-      "server_port": 443,
-      "uuid": "9480871a-3843-441c-9b83-aa8c5c96b209"
-    },
-    {
-      "tag": "🌐 HU-12",
-      "type": "vless",
-      "server": "155.117.137.225",
-      "server_port": 443,
-      "uuid": "9480871a-3843-441c-9b83-aa8c5c96b209"
-    },
-    {
-      "tag": "🌐 HU-13",
-      "type": "vless",
-      "server": "155.117.137.58",
-      "server_port": 443,
-      "uuid": "9480871a-3843-441c-9b83-aa8c5c96b209"
-    },
-    {
-      "tag": "🌐 HU-14",
-      "type": "vless",
-      "server": "155.117.137.110",
-      "server_port": 443,
-      "uuid": "9480871a-3843-441c-9b83-aa8c5c96b209"
-    },
-    {
-      "tag": "🌐 HU-15",
       "type": "shadowsocks",
       "server": "37.221.210.113",
       "server_port": 8443,
@@ -107,15 +79,7 @@
       "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
-      "tag": "🌐 HU-16",
-      "type": "shadowsocks",
-      "server": "95.164.10.50",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "k]4m\u001c_m=yvqޚ"
-    },
-    {
-      "tag": "🌐 HU-17",
+      "tag": "🌐 HU-12",
       "type": "shadowsocks",
       "server": "37.221.210.113",
       "server_port": 443,
@@ -123,47 +87,39 @@
       "password": "ntn\u001ciᾛ\u001fߧ7"
     },
     {
-      "tag": "🌐 HU-18",
+      "tag": "🌐 HU-13",
       "type": "shadowsocks",
-      "server": "217.13.104.148",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "o;74Vwiy"
-    },
-    {
-      "tag": "🌐 HU-19",
-      "type": "shadowsocks",
-      "server": "37.221.210.113",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ntn\u001ciᾛ\u001fߧ7"
-    },
-    {
-      "tag": "🌐 HU-20",
-      "type": "shadowsocks",
-      "server": "217.13.104.149",
+      "server": "217.13.104.154",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "y\u001d;kM]\u001es"
     },
     {
-      "tag": "🌐 HU-21",
+      "tag": "🌐 HU-14",
       "type": "shadowsocks",
-      "server": "185.187.72.117",
+      "server": "217.13.105.1",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "㶛9og\u001c_o6oww"
+      "password": "qiq\u001fkvݷׇ5<"
     },
     {
-      "tag": "🌐 HU-22",
+      "tag": "🌐 HU-15",
       "type": "shadowsocks",
-      "server": "155.117.137.174",
+      "server": "37.221.210.113",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ntn\u001ciᾛ\u001fߧ7"
+    },
+    {
+      "tag": "🌐 HU-16",
+      "type": "shadowsocks",
+      "server": "155.117.137.58",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "4Z7\\7i\u001czom="
     },
     {
-      "tag": "🌐 HU-23",
+      "tag": "🌐 HU-17",
       "type": "shadowsocks",
       "server": "155.117.137.166",
       "server_port": 443,
@@ -171,7 +127,7 @@
       "password": "4Z7\\7i\u001czom="
     },
     {
-      "tag": "🌐 HU-24",
+      "tag": "🌐 HU-18",
       "type": "shadowsocks",
       "server": "155.117.137.60",
       "server_port": 443,
@@ -179,17 +135,65 @@
       "password": "4Z7\\7i\u001czom="
     },
     {
-      "tag": "🌐 HU-25",
+      "tag": "🌐 HU-19",
       "type": "shadowsocks",
-      "server": "155.117.137.182",
+      "server": "155.117.137.160",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "q\\{}y[s}n"
+    },
+    {
+      "tag": "🌐 HU-20",
+      "type": "shadowsocks",
+      "server": "155.117.137.103",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "4Z7\\7i\u001czom="
     },
     {
+      "tag": "🌐 HU-21",
+      "type": "shadowsocks",
+      "server": "37.221.210.113",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "Ӈ<ǶѾ}k\u001bgs6"
+    },
+    {
+      "tag": "🌐 HU-22",
+      "type": "shadowsocks",
+      "server": "37.221.210.113",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ntn\u001ciᾛ\u001fߧ7"
+    },
+    {
+      "tag": "🌐 HU-23",
+      "type": "shadowsocks",
+      "server": "217.13.104.154",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "y\u001d;kM]\u001es"
+    },
+    {
+      "tag": "🌐 HU-24",
+      "type": "shadowsocks",
+      "server": "217.13.105.1",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "qiq\u001fkvݷׇ5<"
+    },
+    {
+      "tag": "🌐 HU-25",
+      "type": "shadowsocks",
+      "server": "37.221.210.113",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ntn\u001ciᾛ\u001fߧ7"
+    },
+    {
       "tag": "🌐 HU-26",
       "type": "shadowsocks",
-      "server": "155.117.137.225",
+      "server": "155.117.137.58",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "4Z7\\7i\u001czom="
@@ -197,7 +201,7 @@
     {
       "tag": "🌐 HU-27",
       "type": "shadowsocks",
-      "server": "155.117.137.58",
+      "server": "155.117.137.166",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "4Z7\\7i\u001czom="
@@ -205,7 +209,7 @@
     {
       "tag": "🌐 HU-28",
       "type": "shadowsocks",
-      "server": "155.117.137.110",
+      "server": "155.117.137.60",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "4Z7\\7i\u001czom="
@@ -213,63 +217,63 @@
     {
       "tag": "🌐 HU-29",
       "type": "shadowsocks",
+      "server": "155.117.137.160",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "q\\{}y[s}n"
+    },
+    {
+      "tag": "🌐 HU-30",
+      "type": "shadowsocks",
+      "server": "155.117.137.103",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "4Z7\\7i\u001czom="
+    },
+    {
+      "tag": "🌐 HU-31",
+      "type": "shadowsocks",
       "server": "37.221.210.113",
       "server_port": 8443,
       "method": "aes-256-gcm",
       "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
-      "tag": "🌐 HU-30",
-      "type": "shadowsocks",
-      "server": "95.164.10.50",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "k]4m\u001c_m=yvqޚ"
-    },
-    {
-      "tag": "🌐 HU-31",
+      "tag": "🌐 HU-32",
       "type": "shadowsocks",
       "server": "37.221.210.113",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "ntn\u001ciᾛ\u001fߧ7"
-    },
-    {
-      "tag": "🌐 HU-32",
-      "type": "shadowsocks",
-      "server": "217.13.104.148",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "o;74Vwiy"
     },
     {
       "tag": "🌐 HU-33",
       "type": "shadowsocks",
-      "server": "37.221.210.113",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ntn\u001ciᾛ\u001fߧ7"
-    },
-    {
-      "tag": "🌐 HU-34",
-      "type": "shadowsocks",
-      "server": "217.13.104.149",
+      "server": "217.13.104.154",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "y\u001d;kM]\u001es"
     },
     {
-      "tag": "🌐 HU-35",
+      "tag": "🌐 HU-34",
       "type": "shadowsocks",
-      "server": "185.187.72.117",
+      "server": "217.13.105.1",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "㶛9og\u001c_o6oww"
+      "password": "qiq\u001fkvݷׇ5<"
+    },
+    {
+      "tag": "🌐 HU-35",
+      "type": "shadowsocks",
+      "server": "37.221.210.113",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ntn\u001ciᾛ\u001fߧ7"
     },
     {
       "tag": "🌐 HU-36",
       "type": "shadowsocks",
-      "server": "155.117.137.174",
+      "server": "155.117.137.58",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "4Z7\\7i\u001czom="
@@ -293,15 +297,15 @@
     {
       "tag": "🌐 HU-39",
       "type": "shadowsocks",
-      "server": "155.117.137.182",
+      "server": "155.117.137.160",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
+      "password": "q\\{}y[s}n"
     },
     {
       "tag": "🌐 HU-40",
       "type": "shadowsocks",
-      "server": "155.117.137.225",
+      "server": "155.117.137.103",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "4Z7\\7i\u001czom="
@@ -309,34 +313,34 @@
     {
       "tag": "🌐 HU-41",
       "type": "shadowsocks",
-      "server": "155.117.137.58",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
-    },
-    {
-      "tag": "🌐 HU-42",
-      "type": "shadowsocks",
-      "server": "155.117.137.110",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
-    },
-    {
-      "tag": "🌐 HU-43",
-      "type": "shadowsocks",
       "server": "37.221.210.113",
       "server_port": 8443,
       "method": "aes-256-gcm",
       "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
-      "tag": "🌐 HU-44",
+      "tag": "🌐 HU-42",
       "type": "shadowsocks",
-      "server": "95.164.10.50",
+      "server": "37.221.210.113",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "k]4m\u001c_m=yvqޚ"
+      "password": "ntn\u001ciᾛ\u001fߧ7"
+    },
+    {
+      "tag": "🌐 HU-43",
+      "type": "shadowsocks",
+      "server": "217.13.104.154",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "y\u001d;kM]\u001es"
+    },
+    {
+      "tag": "🌐 HU-44",
+      "type": "shadowsocks",
+      "server": "217.13.105.1",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "qiq\u001fkvݷׇ5<"
     },
     {
       "tag": "🌐 HU-45",
@@ -349,45 +353,13 @@
     {
       "tag": "🌐 HU-46",
       "type": "shadowsocks",
-      "server": "217.13.104.148",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "o;74Vwiy"
-    },
-    {
-      "tag": "🌐 HU-47",
-      "type": "shadowsocks",
-      "server": "37.221.210.113",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ntn\u001ciᾛ\u001fߧ7"
-    },
-    {
-      "tag": "🌐 HU-48",
-      "type": "shadowsocks",
-      "server": "217.13.104.149",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "y\u001d;kM]\u001es"
-    },
-    {
-      "tag": "🌐 HU-49",
-      "type": "shadowsocks",
-      "server": "185.187.72.117",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "㶛9og\u001c_o6oww"
-    },
-    {
-      "tag": "🌐 HU-50",
-      "type": "shadowsocks",
-      "server": "155.117.137.174",
+      "server": "155.117.137.58",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "4Z7\\7i\u001czom="
     },
     {
-      "tag": "🌐 HU-51",
+      "tag": "🌐 HU-47",
       "type": "shadowsocks",
       "server": "155.117.137.166",
       "server_port": 443,
@@ -395,7 +367,7 @@
       "password": "4Z7\\7i\u001czom="
     },
     {
-      "tag": "🌐 HU-52",
+      "tag": "🌐 HU-48",
       "type": "shadowsocks",
       "server": "155.117.137.60",
       "server_port": 443,
@@ -403,20 +375,52 @@
       "password": "4Z7\\7i\u001czom="
     },
     {
-      "tag": "🌐 HU-53",
+      "tag": "🌐 HU-49",
       "type": "shadowsocks",
-      "server": "155.117.137.182",
+      "server": "155.117.137.160",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "q\\{}y[s}n"
+    },
+    {
+      "tag": "🌐 HU-50",
+      "type": "shadowsocks",
+      "server": "155.117.137.103",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "4Z7\\7i\u001czom="
     },
     {
-      "tag": "🌐 HU-54",
+      "tag": "🌐 HU-51",
       "type": "shadowsocks",
-      "server": "155.117.137.225",
+      "server": "37.221.210.113",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "Ӈ<ǶѾ}k\u001bgs6"
+    },
+    {
+      "tag": "🌐 HU-52",
+      "type": "shadowsocks",
+      "server": "37.221.210.113",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
+      "password": "ntn\u001ciᾛ\u001fߧ7"
+    },
+    {
+      "tag": "🌐 HU-53",
+      "type": "shadowsocks",
+      "server": "217.13.104.154",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "y\u001d;kM]\u001es"
+    },
+    {
+      "tag": "🌐 HU-54",
+      "type": "shadowsocks",
+      "server": "217.13.105.1",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "qiq\u001fkvݷׇ5<"
     },
     {
       "tag": "🌐 HU-55",
@@ -429,7 +433,7 @@
     {
       "tag": "🌐 HU-56",
       "type": "shadowsocks",
-      "server": "155.117.137.110",
+      "server": "155.117.137.166",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "4Z7\\7i\u001czom="
@@ -437,253 +441,37 @@
     {
       "tag": "🌐 HU-57",
       "type": "shadowsocks",
-      "server": "37.221.210.113",
-      "server_port": 8443,
+      "server": "155.117.137.60",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "Ӈ<ǶѾ}k\u001bgs6"
+      "password": "4Z7\\7i\u001czom="
     },
     {
       "tag": "🌐 HU-58",
       "type": "shadowsocks",
-      "server": "95.164.10.50",
+      "server": "155.117.137.160",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "k]4m\u001c_m=yvqޚ"
+      "password": "q\\{}y[s}n"
     },
     {
       "tag": "🌐 HU-59",
       "type": "shadowsocks",
-      "server": "37.221.210.113",
+      "server": "155.117.137.103",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "ntn\u001ciᾛ\u001fߧ7"
+      "password": "4Z7\\7i\u001czom="
     },
     {
       "tag": "🌐 HU-60",
       "type": "shadowsocks",
-      "server": "217.13.104.148",
+      "server": "155.117.137.150",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "o;74Vwiy"
+      "password": "}uvW\\t^"
     },
     {
       "tag": "🌐 HU-61",
-      "type": "shadowsocks",
-      "server": "37.221.210.113",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ntn\u001ciᾛ\u001fߧ7"
-    },
-    {
-      "tag": "🌐 HU-62",
-      "type": "shadowsocks",
-      "server": "217.13.104.149",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "y\u001d;kM]\u001es"
-    },
-    {
-      "tag": "🌐 HU-63",
-      "type": "shadowsocks",
-      "server": "185.187.72.117",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "㶛9og\u001c_o6oww"
-    },
-    {
-      "tag": "🌐 HU-64",
-      "type": "shadowsocks",
-      "server": "155.117.137.174",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
-    },
-    {
-      "tag": "🌐 HU-65",
-      "type": "shadowsocks",
-      "server": "155.117.137.166",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
-    },
-    {
-      "tag": "🌐 HU-66",
-      "type": "shadowsocks",
-      "server": "155.117.137.60",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
-    },
-    {
-      "tag": "🌐 HU-67",
-      "type": "shadowsocks",
-      "server": "155.117.137.182",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
-    },
-    {
-      "tag": "🌐 HU-68",
-      "type": "shadowsocks",
-      "server": "155.117.137.225",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
-    },
-    {
-      "tag": "🌐 HU-69",
-      "type": "shadowsocks",
-      "server": "155.117.137.58",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
-    },
-    {
-      "tag": "🌐 HU-70",
-      "type": "shadowsocks",
-      "server": "155.117.137.110",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
-    },
-    {
-      "tag": "🌐 HU-71",
-      "type": "shadowsocks",
-      "server": "37.221.210.113",
-      "server_port": 8443,
-      "method": "aes-256-gcm",
-      "password": "Ӈ<ǶѾ}k\u001bgs6"
-    },
-    {
-      "tag": "🌐 HU-72",
-      "type": "shadowsocks",
-      "server": "95.164.10.50",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "k]4m\u001c_m=yvqޚ"
-    },
-    {
-      "tag": "🌐 HU-73",
-      "type": "shadowsocks",
-      "server": "37.221.210.113",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ntn\u001ciᾛ\u001fߧ7"
-    },
-    {
-      "tag": "🌐 HU-74",
-      "type": "shadowsocks",
-      "server": "217.13.104.148",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "o;74Vwiy"
-    },
-    {
-      "tag": "🌐 HU-75",
-      "type": "shadowsocks",
-      "server": "217.13.104.149",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "y\u001d;kM]\u001es"
-    },
-    {
-      "tag": "🌐 HU-76",
-      "type": "shadowsocks",
-      "server": "185.187.72.117",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "㶛9og\u001c_o6oww"
-    },
-    {
-      "tag": "🌐 HU-77",
-      "type": "shadowsocks",
-      "server": "155.117.137.174",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
-    },
-    {
-      "tag": "🌐 HU-78",
-      "type": "shadowsocks",
-      "server": "155.117.137.166",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
-    },
-    {
-      "tag": "🌐 HU-79",
-      "type": "shadowsocks",
-      "server": "155.117.137.60",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
-    },
-    {
-      "tag": "🌐 HU-80",
-      "type": "shadowsocks",
-      "server": "155.117.137.182",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
-    },
-    {
-      "tag": "🌐 HU-81",
-      "type": "shadowsocks",
-      "server": "155.117.137.225",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
-    },
-    {
-      "tag": "🌐 HU-82",
-      "type": "shadowsocks",
-      "server": "155.117.137.58",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
-    },
-    {
-      "tag": "🌐 HU-83",
-      "type": "shadowsocks",
-      "server": "155.117.137.110",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "4Z7\\7i\u001czom="
-    },
-    {
-      "tag": "🌐 HU-84",
-      "type": "shadowsocks",
-      "server": "37.221.208.37",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "׷tӞ|iw]v"
-    },
-    {
-      "tag": "🌐 HU-85",
-      "type": "shadowsocks",
-      "server": "217.13.104.149",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "y;׮;f=}o\u001dg"
-    },
-    {
-      "tag": "🌐 HU-86",
-      "type": "shadowsocks",
-      "server": "185.187.72.117",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ѭvZ{n5ᾷkMծZ㖽"
-    },
-    {
-      "tag": "🌐 HU-87",
-      "type": "shadowsocks",
-      "server": "38.180.225.181",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "yg^]o\u001ak"
-    },
-    {
-      "tag": "🌐 HU-88",
       "type": "shadowsocks",
       "server": "155.117.137.199",
       "server_port": 443,
@@ -691,25 +479,12 @@
       "password": "4Z7\\7i\u001czom="
     },
     {
-      "tag": "🌐 HU-89",
-      "type": "trojan",
-      "server": "185.225.68.232",
+      "tag": "🌐 HU-62",
+      "type": "shadowsocks",
+      "server": "155.117.137.89",
       "server_port": 443,
-      "password": "humanity"
-    },
-    {
-      "tag": "🌐 HU-90",
-      "type": "trojan",
-      "server": "46.29.142.57",
-      "server_port": 4443,
-      "password": "C0ldyfh-vpnjantit.com"
-    },
-    {
-      "tag": "🌐 HU-91",
-      "type": "trojan",
-      "server": "180.149.37.38",
-      "server_port": 8443,
-      "password": "8r%3C%5B9%27l6hAO%238ZQi"
+      "method": "aes-256-gcm",
+      "password": "4Z7\\7i\u001czom="
     }
   ]
 }

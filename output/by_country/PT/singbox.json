@@ -2,50 +2,11 @@
   "outbounds": [
     {
       "tag": "🌐 PT-01",
-      "type": "vless",
-      "server": "195.133.92.20",
-      "server_port": 443,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64"
-    },
-    {
-      "tag": "🌐 PT-02",
       "type": "shadowsocks",
-      "server": "195.133.92.20",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
-    },
-    {
-      "tag": "🌐 PT-03",
-      "type": "shadowsocks",
-      "server": "195.133.92.20",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
-    },
-    {
-      "tag": "🌐 PT-04",
-      "type": "shadowsocks",
-      "server": "195.133.92.20",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
-    },
-    {
-      "tag": "🌐 PT-05",
-      "type": "shadowsocks",
-      "server": "195.133.92.20",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
-    },
-    {
-      "tag": "🌐 PT-06",
-      "type": "shadowsocks",
-      "server": "195.133.92.20",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
+      "server": "185.231.233.91",
+      "server_port": 17167,
+      "method": "ss",
+      "password": "//c3M6Ly9ZV1Z6TFRFeU9DMW5ZMjA2WTJFME16Z3dOVFEzTnpFNE1qRXlOVEF3T0Rrek9UbGhNbVl6TXpJM05XVT0="
     }
   ]
 }
