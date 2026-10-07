@@ -210,6 +210,22 @@ rule-providers:
     path: ./ruleset/reject.mrs
     interval: 86400
 
+  tvbox_cn:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/haygcao/tvbox-master-aggregator@main/mrs/domain/clash_rules_direct.mrs"
+    path: ./ruleset/tvbox_cn.mrs
+    interval: 86400
+
+  tvbox_proxy:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/haygcao/tvbox-master-aggregator@main/mrs/domain/clash_rules_proxy.mrs"
+    path: ./ruleset/tvbox_proxy.mrs
+    interval: 86400
+
   YouTube:
     type: http
     behavior: domain
@@ -336,9 +352,11 @@ rules:
   - IP-CIDR,45.159.51.56/32,DIRECT,no-resolve
   - IP-CIDR,104.243.24.216/32,DIRECT,no-resolve
   - IP-CIDR,104.225.233.178/32,DIRECT,no-resolve
+  - RULE-SET,tvbox_cn,📺 国内影视
   - RULE-SET,reject,🛑 广告拦截
   - RULE-SET,YouTube,▶️ YouTube
   - RULE-SET,Google,🌐 Google
+  - RULE-SET,tvbox_proxy,📺 TVBox代理
   - RULE-SET,OpenAI,🟢 OpenAI / AI
   - RULE-SET,Telegram,✈️ Telegram
   - RULE-SET,Twitter,🐦 Twitter / X

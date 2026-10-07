@@ -1321,7 +1321,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/cn.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/haygcao/tvbox-master-aggregator@main/mrs/domain/clash_rules_direct.mrs"
     path: ./ruleset/tvbox_cn.mrs
     interval: 86400
 
@@ -1329,7 +1329,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/geolocation-!cn.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/haygcao/tvbox-master-aggregator@main/mrs/domain/clash_rules_proxy.mrs"
     path: ./ruleset/tvbox_proxy.mrs
     interval: 86400
 
