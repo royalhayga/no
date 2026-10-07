@@ -17,13 +17,13 @@ ELITE_TEMPLATE_FILE = ROOT_DIR / "config" / "rules_elite_template.yaml"
 INPUT_DIR = ROOT_DIR / "output" / "verified"
 ALT_INPUT_DIR = ROOT_DIR / "output" / "dns"
 
-# 产物输出路径：包含私有版、纯公开版 与 手机专享版
+# 产物输出路径：凡是精炼版 (Elite 架构) 均在文件名中包含 elite
 OUTPUT_RULES_CLASH = ROOT_DIR / "output" / "clash_rules.yaml"
 OUTPUT_ELITE_RULES_CLASH = ROOT_DIR / "output" / "clash_elite_rules.yaml"
 OUTPUT_PUBLIC_RULES_CLASH = ROOT_DIR / "output" / "clash_public_rules.yaml"
 OUTPUT_PUBLIC_ELITE_RULES_CLASH = ROOT_DIR / "output" / "clash_public_elite_rules.yaml"
-OUTPUT_MOBILE_RULES_CLASH = ROOT_DIR / "output" / "clash_mobile_rules.yaml"
-OUTPUT_PUBLIC_MOBILE_RULES_CLASH = ROOT_DIR / "output" / "clash_public_mobile_rules.yaml"
+OUTPUT_MOBILE_RULES_CLASH = ROOT_DIR / "output" / "clash_mobile_elite_rules.yaml"
+OUTPUT_PUBLIC_MOBILE_RULES_CLASH = ROOT_DIR / "output" / "clash_public_mobile_elite_rules.yaml"
 
 PRIVATE_NODE_NAMES = ["手机", "reality funo", "JPreality", "39515", "reality", "tourism", "test"]
 
