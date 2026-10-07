@@ -1314,7 +1314,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-ads-all.mrs"
     path: ./ruleset/reject.mrs
-    interval: 86400
+    interval: 21600
 
   # TVBox 国内与国外代理规则源
   tvbox_cn:
@@ -1323,7 +1323,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/haygcao/tvbox-master-aggregator@main/mrs/domain/clash_rules_direct.mrs"
     path: ./ruleset/tvbox_cn.mrs
-    interval: 86400
+    interval: 21600
 
   tvbox_proxy:
     type: http
@@ -1331,7 +1331,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/haygcao/tvbox-master-aggregator@main/mrs/domain/clash_rules_proxy.mrs"
     path: ./ruleset/tvbox_proxy.mrs
-    interval: 86400
+    interval: 21600
 
   # Google 体系
   scholar:
@@ -1340,7 +1340,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/google-scholar.mrs"
     path: ./ruleset/scholar.mrs
-    interval: 86400
+    interval: 21600
 
   youtube_music:
     type: http
@@ -1348,7 +1348,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/youtube.mrs"
     path: ./ruleset/youtube_music.mrs
-    interval: 86400
+    interval: 21600
 
   YouTube:
     type: http
@@ -1356,7 +1356,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/youtube.mrs"
     path: ./ruleset/YouTube.mrs
-    interval: 86400
+    interval: 21600
 
   googledrive:
     type: http
@@ -1364,7 +1364,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/google.mrs"
     path: ./ruleset/googledrive.mrs
-    interval: 86400
+    interval: 21600
 
   google_cn:
     type: http
@@ -1372,7 +1372,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/google-cn.mrs"
     path: ./ruleset/google_cn.mrs
-    interval: 86400
+    interval: 21600
 
   Google:
     type: http
@@ -1380,7 +1380,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/google.mrs"
     path: ./ruleset/Google.mrs
-    interval: 86400
+    interval: 21600
 
   # AI 体系
   OpenAI:
@@ -1389,7 +1389,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/openai.mrs"
     path: ./ruleset/OpenAI.mrs
-    interval: 86400
+    interval: 21600
 
   claude:
     type: http
@@ -1397,7 +1397,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/anthropic.mrs"
     path: ./ruleset/claude.mrs
-    interval: 86400
+    interval: 21600
 
   anthropic:
     type: http
@@ -1405,7 +1405,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/anthropic.mrs"
     path: ./ruleset/anthropic.mrs
-    interval: 86400
+    interval: 21600
 
   gemini:
     type: http
@@ -1413,7 +1413,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/google-gemini.mrs"
     path: ./ruleset/gemini.mrs
-    interval: 86400
+    interval: 21600
 
   Copilot:
     type: http
@@ -1421,7 +1421,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/github-copilot.mrs"
     path: ./ruleset/Copilot.mrs
-    interval: 86400
+    interval: 21600
 
   # 社交与通讯
   Telegram:
@@ -1430,7 +1430,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/telegram.mrs"
     path: ./ruleset/Telegram.mrs
-    interval: 86400
+    interval: 21600
 
   telegramcidr:
     type: http
@@ -1438,7 +1438,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geoip/telegram.mrs"
     path: ./ruleset/telegramcidr.mrs
-    interval: 86400
+    interval: 21600
 
   PotatoChat:
     type: http
@@ -1446,7 +1446,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/telegram.mrs"
     path: ./ruleset/PotatoChat.mrs
-    interval: 86400
+    interval: 21600
 
   KakaoTalk:
     type: http
@@ -1454,7 +1454,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/kakao.mrs"
     path: ./ruleset/KakaoTalk.mrs
-    interval: 86400
+    interval: 21600
 
   Line:
     type: http
@@ -1462,7 +1462,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/line.mrs"
     path: ./ruleset/Line.mrs
-    interval: 86400
+    interval: 21600
 
   Whatsapp:
     type: http
@@ -1470,7 +1470,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/whatsapp.mrs"
     path: ./ruleset/Whatsapp.mrs
-    interval: 86400
+    interval: 21600
 
   Discord:
     type: http
@@ -1478,7 +1478,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/discord.mrs"
     path: ./ruleset/Discord.mrs
-    interval: 86400
+    interval: 21600
 
   Twitter:
     type: http
@@ -1486,7 +1486,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/twitter.mrs"
     path: ./ruleset/Twitter.mrs
-    interval: 86400
+    interval: 21600
 
   Instagram:
     type: http
@@ -1494,7 +1494,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/instagram.mrs"
     path: ./ruleset/Instagram.mrs
-    interval: 86400
+    interval: 21600
 
   Facebook:
     type: http
@@ -1502,7 +1502,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/facebook.mrs"
     path: ./ruleset/Facebook.mrs
-    interval: 86400
+    interval: 21600
 
   threads:
     type: http
@@ -1510,7 +1510,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/threads.mrs"
     path: ./ruleset/threads.mrs
-    interval: 86400
+    interval: 21600
 
   Reddit:
     type: http
@@ -1518,7 +1518,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/reddit.mrs"
     path: ./ruleset/Reddit.mrs
-    interval: 86400
+    interval: 21600
 
   # 影音流媒体
   Netflix:
@@ -1527,7 +1527,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/netflix.mrs"
     path: ./ruleset/Netflix.mrs
-    interval: 86400
+    interval: 21600
 
   Disney:
     type: http
@@ -1535,7 +1535,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/disney.mrs"
     path: ./ruleset/Disney.mrs
-    interval: 86400
+    interval: 21600
 
   Spotify:
     type: http
@@ -1543,7 +1543,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/spotify.mrs"
     path: ./ruleset/Spotify.mrs
-    interval: 86400
+    interval: 21600
 
   TikTok:
     type: http
@@ -1551,7 +1551,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/tiktok.mrs"
     path: ./ruleset/TikTok.mrs
-    interval: 86400
+    interval: 21600
 
   Twitch:
     type: http
@@ -1559,7 +1559,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/twitch.mrs"
     path: ./ruleset/Twitch.mrs
-    interval: 86400
+    interval: 21600
 
   # 金融与应用服务
   PayPal:
@@ -1568,7 +1568,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/paypal.mrs"
     path: ./ruleset/PayPal.mrs
-    interval: 86400
+    interval: 21600
 
   stripe:
     type: http
@@ -1576,7 +1576,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/stripe.mrs"
     path: ./ruleset/stripe.mrs
-    interval: 86400
+    interval: 21600
 
   Binance:
     type: http
@@ -1584,7 +1584,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/binance.mrs"
     path: ./ruleset/Binance.mrs
-    interval: 86400
+    interval: 21600
 
   Duckduckgo:
     type: http
@@ -1592,7 +1592,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/duckduckgo.mrs"
     path: ./ruleset/Duckduckgo.mrs
-    interval: 86400
+    interval: 21600
 
   Wikipedia:
     type: http
@@ -1600,7 +1600,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/wikimedia.mrs"
     path: ./ruleset/Wikipedia.mrs
-    interval: 86400
+    interval: 21600
 
   dropbox:
     type: http
@@ -1608,7 +1608,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/dropbox.mrs"
     path: ./ruleset/dropbox.mrs
-    interval: 86400
+    interval: 21600
 
   Dubox:
     type: http
@@ -1616,7 +1616,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/baidu.mrs"
     path: ./ruleset/Dubox.mrs
-    interval: 86400
+    interval: 21600
 
   MEGA:
     type: http
@@ -1624,7 +1624,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/mega.mrs"
     path: ./ruleset/MEGA.mrs
-    interval: 86400
+    interval: 21600
 
   pixiv:
     type: http
@@ -1632,7 +1632,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/pixiv.mrs"
     path: ./ruleset/pixiv.mrs
-    interval: 86400
+    interval: 21600
 
   Pinterest:
     type: http
@@ -1640,7 +1640,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/pinterest.mrs"
     path: ./ruleset/Pinterest.mrs
-    interval: 86400
+    interval: 21600
 
   Imgur:
     type: http
@@ -1648,7 +1648,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/imgur.mrs"
     path: ./ruleset/Imgur.mrs
-    interval: 86400
+    interval: 21600
 
   Vimeo:
     type: http
@@ -1656,7 +1656,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/vimeo.mrs"
     path: ./ruleset/Vimeo.mrs
-    interval: 86400
+    interval: 21600
 
   BBC:
     type: http
@@ -1664,7 +1664,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/bbc.mrs"
     path: ./ruleset/BBC.mrs
-    interval: 86400
+    interval: 21600
 
   Spark:
     type: http
@@ -1672,7 +1672,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-communication.mrs"
     path: ./ruleset/Spark.mrs
-    interval: 86400
+    interval: 21600
 
   GitBook:
     type: http
@@ -1680,7 +1680,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/gitbook.mrs"
     path: ./ruleset/GitBook.mrs
-    interval: 86400
+    interval: 21600
 
   duolingo:
     type: http
@@ -1688,7 +1688,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/duolingo.mrs"
     path: ./ruleset/duolingo.mrs
-    interval: 86400
+    interval: 21600
 
   notion:
     type: http
@@ -1696,7 +1696,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/notion.mrs"
     path: ./ruleset/notion.mrs
-    interval: 86400
+    interval: 21600
 
   civitai:
     type: http
@@ -1704,7 +1704,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-ai-!cn.mrs"
     path: ./ruleset/civitai.mrs
-    interval: 86400
+    interval: 21600
 
   docker:
     type: http
@@ -1712,7 +1712,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/docker.mrs"
     path: ./ruleset/docker.mrs
-    interval: 86400
+    interval: 21600
 
   vercel:
     type: http
@@ -1720,7 +1720,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/vercel.mrs"
     path: ./ruleset/vercel.mrs
-    interval: 86400
+    interval: 21600
 
   apkpure:
     type: http
@@ -1728,7 +1728,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/apkpure.mrs"
     path: ./ruleset/apkpure.mrs
-    interval: 86400
+    interval: 21600
 
   GitHub:
     type: http
@@ -1736,7 +1736,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/github.mrs"
     path: ./ruleset/GitHub.mrs
-    interval: 86400
+    interval: 21600
 
   proxy_media:
     type: http
@@ -1744,7 +1744,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/geolocation-!cn.mrs"
     path: ./ruleset/proxy_media.mrs
-    interval: 86400
+    interval: 21600
 
   # 品牌直连服务
   Microsoft:
@@ -1753,7 +1753,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/microsoft.mrs"
     path: ./ruleset/Microsoft.mrs
-    interval: 86400
+    interval: 21600
 
   OneDrive:
     type: http
@@ -1761,7 +1761,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/onedrive.mrs"
     path: ./ruleset/OneDrive.mrs
-    interval: 86400
+    interval: 21600
 
   MicrosoftEdge:
     type: http
@@ -1769,7 +1769,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/microsoft.mrs"
     path: ./ruleset/MicrosoftEdge.mrs
-    interval: 86400
+    interval: 21600
 
   Bing:
     type: http
@@ -1777,7 +1777,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/bing.mrs"
     path: ./ruleset/Bing.mrs
-    interval: 86400
+    interval: 21600
 
   Apple:
     type: http
@@ -1785,7 +1785,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/apple.mrs"
     path: ./ruleset/Apple.mrs
-    interval: 86400
+    interval: 21600
 
   AppStore:
     type: http
@@ -1793,7 +1793,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/apple.mrs"
     path: ./ruleset/AppStore.mrs
-    interval: 86400
+    interval: 21600
 
   iCloud:
     type: http
@@ -1801,7 +1801,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/icloud.mrs"
     path: ./ruleset/iCloud.mrs
-    interval: 86400
+    interval: 21600
 
   apple_cn_domain:
     type: http
@@ -1809,7 +1809,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/apple-cn.mrs"
     path: ./ruleset/apple_cn_domain.mrs
-    interval: 86400
+    interval: 21600
 
   icloud_domain:
     type: http
@@ -1817,7 +1817,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/icloud.mrs"
     path: ./ruleset/icloud_domain.mrs
-    interval: 86400
+    interval: 21600
 
   Steam:
     type: http
@@ -1825,7 +1825,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/steam.mrs"
     path: ./ruleset/Steam.mrs
-    interval: 86400
+    interval: 21600
 
   Sony:
     type: http
@@ -1833,7 +1833,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/sony.mrs"
     path: ./ruleset/Sony.mrs
-    interval: 86400
+    interval: 21600
 
   Amazon:
     type: http
@@ -1841,7 +1841,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/amazon.mrs"
     path: ./ruleset/Amazon.mrs
-    interval: 86400
+    interval: 21600
 
   eBay:
     type: http
@@ -1849,7 +1849,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/ebay.mrs"
     path: ./ruleset/eBay.mrs
-    interval: 86400
+    interval: 21600
 
   Bestbuy:
     type: http
@@ -1857,7 +1857,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/bestbuy.mrs"
     path: ./ruleset/Bestbuy.mrs
-    interval: 86400
+    interval: 21600
 
   Shopee:
     type: http
@@ -1865,7 +1865,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/shopee.mrs"
     path: ./ruleset/Shopee.mrs
-    interval: 86400
+    interval: 21600
 
   Shopify:
     type: http
@@ -1873,7 +1873,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/shopify.mrs"
     path: ./ruleset/Shopify.mrs
-    interval: 86400
+    interval: 21600
 
   MOMOShop:
     type: http
@@ -1881,7 +1881,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-ecommerce.mrs"
     path: ./ruleset/MOMOShop.mrs
-    interval: 86400
+    interval: 21600
 
   Gucci:
     type: http
@@ -1889,7 +1889,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/gucci.mrs"
     path: ./ruleset/Gucci.mrs
-    interval: 86400
+    interval: 21600
 
   Samsung:
     type: http
@@ -1897,7 +1897,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/samsung.mrs"
     path: ./ruleset/Samsung.mrs
-    interval: 86400
+    interval: 21600
 
   Razer:
     type: http
@@ -1905,7 +1905,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/razer.mrs"
     path: ./ruleset/Razer.mrs
-    interval: 86400
+    interval: 21600
 
   Adobe:
     type: http
@@ -1913,7 +1913,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/adobe.mrs"
     path: ./ruleset/Adobe.mrs
-    interval: 86400
+    interval: 21600
 
   VISA:
     type: http
@@ -1921,7 +1921,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/visa.mrs"
     path: ./ruleset/VISA.mrs
-    interval: 86400
+    interval: 21600
 
   WIX:
     type: http
@@ -1929,7 +1929,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/wix.mrs"
     path: ./ruleset/WIX.mrs
-    interval: 86400
+    interval: 21600
 
   Zoho:
     type: http
@@ -1937,7 +1937,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/zoho.mrs"
     path: ./ruleset/Zoho.mrs
-    interval: 86400
+    interval: 21600
 
   # 通用代理与直连 (.mrs)
   proxy_domain:
@@ -1946,7 +1946,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/geolocation-!cn.mrs"
     path: ./ruleset/proxy_domain.mrs
-    interval: 86400
+    interval: 21600
 
   direct:
     type: http
@@ -1954,7 +1954,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/cn.mrs"
     path: ./ruleset/direct.mrs
-    interval: 86400
+    interval: 21600
 
   private:
     type: http
@@ -1962,7 +1962,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/private.mrs"
     path: ./ruleset/private.mrs
-    interval: 86400
+    interval: 21600
 
   cncidr:
     type: http
@@ -1970,7 +1970,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geoip/cn.mrs"
     path: ./ruleset/cncidr.mrs
-    interval: 86400
+    interval: 21600
 
   lancidr:
     type: http
@@ -1978,7 +1978,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geoip/private.mrs"
     path: ./ruleset/lancidr.mrs
-    interval: 86400
+    interval: 21600
 
   applications:
     type: http
@@ -1986,7 +1986,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-dev.mrs"
     path: ./ruleset/applications.mrs
-    interval: 86400
+    interval: 21600
 
   download_pt:
     type: http
@@ -1994,7 +1994,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-pt.mrs"
     path: ./ruleset/download_pt.mrs
-    interval: 86400
+    interval: 21600
 
   gfw:
     type: http
@@ -2002,7 +2002,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/gfw.mrs"
     path: ./ruleset/gfw.mrs
-    interval: 86400
+    interval: 21600
 
   tld-not-cn:
     type: http
@@ -2010,7 +2010,7 @@ rule-providers:
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/tld-!cn.mrs"
     path: ./ruleset/tld-not-cn.mrs
-    interval: 86400
+    interval: 21600
 
 # ==================== 3. 严格分流规则 (由上至下匹配，顺序绝对固定) ====================
 rules:
