@@ -2,112 +2,108 @@
   "outbounds": [
     {
       "tag": "🇦🇺 AU-01",
-      "type": "vless",
-      "server": "160.187.111.222",
+      "type": "vmess",
+      "server": "82.117.225.80",
       "server_port": 443,
-      "uuid": "3e7f67de-648e-4871-b51a-a225214d41ee"
+      "uuid": "03fcc618-b93d-6796-6aed-8a38c975d581",
+      "security": "auto"
     },
     {
       "tag": "🇦🇺 AU-02",
+      "type": "vless",
+      "server": "103.169.142.30",
+      "server_port": 8880,
+      "uuid": "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    },
+    {
+      "tag": "🇦🇺 AU-03",
+      "type": "vless",
+      "server": "51.161.204.242",
+      "server_port": 443,
+      "uuid": "a14b736b-a92a-48d6-a596-5d31f7378ded"
+    },
+    {
+      "tag": "🇦🇺 AU-04",
+      "type": "vless",
+      "server": "51.161.204.244",
+      "server_port": 443,
+      "uuid": "36e89875-9c53-482b-bc41-d3890e9da176"
+    },
+    {
+      "tag": "🇦🇺 AU-05",
+      "type": "vless",
+      "server": "194.195.123.60",
+      "server_port": 22368,
+      "uuid": "d00d9d18-20cf-4191-be76-6f73d43a27ec"
+    },
+    {
+      "tag": "🇦🇺 AU-06",
       "type": "vless",
       "server": "143.42.46.37",
       "server_port": 25605,
       "uuid": "d00d9d18-20cf-4191-be76-6f73d43a27ec"
     },
     {
-      "tag": "🇦🇺 AU-03",
+      "tag": "🇦🇺 AU-07",
+      "type": "vless",
+      "server": "156.59.201.182",
+      "server_port": 24442,
+      "uuid": "26524cce-d514-4014-a426-365fb266a14d"
+    },
+    {
+      "tag": "🇦🇺 AU-08",
       "type": "vless",
       "server": "103.43.75.82",
       "server_port": 443,
       "uuid": "40af9131-d540-448a-bc56-5bba147a1dc3"
     },
     {
-      "tag": "🇦🇺 AU-04",
-      "type": "shadowsocks",
-      "server": "160.187.111.222",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "^\u001eoZkm^\u001dW"
-    },
-    {
-      "tag": "🇦🇺 AU-05",
-      "type": "shadowsocks",
-      "server": "143.42.46.37",
-      "server_port": 25605,
-      "method": "aes-256-gcm",
-      "password": "wM\u001d|G\u001f_umw۷"
-    },
-    {
-      "tag": "🇦🇺 AU-06",
-      "type": "shadowsocks",
-      "server": "103.43.75.82",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "F]w4\u001amz׎7"
-    },
-    {
-      "tag": "🇦🇺 AU-07",
-      "type": "shadowsocks",
-      "server": "160.187.111.222",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "^\u001eoZkm^\u001dW"
-    },
-    {
-      "tag": "🇦🇺 AU-08",
-      "type": "shadowsocks",
-      "server": "143.42.46.37",
-      "server_port": 25605,
-      "method": "aes-256-gcm",
-      "password": "wM\u001d|G\u001f_umw۷"
-    },
-    {
       "tag": "🇦🇺 AU-09",
       "type": "shadowsocks",
-      "server": "103.43.75.82",
-      "server_port": 443,
+      "server": "103.169.142.30",
+      "server_port": 8880,
       "method": "aes-256-gcm",
-      "password": "F]w4\u001amz׎7"
+      "password": "m6om^\u001eois]"
     },
     {
       "tag": "🇦🇺 AU-10",
       "type": "shadowsocks",
-      "server": "160.187.111.222",
+      "server": "51.161.204.242",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "^\u001eoZkm^\u001dW"
+      "password": "k^\u001b~kݚzkzם"
     },
     {
       "tag": "🇦🇺 AU-11",
       "type": "shadowsocks",
-      "server": "143.42.46.37",
-      "server_port": 25605,
+      "server": "51.161.204.244",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "wM\u001d|G\u001f_umw۷"
+      "password": "ߧw͛m5w=]k^"
     },
     {
       "tag": "🇦🇺 AU-12",
       "type": "shadowsocks",
-      "server": "103.43.75.82",
-      "server_port": 443,
+      "server": "194.195.123.60",
+      "server_port": 22368,
       "method": "aes-256-gcm",
-      "password": "F]w4\u001amz׎7"
+      "password": "wM\u001d|G\u001f_umw۷"
     },
     {
       "tag": "🇦🇺 AU-13",
-      "type": "shadowsocks",
-      "server": "160.187.111.222",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "^\u001eoZkm^\u001dW"
-    },
-    {
-      "tag": "🇦🇺 AU-14",
       "type": "shadowsocks",
       "server": "143.42.46.37",
       "server_port": 25605,
       "method": "aes-256-gcm",
       "password": "wM\u001d|G\u001f_umw۷"
+    },
+    {
+      "tag": "🇦🇺 AU-14",
+      "type": "shadowsocks",
+      "server": "156.59.201.182",
+      "server_port": 24442,
+      "method": "aes-256-gcm",
+      "password": "ۮv\u001ewxMxk߮_onk^"
     },
     {
       "tag": "🇦🇺 AU-15",
@@ -120,13 +116,37 @@
     {
       "tag": "🇦🇺 AU-16",
       "type": "shadowsocks",
-      "server": "160.187.111.222",
-      "server_port": 443,
+      "server": "103.169.142.30",
+      "server_port": 8880,
       "method": "aes-256-gcm",
-      "password": "^\u001eoZkm^\u001dW"
+      "password": "m6om^\u001eois]"
     },
     {
       "tag": "🇦🇺 AU-17",
+      "type": "shadowsocks",
+      "server": "51.161.204.242",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "k^\u001b~kݚzkzם"
+    },
+    {
+      "tag": "🇦🇺 AU-18",
+      "type": "shadowsocks",
+      "server": "51.161.204.244",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ߧw͛m5w=]k^"
+    },
+    {
+      "tag": "🇦🇺 AU-19",
+      "type": "shadowsocks",
+      "server": "194.195.123.60",
+      "server_port": 22368,
+      "method": "aes-256-gcm",
+      "password": "wM\u001d|G\u001f_umw۷"
+    },
+    {
+      "tag": "🇦🇺 AU-20",
       "type": "shadowsocks",
       "server": "143.42.46.37",
       "server_port": 25605,
@@ -134,7 +154,15 @@
       "password": "wM\u001d|G\u001f_umw۷"
     },
     {
-      "tag": "🇦🇺 AU-18",
+      "tag": "🇦🇺 AU-21",
+      "type": "shadowsocks",
+      "server": "156.59.201.182",
+      "server_port": 24442,
+      "method": "aes-256-gcm",
+      "password": "ۮv\u001ewxMxk߮_onk^"
+    },
+    {
+      "tag": "🇦🇺 AU-22",
       "type": "shadowsocks",
       "server": "103.43.75.82",
       "server_port": 443,
@@ -142,7 +170,175 @@
       "password": "F]w4\u001amz׎7"
     },
     {
-      "tag": "🇦🇺 AU-19",
+      "tag": "🇦🇺 AU-23",
+      "type": "shadowsocks",
+      "server": "103.169.142.30",
+      "server_port": 8880,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    },
+    {
+      "tag": "🇦🇺 AU-24",
+      "type": "shadowsocks",
+      "server": "51.161.204.242",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "k^\u001b~kݚzkzם"
+    },
+    {
+      "tag": "🇦🇺 AU-25",
+      "type": "shadowsocks",
+      "server": "51.161.204.244",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ߧw͛m5w=]k^"
+    },
+    {
+      "tag": "🇦🇺 AU-26",
+      "type": "shadowsocks",
+      "server": "194.195.123.60",
+      "server_port": 22368,
+      "method": "aes-256-gcm",
+      "password": "wM\u001d|G\u001f_umw۷"
+    },
+    {
+      "tag": "🇦🇺 AU-27",
+      "type": "shadowsocks",
+      "server": "143.42.46.37",
+      "server_port": 25605,
+      "method": "aes-256-gcm",
+      "password": "wM\u001d|G\u001f_umw۷"
+    },
+    {
+      "tag": "🇦🇺 AU-28",
+      "type": "shadowsocks",
+      "server": "156.59.201.182",
+      "server_port": 24442,
+      "method": "aes-256-gcm",
+      "password": "ۮv\u001ewxMxk߮_onk^"
+    },
+    {
+      "tag": "🇦🇺 AU-29",
+      "type": "shadowsocks",
+      "server": "103.43.75.82",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "F]w4\u001amz׎7"
+    },
+    {
+      "tag": "🇦🇺 AU-30",
+      "type": "shadowsocks",
+      "server": "103.169.142.30",
+      "server_port": 8880,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    },
+    {
+      "tag": "🇦🇺 AU-31",
+      "type": "shadowsocks",
+      "server": "51.161.204.242",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "k^\u001b~kݚzkzם"
+    },
+    {
+      "tag": "🇦🇺 AU-32",
+      "type": "shadowsocks",
+      "server": "51.161.204.244",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ߧw͛m5w=]k^"
+    },
+    {
+      "tag": "🇦🇺 AU-33",
+      "type": "shadowsocks",
+      "server": "194.195.123.60",
+      "server_port": 22368,
+      "method": "aes-256-gcm",
+      "password": "wM\u001d|G\u001f_umw۷"
+    },
+    {
+      "tag": "🇦🇺 AU-34",
+      "type": "shadowsocks",
+      "server": "143.42.46.37",
+      "server_port": 25605,
+      "method": "aes-256-gcm",
+      "password": "wM\u001d|G\u001f_umw۷"
+    },
+    {
+      "tag": "🇦🇺 AU-35",
+      "type": "shadowsocks",
+      "server": "156.59.201.182",
+      "server_port": 24442,
+      "method": "aes-256-gcm",
+      "password": "ۮv\u001ewxMxk߮_onk^"
+    },
+    {
+      "tag": "🇦🇺 AU-36",
+      "type": "shadowsocks",
+      "server": "103.43.75.82",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "F]w4\u001amz׎7"
+    },
+    {
+      "tag": "🇦🇺 AU-37",
+      "type": "shadowsocks",
+      "server": "103.169.142.30",
+      "server_port": 8880,
+      "method": "aes-256-gcm",
+      "password": "m6om^\u001eois]"
+    },
+    {
+      "tag": "🇦🇺 AU-38",
+      "type": "shadowsocks",
+      "server": "51.161.204.242",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "k^\u001b~kݚzkzם"
+    },
+    {
+      "tag": "🇦🇺 AU-39",
+      "type": "shadowsocks",
+      "server": "51.161.204.244",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ߧw͛m5w=]k^"
+    },
+    {
+      "tag": "🇦🇺 AU-40",
+      "type": "shadowsocks",
+      "server": "194.195.123.60",
+      "server_port": 22368,
+      "method": "aes-256-gcm",
+      "password": "wM\u001d|G\u001f_umw۷"
+    },
+    {
+      "tag": "🇦🇺 AU-41",
+      "type": "shadowsocks",
+      "server": "143.42.46.37",
+      "server_port": 25605,
+      "method": "aes-256-gcm",
+      "password": "wM\u001d|G\u001f_umw۷"
+    },
+    {
+      "tag": "🇦🇺 AU-42",
+      "type": "shadowsocks",
+      "server": "156.59.201.182",
+      "server_port": 24442,
+      "method": "aes-256-gcm",
+      "password": "ۮv\u001ewxMxk߮_onk^"
+    },
+    {
+      "tag": "🇦🇺 AU-43",
+      "type": "shadowsocks",
+      "server": "103.43.75.82",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "F]w4\u001amz׎7"
+    },
+    {
+      "tag": "🇦🇺 AU-44",
       "type": "shadowsocks",
       "server": "23.230.14.168",
       "server_port": 37750,
@@ -150,26 +346,41 @@
       "password": "};5iwg"
     },
     {
-      "tag": "🇦🇺 AU-20",
+      "tag": "🇦🇺 AU-45",
+      "type": "shadowsocks",
+      "server": "16.176.42.97",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "շ7Fq㎟o]\u001awo_sZ"
+    },
+    {
+      "tag": "🇦🇺 AU-46",
       "type": "shadowsocks",
       "server": "45.79.238.129",
       "server_port": 443,
-      "method": "ss",
-      "password": "//Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpZVVdYNkNPTFpZbWFIbFVHaUt3RGFO"
+      "method": "chacha20-ietf-poly1305",
+      "password": "YUWX6COLZYmaHlUGiKwDaN"
     },
     {
-      "tag": "🇦🇺 AU-21",
+      "tag": "🇦🇺 AU-47",
       "type": "trojan",
-      "server": "eternal-frog.rooster465.autos",
+      "server": "87.121.33.238",
       "server_port": 443,
-      "password": "IQ68037294"
+      "password": "AE62539071"
     },
     {
-      "tag": "🇦🇺 AU-22",
+      "tag": "🇦🇺 AU-48",
       "type": "trojan",
-      "server": "fluent-gar.rooster465.autos",
+      "server": "87.121.33.185",
       "server_port": 443,
-      "password": "ON38567014"
+      "password": "AE62539071"
+    },
+    {
+      "tag": "🇦🇺 AU-49",
+      "type": "trojan",
+      "server": "125.7.24.251",
+      "server_port": 443,
+      "password": "rYuChHcwQZskq9E0zdoR"
     }
   ]
 }
