@@ -17,12 +17,13 @@ ELITE_TEMPLATE_FILE = ROOT_DIR / "config" / "rules_elite_template.yaml"
 INPUT_DIR = ROOT_DIR / "output" / "verified"
 ALT_INPUT_DIR = ROOT_DIR / "output" / "dns"
 
-# 产物输出路径：包含带私有占位符版、纯公开版 与 手机轻量专用版
+# 产物输出路径：包含私有版、纯公开版 与 手机专享版
 OUTPUT_RULES_CLASH = ROOT_DIR / "output" / "clash_rules.yaml"
 OUTPUT_ELITE_RULES_CLASH = ROOT_DIR / "output" / "clash_elite_rules.yaml"
 OUTPUT_PUBLIC_RULES_CLASH = ROOT_DIR / "output" / "clash_public_rules.yaml"
 OUTPUT_PUBLIC_ELITE_RULES_CLASH = ROOT_DIR / "output" / "clash_public_elite_rules.yaml"
 OUTPUT_MOBILE_RULES_CLASH = ROOT_DIR / "output" / "clash_mobile_rules.yaml"
+OUTPUT_PUBLIC_MOBILE_RULES_CLASH = ROOT_DIR / "output" / "clash_public_mobile_rules.yaml"
 
 PRIVATE_NODE_NAMES = ["手机", "reality funo", "JPreality", "39515", "reality", "tourism", "test"]
 
@@ -261,11 +262,15 @@ def main() -> int:
         OUTPUT_PUBLIC_ELITE_RULES_CLASH.write_text(public_elite_yaml, encoding="utf-8")
         print(f"Successfully generated Elite Public Clash Config -> {OUTPUT_PUBLIC_ELITE_RULES_CLASH}", flush=True)
 
-    # 3. 手机端专享轻量精炼版 (clash_mobile_rules.yaml)
+    # 3. 手机端专享版 (包含私有版与纯公开版)
     if ELITE_TEMPLATE_FILE.exists():
         mobile_yaml = build_merged_clash_config(ELITE_TEMPLATE_FILE, crawled_nodes, include_private=True)
         OUTPUT_MOBILE_RULES_CLASH.write_text(mobile_yaml, encoding="utf-8")
-        print(f"Successfully generated Dedicated Mobile Clash Config -> {OUTPUT_MOBILE_RULES_CLASH}", flush=True)
+        print(f"Successfully generated Dedicated Private Mobile Clash Config -> {OUTPUT_MOBILE_RULES_CLASH}", flush=True)
+
+        public_mobile_yaml = build_merged_clash_config(ELITE_TEMPLATE_FILE, crawled_nodes, include_private=False)
+        OUTPUT_PUBLIC_MOBILE_RULES_CLASH.write_text(public_mobile_yaml, encoding="utf-8")
+        print(f"Successfully generated Dedicated Public Mobile Clash Config -> {OUTPUT_PUBLIC_MOBILE_RULES_CLASH}", flush=True)
 
     return 0
 

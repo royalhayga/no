@@ -835,9 +835,150 @@ proxy-groups:
       - "test"
       - REJECT
 
-  - name: 🏦 国外金融/银行
+  - name: 🏦 美国银行
     type: select
     proxies:
+      - 🇺🇸 美国-自动选优
+      - 🇺🇸 美国-负载均衡
+      - PROXY
+      - "手机"
+      - "reality funo"
+      - "JPreality"
+      - "39515"
+      - "reality"
+      - "tourism"
+      - "test"
+      - DIRECT
+      - REJECT
+
+  - name: 🏦 香港银行
+    type: select
+    proxies:
+      - 🇭🇰 香港-自动选优
+      - 🇭🇰 香港-负载均衡
+      - PROXY
+      - "手机"
+      - "reality funo"
+      - "JPreality"
+      - "39515"
+      - "reality"
+      - "tourism"
+      - "test"
+      - DIRECT
+      - REJECT
+
+  - name: 🏦 英国银行
+    type: select
+    proxies:
+      - 🇬🇧 英国-自动选优
+      - 🇬🇧 英国-负载均衡
+      - PROXY
+      - "手机"
+      - "reality funo"
+      - "JPreality"
+      - "39515"
+      - "reality"
+      - "tourism"
+      - "test"
+      - DIRECT
+      - REJECT
+
+  - name: 🏦 日本银行
+    type: select
+    proxies:
+      - 🇯🇵 日本-自动选优
+      - 🇯🇵 日本-负载均衡
+      - PROXY
+      - "手机"
+      - "reality funo"
+      - "JPreality"
+      - "39515"
+      - "reality"
+      - "tourism"
+      - "test"
+      - DIRECT
+      - REJECT
+
+  - name: 🇸🇬 新加坡银行
+    type: select
+    proxies:
+      - 🇸🇬 新加坡-自动选优
+      - 🇸🇬 新加坡-负载均衡
+      - PROXY
+      - "手机"
+      - "reality funo"
+      - "JPreality"
+      - "39515"
+      - "reality"
+      - "tourism"
+      - "test"
+      - DIRECT
+      - REJECT
+
+  - name: 🇨🇦 加拿大银行
+    type: select
+    proxies:
+      - 🇨🇦 加拿大-自动选优
+      - 🇨🇦 加拿大-负载均衡
+      - PROXY
+      - "手机"
+      - "reality funo"
+      - "JPreality"
+      - "39515"
+      - "reality"
+      - "tourism"
+      - "test"
+      - DIRECT
+      - REJECT
+
+  - name: 🇦🇺 澳大利亚银行
+    type: select
+    proxies:
+      - 🇦🇺 澳大利亚-自动选优
+      - 🇦🇺 澳大利亚-负载均衡
+      - PROXY
+      - "手机"
+      - "reality funo"
+      - "JPreality"
+      - "39515"
+      - "reality"
+      - "tourism"
+      - "test"
+      - DIRECT
+      - REJECT
+
+  - name: 💳 虚拟金融/Wise/PayPal
+    type: select
+    proxies:
+      - PROXY
+      - "手机"
+      - "reality funo"
+      - "JPreality"
+      - "39515"
+      - "reality"
+      - "tourism"
+      - "test"
+      - DIRECT
+      - REJECT
+
+  - name: 📍 IP归属地修正(FakeLocation)
+    type: select
+    proxies:
+      - DIRECT
+      - PROXY
+      - "手机"
+      - "reality funo"
+      - "JPreality"
+      - "39515"
+      - "reality"
+      - "tourism"
+      - "test"
+      - REJECT
+
+  - name: 🍎 Apple Intelligence
+    type: select
+    proxies:
+      - 🇺🇸 美国-自动选优
       - PROXY
       - "手机"
       - "reality funo"
@@ -1967,7 +2108,7 @@ rule-providers:
     path: ./ruleset/Zoho.mrs
     interval: 21600
 
-  # 国内与国外银行金融规则
+  # 国内与各国银行金融规则
   bank_cn:
     type: http
     behavior: domain
@@ -1976,12 +2117,84 @@ rule-providers:
     path: ./ruleset/bank_cn.mrs
     interval: 21600
 
-  bank_foreign:
+  bank_us:
     type: http
     behavior: domain
     format: mrs
-    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-bank-!cn.mrs"
-    path: ./ruleset/bank_foreign.mrs
+    url: "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/US.yaml"
+    path: ./ruleset/bank_us.yaml
+    interval: 21600
+
+  bank_hk:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/HK.yaml"
+    path: ./ruleset/bank_hk.yaml
+    interval: 21600
+
+  bank_uk:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/UK.yaml"
+    path: ./ruleset/bank_uk.yaml
+    interval: 21600
+
+  bank_jp:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-bank-jp.mrs"
+    path: ./ruleset/bank_jp.mrs
+    interval: 21600
+
+  bank_sg:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/SG.yaml"
+    path: ./ruleset/bank_sg.yaml
+    interval: 21600
+
+  bank_ca:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/CA.yaml"
+    path: ./ruleset/bank_ca.yaml
+    interval: 21600
+
+  bank_au:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/AU.yaml"
+    path: ./ruleset/bank_au.yaml
+    interval: 21600
+
+  virtual_finance:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/VirtualFinance/VirtualFinance.yaml"
+    path: ./ruleset/virtual_finance.yaml
+    interval: 21600
+
+  fakelocation:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/FakeLocation/FakeLocation.yaml"
+    path: ./ruleset/fakelocation.yaml
+    interval: 21600
+
+  apple_ai:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/apple-intelligence.mrs"
+    path: ./ruleset/apple_ai.mrs
     interval: 21600
 
   # 通用代理与直连 (.mrs)
@@ -2088,8 +2301,17 @@ rules:
   # ================= 阶层 5：国外影视（TVBox 专属代理源，独立成组，紧随 Google 体系后段） =================
   - RULE-SET,tvbox_proxy,📺 TVBox代理
 
-  # ================= 阶层 6：海外代理专属业务（首选 PROXY） =================
-  - RULE-SET,bank_foreign,🏦 国外金融/银行
+  # ================= 阶层 6：海外代理专属业务（按国家精准匹配银行与 IP） =================
+  - RULE-SET,bank_us,🏦 美国银行
+  - RULE-SET,bank_hk,🏦 香港银行
+  - RULE-SET,bank_uk,🏦 英国银行
+  - RULE-SET,bank_jp,🏦 日本银行
+  - RULE-SET,bank_sg,🇸🇬 新加坡银行
+  - RULE-SET,bank_ca,🇨🇦 加拿大银行
+  - RULE-SET,bank_au,🇦🇺 澳大利亚银行
+  - RULE-SET,virtual_finance,💳 虚拟金融/Wise/PayPal
+  - RULE-SET,apple_ai,🍎 Apple Intelligence
+  - RULE-SET,fakelocation,📍 IP归属地修正(FakeLocation)
   - RULE-SET,proxy_media,🎬 国外影视
   - RULE-SET,OpenAI,🟢 OpenAI
   - RULE-SET,claude,🟣 Claude
