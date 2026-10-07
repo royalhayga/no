@@ -835,6 +835,20 @@ proxy-groups:
       - "test"
       - REJECT
 
+  - name: 🏦 国外金融/银行
+    type: select
+    proxies:
+      - PROXY
+      - "手机"
+      - "reality funo"
+      - "JPreality"
+      - "39515"
+      - "reality"
+      - "tourism"
+      - "test"
+      - DIRECT
+      - REJECT
+
   - name: 🪟 Microsoft
     type: select
     proxies:
@@ -1953,13 +1967,21 @@ rule-providers:
     path: ./ruleset/Zoho.mrs
     interval: 21600
 
-  # 国内银行与金融规则
+  # 国内与国外银行金融规则
   bank_cn:
     type: http
     behavior: domain
     format: mrs
     url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-bank-cn.mrs"
     path: ./ruleset/bank_cn.mrs
+    interval: 21600
+
+  bank_foreign:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-bank-!cn.mrs"
+    path: ./ruleset/bank_foreign.mrs
     interval: 21600
 
   # 通用代理与直连 (.mrs)
@@ -2067,6 +2089,7 @@ rules:
   - RULE-SET,tvbox_proxy,📺 TVBox代理
 
   # ================= 阶层 6：海外代理专属业务（首选 PROXY） =================
+  - RULE-SET,bank_foreign,🏦 国外金融/银行
   - RULE-SET,proxy_media,🎬 国外影视
   - RULE-SET,OpenAI,🟢 OpenAI
   - RULE-SET,claude,🟣 Claude
