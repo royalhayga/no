@@ -820,7 +820,21 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-  # 【第 7 阶对应策略组】日常直连品牌服务
+  # 【第 7 阶对应策略组】日常直连品牌与金融服务
+  - name: 🏦 国内金融/银行
+    type: select
+    proxies:
+      - DIRECT
+      - PROXY
+      - "手机"
+      - "reality funo"
+      - "JPreality"
+      - "39515"
+      - "reality"
+      - "tourism"
+      - "test"
+      - REJECT
+
   - name: 🪟 Microsoft
     type: select
     proxies:
@@ -1939,6 +1953,15 @@ rule-providers:
     path: ./ruleset/Zoho.mrs
     interval: 21600
 
+  # 国内银行与金融规则
+  bank_cn:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-bank-cn.mrs"
+    path: ./ruleset/bank_cn.mrs
+    interval: 21600
+
   # 通用代理与直连 (.mrs)
   proxy_domain:
     type: http
@@ -2092,6 +2115,7 @@ rules:
   - RULE-SET,proxy_domain,PROXY
 
   # ================= 阶层 7：日常/在华直连品牌（DIRECT 首选，方便客户端按需切代理） =================
+  - RULE-SET,bank_cn,🏦 国内金融/银行
   - RULE-SET,Microsoft,🪟 Microsoft
   - RULE-SET,OneDrive,☁️ OneDrive
   - RULE-SET,MicrosoftEdge,🌐 MicrosoftEdge

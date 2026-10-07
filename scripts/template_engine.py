@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import copy
 import json
 import sys
 from datetime import datetime, timezone
@@ -16,8 +17,13 @@ ELITE_TEMPLATE_FILE = ROOT_DIR / "config" / "rules_elite_template.yaml"
 INPUT_DIR = ROOT_DIR / "output" / "verified"
 ALT_INPUT_DIR = ROOT_DIR / "output" / "dns"
 
+# 产物输出路径：包含带私有占位符版 与 纯公开版
 OUTPUT_RULES_CLASH = ROOT_DIR / "output" / "clash_rules.yaml"
 OUTPUT_ELITE_RULES_CLASH = ROOT_DIR / "output" / "clash_elite_rules.yaml"
+OUTPUT_PUBLIC_RULES_CLASH = ROOT_DIR / "output" / "clash_public_rules.yaml"
+OUTPUT_PUBLIC_ELITE_RULES_CLASH = ROOT_DIR / "output" / "clash_public_elite_rules.yaml"
+
+PRIVATE_NODE_NAMES = ["手机", "reality funo", "JPreality", "39515", "reality", "tourism", "test"]
 
 COUNTRY_FLAGS = {
     "HK": "🇭🇰", "TW": "🇹🇼", "JP": "🇯🇵", "SG": "🇸🇬",
@@ -56,14 +62,22 @@ def build_clash_proxy_dict(node: Dict[str, Any]) -> Dict[str, Any]:
     return proxy
 
 
-def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str, Any]]) -> str:
-    """Build a Clash configuration with 100% duplicate proxy group name prevention."""
+def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str, Any]], include_private: bool = True) -> str:
+    """
+    Build Clash config.
+    include_private=True: 包含顶级私有占位节点 (手机, reality 等)
+    include_private=False: 纯公开版，无任何私有占位符节点，仅依赖自动爬取节点与负载均衡
+    """
     template_content = template_path.read_text(encoding="utf-8")
     template = yaml.safe_load(template_content)
 
     # 1. Identify Private Nodes
-    private_proxies = template.get("proxies", [])
-    private_proxy_names = [p.get("name") for p in private_proxies if isinstance(p, dict) and p.get("name")]
+    if include_private:
+        private_proxies = template.get("proxies", [])
+        private_proxy_names = [p.get("name") for p in private_proxies if isinstance(p, dict) and p.get("name")]
+    else:
+        private_proxies = []
+        private_proxy_names = []
 
     # 2. Convert crawled nodes to Clash proxies and group by country
     crawled_clash_proxies = []
@@ -82,9 +96,10 @@ def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str,
     combined_proxies = private_proxies + crawled_clash_proxies
     all_crawled_proxy_names = [p["name"] for p in crawled_clash_proxies]
 
-    # Track existing group names to 100% PREVENT DUPLICATE GROUP NAMES!
+    # Track existing group names
     existing_group_names: Set[str] = set()
-    template_proxy_groups = template.get("proxy-groups", [])
+    template_proxy_groups = copy.deepcopy(template.get("proxy-groups", []))
+
     for g in template_proxy_groups:
         if isinstance(g, dict) and g.get("name"):
             existing_group_names.add(g["name"])
@@ -158,12 +173,28 @@ def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str,
     # 4. Inject into Template Proxy Groups
     for group in template_proxy_groups:
         gname = group.get("name")
+        g_proxies = group.get("proxies", [])
+
+        # 如果是不带私有节点的公开版本，强行从策略组过滤掉私有占位符节点
+        if not include_private:
+            g_proxies = [p for p in g_proxies if p not in PRIVATE_NODE_NAMES]
+
         if gname == "PROXY":
-            group["proxies"] = private_proxy_names + [global_auto_name, global_lb_name] + country_lb_group_names + ["DIRECT", "REJECT"]
+            group["proxies"] = private_proxy_names + [global_auto_name, global_lb_name] + country_lb_group_names + [p for p in g_proxies if p not in private_proxy_names + [global_auto_name, global_lb_name] + country_lb_group_names]
         elif gname == "📺 TVBox代理":
-            group["proxies"] = [global_lb_name, global_auto_name] + country_lb_group_names + private_proxy_names + ["DIRECT", "REJECT"]
+            group["proxies"] = [global_lb_name, global_auto_name] + country_lb_group_names + private_proxy_names + [p for p in g_proxies if p not in private_proxy_names + [global_auto_name, global_lb_name] + country_lb_group_names]
         else:
-            group["proxies"] = private_proxy_names + ["PROXY", global_auto_name, global_lb_name] + country_lb_group_names + ["DIRECT", "REJECT"]
+            base_items = [p for p in g_proxies if p in ["PROXY", "DIRECT", "REJECT"]]
+            group["proxies"] = private_proxy_names + base_items + [global_auto_name, global_lb_name] + country_lb_group_names
+
+            # 去重保持顺序
+            seen = set()
+            clean_p = []
+            for p in group["proxies"]:
+                if p not in seen:
+                    seen.add(p)
+                    clean_p.append(p)
+            group["proxies"] = clean_p
 
     # Assemble all generated proxy groups cleanly
     generated_extra_groups = []
@@ -207,17 +238,27 @@ def main() -> int:
 
     print(f"Loaded {len(crawled_nodes)} Crawled Verified Nodes.", flush=True)
 
-    # 1. Build Full Ruleset Version (clash_rules.yaml)
+    # 1. 私有带占位节点版本 (clash_rules.yaml & clash_elite_rules.yaml)
     if FULL_TEMPLATE_FILE.exists():
-        full_yaml = build_merged_clash_config(FULL_TEMPLATE_FILE, crawled_nodes)
+        full_yaml = build_merged_clash_config(FULL_TEMPLATE_FILE, crawled_nodes, include_private=True)
         OUTPUT_RULES_CLASH.write_text(full_yaml, encoding="utf-8")
-        print(f"Successfully generated Full Ruleset Clash Config -> {OUTPUT_RULES_CLASH}", flush=True)
+        print(f"Successfully generated Full Private Clash Config -> {OUTPUT_RULES_CLASH}", flush=True)
 
-    # 2. Build Elite Ruleset Version (clash_elite_rules.yaml)
     if ELITE_TEMPLATE_FILE.exists():
-        elite_yaml = build_merged_clash_config(ELITE_TEMPLATE_FILE, crawled_nodes)
+        elite_yaml = build_merged_clash_config(ELITE_TEMPLATE_FILE, crawled_nodes, include_private=True)
         OUTPUT_ELITE_RULES_CLASH.write_text(elite_yaml, encoding="utf-8")
-        print(f"Successfully generated Elite Streamlined Clash Config -> {OUTPUT_ELITE_RULES_CLASH}", flush=True)
+        print(f"Successfully generated Elite Private Clash Config -> {OUTPUT_ELITE_RULES_CLASH}", flush=True)
+
+    # 2. 纯公开不带占位节点版本 (clash_public_rules.yaml & clash_public_elite_rules.yaml)
+    if FULL_TEMPLATE_FILE.exists():
+        public_full_yaml = build_merged_clash_config(FULL_TEMPLATE_FILE, crawled_nodes, include_private=False)
+        OUTPUT_PUBLIC_RULES_CLASH.write_text(public_full_yaml, encoding="utf-8")
+        print(f"Successfully generated Full Public Clash Config -> {OUTPUT_PUBLIC_RULES_CLASH}", flush=True)
+
+    if ELITE_TEMPLATE_FILE.exists():
+        public_elite_yaml = build_merged_clash_config(ELITE_TEMPLATE_FILE, crawled_nodes, include_private=False)
+        OUTPUT_PUBLIC_ELITE_RULES_CLASH.write_text(public_elite_yaml, encoding="utf-8")
+        print(f"Successfully generated Elite Public Clash Config -> {OUTPUT_PUBLIC_ELITE_RULES_CLASH}", flush=True)
 
     return 0
 
