@@ -1,0 +1,54 @@
+name: MRS Decoupled Pipeline - 二进制规则集无损转换 (Decoupled MRS Converter)
+
+on:
+  workflow_run:
+    workflows: ["Index Pipeline - 全阶段处理 (Index 1-2-3-4-5-6-Template)"]
+    types:
+      - completed
+  workflow_dispatch:  # 支持手动触发
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  convert_mrs:
+    name: 解耦自动转换 MRS (域名与 IP 智能隔离)
+    # 仅在前置工作流成功完成或手动触发时运行，完全不影响主 Pipeline 稳定性
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 配置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: 安装 Python 依赖
+        run: pip install -r requirements.txt
+
+      - name: 安装 Mihomo (Clash Meta) 编译内核
+        run: |
+          wget -q https://github.com/MetaCubeX/mihomo/releases/download/v1.18.0/mihomo-linux-amd64-v1.18.0.gz
+          gunzip mihomo-linux-amd64-v1.18.0.gz
+          chmod +x mihomo-linux-amd64-v1.18.0
+          sudo mv mihomo-linux-amd64-v1.18.0 /usr/local/bin/mihomo
+          mihomo -v || true
+
+      - name: 执行解耦 MRS 规则智能拆分与编译引擎
+        run: python scripts/convert_mrs.py
+
+      - name: 提交并推送二进制 MRS 规则产物
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/mrs/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: [MRS Pipeline] Automated lossless .mrs binary rulesets generated & isolated"
+            git push origin HEAD:master || echo "Push skipped"
+          fi
