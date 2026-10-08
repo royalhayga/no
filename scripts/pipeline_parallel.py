@@ -15,7 +15,7 @@ RAW_OUTPUT_DIR = ROOT_DIR / "output" / "raw"
 def run_script(script_name: str) -> tuple[str, bool, str]:
     """Execute a python script in scripts/ directory."""
     script_path = ROOT_DIR / "scripts" / script_name
-    print(f"  [>] Launching parallel pipeline task: {script_name}...", flush=True)
+    print(f"  [>] Launching parallel branch task: {script_name}...", flush=True)
     t0 = time.time()
     try:
         res = subprocess.run([sys.executable, str(script_path)], capture_output=True, text=True, timeout=300)
@@ -51,55 +51,49 @@ def assign_unique_ids_to_raw_nodes() -> int:
 
 def main() -> int:
     print("=================================================================", flush=True)
-    print("=== TVTV ID-Based Set Difference Parallel Execution Engine ===", flush=True)
+    print("=== TVTV 100% Non-Linear Pure Parallel Multi-Branch Pipeline Engine ===", flush=True)
     print("=================================================================", flush=True)
     start_time = time.time()
 
-    # Phase 1: Clone Repos (Stage 0)
-    print("\n--- Phase 1: Parallel Repo Sync (Stage 0) ---", flush=True)
+    # Step 1: Stage 0 - Clone Repositories
+    print("\n--- Step 1: Repo Sync (Stage 0) ---", flush=True)
     s0_name, s0_ok, s0_msg = run_script("clone_repos.py")
     print(f"[{s0_name}] {s0_msg}", flush=True)
 
-    # Phase 2: Raw Aggregation & ID Sequence Tagging (Stage 1)
-    print("\n--- Phase 2: Parallel Multi-Source Aggregation & ID Tagging (Stage 1) ---", flush=True)
+    # Step 2: Stage 1 - Multi-Source Aggregation & ID Tagging
+    print("\n--- Step 2: Multi-Source Aggregation & ID Tagging (Stage 1) ---", flush=True)
     s1_name, s1_ok, s1_msg = run_script("aggregate.py")
     print(f"[{s1_name}] {s1_msg}", flush=True)
 
     total_tagged = assign_unique_ids_to_raw_nodes()
 
-    # Phase 3: DUAL-BRANCH PARALLEL EXECUTION
-    # Branch A: Mihomo Kernel Auditor & Syntax Pruner
-    # Branch B: Network Evaluation Pipeline (Dedupe -> DNS -> Socket -> Speedtest)
-    print("\n--- Phase 3: Dual-Branch Parallel Execution (Mihomo Kernel Auditor || Network Evaluation Pipeline) ---", flush=True)
+    # Step 3: PURE PARALLEL CONCURRENT MULTI-BRANCH EVALUATION (PROHIBIT LINEAR STACKING!)
+    # All 5 evaluation branches run SIMULTANEOUSLY at the EXACT SAME INSTANT on ID-tagged raw nodes!
+    print("\n--- Step 3: Pure Concurrent Parallel Multi-Branch Evaluation (5 Branches SIMULTANEOUSLY) ---", flush=True)
+    parallel_branches = [
+        "validate_and_prune.py",  # Branch 1: Mihomo Kernel Auditor
+        "dedupe.py",              # Branch 2: Fingerprint Deduplication
+        "dns_check.py",           # Branch 3: 3-DNS GFW Pollution Check
+        "socket_probe.py",        # Branch 4: Socket TCP/TLS/QUIC Probe
+        "verified.py"             # Branch 5: Mihomo Go Native 204 Speedtest
+    ]
 
-    def run_branch_a():
-        return run_script("validate_and_prune.py")
+    branch_results = {}
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        futures = {executor.submit(run_script, script): script for script in parallel_branches}
+        for future in as_completed(futures):
+            b_name, b_ok, b_msg = future.result()
+            branch_results[b_name] = (b_ok, b_msg)
+            print(f"  [+] [{b_name}] {b_msg}", flush=True)
 
-    def run_branch_b():
-        s2_n, s2_ok, s2_m = run_script("dedupe.py")
-        s3_n, s3_ok, s3_m = run_script("dns_check.py")
-        s4_n, s4_ok, s4_m = run_script("socket_probe.py")
-        s5_n, s5_ok, s5_m = run_script("verified.py")
-        return "network_pipeline", s2_ok and s3_ok and s4_ok and s5_ok, "Network Pipeline Completed"
-
-    with ThreadPoolExecutor(max_workers=2) as executor:
-        f_branch_a = executor.submit(run_branch_a)
-        f_branch_b = executor.submit(run_branch_b)
-
-        res_a = f_branch_a.result()
-        res_b = f_branch_b.result()
-
-        print(f"  [+] Branch A (Mihomo Kernel Auditor): {res_a[2]}", flush=True)
-        print(f"  [+] Branch B (Network Evaluation Pipeline): {res_b[2]}", flush=True)
-
-    # Phase 4: GeoIP Country Split & Master Template Engine
-    print("\n--- Phase 4: GeoIP Country Split & Master Template Engine (Stages 6 & Template) ---", flush=True)
+    # Step 4: GeoIP Country Split & Master Template Engine
+    print("\n--- Step 4: GeoIP Country Split & Master Template Engine (Stages 6 & Template) ---", flush=True)
     run_script("country_split.py")
     run_script("template_engine.py")
 
     total_elapsed = time.time() - start_time
     print(f"\n=================================================================", flush=True)
-    print(f"=== ID-Based Parallel Pipeline Completed Successfully in {total_elapsed:.2f}s! ===", flush=True)
+    print(f"=== 100% Non-Linear Pure Parallel Pipeline Completed in {total_elapsed:.2f}s! ===", flush=True)
     print("=================================================================", flush=True)
     return 0
 
