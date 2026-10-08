@@ -81,14 +81,28 @@ def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str,
         private_proxies = []
         private_proxy_names = []
 
-    # 2. Convert crawled nodes to Clash proxies and group by country
+    # 2. Convert crawled nodes to Clash proxies and ensure 100% UNIQUE proxy names
     crawled_clash_proxies = []
     country_groups: Dict[str, List[str]] = {}
 
+    seen_proxy_names: Set[str] = set(private_proxy_names)
+
     for node in crawled_nodes:
         pdict = build_clash_proxy_dict(node)
-        crawled_clash_proxies.append(pdict)
         pname = pdict["name"]
+
+        # 防止节点重名报错 "proxy United States is the duplicate name"
+        if pname in seen_proxy_names:
+            idx = 1
+            new_name = f"{pname} {idx:02d}"
+            while new_name in seen_proxy_names:
+                idx += 1
+                new_name = f"{pname} {idx:02d}"
+            pdict["name"] = new_name
+            pname = new_name
+
+        seen_proxy_names.add(pname)
+        crawled_clash_proxies.append(pdict)
 
         code = node.get("country_code", "OTHER")
         if code not in country_groups:
