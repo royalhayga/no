@@ -42,8 +42,16 @@ COUNTRY_NAMES_ZH = {
 }
 
 
+VALID_SS_CIPHERS = {
+    "aes-128-gcm", "aes-256-gcm", "chacha20-ietf-poly1305",
+    "2022-blake3-aes-128-gcm", "2022-blake3-aes-256-gcm", "2022-blake3-chacha20-poly1305",
+    "rc4-md5", "aes-128-cfb", "aes-192-cfb", "aes-256-cfb",
+    "aes-128-ctr", "aes-192-ctr", "aes-256-ctr", "chacha20", "chacha20-ietf"
+}
+
+
 def build_clash_proxy_dict(node: Dict[str, Any]) -> Dict[str, Any]:
-    """Convert node dictionary to Clash proxy definition."""
+    """Convert node dictionary to Clash proxy definition with strict SS cipher validation."""
     ptype = node.get("type", "ss")
     proxy = {
         "name": node.get("name"),
@@ -56,7 +64,10 @@ def build_clash_proxy_dict(node: Dict[str, Any]) -> Dict[str, Any]:
     elif ptype == "vless":
         proxy.update({"uuid": node.get("uuid"), "cipher": "auto", "tls": bool(node.get("tls")), "servername": node.get("sni", "")})
     elif ptype == "ss":
-        proxy.update({"cipher": node.get("cipher", "aes-256-gcm"), "password": node.get("password", "")})
+        cipher = str(node.get("cipher", "aes-256-gcm")).lower().strip()
+        if cipher not in VALID_SS_CIPHERS:
+            cipher = "aes-256-gcm"
+        proxy.update({"cipher": cipher, "password": node.get("password", "")})
     elif ptype == "trojan":
         proxy.update({"password": node.get("password", ""), "sni": node.get("sni", "")})
     elif ptype in ["hysteria2", "hy2"]:
