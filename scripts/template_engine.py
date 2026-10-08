@@ -50,28 +50,51 @@ VALID_SS_CIPHERS = {
 }
 
 
-def build_clash_proxy_dict(node: Dict[str, Any]) -> Dict[str, Any]:
-    """Convert node dictionary to Clash proxy definition with strict SS cipher validation."""
-    ptype = node.get("type", "ss")
+def build_clash_proxy_dict(node: Dict[str, Any]) -> Dict[str, Any] | None:
+    """Convert node dictionary to Clash proxy definition with strict SS cipher & credential validation."""
+    ptype = str(node.get("type", "ss")).lower().strip()
+    server = str(node.get("server", "")).strip()
+    port = node.get("port")
+    name = str(node.get("name", "")).strip()
+
+    if not server or not port or not name:
+        return None
+
     proxy = {
-        "name": node.get("name"),
+        "name": name,
         "type": ptype,
-        "server": node.get("server"),
-        "port": node.get("port")
+        "server": server,
+        "port": port
     }
     if ptype == "vmess":
-        proxy.update({"uuid": node.get("uuid"), "alterId": node.get("alterId", 0), "cipher": node.get("cipher", "auto"), "tls": bool(node.get("tls")), "network": node.get("network", "tcp")})
+        uuid = str(node.get("uuid", "")).strip()
+        if not uuid:
+            return None
+        proxy.update({"uuid": uuid, "alterId": node.get("alterId", 0), "cipher": node.get("cipher", "auto"), "tls": bool(node.get("tls")), "network": node.get("network", "tcp")})
     elif ptype == "vless":
-        proxy.update({"uuid": node.get("uuid"), "cipher": "auto", "tls": bool(node.get("tls")), "servername": node.get("sni", "")})
+        uuid = str(node.get("uuid", "")).strip()
+        if not uuid:
+            return None
+        proxy.update({"uuid": uuid, "cipher": "auto", "tls": bool(node.get("tls")), "servername": node.get("sni", "")})
     elif ptype == "ss":
         cipher = str(node.get("cipher", "aes-256-gcm")).lower().strip()
-        if cipher not in VALID_SS_CIPHERS:
-            cipher = "aes-256-gcm"
-        proxy.update({"cipher": cipher, "password": node.get("password", "")})
+        pwd = str(node.get("password", "")).strip()
+        if not pwd or cipher not in VALID_SS_CIPHERS:
+            return None
+        proxy.update({"cipher": cipher, "password": pwd})
     elif ptype == "trojan":
-        proxy.update({"password": node.get("password", ""), "sni": node.get("sni", "")})
+        pwd = str(node.get("password", "")).strip()
+        if not pwd:
+            return None
+        proxy.update({"password": pwd, "sni": node.get("sni", "")})
     elif ptype in ["hysteria2", "hy2"]:
-        proxy.update({"auth": node.get("auth") or node.get("password", ""), "sni": node.get("sni", "")})
+        auth = str(node.get("auth") or node.get("password", "")).strip()
+        if not auth:
+            return None
+        proxy.update({"auth": auth, "sni": node.get("sni", "")})
+    else:
+        return None
+
     return proxy
 
 
@@ -100,6 +123,8 @@ def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str,
 
     for node in crawled_nodes:
         pdict = build_clash_proxy_dict(node)
+        if not pdict:
+            continue
         pname = pdict["name"]
 
         # 防止节点重名报错 "proxy United States is the duplicate name"
