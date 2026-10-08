@@ -62,6 +62,9 @@ jobs:
       - name: 动态 Clash 模版合成与双层负载均衡 (Template Engine)
         run: python scripts/template_engine.py
 
+      - name: Mihomo 内核严苛语法与节点合法性校验 (Kernel Auditor & Auto Prune)
+        run: python scripts/validate_and_prune.py
+
       - name: 提交并推送生产订阅结果
         run: |
           git config --local user.name "github-actions[bot]"
