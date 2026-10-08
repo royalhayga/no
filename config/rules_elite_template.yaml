@@ -218,6 +218,14 @@ rule-providers:
     path: ./ruleset/tvbox_cn.mrs
     interval: 21600
 
+  tvbox_cn_ip:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/haygcao/tvbox-master-aggregator@main/mrs/ip/clash_rules_direct_ip.mrs"
+    path: ./ruleset/tvbox_cn_ip.mrs
+    interval: 21600
+
   tvbox_proxy:
     type: http
     behavior: domain
@@ -353,6 +361,7 @@ rules:
   - IP-CIDR,104.243.24.216/32,DIRECT,no-resolve
   - IP-CIDR,104.225.233.178/32,DIRECT,no-resolve
   - RULE-SET,tvbox_cn,📺 国内影视
+  - RULE-SET,tvbox_cn_ip,📺 国内影视,no-resolve
   - RULE-SET,reject,🛑 广告拦截
   - RULE-SET,YouTube,▶️ YouTube
   - RULE-SET,Google,🌐 Google

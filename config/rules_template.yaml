@@ -1494,6 +1494,14 @@ rule-providers:
     path: ./ruleset/tvbox_cn.mrs
     interval: 21600
 
+  tvbox_cn_ip:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/haygcao/tvbox-master-aggregator@main/mrs/ip/clash_rules_direct_ip.mrs"
+    path: ./ruleset/tvbox_cn_ip.mrs
+    interval: 21600
+
   tvbox_proxy:
     type: http
     behavior: domain
@@ -2282,10 +2290,11 @@ rules:
   - RULE-SET,applications,DIRECT
   - RULE-SET,private,DIRECT
   - GEOIP,LAN,DIRECT,no-resolve
-  - RULE-SET,lancidr,DIRECT
+  - RULE-SET,lancidr,DIRECT,no-resolve
 
-  # ================= 阶层 2：国内影视（TVBox 采集站直连源，高于任何代理组，必须优先命中） =================
+  # ================= 阶层 2：国内影视（TVBox 采集站直连源，高于任何代理组，开播秒播） =================
   - RULE-SET,tvbox_cn,📺 国内影视
+  - RULE-SET,tvbox_cn_ip,📺 国内影视,no-resolve
 
   # ================= 阶层 3：广告拦截（必须在业务规则之前拦截） =================
   - RULE-SET,reject,🛑 广告拦截
@@ -2391,8 +2400,8 @@ rules:
 
   # ================= 阶层 9：全量国内直连兜底（业务规则匹配完毕后执行） =================
   - RULE-SET,direct,DIRECT
-  - RULE-SET,cncidr,DIRECT
-  - GEOIP,CN,DIRECT
+  - RULE-SET,cncidr,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT,no-resolve
 
   # ================= 阶层 10：GFW 代理兜底 =================
   - RULE-SET,gfw,PROXY
