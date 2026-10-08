@@ -89,13 +89,21 @@
     {
       "tag": "🌐 MX-12",
       "type": "shadowsocks",
+      "server": "147.78.1.141",
+      "server_port": 16672,
+      "method": "aes-128-gcm",
+      "password": "67c57ae584eecd70396fcd7ca7521130"
+    },
+    {
+      "tag": "🌐 MX-13",
+      "type": "shadowsocks",
       "server": "131.196.253.141",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "ӞN_Ѷޝᮚ}["
     },
     {
-      "tag": "🌐 MX-13",
+      "tag": "🌐 MX-14",
       "type": "shadowsocks",
       "server": "121.127.43.215",
       "server_port": 8443,

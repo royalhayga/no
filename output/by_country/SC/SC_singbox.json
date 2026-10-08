@@ -2,6 +2,100 @@
   "outbounds": [
     {
       "tag": "🌐 SC-01",
+      "type": "vless",
+      "server": "45.130.125.209",
+      "server_port": 80,
+      "uuid": "dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51"
+    },
+    {
+      "tag": "🌐 SC-02",
+      "type": "vless",
+      "server": "45.130.125.207",
+      "server_port": 8443,
+      "uuid": "31aa0950-eb19-45ff-94a2-af416deb3b90"
+    },
+    {
+      "tag": "🌐 SC-03",
+      "type": "shadowsocks",
+      "server": "45.130.125.209",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "u\u001eq[y~_58͞u"
+    },
+    {
+      "tag": "🌐 SC-04",
+      "type": "shadowsocks",
+      "server": "45.130.125.207",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "Vty}i5כݿt"
+    },
+    {
+      "tag": "🌐 SC-05",
+      "type": "shadowsocks",
+      "server": "45.130.125.209",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "u\u001eq[y~_58͞u"
+    },
+    {
+      "tag": "🌐 SC-06",
+      "type": "shadowsocks",
+      "server": "45.130.125.207",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "Vty}i5כݿt"
+    },
+    {
+      "tag": "🌐 SC-07",
+      "type": "shadowsocks",
+      "server": "45.130.125.209",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "u\u001eq[y~_58͞u"
+    },
+    {
+      "tag": "🌐 SC-08",
+      "type": "shadowsocks",
+      "server": "45.130.125.207",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "Vty}i5כݿt"
+    },
+    {
+      "tag": "🌐 SC-09",
+      "type": "shadowsocks",
+      "server": "45.130.125.209",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "u\u001eq[y~_58͞u"
+    },
+    {
+      "tag": "🌐 SC-10",
+      "type": "shadowsocks",
+      "server": "45.130.125.207",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "Vty}i5כݿt"
+    },
+    {
+      "tag": "🌐 SC-11",
+      "type": "shadowsocks",
+      "server": "45.130.125.209",
+      "server_port": 80,
+      "method": "aes-256-gcm",
+      "password": "u\u001eq[y~_58͞u"
+    },
+    {
+      "tag": "🌐 SC-12",
+      "type": "shadowsocks",
+      "server": "45.130.125.207",
+      "server_port": 8443,
+      "method": "aes-256-gcm",
+      "password": "Vty}i5כݿt"
+    },
+    {
+      "tag": "🌐 SC-13",
       "type": "trojan",
       "server": "45.130.125.160",
       "server_port": 443,
