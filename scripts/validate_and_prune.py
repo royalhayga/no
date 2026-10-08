@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -17,15 +18,16 @@ VALID_SS_CIPHERS = {
     "2022-blake3-aes-128-gcm", "2022-blake3-aes-256-gcm", "2022-blake3-chacha20-poly1305"
 }
 
+
 def auto_repair_clash_structure(file_path: Path) -> dict | None:
-    """自动修复骨架缺失与脏节点，确保结构符合 Mihomo 规范"""
+    """自动修复骨架缺失、脏节点、VMess加密字段缺失及 MRS 格式，确保 100% 符合 Mihomo 规范"""
     try:
         content = file_path.read_text(encoding="utf-8", errors="ignore")
         data = yaml.safe_load(content)
         if not isinstance(data, dict):
             return None
 
-        # 1. 补齐 Mihomo 最低骨架要求，避免缺失基础字段直接报 fatal
+        # 1. 补齐 Mihomo 最低骨架要求
         if "mode" not in data:
             data["mode"] = "rule"
         if "proxies" not in data or not isinstance(data["proxies"], list):
@@ -35,27 +37,55 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
         if "rules" not in data or not isinstance(data["rules"], list):
             data["rules"] = ["MATCH,DIRECT"]
 
-        # 2. 清洗坏节点 (加密乱码、无名称、缺服务器)
+        # 2. 清洗坏节点 & 修复 VMess cipher & 保证节点名称 100% 唯一 (解决 duplicate name)
         valid_proxies = []
-        valid_names = set()
+        seen_names = set()
+
         for p in data["proxies"]:
             if not isinstance(p, dict):
                 continue
-            ptype = str(p.get("type", "")).lower()
-            name = str(p.get("name", "")).strip()
+            ptype = str(p.get("type", "")).lower().strip()
             server = str(p.get("server", "")).strip()
 
-            if not name or not server:
+            if not server:
                 continue
+
+            # VMess 缺加密算法修复
+            if ptype == "vmess":
+                if not p.get("cipher") or str(p.get("cipher")).strip() == "":
+                    p["cipher"] = "auto"
+
+            # SS 非法加密算法剔除
             if ptype == "ss" and str(p.get("cipher", "")).lower() not in VALID_SS_CIPHERS:
                 continue
 
+            # 自动唯一定义节点名称
+            base_name = str(p.get("name") or "Node").strip()
+            candidate = base_name
+            idx = 2
+            while candidate in seen_names:
+                candidate = f"{base_name} #{idx}"
+                idx += 1
+            seen_names.add(candidate)
+            p["name"] = candidate
+
             valid_proxies.append(p)
-            valid_names.add(name)
 
         data["proxies"] = valid_proxies
+        valid_names = seen_names
 
-        # 3. 校验 proxy-groups，移除引用了不存在节点的悬空代理名
+        # 3. 修复 rule-providers 里的 format: mrs (兼容普通 Mihomo 二进制)
+        rule_providers = data.get("rule-providers", {})
+        if isinstance(rule_providers, dict):
+            for rp_name, rp_val in rule_providers.items():
+                if isinstance(rp_val, dict) and rp_val.get("format") == "mrs":
+                    # 自动转换为标准 yaml 格式
+                    rp_val["format"] = "text" if rp_val.get("behavior") == "domain" else "yaml"
+                    if rp_val.get("url", "").endswith(".mrs"):
+                        rp_val["url"] = rp_val["url"].replace(".mrs", ".yaml").replace(".txt", ".yaml")
+                        rp_val["path"] = rp_val["path"].replace(".mrs", ".yaml")
+
+        # 4. 校验 proxy-groups，移除引用了不存在节点的悬空代理名
         group_names = {g.get("name") for g in data["proxy-groups"] if isinstance(g, dict)}
         builtin_targets = {"DIRECT", "REJECT", "GLOBAL"}
 
@@ -65,19 +95,17 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
                 continue
             g_proxies = g.get("proxies", [])
             if isinstance(g_proxies, list):
-                # 过滤出真实存在的节点、策略组或内置策略
                 g["proxies"] = [
                     px for px in g_proxies
                     if px in valid_names or px in group_names or px in builtin_targets
                 ]
-            # 策略组若空了，至少塞一个 DIRECT，防止 Mihomo 抛 empty proxy group
             if not g.get("proxies"):
                 g["proxies"] = ["DIRECT"]
             clean_groups.append(g)
 
         data["proxy-groups"] = clean_groups
 
-        # 4. 校验 rules，避免出现指向不存在 group 的坏规则
+        # 5. 校验 rules
         all_available_targets = valid_names | group_names | builtin_targets
         clean_rules = []
         for r in data["rules"]:
@@ -85,8 +113,7 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
                 continue
             parts = [seg.strip() for seg in r.split(",")]
             if len(parts) >= 2:
-                target = parts[-1]  # 规则终点
-                # 如果 target 既不是节点也不是策略组，改降级为 DIRECT，避免整条规则报崩
+                target = parts[-1]
                 if target not in all_available_targets:
                     parts[-1] = "DIRECT"
                     clean_rules.append(",".join(parts))
@@ -105,18 +132,70 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
         print(f"[REPAIR ERROR] {file_path.name}: {e}", file=sys.stderr)
         return None
 
+
+def prune_failing_proxies(file_path: Path, err_msg: str) -> bool:
+    """动态解析 Mihomo 报错日志并精确剔除损坏节点"""
+    try:
+        content = file_path.read_text(encoding="utf-8", errors="ignore")
+        data = yaml.safe_load(content) or {}
+        proxies = data.get("proxies", [])
+        if not proxies:
+            return False
+
+        indices_to_remove = set()
+        names_to_remove = set()
+
+        # 匹配: proxy 488: vmess: unsupported security type: ""
+        for match in re.finditer(r"proxy\s+(\d+):", err_msg):
+            idx = int(match.group(1))
+            if 0 <= idx < len(proxies):
+                indices_to_remove.add(idx)
+
+        # 匹配: proxy 'xxx' is the duplicate name
+        for match in re.finditer(r"proxy\s+'?([^']+)'?\s+is the duplicate name", err_msg):
+            names_to_remove.add(match.group(1).strip())
+
+        for i, p in enumerate(proxies):
+            if isinstance(p, dict) and p.get("name") in names_to_remove:
+                indices_to_remove.add(i)
+
+        if not indices_to_remove:
+            return False
+
+        data["proxies"] = [p for i, p in enumerate(proxies) if i not in indices_to_remove]
+        with open(file_path, "w", encoding="utf-8") as f:
+            yaml.safe_dump(data, f, allow_unicode=True, sort_keys=False)
+        print(f"[PRUNE OK] Dynamically removed {len(indices_to_remove)} failing proxies from {file_path.name}", flush=True)
+        return True
+    except Exception as e:
+        print(f"[PRUNE FAIL] {file_path.name}: {e}", file=sys.stderr)
+        return False
+
+
 def test_mihomo_offline(file_path: Path) -> bool:
-    """执行 Mihomo 语法校验并打印真实错误日志"""
+    """执行 Mihomo 语法校验并在失败时尝试迭代修复剔除"""
     cmd = ["mihomo", "-t", "-f", str(file_path)]
     result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     if result.returncode == 0:
         print(f"[PASS] {file_path.name} verified by Mihomo kernel!")
         return True
 
-    # 打印真实的失败原因（排查到底是哪一行、什么 key 触发了 fatal）
     err_msg = result.stderr.strip() or result.stdout.strip()
+
+    # 尝试多轮动态剔除重试
+    for attempt in range(1, 5):
+        if prune_failing_proxies(file_path, err_msg):
+            # 重新跑修复与校验
+            auto_repair_clash_structure(file_path)
+            res2 = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            if res2.returncode == 0:
+                print(f"[RE-PASS] {file_path.name} verified after dynamic prune round {attempt}!")
+                return True
+            err_msg = res2.stderr.strip() or res2.stdout.strip()
+
     print(f"[FATAL] {file_path} failed Mihomo check:\n>>> {err_msg}", file=sys.stderr)
     return False
+
 
 def main() -> int:
     print("=== Starting Pure-Offline Mihomo Kernel Syntax Assertion & Auto-Repair ===", flush=True)
@@ -127,10 +206,10 @@ def main() -> int:
 
     has_error = False
     for yf in yaml_files:
-        # 第一阶段：自动修复缺失字段、空 group 与坏规则
+        # 第一阶段：自动修复缺失字段、空 group、VMess cipher 与 MRS 格式
         auto_repair_clash_structure(yf)
 
-        # 第二阶段：内核离线复检
+        # 第二阶段：内核离线复检 (带动态剔除)
         if not test_mihomo_offline(yf):
             has_error = True
 
@@ -140,6 +219,7 @@ def main() -> int:
 
     print("=== All configuration files successfully verified! ===", flush=True)
     return 0
+
 
 if __name__ == "__main__":
     sys.exit(main())
