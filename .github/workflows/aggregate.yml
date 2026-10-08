@@ -1,4 +1,4 @@
-name: Index Pipeline - 全阶段 32 线程极速并发处理流水线
+name: Index Pipeline - 全阶段并发处理流水线
 
 on:
   push:
@@ -13,7 +13,7 @@ env:
 
 jobs:
   pipeline:
-    name: 全流程 32 线程极速并发流水线
+    name: 全流程处理流水线
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -38,8 +38,29 @@ jobs:
           chmod +x mihomo-linux-amd64-v1.18.0
           sudo mv mihomo-linux-amd64-v1.18.0 /usr/local/bin/mihomo
 
-      - name: 运行 32 线程极速并发流水线 (Pipeline Parallel Engine)
-        run: python scripts/pipeline_parallel.py
+      - name: Stage 0 - 并行克隆/同步 28 个参考仓库
+        run: python scripts/clone_repos.py
+
+      - name: Index 1 - 多源全量汇总 (Aggregate)
+        run: python scripts/aggregate.py
+
+      - name: Index 2 - SHA256 哈希指纹去重 (Dedupe)
+        run: python scripts/dedupe.py
+
+      - name: Index 3 - 三 DNS 墙与 GFW 污染检测 (DNS Check)
+        run: python scripts/dns_check.py
+
+      - name: Index 4 - Socket 高并发端口探针 (Socket Probe)
+        run: python scripts/socket_probe.py
+
+      - name: Index 5 - Mihomo Go 原生内核 204 实测 (HTTP 204 Verified)
+        run: python scripts/verified.py
+
+      - name: Index 6 - GeoIP 精准按国家/地区分流 (Country Split)
+        run: python scripts/country_split.py
+
+      - name: 动态 Clash 模版合成与双层负载均衡 (Template Engine)
+        run: python scripts/template_engine.py
 
       - name: Mihomo 内核严苛语法与节点合法性校验 (Kernel Auditor & Auto Prune)
         run: python scripts/validate_and_prune.py
@@ -50,6 +71,6 @@ jobs:
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add output/
           if ! git diff --cached --quiet; then
-            git commit -m "chore: [Auto Parallel Pipeline] All stages 0-6 completed & output synced"
+            git commit -m "chore: [Auto Pipeline] All stages 0-6 + template engine completed & output synced"
             git push origin HEAD:master || echo "Push skipped"
           fi
