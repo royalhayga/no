@@ -39,7 +39,7 @@ async def verify_nodes_with_mihomo_native(
     """
     Ultra-Fast Mihomo Kernel Outbound 204 Delay Test:
     Uses Mihomo's Native Go-routine Group Speedtest Engine (FAST_TEST group).
-    Completes 70,000+ node tests in Go memory in 10-15 seconds instead of 20+ minutes!
+    Fixes aiohttp SSL connection issues by explicitly using http:// and ssl=False.
     """
     print(f"Starting Mihomo Go Native Kernel 204 Speedtest for {len(nodes)} nodes...", flush=True)
     tmp_dir = Path("/tmp/mihomo_test")
@@ -48,7 +48,6 @@ async def verify_nodes_with_mihomo_native(
     unique_nodes = ensure_unique_node_names(nodes)
     proxy_names = [n["name"] for n in unique_nodes]
 
-    # Generate temporary Clash config with native url-test group for C/Go speedtest
     clash_proxies = []
     for n in unique_nodes:
         proxy = {
@@ -93,18 +92,33 @@ async def verify_nodes_with_mihomo_native(
     config_path = tmp_dir / "clash.yaml"
     config_path.write_text(yaml.dump(runtime_config, allow_unicode=True, sort_keys=False), encoding="utf-8")
 
-    # Start Mihomo process
     proc = subprocess.Popen(
         [mihomo_bin, "-d", str(tmp_dir), "-f", str(config_path)],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL
     )
-    time.sleep(3)  # Allow Mihomo REST API to initialize
 
     verified_nodes = []
     try:
-        async with aiohttp.ClientSession() as session:
-            # Trigger Mihomo's native Go-routine group speedtest
+        # Disable SSL in aiohttp Connector for pure HTTP 127.0.0.1 REST API
+        conn = aiohttp.TCPConnector(ssl=False)
+        async with aiohttp.ClientSession(connector=conn) as session:
+            # Poll for Mihomo REST API readiness
+            api_ready = False
+            for _ in range(20):
+                try:
+                    async with session.get("http://127.0.0.1:9090/version", timeout=1.0) as r:
+                        if r.status == 200:
+                            api_ready = True
+                            print("Mihomo REST API server initialized successfully!", flush=True)
+                            break
+                except Exception:
+                    await asyncio.sleep(0.5)
+
+            if not api_ready:
+                print("Mihomo REST API failed to respond on 127.0.0.1:9090, passing nodes directly.", flush=True)
+                return unique_nodes
+
             group_url = "http://127.0.0.1:9090/group/FAST_TEST/delay?url=http://www.gstatic.com/generate_204&timeout=3000"
             print("Triggering Mihomo Go native concurrent group speedtest...", flush=True)
             try:
@@ -113,7 +127,6 @@ async def verify_nodes_with_mihomo_native(
             except Exception:
                 pass
 
-            # Fetch all proxies status with ONE single HTTP GET request!
             async with session.get("http://127.0.0.1:9090/proxies", timeout=10.0) as resp:
                 if resp.status == 200:
                     data = await resp.json()
