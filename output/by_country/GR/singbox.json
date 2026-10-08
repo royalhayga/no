@@ -52,19 +52,12 @@
     {
       "tag": "🌐 GR-08",
       "type": "vless",
-      "server": "38.54.29.210",
-      "server_port": 2053,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64"
-    },
-    {
-      "tag": "🌐 GR-09",
-      "type": "vless",
       "server": "79.127.218.204",
       "server_port": 8443,
       "uuid": "157448af-8ecf-4075-a9e9-b23a6a94899b"
     },
     {
-      "tag": "🌐 GR-10",
+      "tag": "🌐 GR-09",
       "type": "shadowsocks",
       "server": "85.90.197.220",
       "server_port": 443,
@@ -72,7 +65,7 @@
       "password": "zZ8]շM{ק^"
     },
     {
-      "tag": "🌐 GR-11",
+      "tag": "🌐 GR-10",
       "type": "shadowsocks",
       "server": "85.90.197.156",
       "server_port": 443,
@@ -80,7 +73,7 @@
       "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
-      "tag": "🌐 GR-12",
+      "tag": "🌐 GR-11",
       "type": "shadowsocks",
       "server": "85.90.197.220",
       "server_port": 443,
@@ -88,7 +81,7 @@
       "password": "zZ8]շM{ק^"
     },
     {
-      "tag": "🌐 GR-13",
+      "tag": "🌐 GR-12",
       "type": "shadowsocks",
       "server": "45.142.31.21",
       "server_port": 443,
@@ -96,7 +89,7 @@
       "password": "پվ\u001a6Ǵk;o5"
     },
     {
-      "tag": "🌐 GR-14",
+      "tag": "🌐 GR-13",
       "type": "shadowsocks",
       "server": "85.90.197.53",
       "server_port": 443,
@@ -104,7 +97,7 @@
       "password": "ntn\u001ciᾛ\u001fߧ7"
     },
     {
-      "tag": "🌐 GR-15",
+      "tag": "🌐 GR-14",
       "type": "shadowsocks",
       "server": "85.90.197.156",
       "server_port": 443,
@@ -112,7 +105,7 @@
       "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
-      "tag": "🌐 GR-16",
+      "tag": "🌐 GR-15",
       "type": "shadowsocks",
       "server": "85.90.197.146",
       "server_port": 443,
@@ -120,20 +113,28 @@
       "password": "׺7tֽ׽zן\u001dG"
     },
     {
-      "tag": "🌐 GR-17",
-      "type": "shadowsocks",
-      "server": "38.54.29.210",
-      "server_port": 2053,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
-    },
-    {
-      "tag": "🌐 GR-18",
+      "tag": "🌐 GR-16",
       "type": "shadowsocks",
       "server": "79.127.218.204",
       "server_port": 8443,
       "method": "aes-256-gcm",
       "password": "מƟ\u001fNk׽omx["
+    },
+    {
+      "tag": "🌐 GR-17",
+      "type": "shadowsocks",
+      "server": "85.90.197.220",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "zZ8]շM{ק^"
+    },
+    {
+      "tag": "🌐 GR-18",
+      "type": "shadowsocks",
+      "server": "85.90.197.156",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
       "tag": "🌐 GR-19",
@@ -146,61 +147,37 @@
     {
       "tag": "🌐 GR-20",
       "type": "shadowsocks",
-      "server": "85.90.197.156",
+      "server": "45.142.31.21",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "Ӈ<ǶѾ}k\u001bgs6"
+      "password": "پվ\u001a6Ǵk;o5"
     },
     {
       "tag": "🌐 GR-21",
       "type": "shadowsocks",
-      "server": "85.90.197.220",
+      "server": "85.90.197.53",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "zZ8]շM{ק^"
+      "password": "ntn\u001ciᾛ\u001fߧ7"
     },
     {
       "tag": "🌐 GR-22",
       "type": "shadowsocks",
-      "server": "45.142.31.21",
+      "server": "85.90.197.156",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "پվ\u001a6Ǵk;o5"
+      "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
       "tag": "🌐 GR-23",
       "type": "shadowsocks",
-      "server": "85.90.197.53",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "ntn\u001ciᾛ\u001fߧ7"
-    },
-    {
-      "tag": "🌐 GR-24",
-      "type": "shadowsocks",
-      "server": "85.90.197.156",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Ӈ<ǶѾ}k\u001bgs6"
-    },
-    {
-      "tag": "🌐 GR-25",
-      "type": "shadowsocks",
       "server": "85.90.197.146",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "׺7tֽ׽zן\u001dG"
     },
     {
-      "tag": "🌐 GR-26",
-      "type": "shadowsocks",
-      "server": "38.54.29.210",
-      "server_port": 2053,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
-    },
-    {
-      "tag": "🌐 GR-27",
+      "tag": "🌐 GR-24",
       "type": "shadowsocks",
       "server": "79.127.218.204",
       "server_port": 8443,
@@ -208,7 +185,7 @@
       "password": "מƟ\u001fNk׽omx["
     },
     {
-      "tag": "🌐 GR-28",
+      "tag": "🌐 GR-25",
       "type": "shadowsocks",
       "server": "85.90.197.220",
       "server_port": 443,
@@ -216,7 +193,7 @@
       "password": "zZ8]շM{ק^"
     },
     {
-      "tag": "🌐 GR-29",
+      "tag": "🌐 GR-26",
       "type": "shadowsocks",
       "server": "85.90.197.156",
       "server_port": 443,
@@ -224,7 +201,7 @@
       "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
-      "tag": "🌐 GR-30",
+      "tag": "🌐 GR-27",
       "type": "shadowsocks",
       "server": "85.90.197.220",
       "server_port": 443,
@@ -232,7 +209,7 @@
       "password": "zZ8]շM{ק^"
     },
     {
-      "tag": "🌐 GR-31",
+      "tag": "🌐 GR-28",
       "type": "shadowsocks",
       "server": "45.142.31.21",
       "server_port": 443,
@@ -240,7 +217,7 @@
       "password": "پվ\u001a6Ǵk;o5"
     },
     {
-      "tag": "🌐 GR-32",
+      "tag": "🌐 GR-29",
       "type": "shadowsocks",
       "server": "85.90.197.53",
       "server_port": 443,
@@ -248,7 +225,7 @@
       "password": "ntn\u001ciᾛ\u001fߧ7"
     },
     {
-      "tag": "🌐 GR-33",
+      "tag": "🌐 GR-30",
       "type": "shadowsocks",
       "server": "85.90.197.156",
       "server_port": 443,
@@ -256,7 +233,7 @@
       "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
-      "tag": "🌐 GR-34",
+      "tag": "🌐 GR-31",
       "type": "shadowsocks",
       "server": "85.90.197.146",
       "server_port": 443,
@@ -264,15 +241,7 @@
       "password": "׺7tֽ׽zן\u001dG"
     },
     {
-      "tag": "🌐 GR-35",
-      "type": "shadowsocks",
-      "server": "38.54.29.210",
-      "server_port": 2053,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
-    },
-    {
-      "tag": "🌐 GR-36",
+      "tag": "🌐 GR-32",
       "type": "shadowsocks",
       "server": "79.127.218.204",
       "server_port": 8443,
@@ -280,12 +249,44 @@
       "password": "מƟ\u001fNk׽omx["
     },
     {
-      "tag": "🌐 GR-37",
+      "tag": "🌐 GR-33",
       "type": "shadowsocks",
       "server": "85.90.197.220",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "zZ8]շM{ק^"
+    },
+    {
+      "tag": "🌐 GR-34",
+      "type": "shadowsocks",
+      "server": "85.90.197.156",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Ӈ<ǶѾ}k\u001bgs6"
+    },
+    {
+      "tag": "🌐 GR-35",
+      "type": "shadowsocks",
+      "server": "85.90.197.220",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "zZ8]շM{ק^"
+    },
+    {
+      "tag": "🌐 GR-36",
+      "type": "shadowsocks",
+      "server": "45.142.31.21",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "پվ\u001a6Ǵk;o5"
+    },
+    {
+      "tag": "🌐 GR-37",
+      "type": "shadowsocks",
+      "server": "85.90.197.53",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ntn\u001ciᾛ\u001fߧ7"
     },
     {
       "tag": "🌐 GR-38",
@@ -298,26 +299,26 @@
     {
       "tag": "🌐 GR-39",
       "type": "shadowsocks",
-      "server": "85.90.197.220",
+      "server": "85.90.197.146",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "zZ8]շM{ק^"
+      "password": "׺7tֽ׽zן\u001dG"
     },
     {
       "tag": "🌐 GR-40",
       "type": "shadowsocks",
-      "server": "45.142.31.21",
-      "server_port": 443,
+      "server": "79.127.218.204",
+      "server_port": 8443,
       "method": "aes-256-gcm",
-      "password": "پվ\u001a6Ǵk;o5"
+      "password": "מƟ\u001fNk׽omx["
     },
     {
       "tag": "🌐 GR-41",
       "type": "shadowsocks",
-      "server": "85.90.197.53",
+      "server": "85.90.197.220",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "ntn\u001ciᾛ\u001fߧ7"
+      "password": "zZ8]շM{ק^"
     },
     {
       "tag": "🌐 GR-42",
@@ -330,53 +331,13 @@
     {
       "tag": "🌐 GR-43",
       "type": "shadowsocks",
-      "server": "85.90.197.146",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "׺7tֽ׽zן\u001dG"
-    },
-    {
-      "tag": "🌐 GR-44",
-      "type": "shadowsocks",
-      "server": "38.54.29.210",
-      "server_port": 2053,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
-    },
-    {
-      "tag": "🌐 GR-45",
-      "type": "shadowsocks",
-      "server": "79.127.218.204",
-      "server_port": 8443,
-      "method": "aes-256-gcm",
-      "password": "מƟ\u001fNk׽omx["
-    },
-    {
-      "tag": "🌐 GR-46",
-      "type": "shadowsocks",
-      "server": "85.90.197.220",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "zZ8]շM{ק^"
-    },
-    {
-      "tag": "🌐 GR-47",
-      "type": "shadowsocks",
-      "server": "85.90.197.156",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Ӈ<ǶѾ}k\u001bgs6"
-    },
-    {
-      "tag": "🌐 GR-48",
-      "type": "shadowsocks",
       "server": "45.142.31.21",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "پվ\u001a6Ǵk;o5"
     },
     {
-      "tag": "🌐 GR-49",
+      "tag": "🌐 GR-44",
       "type": "shadowsocks",
       "server": "85.90.197.53",
       "server_port": 443,
@@ -384,7 +345,7 @@
       "password": "ntn\u001ciᾛ\u001fߧ7"
     },
     {
-      "tag": "🌐 GR-50",
+      "tag": "🌐 GR-45",
       "type": "shadowsocks",
       "server": "85.90.197.146",
       "server_port": 443,
@@ -392,15 +353,7 @@
       "password": "׺7tֽ׽zן\u001dG"
     },
     {
-      "tag": "🌐 GR-51",
-      "type": "shadowsocks",
-      "server": "38.54.29.210",
-      "server_port": 2053,
-      "method": "aes-256-gcm",
-      "password": "s_\u001b\u001e\u001e^\\ӿxپzݮ"
-    },
-    {
-      "tag": "🌐 GR-52",
+      "tag": "🌐 GR-46",
       "type": "shadowsocks",
       "server": "79.127.218.204",
       "server_port": 8443,
@@ -408,12 +361,20 @@
       "password": "מƟ\u001fNk׽omx["
     },
     {
-      "tag": "🌐 GR-53",
+      "tag": "🌐 GR-47",
       "type": "shadowsocks",
       "server": "91.250.248.151",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "vw\u001fM\u001f=m;맟^sW|"
+    },
+    {
+      "tag": "🌐 GR-48",
+      "type": "shadowsocks",
+      "server": "151.236.29.97",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "ߦwfۏzվv"
     }
   ]
 }

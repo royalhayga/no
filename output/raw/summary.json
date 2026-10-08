@@ -1,30 +1,25 @@
 {
   "stage": "Stage 1 - Raw Aggregation",
-  "generated_at": "2026-10-07T22:43:32.590940+00:00",
-  "total_nodes": 488547,
+  "generated_at": "2026-10-08T01:24:14.625874+00:00",
+  "total_nodes": 491782,
   "protocol_breakdown": {
-    "vmess": 22969,
-    "ss": 185819,
-    "vless": 207784,
-    "tuic": 2,
-    "hysteria2": 14539,
-    "trojan": 57434
+    "ss": 187536,
+    "hysteria2": 14569,
+    "vless": 208882,
+    "trojan": 57669,
+    "vmess": 23124,
+    "tuic": 2
   },
   "extra": {
     "sources": [
-      {
-        "source": "tolinkshare2.github.io",
-        "path": "/home/runner/work/tvtv/tvtv/ref/tolinkshare2.github.io",
-        "found_nodes": 0
-      },
       {
         "source": "latest_jichang",
         "path": "/home/runner/work/tvtv/tvtv/ref/latest_jichang",
         "found_nodes": 0
       },
       {
-        "source": "toshare5.github.io",
-        "path": "/home/runner/work/tvtv/tvtv/ref/toshare5.github.io",
+        "source": "tolinkshare2.github.io",
+        "path": "/home/runner/work/tvtv/tvtv/ref/tolinkshare2.github.io",
         "found_nodes": 0
       },
       {
@@ -33,9 +28,14 @@
         "found_nodes": 0
       },
       {
-        "source": "share-daily_node",
-        "path": "/home/runner/work/tvtv/tvtv/ref/node",
-        "found_nodes": 24
+        "source": "fanqiang",
+        "path": "/home/runner/work/tvtv/tvtv/ref/fanqiang",
+        "found_nodes": 0
+      },
+      {
+        "source": "toshare5.github.io",
+        "path": "/home/runner/work/tvtv/tvtv/ref/toshare5.github.io",
+        "found_nodes": 0
       },
       {
         "source": "free-nodes-sr",
@@ -43,14 +43,14 @@
         "found_nodes": 6
       },
       {
-        "source": "fanqiang",
-        "path": "/home/runner/work/tvtv/tvtv/ref/fanqiang",
-        "found_nodes": 0
-      },
-      {
         "source": "Free-servers",
         "path": "/home/runner/work/tvtv/tvtv/ref/Free-servers",
-        "found_nodes": 508
+        "found_nodes": 514
+      },
+      {
+        "source": "share-daily_node",
+        "path": "/home/runner/work/tvtv/tvtv/ref/node",
+        "found_nodes": 24
       },
       {
         "source": "globe-probe",
@@ -58,19 +58,24 @@
         "found_nodes": 0
       },
       {
+        "source": "proxypool",
+        "path": "/home/runner/work/tvtv/tvtv/ref/proxypool",
+        "found_nodes": 206
+      },
+      {
         "source": "FreeProxies",
         "path": "/home/runner/work/tvtv/tvtv/ref/FreeProxies",
         "found_nodes": 0
       },
       {
-        "source": "proxypool",
-        "path": "/home/runner/work/tvtv/tvtv/ref/proxypool",
-        "found_nodes": 228
-      },
-      {
         "source": "FreeSubsCheck",
         "path": "/home/runner/work/tvtv/tvtv/ref/FreeSubsCheck",
         "found_nodes": 1910
+      },
+      {
+        "source": "jichang",
+        "path": "/home/runner/work/tvtv/tvtv/ref/jichang",
+        "found_nodes": 0
       },
       {
         "source": "fee-based",
@@ -83,9 +88,9 @@
         "found_nodes": 0
       },
       {
-        "source": "jichang",
-        "path": "/home/runner/work/tvtv/tvtv/ref/jichang",
-        "found_nodes": 0
+        "source": "SubCrawler",
+        "path": "/home/runner/work/tvtv/tvtv/ref/SubCrawler",
+        "found_nodes": 6
       },
       {
         "source": "freevpn",
@@ -98,19 +103,9 @@
         "found_nodes": 505
       },
       {
-        "source": "SubCrawler",
-        "path": "/home/runner/work/tvtv/tvtv/ref/SubCrawler",
-        "found_nodes": 6
-      },
-      {
-        "source": "dljdsjq",
-        "path": "/home/runner/work/tvtv/tvtv/ref/dljdsjq",
-        "found_nodes": 69173
-      },
-      {
         "source": "v2rayfree",
         "path": "/home/runner/work/tvtv/tvtv/ref/v2rayfree",
-        "found_nodes": 1883
+        "found_nodes": 1879
       },
       {
         "source": "daily_free_vpn",
@@ -118,9 +113,14 @@
         "found_nodes": 14140
       },
       {
+        "source": "dljdsjq",
+        "path": "/home/runner/work/tvtv/tvtv/ref/dljdsjq",
+        "found_nodes": 72422
+      },
+      {
         "source": "vpngate",
         "path": "/home/runner/work/tvtv/tvtv/ref/vpngate",
-        "found_nodes": 13903
+        "found_nodes": 13909
       },
       {
         "source": "AutoScrapeFreeNodes",

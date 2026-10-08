@@ -25,23 +25,24 @@
     {
       "tag": "🌐 UZ-04",
       "type": "vless",
-      "server": "193.202.113.5",
-      "server_port": 443,
-      "uuid": "6f756511-7fc3-41ba-874b-8cdc8e1b225f"
-    },
-    {
-      "tag": "🌐 UZ-05",
-      "type": "vless",
       "server": "94.154.128.132",
       "server_port": 443,
       "uuid": "04c808e2-0b59-47b0-a54b-32fc7ef1c902"
     },
     {
-      "tag": "🌐 UZ-06",
+      "tag": "🌐 UZ-05",
       "type": "vless",
       "server": "193.202.113.4",
       "server_port": 443,
       "uuid": "75c4c6b1-dc9a-4c59-9985-df8af6e9c707"
+    },
+    {
+      "tag": "🌐 UZ-06",
+      "type": "shadowsocks",
+      "server": "193.202.113.5",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "u7V\u001b\\[n_"
     },
     {
       "tag": "🌐 UZ-07",
@@ -54,29 +55,13 @@
     {
       "tag": "🌐 UZ-08",
       "type": "shadowsocks",
-      "server": "193.202.113.5",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "u7V\u001b\\[n_"
-    },
-    {
-      "tag": "🌐 UZ-09",
-      "type": "shadowsocks",
-      "server": "193.202.113.5",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "u7V\u001b\\[n_"
-    },
-    {
-      "tag": "🌐 UZ-10",
-      "type": "shadowsocks",
       "server": "94.154.128.132",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
-      "tag": "🌐 UZ-11",
+      "tag": "🌐 UZ-09",
       "type": "shadowsocks",
       "server": "193.202.113.4",
       "server_port": 443,
@@ -84,7 +69,7 @@
       "password": "8suZ}9u\u001as;"
     },
     {
-      "tag": "🌐 UZ-12",
+      "tag": "🌐 UZ-10",
       "type": "shadowsocks",
       "server": "193.202.113.5",
       "server_port": 443,
@@ -92,12 +77,28 @@
       "password": "u7V\u001b\\[n_"
     },
     {
-      "tag": "🌐 UZ-13",
+      "tag": "🌐 UZ-11",
       "type": "shadowsocks",
       "server": "193.202.113.5",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "u7V\u001b\\[n_"
+    },
+    {
+      "tag": "🌐 UZ-12",
+      "type": "shadowsocks",
+      "server": "94.154.128.132",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "Ӈ<ǶѾ}k\u001bgs6"
+    },
+    {
+      "tag": "🌐 UZ-13",
+      "type": "shadowsocks",
+      "server": "193.202.113.4",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "8suZ}9u\u001as;"
     },
     {
       "tag": "🌐 UZ-14",
@@ -110,26 +111,26 @@
     {
       "tag": "🌐 UZ-15",
       "type": "shadowsocks",
+      "server": "193.202.113.5",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "u7V\u001b\\[n_"
+    },
+    {
+      "tag": "🌐 UZ-16",
+      "type": "shadowsocks",
       "server": "94.154.128.132",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
-      "tag": "🌐 UZ-16",
+      "tag": "🌐 UZ-17",
       "type": "shadowsocks",
       "server": "193.202.113.4",
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "8suZ}9u\u001as;"
-    },
-    {
-      "tag": "🌐 UZ-17",
-      "type": "shadowsocks",
-      "server": "193.202.113.5",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "u7V\u001b\\[n_"
     },
     {
       "tag": "🌐 UZ-18",
@@ -174,53 +175,13 @@
     {
       "tag": "🌐 UZ-23",
       "type": "shadowsocks",
-      "server": "193.202.113.5",
+      "server": "94.154.128.132",
       "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "u7V\u001b\\[n_"
+      "password": "Ӈ<ǶѾ}k\u001bgs6"
     },
     {
       "tag": "🌐 UZ-24",
-      "type": "shadowsocks",
-      "server": "193.202.113.5",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "u7V\u001b\\[n_"
-    },
-    {
-      "tag": "🌐 UZ-25",
-      "type": "shadowsocks",
-      "server": "94.154.128.132",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Ӈ<ǶѾ}k\u001bgs6"
-    },
-    {
-      "tag": "🌐 UZ-26",
-      "type": "shadowsocks",
-      "server": "193.202.113.4",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "8suZ}9u\u001as;"
-    },
-    {
-      "tag": "🌐 UZ-27",
-      "type": "shadowsocks",
-      "server": "193.202.113.5",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "u7V\u001b\\[n_"
-    },
-    {
-      "tag": "🌐 UZ-28",
-      "type": "shadowsocks",
-      "server": "94.154.128.132",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "Ӈ<ǶѾ}k\u001bgs6"
-    },
-    {
-      "tag": "🌐 UZ-29",
       "type": "shadowsocks",
       "server": "193.202.113.4",
       "server_port": 443,

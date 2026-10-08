@@ -11,24 +11,25 @@
     {
       "tag": "🌐 PH-02",
       "type": "vless",
-      "server": "61.245.11.28",
-      "server_port": 9090,
-      "uuid": "Channel:telegram:TurboConfigs"
-    },
-    {
-      "tag": "🌐 PH-03",
-      "type": "vless",
       "server": "61.245.11.164",
       "server_port": 443,
       "uuid": "0dc1fc26-b8e9-4296-9870-0996de3c2333"
     },
     {
+      "tag": "🌐 PH-03",
+      "type": "shadowsocks",
+      "server": "61.245.11.164",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "5}ͺoǽozzu}"
+    },
+    {
       "tag": "🌐 PH-04",
       "type": "shadowsocks",
-      "server": "61.245.11.28",
-      "server_port": 9090,
+      "server": "61.245.11.164",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "\u0016mzW\nߊ"
+      "password": "5}ͺoǽozzu}"
     },
     {
       "tag": "🌐 PH-05",
@@ -41,10 +42,10 @@
     {
       "tag": "🌐 PH-06",
       "type": "shadowsocks",
-      "server": "61.245.11.28",
-      "server_port": 9090,
+      "server": "61.245.11.164",
+      "server_port": 443,
       "method": "aes-256-gcm",
-      "password": "\u0016mzW\nߊ"
+      "password": "5}ͺoǽozzu}"
     },
     {
       "tag": "🌐 PH-07",
@@ -53,61 +54,6 @@
       "server_port": 443,
       "method": "aes-256-gcm",
       "password": "5}ͺoǽozzu}"
-    },
-    {
-      "tag": "🌐 PH-08",
-      "type": "shadowsocks",
-      "server": "61.245.11.28",
-      "server_port": 9090,
-      "method": "aes-256-gcm",
-      "password": "\u0016mzW\nߊ"
-    },
-    {
-      "tag": "🌐 PH-09",
-      "type": "shadowsocks",
-      "server": "61.245.11.164",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "5}ͺoǽozzu}"
-    },
-    {
-      "tag": "🌐 PH-10",
-      "type": "shadowsocks",
-      "server": "61.245.11.28",
-      "server_port": 9090,
-      "method": "aes-256-gcm",
-      "password": "\u0016mzW\nߊ"
-    },
-    {
-      "tag": "🌐 PH-11",
-      "type": "shadowsocks",
-      "server": "61.245.11.164",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "5}ͺoǽozzu}"
-    },
-    {
-      "tag": "🌐 PH-12",
-      "type": "shadowsocks",
-      "server": "61.245.11.28",
-      "server_port": 9090,
-      "method": "aes-256-gcm",
-      "password": "\u0016mzW\nߊ"
-    },
-    {
-      "tag": "🌐 PH-13",
-      "type": "shadowsocks",
-      "server": "61.245.11.164",
-      "server_port": 443,
-      "method": "aes-256-gcm",
-      "password": "5}ͺoǽozzu}"
-    },
-    {
-      "tag": "🌐 PH-14",
-      "type": "trojan",
-      "server": "38.54.81.111",
-      "server_port": 443,
-      "password": "3e974f9e"
     }
   ]
 }
