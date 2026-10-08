@@ -423,6 +423,26 @@ def reconstruct_node_link(node: Dict[str, Any]) -> str:
     return f"{ntype}://{server}:{port}#{name}"
 
 
+def ensure_unique_node_names(nodes: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Ensure every node in the list has a 100% unique name to prevent Mihomo duplicate proxy name errors."""
+    seen_names: Set[str] = set()
+    unique_nodes = []
+
+    for n in nodes:
+        n_copy = dict(n)
+        base_name = str(n_copy.get("name") or "Node").strip()
+        candidate_name = base_name
+        idx = 2
+        while candidate_name in seen_names:
+            candidate_name = f"{base_name} #{idx}"
+            idx += 1
+        seen_names.add(candidate_name)
+        n_copy["name"] = candidate_name
+        unique_nodes.append(n_copy)
+
+    return unique_nodes
+
+
 def export_stage_files(output_dir: Path, nodes: List[Dict[str, Any]], stage_title: str, extra_data: Dict[str, Any] = None, max_nodes_per_file: int = 50000) -> None:
     """
     Export all 5 standard formats to output_dir with safety cap to avoid GitHub 100MB file limit.
@@ -434,8 +454,8 @@ def export_stage_files(output_dir: Path, nodes: List[Dict[str, Any]], stage_titl
     """
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Safety cap: limit max nodes written to single file so size stays < 40MB (GitHub limit is 100MB)
-    capped_nodes = nodes[:max_nodes_per_file] if len(nodes) > max_nodes_per_file else nodes
+    # Safety cap & Ensure 100% unique proxy names
+    capped_nodes = ensure_unique_node_names(nodes[:max_nodes_per_file] if len(nodes) > max_nodes_per_file else nodes)
 
     # 1. Plaintext node links
     raw_links = [reconstruct_node_link(n) for n in capped_nodes]

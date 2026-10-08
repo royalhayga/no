@@ -115,6 +115,8 @@ def build_master_country_clash_yaml(country_groups: Dict[str, List[Dict[str, Any
     # Sort countries by count
     sorted_codes = sorted(country_groups.keys(), key=lambda c: len(country_groups[c]), reverse=True)
 
+    seen_proxy_names: Set[str] = set()
+
     for code in sorted_codes:
         country_nodes = country_groups[code]
         flag = COUNTRY_FLAGS.get(code, "🌐")
@@ -124,7 +126,13 @@ def build_master_country_clash_yaml(country_groups: Dict[str, List[Dict[str, Any
 
         node_names_in_country = []
         for n in country_nodes:
-            proxy_name = n.get("name")
+            base_name = str(n.get("name") or "Node").strip()
+            proxy_name = base_name
+            idx = 2
+            while proxy_name in seen_proxy_names:
+                proxy_name = f"{base_name} #{idx}"
+                idx += 1
+            seen_proxy_names.add(proxy_name)
             node_names_in_country.append(proxy_name)
 
             proxy = {
