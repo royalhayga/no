@@ -34,33 +34,33 @@ def clone_single_repo(source: dict) -> tuple[str, int, str]:
 
 
 def main() -> int:
-    print("=== Stage 0: Parallel Concurrent Clone of All 28 Repositories ===")
+    print("=== Stage 0: 32-Worker Parallel Concurrent Clone of All 28 Repositories ===", flush=True)
     REF_DIR.mkdir(parents=True, exist_ok=True)
 
     if not CONFIG_FILE.exists():
-        print(f"Error: Config file {CONFIG_FILE} not found.")
+        print(f"Error: Config file {CONFIG_FILE} not found.", flush=True)
         return 1
 
     config = json.loads(CONFIG_FILE.read_text(encoding="utf-8"))
     sources = config.get("sources", [])
 
-    print(f"Starting 16-worker concurrent clone for {len(sources)} repositories...")
+    print(f"Starting 32-worker max-speed concurrent clone for {len(sources)} repositories...", flush=True)
 
     cloned, skipped, failed = 0, 0, 0
-    with ThreadPoolExecutor(max_workers=16) as executor:
+    with ThreadPoolExecutor(max_workers=32) as executor:
         futures = {executor.submit(clone_single_repo, src): src for src in sources}
         for future in as_completed(futures):
             sname, status, msg = future.result()
             if status == 1:
                 cloned += 1
-                print(f"  [+] [{sname}] {msg}")
+                print(f"  [+] [{sname}] {msg}", flush=True)
             elif status == 0:
                 skipped += 1
             else:
                 failed += 1
-                print(f"  [-] [{sname}] {msg}")
+                print(f"  [-] [{sname}] {msg}", flush=True)
 
-    print(f"=== Stage 0 Complete: Cloned {cloned}, Skipped {skipped}, Failed {failed} ===")
+    print(f"=== Stage 0 Complete: Cloned {cloned}, Skipped {skipped}, Failed {failed} ===", flush=True)
     return 0
 
 

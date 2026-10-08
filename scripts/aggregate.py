@@ -76,11 +76,9 @@ def scan_single_source(source: dict) -> tuple[dict, list[dict]]:
                 elif file.endswith((".txt", ".json", ".md", ".sub", ".link")):
                     try:
                         content = file_path.read_text(encoding="utf-8", errors="ignore")
-                        # Extract direct node links (vmess://, vless://, ss://, etc.)
                         extracted = extract_node_links_from_text(content)
                         nodes.extend(extracted)
 
-                        # Extract embedded http/https subscription URLs from markdown/txt
                         urls = re.findall(r"https?://[^\s\"'\)>]+\.(?:yaml|yml|txt|sub)", content)
                         for url in urls[:5]:
                             res_text = fetch_remote_url(url)
@@ -94,9 +92,9 @@ def scan_single_source(source: dict) -> tuple[dict, list[dict]]:
 
 
 def main() -> int:
-    print("=== Stage 1: Parallel Multi-Source Repository Aggregation ===")
+    print("=== Stage 1: 32-Worker Max-Speed Parallel Repository Aggregation ===", flush=True)
     if not CONFIG_FILE.exists():
-        print(f"Error: Config file {CONFIG_FILE} not found.")
+        print(f"Error: Config file {CONFIG_FILE} not found.", flush=True)
         return 1
 
     config = json.loads(CONFIG_FILE.read_text(encoding="utf-8"))
@@ -105,16 +103,16 @@ def main() -> int:
     all_raw_nodes: List[Dict[str, Any]] = []
     source_stats = []
 
-    print(f"Scanning {len(sources)} repositories in parallel with 16 workers...")
-    with ThreadPoolExecutor(max_workers=16) as executor:
+    print(f"Scanning {len(sources)} repositories in parallel with 32 workers...", flush=True)
+    with ThreadPoolExecutor(max_workers=32) as executor:
         futures = {executor.submit(scan_single_source, src): src for src in sources}
         for future in as_completed(futures):
             stat, nodes = future.result()
             all_raw_nodes.extend(nodes)
             source_stats.append(stat)
-            print(f"  [+] [{stat['source']}] Found {len(nodes)} nodes")
+            print(f"  [+] [{stat['source']}] Found {len(nodes)} nodes", flush=True)
 
-    print(f"Stage 1 Total Raw Aggregated Nodes: {len(all_raw_nodes)}")
+    print(f"Stage 1 Total Raw Aggregated Nodes: {len(all_raw_nodes)}", flush=True)
 
     # Export all 5 standard formats to output/raw/
     export_stage_files(
@@ -123,7 +121,7 @@ def main() -> int:
         stage_title="Stage 1 - Raw Aggregation",
         extra_data={"sources": source_stats}
     )
-    print(f"Successfully exported Stage 1 output to {OUTPUT_DIR}")
+    print(f"Successfully exported Stage 1 output to {OUTPUT_DIR}", flush=True)
     return 0
 
 
