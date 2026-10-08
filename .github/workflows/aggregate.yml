@@ -1,36 +1,65 @@
-name: Pure Aggregator Pipeline
+name: Index Pipeline - Clean Offline Aggregator
 
 on:
+  push:
+    branches:
+      - master
   schedule:
-    - cron: '0 */12 * * *'  # 12 小时跑一次足矣，无需高频
+    - cron: '0 */12 * * *'  # 调整为每12小时一次，降低频率规避风控
   workflow_dispatch:
+
+env:
+  PYTHONUNBUFFERED: "1"
 
 jobs:
   build:
+    name: 纯离线聚合与内核校验流水线
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 配置 Python 环境
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
           cache: 'pip'
 
-      - run: pip install -r requirements.txt
+      - name: 安装 Python 依赖
+        run: pip install -r requirements.txt
 
-      - name: 纯静态聚合与模版合成
+      - name: Stage 0 克隆与 Stage 1 全量汇总
         run: |
           python scripts/clone_repos.py
           python scripts/aggregate.py
+
+      - name: Stage 2 内存指纹去重与模版合成
+        run: |
           python scripts/dedupe.py
           python scripts/country_split.py
           python scripts/template_engine.py
 
-      - name: 提交并推送
+      - name: 安装 Mihomo 内核 (仅用于本地离线语法断言)
+        run: |
+          wget -q https://github.com/MetaCubeX/mihomo/releases/download/v1.18.0/mihomo-linux-amd64-v1.18.0.gz
+          gunzip mihomo-linux-amd64-v1.18.0.gz
+          chmod +x mihomo-linux-amd64-v1.18.0
+          sudo mv mihomo-linux-amd64-v1.18.0 /usr/local/bin/mihomo
+
+      - name: 执行本地单次语法校验 (纯离线 0网络请求)
+        run: |
+          python scripts/validate_and_prune.py
+
+      - name: 提交并推送订阅结果
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add output/
           if ! git diff --cached --quiet; then
-            git commit -m "chore: sync static aggregated configs"
-            git push origin HEAD:master
+            git commit -m "chore: sync offline verified subscription output"
+            git push origin HEAD:master || echo "Push skipped"
+          else
+            echo "No output changes to commit."
           fi
