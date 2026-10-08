@@ -21,6 +21,16 @@ if hasattr(sys.stdout, "reconfigure"):
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 
+VALID_SS_CIPHERS = {
+    "aes-128-gcm", "aes-192-gcm", "aes-256-gcm",
+    "chacha20-ietf-poly1305", "chacha20-poly1305",
+    "2022-blake3-aes-128-gcm", "2022-blake3-aes-256-gcm", "2022-blake3-chacha20-poly1305",
+    "rc4-md5", "aes-128-cfb", "aes-192-cfb", "aes-256-cfb",
+    "aes-128-ctr", "aes-192-ctr", "aes-256-ctr",
+    "chacha20", "chacha20-ietf", "xchacha20-ietf-poly1305",
+    "none"
+}
+
 
 def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     """
@@ -28,6 +38,7 @@ def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     1. Strip HTML tags, control chars, and malicious script injection from node name/remark.
     2. Filter out invalid, empty, or internal/bogon server addresses (127.0.0.1, 10.x, 192.168.x, 0.0.0.0, etc.).
     3. Validate port numbers (1-65535).
+    4. Strict validation on credentials and Shadowsocks ciphers to prevent Mihomo initialization errors.
     """
     if not isinstance(node, dict):
         return None
@@ -54,6 +65,33 @@ def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         node["port"] = port
     except Exception:
         return None
+
+    ntype = str(node.get("type", "")).lower().strip()
+    if ntype == "ss":
+        cipher = str(node.get("cipher", "")).lower().strip()
+        pwd = str(node.get("password", "")).strip()
+        if not pwd or not cipher or cipher not in VALID_SS_CIPHERS:
+            return None
+        if not re.match(r"^[a-z0-9_-]+$", cipher):
+            return None
+        node["cipher"] = cipher
+        node["password"] = pwd
+    elif ntype in ["vmess", "vless"]:
+        uuid = str(node.get("uuid", "")).strip()
+        if not uuid:
+            return None
+        node["uuid"] = uuid
+    elif ntype == "trojan":
+        pwd = str(node.get("password", "")).strip()
+        if not pwd:
+            return None
+        node["password"] = pwd
+    elif ntype in ["hysteria2", "hy2"]:
+        auth = str(node.get("auth") or node.get("password", "")).strip()
+        if not auth:
+            return None
+        node["auth"] = auth
+        node["password"] = auth
 
     # Sanitize node name / remark (remove HTML tags and control chars)
     raw_name = str(node.get("name", "Node")).strip()
@@ -198,13 +236,18 @@ def parse_ss(link: str) -> Optional[Dict[str, Any]]:
         else:
             return None
 
+        cipher = cipher.strip().lower()
+        password = password.strip()
+        if not password or not cipher or cipher not in VALID_SS_CIPHERS:
+            return None
+
         return {
             "type": "ss",
             "name": remark.strip() or "Shadowsocks",
             "server": server.strip(),
             "port": port,
-            "cipher": cipher.strip(),
-            "password": password.strip(),
+            "cipher": cipher,
+            "password": password,
             "raw_link": link
         }
     except Exception:

@@ -19,39 +19,80 @@ def validate_yaml(yaml_file: Path) -> tuple[bool, str]:
     if not yaml_file.exists():
         return False, "File not found"
 
-    cmd = [MIHOMO_BIN, "-t", "-f", str(yaml_file)]
-    res = subprocess.run(cmd, capture_output=True, text=True)
+    try:
+        cmd = [MIHOMO_BIN, "-t", "-f", str(yaml_file)]
+        res = subprocess.run(cmd, capture_output=True, text=True)
 
-    if res.returncode == 0:
-        return True, res.stdout
-    else:
-        return False, res.stderr + "\n" + res.stdout
+        if res.returncode == 0:
+            return True, res.stdout
+        else:
+            return False, res.stderr + "\n" + res.stdout
+    except FileNotFoundError:
+        return True, f"[SKIP] Mihomo binary '{MIHOMO_BIN}' not found in environment."
 
 
 def prune_failing_proxies(yaml_file: Path, err_msg: str) -> bool:
-    """动态解析 Mihomo 报错并精准剔除有缺陷的节点 (如缺少密码/加密非法/节点重名)"""
+    """
+    动态解析 Mihomo 报错并精准剔除有缺陷的节点 (如缺少密码/加密非法/节点重名)，
+    并同步清理 proxy-groups 中对已被移除节点的引用，防止 'not found' 报错死循环。
+    """
     try:
         content = yaml_file.read_text(encoding="utf-8")
         data = yaml.safe_load(content) or {}
         proxies = data.get("proxies", [])
-        if not proxies:
+        proxy_groups = data.get("proxy-groups", [])
+
+        if not proxies and not proxy_groups:
             return False
 
         indices_to_remove = set()
+        names_to_remove = set()
 
-        for match in re.finditer(r"proxy\s+(\d+):", err_msg):
+        # 1. 匹配常规节点下标报错: "proxy 271: ss 104.18.1.1:2083 initialize error: unknown method: xxx"
+        for match in re.finditer(r"(?<!group\[)\bproxy\s+(\d+):", err_msg):
             idx = int(match.group(1))
             if 0 <= idx < len(proxies):
                 indices_to_remove.add(idx)
+                pname = proxies[idx].get("name") if isinstance(proxies[idx], dict) else None
+                if pname:
+                    names_to_remove.add(pname)
 
-        if not indices_to_remove:
+        # 2. 匹配策略组找不到节点报错: "proxy group[0]: AUTO: '🇧🇷 BR-08' not found" 或 "proxy group[x]: ... 'xxx' not found"
+        for match in re.finditer(r"proxy group\[\d+\]:[^:]+:\s*'([^']+)'\s+not found", err_msg):
+            missing_name = match.group(1).strip()
+            if missing_name:
+                names_to_remove.add(missing_name)
+
+        # 3. 匹配通用 'node_name' not found 报错
+        for match in re.finditer(r"'([^']+)'\s+not found", err_msg):
+            missing_name = match.group(1).strip()
+            if missing_name:
+                names_to_remove.add(missing_name)
+
+        # 通过名字反向查找 proxies 数组中的索引
+        for i, p in enumerate(proxies):
+            if isinstance(p, dict) and p.get("name") in names_to_remove:
+                indices_to_remove.add(i)
+
+        if not indices_to_remove and not names_to_remove:
             return False
 
+        # 从 proxies 剔除损坏节点
         new_proxies = [p for i, p in enumerate(proxies) if i not in indices_to_remove]
         data["proxies"] = new_proxies
 
+        # 同步更新 proxy-groups，移除不存在的节点引用
+        if proxy_groups and names_to_remove:
+            for group in proxy_groups:
+                if isinstance(group, dict) and "proxies" in group and isinstance(group["proxies"], list):
+                    group["proxies"] = [p for p in group["proxies"] if p not in names_to_remove]
+                    if not group["proxies"]:
+                        group["proxies"] = ["DIRECT"]
+
+        data["proxy-groups"] = proxy_groups
+
         yaml_file.write_text(yaml.dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8")
-        print(f"[PRUNE OK] Dynamically removed {len(indices_to_remove)} failing proxies from {yaml_file.name}", flush=True)
+        print(f"[PRUNE OK] Dynamically removed {len(indices_to_remove)} failing proxies & cleaned group refs from {yaml_file.name}", flush=True)
         return True
     except Exception as e:
         print(f"[PRUNE FAIL] Failed to prune {yaml_file.name}: {e}", flush=True)

@@ -6,6 +6,7 @@ import re
 import socket
 import sys
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
@@ -186,12 +187,20 @@ def main() -> int:
     nodes = extract_node_links_from_text(content)
     print(f"Loaded {len(nodes)} nodes for GeoIP country splitting.", flush=True)
 
-    # 1. Resolve server domains to IPs
-    print("Resolving server domain IPs for GeoIP lookup...", flush=True)
+    # 1. Resolve server domains to IPs concurrently
+    print("Resolving server domain IPs for GeoIP lookup with 64 workers...", flush=True)
+    unique_servers = list({n.get("server", "").strip() for n in nodes if n.get("server")})
     server_to_ip = {}
-    for n in nodes:
-        srv = n.get("server", "").strip()
-        if srv and srv not in server_to_ip:
+
+    def resolve_worker(srv: str) -> tuple[str, str]:
+        return srv, resolve_server_ip(srv)
+
+    with ThreadPoolExecutor(max_workers=64) as executor:
+        futures = [executor.submit(resolve_worker, srv) for srv in unique_servers]
+        for future in as_completed(futures):
+            srv, ip = future.result()
+            if ip:
+                server_to_ip[srv] = ip
             server_to_ip[srv] = resolve_server_ip(srv)
 
     all_ips = list(set(server_to_ip.values()))

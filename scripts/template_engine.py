@@ -13,6 +13,7 @@ from common import ROOT_DIR, extract_node_links_from_text
 
 FULL_TEMPLATE_FILE = ROOT_DIR / "config" / "rules_template.yaml"
 ELITE_TEMPLATE_FILE = ROOT_DIR / "config" / "rules_elite_template.yaml"
+FAKELOCATION_TEMPLATE_FILE = ROOT_DIR / "config" / "rules_fakelocation_template.yaml"
 
 INPUT_DIR = ROOT_DIR / "output" / "verified"
 ALT_INPUT_DIR = ROOT_DIR / "output" / "dns"
@@ -24,6 +25,8 @@ OUTPUT_PUBLIC_RULES_CLASH = ROOT_DIR / "output" / "clash_public_rules.yaml"
 OUTPUT_PUBLIC_ELITE_RULES_CLASH = ROOT_DIR / "output" / "clash_public_elite_rules.yaml"
 OUTPUT_MOBILE_RULES_CLASH = ROOT_DIR / "output" / "clash_mobile_elite_rules.yaml"
 OUTPUT_PUBLIC_MOBILE_RULES_CLASH = ROOT_DIR / "output" / "clash_public_mobile_elite_rules.yaml"
+OUTPUT_FAKELOCATION_RULES_CLASH = ROOT_DIR / "output" / "clash_fakelocation_rules.yaml"
+OUTPUT_PUBLIC_FAKELOCATION_RULES_CLASH = ROOT_DIR / "output" / "clash_public_fakelocation_rules.yaml"
 
 PRIVATE_NODE_NAMES = ["手机", "reality funo", "JPreality", "39515", "reality", "tourism", "test"]
 
@@ -43,10 +46,13 @@ COUNTRY_NAMES_ZH = {
 
 
 VALID_SS_CIPHERS = {
-    "aes-128-gcm", "aes-256-gcm", "chacha20-ietf-poly1305",
+    "aes-128-gcm", "aes-192-gcm", "aes-256-gcm",
+    "chacha20-ietf-poly1305", "chacha20-poly1305",
     "2022-blake3-aes-128-gcm", "2022-blake3-aes-256-gcm", "2022-blake3-chacha20-poly1305",
     "rc4-md5", "aes-128-cfb", "aes-192-cfb", "aes-256-cfb",
-    "aes-128-ctr", "aes-192-ctr", "aes-256-ctr", "chacha20", "chacha20-ietf"
+    "aes-128-ctr", "aes-192-ctr", "aes-256-ctr",
+    "chacha20", "chacha20-ietf", "xchacha20-ietf-poly1305",
+    "none"
 }
 
 
@@ -321,6 +327,16 @@ def main() -> int:
         public_mobile_yaml = build_merged_clash_config(ELITE_TEMPLATE_FILE, crawled_nodes, include_private=False)
         OUTPUT_PUBLIC_MOBILE_RULES_CLASH.write_text(public_mobile_yaml, encoding="utf-8")
         print(f"Successfully generated Dedicated Public Mobile Clash Config -> {OUTPUT_PUBLIC_MOBILE_RULES_CLASH}", flush=True)
+
+    # 4. 独立 FakeLocation 社交 App 定位专享版 (私有版与纯公开版)
+    if FAKELOCATION_TEMPLATE_FILE.exists():
+        fl_yaml = build_merged_clash_config(FAKELOCATION_TEMPLATE_FILE, crawled_nodes, include_private=True)
+        OUTPUT_FAKELOCATION_RULES_CLASH.write_text(fl_yaml, encoding="utf-8")
+        print(f"Successfully generated Private FakeLocation Clash Config -> {OUTPUT_FAKELOCATION_RULES_CLASH}", flush=True)
+
+        public_fl_yaml = build_merged_clash_config(FAKELOCATION_TEMPLATE_FILE, crawled_nodes, include_private=False)
+        OUTPUT_PUBLIC_FAKELOCATION_RULES_CLASH.write_text(public_fl_yaml, encoding="utf-8")
+        print(f"Successfully generated Public FakeLocation Clash Config -> {OUTPUT_PUBLIC_FAKELOCATION_RULES_CLASH}", flush=True)
 
     return 0
 
