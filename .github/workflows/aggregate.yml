@@ -1,4 +1,4 @@
-name: Index Pipeline - 全阶段并发处理流水线
+name: Index Pipeline - GitHub Actions 原生 5 管道 DAG 并行流水线
 
 on:
   push:
@@ -12,12 +12,10 @@ env:
   PYTHONUNBUFFERED: "1"   # Real-time unbuffered log output
 
 jobs:
-  pipeline:
-    name: 全流程处理流水线
+  # ================= Phase 1: 数据准备阶段 (Stage 0 克隆 & Stage 1 汇总) =================
+  prepare:
+    name: 1. 数据准备 (Clone & Aggregate & ID Tag)
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
@@ -31,39 +29,122 @@ jobs:
       - name: 安装 Python 依赖
         run: pip install -r requirements.txt
 
-      - name: 安装 Mihomo (Clash Meta) 内核
+      - name: Stage 0 克隆与 Stage 1 全量汇总
+        run: |
+          python scripts/clone_repos.py
+          python scripts/aggregate.py
+
+      - name: 上传原始数据 Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: raw-nodes
+          path: output/raw/
+
+  # ================= Phase 2: GitHub UI 原生 5 管道并行 (DAG Parallel Matrix) =================
+  eval_validate:
+    name: 管道 1 - Mihomo 内核语法与加密校验
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.10', cache: 'pip' }
+      - run: pip install -r requirements.txt
+      - name: 安装 Mihomo
         run: |
           wget -q https://github.com/MetaCubeX/mihomo/releases/download/v1.18.0/mihomo-linux-amd64-v1.18.0.gz
           gunzip mihomo-linux-amd64-v1.18.0.gz
           chmod +x mihomo-linux-amd64-v1.18.0
           sudo mv mihomo-linux-amd64-v1.18.0 /usr/local/bin/mihomo
+      - uses: actions/download-artifact@v4
+        with: { name: raw-nodes, path: output/raw/ }
+      - name: 执行 Mihomo 语法校验
+        run: python scripts/validate_and_prune.py
 
-      - name: Stage 0 - 并行克隆/同步 28 个参考仓库
-        run: python scripts/clone_repos.py
-
-      - name: Index 1 - 多源全量汇总 (Aggregate)
-        run: python scripts/aggregate.py
-
-      - name: Index 2 - SHA256 哈希指纹去重 (Dedupe)
+  eval_dedupe:
+    name: 管道 2 - SHA256 指纹去重
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.10', cache: 'pip' }
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with: { name: raw-nodes, path: output/raw/ }
+      - name: 执行指纹去重
         run: python scripts/dedupe.py
 
-      - name: Index 3 - 三 DNS 墙与 GFW 污染检测 (DNS Check)
+  eval_dns:
+    name: 管道 3 - 三 DNS 墙与 GFW 污染检测
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.10', cache: 'pip' }
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with: { name: raw-nodes, path: output/raw/ }
+      - name: 执行三 DNS 检测
         run: python scripts/dns_check.py
 
-      - name: Index 4 - Socket 高并发端口探针 (Socket Probe)
+  eval_socket:
+    name: 管道 4 - Socket TCP/TLS/QUIC 高并发探针
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.10', cache: 'pip' }
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with: { name: raw-nodes, path: output/raw/ }
+      - name: 执行 Socket 探针
         run: python scripts/socket_probe.py
 
-      - name: Index 5 - Mihomo Go 原生内核 204 实测 (HTTP 204 Verified)
+  eval_verified:
+    name: 管道 5 - Mihomo Go 原生 204 出海实测
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.10', cache: 'pip' }
+      - run: pip install -r requirements.txt
+      - name: 安装 Mihomo
+        run: |
+          wget -q https://github.com/MetaCubeX/mihomo/releases/download/v1.18.0/mihomo-linux-amd64-v1.18.0.gz
+          gunzip mihomo-linux-amd64-v1.18.0.gz
+          chmod +x mihomo-linux-amd64-v1.18.0
+          sudo mv mihomo-linux-amd64-v1.18.0 /usr/local/bin/mihomo
+      - uses: actions/download-artifact@v4
+        with: { name: raw-nodes, path: output/raw/ }
+      - name: 执行 Mihomo 出海 204 组测速
         run: python scripts/verified.py
 
-      - name: Index 6 - GeoIP 精准按国家/地区分流 (Country Split)
-        run: python scripts/country_split.py
+  # ================= Phase 3: 模版合成与提交推送 (Needs All 5 Parallel Jobs) =================
+  finalize:
+    name: 3. 模版合成与自动发布
+    needs: [eval_validate, eval_dedupe, eval_dns, eval_socket, eval_verified]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
 
-      - name: 动态 Clash 模版合成与双层负载均衡 (Template Engine)
-        run: python scripts/template_engine.py
+      - name: 配置 Python 环境
+        uses: actions/setup-python@v5
+        with: { python-version: '3.10', cache: 'pip' }
 
-      - name: Mihomo 内核严苛语法与节点合法性校验 (Kernel Auditor & Auto Prune)
-        run: python scripts/validate_and_prune.py
+      - name: 安装 Python 依赖
+        run: pip install -r requirements.txt
+
+      - name: 执行 GeoIP 分国与双模版合成
+        run: |
+          python scripts/country_split.py
+          python scripts/template_engine.py
 
       - name: 提交并推送生产订阅结果
         run: |
@@ -71,6 +152,6 @@ jobs:
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add output/
           if ! git diff --cached --quiet; then
-            git commit -m "chore: [Auto Pipeline] All stages 0-6 + template engine completed & output synced"
+            git commit -m "chore: [Auto Parallel Pipeline] All 5 parallel DAG branches completed & output synced"
             git push origin HEAD:master || echo "Push skipped"
           fi
