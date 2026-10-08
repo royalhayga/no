@@ -22,13 +22,13 @@ def clone_single_repo(source: dict) -> tuple[str, int, str]:
 
     try:
         subprocess.run(
-            ["git", "clone", "--depth", "1", surl, str(spath)],
+            ["git", "clone", "--depth", "1", "--single-branch", surl, str(spath)],
             check=True,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
-            timeout=120
+            timeout=45
         )
-        return sname, 1, "Cloned successfully"
+        return sname, 1, "Cloned successfully (depth 1)"
     except Exception as exc:
         return sname, -1, f"Failed: {exc}"
 
