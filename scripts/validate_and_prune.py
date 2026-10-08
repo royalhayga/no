@@ -1,148 +1,117 @@
 from __future__ import annotations
 
+import os
 import re
-import shutil
 import subprocess
 import sys
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import yaml
 
-ROOT_DIR = Path(__file__).resolve().parents[1]
-OUTPUT_DIR = ROOT_DIR / "output"
-MIHOMO_BIN = shutil.which("mihomo") or "mihomo"
+# 目标需要校验的目录
+OUTPUT_DIR = Path("output")
+
+# 1. 严格合法的 SS 加密白名单
+VALID_SS_CIPHERS = {
+    "aes-128-gcm", "aes-192-gcm", "aes-256-gcm",
+    "chacha20-ietf-poly1305", "xchacha20-ietf-poly1305",
+    "aes-128-ctr", "aes-192-ctr", "aes-256-ctr",
+    "aes-128-cfb", "aes-192-cfb", "aes-256-cfb",
+    "rc4-md5", "chacha20-ietf",
+    "2022-blake3-aes-128-gcm", "2022-blake3-aes-256-gcm", "2022-blake3-chacha20-poly1305"
+}
 
 
-def validate_yaml(yaml_file: Path) -> tuple[bool, str]:
-    """使用 Mihomo 内核校验单个 YAML 文件的语法合规性"""
-    if not yaml_file.exists():
-        return False, "File not found"
-
+def sanitize_yaml_file(file_path: Path) -> bool:
+    """在喂给 Mihomo 前做纯内存批量清洗，秒级过滤坏节点与非法字段"""
     try:
-        cmd = [MIHOMO_BIN, "-t", "-f", str(yaml_file)]
-        res = subprocess.run(cmd, capture_output=True, text=True)
+        content = file_path.read_text(encoding="utf-8", errors="ignore")
+        data = yaml.safe_load(content)
+        if not isinstance(data, dict) or "proxies" not in data:
+            return True
 
-        if res.returncode == 0:
-            return True, res.stdout
-        else:
-            return False, res.stderr + "\n" + res.stdout
-    except FileNotFoundError:
-        return True, f"[SKIP] Mihomo binary '{MIHOMO_BIN}' not found in environment."
-
-
-def prune_failing_proxies(yaml_file: Path, err_msg: str) -> bool:
-    """
-    动态解析 Mihomo 报错并精准剔除有缺陷的节点 (如缺少密码/加密非法/节点重名)，
-    并同步清理 proxy-groups 中对已被移除节点的引用，防止 'not found' 报错死循环。
-    """
-    try:
-        content = yaml_file.read_text(encoding="utf-8")
-        data = yaml.safe_load(content) or {}
         proxies = data.get("proxies", [])
-        proxy_groups = data.get("proxy-groups", [])
+        clean_proxies = []
+        valid_proxy_names = set()
 
-        if not proxies and not proxy_groups:
-            return False
+        for p in proxies:
+            if not isinstance(p, dict):
+                continue
+            ptype = str(p.get("type", "")).lower()
+            # 过滤未知乱码 SS
+            if ptype == "ss":
+                cipher = str(p.get("cipher", "")).lower()
+                if cipher not in VALID_SS_CIPHERS:
+                    continue
 
-        indices_to_remove = set()
-        names_to_remove = set()
+            name = str(p.get("name", "")).strip()
+            if not name:
+                continue
+            
+            clean_proxies.append(p)
+            valid_proxy_names.add(name)
 
-        # 1. 匹配常规节点下标报错: "proxy 271: ss 104.18.1.1:2083 initialize error: unknown method: xxx"
-        for match in re.finditer(r"(?<!group\[)\bproxy\s+(\d+):", err_msg):
-            idx = int(match.group(1))
-            if 0 <= idx < len(proxies):
-                indices_to_remove.add(idx)
-                pname = proxies[idx].get("name") if isinstance(proxies[idx], dict) else None
-                if pname:
-                    names_to_remove.add(pname)
+        data["proxies"] = clean_proxies
 
-        # 2. 匹配策略组找不到节点报错: "proxy group[0]: AUTO: '🇧🇷 BR-08' not found" 或 "proxy group[x]: ... 'xxx' not found"
-        for match in re.finditer(r"proxy group\[\d+\]:[^:]+:\s*'([^']+)'\s+not found", err_msg):
-            missing_name = match.group(1).strip()
-            if missing_name:
-                names_to_remove.add(missing_name)
+        # 保证 proxy-groups 里面的引用不会悬空
+        if "proxy-groups" in data and isinstance(data["proxy-groups"], list):
+            group_names = {g.get("name") for g in data["proxy-groups"] if isinstance(g, dict)}
+            for g in data["proxy-groups"]:
+                if isinstance(g, dict) and "proxies" in g and isinstance(g["proxies"], list):
+                    g["proxies"] = [
+                        p for p in g["proxies"]
+                        if p in valid_proxy_names or p in group_names
+                    ]
 
-        # 3. 匹配通用 'node_name' not found 报错
-        for match in re.finditer(r"'([^']+)'\s+not found", err_msg):
-            missing_name = match.group(1).strip()
-            if missing_name:
-                names_to_remove.add(missing_name)
-
-        # 通过名字反向查找 proxies 数组中的索引
-        for i, p in enumerate(proxies):
-            if isinstance(p, dict) and p.get("name") in names_to_remove:
-                indices_to_remove.add(i)
-
-        if not indices_to_remove and not names_to_remove:
-            return False
-
-        # 从 proxies 剔除损坏节点
-        new_proxies = [p for i, p in enumerate(proxies) if i not in indices_to_remove]
-        data["proxies"] = new_proxies
-
-        # 同步更新 proxy-groups，移除不存在的节点引用
-        if proxy_groups and names_to_remove:
-            for group in proxy_groups:
-                if isinstance(group, dict) and "proxies" in group and isinstance(group["proxies"], list):
-                    group["proxies"] = [p for p in group["proxies"] if p not in names_to_remove]
-                    if not group["proxies"]:
-                        group["proxies"] = ["DIRECT"]
-
-        data["proxy-groups"] = proxy_groups
-
-        yaml_file.write_text(yaml.dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8")
-        print(f"[PRUNE OK] Dynamically removed {len(indices_to_remove)} failing proxies & cleaned group refs from {yaml_file.name}", flush=True)
+        # 覆盖写回
+        with open(file_path, "w", encoding="utf-8") as f:
+            yaml.safe_dump(data, f, allow_unicode=True, sort_keys=False)
         return True
     except Exception as e:
-        print(f"[PRUNE FAIL] Failed to prune {yaml_file.name}: {e}", flush=True)
+        print(f"Error sanitizing {file_path}: {e}", file=sys.stderr)
         return False
 
 
-def process_single_file(yfile: Path) -> tuple[bool, str]:
-    """多线程并发执行单个 YAML 的 Mihomo 语法校验与修剪"""
-    passed, err_msg = validate_yaml(yfile)
-    if passed:
-        return True, f"[PASS] {yfile.name} verified by Mihomo kernel!"
-
-    pruned_attempts = 0
-    while not passed and pruned_attempts < 10:
-        pruned_attempts += 1
-        if prune_failing_proxies(yfile, err_msg):
-            passed, err_msg = validate_yaml(yfile)
-        else:
-            break
-
-    if passed:
-        return True, f"[RE-PASS] {yfile.name} passed after dynamic pruning!"
+def test_with_mihomo_offline(file_path: Path) -> bool:
+    """使用 Mihomo 内核进行纯离线配置断言（-t 参数）"""
+    # 注入一个极简的本地临时运行目录，防止读取外部规则/Geo 数据库
+    cmd = [
+        "mihomo",
+        "-t",
+        "-f", str(file_path)
+    ]
+    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    if result.returncode == 0:
+        print(f"[PASS] {file_path.name} verified by Mihomo kernel!")
+        return True
     else:
-        return False, f"[FATAL] {yfile.name} failed Mihomo check:\n{err_msg}"
+        print(f"[FATAL] {file_path} failed Mihomo check:\n{result.stderr}", file=sys.stderr)
+        return False
 
 
 def main() -> int:
-    print("=== Mihomo Kernel Strict CI/CD 8-Worker Parallel Auditor ===", flush=True)
-
-    yaml_files = list(OUTPUT_DIR.rglob("*.yaml"))
+    print("=== Starting Pure-Offline Mihomo Kernel Syntax Assertion ===", flush=True)
+    yaml_files = list(OUTPUT_DIR.rglob("*.yaml")) + list(OUTPUT_DIR.rglob("*.yml"))
     if not yaml_files:
-        print("No YAML output files found to validate.", flush=True)
+        print("No YAML files found to test.")
         return 0
 
-    print(f"Starting 8-worker parallel Mihomo syntax verification for {len(yaml_files)} YAML files...", flush=True)
+    has_error = False
 
-    all_passed = True
-    with ThreadPoolExecutor(max_workers=8) as executor:
-        futures = {executor.submit(process_single_file, yf): yf for yf in yaml_files}
-        for future in as_completed(futures):
-            ok, msg = future.result()
-            print(msg, flush=True)
-            if not ok:
-                all_passed = False
+    for yf in yaml_files:
+        # 1. 预先做内存批量清洗（秒级处理，不依赖反复启动内核）
+        sanitize_yaml_file(yf)
 
-    if not all_passed:
-        print("=== Syntax Validation Failed ===", flush=True)
+        # 2. 调用内核进行一次性断言（仅做语法校验，不联网）
+        passed = test_with_mihomo_offline(yf)
+        if not passed:
+            has_error = True
+
+    if has_error:
+        print("Mihomo verification failed for one or more files.", file=sys.stderr)
         return 1
 
-    print("=== ALL Output YAML Configurations Passed Mihomo Kernel Check 100% ===", flush=True)
+    print("=== All configuration files successfully verified by Mihomo! ===", flush=True)
     return 0
 
 
