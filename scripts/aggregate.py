@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import re
@@ -15,6 +16,26 @@ from common import ROOT_DIR, export_stage_files, extract_node_links_from_text, s
 
 CONFIG_FILE = ROOT_DIR / "config" / "sources.json"
 OUTPUT_DIR = ROOT_DIR / "output" / "raw"
+
+# Shadowsocks 标准合法加密算法白名单（拦截乱码）
+VALID_SS_CIPHERS = {
+    "aes-128-gcm", "aes-192-gcm", "aes-256-gcm",
+    "chacha20-ietf-poly1305", "xchacha20-ietf-poly1305",
+    "aes-128-ctr", "aes-192-ctr", "aes-256-ctr",
+    "aes-128-cfb", "aes-192-cfb", "aes-256-cfb",
+    "rc4-md5", "chacha20-ietf",
+    "2022-blake3-aes-128-gcm", "2022-blake3-aes-256-gcm", "2022-blake3-chacha20-poly1305"
+}
+
+
+def is_valid_node(node: Dict[str, Any]) -> bool:
+    """过滤含有非法乱码属性的坏节点"""
+    ntype = str(node.get("type", "")).lower()
+    if ntype == "ss":
+        cipher = str(node.get("cipher", "")).lower()
+        if cipher not in VALID_SS_CIPHERS:
+            return False
+    return True
 
 
 def fetch_remote_url(url: str, timeout: int = 5) -> str:
@@ -51,12 +72,23 @@ def parse_clash_yaml_file(file_path: Path) -> List[Dict[str, Any]]:
                     "sni": str(proxy.get("servername", proxy.get("sni", ""))).strip(),
                     "raw_proxy_dict": proxy
                 }
+                if not is_valid_node(node):
+                    continue
                 sanitized = sanitize_node(node)
-                if sanitized:
+                if sanitized and is_valid_node(sanitized):
                     nodes.append(sanitized)
     except Exception:
         pass
     return nodes
+
+
+def filter_and_sanitize_nodes(raw_nodes: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """过滤非法节点"""
+    valid = []
+    for node in raw_nodes:
+        if isinstance(node, dict) and is_valid_node(node):
+            valid.append(node)
+    return valid
 
 
 def scan_single_source(source: dict) -> tuple[dict, list[dict]]:
@@ -77,18 +109,54 @@ def scan_single_source(source: dict) -> tuple[dict, list[dict]]:
                     try:
                         content = file_path.read_text(encoding="utf-8", errors="ignore")
                         extracted = extract_node_links_from_text(content)
-                        nodes.extend(extracted)
+                        nodes.extend(filter_and_sanitize_nodes(extracted))
 
                         urls = re.findall(r"https?://[^\s\"'\)>]+\.(?:yaml|yml|txt|sub)", content)
                         for url in urls[:5]:
                             res_text = fetch_remote_url(url)
                             if res_text:
-                                nodes.extend(extract_node_links_from_text(res_text))
+                                remote_nodes = extract_node_links_from_text(res_text)
+                                nodes.extend(filter_and_sanitize_nodes(remote_nodes))
                     except Exception:
                         pass
 
     stat = {"source": sname, "path": str(spath), "found_nodes": len(nodes)}
     return stat, nodes
+
+
+def make_nodes_compact_and_unique(nodes: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """生成全局独一无二的极短后缀命名，绝不超长，杜绝 duplicate name"""
+    seen_names = set()
+    unique_nodes = []
+
+    for node in nodes:
+        raw_name = str(node.get("name", "Proxy")).strip()
+        # 裁剪原名长度，保留美观性
+        clean_name = raw_name[:24]
+
+        # 基于核心网络参数生成 4 位十六进制短指纹
+        ptype = str(node.get("type", "")).lower()
+        server = str(node.get("server", "")).strip().lower()
+        port = str(node.get("port", ""))
+        pwd = str(node.get("uuid") or node.get("password") or "").strip()
+
+        fp = hashlib.md5(f"{ptype}{pwd}{server}{port}".encode("utf-8")).hexdigest()[:4].upper()
+        unique_name = f"{clean_name} #{fp}"
+
+        # 极端防碰撞保险
+        suffix = 1
+        while unique_name in seen_names:
+            unique_name = f"{clean_name} #{fp}{suffix}"
+            suffix += 1
+
+        seen_names.add(unique_name)
+        node["name"] = unique_name
+        if "raw_proxy_dict" in node and isinstance(node["raw_proxy_dict"], dict):
+            node["raw_proxy_dict"]["name"] = unique_name
+
+        unique_nodes.append(node)
+
+    return unique_nodes
 
 
 def main() -> int:
@@ -111,6 +179,12 @@ def main() -> int:
             all_raw_nodes.extend(nodes)
             source_stats.append(stat)
             print(f"  [+] [{stat['source']}] Found {len(nodes)} nodes", flush=True)
+
+    # 1. 过滤乱码加密算法
+    all_raw_nodes = [n for n in all_raw_nodes if is_valid_node(n)]
+
+    # 2. 全局短后缀唯一命名（仅增 6 字符，如 "🇭🇰 香港 #8F2A"）
+    all_raw_nodes = make_nodes_compact_and_unique(all_raw_nodes)
 
     print(f"Stage 1 Total Raw Aggregated Nodes: {len(all_raw_nodes)}", flush=True)
 
