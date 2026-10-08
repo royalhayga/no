@@ -4,6 +4,7 @@ import re
 import shutil
 import subprocess
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import yaml
@@ -38,7 +39,6 @@ def prune_failing_proxies(yaml_file: Path, err_msg: str) -> bool:
 
         indices_to_remove = set()
 
-        # 匹配报错类似: proxy 5662: ss 177.1.187.251:443 initialize error: missing password
         for match in re.finditer(r"proxy\s+(\d+):", err_msg):
             idx = int(match.group(1))
             if 0 <= idx < len(proxies):
@@ -58,37 +58,44 @@ def prune_failing_proxies(yaml_file: Path, err_msg: str) -> bool:
         return False
 
 
+def process_single_file(yfile: Path) -> tuple[bool, str]:
+    """多线程并发执行单个 YAML 的 Mihomo 语法校验与修剪"""
+    passed, err_msg = validate_yaml(yfile)
+    if passed:
+        return True, f"[PASS] {yfile.name} verified by Mihomo kernel!"
+
+    pruned_attempts = 0
+    while not passed and pruned_attempts < 10:
+        pruned_attempts += 1
+        if prune_failing_proxies(yfile, err_msg):
+            passed, err_msg = validate_yaml(yfile)
+        else:
+            break
+
+    if passed:
+        return True, f"[RE-PASS] {yfile.name} passed after dynamic pruning!"
+    else:
+        return False, f"[FATAL] {yfile.name} failed Mihomo check:\n{err_msg}"
+
+
 def main() -> int:
-    print("=== Mihomo Kernel Strict CI/CD Syntax Auditor & Dynamic Pruner ===", flush=True)
+    print("=== Mihomo Kernel Strict CI/CD 8-Worker Parallel Auditor ===", flush=True)
 
     yaml_files = list(OUTPUT_DIR.rglob("*.yaml"))
     if not yaml_files:
         print("No YAML output files found to validate.", flush=True)
         return 0
 
+    print(f"Starting 8-worker parallel Mihomo syntax verification for {len(yaml_files)} YAML files...", flush=True)
+
     all_passed = True
-
-    for yfile in yaml_files:
-        passed, err_msg = validate_yaml(yfile)
-        if passed:
-            print(f"[PASS] {yfile.name} successfully verified by Mihomo kernel!", flush=True)
-        else:
-            print(f"[FAIL] {yfile.name} failed Mihomo kernel syntax check:\n{err_msg}", flush=True)
-
-            # 循环精准剔除该 YAML 中的缺陷节点直至校验完全通过
-            pruned_attempts = 0
-            while not passed and pruned_attempts < 10:
-                pruned_attempts += 1
-                if prune_failing_proxies(yfile, err_msg):
-                    passed, err_msg = validate_yaml(yfile)
-                else:
-                    break
-
-            if passed:
-                print(f"[RE-PASS] {yfile.name} passed after dynamic pruning!", flush=True)
-            else:
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        futures = {executor.submit(process_single_file, yf): yf for yf in yaml_files}
+        for future in as_completed(futures):
+            ok, msg = future.result()
+            print(msg, flush=True)
+            if not ok:
                 all_passed = False
-                print(f"[FATAL] {yfile.name} still failed: {err_msg}", flush=True)
 
     if not all_passed:
         print("=== Syntax Validation Failed ===", flush=True)
