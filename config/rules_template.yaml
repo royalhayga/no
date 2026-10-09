@@ -2127,24 +2127,24 @@ rule-providers:
 
   bank_us:
     type: http
-    behavior: domain
-    format: mrs
+    behavior: classical
+    format: yaml
     url: "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/US.yaml"
     path: ./ruleset/bank_us.yaml
     interval: 21600
 
   bank_hk:
     type: http
-    behavior: domain
-    format: mrs
+    behavior: classical
+    format: yaml
     url: "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/HK.yaml"
     path: ./ruleset/bank_hk.yaml
     interval: 21600
 
   bank_uk:
     type: http
-    behavior: domain
-    format: mrs
+    behavior: classical
+    format: yaml
     url: "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/UK.yaml"
     path: ./ruleset/bank_uk.yaml
     interval: 21600
@@ -2159,40 +2159,40 @@ rule-providers:
 
   bank_sg:
     type: http
-    behavior: domain
-    format: mrs
+    behavior: classical
+    format: yaml
     url: "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/SG.yaml"
     path: ./ruleset/bank_sg.yaml
     interval: 21600
 
   bank_ca:
     type: http
-    behavior: domain
-    format: mrs
+    behavior: classical
+    format: yaml
     url: "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/CA.yaml"
     path: ./ruleset/bank_ca.yaml
     interval: 21600
 
   bank_au:
     type: http
-    behavior: domain
-    format: mrs
+    behavior: classical
+    format: yaml
     url: "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/AU.yaml"
     path: ./ruleset/bank_au.yaml
     interval: 21600
 
   virtual_finance:
     type: http
-    behavior: domain
-    format: mrs
+    behavior: classical
+    format: yaml
     url: "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/VirtualFinance/VirtualFinance.yaml"
     path: ./ruleset/virtual_finance.yaml
     interval: 21600
 
   fakelocation:
     type: http
-    behavior: domain
-    format: mrs
+    behavior: classical
+    format: yaml
     url: "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/FakeLocation/FakeLocation.yaml"
     path: ./ruleset/fakelocation.yaml
     interval: 21600
