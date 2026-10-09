@@ -284,10 +284,18 @@ def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str,
 def main() -> int:
     print("=== Master Clash Dynamic Template Engine (Full & Elite Rulesets) ===", flush=True)
 
-    # Read Crawled Verified Nodes
-    nodes_file = INPUT_DIR / "nodes.txt"
-    if not nodes_file.exists():
-        nodes_file = ALT_INPUT_DIR / "nodes.txt"
+    input_files = [
+        ROOT_DIR / "output" / "deduped" / "nodes.txt",
+        ROOT_DIR / "output" / "raw" / "nodes.txt",
+        INPUT_DIR / "nodes.txt",
+        ALT_INPUT_DIR / "nodes.txt"
+    ]
+
+    nodes_file = None
+    for f in input_files:
+        if f.exists() and f.stat().st_size > 0:
+            nodes_file = f
+            break
 
     crawled_nodes = []
     if nodes_file.exists():

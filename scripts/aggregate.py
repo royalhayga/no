@@ -5,7 +5,6 @@ import json
 import os
 import re
 import sys
-import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any, Dict, List
@@ -38,18 +37,8 @@ def is_valid_node(node: Dict[str, Any]) -> bool:
     return True
 
 
-def fetch_remote_url(url: str, timeout: int = 5) -> str:
-    """Safely fetch remote HTTP subscription URL content."""
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            return resp.read().decode("utf-8", errors="ignore")
-    except Exception:
-        return ""
-
-
 def parse_clash_yaml_file(file_path: Path) -> List[Dict[str, Any]]:
-    """Parse Clash YAML file and extract proxies."""
+    """Parse local Clash YAML file and extract proxies (Pure Offline)."""
     nodes = []
     try:
         content = file_path.read_text(encoding="utf-8", errors="ignore")
@@ -92,7 +81,7 @@ def filter_and_sanitize_nodes(raw_nodes: List[Dict[str, Any]]) -> List[Dict[str,
 
 
 def scan_single_source(source: dict) -> tuple[dict, list[dict]]:
-    """Scan a single repository source concurrently."""
+    """Scan local repository files concurrently (100% Pure Offline)."""
     sname = source.get("name")
     spath = ROOT_DIR / source.get("path")
     nodes = []
@@ -110,13 +99,6 @@ def scan_single_source(source: dict) -> tuple[dict, list[dict]]:
                         content = file_path.read_text(encoding="utf-8", errors="ignore")
                         extracted = extract_node_links_from_text(content)
                         nodes.extend(filter_and_sanitize_nodes(extracted))
-
-                        urls = re.findall(r"https?://[^\s\"'\)>]+\.(?:yaml|yml|txt|sub)", content)
-                        for url in urls[:5]:
-                            res_text = fetch_remote_url(url)
-                            if res_text:
-                                remote_nodes = extract_node_links_from_text(res_text)
-                                nodes.extend(filter_and_sanitize_nodes(remote_nodes))
                     except Exception:
                         pass
 
@@ -131,10 +113,8 @@ def make_nodes_compact_and_unique(nodes: List[Dict[str, Any]]) -> List[Dict[str,
 
     for node in nodes:
         raw_name = str(node.get("name", "Proxy")).strip()
-        # 裁剪原名长度，保留美观性
         clean_name = raw_name[:24]
 
-        # 基于核心网络参数生成 4 位十六进制短指纹
         ptype = str(node.get("type", "")).lower()
         server = str(node.get("server", "")).strip().lower()
         port = str(node.get("port", ""))
@@ -143,7 +123,6 @@ def make_nodes_compact_and_unique(nodes: List[Dict[str, Any]]) -> List[Dict[str,
         fp = hashlib.md5(f"{ptype}{pwd}{server}{port}".encode("utf-8")).hexdigest()[:4].upper()
         unique_name = f"{clean_name} #{fp}"
 
-        # 极端防碰撞保险
         suffix = 1
         while unique_name in seen_names:
             unique_name = f"{clean_name} #{fp}{suffix}"
@@ -160,7 +139,7 @@ def make_nodes_compact_and_unique(nodes: List[Dict[str, Any]]) -> List[Dict[str,
 
 
 def main() -> int:
-    print("=== Stage 1: 32-Worker Max-Speed Parallel Repository Aggregation ===", flush=True)
+    print("=== Stage 1: 32-Worker Pure Offline Repository Aggregation ===", flush=True)
     if not CONFIG_FILE.exists():
         print(f"Error: Config file {CONFIG_FILE} not found.", flush=True)
         return 1
@@ -171,7 +150,7 @@ def main() -> int:
     all_raw_nodes: List[Dict[str, Any]] = []
     source_stats = []
 
-    print(f"Scanning {len(sources)} repositories in parallel with 32 workers...", flush=True)
+    print(f"Scanning {len(sources)} local repositories in parallel with 32 workers (100% Offline)...", flush=True)
     with ThreadPoolExecutor(max_workers=32) as executor:
         futures = {executor.submit(scan_single_source, src): src for src in sources}
         for future in as_completed(futures):
@@ -180,15 +159,11 @@ def main() -> int:
             source_stats.append(stat)
             print(f"  [+] [{stat['source']}] Found {len(nodes)} nodes", flush=True)
 
-    # 1. 过滤乱码加密算法
     all_raw_nodes = [n for n in all_raw_nodes if is_valid_node(n)]
-
-    # 2. 全局短后缀唯一命名（仅增 6 字符，如 "🇭🇰 香港 #8F2A"）
     all_raw_nodes = make_nodes_compact_and_unique(all_raw_nodes)
 
-    print(f"Stage 1 Total Raw Aggregated Nodes: {len(all_raw_nodes)}", flush=True)
+    print(f"Stage 1 Total Pure Offline Aggregated Nodes: {len(all_raw_nodes)}", flush=True)
 
-    # Export all 5 standard formats to output/raw/
     export_stage_files(
         output_dir=OUTPUT_DIR,
         nodes=all_raw_nodes,

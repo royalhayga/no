@@ -32,12 +32,44 @@ COUNTRY_NAMES_ZH = {
     "RU": "俄罗斯节点", "IN": "印度节点", "BR": "巴西节点", "OTHER": "其他国家节点"
 }
 
+LOCAL_MMDB_PATHS = [
+    ROOT_DIR / "ref" / "SubCrawler" / "src" / "main" / "resources" / "GeoLite2-Country.mmdb",
+    ROOT_DIR / "ref" / "mianfeijiedian" / "src" / "main" / "resources" / "GeoLite2-Country.mmdb",
+    ROOT_DIR / "ref" / "NiceVPN" / "utils" / "clashcheck" / "Country.mmdb",
+]
+
+
+def lookup_local_mmdb_ip(ip_str: str) -> Tuple[str, str] | None:
+    """100% Local Offline GeoIP Lookup using local .mmdb files in ref/ without network requests."""
+    for mmdb_p in LOCAL_MMDB_PATHS:
+        if mmdb_p.exists() and mmdb_p.stat().st_size > 1000000:
+            try:
+                import maxminddb
+                with maxminddb.open_database(str(mmdb_p)) as reader:
+                    res = reader.get(ip_str) or {}
+                    code = res.get("country", {}).get("iso_code") or res.get("registered_country", {}).get("iso_code") or "OTHER"
+                    name = res.get("country", {}).get("names", {}).get("en") or "Unknown"
+                    return code.upper(), name
+            except Exception:
+                pass
+    return None
+
 
 def infer_country_from_text_or_ip(server: str, name: str) -> Tuple[str, str]:
     """
     100% Pure Offline Local Country Categorization (Zero DNS Lookups, Zero Network API Calls):
-    Infers country code and name purely from node name, domain keywords, or IP string.
+    Combines local offline MMDB file lookup for IPs and text regex keyword matching.
     """
+    clean_server = server.strip()
+
+    # If server is pure IP string, query local offline MMDB database
+    if clean_server.replace(".", "").isdigit():
+        geo_res = lookup_local_mmdb_ip(clean_server)
+        if geo_res and geo_res[0] != "OTHER":
+            code = geo_res[0]
+            return code, COUNTRY_NAMES_ZH.get(code, f"{code}节点")
+
+    # Local text & domain keyword matching
     text = f"{name} {server}".upper()
 
     keywords = [
@@ -137,7 +169,7 @@ def build_master_country_clash_yaml(country_groups: Dict[str, List[Dict[str, Any
 
 
 def main() -> int:
-    print("=== Stage 6: 100% Pure Offline Local Country Categorization ===", flush=True)
+    print("=== Stage 6: 100% Pure Offline Local Country Categorization (MMDB + Text) ===", flush=True)
 
     input_files = [
         INPUT_DIR / "nodes.txt",
@@ -184,7 +216,7 @@ def main() -> int:
         country_groups[code].append(n_copy)
         all_country_categorized_nodes.append(n_copy)
 
-    print(f"Categorized nodes into {len(country_groups)} country directories (100% Offline, Zero DNS calls).", flush=True)
+    print(f"Categorized nodes into {len(country_groups)} country directories (100% Offline Local MMDB + Text).", flush=True)
     summary_by_country = {}
 
     for code, country_nodes in country_groups.items():
