@@ -1,25 +1,19 @@
 {
   "stage": "Stage 1 - Raw Aggregation",
-  "generated_at": "2026-10-09T01:56:50.035679+00:00",
-  "total_nodes": 437676,
+  "generated_at": "2026-10-09T05:15:22.440553+00:00",
+  "total_nodes": 449237,
   "protocol_breakdown": {
-    "ss": 153677,
-    "vmess": 21505,
-    "vless": 194435,
-    "trojan": 56232,
-    "hysteria2": 11826,
-    "tuic": 1
+    "ss": 157770,
+    "vmess": 21523,
+    "vless": 201421,
+    "trojan": 56693,
+    "hysteria2": 11830
   },
   "extra": {
     "sources": [
       {
-        "source": "latest_jichang",
-        "path": "/home/runner/work/no/no/ref/latest_jichang",
-        "found_nodes": 0
-      },
-      {
-        "source": "tolinkshare2.github.io",
-        "path": "/home/runner/work/no/no/ref/tolinkshare2.github.io",
+        "source": "free-nodes-sr",
+        "path": "/home/runner/work/no/no/ref/free-nodes-sr",
         "found_nodes": 0
       },
       {
@@ -33,13 +27,18 @@
         "found_nodes": 0
       },
       {
-        "source": "free-nodes-sr",
-        "path": "/home/runner/work/no/no/ref/free-nodes-sr",
+        "source": "latest_jichang",
+        "path": "/home/runner/work/no/no/ref/latest_jichang",
         "found_nodes": 0
       },
       {
         "source": "fanqiang",
         "path": "/home/runner/work/no/no/ref/fanqiang",
+        "found_nodes": 0
+      },
+      {
+        "source": "tolinkshare2.github.io",
+        "path": "/home/runner/work/no/no/ref/tolinkshare2.github.io",
         "found_nodes": 0
       },
       {
@@ -50,12 +49,7 @@
       {
         "source": "FreeSubsCheck",
         "path": "/home/runner/work/no/no/ref/FreeSubsCheck",
-        "found_nodes": 916
-      },
-      {
-        "source": "Free-servers",
-        "path": "/home/runner/work/no/no/ref/Free-servers",
-        "found_nodes": 498
+        "found_nodes": 967
       },
       {
         "source": "share-daily_node",
@@ -73,9 +67,14 @@
         "found_nodes": 0
       },
       {
-        "source": "globe-probe",
-        "path": "/home/runner/work/no/no/ref/globe-probe",
-        "found_nodes": 0
+        "source": "Free-servers",
+        "path": "/home/runner/work/no/no/ref/Free-servers",
+        "found_nodes": 513
+      },
+      {
+        "source": "proxypool",
+        "path": "/home/runner/work/no/no/ref/proxypool",
+        "found_nodes": 122
       },
       {
         "source": "free-vpn-clash-aggregator",
@@ -83,9 +82,9 @@
         "found_nodes": 500
       },
       {
-        "source": "proxypool",
-        "path": "/home/runner/work/no/no/ref/proxypool",
-        "found_nodes": 129
+        "source": "globe-probe",
+        "path": "/home/runner/work/no/no/ref/globe-probe",
+        "found_nodes": 0
       },
       {
         "source": "AutoScrapeFreeNodes",
@@ -98,6 +97,11 @@
         "found_nodes": 6
       },
       {
+        "source": "vpngate",
+        "path": "/home/runner/work/no/no/ref/vpngate",
+        "found_nodes": 6812
+      },
+      {
         "source": "fee-based",
         "path": "/home/runner/work/no/no/ref/fee-based",
         "found_nodes": 0
@@ -108,19 +112,14 @@
         "found_nodes": 0
       },
       {
-        "source": "vpngate",
-        "path": "/home/runner/work/no/no/ref/vpngate",
-        "found_nodes": 6215
-      },
-      {
         "source": "dljdsjq",
         "path": "/home/runner/work/no/no/ref/dljdsjq",
         "found_nodes": 53229
       },
       {
-        "source": "daily_free_vpn",
-        "path": "/home/runner/work/no/no/ref/daily_free_vpn",
-        "found_nodes": 5354
+        "source": "v2rayfree",
+        "path": "/home/runner/work/no/no/ref/v2rayfree",
+        "found_nodes": 1756
       },
       {
         "source": "mafly",
@@ -128,9 +127,9 @@
         "found_nodes": 545
       },
       {
-        "source": "v2rayfree",
-        "path": "/home/runner/work/no/no/ref/v2rayfree",
-        "found_nodes": 1756
+        "source": "daily_free_vpn",
+        "path": "/home/runner/work/no/no/ref/daily_free_vpn",
+        "found_nodes": 16259
       },
       {
         "source": "NiceVPN",

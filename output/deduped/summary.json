@@ -1,24 +1,35 @@
 {
   "stage": "Stage 2 - Deduplication & Alias Analysis",
-  "generated_at": "2026-10-09T01:56:57.788391+00:00",
-  "total_nodes": 14878,
+  "generated_at": "2026-10-09T05:15:31.388533+00:00",
+  "total_nodes": 15000,
   "protocol_breakdown": {
-    "vmess": 727,
-    "vless": 6713,
-    "ss": 6481,
-    "trojan": 780,
+    "vmess": 733,
+    "vless": 6795,
+    "ss": 6512,
+    "trojan": 783,
     "hysteria2": 177
   },
   "extra": {
-    "total_unique_endpoints": 8188,
-    "potential_alias_groups_count": 7443,
+    "total_unique_endpoints": 8213,
+    "potential_alias_groups_count": 7463,
     "collision_details": [
+      {
+        "endpoint": "www.nextkyc.com:8443",
+        "count": 2,
+        "unique_names": [
+          "🌐 Node-02",
+          "Node"
+        ],
+        "protocols": [
+          "vmess"
+        ]
+      },
       {
         "endpoint": "france.paydar.site:443",
         "count": 5,
         "unique_names": [
-          "🇫🇷 法国 | vmess | 228",
-          "🌐 Node-08"
+          "🌐 Node-08",
+          "🇫🇷 法国 | vmess | 228"
         ],
         "protocols": [
           "vmess"
@@ -37,7 +48,7 @@
       },
       {
         "endpoint": "149.88.23.202:18000",
-        "count": 6,
+        "count": 5,
         "unique_names": [
           "🇸🇬 新加坡 | vmess | 31",
           "vmess-485686543 #6AE0",
@@ -85,8 +96,8 @@
         "count": 5,
         "unique_names": [
           "🇩🇪 DE-02",
-          "🇩🇪 DE-49",
-          "🇩🇪 德国 | vmess | 166"
+          "🇩🇪 德国 | vmess | 166",
+          "🇩🇪 DE-49"
         ],
         "protocols": [
           "vmess"
@@ -96,8 +107,8 @@
         "endpoint": "fr.connfull.org:2053",
         "count": 5,
         "unique_names": [
-          "🌐 Node-29",
-          "🇫🇷 法国 | vmess | 129"
+          "🇫🇷 法国 | vmess | 129",
+          "🌐 Node-29"
         ],
         "protocols": [
           "vmess"
@@ -107,8 +118,8 @@
         "endpoint": "dashboard.afrawebsite.top:3071",
         "count": 3,
         "unique_names": [
-          "🇮🇷 伊朗 | vmess | 280",
           "🌐 Node-339",
+          "🇮🇷 伊朗 | vmess | 280",
           "🌐 Node-30"
         ],
         "protocols": [
@@ -117,10 +128,10 @@
       },
       {
         "endpoint": "us-nohessss.privnet.store:10028",
-        "count": 6,
+        "count": 5,
         "unique_names": [
-          "🇺🇸 US-08",
-          "🇺🇸 美国 | vmess | 795"
+          "🇺🇸 美国 | vmess | 795",
+          "🇺🇸 US-09"
         ],
         "protocols": [
           "vmess"
@@ -130,35 +141,35 @@
         "endpoint": "85.90.217.42:22324",
         "count": 8,
         "unique_names": [
-          "🌐 Node-33",
-          "🇪🇸 西班牙 | ss | 17",
           "🇪🇸 西班牙 | vmess | 16",
-          "🌐 Node-7055"
+          "🇪🇸 西班牙 | ss | 17",
+          "🌐 Node-7141",
+          "🌐 Node-33"
         ],
         "protocols": [
-          "ss",
-          "vmess"
+          "vmess",
+          "ss"
         ]
       },
       {
         "endpoint": "zula.ir:80",
         "count": 4,
         "unique_names": [
+          "🌐 Node-8311",
           "🌐 Node-36",
-          "🌐 Node-8222",
           "🇮🇷 伊朗 | vmess | 284"
         ],
         "protocols": [
-          "ss",
-          "vmess"
+          "vmess",
+          "ss"
         ]
       },
       {
         "endpoint": "20.235.220.189:443",
         "count": 5,
         "unique_names": [
-          "🌐 Node-41",
-          "🇮🇳 印度 | vmess | 27"
+          "🇮🇳 印度 | vmess | 27",
+          "🌐 Node-41"
         ],
         "protocols": [
           "vmess"
@@ -177,7 +188,7 @@
       },
       {
         "endpoint": "145.63.134.175:443",
-        "count": 5,
+        "count": 4,
         "unique_names": [
           "🇵🇱 波兰 | vmess | 166",
           "🌐 Node-53"
@@ -188,10 +199,10 @@
       },
       {
         "endpoint": "45.144.154.149:443",
-        "count": 5,
+        "count": 4,
         "unique_names": [
-          "🌐 Node-54",
-          "🇳🇱 荷兰 | vmess | 348"
+          "🇳🇱 荷兰 | vmess | 348",
+          "🌐 Node-54"
         ],
         "protocols": [
           "vmess"
@@ -223,8 +234,8 @@
         "endpoint": "3dtmmsfpalaqhi7b.v.3dns.vip:443",
         "count": 5,
         "unique_names": [
-          "🇮🇩 印尼 | vmess | 09",
-          "🌐 Node-71"
+          "🌐 Node-71",
+          "🇮🇩 印尼 | vmess | 09"
         ],
         "protocols": [
           "vmess"
@@ -232,10 +243,10 @@
       },
       {
         "endpoint": "169.197.143.116:22324",
-        "count": 6,
+        "count": 5,
         "unique_names": [
-          "🇺🇸 US-12",
-          "🇺🇸 美国 | vmess | 39"
+          "🇺🇸 美国 | vmess | 39",
+          "🇺🇸 US-13"
         ],
         "protocols": [
           "vmess"
@@ -243,9 +254,9 @@
       },
       {
         "endpoint": "cubigatoro-production.up.railway.app:443",
-        "count": 6,
+        "count": 5,
         "unique_names": [
-          "🇺🇸 US-13",
+          "🇺🇸 US-14",
           "🇺🇸 美国 | vmess | 896"
         ],
         "protocols": [
@@ -254,10 +265,10 @@
       },
       {
         "endpoint": "web-production-0392e.up.railway.app:443",
-        "count": 6,
+        "count": 5,
         "unique_names": [
-          "🇺🇸 美国 | vmess | 1815",
-          "🇺🇸 US-14"
+          "🇺🇸 US-15",
+          "🇺🇸 美国 | vmess | 1815"
         ],
         "protocols": [
           "vmess"
@@ -267,8 +278,8 @@
         "endpoint": "13.140.28.46:443",
         "count": 5,
         "unique_names": [
-          "🇩🇪 DE-12",
-          "🇩🇪 德国 | vmess | 384"
+          "🇩🇪 德国 | vmess | 384",
+          "🇩🇪 DE-12"
         ],
         "protocols": [
           "vmess"
@@ -276,10 +287,10 @@
       },
       {
         "endpoint": "hi.northcluster.info:52300",
-        "count": 6,
+        "count": 5,
         "unique_names": [
-          "🇹🇼 TW-01",
-          "🇹🇼 台湾 | vmess | 39"
+          "🇹🇼 台湾 | vmess | 39",
+          "🇹🇼 TW-01"
         ],
         "protocols": [
           "vmess"
@@ -287,11 +298,11 @@
       },
       {
         "endpoint": "119.46.51.45:37515",
-        "count": 6,
+        "count": 5,
         "unique_names": [
-          "🌐 Node-76",
           "🇹🇭 泰国 | vmess | 04",
-          "vmess-971093565 #7036"
+          "vmess-971093565 #7036",
+          "🌐 Node-76"
         ],
         "protocols": [
           "vmess"
@@ -299,10 +310,10 @@
       },
       {
         "endpoint": "162.4.136.79:443",
-        "count": 3,
+        "count": 2,
         "unique_names": [
-          "🌐 Node-84",
-          "🏳️ 未知 | vmess | 11"
+          "🏳️ 未知 | vmess | 11",
+          "🌐 Node-84"
         ],
         "protocols": [
           "vmess"
@@ -312,8 +323,8 @@
         "endpoint": "94.177.9.66:29825",
         "count": 5,
         "unique_names": [
-          "🇦🇹 奥地利 | vmess | 20",
-          "🌐 Node-86"
+          "🌐 Node-86",
+          "🇦🇹 奥地利 | vmess | 20"
         ],
         "protocols": [
           "vmess"
@@ -323,8 +334,8 @@
         "endpoint": "35.241.172.224:443",
         "count": 3,
         "unique_names": [
-          "🏳️ Google | vmess | 09",
-          "🌐 Node-98"
+          "🌐 Node-98",
+          "🏳️ Google | vmess | 09"
         ],
         "protocols": [
           "vmess"
@@ -332,10 +343,12 @@
       },
       {
         "endpoint": "47.83.207.148:443",
-        "count": 5,
+        "count": 7,
         "unique_names": [
-          "🇭🇰 香港 | vmess | 79",
-          "🇭🇰 HK-10"
+          "🇭🇰 HK-10",
+          "🇭🇰 HK-22",
+          "🇭🇰 HK-26",
+          "🇭🇰 香港 | vmess | 79"
         ],
         "protocols": [
           "vmess"
@@ -345,9 +358,20 @@
         "endpoint": "mygptagent.org:443",
         "count": 5,
         "unique_names": [
-          "🌐 Node-104",
           "🇬🇧 英国 | vmess | 76",
+          "🌐 Node-104",
           "🇬🇧 UK-12"
+        ],
+        "protocols": [
+          "vmess"
+        ]
+      },
+      {
+        "endpoint": "wwafj5lhl6bi8au9.v.3dns.vip:443",
+        "count": 2,
+        "unique_names": [
+          "🇭🇰 HK-11",
+          "🌐 Node-149"
         ],
         "protocols": [
           "vmess"
@@ -388,9 +412,9 @@
       },
       {
         "endpoint": "167.17.68.89:22324",
-        "count": 6,
+        "count": 5,
         "unique_names": [
-          "🇺🇸 US-23",
+          "🇺🇸 US-24",
           "🇺🇸 美国 | vmess | 365"
         ],
         "protocols": [
@@ -399,10 +423,10 @@
       },
       {
         "endpoint": "stanngv2-production-20ea.up.railway.app:443",
-        "count": 6,
+        "count": 5,
         "unique_names": [
           "🇺🇸 美国 | vmess | 899",
-          "🇺🇸 US-24"
+          "🇺🇸 US-25"
         ],
         "protocols": [
           "vmess"
@@ -421,10 +445,10 @@
       },
       {
         "endpoint": "usa.sixmax.ir:110",
-        "count": 6,
+        "count": 5,
         "unique_names": [
           "🇺🇸 美国 | vmess | 1924",
-          "🇺🇸 US-25"
+          "🇺🇸 US-26"
         ],
         "protocols": [
           "vmess"
@@ -434,8 +458,8 @@
         "endpoint": "185.143.232.178:8080",
         "count": 3,
         "unique_names": [
-          "🇮🇷 伊朗 | vmess | 138",
-          "🌐 Node-120"
+          "🌐 Node-120",
+          "🇮🇷 伊朗 | vmess | 138"
         ],
         "protocols": [
           "vmess"
@@ -445,8 +469,8 @@
         "endpoint": "193.108.117.54:443",
         "count": 5,
         "unique_names": [
-          "🇩🇪 DE-25",
-          "🇩🇪 德国 | vmess | 271"
+          "🇩🇪 德国 | vmess | 271",
+          "🇩🇪 DE-25"
         ],
         "protocols": [
           "vmess"
@@ -454,10 +478,10 @@
       },
       {
         "endpoint": "usa.webpathway.eu:2086",
-        "count": 6,
+        "count": 5,
         "unique_names": [
           "🇺🇸 美国 | vmess | 1044",
-          "🇺🇸 US-26"
+          "🇺🇸 US-27"
         ],
         "protocols": [
           "vmess"
@@ -468,8 +492,8 @@
         "count": 3,
         "unique_names": [
           "🇮🇷 伊朗 | vmess | 273",
-          "🌐 Node-337",
-          "🌐 Node-123"
+          "🌐 Node-123",
+          "🌐 Node-337"
         ],
         "protocols": [
           "vmess"
@@ -477,7 +501,7 @@
       },
       {
         "endpoint": "212.87.220.98:443",
-        "count": 5,
+        "count": 4,
         "unique_names": [
           "🇳🇱 荷兰 | vmess | 786",
           "🌐 Node-124"
@@ -490,8 +514,8 @@
         "endpoint": "v10.hdacd.com:30807",
         "count": 5,
         "unique_names": [
-          "🇭🇰 HK-13",
-          "🇭🇰 香港 | vmess | 63"
+          "🇭🇰 香港 | vmess | 63",
+          "🇭🇰 HK-13"
         ],
         "protocols": [
           "vmess"
@@ -501,8 +525,8 @@
         "endpoint": "adncdovlhr4m1p36.v.3dns.vip:443",
         "count": 5,
         "unique_names": [
-          "🇭🇰 HK-14",
-          "🇭🇰 香港 | vmess | 187"
+          "🇭🇰 香港 | vmess | 187",
+          "🇭🇰 HK-14"
         ],
         "protocols": [
           "vmess"
@@ -512,9 +536,9 @@
         "endpoint": "kbondxw9lifci4h4.v.3dns.vip:443",
         "count": 5,
         "unique_names": [
-          "🇭🇰 HK-46",
+          "🇭🇰 HK-15",
           "🇭🇰 香港 | vmess | 93",
-          "🇭🇰 HK-15"
+          "🇭🇰 HK-48"
         ],
         "protocols": [
           "vmess"
@@ -535,9 +559,9 @@
         "endpoint": "syj2ggugmwbwqwqx.v.3dns.vip:443",
         "count": 5,
         "unique_names": [
-          "🇭🇰 HK-48",
-          "🇭🇰 HK-17",
-          "🇭🇰 香港 | vmess | 102"
+          "🇭🇰 香港 | vmess | 102",
+          "🇭🇰 HK-50",
+          "🇭🇰 HK-17"
         ],
         "protocols": [
           "vmess"
@@ -547,8 +571,8 @@
         "endpoint": "z9ffbx3zs2q5o0bg.v.3dns.vip:443",
         "count": 6,
         "unique_names": [
-          "🇯🇵 日本 | vmess | 98",
           "🇯🇵 JP-12",
+          "🇯🇵 日本 | vmess | 98",
           "🇯🇵 JP-03"
         ],
         "protocols": [
@@ -559,8 +583,8 @@
         "endpoint": "kqov7ukadknxb8a3.v.3dns.vip:443",
         "count": 6,
         "unique_names": [
-          "🇯🇵 日本 | vmess | 77",
           "🇯🇵 JP-11",
+          "🇯🇵 日本 | vmess | 77",
           "🇯🇵 JP-04"
         ],
         "protocols": [
@@ -572,8 +596,8 @@
         "count": 6,
         "unique_names": [
           "🇯🇵 日本 | vmess | 224",
-          "🇯🇵 JP-05",
-          "🇯🇵 JP-23"
+          "🇯🇵 JP-23",
+          "🇯🇵 JP-05"
         ],
         "protocols": [
           "vmess"
@@ -581,7 +605,7 @@
       },
       {
         "endpoint": "asaqyidza9wdq9kq.v.3dns.vip:443",
-        "count": 5,
+        "count": 4,
         "unique_names": [
           "🇸🇬 SG-04",
           "🇸🇬 新加坡 | vmess | 243"
@@ -592,10 +616,10 @@
       },
       {
         "endpoint": "6jizio8pxqaxbatz.v.3dns.vip:443",
-        "count": 5,
+        "count": 4,
         "unique_names": [
-          "🇸🇬 SG-19",
           "🇸🇬 新加坡 | vmess | 128",
+          "🇸🇬 SG-19",
           "🇸🇬 SG-05"
         ],
         "protocols": [
@@ -604,11 +628,11 @@
       },
       {
         "endpoint": "8ntzyr5knivfabat.v.3dns.vip:443",
-        "count": 6,
+        "count": 5,
         "unique_names": [
           "🇰🇷 KR-01",
-          "🇰🇷 韩国 | vmess | 93",
-          "🇰🇷 KR-06"
+          "🇰🇷 KR-06",
+          "🇰🇷 韩国 | vmess | 93"
         ],
         "protocols": [
           "vmess"
@@ -616,22 +640,10 @@
       },
       {
         "endpoint": "53vxovarmgcreasv.v.3dns.vip:443",
-        "count": 6,
+        "count": 5,
         "unique_names": [
-          "🇺🇸 US-27",
-          "🇺🇸 US-92",
-          "🇺🇸 美国 | vmess | 1365"
-        ],
-        "protocols": [
-          "vmess"
-        ]
-      },
-      {
-        "endpoint": "bj1aa2zyjxyamyuk.v.3dns.vip:443",
-        "count": 6,
-        "unique_names": [
-          "🇺🇸 US-108",
-          "🇺🇸 美国 | vmess | 1755",
+          "🇺🇸 美国 | vmess | 1365",
+          "🇺🇸 US-93",
           "🇺🇸 US-28"
         ],
         "protocols": [
@@ -639,57 +651,54 @@
         ]
       },
       {
-        "endpoint": "47.243.65.243:443",
+        "endpoint": "bj1aa2zyjxyamyuk.v.3dns.vip:443",
         "count": 5,
         "unique_names": [
-          "🇭🇰 香港 | vmess | 78",
-          "🇭🇰 HK-18"
+          "🇺🇸 US-109",
+          "🇺🇸 US-29",
+          "🇺🇸 美国 | vmess | 1755"
         ],
         "protocols": [
           "vmess"
         ]
       },
       {
-        "endpoint": "47.86.167.194:800",
-        "count": 5,
-        "unique_names": [
-          "🇭🇰 香港 | vmess | 220",
-          "🇭🇰 HK-19"
-        ],
-        "protocols": [
-          "vmess"
-        ]
-      },
-      {
-        "endpoint": "vah4urdzl3jdx5r2.v.3dns.vip:443",
+        "endpoint": "47.244.120.197:23026",
         "count": 7,
         "unique_names": [
-          "United States",
-          "🇭🇰 HK-20",
-          "🇭🇰 香港 | vmess | 228",
-          "🌐 Node-180"
+          "🇭🇰 HK-35",
+          "🇭🇰 HK-18",
+          "🇭🇰 香港 | vmess | 67",
+          "🇭🇰 香港 | HKG",
+          "🇭🇰 HK-24"
         ],
         "protocols": [
           "vmess"
         ]
       },
       {
-        "endpoint": "ex1ogt73nzpqkac2.v.3dns.vip:443",
-        "count": 5,
+        "endpoint": "47.244.120.197:36703",
+        "count": 7,
         "unique_names": [
+          "🇭🇰 HK-19",
           "🇭🇰 HK-21",
-          "🇭🇰 香港 | vmess | 227"
+          "🇭🇰 HK-29",
+          "🇭🇰 香港 | HKG",
+          "🇭🇰 香港 | vmess | 06"
         ],
         "protocols": [
           "vmess"
         ]
       },
       {
-        "endpoint": "8.217.254.88:443",
-        "count": 5,
+        "endpoint": "47.244.120.197:44867",
+        "count": 7,
         "unique_names": [
-          "🇭🇰 香港 | vmess | 71",
-          "🇭🇰 HK-22"
+          "🇭🇰 HK-23",
+          "🇭🇰 HK-36",
+          "🇭🇰 香港 | vmess | 68",
+          "🇭🇰 香港 | HKG",
+          "🇭🇰 HK-20"
         ],
         "protocols": [
           "vmess"
@@ -699,8 +708,8 @@
         "endpoint": "guanwang.awsno.com:443",
         "count": 2,
         "unique_names": [
-          "🇺🇸 US-29",
-          "🌐 Node-170"
+          "🇺🇸 US-31",
+          "🌐 Node-168"
         ],
         "protocols": [
           "vmess"
@@ -710,7 +719,7 @@
         "endpoint": "silversbgfgov.vip38.wogbcnmnagfwgov.com:11238",
         "count": 3,
         "unique_names": [
-          "🇺🇸 US-31",
+          "🇺🇸 US-33",
           "🇨🇳 中国 | vmess | 06"
         ],
         "protocols": [
@@ -721,8 +730,8 @@
         "endpoint": "v29.hdacd.com:30829",
         "count": 5,
         "unique_names": [
-          "🇺🇸 US-32",
-          "🇭🇰 香港 | vmess | 195"
+          "🇭🇰 香港 | vmess | 195",
+          "🇺🇸 US-34"
         ],
         "protocols": [
           "vmess"
@@ -730,12 +739,11 @@
       },
       {
         "endpoint": "v4.hdacd.com:30804",
-        "count": 6,
+        "count": 5,
         "unique_names": [
-          "🇭🇰 香港 | vmess | 217",
-          "🇭🇰 HK-77",
-          "DE-VMESS-01 #7C5A",
-          "🌐 Node-136"
+          "🇭🇰 HK-80",
+          "🌐 Node-136",
+          "🇭🇰 香港 | vmess | 217"
         ],
         "protocols": [
           "vmess"
@@ -756,115 +764,9 @@
         "endpoint": "43.108.103.167:123",
         "count": 6,
         "unique_names": [
+          "🇰🇷 韩国 | vmess | 12",
           "🇰🇷 KR-02",
-          "🇰🇷 KR-04",
-          "🇰🇷 韩国 | vmess | 12"
-        ],
-        "protocols": [
-          "vmess"
-        ]
-      },
-      {
-        "endpoint": "47.244.120.197:36703",
-        "count": 7,
-        "unique_names": [
-          "🇭🇰 HK-24",
-          "🌐 Node-137",
-          "🇭🇰 HK-27",
-          "🇭🇰 香港 | vmess | 06"
-        ],
-        "protocols": [
-          "vmess"
-        ]
-      },
-      {
-        "endpoint": "vps123.kbxa.top:443",
-        "count": 2,
-        "unique_names": [
-          "🇩🇪 DE-27",
-          "Node"
-        ],
-        "protocols": [
-          "vmess"
-        ]
-      },
-      {
-        "endpoint": "84.17.41.2:18000",
-        "count": 7,
-        "unique_names": [
-          "🇺🇸 美国 | vmess | 30",
-          "vmess-676886736 #F17A",
-          "🇺🇸 US-39",
-          "🌐 Node-138"
-        ],
-        "protocols": [
-          "vmess"
-        ]
-      },
-      {
-        "endpoint": "newrelax.relaxedboy.online:110",
-        "count": 4,
-        "unique_names": [
-          "🌐 Node-140",
-          "Bulgarie",
-          "Bulgaria"
-        ],
-        "protocols": [
-          "vmess"
-        ]
-      },
-      {
-        "endpoint": "146.56.112.110:8888",
-        "count": 8,
-        "unique_names": [
-          "South Korea",
-          "🇰🇷 韩国 | vmess | 27",
-          "🌐 Node-141"
-        ],
-        "protocols": [
-          "vmess"
-        ]
-      },
-      {
-        "endpoint": "6jdvarazgu3qqr6q.v.3dns.vip:443",
-        "count": 5,
-        "unique_names": [
-          "🌐 Node-142",
-          "🇭🇰 香港 | vmess | 201"
-        ],
-        "protocols": [
-          "vmess"
-        ]
-      },
-      {
-        "endpoint": "2001:bc8:32d7:1a9::2:23388",
-        "count": 3,
-        "unique_names": [
-          "Франция",
-          "🌐 Node-143"
-        ],
-        "protocols": [
-          "vmess"
-        ]
-      },
-      {
-        "endpoint": "node-uk.connectsuite.org:2053",
-        "count": 6,
-        "unique_names": [
-          "🌐 Node-144",
-          "🇬🇧 英国 | vmess | 305",
-          "英国"
-        ],
-        "protocols": [
-          "vmess"
-        ]
-      },
-      {
-        "endpoint": "goldcnmltyljgfwgov.vip52.wogcnmnnagfwgov.com:11252",
-        "count": 3,
-        "unique_names": [
-          "🌐 Node-151",
-          "🇨🇳 中国 | vmess | 07"
+          "🇰🇷 KR-04"
         ],
         "protocols": [
           "vmess"
@@ -874,70 +776,135 @@
         "endpoint": "silversbgfgov.vip44.wogbcnmnagfwgov.com:11244",
         "count": 4,
         "unique_names": [
-          "🌐 Node-153",
-          "UN-VMESS-07 #4987",
-          "🇨🇳 中国 | vmess | 10"
+          "🇨🇳 中国 | vmess | 10",
+          "PH-VMESS-01 #4987",
+          "🌐 Node-139"
         ],
         "protocols": [
           "vmess"
         ]
       },
       {
-        "endpoint": "goldcnmltyljgfwgov.vip67.wogcnmnnagfwgov.com:11267",
-        "count": 3,
-        "unique_names": [
-          "🇺🇸 US-36",
-          "🇺🇸 US-35",
-          "🇺🇸 美国 | USA 10 #F4CF"
-        ],
-        "protocols": [
-          "vmess"
-        ]
-      },
-      {
-        "endpoint": "ww11.levikogjgfdd.ir:18000",
+        "endpoint": "v24.hdacd.com:30824",
         "count": 5,
         "unique_names": [
-          "🌐 Node-154",
-          "🇸🇬 新加坡 | vmess | 256",
-          "🇸🇬 SG-23"
+          "🇺🇸 US-37",
+          "🇭🇰 香港 | vmess | 222"
         ],
         "protocols": [
           "vmess"
         ]
       },
       {
-        "endpoint": "134.195.196.211:18000",
-        "count": 5,
-        "unique_names": [
-          "🌐 Node-192",
-          "🇨🇦 加拿大 | vmess | 06",
-          "🌐 Node-155"
-        ],
-        "protocols": [
-          "vmess"
-        ]
-      },
-      {
-        "endpoint": "149.88.23.207:18000",
-        "count": 5,
-        "unique_names": [
-          "🇸🇬 SG-07",
-          "🌐 Node-156",
-          "🇸🇬 新加坡 | vmess | 18"
-        ],
-        "protocols": [
-          "vmess"
-        ]
-      },
-      {
-        "endpoint": "169.197.142.22:18000",
+        "endpoint": "93ucrn4i0pffuabk.v.3dns.vip:443",
         "count": 8,
         "unique_names": [
-          "🇺🇸 US-43",
+          "🌐 Node-142",
+          "🇭🇰 HK-27",
+          "🇭🇰 香港 | vmess | 225",
+          "🇭🇰 HK-25",
+          "Гонконг"
+        ],
+        "protocols": [
+          "vmess"
+        ]
+      },
+      {
+        "endpoint": "165.140.216.141:443",
+        "count": 2,
+        "unique_names": [
+          "🌐 Node-143",
+          "Estados Unidos"
+        ],
+        "protocols": [
+          "vmess"
+        ]
+      },
+      {
+        "endpoint": "84.17.41.2:18000",
+        "count": 7,
+        "unique_names": [
+          "🌐 Node-144",
           "United States",
-          "🇺🇸 美国 | vmess | 260",
-          "🌐 Node-157"
+          "🇺🇸 US-40",
+          "🇺🇸 美国 | vmess | 30",
+          "vmess-676886736 #F17A"
+        ],
+        "protocols": [
+          "vmess"
+        ]
+      },
+      {
+        "endpoint": "47.250.45.234:43063",
+        "count": 3,
+        "unique_names": [
+          "🌐 Node-145",
+          "Malaysia"
+        ],
+        "protocols": [
+          "vmess"
+        ]
+      },
+      {
+        "endpoint": "172.111.146.64:80",
+        "count": 10,
+        "unique_names": [
+          "🇯🇵 JP-47",
+          "🇯🇵 日本 | vless | 32",
+          "🌐 Node-146",
+          "🇯🇵 JP-10",
+          "🇯🇵 日本 | vmess | 31"
+        ],
+        "protocols": [
+          "vmess",
+          "vless"
+        ]
+      },
+      {
+        "endpoint": "23.162.200.198:18000",
+        "count": 6,
+        "unique_names": [
+          "🌐 Node-147",
+          "🇨🇦 加拿大 | vmess | 05",
+          "vmess-2386852 #4E0D"
+        ],
+        "protocols": [
+          "vmess"
+        ]
+      },
+      {
+        "endpoint": "47.250.135.244:10000",
+        "count": 4,
+        "unique_names": [
+          "🌐 Node-148",
+          "🇲🇾 马来西亚 | vmess | 01",
+          "🌐 Node-251"
+        ],
+        "protocols": [
+          "vmess"
+        ]
+      },
+      {
+        "endpoint": "152.67.8.205:80",
+        "count": 7,
+        "unique_names": [
+          "🌐 Node-150",
+          "🇮🇳 印度 | vmess | 29",
+          "India",
+          "🌐 Node-244"
+        ],
+        "protocols": [
+          "vmess"
+        ]
+      },
+      {
+        "endpoint": "66.163.117.58:22324",
+        "count": 6,
+        "unique_names": [
+          "United States",
+          "🇬🇧 UK-08",
+          "🇬🇧 英国 | vmess | 32",
+          "🌐 Node-151"
         ],
         "protocols": [
           "vmess"
@@ -947,20 +914,59 @@
         "endpoint": "38.91.107.49:18000",
         "count": 6,
         "unique_names": [
+          "vmess-485686938 #7E22",
           "🇺🇸 美国 | vmess | 759",
-          "🇺🇸 US-61",
-          "🌐 Node-158"
+          "🌐 Node-153",
+          "🇺🇸 US-62"
         ],
         "protocols": [
           "vmess"
         ]
       },
       {
-        "endpoint": "23.162.200.198:18000",
+        "endpoint": "ww11.levikogjgfdd.ir:18000",
+        "count": 4,
+        "unique_names": [
+          "🇸🇬 SG-23",
+          "🇸🇬 新加坡 | vmess | 256",
+          "🌐 Node-154"
+        ],
+        "protocols": [
+          "vmess"
+        ]
+      },
+      {
+        "endpoint": "134.195.196.211:18000",
         "count": 5,
         "unique_names": [
-          "🇨🇦 加拿大 | vmess | 05",
-          "🌐 Node-160"
+          "🌐 Node-191",
+          "🌐 Node-155",
+          "🇨🇦 加拿大 | vmess | 06"
+        ],
+        "protocols": [
+          "vmess"
+        ]
+      },
+      {
+        "endpoint": "149.88.23.207:18000",
+        "count": 4,
+        "unique_names": [
+          "🇸🇬 SG-07",
+          "🇸🇬 新加坡 | vmess | 18",
+          "🌐 Node-156"
+        ],
+        "protocols": [
+          "vmess"
+        ]
+      },
+      {
+        "endpoint": "169.197.142.22:18000",
+        "count": 7,
+        "unique_names": [
+          "🇺🇸 美国 | vmess | 260",
+          "🇺🇸 US-44",
+          "United States",
+          "🌐 Node-157"
         ],
         "protocols": [
           "vmess"
@@ -968,12 +974,12 @@
       },
       {
         "endpoint": "38.110.1.246:18000",
-        "count": 8,
+        "count": 7,
         "unique_names": [
-          "🌐 Node-161",
-          "🇺🇸 美国 | vmess | 998",
+          "🌐 Node-159",
+          "🇺🇸 US-75",
           "United States",
-          "🇺🇸 US-74"
+          "🇺🇸 美国 | vmess | 998"
         ],
         "protocols": [
           "vmess"
@@ -983,8 +989,8 @@
         "endpoint": "168.138.43.75:80",
         "count": 6,
         "unique_names": [
+          "🌐 Node-160",
           "🇯🇵 JP-24",
-          "🌐 Node-162",
           "🇯🇵 日本 | vmess | 230"
         ],
         "protocols": [
@@ -995,7 +1001,7 @@
         "endpoint": "132.145.80.230:80",
         "count": 6,
         "unique_names": [
-          "🌐 Node-163",
+          "🌐 Node-161",
           "🇰🇷 韩国 | vmess | 10",
           "🇰🇷 KR-03"
         ],
@@ -1005,10 +1011,10 @@
       },
       {
         "endpoint": "67.220.95.3:18000",
-        "count": 6,
+        "count": 5,
         "unique_names": [
-          "🇺🇸 美国 | vmess | 571",
-          "🌐 Node-164"
+          "🌐 Node-162",
+          "🇺🇸 美国 | vmess | 571"
         ],
         "protocols": [
           "vmess"
@@ -1016,11 +1022,11 @@
       },
       {
         "endpoint": "67.220.85.46:18000",
-        "count": 6,
+        "count": 5,
         "unique_names": [
-          "🌐 Node-165",
-          "🇺🇸 US-57",
-          "🇺🇸 美国 | vmess | 650"
+          "🌐 Node-163",
+          "🇺🇸 美国 | vmess | 650",
+          "🇺🇸 US-58"
         ],
         "protocols": [
           "vmess"
@@ -1028,10 +1034,10 @@
       },
       {
         "endpoint": "165.154.195.38:35034",
-        "count": 6,
+        "count": 5,
         "unique_names": [
-          "🌐 Node-166",
-          "🇹🇼 台湾 | vmess | 10"
+          "🇹🇼 台湾 | vmess | 10",
+          "🌐 Node-164"
         ],
         "protocols": [
           "vmess"
@@ -1039,11 +1045,11 @@
       },
       {
         "endpoint": "159.223.13.109:1234",
-        "count": 5,
+        "count": 4,
         "unique_names": [
           "🇳🇱 荷兰 | vmess | 40",
-          "🌐 Node-167",
-          "🌐 Node-261"
+          "🌐 Node-260",
+          "🌐 Node-165"
         ],
         "protocols": [
           "vmess"
@@ -1053,8 +1059,8 @@
         "endpoint": "141.95.65.9:1234",
         "count": 5,
         "unique_names": [
-          "🌐 Node-228",
-          "🌐 Node-168",
+          "🌐 Node-227",
+          "🌐 Node-166",
           "🇫🇷 法国 | vmess | 64"
         ],
         "protocols": [
@@ -1063,37 +1069,11 @@
       },
       {
         "endpoint": "129.146.77.248:39495",
-        "count": 6,
+        "count": 5,
         "unique_names": [
-          "🇺🇸 US-48",
+          "🌐 Node-167",
           "🇺🇸 美国 | vmess | 427",
-          "🌐 Node-169"
-        ],
-        "protocols": [
-          "vmess"
-        ]
-      },
-      {
-        "endpoint": "47.244.120.197:23026",
-        "count": 6,
-        "unique_names": [
-          "🇭🇰 HK-26",
-          "🇭🇰 HK-35",
-          "🇭🇰 HK-23",
-          "🇭🇰 香港 | vmess | 67"
-        ],
-        "protocols": [
-          "vmess"
-        ]
-      },
-      {
-        "endpoint": "47.244.120.197:44867",
-        "count": 6,
-        "unique_names": [
-          "🇭🇰 香港 | vmess | 68",
-          "🇭🇰 HK-28",
-          "🇭🇰 HK-25",
-          "🇭🇰 HK-36"
+          "🇺🇸 US-49"
         ],
         "protocols": [
           "vmess"
@@ -1103,8 +1083,8 @@
         "endpoint": "47.83.19.148:443",
         "count": 2,
         "unique_names": [
-          "USA",
-          "🇺🇸 US-37"
+          "🇺🇸 US-38",
+          "USA"
         ],
         "protocols": [
           "vmess"
@@ -1112,11 +1092,11 @@
       },
       {
         "endpoint": "129.146.143.80:48111",
-        "count": 7,
+        "count": 6,
         "unique_names": [
-          "🇺🇸 US-49",
           "USA",
-          "🇺🇸 US-38",
+          "🇺🇸 US-50",
+          "🇺🇸 US-39",
           "🇺🇸 美国 | vmess | 434"
         ],
         "protocols": [
@@ -1128,7 +1108,7 @@
         "count": 2,
         "unique_names": [
           "Hong Kong",
-          "🌐 Node-171"
+          "🌐 Node-169"
         ],
         "protocols": [
           "vmess"
@@ -1138,7 +1118,7 @@
         "endpoint": "43.228.126.187:47630",
         "count": 2,
         "unique_names": [
-          "🌐 Node-172",
+          "🌐 Node-170",
           "Singapur"
         ],
         "protocols": [
@@ -1149,9 +1129,9 @@
         "endpoint": "140.83.57.20:13118",
         "count": 7,
         "unique_names": [
-          "Japón",
+          "🌐 Node-171",
           "🇯🇵 日本 | vmess | 46",
-          "🌐 Node-173"
+          "Japón"
         ],
         "protocols": [
           "vmess"
@@ -1159,11 +1139,44 @@
       },
       {
         "endpoint": "216.106.183.35:22324",
-        "count": 7,
+        "count": 6,
         "unique_names": [
           "États Unis",
-          "🌐 Node-174",
-          "🇺🇸 美国 | vmess | 678"
+          "🇺🇸 美国 | vmess | 678",
+          "🌐 Node-172"
+        ],
+        "protocols": [
+          "vmess"
+        ]
+      },
+      {
+        "endpoint": "rush-w1niu.teeopp.online:443",
+        "count": 2,
+        "unique_names": [
+          "🌐 Node-173",
+          "United States"
+        ],
+        "protocols": [
+          "vmess"
+        ]
+      },
+      {
+        "endpoint": "newrelax.relaxedboy.online:110",
+        "count": 2,
+        "unique_names": [
+          "Bulgaria",
+          "🌐 Node-174"
+        ],
+        "protocols": [
+          "vmess"
+        ]
+      },
+      {
+        "endpoint": "n1747624260.4u9ma.icu:443",
+        "count": 2,
+        "unique_names": [
+          "🌐 Node-175",
+          "Singapore"
         ],
         "protocols": [
           "vmess"
