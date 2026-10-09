@@ -79,7 +79,6 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
         if isinstance(rule_providers, dict):
             for rp_name, rp_val in rule_providers.items():
                 if isinstance(rp_val, dict) and rp_val.get("format") == "mrs":
-                    # 自动转换为标准 yaml 格式
                     rp_val["format"] = "text" if rp_val.get("behavior") == "domain" else "yaml"
                     if rp_val.get("url", "").endswith(".mrs"):
                         rp_val["url"] = rp_val["url"].replace(".mrs", ".yaml").replace(".txt", ".yaml")
@@ -105,7 +104,7 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
 
         data["proxy-groups"] = clean_groups
 
-        # 5. 校验 rules
+        # 5. 校验 rules (精准解析带/不带 no-resolve 的策略组目标)
         all_available_targets = valid_names | group_names | builtin_targets
         clean_rules = []
         for r in data["rules"]:
@@ -113,9 +112,13 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
                 continue
             parts = [seg.strip() for seg in r.split(",")]
             if len(parts) >= 2:
-                target = parts[-1]
+                # 准确获取策略组/节点目标 (处理带 no-resolve 的 4 段规则)
+                target = parts[-2] if parts[-1] == "no-resolve" and len(parts) >= 3 else parts[-1]
                 if target not in all_available_targets:
-                    parts[-1] = "DIRECT"
+                    if parts[-1] == "no-resolve" and len(parts) >= 3:
+                        parts[-2] = "DIRECT"
+                    else:
+                        parts[-1] = "DIRECT"
                     clean_rules.append(",".join(parts))
                 else:
                     clean_rules.append(r)
@@ -134,7 +137,7 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
 
 
 def prune_failing_proxies(file_path: Path, err_msg: str) -> bool:
-    """动态解析 Mihomo 报错日志并精确剔除损坏节点"""
+    """动态解析 Mihomo 报错日志并精确剔除损坏节点或代理组"""
     try:
         content = file_path.read_text(encoding="utf-8", errors="ignore")
         data = yaml.safe_load(content) or {}
@@ -153,6 +156,10 @@ def prune_failing_proxies(file_path: Path, err_msg: str) -> bool:
 
         # 匹配: proxy 'xxx' is the duplicate name
         for match in re.finditer(r"proxy\s+'?([^']+)'?\s+is the duplicate name", err_msg):
+            names_to_remove.add(match.group(1).strip())
+
+        # 匹配: proxy [xxx] not found
+        for match in re.finditer(r"proxy\s+\[?([^\]]+)\]?\s+not found", err_msg):
             names_to_remove.add(match.group(1).strip())
 
         for i, p in enumerate(proxies):
@@ -185,7 +192,6 @@ def test_mihomo_offline(file_path: Path) -> bool:
     # 尝试多轮动态剔除重试
     for attempt in range(1, 5):
         if prune_failing_proxies(file_path, err_msg):
-            # 重新跑修复与校验
             auto_repair_clash_structure(file_path)
             res2 = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
             if res2.returncode == 0:

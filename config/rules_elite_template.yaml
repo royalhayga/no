@@ -80,6 +80,23 @@ proxy-groups:
       - DIRECT
       - REJECT
 
+  # TVBox 直连与代理策略组
+  - name: 📺 国内影视
+    type: select
+    proxies:
+      - DIRECT
+      - PROXY
+      - "手机"
+      - REJECT
+
+  - name: 📺 TVBox代理
+    type: select
+    proxies:
+      - PROXY
+      - "手机"
+      - DIRECT
+      - REJECT
+
   # 广告拦截
   - name: 🛑 广告拦截
     type: select
