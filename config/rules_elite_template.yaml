@@ -231,7 +231,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://testingcf.jsdelivr.net/gh/haygcao/tvbox-master-aggregator@main/mrs/domain/clash_rules_direct.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/royalhayga/tvbox-master-aggregator@main/mrs/domain/clash_rules_direct.mrs"
     path: ./ruleset/tvbox_cn.mrs
     interval: 21600
 
@@ -239,7 +239,7 @@ rule-providers:
     type: http
     behavior: ipcidr
     format: mrs
-    url: "https://testingcf.jsdelivr.net/gh/haygcao/tvbox-master-aggregator@main/mrs/ip/clash_rules_direct_ip.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/royalhayga/tvbox-master-aggregator@main/mrs/ip/clash_rules_direct_ip.mrs"
     path: ./ruleset/tvbox_cn_ip.mrs
     interval: 21600
 
@@ -247,7 +247,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://testingcf.jsdelivr.net/gh/haygcao/tvbox-master-aggregator@main/mrs/domain/clash_rules_proxy.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/royalhayga/tvbox-master-aggregator@main/mrs/domain/clash_rules_proxy.mrs"
     path: ./ruleset/tvbox_proxy.mrs
     interval: 21600
 
