@@ -1,0 +1,28 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+proxies:
+- name: 🌐 VE-01
+  type: vless
+  server: 38.76.171.73
+  port: 30001
+  uuid: 65c56e1f-5c41-40bc-b0b5-9346772476ca
+  cipher: auto
+  tls: true
+  servername: s0.awsstatic.com
+proxy-groups:
+- name: AUTO
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  proxies:
+  - 🌐 VE-01
+- name: PROXY
+  type: select
+  proxies:
+  - AUTO
+  - DIRECT
+  - 🌐 VE-01
+rules:
+- MATCH,PROXY

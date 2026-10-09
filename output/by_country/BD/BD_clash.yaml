@@ -1,0 +1,26 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+proxies:
+- name: 🌐 BD-01
+  type: ss
+  server: 203.190.0.189
+  port: 443
+  cipher: aes-256-gcm
+  password: "y\x1FѽzƝk|ݶ]ݽ"
+proxy-groups:
+- name: AUTO
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  proxies:
+  - 🌐 BD-01
+- name: PROXY
+  type: select
+  proxies:
+  - AUTO
+  - DIRECT
+  - 🌐 BD-01
+rules:
+- MATCH,PROXY
