@@ -20,7 +20,7 @@ log-level: info
 ipv6: false
 external-controller: 0.0.0.0:9090
 
-# 模版顶级私有节点占位符
+# 模版顶级私有节点占位�?
 proxies:
   - name: "手机"
     type: ss
@@ -65,7 +65,7 @@ proxies:
     cipher: aes-256-gcm
     password: "private_placeholder"
 
-# ==================== 1. 精简 Elite 策略组定义 ====================
+# ==================== 1. 精简 Elite 策略组定�?====================
 proxy-groups:
   - name: PROXY
     type: select
@@ -105,7 +105,7 @@ proxy-groups:
       - DIRECT
       - PROXY
 
-  # 核心高频业务策略组 (含 Pinterest 与 Vimeo)
+  # 核心高频业务策略�?(�?Pinterest �?Vimeo)
   - name: ▶️ YouTube
     type: select
     proxies:
@@ -162,7 +162,7 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-  - name: 🍿 流媒体/Netflix
+  - name: 🍿 流媒�?Netflix
     type: select
     proxies:
       - PROXY
@@ -217,7 +217,7 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-# ==================== 2. 精炼 Elite 规则集 (.mrs 格式) ====================
+# ==================== 2. 精炼 Elite 规则�?(.mrs 格式) ====================
 rule-providers:
   reject:
     type: http
@@ -388,7 +388,7 @@ rules:
   - RULE-SET,Twitter,🐦 Twitter / X
   - RULE-SET,Pinterest,📌 Pinterest
   - RULE-SET,Vimeo,📹 Vimeo
-  - RULE-SET,Netflix,🍿 流媒体/Netflix
+  - RULE-SET,Netflix,🍿 流媒�?Netflix
   - RULE-SET,GitHub,🐙 GitHub / Docker
   - RULE-SET,Apple,🍎 Apple
   - RULE-SET,Microsoft,🪟 Microsoft

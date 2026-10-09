@@ -20,7 +20,7 @@ log-level: info
 ipv6: false
 external-controller: 0.0.0.0:9090
 
-# 模版顶级私有节点占位符
+# 模版顶级私有节点占位�?
 proxies:
   - name: "手机"
     type: ss
@@ -65,7 +65,7 @@ proxies:
     cipher: aes-256-gcm
     password: "private_placeholder"
 
-# ==================== 1. 策略组定义 (电脑全功能全量策略组) ====================
+# ==================== 1. 策略组定�?(电脑全功能全量策略组) ====================
 proxy-groups:
   - name: PROXY
     type: select
@@ -80,7 +80,7 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-  # 【第 2 阶对应策略组】TVBox 国内采集站直连
+  # 【第 2 阶对应策略组】TVBox 国内采集站直�?
   - name: 📺 国内影视
     type: select
     proxies:
@@ -95,7 +95,7 @@ proxy-groups:
       - "test"
       - REJECT
 
-  # 【第 3 阶对应策略组】广告拦截
+  # 【第 3 阶对应策略组】广告拦�?
   - name: 🛑 广告拦截
     type: select
     proxies:
@@ -188,7 +188,7 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-  # 【第 5 阶对应策略组】TVBox 专属代理源
+  # 【第 5 阶对应策略组】TVBox 专属代理�?
   - name: 📺 TVBox代理
     type: select
     proxies:
@@ -203,7 +203,7 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-  # 【第 6 阶对应策略组】常规海外代理服务
+  # 【第 6 阶对应策略组】常规海外代理服�?
   - name: 🎬 国外影视
     type: select
     proxies:
@@ -512,7 +512,7 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-  - name: 🅿️ PayPal
+  - name: 🅿�?PayPal
     type: select
     proxies:
       - PROXY
@@ -652,7 +652,7 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-  - name: 🖼️ Imgur
+  - name: 🖼�?Imgur
     type: select
     proxies:
       - PROXY
@@ -899,11 +899,11 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-  - name: 🇸🇬 新加坡银行
+  - name: 🇸🇬 新加坡银�?
     type: select
     proxies:
-      - 🇸🇬 新加坡-自动选优
-      - 🇸🇬 新加坡-负载均衡
+      - 🇸🇬 新加�?自动选优
+      - 🇸🇬 新加�?负载均衡
       - PROXY
       - "手机"
       - "reality funo"
@@ -915,11 +915,11 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-  - name: 🇨🇦 加拿大银行
+  - name: 🇨🇦 加拿大银�?
     type: select
     proxies:
-      - 🇨🇦 加拿大-自动选优
-      - 🇨🇦 加拿大-负载均衡
+      - 🇨🇦 加拿�?自动选优
+      - 🇨🇦 加拿�?负载均衡
       - PROXY
       - "手机"
       - "reality funo"
@@ -961,7 +961,7 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-  - name: 📍 IP归属地修正(FakeLocation)
+  - name: 📍 IP归属地修�?FakeLocation)
     type: select
     proxies:
       - DIRECT
@@ -1060,7 +1060,7 @@ proxy-groups:
       - "test"
       - REJECT
 
-  - name: 🛍️ AppStore
+  - name: 🛍�?AppStore
     type: select
     proxies:
       - DIRECT
@@ -1130,7 +1130,7 @@ proxy-groups:
       - "test"
       - REJECT
 
-  - name: 🛍️ eBay
+  - name: 🛍�?eBay
     type: select
     proxies:
       - DIRECT
@@ -1144,7 +1144,7 @@ proxy-groups:
       - "test"
       - REJECT
 
-  - name: 🛍️ Bestbuy
+  - name: 🛍�?Bestbuy
     type: select
     proxies:
       - DIRECT
@@ -1158,7 +1158,7 @@ proxy-groups:
       - "test"
       - REJECT
 
-  - name: 🛍️ Shopee
+  - name: 🛍�?Shopee
     type: select
     proxies:
       - DIRECT
@@ -1172,7 +1172,7 @@ proxy-groups:
       - "test"
       - REJECT
 
-  - name: 🛍️ Shopify
+  - name: 🛍�?Shopify
     type: select
     proxies:
       - DIRECT
@@ -1186,7 +1186,7 @@ proxy-groups:
       - "test"
       - REJECT
 
-  - name: 🛍️ MOMOShop
+  - name: 🛍�?MOMOShop
     type: select
     proxies:
       - DIRECT
@@ -1424,7 +1424,7 @@ proxy-groups:
       - "test"
       - REJECT
 
-  - name: 🖱️ Logitech
+  - name: 🖱�?Logitech
     type: select
     proxies:
       - DIRECT
@@ -1438,7 +1438,7 @@ proxy-groups:
       - "test"
       - REJECT
 
-  - name: ⚡ Speedtest
+  - name: �?Speedtest
     type: select
     proxies:
       - DIRECT
@@ -1474,7 +1474,7 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-# ==================== 2. 规则集定义 (全量 MRS 无损切换，绝不删除任何业务规则) ====================
+# ==================== 2. 规则集定�?(全量 MRS 无损切换，绝不删除任何业务规�? ====================
 rule-providers:
   # 广告拦截
   reject:
@@ -1547,7 +1547,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/google-cn.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/google-cn.mrs"
     path: ./ruleset/google_cn.mrs
     interval: 21600
 
@@ -1697,7 +1697,7 @@ rule-providers:
     path: ./ruleset/Reddit.mrs
     interval: 21600
 
-  # 影音流媒体
+  # 影音流媒�?
   Netflix:
     type: http
     behavior: domain
@@ -1738,7 +1738,7 @@ rule-providers:
     path: ./ruleset/Twitch.mrs
     interval: 21600
 
-  # 金融与应用服务
+  # 金融与应用服�?
   PayPal:
     type: http
     behavior: domain
@@ -2116,7 +2116,7 @@ rule-providers:
     path: ./ruleset/Zoho.mrs
     interval: 21600
 
-  # 国内与各国银行金融规则
+  # 国内与各国银行金融规�?
   bank_cn:
     type: http
     behavior: domain
@@ -2205,7 +2205,7 @@ rule-providers:
     path: ./ruleset/apple_ai.mrs
     interval: 21600
 
-  # 通用代理与直连 (.mrs)
+  # 通用代理与直�?(.mrs)
   proxy_domain:
     type: http
     behavior: domain
@@ -2278,9 +2278,9 @@ rule-providers:
     path: ./ruleset/tld-not-cn.mrs
     interval: 21600
 
-# ==================== 3. 严格分流规则 (由上至下匹配，顺序绝对固定) ====================
+# ==================== 3. 严格分流规则 (由上至下匹配，顺序绝对固�? ====================
 rules:
-  # ================= 阶层 1：订阅更新服务器、自建节点服务器 IP 与本地保留网络（必须首位防死循环） =================
+  # ================= 阶层 1：订阅更新服务器、自建节点服务器 IP 与本地保留网络（必须首位防死循环�?=================
   - DOMAIN,umail.eu.org,DIRECT
   - IP-CIDR,45.159.51.56/32,DIRECT,no-resolve
   - IP-CIDR,104.243.24.216/32,DIRECT,no-resolve
@@ -2299,7 +2299,7 @@ rules:
   # ================= 阶层 3：广告拦截（必须在业务规则之前拦截） =================
   - RULE-SET,reject,🛑 广告拦截
 
-  # ================= 阶层 4：Google 体系（全量走代理，按优先级排序，包含 Google CN） =================
+  # ================= 阶层 4：Google 体系（全量走代理，按优先级排序，包含 Google CN�?=================
   - RULE-SET,scholar,🎓 谷歌学术
   - RULE-SET,youtube_music,🎵 YouTube Music
   - RULE-SET,YouTube,▶️ YouTube
@@ -2307,20 +2307,20 @@ rules:
   - RULE-SET,google_cn,🇬 谷歌(CN)
   - RULE-SET,Google,🌐 谷歌(国际)
 
-  # ================= 阶层 5：国外影视（TVBox 专属代理源，独立成组，紧随 Google 体系后段） =================
+  # ================= 阶层 5：国外影视（TVBox 专属代理源，独立成组，紧�?Google 体系后段�?=================
   - RULE-SET,tvbox_proxy,📺 TVBox代理
 
-  # ================= 阶层 6：海外代理专属业务（按国家精准匹配银行与 IP） =================
+  # ================= 阶层 6：海外代理专属业务（按国家精准匹配银行与 IP�?=================
   - RULE-SET,bank_us,🏦 美国银行
   - RULE-SET,bank_hk,🏦 香港银行
   - RULE-SET,bank_uk,🏦 英国银行
   - RULE-SET,bank_jp,🏦 日本银行
-  - RULE-SET,bank_sg,🇸🇬 新加坡银行
-  - RULE-SET,bank_ca,🇨🇦 加拿大银行
+  - RULE-SET,bank_sg,🇸🇬 新加坡银�?
+  - RULE-SET,bank_ca,🇨🇦 加拿大银�?
   - RULE-SET,bank_au,🇦🇺 澳大利亚银行
   - RULE-SET,virtual_finance,💳 虚拟金融/Wise/PayPal
   - RULE-SET,apple_ai,🍎 Apple Intelligence
-  - RULE-SET,fakelocation,📍 IP归属地修正(FakeLocation)
+  - RULE-SET,fakelocation,📍 IP归属地修�?FakeLocation)
   - RULE-SET,proxy_media,🎬 国外影视
   - RULE-SET,OpenAI,🟢 OpenAI
   - RULE-SET,claude,🟣 Claude
@@ -2344,7 +2344,7 @@ rules:
   - RULE-SET,Spotify,🎧 Spotify
   - RULE-SET,TikTok,🎵 TikTok
   - RULE-SET,Twitch,🎮 Twitch
-  - RULE-SET,PayPal,🅿️ PayPal
+  - RULE-SET,PayPal,🅿�?PayPal
   - RULE-SET,stripe,💳 Stripe
   - RULE-SET,Binance,🪙 Binance
   - RULE-SET,Duckduckgo,🦆 Duckduckgo
@@ -2354,7 +2354,7 @@ rules:
   - RULE-SET,MEGA,☁️ MEGA
   - RULE-SET,pixiv,🎨 Pixiv
   - RULE-SET,Pinterest,📌 Pinterest
-  - RULE-SET,Imgur,🖼️ Imgur
+  - RULE-SET,Imgur,🖼�?Imgur
   - RULE-SET,Vimeo,📹 Vimeo
   - RULE-SET,BBC,🇬🇧 BBC
   - RULE-SET,Spark,✉️ Spark
@@ -2368,7 +2368,7 @@ rules:
   - RULE-SET,GitHub,🐙 GitHub
   - RULE-SET,proxy_domain,PROXY
 
-  # ================= 阶层 7：日常/在华直连品牌（DIRECT 首选，方便客户端按需切代理） =================
+  # ================= 阶层 7：日�?在华直连品牌（DIRECT 首选，方便客户端按需切代理） =================
   - RULE-SET,bank_cn,🏦 国内金融/银行
   - RULE-SET,Microsoft,🪟 Microsoft
   - RULE-SET,OneDrive,☁️ OneDrive
@@ -2376,17 +2376,17 @@ rules:
   - RULE-SET,Bing,🔎 Bing
   - RULE-SET,Apple,🍎 Apple
   - RULE-SET,apple_cn_domain,🍎 Apple
-  - RULE-SET,AppStore,🛍️ AppStore
+  - RULE-SET,AppStore,🛍�?AppStore
   - RULE-SET,iCloud,☁️ iCloud
   - RULE-SET,icloud_domain,☁️ iCloud
   - RULE-SET,Steam,🎮 Steam
   - RULE-SET,Sony,🎮 Sony
   - RULE-SET,Amazon,📦 Amazon
-  - RULE-SET,eBay,🛍️ eBay
-  - RULE-SET,Bestbuy,🛍️ Bestbuy
-  - RULE-SET,Shopee,🛍️ Shopee
-  - RULE-SET,Shopify,🛍️ Shopify
-  - RULE-SET,MOMOShop,🛍️ MOMOShop
+  - RULE-SET,eBay,🛍�?eBay
+  - RULE-SET,Bestbuy,🛍�?Bestbuy
+  - RULE-SET,Shopee,🛍�?Shopee
+  - RULE-SET,Shopify,🛍�?Shopify
+  - RULE-SET,MOMOShop,🛍�?MOMOShop
   - RULE-SET,Gucci,👜 Gucci
   - RULE-SET,Samsung,📱 Samsung
   - RULE-SET,Razer,🎮 Razer
