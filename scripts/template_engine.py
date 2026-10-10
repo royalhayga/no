@@ -18,7 +18,10 @@ FAKELOCATION_TEMPLATE_FILE = ROOT_DIR / "config" / "rules_fakelocation_template.
 INPUT_DIR = ROOT_DIR / "output" / "verified"
 ALT_INPUT_DIR = ROOT_DIR / "output" / "dns"
 
-# 产物输出路径：凡是精炼版 (Elite 架构) 均在文件名中包含 elite
+# 产物输出路径：纯规则文件、完整版与精炼版 (Elite) 产物
+OUTPUT_RULES_ONLY_CLASH = ROOT_DIR / "output" / "clash_rules_only.yaml"
+OUTPUT_MOBILE_RULES_ONLY_CLASH = ROOT_DIR / "output" / "clash_mobile_rules_only.yaml"
+
 OUTPUT_RULES_CLASH = ROOT_DIR / "output" / "clash_rules.yaml"
 OUTPUT_ELITE_RULES_CLASH = ROOT_DIR / "output" / "clash_elite_rules.yaml"
 OUTPUT_PUBLIC_RULES_CLASH = ROOT_DIR / "output" / "clash_public_rules.yaml"
@@ -27,10 +30,6 @@ OUTPUT_MOBILE_RULES_CLASH = ROOT_DIR / "output" / "clash_mobile_elite_rules.yaml
 OUTPUT_PUBLIC_MOBILE_RULES_CLASH = ROOT_DIR / "output" / "clash_public_mobile_elite_rules.yaml"
 OUTPUT_FAKELOCATION_RULES_CLASH = ROOT_DIR / "output" / "clash_fakelocation_rules.yaml"
 OUTPUT_PUBLIC_FAKELOCATION_RULES_CLASH = ROOT_DIR / "output" / "clash_public_fakelocation_rules.yaml"
-
-# 纯净零节点纯规则版本 (Pure Rules-Only)
-OUTPUT_RULES_ONLY_CLASH = ROOT_DIR / "output" / "clash_rules_only.yaml"
-OUTPUT_MOBILE_RULES_ONLY_CLASH = ROOT_DIR / "output" / "clash_mobile_rules_only.yaml"
 
 PRIVATE_NODE_NAMES = ["手机", "reality funo", "JPreality", "39515", "reality", "tourism", "test"]
 
@@ -80,8 +79,9 @@ def build_rules_only_clash_config(template_path: Path) -> str:
     """
     生成绝对纯净、不带任何爬取节点/私有节点的纯规则 YAML 配置文件。
     proxies 数组为空 []，供用户随时把自己的私有节点填进去直接使用！
+    支持 UTF-8 容错解码（errors="ignore"）
     """
-    template_content = template_path.read_text(encoding="utf-8")
+    template_content = template_path.read_text(encoding="utf-8", errors="ignore")
     template = yaml.safe_load(template_content)
 
     template_proxy_groups = copy.deepcopy(template.get("proxy-groups", []))
@@ -101,13 +101,13 @@ def build_rules_only_clash_config(template_path: Path) -> str:
         "log-level": template.get("log-level", "info"),
         "ipv6": template.get("ipv6", False),
         "external-controller": template.get("external-controller", "0.0.0.0:9090"),
-        "proxies": [],  # 绝对纯净：0 节点
+        "proxies": [],
         "proxy-groups": template_proxy_groups,
         "rule-providers": template.get("rule-providers", {}),
         "rules": template.get("rules", [])
     }
 
-    return f"# Pure Clean Rules-Only Config Generated at {datetime.now(timezone.utc).isoformat()}\n" + yaml.safe_dump(final_config, allow_unicode=True, sort_keys=False)
+    return f"# Pure Rules-Only Clash Config Generated at {datetime.now(timezone.utc).isoformat()}\n" + yaml.safe_dump(final_config, allow_unicode=True, sort_keys=False)
 
 
 def build_clash_proxy_dict(node: Dict[str, Any]) -> Dict[str, Any] | None:
@@ -159,10 +159,15 @@ def build_clash_proxy_dict(node: Dict[str, Any]) -> Dict[str, Any] | None:
 
 
 def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str, Any]], include_private: bool = True) -> str:
-    """Build Clash config."""
-    template_content = template_path.read_text(encoding="utf-8")
+    """
+    Build Clash config.
+    include_private=True: 包含顶级私有占位节点 (手机, reality 等)
+    include_private=False: 纯公开版，无任何私有占位符节点，仅依赖自动爬取节点与负载均衡
+    """
+    template_content = template_path.read_text(encoding="utf-8", errors="ignore")
     template = yaml.safe_load(template_content)
 
+    # 1. Identify Private Nodes
     if include_private:
         private_proxies = template.get("proxies", [])
         private_proxy_names = [p.get("name") for p in private_proxies if isinstance(p, dict) and p.get("name")]
@@ -170,6 +175,7 @@ def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str,
         private_proxies = []
         private_proxy_names = []
 
+    # 2. Convert crawled nodes to Clash proxies and ensure 100% UNIQUE proxy names
     crawled_clash_proxies = []
     country_groups: Dict[str, List[str]] = {}
 
@@ -181,6 +187,7 @@ def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str,
             continue
         pname = pdict["name"]
 
+        # 防止节点重名报错 "proxy United States is the duplicate name"
         if pname in seen_proxy_names:
             idx = 1
             new_name = f"{pname} {idx:02d}"
@@ -201,6 +208,7 @@ def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str,
     combined_proxies = private_proxies + crawled_clash_proxies
     all_crawled_proxy_names = [p["name"] for p in crawled_clash_proxies]
 
+    # Track existing group names
     existing_group_names: Set[str] = set()
     template_proxy_groups = copy.deepcopy(template.get("proxy-groups", []))
 
@@ -208,6 +216,7 @@ def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str,
         if isinstance(g, dict) and g.get("name"):
             existing_group_names.add(g["name"])
 
+    # 3. Build Per-Country Load Balancing Groups
     country_lb_groups = []
     country_lb_group_names = []
 
@@ -273,10 +282,12 @@ def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str,
                 "proxies": cnodes
             })
 
+    # 4. Inject into Template Proxy Groups
     for group in template_proxy_groups:
         gname = group.get("name")
         g_proxies = group.get("proxies", [])
 
+        # 如果是不带私有节点的公开版本，强行从策略组过滤掉私有占位符节点
         if not include_private:
             g_proxies = [p for p in g_proxies if p not in PRIVATE_NODE_NAMES]
 
@@ -288,6 +299,7 @@ def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str,
             base_items = [p for p in g_proxies if p in ["PROXY", "DIRECT", "REJECT"]]
             group["proxies"] = private_proxy_names + base_items + [global_auto_name, global_lb_name] + country_lb_group_names
 
+            # 去重保持顺序
             seen = set()
             clean_p = []
             for p in group["proxies"]:
@@ -296,6 +308,7 @@ def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str,
                     clean_p.append(p)
             group["proxies"] = clean_p
 
+    # Assemble all generated proxy groups cleanly
     generated_extra_groups = []
     if global_lb_group:
         generated_extra_groups.append(global_lb_group)
@@ -340,7 +353,7 @@ def main() -> int:
 
     crawled_nodes = []
     if nodes_file and nodes_file.exists():
-        content = nodes_file.read_text(encoding="utf-8")
+        content = nodes_file.read_text(encoding="utf-8", errors="ignore")
         crawled_nodes = extract_node_links_from_text(content)
 
     print(f"Loaded {len(crawled_nodes)} Crawled Verified Nodes.", flush=True)
@@ -374,6 +387,26 @@ def main() -> int:
         public_elite_yaml = build_merged_clash_config(ELITE_TEMPLATE_FILE, crawled_nodes, include_private=False)
         OUTPUT_PUBLIC_ELITE_RULES_CLASH.write_text(public_elite_yaml, encoding="utf-8")
         print(f"Successfully generated Elite Public Clash Config -> {OUTPUT_PUBLIC_ELITE_RULES_CLASH}", flush=True)
+
+    # 3. 手机端专享版 (包含私有版与纯公开版)
+    if ELITE_TEMPLATE_FILE.exists():
+        mobile_yaml = build_merged_clash_config(ELITE_TEMPLATE_FILE, crawled_nodes, include_private=True)
+        OUTPUT_MOBILE_RULES_CLASH.write_text(mobile_yaml, encoding="utf-8")
+        print(f"Successfully generated Dedicated Private Mobile Clash Config -> {OUTPUT_MOBILE_RULES_CLASH}", flush=True)
+
+        public_mobile_yaml = build_merged_clash_config(ELITE_TEMPLATE_FILE, crawled_nodes, include_private=False)
+        OUTPUT_PUBLIC_MOBILE_RULES_CLASH.write_text(public_mobile_yaml, encoding="utf-8")
+        print(f"Successfully generated Dedicated Public Mobile Clash Config -> {OUTPUT_PUBLIC_MOBILE_RULES_CLASH}", flush=True)
+
+    # 4. 独立 FakeLocation 社交 App 定位专享版 (私有版与纯公开版)
+    if FAKELOCATION_TEMPLATE_FILE.exists():
+        fl_yaml = build_merged_clash_config(FAKELOCATION_TEMPLATE_FILE, crawled_nodes, include_private=True)
+        OUTPUT_FAKELOCATION_RULES_CLASH.write_text(fl_yaml, encoding="utf-8")
+        print(f"Successfully generated Private FakeLocation Clash Config -> {OUTPUT_FAKELOCATION_RULES_CLASH}", flush=True)
+
+        public_fl_yaml = build_merged_clash_config(FAKELOCATION_TEMPLATE_FILE, crawled_nodes, include_private=False)
+        OUTPUT_PUBLIC_FAKELOCATION_RULES_CLASH.write_text(public_fl_yaml, encoding="utf-8")
+        print(f"Successfully generated Public FakeLocation Clash Config -> {OUTPUT_PUBLIC_FAKELOCATION_RULES_CLASH}", flush=True)
 
     return 0
 
