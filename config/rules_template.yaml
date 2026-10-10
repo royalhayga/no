@@ -1919,7 +1919,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/geolocation-!cn.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-media-!cn.mrs"
     path: ./ruleset/proxy_media.mrs
     interval: 21600
 
