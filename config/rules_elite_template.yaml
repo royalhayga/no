@@ -20,7 +20,7 @@ log-level: info
 ipv6: false
 external-controller: 0.0.0.0:9090
 
-# 模版顶级私有节点占位�?
+# 模版顶级私有节点占位�?
 proxies:
   - name: "手机"
     type: ss
@@ -65,7 +65,7 @@ proxies:
     cipher: aes-256-gcm
     password: "private_placeholder"
 
-# ==================== 1. 精简 Elite 策略组定�?====================
+# ==================== 1. 精简 Elite 策略组定�?====================
 proxy-groups:
   - name: PROXY
     type: select
@@ -105,7 +105,7 @@ proxy-groups:
       - DIRECT
       - PROXY
 
-  # 核心高频业务策略�?(�?Pinterest �?Vimeo)
+  # 核心高频业务策略�?(�?Pinterest �?Vimeo)
   - name: ▶️ YouTube
     type: select
     proxies:
@@ -162,7 +162,7 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-  - name: 🍿 流媒�?Netflix
+  - name: 🍿 流媒�?Netflix
     type: select
     proxies:
       - PROXY
@@ -217,7 +217,7 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-# ==================== 2. 精炼 Elite 规则�?(.mrs 格式) ====================
+# ==================== 2. 精炼 Elite 规则�?(.mrs 格式) ====================
 rule-providers:
   reject:
     type: http
@@ -363,6 +363,30 @@ rule-providers:
     path: ./ruleset/direct.mrs
     interval: 21600
 
+  firebase:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/firebase.mrs"
+    path: ./ruleset/firebase.mrs
+    interval: 21600
+
+  proxy_media:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-media-!cn.mrs"
+    path: ./ruleset/proxy_media.mrs
+    interval: 21600
+
+  applications:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-dev.mrs"
+    path: ./ruleset/applications.mrs
+    interval: 21600
+
   cncidr:
     type: http
     behavior: ipcidr
@@ -379,6 +403,7 @@ rules:
   - IP-CIDR,104.225.233.178/32,DIRECT,no-resolve
   - RULE-SET,tvbox_cn,📺 国内影视
   - RULE-SET,tvbox_cn_ip,📺 国内影视,no-resolve
+  - RULE-SET,firebase,🌐 Google
   - RULE-SET,reject,🛑 广告拦截
   - RULE-SET,YouTube,▶️ YouTube
   - RULE-SET,Google,🌐 Google
@@ -388,7 +413,7 @@ rules:
   - RULE-SET,Twitter,🐦 Twitter / X
   - RULE-SET,Pinterest,📌 Pinterest
   - RULE-SET,Vimeo,📹 Vimeo
-  - RULE-SET,Netflix,🍿 流媒�?Netflix
+  - RULE-SET,Netflix,🍿 流媒�?Netflix
   - RULE-SET,GitHub,🐙 GitHub / Docker
   - RULE-SET,Apple,🍎 Apple
   - RULE-SET,Microsoft,🪟 Microsoft
@@ -397,4 +422,6 @@ rules:
   - RULE-SET,direct,DIRECT
   - RULE-SET,cncidr,DIRECT,no-resolve
   - GEOIP,CN,DIRECT,no-resolve
+  - RULE-SET,proxy_media,🍿 流媒体/Netflix
+  - RULE-SET,applications,PROXY
   - MATCH,🐟 漏网之鱼

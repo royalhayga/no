@@ -1510,6 +1510,15 @@ rule-providers:
     path: ./ruleset/tvbox_proxy.mrs
     interval: 21600
 
+  # 开发者 Firebase 服务 (白名单保护，防止广告规则拦截)
+  firebase:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/firebase.mrs"
+    path: ./ruleset/firebase.mrs
+    interval: 21600
+
   # Google 体系
   scholar:
     type: http
@@ -1547,7 +1556,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/google-cn.mrs"
+    url: "https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/google-cn.mrs"
     path: ./ruleset/google_cn.mrs
     interval: 21600
 
@@ -2295,6 +2304,9 @@ rules:
   - RULE-SET,tvbox_cn,📺 国内影视
   - RULE-SET,tvbox_cn_ip,📺 国内影视,no-resolve
 
+  # ================= 阶层 2.5：开发者 Firebase 白名单保护 (置于广告拦截之前，防止被误拦截) =================
+  - RULE-SET,firebase,🌐 谷歌(国际)
+
   # ================= 阶层 3：广告拦截（必须在业务规则之前拦截） =================
   - RULE-SET,reject,🛑 广告拦截
 
@@ -2320,7 +2332,6 @@ rules:
   - RULE-SET,virtual_finance,💳 虚拟金融/Wise/PayPal
   - RULE-SET,apple_ai,🍎 Apple Intelligence
   - RULE-SET,fakelocation,📍 IP归属地修�?FakeLocation)
-  - RULE-SET,proxy_media,🎬 国外影视
   - RULE-SET,OpenAI,🟢 OpenAI
   - RULE-SET,claude,🟣 Claude
   - RULE-SET,anthropic,🟣 Anthropic
@@ -2405,6 +2416,10 @@ rules:
   # ================= 阶层 10：GFW 代理兜底 =================
   - RULE-SET,gfw,PROXY
   - RULE-SET,tld-not-cn,PROXY
+
+  # ================= 阶层 10.5：末端媒体与应用规则（移至末端，防止误拦截/劫持） =================
+  - RULE-SET,proxy_media,🎬 国外影视
+  - RULE-SET,applications,PROXY
 
   # ================= 阶层 11：终极大兜底 =================
   - MATCH,🐟 漏网之鱼
