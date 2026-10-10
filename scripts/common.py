@@ -31,17 +31,32 @@ VALID_SS_CIPHERS = {
     "none"
 }
 
+# 匹配并清洗不可打印的 ASCII 控制字符 (\x00-\x08, \x0b-\x0c, \x0e-\x1f)
+INVALID_CTRL_CHARS_RE = re.compile(r'[\x00-\x08\x0b\x0c\x0e-\x1f]')
+
+
+def clean_control_chars(val: Any) -> Any:
+    """清理字符串中的非法 ASCII 控制字符，防止 PyYAML / Mihomo 崩溃"""
+    if isinstance(val, str):
+        return INVALID_CTRL_CHARS_RE.sub('', val).strip()
+    return val
+
 
 def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     """
     Sanitize and disinfect node data ("去毒"与安全净化):
-    1. Strip HTML tags, control chars, and malicious script injection from node name/remark.
+    1. Strip HTML tags, non-printable control chars from ALL string fields (password, uuid, server, name, auth).
     2. Filter out invalid, empty, or internal/bogon server addresses (127.0.0.1, 10.x, 192.168.x, 0.0.0.0, etc.).
     3. Validate port numbers (1-65535).
     4. Strict validation on credentials and Shadowsocks ciphers to prevent Mihomo initialization errors.
     """
     if not isinstance(node, dict):
         return None
+
+    # 清理所有 string 字段中的二进制/不可打印控制字符 (\x00-\x1F)
+    for k, v in list(node.items()):
+        if isinstance(v, str):
+            node[k] = clean_control_chars(v)
 
     server = str(node.get("server", "")).strip().rstrip(".")
     if not server or server.lower() in ["localhost", "0.0.0.0", "127.0.0.1"]:
@@ -65,11 +80,6 @@ def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         node["port"] = port
     except Exception:
         return None
-
-    # Disinfect all string fields in node (remove binary control characters 0x00-0x1F)
-    for k, v in list(node.items()):
-        if isinstance(v, str):
-            node[k] = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", "", v).strip()
 
     ntype = str(node.get("type", "")).lower().strip()
     if ntype == "ss":
@@ -113,7 +123,6 @@ def safe_base64_decode(data: str) -> str:
     if not data:
         return ""
     data = data.strip().replace("\r", "").replace("\n", "").replace(" ", "")
-    # Add missing Base64 padding
     missing_padding = len(data) % 4
     if missing_padding:
         data += "=" * (4 - missing_padding)
@@ -127,42 +136,44 @@ def safe_base64_decode(data: str) -> str:
 
 
 def safe_base64_encode(data: str) -> str:
-    """Encode a string to Base64."""
+    """Safely encode UTF-8 string to Base64."""
+    if not data:
+        return ""
     return base64.b64encode(data.encode("utf-8")).decode("utf-8")
 
 
 def parse_vmess(link: str) -> Optional[Dict[str, Any]]:
-    """Parse vmess:// B64JSON link."""
+    """Parse vmess:// B64 / JSON link."""
     try:
         b64_str = link[8:]
-        decoded = safe_base64_decode(b64_str)
-        if not decoded:
+        decoded_json_str = safe_base64_decode(b64_str)
+        if not decoded_json_str:
             return None
-        data = json.loads(decoded)
-        if not isinstance(data, dict):
+        vdict = json.loads(decoded_json_str)
+        if not isinstance(vdict, dict):
             return None
-        server = data.get("add") or data.get("host")
-        port = int(data.get("port", 0))
-        uuid = data.get("id")
+
+        server = str(vdict.get("add", "")).strip()
+        port = int(vdict.get("port", 0))
+        uuid = str(vdict.get("id", "")).strip()
+        name = str(vdict.get("ps", "VMess")).strip()
+        tls_val = str(vdict.get("tls", "")).lower().strip()
+
         if not server or not port or not uuid:
             return None
 
-        tls = data.get("tls") in ["tls", True, "true"]
-        net = data.get("net") or "tcp"
-
         return {
             "type": "vmess",
-            "name": str(data.get("ps", "VMess")).strip(),
-            "server": str(server).strip(),
+            "name": name,
+            "server": server,
             "port": port,
-            "uuid": str(uuid).strip(),
-            "alterId": int(data.get("aid", 0)),
-            "cipher": str(data.get("scy", "auto")).strip(),
-            "network": str(net).strip(),
-            "path": str(data.get("path", "")).strip(),
-            "host": str(data.get("host", "")).strip(),
-            "tls": tls,
-            "sni": str(data.get("sni", data.get("host", ""))).strip(),
+            "uuid": uuid,
+            "alterId": int(vdict.get("aid", 0)),
+            "cipher": str(vdict.get("scy", "auto")).lower().strip() or "auto",
+            "tls": tls_val in ["tls", "true", "1"],
+            "network": str(vdict.get("net", "tcp")).lower().strip() or "tcp",
+            "host": str(vdict.get("host", "")).strip(),
+            "path": str(vdict.get("path", "")).strip(),
             "raw_link": link
         }
     except Exception:
@@ -184,10 +195,7 @@ def parse_vless(link: str) -> Optional[Dict[str, Any]]:
             port = 443
 
         params = urllib.parse.parse_qs(parsed.query)
-        remark = urllib.parse.unquote(parsed.fragment) or "VLESS"
-
-        security = params.get("security", ["none"])[0]
-        tls = security in ["tls", "reality"]
+        remark = urllib.parse.unquote(parsed.fragment) or "VLess"
 
         return {
             "type": "vless",
@@ -196,15 +204,8 @@ def parse_vless(link: str) -> Optional[Dict[str, Any]]:
             "port": port,
             "uuid": uuid.strip(),
             "cipher": "auto",
-            "network": params.get("type", ["tcp"])[0],
-            "path": params.get("path", [""])[0],
-            "host": params.get("host", [""])[0],
-            "tls": tls,
-            "security": security,
-            "sni": params.get("sni", [params.get("host", [""])[0]])[0],
-            "flow": params.get("flow", [""])[0],
-            "public_key": params.get("pbk", [""])[0],
-            "short_id": params.get("sid", [""])[0],
+            "tls": params.get("security", [""])[0] in ["tls", "reality"],
+            "sni": params.get("sni", [""])[0],
             "raw_link": link
         }
     except Exception:
@@ -282,11 +283,7 @@ def parse_trojan(link: str) -> Optional[Dict[str, Any]]:
             "server": server.strip(),
             "port": port,
             "password": password.strip(),
-            "tls": True,
-            "sni": params.get("sni", [params.get("peer", [""])[0]])[0],
-            "network": params.get("type", ["tcp"])[0],
-            "path": params.get("path", [""])[0],
-            "host": params.get("host", [""])[0],
+            "sni": params.get("sni", [""])[0],
             "raw_link": link
         }
     except Exception:
@@ -294,9 +291,8 @@ def parse_trojan(link: str) -> Optional[Dict[str, Any]]:
 
 
 def parse_hysteria2(link: str) -> Optional[Dict[str, Any]]:
-    """Parse hysteria2:// or hy2:// auth@server:port?params#remark link."""
+    """Parse hysteria2://auth@server:port?params#remark link."""
     try:
-        prefix_len = 12 if link.startswith("hysteria2://") else 6
         parsed = urllib.parse.urlparse(link)
         netloc = parsed.netloc
         auth = ""
@@ -333,7 +329,6 @@ def parse_hysteria2(link: str) -> Optional[Dict[str, Any]]:
 def extract_node_links_from_text(text: str) -> List[Dict[str, Any]]:
     """Extract node links from raw text (including Base64 decoded text)."""
     nodes = []
-    # If text looks like a Base64 blob, decode it first
     if not any(proto in text for proto in ["vmess://", "vless://", "ss://", "trojan://", "hysteria2://", "hy2://", "tuic://"]):
         decoded = safe_base64_decode(text)
         if decoded:
@@ -390,39 +385,39 @@ def get_node_fingerprint(node: Dict[str, Any]) -> str:
 def reconstruct_node_link(node: Dict[str, Any]) -> str:
     """Reconstruct standard node URL string from node dictionary."""
     if node.get("raw_link"):
-        return node["raw_link"]
+        return clean_control_chars(node["raw_link"])
 
     ntype = node.get("type")
-    server = node.get("server")
+    server = clean_control_chars(node.get("server"))
     port = node.get("port")
-    name = urllib.parse.quote(node.get("name", "Node"))
+    name = urllib.parse.quote(clean_control_chars(node.get("name", "Node")))
 
     if ntype == "ss":
         cipher = node.get("cipher", "aes-256-gcm")
-        pwd = node.get("password", "")
+        pwd = clean_control_chars(node.get("password", ""))
         userinfo = safe_base64_encode(f"{cipher}:{pwd}")
         return f"ss://{userinfo}@{server}:{port}#{name}"
     elif ntype == "trojan":
-        pwd = node.get("password", "")
-        sni = node.get("sni", "")
+        pwd = clean_control_chars(node.get("password", ""))
+        sni = clean_control_chars(node.get("sni", ""))
         return f"trojan://{pwd}@{server}:{port}?sni={sni}#{name}"
     elif ntype == "vless":
-        uuid = node.get("uuid", "")
-        sni = node.get("sni", "")
+        uuid = clean_control_chars(node.get("uuid", ""))
+        sni = clean_control_chars(node.get("sni", ""))
         security = node.get("security", "none")
         return f"vless://{uuid}@{server}:{port}?security={security}&sni={sni}#{name}"
     elif ntype == "vmess":
         vdict = {
-            "v": "2", "ps": node.get("name", "VMess"), "add": server, "port": str(port),
-            "id": node.get("uuid", ""), "aid": "0", "scy": "auto", "net": node.get("network", "tcp"),
-            "type": "none", "host": node.get("host", ""), "path": node.get("path", ""),
+            "v": "2", "ps": clean_control_chars(node.get("name", "VMess")), "add": server, "port": str(port),
+            "id": clean_control_chars(node.get("uuid", "")), "aid": "0", "scy": "auto", "net": node.get("network", "tcp"),
+            "type": "none", "host": clean_control_chars(node.get("host", "")), "path": clean_control_chars(node.get("path", "")),
             "tls": "tls" if node.get("tls") else ""
         }
         b64 = safe_base64_encode(json.dumps(vdict, ensure_ascii=False))
         return f"vmess://{b64}"
     elif ntype in ["hysteria2", "hy2"]:
-        auth = node.get("auth") or node.get("password", "")
-        sni = node.get("sni", "")
+        auth = clean_control_chars(node.get("auth") or node.get("password", ""))
+        sni = clean_control_chars(node.get("sni", ""))
         return f"hysteria2://{auth}@{server}:{port}?sni={sni}#{name}"
 
     return f"{ntype}://{server}:{port}#{name}"
@@ -459,8 +454,15 @@ def export_stage_files(output_dir: Path, nodes: List[Dict[str, Any]], stage_titl
     """
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    # Clean control characters from all nodes
+    clean_nodes = []
+    for n in nodes:
+        sanitized = sanitize_node(n)
+        if sanitized:
+            clean_nodes.append(sanitized)
+
     # Safety cap & Ensure 100% unique proxy names
-    capped_nodes = ensure_unique_node_names(nodes[:max_nodes_per_file] if len(nodes) > max_nodes_per_file else nodes)
+    capped_nodes = ensure_unique_node_names(clean_nodes[:max_nodes_per_file] if len(clean_nodes) > max_nodes_per_file else clean_nodes)
 
     # 1. Plaintext node links
     raw_links = [reconstruct_node_link(n) for n in capped_nodes]
@@ -475,40 +477,40 @@ def export_stage_files(output_dir: Path, nodes: List[Dict[str, Any]], stage_titl
     clash_proxies = []
     for idx, n in enumerate(capped_nodes):
         proxy = {
-            "name": n.get("name") or f"Node-{idx+1}",
-            "type": n.get("type", "ss"),
-            "server": n.get("server"),
+            "name": clean_control_chars(n.get("name") or f"Node-{idx+1}"),
+            "type": clean_control_chars(n.get("type", "ss")),
+            "server": clean_control_chars(n.get("server")),
             "port": n.get("port")
         }
         if n.get("type") == "vmess":
             proxy.update({
-                "uuid": n.get("uuid"),
+                "uuid": clean_control_chars(n.get("uuid")),
                 "alterId": n.get("alterId", 0),
-                "cipher": n.get("cipher", "auto"),
+                "cipher": clean_control_chars(n.get("cipher", "auto")),
                 "tls": bool(n.get("tls")),
-                "network": n.get("network", "tcp")
+                "network": clean_control_chars(n.get("network", "tcp"))
             })
         elif n.get("type") == "vless":
             proxy.update({
-                "uuid": n.get("uuid"),
+                "uuid": clean_control_chars(n.get("uuid")),
                 "cipher": "auto",
                 "tls": bool(n.get("tls")),
-                "servername": n.get("sni", "")
+                "servername": clean_control_chars(n.get("sni", ""))
             })
         elif n.get("type") == "ss":
             proxy.update({
-                "cipher": n.get("cipher", "aes-256-gcm"),
-                "password": n.get("password", "")
+                "cipher": clean_control_chars(n.get("cipher", "aes-256-gcm")),
+                "password": clean_control_chars(n.get("password", ""))
             })
         elif n.get("type") == "trojan":
             proxy.update({
-                "password": n.get("password", ""),
-                "sni": n.get("sni", "")
+                "password": clean_control_chars(n.get("password", "")),
+                "sni": clean_control_chars(n.get("sni", ""))
             })
         elif n.get("type") in ["hysteria2", "hy2"]:
             proxy.update({
-                "auth": n.get("auth") or n.get("password", ""),
-                "sni": n.get("sni", "")
+                "auth": clean_control_chars(n.get("auth") or n.get("password", "")),
+                "sni": clean_control_chars(n.get("sni", ""))
             })
         clash_proxies.append(proxy)
 
@@ -532,22 +534,22 @@ def export_stage_files(output_dir: Path, nodes: List[Dict[str, Any]], stage_titl
     singbox_outbounds = []
     for idx, n in enumerate(capped_nodes):
         outbound = {
-            "tag": n.get("name") or f"Node-{idx+1}",
-            "type": n.get("type", "shadowsocks"),
-            "server": n.get("server"),
+            "tag": clean_control_chars(n.get("name") or f"Node-{idx+1}"),
+            "type": clean_control_chars(n.get("type", "shadowsocks")),
+            "server": clean_control_chars(n.get("server")),
             "server_port": n.get("port")
         }
         if n.get("type") == "ss":
             outbound["type"] = "shadowsocks"
-            outbound["method"] = n.get("cipher", "aes-256-gcm")
-            outbound["password"] = n.get("password", "")
+            outbound["method"] = clean_control_chars(n.get("cipher", "aes-256-gcm"))
+            outbound["password"] = clean_control_chars(n.get("password", ""))
         elif n.get("type") == "vmess":
-            outbound["uuid"] = n.get("uuid")
-            outbound["security"] = n.get("cipher", "auto")
+            outbound["uuid"] = clean_control_chars(n.get("uuid"))
+            outbound["security"] = clean_control_chars(n.get("cipher", "auto"))
         elif n.get("type") == "vless":
-            outbound["uuid"] = n.get("uuid")
+            outbound["uuid"] = clean_control_chars(n.get("uuid"))
         elif n.get("type") == "trojan":
-            outbound["password"] = n.get("password", "")
+            outbound["password"] = clean_control_chars(n.get("password", ""))
 
         singbox_outbounds.append(outbound)
 
@@ -558,14 +560,14 @@ def export_stage_files(output_dir: Path, nodes: List[Dict[str, Any]], stage_titl
 
     # 5. Summary statistics
     protocol_counts = {}
-    for n in nodes:
+    for n in clean_nodes:
         ptype = n.get("type", "other")
         protocol_counts[ptype] = protocol_counts.get(ptype, 0) + 1
 
     summary = {
         "stage": stage_title,
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "total_nodes": len(nodes),
+        "total_nodes": len(clean_nodes),
         "protocol_breakdown": protocol_counts
     }
     if extra_data:
