@@ -66,6 +66,11 @@ def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     except Exception:
         return None
 
+    # Disinfect all string fields in node (remove binary control characters 0x00-0x1F)
+    for k, v in list(node.items()):
+        if isinstance(v, str):
+            node[k] = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", "", v).strip()
+
     ntype = str(node.get("type", "")).lower().strip()
     if ntype == "ss":
         cipher = str(node.get("cipher", "")).lower().strip()

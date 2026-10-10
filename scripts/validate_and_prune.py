@@ -18,12 +18,21 @@ VALID_SS_CIPHERS = {
     "2022-blake3-aes-128-gcm", "2022-blake3-aes-256-gcm", "2022-blake3-chacha20-poly1305"
 }
 
+# 匹配并清洗非打印控制字符 (\x00-\x08, \x0b-\x0c, \x0e-\x1f)
+INVALID_CTRL_CHARS_RE = re.compile(r'[\x00-\x08\x0b\x0c\x0e-\x1f]')
+
+
+def sanitize_yaml_text(text: str) -> str:
+    """清理字符串中的非法 ASCII 二进制控制字符，防止 PyYAML 解析崩溃"""
+    return INVALID_CTRL_CHARS_RE.sub('', text)
+
 
 def auto_repair_clash_structure(file_path: Path) -> dict | None:
-    """自动修复骨架缺失、脏节点、VMess加密字段缺失及 MRS 格式，确保 100% 符合 Mihomo 规范"""
+    """自动修复骨架缺失、脏节点、二进制控制字符、VMess加密字段缺失及 MRS 格式，确保 100% 符合 Mihomo 规范"""
     try:
-        content = file_path.read_text(encoding="utf-8", errors="ignore")
-        data = yaml.safe_load(content)
+        raw_text = file_path.read_text(encoding="utf-8", errors="ignore")
+        clean_text = sanitize_yaml_text(raw_text)
+        data = yaml.safe_load(clean_text)
         if not isinstance(data, dict):
             return None
 
@@ -50,6 +59,15 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
             if not server:
                 continue
 
+            # 过滤含有损坏二进制控制字符的字段
+            is_corrupt = False
+            for k, v in p.items():
+                if isinstance(v, str) and INVALID_CTRL_CHARS_RE.search(v):
+                    is_corrupt = True
+                    break
+            if is_corrupt:
+                continue
+
             # VMess 缺加密算法修复
             if ptype == "vmess":
                 if not p.get("cipher") or str(p.get("cipher")).strip() == "":
@@ -74,7 +92,7 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
         data["proxies"] = valid_proxies
         valid_names = seen_names
 
-        # 3. 修复 rule-providers 里的 format: mrs (兼容普通 Mihomo 二进制)
+        # 3. 保持与 Mihomo 标准全兼容
         rule_providers = data.get("rule-providers", {})
         if isinstance(rule_providers, dict):
             for rp_name, rp_val in rule_providers.items():
@@ -139,8 +157,9 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
 def prune_failing_proxies(file_path: Path, err_msg: str) -> bool:
     """动态解析 Mihomo 报错日志并精确剔除损坏节点或代理组"""
     try:
-        content = file_path.read_text(encoding="utf-8", errors="ignore")
-        data = yaml.safe_load(content) or {}
+        raw_text = file_path.read_text(encoding="utf-8", errors="ignore")
+        clean_text = sanitize_yaml_text(raw_text)
+        data = yaml.safe_load(clean_text) or {}
         proxies = data.get("proxies", [])
         if not proxies:
             return False
