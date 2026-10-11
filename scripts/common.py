@@ -31,33 +31,37 @@ VALID_SS_CIPHERS = {
     "none"
 }
 
+HEX_ESCAPE_RE = re.compile(r'\\x[0-9a-fA-F]{2}')
+
 
 def clean_control_chars(val: Any) -> Any:
-    """100% 物理绝对清理 ASCII 0-31 所有非打印二进制控制字符 (如 \\x1E, \\x10, \\x00)"""
+    """100% 物理绝对物理清理 ASCII 0-31 控制字符及字面量 \\x.. 转义序列"""
     if not isinstance(val, str):
         return val
-    # ord(c) >= 32 绝对过滤 ASCII < 32 及 127 各种脏控制字符
-    return ''.join(c for c in val if ord(c) >= 32 and ord(c) != 127).strip()
+    # 1. 移除字面量 \x1E, \x00 等 16 进制转义符文本
+    val = HEX_ESCAPE_RE.sub('', val)
+    # 2. ord(c) >= 32 过滤 ASCII < 32 及 127
+    return ''.join(c for c in val if 32 <= ord(c) <= 126 or ord(c) > 127).strip()
 
 
 def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     """
     Sanitize and disinfect node data ("去毒"与安全净化):
-    1. Strip HTML tags, non-printable control chars from ALL string fields (password, uuid, server, name, auth).
-    2. Filter out invalid, empty, or internal/bogon server addresses (127.0.0.1, 10.x, 192.168.x, 0.0.0.0, etc.).
-    3. Validate port numbers (1-65535).
-    4. Strict validation on credentials and Shadowsocks ciphers to prevent Mihomo initialization errors.
+    1. Strip HTML tags, non-printable control chars, and literal \\x.. hex escapes from ALL fields.
+    2. Strictly validate UUIDs (VMess/VLESS) to reject corrupted nodes containing backslashes or corrupt hex bytes.
+    3. Filter out invalid, empty, or internal/bogon server addresses (127.0.0.1, 10.x, 192.168.x, 0.0.0.0, etc.).
+    4. Validate port numbers (1-65535) and SS ciphers.
     """
     if not isinstance(node, dict):
         return None
 
-    # 清理所有 string 字段中的二进制/不可打印控制字符 (\x00-\x1F)
+    # 清理所有 string 字段中的二进制/控制字符与 \x.. 转义序列
     for k, v in list(node.items()):
         if isinstance(v, str):
             node[k] = clean_control_chars(v)
 
     server = str(node.get("server", "")).strip().rstrip(".")
-    if not server or server.lower() in ["localhost", "0.0.0.0", "127.0.0.1"]:
+    if not server or server.lower() in ["localhost", "0.0.0.0", "127.0.0.1"] or "\\" in server:
         return None
 
     # Internal BOGON IP check
@@ -80,10 +84,11 @@ def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         return None
 
     ntype = str(node.get("type", "")).lower().strip()
+
     if ntype == "ss":
         cipher = str(node.get("cipher", "")).lower().strip()
         pwd = str(node.get("password", "")).strip()
-        if not pwd or not cipher or cipher not in VALID_SS_CIPHERS:
+        if not pwd or not cipher or cipher not in VALID_SS_CIPHERS or "\\" in pwd:
             return None
         if not re.match(r"^[a-z0-9_-]+$", cipher):
             return None
@@ -91,20 +96,21 @@ def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         node["password"] = pwd
     elif ntype in ["vmess", "vless"]:
         uuid = str(node.get("uuid", "")).strip()
-        if not uuid:
+        # 严格 UUID 格式校验：拒绝包含反斜杠、损坏乱码或长度异常的凭据
+        if not uuid or "\\" in uuid or len(uuid) < 8 or any(ord(c) > 126 for c in uuid):
             return None
         node["uuid"] = uuid
-        # VLESS / VMess 不允许残留无用的垃圾 password 字典字段
+        # 彻底移除绝不属于 VLESS / VMess 的残留 password 字段
         if "password" in node:
             del node["password"]
     elif ntype == "trojan":
         pwd = str(node.get("password", "")).strip()
-        if not pwd:
+        if not pwd or "\\" in pwd:
             return None
         node["password"] = pwd
     elif ntype in ["hysteria2", "hy2"]:
         auth = str(node.get("auth") or node.get("password", "")).strip()
-        if not auth:
+        if not auth or "\\" in auth:
             return None
         node["auth"] = auth
         node["password"] = auth
@@ -160,7 +166,7 @@ def parse_vmess(link: str) -> Optional[Dict[str, Any]]:
         name = str(vdict.get("ps", "VMess")).strip()
         tls_val = str(vdict.get("tls", "")).lower().strip()
 
-        if not server or not port or not uuid:
+        if not server or not port or not uuid or "\\" in uuid:
             return None
 
         return {
@@ -197,6 +203,9 @@ def parse_vless(link: str) -> Optional[Dict[str, Any]]:
 
         params = urllib.parse.parse_qs(parsed.query)
         remark = urllib.parse.unquote(parsed.fragment) or "VLess"
+
+        if "\\" in uuid or len(uuid) < 8:
+            return None
 
         return {
             "type": "vless",
@@ -245,7 +254,7 @@ def parse_ss(link: str) -> Optional[Dict[str, Any]]:
 
         cipher = cipher.strip().lower()
         password = password.strip()
-        if not password or not cipher or cipher not in VALID_SS_CIPHERS:
+        if not password or not cipher or cipher not in VALID_SS_CIPHERS or "\\" in password:
             return None
 
         return {
@@ -278,6 +287,9 @@ def parse_trojan(link: str) -> Optional[Dict[str, Any]]:
         params = urllib.parse.parse_qs(parsed.query)
         remark = urllib.parse.unquote(parsed.fragment) or "Trojan"
 
+        if "\\" in password:
+            return None
+
         return {
             "type": "trojan",
             "name": remark.strip(),
@@ -309,6 +321,9 @@ def parse_hysteria2(link: str) -> Optional[Dict[str, Any]]:
 
         params = urllib.parse.parse_qs(parsed.query)
         remark = urllib.parse.unquote(parsed.fragment) or "Hysteria2"
+
+        if "\\" in auth:
+            return None
 
         return {
             "type": "hysteria2",
