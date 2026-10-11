@@ -31,15 +31,13 @@ VALID_SS_CIPHERS = {
     "none"
 }
 
-# 匹配并清洗不可打印的 ASCII 控制字符 (\x00-\x08, \x0b-\x0c, \x0e-\x1f)
-INVALID_CTRL_CHARS_RE = re.compile(r'[\x00-\x08\x0b\x0c\x0e-\x1f]')
-
 
 def clean_control_chars(val: Any) -> Any:
-    """清理字符串中的非法 ASCII 控制字符，防止 PyYAML / Mihomo 崩溃"""
-    if isinstance(val, str):
-        return INVALID_CTRL_CHARS_RE.sub('', val).strip()
-    return val
+    """100% 物理绝对清理 ASCII 0-31 所有非打印二进制控制字符 (如 \\x1E, \\x10, \\x00)"""
+    if not isinstance(val, str):
+        return val
+    # ord(c) >= 32 绝对过滤 ASCII < 32 及 127 各种脏控制字符
+    return ''.join(c for c in val if ord(c) >= 32 and ord(c) != 127).strip()
 
 
 def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
@@ -96,6 +94,9 @@ def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         if not uuid:
             return None
         node["uuid"] = uuid
+        # VLESS / VMess 不允许残留无用的垃圾 password 字典字段
+        if "password" in node:
+            del node["password"]
     elif ntype == "trojan":
         pwd = str(node.get("password", "")).strip()
         if not pwd:
@@ -111,7 +112,7 @@ def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     # Sanitize node name / remark (remove HTML tags and control chars)
     raw_name = str(node.get("name", "Node")).strip()
     clean_name = re.sub(r"<[^>]+>", "", raw_name)  # Remove HTML tags
-    clean_name = re.sub(r"[\r\n\t\x00-\x1f]", " ", clean_name).strip()  # Remove control chars
+    clean_name = clean_control_chars(clean_name)
     node["name"] = clean_name or "Node"
     node["server"] = server
 

@@ -18,13 +18,12 @@ VALID_SS_CIPHERS = {
     "2022-blake3-aes-128-gcm", "2022-blake3-aes-256-gcm", "2022-blake3-chacha20-poly1305"
 }
 
-# 匹配并清洗非打印控制字符 (\x00-\x08, \x0b-\x0c, \x0e-\x1f)
-INVALID_CTRL_CHARS_RE = re.compile(r'[\x00-\x08\x0b\x0c\x0e-\x1f]')
-
 
 def sanitize_yaml_text(text: str) -> str:
-    """清理字符串中的非法 ASCII 二进制控制字符，防止 PyYAML 解析崩溃"""
-    return INVALID_CTRL_CHARS_RE.sub('', text)
+    """物理绝对清理字符串中的非法 ASCII 二进制控制字符 (ASCII < 32，保留 \\n, \\r, \\t)，防止 PyYAML 解析崩溃"""
+    if not text:
+        return ""
+    return ''.join(c for c in text if (ord(c) >= 32 or c in '\n\r\t') and ord(c) != 127)
 
 
 def auto_repair_clash_structure(file_path: Path) -> dict | None:
@@ -61,10 +60,12 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
 
             # 过滤含有损坏二进制控制字符的字段
             is_corrupt = False
-            for k, v in p.items():
-                if isinstance(v, str) and INVALID_CTRL_CHARS_RE.search(v):
-                    is_corrupt = True
-                    break
+            for k, v in list(p.items()):
+                if isinstance(v, str):
+                    clean_v = sanitize_yaml_text(v)
+                    p[k] = clean_v
+                    if any(ord(c) < 32 and c not in '\n\r\t' for c in v):
+                        is_corrupt = True
             if is_corrupt:
                 continue
 
