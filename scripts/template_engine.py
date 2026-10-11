@@ -9,7 +9,7 @@ from typing import Any, Dict, List, Set
 
 import yaml
 
-from common import ROOT_DIR, extract_node_links_from_text
+from common import ROOT_DIR, extract_node_links_from_text, sanitize_node
 
 FULL_TEMPLATE_FILE = ROOT_DIR / "config" / "rules_template.yaml"
 ELITE_TEMPLATE_FILE = ROOT_DIR / "config" / "rules_elite_template.yaml"
@@ -111,51 +111,8 @@ def build_rules_only_clash_config(template_path: Path) -> str:
 
 
 def build_clash_proxy_dict(node: Dict[str, Any]) -> Dict[str, Any] | None:
-    """Convert node dictionary to Clash proxy definition with strict SS cipher & credential validation."""
-    ptype = str(node.get("type", "ss")).lower().strip()
-    server = str(node.get("server", "")).strip()
-    port = node.get("port")
-    name = str(node.get("name", "")).strip()
-
-    if not server or not port or not name:
-        return None
-
-    proxy = {
-        "name": name,
-        "type": ptype,
-        "server": server,
-        "port": port
-    }
-    if ptype == "vmess":
-        uuid = str(node.get("uuid", "")).strip()
-        if not uuid:
-            return None
-        proxy.update({"uuid": uuid, "alterId": node.get("alterId", 0), "cipher": node.get("cipher", "auto"), "tls": bool(node.get("tls")), "network": node.get("network", "tcp")})
-    elif ptype == "vless":
-        uuid = str(node.get("uuid", "")).strip()
-        if not uuid:
-            return None
-        proxy.update({"uuid": uuid, "cipher": "auto", "tls": bool(node.get("tls")), "servername": node.get("sni", "")})
-    elif ptype == "ss":
-        cipher = str(node.get("cipher", "aes-256-gcm")).lower().strip()
-        pwd = str(node.get("password", "")).strip()
-        if not pwd or cipher not in VALID_SS_CIPHERS:
-            return None
-        proxy.update({"cipher": cipher, "password": pwd})
-    elif ptype == "trojan":
-        pwd = str(node.get("password", "")).strip()
-        if not pwd:
-            return None
-        proxy.update({"password": pwd, "sni": node.get("sni", "")})
-    elif ptype in ["hysteria2", "hy2"]:
-        auth = str(node.get("auth") or node.get("password", "")).strip()
-        if not auth:
-            return None
-        proxy.update({"auth": auth, "sni": node.get("sni", "")})
-    else:
-        return None
-
-    return proxy
+    """Delegate to common.sanitize_node for 100% strict constructive whitelisting and disinfection."""
+    return sanitize_node(node)
 
 
 def build_merged_clash_config(template_path: Path, crawled_nodes: List[Dict[str, Any]], include_private: bool = True) -> str:
