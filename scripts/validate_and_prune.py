@@ -20,10 +20,19 @@ VALID_SS_CIPHERS = {
 
 
 def sanitize_yaml_text(text: str) -> str:
-    """物理绝对清理字符串中的非法 ASCII 二进制控制字符 (ASCII < 32，保留 \\n, \\r, \\t)，防止 PyYAML 解析崩溃"""
+    """物理绝对清理字符串中的非法 ASCII 二进制控制字符及字面量 \\x.. 文本序列，确保 100% 可被 PyYAML 解析"""
     if not text:
         return ""
-    return ''.join(c for c in text if (ord(c) >= 32 or c in '\n\r\t') and ord(c) != 127)
+    cleaned_lines = []
+    for line in text.splitlines():
+        if '\\x' in line or '\x1e' in line:
+            line = re.sub(r'password:\s*".*?"', 'password: ""', line)
+            line = re.sub(r'uuid:\s*".*?"', 'uuid: ""', line)
+            line = re.sub(r'\\x[0-9a-fA-F]{2}', '', line)
+        cleaned_lines.append(line)
+
+    s = '\n'.join(cleaned_lines)
+    return ''.join(c for c in s if (ord(c) >= 32 or c in '\n\r\t') and ord(c) != 127)
 
 
 def auto_repair_clash_structure(file_path: Path) -> dict | None:
@@ -31,7 +40,13 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
     try:
         raw_text = file_path.read_text(encoding="utf-8", errors="ignore")
         clean_text = sanitize_yaml_text(raw_text)
-        data = yaml.safe_load(clean_text)
+        try:
+            data = yaml.safe_load(clean_text)
+        except Exception:
+            # 容错兜底：若包含极个别坏节点，二次剔除坏行
+            good_lines = [l for l in clean_text.splitlines() if '\\x' not in l and '\x1e' not in l]
+            data = yaml.safe_load('\n'.join(good_lines))
+
         if not isinstance(data, dict):
             return None
 
@@ -45,7 +60,7 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
         if "rules" not in data or not isinstance(data["rules"], list):
             data["rules"] = ["MATCH,DIRECT"]
 
-        # 2. 清洗坏节点 & 修复 VMess cipher & 保证节点名称 100% 唯一 (解决 duplicate name)
+        # 2. 清洗坏节点 & 修复 VMess cipher 与 alterId & 保证节点名称 100% 唯一 (解决 duplicate name)
         valid_proxies = []
         seen_names = set()
 
@@ -69,10 +84,17 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
             if is_corrupt:
                 continue
 
-            # VMess 缺加密算法修复
+            # VMess 必填 key 'alterId' 补齐与 cipher 修复
             if ptype == "vmess":
+                p["alterId"] = int(p.get("alterId", 0))
                 if not p.get("cipher") or str(p.get("cipher")).strip() == "":
                     p["cipher"] = "auto"
+                # 移除 VLESS / VMess 不属于该协议的冗余字段
+                if "password" in p:
+                    del p["password"]
+            elif ptype == "vless":
+                if "password" in p:
+                    del p["password"]
 
             # SS 非法加密算法剔除
             if ptype == "ss" and str(p.get("cipher", "")).lower() not in VALID_SS_CIPHERS:
@@ -131,7 +153,6 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
                 continue
             parts = [seg.strip() for seg in r.split(",")]
             if len(parts) >= 2:
-                # 准确获取策略组/节点目标 (处理带 no-resolve 的 4 段规则)
                 target = parts[-2] if parts[-1] == "no-resolve" and len(parts) >= 3 else parts[-1]
                 if target not in all_available_targets:
                     if parts[-1] == "no-resolve" and len(parts) >= 3:
@@ -160,7 +181,12 @@ def prune_failing_proxies(file_path: Path, err_msg: str) -> bool:
     try:
         raw_text = file_path.read_text(encoding="utf-8", errors="ignore")
         clean_text = sanitize_yaml_text(raw_text)
-        data = yaml.safe_load(clean_text) or {}
+        try:
+            data = yaml.safe_load(clean_text) or {}
+        except Exception:
+            good_lines = [l for l in clean_text.splitlines() if '\\x' not in l and '\x1e' not in l]
+            data = yaml.safe_load('\n'.join(good_lines)) or {}
+
         proxies = data.get("proxies", [])
         if not proxies:
             return False

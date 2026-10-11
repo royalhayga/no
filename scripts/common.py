@@ -99,12 +99,34 @@ def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
             "cipher": cipher,
             "password": pwd
         }
-    elif ntype in ["vmess", "vless"]:
+    elif ntype == "vmess":
         uuid = strict_clean_str(node.get("uuid"))
         if not uuid or "\\" in uuid or len(uuid) < 8 or any(ord(c) > 126 for c in uuid):
             return None
         clean_node = {
-            "type": ntype,
+            "type": "vmess",
+            "name": name,
+            "server": server,
+            "port": port,
+            "uuid": uuid,
+            "alterId": int(node.get("alterId", 0)),
+            "cipher": strict_clean_str(node.get("cipher")) or "auto",
+            "tls": bool(node.get("tls")),
+            "network": strict_clean_str(node.get("network")) or "tcp"
+        }
+        if node.get("sni"):
+            clean_node["sni"] = strict_clean_str(node.get("sni"))
+        if node.get("host"):
+            clean_node["host"] = strict_clean_str(node.get("host"))
+        if node.get("path"):
+            clean_node["path"] = strict_clean_str(node.get("path"))
+        return clean_node
+    elif ntype == "vless":
+        uuid = strict_clean_str(node.get("uuid"))
+        if not uuid or "\\" in uuid or len(uuid) < 8 or any(ord(c) > 126 for c in uuid):
+            return None
+        clean_node = {
+            "type": "vless",
             "name": name,
             "server": server,
             "port": port,
