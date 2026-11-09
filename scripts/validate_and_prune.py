@@ -1,9 +1,12 @@
+from __future__ import annotations
+
 import os
 import re
 import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+from typing import Any
 import yaml
 
 OUTPUT_DIR = Path("output")
