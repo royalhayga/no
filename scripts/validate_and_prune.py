@@ -1,9 +1,8 @@
-from __future__ import annotations
-
 import os
 import re
 import subprocess
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 import yaml
 
@@ -306,6 +305,12 @@ def test_mihomo_offline(file_path: Path) -> bool:
     return False
 
 
+def process_single_yaml(file_path: Path) -> bool:
+    """对单份 YAML 文件并行执行结构校验修复与 Mihomo 内核断言"""
+    auto_repair_clash_structure(file_path)
+    return test_mihomo_offline(file_path)
+
+
 def main() -> int:
     print("=== Starting Pure-Offline Mihomo Kernel Syntax Assertion & Auto-Repair ===", flush=True)
     yaml_files = list(OUTPUT_DIR.rglob("*.yaml")) + list(OUTPUT_DIR.rglob("*.yml"))
@@ -313,20 +318,27 @@ def main() -> int:
         print("No YAML files found.")
         return 0
 
-    has_error = False
-    for yf in yaml_files:
-        # 第一阶段：自动修复缺失字段、空 group、VMess cipher 与 MRS 格式
-        auto_repair_clash_structure(yf)
+    max_workers = min(16, (os.cpu_count() or 4) * 4)
+    print(f"Executing parallel offline syntax validation on {len(yaml_files)} YAML files with {max_workers} workers...", flush=True)
 
-        # 第二阶段：内核离线复检 (带动态剔除)
-        if not test_mihomo_offline(yf):
-            has_error = True
+    has_error = False
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {executor.submit(process_single_yaml, yf): yf for yf in yaml_files}
+        for future in as_completed(futures):
+            yf = futures[future]
+            try:
+                ok = future.result()
+                if not ok:
+                    has_error = True
+            except Exception as e:
+                print(f"[ERROR] Exception validating {yf.name}: {e}", file=sys.stderr)
+                has_error = True
 
     if has_error:
         print("Mihomo verification failed after repair.", file=sys.stderr)
         return 1
 
-    print("=== All configuration files successfully verified! ===", flush=True)
+    print("=== All configuration files successfully verified in parallel! ===", flush=True)
     return 0
 
 
