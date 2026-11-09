@@ -2,25 +2,18 @@ mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
-proxies:
-- name: 🌐 NG-01
-  type: ss
-  server: 185.255.123.232
-  port: 443
-  cipher: aes-256-gcm
-  password: "k\x1C}_|\x1Fw_4"
+proxies: []
 proxy-groups:
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 NG-01
+  - DIRECT
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - DIRECT
-  - 🌐 NG-01
 rules:
 - MATCH,PROXY

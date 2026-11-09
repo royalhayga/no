@@ -3,324 +3,82 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🌐 RS-01
-  type: vless
+- type: vless
+  name: 🇷🇸 塞尔维亚 01
   server: 85.121.124.65
   port: 8443
   uuid: f49d04d6-aaa7-4013-b323-bc35b78230db
   cipher: auto
   tls: true
-  servername: s4ws.ragingbull.de5.net
-- name: 🌐 RS-02
-  type: vless
+  network: tcp
+  sni: s4ws.ragingbull.de5.net
+- type: vless
+  name: 🇷🇸 塞尔维亚 02
   server: 188.255.156.202
   port: 443
   uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
   cipher: auto
   tls: true
-  servername: cf3.schzyc.cc.cd
-- name: 🌐 RS-03
-  type: vless
+  network: tcp
+  sni: cf3.schzyc.cc.cd
+- type: vless
+  name: 🇷🇸 塞尔维亚 03
   server: 188.255.156.218
   port: 443
   uuid: fdc48be3-a615-41ac-8bd1-ed844c931048
   cipher: auto
   tls: true
-  servername: edgetunnel-4uw.pages.dev
-- name: 🌐 RS-04
-  type: vless
+  network: tcp
+  sni: edgetunnel-4uw.pages.dev
+- type: vless
+  name: 🇷🇸 塞尔维亚 04
   server: 188.255.236.213
   port: 443
   uuid: 2a12bb81-f3a3-41bb-99ab-36febf676b4a
   cipher: auto
   tls: true
-  servername: cosmic-aurora.cdn.cachefleet.com
-- name: 🌐 RS-05
-  type: vless
+  network: tcp
+  sni: cosmic-aurora.cdn.cachefleet.com
+- type: vless
+  name: 🇷🇸 塞尔维亚 05
   server: 188.255.236.212
   port: 443
   uuid: 2a12bb81-f3a3-41bb-99ab-36febf676b4a
   cipher: auto
   tls: true
-  servername: cosmic-umbra.cdn.cachefleet.com
-- name: 🌐 RS-06
-  type: vless
+  network: tcp
+  sni: cosmic-umbra.cdn.cachefleet.com
+- type: vless
+  name: 🇷🇸 塞尔维亚 06
   server: 188.255.236.217
   port: 443
   uuid: 2a12bb81-f3a3-41bb-99ab-36febf676b4a
   cipher: auto
   tls: true
-  servername: cosmic-dolphin.cdn.cachefleet.com
-- name: 🌐 RS-07
-  type: ss
-  server: 85.121.124.65
-  port: 8443
-  cipher: aes-256-gcm
-  password: "\x7F]ӇziMwo}mo6G["
-- name: 🌐 RS-08
-  type: ss
-  server: 188.255.156.202
-  port: 443
-  cipher: aes-256-gcm
-  password: "Vik\x1C[V\x7F\x1Eսw\e"
-- name: 🌐 RS-09
-  type: ss
-  server: 188.255.156.218
-  port: 443
-  cipher: aes-256-gcm
-  password: '}8kyVuy8wN<'
-- name: 🌐 RS-10
-  type: ss
-  server: 188.255.236.213
-  port: 443
-  cipher: aes-256-gcm
-  password: "٭vm5\x7FvV֛ߧm\x1A"
-- name: 🌐 RS-11
-  type: ss
-  server: 188.255.236.212
-  port: 443
-  cipher: aes-256-gcm
-  password: "٭vm5\x7FvV֛ߧm\x1A"
-- name: 🌐 RS-12
-  type: ss
-  server: 188.255.236.217
-  port: 443
-  cipher: aes-256-gcm
-  password: "٭vm5\x7FvV֛ߧm\x1A"
-- name: 🌐 RS-13
-  type: ss
-  server: 85.121.124.65
-  port: 8443
-  cipher: aes-256-gcm
-  password: "\x7F]ӇziMwo}mo6G["
-- name: 🌐 RS-14
-  type: ss
-  server: 188.255.156.202
-  port: 443
-  cipher: aes-256-gcm
-  password: "Vik\x1C[V\x7F\x1Eսw\e"
-- name: 🌐 RS-15
-  type: ss
-  server: 188.255.156.218
-  port: 443
-  cipher: aes-256-gcm
-  password: '}8kyVuy8wN<'
-- name: 🌐 RS-16
-  type: ss
-  server: 188.255.236.213
-  port: 443
-  cipher: aes-256-gcm
-  password: "٭vm5\x7FvV֛ߧm\x1A"
-- name: 🌐 RS-17
-  type: ss
-  server: 188.255.236.212
-  port: 443
-  cipher: aes-256-gcm
-  password: "٭vm5\x7FvV֛ߧm\x1A"
-- name: 🌐 RS-18
-  type: ss
-  server: 188.255.236.217
-  port: 443
-  cipher: aes-256-gcm
-  password: "٭vm5\x7FvV֛ߧm\x1A"
-- name: 🌐 RS-19
-  type: ss
-  server: 85.121.124.65
-  port: 8443
-  cipher: aes-256-gcm
-  password: "\x7F]ӇziMwo}mo6G["
-- name: 🌐 RS-20
-  type: ss
-  server: 188.255.156.202
-  port: 443
-  cipher: aes-256-gcm
-  password: "Vik\x1C[V\x7F\x1Eսw\e"
-- name: 🌐 RS-21
-  type: ss
-  server: 188.255.156.218
-  port: 443
-  cipher: aes-256-gcm
-  password: '}8kyVuy8wN<'
-- name: 🌐 RS-22
-  type: ss
-  server: 188.255.236.213
-  port: 443
-  cipher: aes-256-gcm
-  password: "٭vm5\x7FvV֛ߧm\x1A"
-- name: 🌐 RS-23
-  type: ss
-  server: 188.255.236.212
-  port: 443
-  cipher: aes-256-gcm
-  password: "٭vm5\x7FvV֛ߧm\x1A"
-- name: 🌐 RS-24
-  type: ss
-  server: 188.255.236.217
-  port: 443
-  cipher: aes-256-gcm
-  password: "٭vm5\x7FvV֛ߧm\x1A"
-- name: 🌐 RS-25
-  type: ss
-  server: 85.121.124.65
-  port: 8443
-  cipher: aes-256-gcm
-  password: "\x7F]ӇziMwo}mo6G["
-- name: 🌐 RS-26
-  type: ss
-  server: 188.255.156.202
-  port: 443
-  cipher: aes-256-gcm
-  password: "Vik\x1C[V\x7F\x1Eսw\e"
-- name: 🌐 RS-27
-  type: ss
-  server: 188.255.156.218
-  port: 443
-  cipher: aes-256-gcm
-  password: '}8kyVuy8wN<'
-- name: 🌐 RS-28
-  type: ss
-  server: 188.255.236.213
-  port: 443
-  cipher: aes-256-gcm
-  password: "٭vm5\x7FvV֛ߧm\x1A"
-- name: 🌐 RS-29
-  type: ss
-  server: 188.255.236.212
-  port: 443
-  cipher: aes-256-gcm
-  password: "٭vm5\x7FvV֛ߧm\x1A"
-- name: 🌐 RS-30
-  type: ss
-  server: 188.255.236.217
-  port: 443
-  cipher: aes-256-gcm
-  password: "٭vm5\x7FvV֛ߧm\x1A"
-- name: 🌐 RS-31
-  type: ss
-  server: 85.121.124.65
-  port: 8443
-  cipher: aes-256-gcm
-  password: "\x7F]ӇziMwo}mo6G["
-- name: 🌐 RS-32
-  type: ss
-  server: 188.255.156.202
-  port: 443
-  cipher: aes-256-gcm
-  password: "Vik\x1C[V\x7F\x1Eսw\e"
-- name: 🌐 RS-33
-  type: ss
-  server: 188.255.156.218
-  port: 443
-  cipher: aes-256-gcm
-  password: '}8kyVuy8wN<'
-- name: 🌐 RS-34
-  type: ss
-  server: 188.255.236.213
-  port: 443
-  cipher: aes-256-gcm
-  password: "٭vm5\x7FvV֛ߧm\x1A"
-- name: 🌐 RS-35
-  type: ss
-  server: 188.255.236.212
-  port: 443
-  cipher: aes-256-gcm
-  password: "٭vm5\x7FvV֛ߧm\x1A"
-- name: 🌐 RS-36
-  type: ss
-  server: 188.255.236.217
-  port: 443
-  cipher: aes-256-gcm
-  password: "٭vm5\x7FvV֛ߧm\x1A"
-- name: 🌐 RS-37
-  type: ss
-  server: 188.255.236.214
-  port: 443
-  cipher: aes-256-gcm
-  password: "٭vm5\x7FvV֛ߧm\x1A"
+  network: tcp
+  sni: cosmic-dolphin.cdn.cachefleet.com
 proxy-groups:
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 RS-01
-  - 🌐 RS-02
-  - 🌐 RS-03
-  - 🌐 RS-04
-  - 🌐 RS-05
-  - 🌐 RS-06
-  - 🌐 RS-07
-  - 🌐 RS-08
-  - 🌐 RS-09
-  - 🌐 RS-10
-  - 🌐 RS-11
-  - 🌐 RS-12
-  - 🌐 RS-13
-  - 🌐 RS-14
-  - 🌐 RS-15
-  - 🌐 RS-16
-  - 🌐 RS-17
-  - 🌐 RS-18
-  - 🌐 RS-19
-  - 🌐 RS-20
-  - 🌐 RS-21
-  - 🌐 RS-22
-  - 🌐 RS-23
-  - 🌐 RS-24
-  - 🌐 RS-25
-  - 🌐 RS-26
-  - 🌐 RS-27
-  - 🌐 RS-28
-  - 🌐 RS-29
-  - 🌐 RS-30
-  - 🌐 RS-31
-  - 🌐 RS-32
-  - 🌐 RS-33
-  - 🌐 RS-34
-  - 🌐 RS-35
-  - 🌐 RS-36
-  - 🌐 RS-37
+  - 🇷🇸 塞尔维亚 01
+  - 🇷🇸 塞尔维亚 02
+  - 🇷🇸 塞尔维亚 03
+  - 🇷🇸 塞尔维亚 04
+  - 🇷🇸 塞尔维亚 05
+  - 🇷🇸 塞尔维亚 06
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - DIRECT
-  - 🌐 RS-01
-  - 🌐 RS-02
-  - 🌐 RS-03
-  - 🌐 RS-04
-  - 🌐 RS-05
-  - 🌐 RS-06
-  - 🌐 RS-07
-  - 🌐 RS-08
-  - 🌐 RS-09
-  - 🌐 RS-10
-  - 🌐 RS-11
-  - 🌐 RS-12
-  - 🌐 RS-13
-  - 🌐 RS-14
-  - 🌐 RS-15
-  - 🌐 RS-16
-  - 🌐 RS-17
-  - 🌐 RS-18
-  - 🌐 RS-19
-  - 🌐 RS-20
-  - 🌐 RS-21
-  - 🌐 RS-22
-  - 🌐 RS-23
-  - 🌐 RS-24
-  - 🌐 RS-25
-  - 🌐 RS-26
-  - 🌐 RS-27
-  - 🌐 RS-28
-  - 🌐 RS-29
-  - 🌐 RS-30
-  - 🌐 RS-31
-  - 🌐 RS-32
-  - 🌐 RS-33
-  - 🌐 RS-34
-  - 🌐 RS-35
-  - 🌐 RS-36
-  - 🌐 RS-37
+  - 🇷🇸 塞尔维亚 01
+  - 🇷🇸 塞尔维亚 02
+  - 🇷🇸 塞尔维亚 03
+  - 🇷🇸 塞尔维亚 04
+  - 🇷🇸 塞尔维亚 05
+  - 🇷🇸 塞尔维亚 06
 rules:
 - MATCH,PROXY

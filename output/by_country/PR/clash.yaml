@@ -3,8 +3,8 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🌐 PR-01
-  type: trojan
+- type: trojan
+  name: 🌐 PR节点 01
   server: 74.50.11.24
   port: 443
   password: 8r%3C%5B9%27l6hAO%238ZQi
@@ -15,12 +15,12 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 PR-01
+  - 🌐 PR节点 01
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - DIRECT
-  - 🌐 PR-01
+  - 🌐 PR节点 01
 rules:
 - MATCH,PROXY

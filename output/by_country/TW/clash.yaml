@@ -3,8 +3,245 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇹🇼 TW-01
-  type: vmess
+- type: vless
+  name: 🇹🇼 台湾 01
+  server: 60.248.219.53
+  port: 443
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: ty986gfazs.cainiaohub.xyz
+- type: vless
+  name: 🇹🇼 台湾 02
+  server: 59.125.69.23
+  port: 443
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+  cipher: auto
+  tls: false
+  network: tcp
+  sni: ty986gfazs.cainiaohub.xyz
+- type: vless
+  name: 🇹🇼 台湾 03
+  server: 59.125.69.24
+  port: 443
+  uuid: 06e177f7-240d-4687-bd85-235505801a5e
+  cipher: auto
+  tls: false
+  network: tcp
+  sni: ty986gfazs.cainiaohub.xyz
+- type: vless
+  name: 🇹🇼 台湾 04
+  server: 60.248.219.78
+  port: 443
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+  cipher: auto
+  tls: false
+  network: tcp
+  sni: ty986gfazs.cainiaohub.xyz
+- type: vless
+  name: 🇹🇼 台湾 05
+  server: 60.248.219.53
+  port: 443
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+  cipher: auto
+  tls: false
+  network: tcp
+  sni: ty986gfazs.cainiaohub.xyz
+- type: vless
+  name: 🇹🇼 台湾 06
+  server: 60.248.219.78
+  port: 443
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: ty986gfazs.cainiaohub.xyz
+- type: vless
+  name: 🇹🇼 台湾 07
+  server: 60.248.219.53
+  port: 443
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: ty986gfazs.cainiaohub.xyz
+- type: vless
+  name: 🇹🇼 台湾 08
+  server: 59.125.69.24
+  port: 443
+  uuid: 06e177f7-240d-4687-bd85-235505801a5e
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: ty986gfazs.cainiaohub.xyz
+- type: vless
+  name: 🇹🇼 台湾 09
+  server: 60.248.219.54
+  port: 443
+  uuid: 06e177f7-240d-4687-bd85-235505801a5e
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: ty986gfazs.cainiaohub.xyz
+- type: vless
+  name: 🇹🇼 台湾 10
+  server: 59.125.69.23
+  port: 443
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: ty986gfazs.cainiaohub.xyz
+- type: vless
+  name: 🇹🇼 台湾 11
+  server: 59.125.69.23
+  port: 443
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: ty986gfazs.cainiaohub.xyz
+- type: vless
+  name: 🇹🇼 台湾 12
+  server: 59.125.69.24
+  port: 443
+  uuid: 06e177f7-240d-4687-bd85-235505801a5e
+  cipher: auto
+  tls: false
+  network: tcp
+  sni: ty986gfazs.cainiaohub.xyz
+- type: vless
+  name: 🇹🇼 台湾 13
+  server: 60.249.21.29
+  port: 443
+  uuid: ce069292-c8bf-40dd-a6b1-87818a1e64e9
+  cipher: auto
+  tls: false
+  network: tcp
+  sni: gogo4.kmj.qzz.io
+- type: vless
+  name: 🇹🇼 台湾 14
+  server: 60.248.219.78
+  port: 443
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+  cipher: auto
+  tls: false
+  network: tcp
+  sni: ty986gfazs.cainiaohub.xyz
+- type: vless
+  name: 🇹🇼 台湾 15
+  server: 43.213.230.249
+  port: 443
+  uuid: ab61daa1-b7fb-486e-8946-b1da9a444685
+  cipher: auto
+  tls: false
+  network: tcp
+  sni: cf2us.3rr0r.online
+- type: vless
+  name: 🇹🇼 台湾 16
+  server: 60.248.219.53
+  port: 443
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+  cipher: auto
+  tls: false
+  network: tcp
+  sni: ty986gfazs.cainiaohub.xyz
+- type: vless
+  name: 🇹🇼 台湾 17
+  server: 211.75.210.34
+  port: 443
+  uuid: ef6c9625-62de-4b9d-b7e2-0d4a9f67a9b2
+  cipher: auto
+  tls: false
+  network: tcp
+  sni: sni.ehb.cc.cd
+- type: trojan
+  name: 🇹🇼 台湾 18
+  server: 60.250.152.229
+  port: 8443
+  password: 96983eb4-c8f1-316e-ab00-500014ed3d8b
+  sni: official.taipeicitygovernment.chernovtsy.ua
+- type: trojan
+  name: 🇹🇼 台湾 19
+  server: 125.227.86.45
+  port: 443
+  password: 0a9f1f5a397bd427
+  sni: TG.freecodes
+- type: trojan
+  name: 🇹🇼 台湾 20
+  server: 118.163.200.38
+  port: 443
+  password: 0cc6b4268dea0ba8
+  sni: TG.WangCai2
+- type: trojan
+  name: 🇹🇼 台湾 21
+  server: 60.249.35.37
+  port: 443
+  password: 3c4e10af98c30972
+  sni: TG.WangCai2
+- type: vless
+  name: 🇹🇼 台湾 22
+  server: undef.network
+  port: 2052
+  uuid: e3fb01b6-69b4-41d7-babf-696d992de194
+  cipher: auto
+  tls: false
+  network: tcp
+- type: vless
+  name: 🇹🇼 台湾 23
+  server: undef.network
+  port: 2052
+  uuid: aa5d861a-7799-41a7-bdf4-7a6414cf98fd
+  cipher: auto
+  tls: false
+  network: tcp
+- type: trojan
+  name: 🇹🇼 台湾 24
+  server: 60.250.152.229
+  port: 3462
+  password: 6e1b9a65-884f-3aa9-9469-bf6ec0f08610
+  sni: a03.taipeicitygovernment.cn.ua
+- type: trojan
+  name: 🇹🇼 台湾 25
+  server: 211.20.156.191
+  port: 28121
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+- type: trojan
+  name: 🇹🇼 台湾 26
+  server: 211.20.156.191
+  port: 28145
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+- type: trojan
+  name: 🇹🇼 台湾 27
+  server: 211.20.156.191
+  port: 28138
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+- type: trojan
+  name: 🇹🇼 台湾 28
+  server: 211.20.156.191
+  port: 28159
+  password: i99Cef
+  sni: download.windowsupdate.com
+- type: trojan
+  name: 🇹🇼 台湾 29
+  server: 211.20.156.191
+  port: 28163
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+- type: vless
+  name: 🇹🇼 台湾 30
+  server: nl-90w-c.southnetworks.cloud
+  port: 80
+  uuid: e08f1ad7-0c60-446d-baec-08b3b69bb3d0
+  cipher: auto
+  tls: false
+  network: tcp
+- type: vmess
+  name: 🇹🇼 台湾 31
   server: 165.154.195.38
   port: 35034
   uuid: 959a8caf-4cea-43d0-a548-3628e7ddfafc
@@ -12,8 +249,8 @@ proxies:
   cipher: auto
   tls: false
   network: tcp
-- name: 🇹🇼 TW-02
-  type: vmess
+- type: vmess
+  name: 🇹🇼 台湾 32
   server: 0218tw02.fans8.xyz
   port: 80
   uuid: 5c70da5d-e641-3bf8-b7dc-5babd843ff3c
@@ -21,1044 +258,82 @@ proxies:
   cipher: auto
   tls: false
   network: ws
-- name: 🇹🇼 TW-03
-  type: vless
-  server: 60.248.219.53
-  port: 443
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  cipher: auto
-  tls: true
-  servername: ty986gfazs.cainiaohub.xyz
-- name: 🇹🇼 TW-04
-  type: vless
-  server: 59.125.69.23
-  port: 443
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  cipher: auto
-  tls: false
-  servername: ty986gfazs.cainiaohub.xyz
-- name: 🇹🇼 TW-05
-  type: vless
-  server: 59.125.69.24
-  port: 443
-  uuid: 06e177f7-240d-4687-bd85-235505801a5e
-  cipher: auto
-  tls: false
-  servername: ty986gfazs.cainiaohub.xyz
-- name: 🇹🇼 TW-06
-  type: vless
-  server: 60.248.219.78
-  port: 443
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  cipher: auto
-  tls: false
-  servername: ty986gfazs.cainiaohub.xyz
-- name: 🇹🇼 TW-07
-  type: vless
-  server: 60.248.219.53
-  port: 443
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  cipher: auto
-  tls: false
-  servername: ty986gfazs.cainiaohub.xyz
-- name: 🇹🇼 TW-08
-  type: vless
-  server: 60.248.219.78
-  port: 443
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  cipher: auto
-  tls: true
-  servername: ty986gfazs.cainiaohub.xyz
-- name: 🇹🇼 TW-09
-  type: vless
-  server: undef.network
-  port: 2052
-  uuid: e3fb01b6-69b4-41d7-babf-696d992de194
-  cipher: auto
-  tls: false
-  servername: uwu.blueknightnet.qzz.io
-- name: 🇹🇼 TW-10
-  type: vless
-  server: undef.network
-  port: 2052
-  uuid: aa5d861a-7799-41a7-bdf4-7a6414cf98fd
-  cipher: auto
-  tls: false
-  servername: uwu.blueknightnet.qzz.io
-- name: 🇹🇼 TW-11
-  type: vless
-  server: 60.248.219.53
-  port: 443
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  cipher: auto
-  tls: true
-  servername: ty986gfazs.cainiaohub.xyz
-- name: 🇹🇼 TW-12
-  type: vless
-  server: 59.125.69.24
-  port: 443
-  uuid: 06e177f7-240d-4687-bd85-235505801a5e
-  cipher: auto
-  tls: true
-  servername: ty986gfazs.cainiaohub.xyz
-- name: 🇹🇼 TW-13
-  type: vless
-  server: 60.248.219.54
-  port: 443
-  uuid: 06e177f7-240d-4687-bd85-235505801a5e
-  cipher: auto
-  tls: true
-  servername: ty986gfazs.cainiaohub.xyz
-- name: 🇹🇼 TW-14
-  type: vless
-  server: 59.125.69.23
-  port: 443
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  cipher: auto
-  tls: true
-  servername: ty986gfazs.cainiaohub.xyz
-- name: 🇹🇼 TW-15
-  type: vless
-  server: nl-90w-c.southnetworks.cloud
-  port: 80
-  uuid: e08f1ad7-0c60-446d-baec-08b3b69bb3d0
-  cipher: auto
-  tls: false
-  servername: ''
-- name: 🇹🇼 TW-16
-  type: vless
-  server: 59.125.69.23
-  port: 443
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  cipher: auto
-  tls: true
-  servername: ty986gfazs.cainiaohub.xyz
-- name: 🇹🇼 TW-17
-  type: vless
-  server: 59.125.69.24
-  port: 443
-  uuid: 06e177f7-240d-4687-bd85-235505801a5e
-  cipher: auto
-  tls: false
-  servername: ty986gfazs.cainiaohub.xyz
-- name: 🇹🇼 TW-18
-  type: vless
-  server: 60.249.21.29
-  port: 443
-  uuid: ce069292-c8bf-40dd-a6b1-87818a1e64e9
-  cipher: auto
-  tls: false
-  servername: gogo4.kmj.qzz.io
-- name: 🇹🇼 TW-19
-  type: vless
-  server: 60.248.219.78
-  port: 443
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  cipher: auto
-  tls: false
-  servername: ty986gfazs.cainiaohub.xyz
-- name: 🇹🇼 TW-20
-  type: vless
-  server: 43.213.230.249
-  port: 443
-  uuid: ab61daa1-b7fb-486e-8946-b1da9a444685
-  cipher: auto
-  tls: false
-  servername: cf2us.3rr0r.online
-- name: 🇹🇼 TW-21
-  type: vless
-  server: 60.248.219.53
-  port: 443
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  cipher: auto
-  tls: false
-  servername: ty986gfazs.cainiaohub.xyz
-- name: 🇹🇼 TW-22
-  type: vless
-  server: 211.75.210.34
-  port: 443
-  uuid: ef6c9625-62de-4b9d-b7e2-0d4a9f67a9b2
-  cipher: auto
-  tls: false
-  servername: sni.ehb.cc.cd
-- name: 🇹🇼 TW-23
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-24
-  type: ss
-  server: 59.125.69.23
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-25
-  type: ss
-  server: 59.125.69.24
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-26
-  type: ss
-  server: 60.248.219.78
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-27
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-28
-  type: ss
-  server: 60.248.219.78
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-29
-  type: ss
-  server: undef.network
-  port: 2052
-  cipher: aes-256-gcm
-  password: '{wVW{mޝݝ{_x'
-- name: 🇹🇼 TW-30
-  type: ss
-  server: undef.network
-  port: 2052
-  cipher: aes-256-gcm
-  password: i]Z}Vmׇ
-- name: 🇹🇼 TW-31
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-32
-  type: ss
-  server: 59.125.69.24
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-33
-  type: ss
-  server: 60.248.219.54
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-34
-  type: ss
-  server: 59.125.69.23
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-35
-  type: ss
-  server: nl-90w-c.southnetworks.cloud
-  port: 80
-  cipher: aes-256-gcm
-  password: "{O\x1Fէ{δ㎝mo[owt"
-- name: 🇹🇼 TW-36
-  type: ss
-  server: 59.125.69.23
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-37
-  type: ss
-  server: 59.125.69.24
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-38
-  type: ss
-  server: 60.248.219.78
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-39
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-40
-  type: ss
-  server: 211.75.210.34
-  port: 443
-  cipher: aes-256-gcm
-  password: "yg^]o\x1Ak"
-- name: 🇹🇼 TW-41
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-42
-  type: ss
-  server: 59.125.69.23
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-43
-  type: ss
-  server: 59.125.69.24
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-44
-  type: ss
-  server: 60.248.219.78
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-45
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-46
-  type: ss
-  server: 60.248.219.78
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-47
-  type: ss
-  server: undef.network
-  port: 2052
-  cipher: aes-256-gcm
-  password: '{wVW{mޝݝ{_x'
-- name: 🇹🇼 TW-48
-  type: ss
-  server: undef.network
-  port: 2052
-  cipher: aes-256-gcm
-  password: i]Z}Vmׇ
-- name: 🇹🇼 TW-49
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-50
-  type: ss
-  server: 59.125.69.24
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-51
-  type: ss
-  server: 60.248.219.54
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-52
-  type: ss
-  server: 59.125.69.23
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-53
-  type: ss
-  server: nl-90w-c.southnetworks.cloud
-  port: 80
-  cipher: aes-256-gcm
-  password: "{O\x1Fէ{δ㎝mo[owt"
-- name: 🇹🇼 TW-54
-  type: ss
-  server: 59.125.69.23
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-55
-  type: ss
-  server: 59.125.69.24
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-56
-  type: ss
-  server: 60.248.219.78
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-57
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-58
-  type: ss
-  server: 211.75.210.34
-  port: 443
-  cipher: aes-256-gcm
-  password: "yg^]o\x1Ak"
-- name: 🇹🇼 TW-59
-  type: ss
-  server: icook.tw
-  port: 8880
-  cipher: aes-256-gcm
-  password: "[m\x1C\x1EzMq\x7FWߝ"
-- name: 🇹🇼 TW-60
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-61
-  type: ss
-  server: 59.125.69.23
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-62
-  type: ss
-  server: 59.125.69.24
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-63
-  type: ss
-  server: 60.248.219.78
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-64
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-65
-  type: ss
-  server: 60.248.219.78
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-66
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-67
-  type: ss
-  server: 59.125.69.24
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-68
-  type: ss
-  server: 60.248.219.54
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-69
-  type: ss
-  server: 59.125.69.23
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-70
-  type: ss
-  server: nl-90w-c.southnetworks.cloud
-  port: 80
-  cipher: aes-256-gcm
-  password: "{O\x1Fէ{δ㎝mo[owt"
-- name: 🇹🇼 TW-71
-  type: ss
-  server: 59.125.69.23
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-72
-  type: ss
-  server: 59.125.69.24
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-73
-  type: ss
-  server: 60.248.219.78
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-74
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-75
-  type: ss
-  server: 211.75.210.34
-  port: 443
-  cipher: aes-256-gcm
-  password: "yg^]o\x1Ak"
-- name: 🇹🇼 TW-76
-  type: ss
-  server: cdn3.sudonetwork.com
-  port: 2087
-  cipher: aes-256-gcm
-  password: "mwwN֚o\esxٽӝ"
-- name: 🇹🇼 TW-77
-  type: ss
-  server: cdn5.sudonetwork.com
-  port: 2096
-  cipher: aes-256-gcm
-  password: og9s~g4wf4
-- name: 🇹🇼 TW-78
-  type: ss
-  server: cdn11.sudonetwork.com
-  port: 2096
-  cipher: aes-256-gcm
-  password: og9s~g4wf4
-- name: 🇹🇼 TW-79
-  type: ss
-  server: cdn4.sudonetwork.com
-  port: 2096
-  cipher: aes-256-gcm
-  password: "\x7F{ƻqi9sxݮ�?
-- name: 🇹🇼 TW-80
-  type: ss
-  server: icook.tw
-  port: 8880
-  cipher: aes-256-gcm
-  password: "[m\x1C\x1EzMq\x7FWߝ"
-- name: 🇹🇼 TW-81
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-82
-  type: ss
-  server: 59.125.69.23
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-83
-  type: ss
-  server: 59.125.69.24
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-84
-  type: ss
-  server: 60.248.219.78
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-85
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-86
-  type: ss
-  server: 60.248.219.78
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-87
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-88
-  type: ss
-  server: 59.125.69.24
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-89
-  type: ss
-  server: 60.248.219.54
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-90
-  type: ss
-  server: 59.125.69.23
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-91
-  type: ss
-  server: nl-90w-c.southnetworks.cloud
-  port: 80
-  cipher: aes-256-gcm
-  password: "{O\x1Fէ{δ㎝mo[owt"
-- name: 🇹🇼 TW-92
-  type: ss
-  server: 59.125.69.23
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-93
-  type: ss
-  server: 59.125.69.24
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-94
-  type: ss
-  server: 60.248.219.78
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-95
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-96
-  type: ss
-  server: 211.75.210.34
-  port: 443
-  cipher: aes-256-gcm
-  password: "yg^]o\x1Ak"
-- name: 🇹🇼 TW-97
-  type: ss
-  server: cdn3.sudonetwork.com
-  port: 2087
-  cipher: aes-256-gcm
-  password: "mwwN֚o\esxٽӝ"
-- name: 🇹🇼 TW-98
-  type: ss
-  server: cdn5.sudonetwork.com
-  port: 2096
-  cipher: aes-256-gcm
-  password: og9s~g4wf4
-- name: 🇹🇼 TW-99
-  type: ss
-  server: cdn11.sudonetwork.com
-  port: 2096
-  cipher: aes-256-gcm
-  password: og9s~g4wf4
-- name: 🇹🇼 TW-100
-  type: ss
-  server: cdn4.sudonetwork.com
-  port: 2096
-  cipher: aes-256-gcm
-  password: "\x7F{ƻqi9sxݮ�?
-- name: 🇹🇼 TW-101
-  type: ss
-  server: icook.tw
-  port: 8880
-  cipher: aes-256-gcm
-  password: "[m\x1C\x1EzMq\x7FWߝ"
-- name: 🇹🇼 TW-102
-  type: ss
-  server: 60.248.219.53
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-103
-  type: ss
-  server: 59.125.69.23
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-104
-  type: ss
-  server: 59.125.69.24
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-105
-  type: ss
-  server: 60.248.219.78
-  port: 443
-  cipher: aes-256-gcm
-  password: "sW4tmN=i\x1Cw\x1D_"
-- name: 🇹🇼 TW-106
-  type: ss
-  server: 60.248.219.54
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӧۍ\x1D;m9~yӟ4ծ^"
-- name: 🇹🇼 TW-107
-  type: ss
-  server: 61.216.165.234
-  port: 2377
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-- name: 🇹🇼 TW-108
-  type: ss
-  server: nl-90w-c.southnetworks.cloud
-  port: 80
-  cipher: aes-256-gcm
-  password: "{O\x1Fէ{δ㎝mo[owt"
-- name: 🇹🇼 TW-109
-  type: ss
-  server: 211.75.210.34
-  port: 443
-  cipher: aes-256-gcm
-  password: "yg^]o\x1Ak"
-- name: 🇹🇼 TW-110
-  type: ss
-  server: cdn3.sudonetwork.com
-  port: 2087
-  cipher: aes-256-gcm
-  password: "mwwN֚o\esxٽӝ"
-- name: 🇹🇼 TW-111
-  type: ss
-  server: cdn5.sudonetwork.com
-  port: 2096
-  cipher: aes-256-gcm
-  password: og9s~g4wf4
-- name: 🇹🇼 TW-112
-  type: ss
-  server: cdn11.sudonetwork.com
-  port: 2096
-  cipher: aes-256-gcm
-  password: og9s~g4wf4
-- name: 🇹🇼 TW-113
-  type: ss
-  server: cdn4.sudonetwork.com
-  port: 2096
-  cipher: aes-256-gcm
-  password: "\x7F{ƻqi9sxݮ�?
-- name: 🇹🇼 TW-114
-  type: ss
-  server: 60.249.39.203
-  port: 2377
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-- name: 🇹🇼 TW-115
-  type: ss
-  server: 59.125.69.19
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7FWv[w\x1E\x1DtMwF"
-- name: 🇹🇼 TW-116
-  type: trojan
-  server: 60.250.152.229
-  port: 3462
-  password: 6e1b9a65-884f-3aa9-9469-bf6ec0f08610
-  sni: a03.taipeicitygovernment.cn.ua
-- name: 🇹🇼 TW-117
-  type: trojan
-  server: 211.20.156.191
-  port: 28121
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-- name: 🇹🇼 TW-118
-  type: trojan
-  server: 211.20.156.191
-  port: 28145
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-- name: 🇹🇼 TW-119
-  type: trojan
-  server: 211.20.156.191
-  port: 28138
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-- name: 🇹🇼 TW-120
-  type: trojan
-  server: 211.20.156.191
-  port: 28159
-  password: i99Cef
-  sni: download.windowsupdate.com
-- name: 🇹🇼 TW-121
-  type: trojan
-  server: 211.20.156.191
-  port: 28163
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-- name: 🇹🇼 TW-122
-  type: trojan
-  server: 60.250.152.229
-  port: 8443
-  password: 96983eb4-c8f1-316e-ab00-500014ed3d8b
-  sni: official.taipeicitygovernment.chernovtsy.ua
-- name: 🇹🇼 TW-123
-  type: trojan
-  server: 125.227.86.45
-  port: 443
-  password: 0a9f1f5a397bd427
-  sni: TG.freecodes
-- name: 🇹🇼 TW-124
-  type: trojan
-  server: 118.163.200.38
-  port: 443
-  password: 0cc6b4268dea0ba8
-  sni: TG.WangCai2
-- name: 🇹🇼 TW-125
-  type: trojan
-  server: 60.249.35.37
-  port: 443
-  password: 3c4e10af98c30972
-  sni: TG.WangCai2
+  host: 0218tw02.fans8.xyz
+  path: /v2ray
 proxy-groups:
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🇹🇼 TW-01
-  - 🇹🇼 TW-02
-  - 🇹🇼 TW-03
-  - 🇹🇼 TW-04
-  - 🇹🇼 TW-05
-  - 🇹🇼 TW-06
-  - 🇹🇼 TW-07
-  - 🇹🇼 TW-08
-  - 🇹🇼 TW-09
-  - 🇹🇼 TW-10
-  - 🇹🇼 TW-11
-  - 🇹🇼 TW-12
-  - 🇹🇼 TW-13
-  - 🇹🇼 TW-14
-  - 🇹🇼 TW-15
-  - 🇹🇼 TW-16
-  - 🇹🇼 TW-17
-  - 🇹🇼 TW-18
-  - 🇹🇼 TW-19
-  - 🇹🇼 TW-20
-  - 🇹🇼 TW-21
-  - 🇹🇼 TW-22
-  - 🇹🇼 TW-23
-  - 🇹🇼 TW-24
-  - 🇹🇼 TW-25
-  - 🇹🇼 TW-26
-  - 🇹🇼 TW-27
-  - 🇹🇼 TW-28
-  - 🇹🇼 TW-29
-  - 🇹🇼 TW-30
-  - 🇹🇼 TW-31
-  - 🇹🇼 TW-32
-  - 🇹🇼 TW-33
-  - 🇹🇼 TW-34
-  - 🇹🇼 TW-35
-  - 🇹🇼 TW-36
-  - 🇹🇼 TW-37
-  - 🇹🇼 TW-38
-  - 🇹🇼 TW-39
-  - 🇹🇼 TW-40
-  - 🇹🇼 TW-41
-  - 🇹🇼 TW-42
-  - 🇹🇼 TW-43
-  - 🇹🇼 TW-44
-  - 🇹🇼 TW-45
-  - 🇹🇼 TW-46
-  - 🇹🇼 TW-47
-  - 🇹🇼 TW-48
-  - 🇹🇼 TW-49
-  - 🇹🇼 TW-50
-  - 🇹🇼 TW-51
-  - 🇹🇼 TW-52
-  - 🇹🇼 TW-53
-  - 🇹🇼 TW-54
-  - 🇹🇼 TW-55
-  - 🇹🇼 TW-56
-  - 🇹🇼 TW-57
-  - 🇹🇼 TW-58
-  - 🇹🇼 TW-59
-  - 🇹🇼 TW-60
-  - 🇹🇼 TW-61
-  - 🇹🇼 TW-62
-  - 🇹🇼 TW-63
-  - 🇹🇼 TW-64
-  - 🇹🇼 TW-65
-  - 🇹🇼 TW-66
-  - 🇹🇼 TW-67
-  - 🇹🇼 TW-68
-  - 🇹🇼 TW-69
-  - 🇹🇼 TW-70
-  - 🇹🇼 TW-71
-  - 🇹🇼 TW-72
-  - 🇹🇼 TW-73
-  - 🇹🇼 TW-74
-  - 🇹🇼 TW-75
-  - 🇹🇼 TW-76
-  - 🇹🇼 TW-77
-  - 🇹🇼 TW-78
-  - 🇹🇼 TW-79
-  - 🇹🇼 TW-80
-  - 🇹🇼 TW-81
-  - 🇹🇼 TW-82
-  - 🇹🇼 TW-83
-  - 🇹🇼 TW-84
-  - 🇹🇼 TW-85
-  - 🇹🇼 TW-86
-  - 🇹🇼 TW-87
-  - 🇹🇼 TW-88
-  - 🇹🇼 TW-89
-  - 🇹🇼 TW-90
-  - 🇹🇼 TW-91
-  - 🇹🇼 TW-92
-  - 🇹🇼 TW-93
-  - 🇹🇼 TW-94
-  - 🇹🇼 TW-95
-  - 🇹🇼 TW-96
-  - 🇹🇼 TW-97
-  - 🇹🇼 TW-98
-  - 🇹🇼 TW-99
-  - 🇹🇼 TW-100
-  - 🇹🇼 TW-101
-  - 🇹🇼 TW-102
-  - 🇹🇼 TW-103
-  - 🇹🇼 TW-104
-  - 🇹🇼 TW-105
-  - 🇹🇼 TW-106
-  - 🇹🇼 TW-107
-  - 🇹🇼 TW-108
-  - 🇹🇼 TW-109
-  - 🇹🇼 TW-110
-  - 🇹🇼 TW-111
-  - 🇹🇼 TW-112
-  - 🇹🇼 TW-113
-  - 🇹🇼 TW-114
-  - 🇹🇼 TW-115
-  - 🇹🇼 TW-116
-  - 🇹🇼 TW-117
-  - 🇹🇼 TW-118
-  - 🇹🇼 TW-119
-  - 🇹🇼 TW-120
-  - 🇹🇼 TW-121
-  - 🇹🇼 TW-122
-  - 🇹🇼 TW-123
-  - 🇹🇼 TW-124
-  - 🇹🇼 TW-125
+  - 🇹🇼 台湾 01
+  - 🇹🇼 台湾 02
+  - 🇹🇼 台湾 03
+  - 🇹🇼 台湾 04
+  - 🇹🇼 台湾 05
+  - 🇹🇼 台湾 06
+  - 🇹🇼 台湾 07
+  - 🇹🇼 台湾 08
+  - 🇹🇼 台湾 09
+  - 🇹🇼 台湾 10
+  - 🇹🇼 台湾 11
+  - 🇹🇼 台湾 12
+  - 🇹🇼 台湾 13
+  - 🇹🇼 台湾 14
+  - 🇹🇼 台湾 15
+  - 🇹🇼 台湾 16
+  - 🇹🇼 台湾 17
+  - 🇹🇼 台湾 18
+  - 🇹🇼 台湾 19
+  - 🇹🇼 台湾 20
+  - 🇹🇼 台湾 21
+  - 🇹🇼 台湾 22
+  - 🇹🇼 台湾 23
+  - 🇹🇼 台湾 24
+  - 🇹🇼 台湾 25
+  - 🇹🇼 台湾 26
+  - 🇹🇼 台湾 27
+  - 🇹🇼 台湾 28
+  - 🇹🇼 台湾 29
+  - 🇹🇼 台湾 30
+  - 🇹🇼 台湾 31
+  - 🇹🇼 台湾 32
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - DIRECT
-  - 🇹🇼 TW-01
-  - 🇹🇼 TW-02
-  - 🇹🇼 TW-03
-  - 🇹🇼 TW-04
-  - 🇹🇼 TW-05
-  - 🇹🇼 TW-06
-  - 🇹🇼 TW-07
-  - 🇹🇼 TW-08
-  - 🇹🇼 TW-09
-  - 🇹🇼 TW-10
-  - 🇹🇼 TW-11
-  - 🇹🇼 TW-12
-  - 🇹🇼 TW-13
-  - 🇹🇼 TW-14
-  - 🇹🇼 TW-15
-  - 🇹🇼 TW-16
-  - 🇹🇼 TW-17
-  - 🇹🇼 TW-18
-  - 🇹🇼 TW-19
-  - 🇹🇼 TW-20
-  - 🇹🇼 TW-21
-  - 🇹🇼 TW-22
-  - 🇹🇼 TW-23
-  - 🇹🇼 TW-24
-  - 🇹🇼 TW-25
-  - 🇹🇼 TW-26
-  - 🇹🇼 TW-27
-  - 🇹🇼 TW-28
-  - 🇹🇼 TW-29
-  - 🇹🇼 TW-30
-  - 🇹🇼 TW-31
-  - 🇹🇼 TW-32
-  - 🇹🇼 TW-33
-  - 🇹🇼 TW-34
-  - 🇹🇼 TW-35
-  - 🇹🇼 TW-36
-  - 🇹🇼 TW-37
-  - 🇹🇼 TW-38
-  - 🇹🇼 TW-39
-  - 🇹🇼 TW-40
-  - 🇹🇼 TW-41
-  - 🇹🇼 TW-42
-  - 🇹🇼 TW-43
-  - 🇹🇼 TW-44
-  - 🇹🇼 TW-45
-  - 🇹🇼 TW-46
-  - 🇹🇼 TW-47
-  - 🇹🇼 TW-48
-  - 🇹🇼 TW-49
-  - 🇹🇼 TW-50
-  - 🇹🇼 TW-51
-  - 🇹🇼 TW-52
-  - 🇹🇼 TW-53
-  - 🇹🇼 TW-54
-  - 🇹🇼 TW-55
-  - 🇹🇼 TW-56
-  - 🇹🇼 TW-57
-  - 🇹🇼 TW-58
-  - 🇹🇼 TW-59
-  - 🇹🇼 TW-60
-  - 🇹🇼 TW-61
-  - 🇹🇼 TW-62
-  - 🇹🇼 TW-63
-  - 🇹🇼 TW-64
-  - 🇹🇼 TW-65
-  - 🇹🇼 TW-66
-  - 🇹🇼 TW-67
-  - 🇹🇼 TW-68
-  - 🇹🇼 TW-69
-  - 🇹🇼 TW-70
-  - 🇹🇼 TW-71
-  - 🇹🇼 TW-72
-  - 🇹🇼 TW-73
-  - 🇹🇼 TW-74
-  - 🇹🇼 TW-75
-  - 🇹🇼 TW-76
-  - 🇹🇼 TW-77
-  - 🇹🇼 TW-78
-  - 🇹🇼 TW-79
-  - 🇹🇼 TW-80
-  - 🇹🇼 TW-81
-  - 🇹🇼 TW-82
-  - 🇹🇼 TW-83
-  - 🇹🇼 TW-84
-  - 🇹🇼 TW-85
-  - 🇹🇼 TW-86
-  - 🇹🇼 TW-87
-  - 🇹🇼 TW-88
-  - 🇹🇼 TW-89
-  - 🇹🇼 TW-90
-  - 🇹🇼 TW-91
-  - 🇹🇼 TW-92
-  - 🇹🇼 TW-93
-  - 🇹🇼 TW-94
-  - 🇹🇼 TW-95
-  - 🇹🇼 TW-96
-  - 🇹🇼 TW-97
-  - 🇹🇼 TW-98
-  - 🇹🇼 TW-99
-  - 🇹🇼 TW-100
-  - 🇹🇼 TW-101
-  - 🇹🇼 TW-102
-  - 🇹🇼 TW-103
-  - 🇹🇼 TW-104
-  - 🇹🇼 TW-105
-  - 🇹🇼 TW-106
-  - 🇹🇼 TW-107
-  - 🇹🇼 TW-108
-  - 🇹🇼 TW-109
-  - 🇹🇼 TW-110
-  - 🇹🇼 TW-111
-  - 🇹🇼 TW-112
-  - 🇹🇼 TW-113
-  - 🇹🇼 TW-114
-  - 🇹🇼 TW-115
-  - 🇹🇼 TW-116
-  - 🇹🇼 TW-117
-  - 🇹🇼 TW-118
-  - 🇹🇼 TW-119
-  - 🇹🇼 TW-120
-  - 🇹🇼 TW-121
-  - 🇹🇼 TW-122
-  - 🇹🇼 TW-123
-  - 🇹🇼 TW-124
-  - 🇹🇼 TW-125
+  - 🇹🇼 台湾 01
+  - 🇹🇼 台湾 02
+  - 🇹🇼 台湾 03
+  - 🇹🇼 台湾 04
+  - 🇹🇼 台湾 05
+  - 🇹🇼 台湾 06
+  - 🇹🇼 台湾 07
+  - 🇹🇼 台湾 08
+  - 🇹🇼 台湾 09
+  - 🇹🇼 台湾 10
+  - 🇹🇼 台湾 11
+  - 🇹🇼 台湾 12
+  - 🇹🇼 台湾 13
+  - 🇹🇼 台湾 14
+  - 🇹🇼 台湾 15
+  - 🇹🇼 台湾 16
+  - 🇹🇼 台湾 17
+  - 🇹🇼 台湾 18
+  - 🇹🇼 台湾 19
+  - 🇹🇼 台湾 20
+  - 🇹🇼 台湾 21
+  - 🇹🇼 台湾 22
+  - 🇹🇼 台湾 23
+  - 🇹🇼 台湾 24
+  - 🇹🇼 台湾 25
+  - 🇹🇼 台湾 26
+  - 🇹🇼 台湾 27
+  - 🇹🇼 台湾 28
+  - 🇹🇼 台湾 29
+  - 🇹🇼 台湾 30
+  - 🇹🇼 台湾 31
+  - 🇹🇼 台湾 32
 rules:
 - MATCH,PROXY

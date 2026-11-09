@@ -3,684 +3,170 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🌐 NO-01
-  type: vless
-  server: 46.29.238.88
-  port: 40443
-  uuid: db320947-adfb-400d-b60b-383b8324bffe
-  cipher: auto
-  tls: true
-  servername: deepl.com
-- name: 🌐 NO-02
-  type: vless
-  server: 46.29.238.88
-  port: 40443
-  uuid: db320947-adfb-400d-b60b-383b8324bffe
-  cipher: auto
-  tls: true
-  servername: deepl.com
-- name: 🌐 NO-03
-  type: vless
+- type: vless
+  name: 🇳🇴 挪威 01
   server: 194.32.107.150
   port: 443
   uuid: 8344360f-0349-4784-a19f-33fd92e89389
   cipher: auto
   tls: true
-  servername: api.w2m.ink
-- name: 🌐 NO-04
-  type: vless
+  network: tcp
+  sni: api.w2m.ink
+- type: vless
+  name: 🇳🇴 挪威 02
   server: 185.90.61.55
   port: 443
   uuid: e75ad2eb-6c1f-45ce-8023-f5f10875df66
   cipher: auto
   tls: true
-  servername: ca9.eu-cdn294.com
-- name: 🌐 NO-05
-  type: vless
+  network: tcp
+  sni: ca9.eu-cdn294.com
+- type: vless
+  name: 🇳🇴 挪威 03
   server: 80.86.222.26
   port: 443
   uuid: 80277367-ce50-478e-80ea-615296dc4185
   cipher: auto
   tls: true
-  servername: nl-cedfa9c9.sishka.network
-- name: 🌐 NO-06
-  type: vless
+  network: tcp
+  sni: nl-cedfa9c9.sishka.network
+- type: vless
+  name: 🇳🇴 挪威 04
   server: 80.86.222.22
   port: 443
   uuid: 5f5677a6-f1fd-4911-b32a-cfbc506f0cf6
   cipher: auto
   tls: true
-  servername: nl-0150f85a.sishka.network
-- name: 🌐 NO-07
-  type: vless
+  network: tcp
+  sni: nl-0150f85a.sishka.network
+- type: vless
+  name: 🇳🇴 挪威 05
   server: 80.86.222.24
   port: 443
   uuid: 28e6c23b-c67e-49a0-a2dc-17375c3b09f2
   cipher: auto
   tls: true
-  servername: nl-ef69fb92.sishka.network
-- name: 🌐 NO-08
-  type: vless
+  network: tcp
+  sni: nl-ef69fb92.sishka.network
+- type: vless
+  name: 🇳🇴 挪威 06
   server: 80.86.222.25
   port: 443
   uuid: e0c43b23-5032-4a6b-ab43-02f4ffa64b9c
   cipher: auto
   tls: true
-  servername: nl-d3694b15.sishka.network
-- name: 🌐 NO-09
-  type: vless
+  network: tcp
+  sni: nl-d3694b15.sishka.network
+- type: vless
+  name: 🇳🇴 挪威 07
   server: 80.86.222.21
   port: 443
   uuid: 8e6104da-f178-49ea-b559-1fd69562baae
   cipher: auto
   tls: true
-  servername: nl-046255d2.sishka.network
-- name: 🌐 NO-10
-  type: vless
+  network: tcp
+  sni: nl-046255d2.sishka.network
+- type: vless
+  name: 🇳🇴 挪威 08
   server: 80.86.222.23
   port: 443
   uuid: 849252f5-b7d0-42e5-b346-0f56885e7869
   cipher: auto
   tls: true
-  servername: nl-05ad0c44.sishka.network
-- name: 🌐 NO-11
-  type: vless
+  network: tcp
+  sni: nl-05ad0c44.sishka.network
+- type: vless
+  name: 🇳🇴 挪威 09
   server: 80.86.222.27
   port: 443
   uuid: 80277367-ce50-478e-80ea-615296dc4185
   cipher: auto
   tls: true
-  servername: nl-3ffe7b81.sishka.network
-- name: 🌐 NO-12
-  type: vless
+  network: tcp
+  sni: nl-3ffe7b81.sishka.network
+- type: vless
+  name: 🇳🇴 挪威 10
   server: 91.190.155.173
   port: 2083
   uuid: 9e3132b8-b595-444a-833a-2de44789f9d7
   cipher: auto
   tls: false
-  servername: shephe.dpdns.org
-- name: 🌐 NO-13
-  type: vless
+  network: tcp
+  sni: shephe.dpdns.org
+- type: vless
+  name: 🇳🇴 挪威 11
   server: 194.68.32.99
   port: 443
   uuid: 9ce4c9e2-1dcc-abe8-9abf-9bf8bc1269f6
   cipher: auto
   tls: false
-  servername: 8.o.8.e.t.g.7.w.8.n.e.1.l.e.us.art-us.kdns.fr
-- name: 🌐 NO-14
-  type: vless
+  network: tcp
+  sni: 8.o.8.e.t.g.7.w.8.n.e.1.l.e.us.art-us.kdns.fr
+- type: vless
+  name: 🇳🇴 挪威 12
   server: 45.139.85.4
   port: 443
   uuid: e02d9f99-c279-42a6-ba6f-abf19403ce0b
   cipher: auto
   tls: true
-  servername: usa.silentgate.lol
-- name: 🌐 NO-15
-  type: ss
+  network: tcp
+  sni: usa.silentgate.lol
+- type: vless
+  name: 🇳🇴 挪威 13
   server: 46.29.238.88
   port: 40443
-  cipher: aes-256-gcm
-  password: "u;iM\x1Do\e}m"
-- name: 🌐 NO-16
-  type: ss
+  uuid: db320947-adfb-400d-b60b-383b8324bffe
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: deepl.com
+- type: vless
+  name: 🇳🇴 挪威 14
   server: 46.29.238.88
   port: 40443
-  cipher: aes-256-gcm
-  password: "u;iM\x1Do\e}m"
-- name: 🌐 NO-17
-  type: ss
-  server: 194.32.107.150
-  port: 443
-  cipher: aes-256-gcm
-  password: "~8߭\x1F~=8k__wg\x7F="
-- name: 🌐 NO-18
-  type: ss
-  server: 185.90.61.55
-  port: 443
-  cipher: aes-256-gcm
-  password: "{Zwg_\x1EM\x7Fu"
-- name: 🌐 NO-19
-  type: ss
-  server: 80.86.222.26
-  port: 443
-  cipher: aes-256-gcm
-  password: "M~qt\x1EG^v\\_9"
-- name: 🌐 NO-20
-  type: ss
-  server: 80.86.222.22
-  port: 443
-  cipher: aes-256-gcm
-  password: "zﶺ\x7FWuo}qN"
-- name: 🌐 NO-21
-  type: ss
-  server: 80.86.222.24
-  port: 443
-  cipher: aes-256-gcm
-  password: Ǻsmsִkg\׽
-- name: 🌐 NO-22
-  type: ss
-  server: 80.86.222.25
-  port: 443
-  cipher: aes-256-gcm
-  password: '{G8ݽMᮛi7g}\'
-- name: 🌐 NO-23
-  type: ss
-  server: 80.86.222.21
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӇZ\x7F^ךo}zm"
-- name: 🌐 NO-24
-  type: ss
-  server: 80.86.222.27
-  port: 443
-  cipher: aes-256-gcm
-  password: "M~qt\x1EG^v\\_9"
-- name: 🌐 NO-25
-  type: ss
-  server: 91.190.155.173
-  port: 2083
-  cipher: aes-256-gcm
-  password: "foy\x1A}׸=\x7F{"
-- name: 🌐 NO-26
-  type: ss
-  server: 194.68.32.99
-  port: 443
-  cipher: aes-256-gcm
-  password: "Ǹs׶\x1Cimv"
-- name: 🌐 NO-27
-  type: ss
-  server: 45.139.85.4
-  port: 443
-  cipher: aes-256-gcm
-  password: "{M}snfmi7q\e"
-- name: 🌐 NO-28
-  type: ss
-  server: 46.29.238.88
-  port: 40443
-  cipher: aes-256-gcm
-  password: "u;iM\x1Do\e}m"
-- name: 🌐 NO-29
-  type: ss
-  server: 46.29.238.88
-  port: 40443
-  cipher: aes-256-gcm
-  password: "u;iM\x1Do\e}m"
-- name: 🌐 NO-30
-  type: ss
-  server: 194.32.107.150
-  port: 443
-  cipher: aes-256-gcm
-  password: "~8߭\x1F~=8k__wg\x7F="
-- name: 🌐 NO-31
-  type: ss
-  server: 185.90.61.55
-  port: 443
-  cipher: aes-256-gcm
-  password: "{Zwg_\x1EM\x7Fu"
-- name: 🌐 NO-32
-  type: ss
-  server: 80.86.222.26
-  port: 443
-  cipher: aes-256-gcm
-  password: "M~qt\x1EG^v\\_9"
-- name: 🌐 NO-33
-  type: ss
-  server: 80.86.222.22
-  port: 443
-  cipher: aes-256-gcm
-  password: "zﶺ\x7FWuo}qN"
-- name: 🌐 NO-34
-  type: ss
-  server: 80.86.222.24
-  port: 443
-  cipher: aes-256-gcm
-  password: Ǻsmsִkg\׽
-- name: 🌐 NO-35
-  type: ss
-  server: 80.86.222.25
-  port: 443
-  cipher: aes-256-gcm
-  password: '{G8ݽMᮛi7g}\'
-- name: 🌐 NO-36
-  type: ss
-  server: 80.86.222.21
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӇZ\x7F^ךo}zm"
-- name: 🌐 NO-37
-  type: ss
-  server: 80.86.222.27
-  port: 443
-  cipher: aes-256-gcm
-  password: "M~qt\x1EG^v\\_9"
-- name: 🌐 NO-38
-  type: ss
-  server: 91.190.155.173
-  port: 2083
-  cipher: aes-256-gcm
-  password: "foy\x1A}׸=\x7F{"
-- name: 🌐 NO-39
-  type: ss
-  server: 194.68.32.99
-  port: 443
-  cipher: aes-256-gcm
-  password: "Ǹs׶\x1Cimv"
-- name: 🌐 NO-40
-  type: ss
-  server: 45.139.85.4
-  port: 443
-  cipher: aes-256-gcm
-  password: "{M}snfmi7q\e"
-- name: 🌐 NO-41
-  type: ss
-  server: 46.29.238.88
-  port: 40443
-  cipher: aes-256-gcm
-  password: "u;iM\x1Do\e}m"
-- name: 🌐 NO-42
-  type: ss
-  server: 46.29.238.88
-  port: 40443
-  cipher: aes-256-gcm
-  password: "u;iM\x1Do\e}m"
-- name: 🌐 NO-43
-  type: ss
-  server: 194.32.107.150
-  port: 443
-  cipher: aes-256-gcm
-  password: "~8߭\x1F~=8k__wg\x7F="
-- name: 🌐 NO-44
-  type: ss
-  server: 185.90.61.55
-  port: 443
-  cipher: aes-256-gcm
-  password: "{Zwg_\x1EM\x7Fu"
-- name: 🌐 NO-45
-  type: ss
-  server: 80.86.222.26
-  port: 443
-  cipher: aes-256-gcm
-  password: "M~qt\x1EG^v\\_9"
-- name: 🌐 NO-46
-  type: ss
-  server: 80.86.222.22
-  port: 443
-  cipher: aes-256-gcm
-  password: "zﶺ\x7FWuo}qN"
-- name: 🌐 NO-47
-  type: ss
-  server: 80.86.222.24
-  port: 443
-  cipher: aes-256-gcm
-  password: Ǻsmsִkg\׽
-- name: 🌐 NO-48
-  type: ss
-  server: 80.86.222.25
-  port: 443
-  cipher: aes-256-gcm
-  password: '{G8ݽMᮛi7g}\'
-- name: 🌐 NO-49
-  type: ss
-  server: 80.86.222.21
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӇZ\x7F^ךo}zm"
-- name: 🌐 NO-50
-  type: ss
-  server: 80.86.222.27
-  port: 443
-  cipher: aes-256-gcm
-  password: "M~qt\x1EG^v\\_9"
-- name: 🌐 NO-51
-  type: ss
-  server: 91.190.155.173
-  port: 2083
-  cipher: aes-256-gcm
-  password: "foy\x1A}׸=\x7F{"
-- name: 🌐 NO-52
-  type: ss
-  server: 194.68.32.99
-  port: 443
-  cipher: aes-256-gcm
-  password: "Ǹs׶\x1Cimv"
-- name: 🌐 NO-53
-  type: ss
-  server: 45.139.85.4
-  port: 443
-  cipher: aes-256-gcm
-  password: "{M}snfmi7q\e"
-- name: 🌐 NO-54
-  type: ss
-  server: 46.29.238.88
-  port: 40443
-  cipher: aes-256-gcm
-  password: "u;iM\x1Do\e}m"
-- name: 🌐 NO-55
-  type: ss
-  server: 46.29.238.88
-  port: 40443
-  cipher: aes-256-gcm
-  password: "u;iM\x1Do\e}m"
-- name: 🌐 NO-56
-  type: ss
-  server: 194.32.107.150
-  port: 443
-  cipher: aes-256-gcm
-  password: "~8߭\x1F~=8k__wg\x7F="
-- name: 🌐 NO-57
-  type: ss
-  server: 185.90.61.55
-  port: 443
-  cipher: aes-256-gcm
-  password: "{Zwg_\x1EM\x7Fu"
-- name: 🌐 NO-58
-  type: ss
-  server: 80.86.222.26
-  port: 443
-  cipher: aes-256-gcm
-  password: "M~qt\x1EG^v\\_9"
-- name: 🌐 NO-59
-  type: ss
-  server: 80.86.222.22
-  port: 443
-  cipher: aes-256-gcm
-  password: "zﶺ\x7FWuo}qN"
-- name: 🌐 NO-60
-  type: ss
-  server: 80.86.222.24
-  port: 443
-  cipher: aes-256-gcm
-  password: Ǻsmsִkg\׽
-- name: 🌐 NO-61
-  type: ss
-  server: 80.86.222.25
-  port: 443
-  cipher: aes-256-gcm
-  password: '{G8ݽMᮛi7g}\'
-- name: 🌐 NO-62
-  type: ss
-  server: 80.86.222.21
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӇZ\x7F^ךo}zm"
-- name: 🌐 NO-63
-  type: ss
-  server: 80.86.222.27
-  port: 443
-  cipher: aes-256-gcm
-  password: "M~qt\x1EG^v\\_9"
-- name: 🌐 NO-64
-  type: ss
-  server: 91.190.155.173
-  port: 2083
-  cipher: aes-256-gcm
-  password: "foy\x1A}׸=\x7F{"
-- name: 🌐 NO-65
-  type: ss
-  server: 194.68.32.99
-  port: 443
-  cipher: aes-256-gcm
-  password: "Ǹs׶\x1Cimv"
-- name: 🌐 NO-66
-  type: ss
-  server: 45.139.85.4
-  port: 443
-  cipher: aes-256-gcm
-  password: "{M}snfmi7q\e"
-- name: 🌐 NO-67
-  type: ss
-  server: 46.29.238.88
-  port: 40443
-  cipher: aes-256-gcm
-  password: "u;iM\x1Do\e}m"
-- name: 🌐 NO-68
-  type: ss
-  server: 185.213.23.63
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-- name: 🌐 NO-69
-  type: ss
-  server: 194.32.107.150
-  port: 443
-  cipher: aes-256-gcm
-  password: "~8߭\x1F~=8k__wg\x7F="
-- name: 🌐 NO-70
-  type: ss
-  server: 185.90.61.55
-  port: 443
-  cipher: aes-256-gcm
-  password: "{Zwg_\x1EM\x7Fu"
-- name: 🌐 NO-71
-  type: ss
-  server: 80.86.222.26
-  port: 443
-  cipher: aes-256-gcm
-  password: "M~qt\x1EG^v\\_9"
-- name: 🌐 NO-72
-  type: ss
-  server: 80.86.222.22
-  port: 443
-  cipher: aes-256-gcm
-  password: "zﶺ\x7FWuo}qN"
-- name: 🌐 NO-73
-  type: ss
-  server: 80.86.222.24
-  port: 443
-  cipher: aes-256-gcm
-  password: Ǻsmsִkg\׽
-- name: 🌐 NO-74
-  type: ss
-  server: 80.86.222.25
-  port: 443
-  cipher: aes-256-gcm
-  password: '{G8ݽMᮛi7g}\'
-- name: 🌐 NO-75
-  type: ss
-  server: 80.86.222.21
-  port: 443
-  cipher: aes-256-gcm
-  password: "ӇZ\x7F^ךo}zm"
-- name: 🌐 NO-76
-  type: ss
-  server: 80.86.222.27
-  port: 443
-  cipher: aes-256-gcm
-  password: "M~qt\x1EG^v\\_9"
-- name: 🌐 NO-77
-  type: ss
-  server: 91.190.155.173
-  port: 2083
-  cipher: aes-256-gcm
-  password: "foy\x1A}׸=\x7F{"
-- name: 🌐 NO-78
-  type: ss
-  server: 194.68.32.99
-  port: 443
-  cipher: aes-256-gcm
-  password: "Ǹs׶\x1Cimv"
-- name: 🌐 NO-79
-  type: ss
-  server: 45.139.85.4
-  port: 443
-  cipher: aes-256-gcm
-  password: "{M}snfmi7q\e"
-- name: 🌐 NO-80
-  type: ss
-  server: 193.200.229.240
-  port: 443
-  cipher: aes-256-gcm
-  password: "箟ۍ|\x1Ai{oZuG8"
+  uuid: db320947-adfb-400d-b60b-383b8324bffe
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: deepl.com
 proxy-groups:
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 NO-01
-  - 🌐 NO-02
-  - 🌐 NO-03
-  - 🌐 NO-04
-  - 🌐 NO-05
-  - 🌐 NO-06
-  - 🌐 NO-07
-  - 🌐 NO-08
-  - 🌐 NO-09
-  - 🌐 NO-10
-  - 🌐 NO-11
-  - 🌐 NO-12
-  - 🌐 NO-13
-  - 🌐 NO-14
-  - 🌐 NO-15
-  - 🌐 NO-16
-  - 🌐 NO-17
-  - 🌐 NO-18
-  - 🌐 NO-19
-  - 🌐 NO-20
-  - 🌐 NO-21
-  - 🌐 NO-22
-  - 🌐 NO-23
-  - 🌐 NO-24
-  - 🌐 NO-25
-  - 🌐 NO-26
-  - 🌐 NO-27
-  - 🌐 NO-28
-  - 🌐 NO-29
-  - 🌐 NO-30
-  - 🌐 NO-31
-  - 🌐 NO-32
-  - 🌐 NO-33
-  - 🌐 NO-34
-  - 🌐 NO-35
-  - 🌐 NO-36
-  - 🌐 NO-37
-  - 🌐 NO-38
-  - 🌐 NO-39
-  - 🌐 NO-40
-  - 🌐 NO-41
-  - 🌐 NO-42
-  - 🌐 NO-43
-  - 🌐 NO-44
-  - 🌐 NO-45
-  - 🌐 NO-46
-  - 🌐 NO-47
-  - 🌐 NO-48
-  - 🌐 NO-49
-  - 🌐 NO-50
-  - 🌐 NO-51
-  - 🌐 NO-52
-  - 🌐 NO-53
-  - 🌐 NO-54
-  - 🌐 NO-55
-  - 🌐 NO-56
-  - 🌐 NO-57
-  - 🌐 NO-58
-  - 🌐 NO-59
-  - 🌐 NO-60
-  - 🌐 NO-61
-  - 🌐 NO-62
-  - 🌐 NO-63
-  - 🌐 NO-64
-  - 🌐 NO-65
-  - 🌐 NO-66
-  - 🌐 NO-67
-  - 🌐 NO-68
-  - 🌐 NO-69
-  - 🌐 NO-70
-  - 🌐 NO-71
-  - 🌐 NO-72
-  - 🌐 NO-73
-  - 🌐 NO-74
-  - 🌐 NO-75
-  - 🌐 NO-76
-  - 🌐 NO-77
-  - 🌐 NO-78
-  - 🌐 NO-79
-  - 🌐 NO-80
+  - 🇳🇴 挪威 01
+  - 🇳🇴 挪威 02
+  - 🇳🇴 挪威 03
+  - 🇳🇴 挪威 04
+  - 🇳🇴 挪威 05
+  - 🇳🇴 挪威 06
+  - 🇳🇴 挪威 07
+  - 🇳🇴 挪威 08
+  - 🇳🇴 挪威 09
+  - 🇳🇴 挪威 10
+  - 🇳🇴 挪威 11
+  - 🇳🇴 挪威 12
+  - 🇳🇴 挪威 13
+  - 🇳🇴 挪威 14
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - DIRECT
-  - 🌐 NO-01
-  - 🌐 NO-02
-  - 🌐 NO-03
-  - 🌐 NO-04
-  - 🌐 NO-05
-  - 🌐 NO-06
-  - 🌐 NO-07
-  - 🌐 NO-08
-  - 🌐 NO-09
-  - 🌐 NO-10
-  - 🌐 NO-11
-  - 🌐 NO-12
-  - 🌐 NO-13
-  - 🌐 NO-14
-  - 🌐 NO-15
-  - 🌐 NO-16
-  - 🌐 NO-17
-  - 🌐 NO-18
-  - 🌐 NO-19
-  - 🌐 NO-20
-  - 🌐 NO-21
-  - 🌐 NO-22
-  - 🌐 NO-23
-  - 🌐 NO-24
-  - 🌐 NO-25
-  - 🌐 NO-26
-  - 🌐 NO-27
-  - 🌐 NO-28
-  - 🌐 NO-29
-  - 🌐 NO-30
-  - 🌐 NO-31
-  - 🌐 NO-32
-  - 🌐 NO-33
-  - 🌐 NO-34
-  - 🌐 NO-35
-  - 🌐 NO-36
-  - 🌐 NO-37
-  - 🌐 NO-38
-  - 🌐 NO-39
-  - 🌐 NO-40
-  - 🌐 NO-41
-  - 🌐 NO-42
-  - 🌐 NO-43
-  - 🌐 NO-44
-  - 🌐 NO-45
-  - 🌐 NO-46
-  - 🌐 NO-47
-  - 🌐 NO-48
-  - 🌐 NO-49
-  - 🌐 NO-50
-  - 🌐 NO-51
-  - 🌐 NO-52
-  - 🌐 NO-53
-  - 🌐 NO-54
-  - 🌐 NO-55
-  - 🌐 NO-56
-  - 🌐 NO-57
-  - 🌐 NO-58
-  - 🌐 NO-59
-  - 🌐 NO-60
-  - 🌐 NO-61
-  - 🌐 NO-62
-  - 🌐 NO-63
-  - 🌐 NO-64
-  - 🌐 NO-65
-  - 🌐 NO-66
-  - 🌐 NO-67
-  - 🌐 NO-68
-  - 🌐 NO-69
-  - 🌐 NO-70
-  - 🌐 NO-71
-  - 🌐 NO-72
-  - 🌐 NO-73
-  - 🌐 NO-74
-  - 🌐 NO-75
-  - 🌐 NO-76
-  - 🌐 NO-77
-  - 🌐 NO-78
-  - 🌐 NO-79
-  - 🌐 NO-80
+  - 🇳🇴 挪威 01
+  - 🇳🇴 挪威 02
+  - 🇳🇴 挪威 03
+  - 🇳🇴 挪威 04
+  - 🇳🇴 挪威 05
+  - 🇳🇴 挪威 06
+  - 🇳🇴 挪威 07
+  - 🇳🇴 挪威 08
+  - 🇳🇴 挪威 09
+  - 🇳🇴 挪威 10
+  - 🇳🇴 挪威 11
+  - 🇳🇴 挪威 12
+  - 🇳🇴 挪威 13
+  - 🇳🇴 挪威 14
 rules:
 - MATCH,PROXY

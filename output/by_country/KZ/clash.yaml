@@ -3,1143 +3,178 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🌐 KZ-01
-  type: vmess
-  server: 38.107.234.57
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-- name: 🌐 KZ-02
-  type: vmess
-  server: 38.107.234.57
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-- name: 🌐 KZ-03
-  type: vmess
-  server: 38.107.234.57
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-- name: 🌐 KZ-04
-  type: vless
-  server: 31.43.179.0
-  port: 80
-  uuid: fcd5a9bf-b5e2-44f2-8bc2-77ef222c7187
-  cipher: auto
-  tls: false
-  servername: worker3.dawejoy4544.workers.dev
-- name: 🌐 KZ-05
-  type: vless
-  server: 45.132.176.190
-  port: 9892
-  uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-  cipher: auto
-  tls: true
-  servername: dl.google.com
-- name: 🌐 KZ-06
-  type: vless
-  server: 45.132.176.225
-  port: 9881
-  uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-  cipher: auto
-  tls: true
-  servername: dl.google.com
-- name: 🌐 KZ-07
-  type: vless
-  server: 45.132.176.190
-  port: 9892
-  uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-  cipher: auto
-  tls: false
-  servername: dl.google.com
-- name: 🌐 KZ-08
-  type: vless
-  server: 45.132.176.225
-  port: 9881
-  uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-  cipher: auto
-  tls: false
-  servername: dl.google.com
-- name: 🌐 KZ-09
-  type: vless
+- type: vless
+  name: 🇰🇿 哈萨克斯坦 01
   server: 31.130.155.114
   port: 443
   uuid: 6ed6162d-fc15-447c-b04c-5d6975d2231d
   cipher: auto
   tls: true
-  servername: api.max.ru
-- name: 🌐 KZ-10
-  type: vless
-  server: 109.248.170.119
-  port: 13447
-  uuid: b573cefb-7bc7-4a42-b407-b8b534e66773
-  cipher: auto
-  tls: true
-  servername: yahoo.com
-- name: 🌐 KZ-11
-  type: vless
-  server: 83.222.23.81
-  port: 38065
-  uuid: 4b9063e0-3288-44e9-9aac-80fbfce323a0
-  cipher: auto
-  tls: true
-  servername: yahoo.com
-- name: 🌐 KZ-12
-  type: vless
-  server: 194.76.18.232
-  port: 2082
-  uuid: 19be7308-1f67-4f47-a09a-48543a741f12
-  cipher: auto
-  tls: false
-  servername: Join-bede-CONFIGT.wordperessweb.ir
-- name: 🌐 KZ-13
-  type: vless
+  network: tcp
+  sni: api.max.ru
+- type: vless
+  name: 🇰🇿 哈萨克斯坦 02
   server: 194.76.18.25
   port: 443
   uuid: e65a5cbc-5663-4f7d-ad7d-800e86ba487d
   cipher: auto
   tls: true
-  servername: rAyAn-cOnFiG-fr-1.pArSa.dPdNs.oRg
-- name: 🌐 KZ-14
-  type: vless
-  server: 89.218.15.90
-  port: 10002
-  uuid: 392fcc7e-b995-11f1-a6b7-1b2272a86bd5
-  cipher: auto
-  tls: true
-  servername: kz1.vpnjantit.com
-- name: 🌐 KZ-15
-  type: vless
-  server: 194.76.18.253
-  port: 2082
-  uuid: 19be7308-1f67-4f47-a09a-48543a741f12
-  cipher: auto
-  tls: false
-  servername: ''
-- name: 🌐 KZ-16
-  type: vless
-  server: 194.76.18.195
-  port: 8080
-  uuid: f1f45d17-9b80-4b41-bc74-aa9fba5dc19b
-  cipher: auto
-  tls: false
-  servername: ''
-- name: 🌐 KZ-17
-  type: vless
-  server: 194.76.18.46
-  port: 2052
-  uuid: ae564d93-0a3f-40b6-9137-4b73da4432c5
-  cipher: auto
-  tls: false
-  servername: ''
-- name: 🌐 KZ-18
-  type: vless
+  network: tcp
+  sni: rAyAn-cOnFiG-fr-1.pArSa.dPdNs.oRg
+- type: vless
+  name: 🇰🇿 哈萨克斯坦 03
   server: 194.76.18.126
   port: 2087
   uuid: probabblynot-ch
   cipher: auto
   tls: true
-  servername: probabblynot.fazelextremeisreal.com
-- name: 🌐 KZ-19
-  type: vless
+  network: tcp
+  sni: probabblynot.fazelextremeisreal.com
+- type: vless
+  name: 🇰🇿 哈萨克斯坦 04
   server: 194.76.18.215
   port: 443
   uuid: aff276ee-b25b-454c-b37f-39cf46062a0f
   cipher: auto
   tls: false
-  servername: neda.lebaptm.online
-- name: 🌐 KZ-20
-  type: vless
-  server: 93.183.87.85
-  port: 24446
-  uuid: 88281d02-b387-4fe3-918e-26ed331e6d08
-  cipher: auto
-  tls: true
-  servername: willow.cdn.cachefleet.com
-- name: 🌐 KZ-21
-  type: vless
-  server: 194.58.42.166
-  port: 8081
-  uuid: 57f03653-3af9-4f11-895b-23672338b0ac
-  cipher: auto
-  tls: true
-  servername: ''
-- name: 🌐 KZ-22
-  type: vless
-  server: 45.136.57.28
-  port: 43000
-  uuid: dd1fa083-8b36-41f6-ae09-e7fe33a3be4e
-  cipher: auto
-  tls: true
-  servername: ''
-- name: 🌐 KZ-23
-  type: vless
+  network: tcp
+  sni: neda.lebaptm.online
+- type: vless
+  name: 🇰🇿 哈萨克斯坦 05
   server: 89.218.250.163
   port: 443
   uuid: 0d8db259-aab6-4e66-8813-fad0b50f3f7a
   cipher: auto
   tls: true
-  servername: kodorm.com
-- name: 🌐 KZ-24
-  type: vless
+  network: tcp
+  sni: kodorm.com
+- type: vless
+  name: 🇰🇿 哈萨克斯坦 06
   server: 176.123.182.162
   port: 443
   uuid: edde565e-41f5-00af-84ea-7b87a3e84488
   cipher: auto
   tls: true
-  servername: auto.quattro-tech.ru
-- name: 🌐 KZ-25
-  type: vless
+  network: tcp
+  sni: auto.quattro-tech.ru
+- type: vless
+  name: 🇰🇿 哈萨克斯坦 07
   server: 84.240.206.178
   port: 443
   uuid: a5a311a8-6b0b-4ddc-b354-79acb4e19d67
   cipher: auto
   tls: true
-  servername: ok.ru
-- name: 🌐 KZ-26
-  type: vless
+  network: tcp
+  sni: ok.ru
+- type: vless
+  name: 🇰🇿 哈萨克斯坦 08
   server: 38.180.38.137
   port: 443
   uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
   cipher: auto
   tls: false
-  servername: vlso5.1d.mom
-- name: 🌐 KZ-27
-  type: ss
-  server: 31.43.179.0
-  port: 80
-  cipher: aes-256-gcm
-  password: '}yko6﷟m_;'
-- name: 🌐 KZ-28
-  type: ss
+  network: tcp
+  sni: vlso5.1d.mom
+- type: vless
+  name: 🇰🇿 哈萨克斯坦 09
   server: 45.132.176.190
   port: 9892
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-29
-  type: ss
+  uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: dl.google.com
+- type: vless
+  name: 🇰🇿 哈萨克斯坦 10
   server: 45.132.176.225
   port: 9881
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-30
-  type: ss
+  uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: dl.google.com
+- type: vless
+  name: 🇰🇿 哈萨克斯坦 11
   server: 45.132.176.190
   port: 9892
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-31
-  type: ss
+  uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+  cipher: auto
+  tls: false
+  network: tcp
+  sni: dl.google.com
+- type: vless
+  name: 🇰🇿 哈萨克斯坦 12
   server: 45.132.176.225
   port: 9881
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-32
-  type: ss
-  server: 31.130.155.114
-  port: 443
-  cipher: aes-256-gcm
-  password: "z׭}yoN\x1C޽v}]"
-- name: 🌐 KZ-33
-  type: ss
-  server: 109.248.170.119
-  port: 13447
-  cipher: aes-256-gcm
-  password: oq;6o;o߇
-- name: 🌐 KZ-34
-  type: ss
-  server: 83.222.23.81
-  port: 38065
-  cipher: aes-256-gcm
-  password: two<ㇽG}Ƿv
-- name: 🌐 KZ-35
-  type: ss
+  uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+  cipher: auto
+  tls: false
+  network: tcp
+  sni: dl.google.com
+- type: vless
+  name: 🇰🇿 哈萨克斯坦 13
   server: 194.76.18.232
   port: 2082
-  cipher: aes-256-gcm
-  password: '}<;kOZxݮv'
-- name: 🌐 KZ-36
-  type: ss
-  server: 194.76.18.25
-  port: 443
-  cipher: aes-256-gcm
-  password: '{Z箷iM'
-- name: 🌐 KZ-37
-  type: ss
-  server: 89.218.15.90
-  port: 10002
-  cipher: aes-256-gcm
-  password: ݟqoyWkսfy
-- name: 🌐 KZ-38
-  type: ss
+  uuid: 19be7308-1f67-4f47-a09a-48543a741f12
+  cipher: auto
+  tls: false
+  network: tcp
+- type: vless
+  name: 🇰🇿 哈萨克斯坦 14
   server: 194.76.18.253
   port: 2082
-  cipher: aes-256-gcm
-  password: '}<;kOZxݮv'
-- name: 🌐 KZ-39
-  type: ss
-  server: 194.76.18.195
-  port: 8080
-  cipher: aes-256-gcm
-  password: "\x7FW{45mi_m]s_["
-- name: 🌐 KZ-40
-  type: ss
+  uuid: 19be7308-1f67-4f47-a09a-48543a741f12
+  cipher: auto
+  tls: false
+  network: tcp
+- type: vless
+  name: 🇰🇿 哈萨克斯坦 15
   server: 194.76.18.46
   port: 2052
-  cipher: aes-256-gcm
-  password: izwѭF]u8g9
-- name: 🌐 KZ-41
-  type: ss
-  server: 194.76.18.126
-  port: 2087
-  cipher: aes-256-gcm
-  password: "\eiz-"
-- name: 🌐 KZ-42
-  type: ss
-  server: 93.183.87.85
-  port: 24446
-  cipher: aes-256-gcm
-  password: "ͼ6o\x7F;_\x1Eۧ}^<"
-- name: 🌐 KZ-43
-  type: ss
-  server: 194.58.42.166
-  port: 8081
-  cipher: aes-256-gcm
-  password: ߮wݧu[~}oF
-- name: 🌐 KZ-44
-  type: ss
-  server: 45.136.57.28
-  port: 43000
-  cipher: aes-256-gcm
-  password: u_kO7Wi={vm
-- name: 🌐 KZ-45
-  type: ss
-  server: 89.218.250.163
-  port: 443
-  cipher: aes-256-gcm
-  password: on}iw}to
-- name: 🌐 KZ-46
-  type: ss
-  server: 176.123.182.162
-  port: 443
-  cipher: aes-256-gcm
-  password: y^^WF;kw<
-- name: 🌐 KZ-47
-  type: ss
-  server: 84.240.206.178
-  port: 443
-  cipher: aes-256-gcm
-  password: "kV\e\\o~x֜o޻"
-- name: 🌐 KZ-48
-  type: ss
-  server: 31.43.179.0
-  port: 80
-  cipher: aes-256-gcm
-  password: '}yko6﷟m_;'
-- name: 🌐 KZ-49
-  type: ss
-  server: 45.132.176.190
-  port: 9892
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-50
-  type: ss
-  server: 45.132.176.225
-  port: 9881
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-51
-  type: ss
-  server: 45.132.176.190
-  port: 9892
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-52
-  type: ss
-  server: 45.132.176.225
-  port: 9881
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-53
-  type: ss
-  server: 31.130.155.114
-  port: 443
-  cipher: aes-256-gcm
-  password: "z׭}yoN\x1C޽v}]"
-- name: 🌐 KZ-54
-  type: ss
-  server: 109.248.170.119
-  port: 13447
-  cipher: aes-256-gcm
-  password: oq;6o;o߇
-- name: 🌐 KZ-55
-  type: ss
-  server: 83.222.23.81
-  port: 38065
-  cipher: aes-256-gcm
-  password: two<ㇽG}Ƿv
-- name: 🌐 KZ-56
-  type: ss
-  server: 194.76.18.232
-  port: 2082
-  cipher: aes-256-gcm
-  password: '}<;kOZxݮv'
-- name: 🌐 KZ-57
-  type: ss
-  server: 194.76.18.25
-  port: 443
-  cipher: aes-256-gcm
-  password: '{Z箷iM'
-- name: 🌐 KZ-58
-  type: ss
-  server: 89.218.15.90
-  port: 10002
-  cipher: aes-256-gcm
-  password: ݟqoyWkսfy
-- name: 🌐 KZ-59
-  type: ss
-  server: 194.76.18.253
-  port: 2082
-  cipher: aes-256-gcm
-  password: '}<;kOZxݮv'
-- name: 🌐 KZ-60
-  type: ss
-  server: 194.76.18.195
-  port: 8080
-  cipher: aes-256-gcm
-  password: "\x7FW{45mi_m]s_["
-- name: 🌐 KZ-61
-  type: ss
-  server: 194.76.18.46
-  port: 2052
-  cipher: aes-256-gcm
-  password: izwѭF]u8g9
-- name: 🌐 KZ-62
-  type: ss
-  server: 194.76.18.126
-  port: 2087
-  cipher: aes-256-gcm
-  password: "\eiz-"
-- name: 🌐 KZ-63
-  type: ss
-  server: 93.183.87.85
-  port: 24446
-  cipher: aes-256-gcm
-  password: "ͼ6o\x7F;_\x1Eۧ}^<"
-- name: 🌐 KZ-64
-  type: ss
-  server: 194.58.42.166
-  port: 8081
-  cipher: aes-256-gcm
-  password: ߮wݧu[~}oF
-- name: 🌐 KZ-65
-  type: ss
-  server: 45.136.57.28
-  port: 43000
-  cipher: aes-256-gcm
-  password: u_kO7Wi={vm
-- name: 🌐 KZ-66
-  type: ss
-  server: 89.218.250.163
-  port: 443
-  cipher: aes-256-gcm
-  password: on}iw}to
-- name: 🌐 KZ-67
-  type: ss
-  server: 176.123.182.162
-  port: 443
-  cipher: aes-256-gcm
-  password: y^^WF;kw<
-- name: 🌐 KZ-68
-  type: ss
-  server: 84.240.206.178
-  port: 443
-  cipher: aes-256-gcm
-  password: "kV\e\\o~x֜o޻"
-- name: 🌐 KZ-69
-  type: ss
-  server: 31.43.179.0
-  port: 80
-  cipher: aes-256-gcm
-  password: '}yko6﷟m_;'
-- name: 🌐 KZ-70
-  type: ss
-  server: 45.132.176.190
-  port: 9892
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-71
-  type: ss
-  server: 45.132.176.225
-  port: 9881
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-72
-  type: ss
-  server: 45.132.176.190
-  port: 9892
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-73
-  type: ss
-  server: 45.132.176.225
-  port: 9881
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-74
-  type: ss
-  server: 31.130.155.114
-  port: 443
-  cipher: aes-256-gcm
-  password: "z׭}yoN\x1C޽v}]"
-- name: 🌐 KZ-75
-  type: ss
-  server: 109.248.170.119
-  port: 13447
-  cipher: aes-256-gcm
-  password: oq;6o;o߇
-- name: 🌐 KZ-76
-  type: ss
-  server: 83.222.23.81
-  port: 38065
-  cipher: aes-256-gcm
-  password: two<ㇽG}Ƿv
-- name: 🌐 KZ-77
-  type: ss
-  server: 194.76.18.232
-  port: 2082
-  cipher: aes-256-gcm
-  password: '}<;kOZxݮv'
-- name: 🌐 KZ-78
-  type: ss
-  server: 194.76.18.25
-  port: 443
-  cipher: aes-256-gcm
-  password: '{Z箷iM'
-- name: 🌐 KZ-79
-  type: ss
-  server: 89.218.15.90
-  port: 10002
-  cipher: aes-256-gcm
-  password: ݟqoyWkսfy
-- name: 🌐 KZ-80
-  type: ss
-  server: 194.76.18.253
-  port: 2082
-  cipher: aes-256-gcm
-  password: '}<;kOZxݮv'
-- name: 🌐 KZ-81
-  type: ss
-  server: 194.76.18.195
-  port: 8080
-  cipher: aes-256-gcm
-  password: "\x7FW{45mi_m]s_["
-- name: 🌐 KZ-82
-  type: ss
-  server: 194.76.18.46
-  port: 2052
-  cipher: aes-256-gcm
-  password: izwѭF]u8g9
-- name: 🌐 KZ-83
-  type: ss
-  server: 194.76.18.126
-  port: 2087
-  cipher: aes-256-gcm
-  password: "\eiz-"
-- name: 🌐 KZ-84
-  type: ss
-  server: 93.183.87.85
-  port: 24446
-  cipher: aes-256-gcm
-  password: "ͼ6o\x7F;_\x1Eۧ}^<"
-- name: 🌐 KZ-85
-  type: ss
-  server: 194.58.42.166
-  port: 8081
-  cipher: aes-256-gcm
-  password: ߮wݧu[~}oF
-- name: 🌐 KZ-86
-  type: ss
-  server: 45.136.57.28
-  port: 43000
-  cipher: aes-256-gcm
-  password: u_kO7Wi={vm
-- name: 🌐 KZ-87
-  type: ss
-  server: 89.218.250.163
-  port: 443
-  cipher: aes-256-gcm
-  password: on}iw}to
-- name: 🌐 KZ-88
-  type: ss
-  server: 176.123.182.162
-  port: 443
-  cipher: aes-256-gcm
-  password: y^^WF;kw<
-- name: 🌐 KZ-89
-  type: ss
-  server: 84.240.206.178
-  port: 443
-  cipher: aes-256-gcm
-  password: "kV\e\\o~x֜o޻"
-- name: 🌐 KZ-90
-  type: ss
-  server: 31.43.179.0
-  port: 80
-  cipher: aes-256-gcm
-  password: '}yko6﷟m_;'
-- name: 🌐 KZ-91
-  type: ss
-  server: 45.132.176.190
-  port: 9892
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-92
-  type: ss
-  server: 45.132.176.225
-  port: 9881
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-93
-  type: ss
-  server: 45.132.176.190
-  port: 9892
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-94
-  type: ss
-  server: 45.132.176.225
-  port: 9881
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-95
-  type: ss
-  server: 31.130.155.114
-  port: 443
-  cipher: aes-256-gcm
-  password: "z׭}yoN\x1C޽v}]"
-- name: 🌐 KZ-96
-  type: ss
-  server: 109.248.170.119
-  port: 13447
-  cipher: aes-256-gcm
-  password: oq;6o;o߇
-- name: 🌐 KZ-97
-  type: ss
-  server: 83.222.23.81
-  port: 38065
-  cipher: aes-256-gcm
-  password: two<ㇽG}Ƿv
-- name: 🌐 KZ-98
-  type: ss
-  server: 194.76.18.232
-  port: 2082
-  cipher: aes-256-gcm
-  password: '}<;kOZxݮv'
-- name: 🌐 KZ-99
-  type: ss
-  server: 194.76.18.25
-  port: 443
-  cipher: aes-256-gcm
-  password: '{Z箷iM'
-- name: 🌐 KZ-100
-  type: ss
-  server: 89.218.15.90
-  port: 10002
-  cipher: aes-256-gcm
-  password: ݟqoyWkսfy
-- name: 🌐 KZ-101
-  type: ss
-  server: 194.76.18.253
-  port: 2082
-  cipher: aes-256-gcm
-  password: '}<;kOZxݮv'
-- name: 🌐 KZ-102
-  type: ss
-  server: 194.76.18.195
-  port: 8080
-  cipher: aes-256-gcm
-  password: "\x7FW{45mi_m]s_["
-- name: 🌐 KZ-103
-  type: ss
-  server: 194.76.18.46
-  port: 2052
-  cipher: aes-256-gcm
-  password: izwѭF]u8g9
-- name: 🌐 KZ-104
-  type: ss
-  server: 194.76.18.126
-  port: 2087
-  cipher: aes-256-gcm
-  password: "\eiz-"
-- name: 🌐 KZ-105
-  type: ss
-  server: 93.183.87.85
-  port: 24446
-  cipher: aes-256-gcm
-  password: "ͼ6o\x7F;_\x1Eۧ}^<"
-- name: 🌐 KZ-106
-  type: ss
-  server: 194.58.42.166
-  port: 8081
-  cipher: aes-256-gcm
-  password: ߮wݧu[~}oF
-- name: 🌐 KZ-107
-  type: ss
-  server: 45.136.57.28
-  port: 43000
-  cipher: aes-256-gcm
-  password: u_kO7Wi={vm
-- name: 🌐 KZ-108
-  type: ss
-  server: 89.218.250.163
-  port: 443
-  cipher: aes-256-gcm
-  password: on}iw}to
-- name: 🌐 KZ-109
-  type: ss
-  server: 176.123.182.162
-  port: 443
-  cipher: aes-256-gcm
-  password: y^^WF;kw<
-- name: 🌐 KZ-110
-  type: ss
-  server: 84.240.206.178
-  port: 443
-  cipher: aes-256-gcm
-  password: "kV\e\\o~x֜o޻"
-- name: 🌐 KZ-111
-  type: ss
-  server: 31.43.179.0
-  port: 80
-  cipher: aes-256-gcm
-  password: '}yko6﷟m_;'
-- name: 🌐 KZ-112
-  type: ss
-  server: 45.132.176.190
-  port: 9892
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-113
-  type: ss
-  server: 45.132.176.225
-  port: 9881
-  cipher: aes-256-gcm
-  password: "ziͶno\x1C޵}"
-- name: 🌐 KZ-114
-  type: ss
-  server: 31.130.155.114
-  port: 443
-  cipher: aes-256-gcm
-  password: "z׭}yoN\x1C޽v}]"
-- name: 🌐 KZ-115
-  type: ss
-  server: 109.248.170.119
-  port: 13447
-  cipher: aes-256-gcm
-  password: oq;6o;o߇
-- name: 🌐 KZ-116
-  type: ss
-  server: 83.222.23.81
-  port: 38065
-  cipher: aes-256-gcm
-  password: two<ㇽG}Ƿv
-- name: 🌐 KZ-117
-  type: ss
-  server: 194.76.18.232
-  port: 2082
-  cipher: aes-256-gcm
-  password: '}<;kOZxݮv'
-- name: 🌐 KZ-118
-  type: ss
-  server: 194.76.18.25
-  port: 443
-  cipher: aes-256-gcm
-  password: '{Z箷iM'
-- name: 🌐 KZ-119
-  type: ss
-  server: 89.218.15.90
-  port: 10002
-  cipher: aes-256-gcm
-  password: ݟqoyWkսfy
-- name: 🌐 KZ-120
-  type: ss
-  server: 194.76.18.253
-  port: 2082
-  cipher: aes-256-gcm
-  password: '}<;kOZxݮv'
-- name: 🌐 KZ-121
-  type: ss
-  server: 194.76.18.195
-  port: 8080
-  cipher: aes-256-gcm
-  password: "\x7FW{45mi_m]s_["
-- name: 🌐 KZ-122
-  type: ss
-  server: 194.76.18.46
-  port: 2052
-  cipher: aes-256-gcm
-  password: izwѭF]u8g9
-- name: 🌐 KZ-123
-  type: ss
-  server: 194.76.18.126
-  port: 2087
-  cipher: aes-256-gcm
-  password: "\eiz-"
-- name: 🌐 KZ-124
-  type: ss
-  server: 93.183.87.85
-  port: 24446
-  cipher: aes-256-gcm
-  password: "ͼ6o\x7F;_\x1Eۧ}^<"
-- name: 🌐 KZ-125
-  type: ss
-  server: 194.58.42.166
-  port: 8081
-  cipher: aes-256-gcm
-  password: ߮wݧu[~}oF
-- name: 🌐 KZ-126
-  type: ss
-  server: 45.136.57.28
-  port: 43000
-  cipher: aes-256-gcm
-  password: u_kO7Wi={vm
-- name: 🌐 KZ-127
-  type: ss
-  server: 89.218.250.163
-  port: 443
-  cipher: aes-256-gcm
-  password: on}iw}to
-- name: 🌐 KZ-128
-  type: ss
-  server: 176.123.182.162
-  port: 443
-  cipher: aes-256-gcm
-  password: y^^WF;kw<
-- name: 🌐 KZ-129
-  type: ss
-  server: 84.240.206.178
-  port: 443
-  cipher: aes-256-gcm
-  password: "kV\e\\o~x֜o޻"
-- name: 🌐 KZ-130
-  type: ss
-  server: 194.76.18.42
-  port: 443
-  cipher: aes-256-gcm
-  password: "ۮv\x1EwxMxk߮_onk^"
-- name: 🌐 KZ-131
-  type: ss
-  server: 194.76.18.243
-  port: 443
-  cipher: aes-256-gcm
-  password: "k]\x7F4m\x1C_m=yvqޚ"
-- name: 🌐 KZ-132
-  type: ss
-  server: 194.76.18.70
-  port: 8080
-  cipher: aes-256-gcm
-  password: Gӏv]kmׯ=i{w
-- name: 🌐 KZ-133
-  type: ss
-  server: 185.136.12.179
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x1Am5sGm\x1A}׽\x1Cׯ^"
-- name: 🌐 KZ-134
-  type: ss
-  server: 185.136.12.174
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x1Am5sGm\x1A}׽\x1Cׯ^"
+  uuid: ae564d93-0a3f-40b6-9137-4b73da4432c5
+  cipher: auto
+  tls: false
+  network: tcp
 proxy-groups:
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 KZ-01
-  - 🌐 KZ-02
-  - 🌐 KZ-03
-  - 🌐 KZ-04
-  - 🌐 KZ-05
-  - 🌐 KZ-06
-  - 🌐 KZ-07
-  - 🌐 KZ-08
-  - 🌐 KZ-09
-  - 🌐 KZ-10
-  - 🌐 KZ-11
-  - 🌐 KZ-12
-  - 🌐 KZ-13
-  - 🌐 KZ-14
-  - 🌐 KZ-15
-  - 🌐 KZ-16
-  - 🌐 KZ-17
-  - 🌐 KZ-18
-  - 🌐 KZ-19
-  - 🌐 KZ-20
-  - 🌐 KZ-21
-  - 🌐 KZ-22
-  - 🌐 KZ-23
-  - 🌐 KZ-24
-  - 🌐 KZ-25
-  - 🌐 KZ-26
-  - 🌐 KZ-27
-  - 🌐 KZ-28
-  - 🌐 KZ-29
-  - 🌐 KZ-30
-  - 🌐 KZ-31
-  - 🌐 KZ-32
-  - 🌐 KZ-33
-  - 🌐 KZ-34
-  - 🌐 KZ-35
-  - 🌐 KZ-36
-  - 🌐 KZ-37
-  - 🌐 KZ-38
-  - 🌐 KZ-39
-  - 🌐 KZ-40
-  - 🌐 KZ-41
-  - 🌐 KZ-42
-  - 🌐 KZ-43
-  - 🌐 KZ-44
-  - 🌐 KZ-45
-  - 🌐 KZ-46
-  - 🌐 KZ-47
-  - 🌐 KZ-48
-  - 🌐 KZ-49
-  - 🌐 KZ-50
-  - 🌐 KZ-51
-  - 🌐 KZ-52
-  - 🌐 KZ-53
-  - 🌐 KZ-54
-  - 🌐 KZ-55
-  - 🌐 KZ-56
-  - 🌐 KZ-57
-  - 🌐 KZ-58
-  - 🌐 KZ-59
-  - 🌐 KZ-60
-  - 🌐 KZ-61
-  - 🌐 KZ-62
-  - 🌐 KZ-63
-  - 🌐 KZ-64
-  - 🌐 KZ-65
-  - 🌐 KZ-66
-  - 🌐 KZ-67
-  - 🌐 KZ-68
-  - 🌐 KZ-69
-  - 🌐 KZ-70
-  - 🌐 KZ-71
-  - 🌐 KZ-72
-  - 🌐 KZ-73
-  - 🌐 KZ-74
-  - 🌐 KZ-75
-  - 🌐 KZ-76
-  - 🌐 KZ-77
-  - 🌐 KZ-78
-  - 🌐 KZ-79
-  - 🌐 KZ-80
-  - 🌐 KZ-81
-  - 🌐 KZ-82
-  - 🌐 KZ-83
-  - 🌐 KZ-84
-  - 🌐 KZ-85
-  - 🌐 KZ-86
-  - 🌐 KZ-87
-  - 🌐 KZ-88
-  - 🌐 KZ-89
-  - 🌐 KZ-90
-  - 🌐 KZ-91
-  - 🌐 KZ-92
-  - 🌐 KZ-93
-  - 🌐 KZ-94
-  - 🌐 KZ-95
-  - 🌐 KZ-96
-  - 🌐 KZ-97
-  - 🌐 KZ-98
-  - 🌐 KZ-99
-  - 🌐 KZ-100
-  - 🌐 KZ-101
-  - 🌐 KZ-102
-  - 🌐 KZ-103
-  - 🌐 KZ-104
-  - 🌐 KZ-105
-  - 🌐 KZ-106
-  - 🌐 KZ-107
-  - 🌐 KZ-108
-  - 🌐 KZ-109
-  - 🌐 KZ-110
-  - 🌐 KZ-111
-  - 🌐 KZ-112
-  - 🌐 KZ-113
-  - 🌐 KZ-114
-  - 🌐 KZ-115
-  - 🌐 KZ-116
-  - 🌐 KZ-117
-  - 🌐 KZ-118
-  - 🌐 KZ-119
-  - 🌐 KZ-120
-  - 🌐 KZ-121
-  - 🌐 KZ-122
-  - 🌐 KZ-123
-  - 🌐 KZ-124
-  - 🌐 KZ-125
-  - 🌐 KZ-126
-  - 🌐 KZ-127
-  - 🌐 KZ-128
-  - 🌐 KZ-129
-  - 🌐 KZ-130
-  - 🌐 KZ-131
-  - 🌐 KZ-132
-  - 🌐 KZ-133
-  - 🌐 KZ-134
+  - 🇰🇿 哈萨克斯坦 01
+  - 🇰🇿 哈萨克斯坦 02
+  - 🇰🇿 哈萨克斯坦 03
+  - 🇰🇿 哈萨克斯坦 04
+  - 🇰🇿 哈萨克斯坦 05
+  - 🇰🇿 哈萨克斯坦 06
+  - 🇰🇿 哈萨克斯坦 07
+  - 🇰🇿 哈萨克斯坦 08
+  - 🇰🇿 哈萨克斯坦 09
+  - 🇰🇿 哈萨克斯坦 10
+  - 🇰🇿 哈萨克斯坦 11
+  - 🇰🇿 哈萨克斯坦 12
+  - 🇰🇿 哈萨克斯坦 13
+  - 🇰🇿 哈萨克斯坦 14
+  - 🇰🇿 哈萨克斯坦 15
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - DIRECT
-  - 🌐 KZ-01
-  - 🌐 KZ-02
-  - 🌐 KZ-03
-  - 🌐 KZ-04
-  - 🌐 KZ-05
-  - 🌐 KZ-06
-  - 🌐 KZ-07
-  - 🌐 KZ-08
-  - 🌐 KZ-09
-  - 🌐 KZ-10
-  - 🌐 KZ-11
-  - 🌐 KZ-12
-  - 🌐 KZ-13
-  - 🌐 KZ-14
-  - 🌐 KZ-15
-  - 🌐 KZ-16
-  - 🌐 KZ-17
-  - 🌐 KZ-18
-  - 🌐 KZ-19
-  - 🌐 KZ-20
-  - 🌐 KZ-21
-  - 🌐 KZ-22
-  - 🌐 KZ-23
-  - 🌐 KZ-24
-  - 🌐 KZ-25
-  - 🌐 KZ-26
-  - 🌐 KZ-27
-  - 🌐 KZ-28
-  - 🌐 KZ-29
-  - 🌐 KZ-30
-  - 🌐 KZ-31
-  - 🌐 KZ-32
-  - 🌐 KZ-33
-  - 🌐 KZ-34
-  - 🌐 KZ-35
-  - 🌐 KZ-36
-  - 🌐 KZ-37
-  - 🌐 KZ-38
-  - 🌐 KZ-39
-  - 🌐 KZ-40
-  - 🌐 KZ-41
-  - 🌐 KZ-42
-  - 🌐 KZ-43
-  - 🌐 KZ-44
-  - 🌐 KZ-45
-  - 🌐 KZ-46
-  - 🌐 KZ-47
-  - 🌐 KZ-48
-  - 🌐 KZ-49
-  - 🌐 KZ-50
-  - 🌐 KZ-51
-  - 🌐 KZ-52
-  - 🌐 KZ-53
-  - 🌐 KZ-54
-  - 🌐 KZ-55
-  - 🌐 KZ-56
-  - 🌐 KZ-57
-  - 🌐 KZ-58
-  - 🌐 KZ-59
-  - 🌐 KZ-60
-  - 🌐 KZ-61
-  - 🌐 KZ-62
-  - 🌐 KZ-63
-  - 🌐 KZ-64
-  - 🌐 KZ-65
-  - 🌐 KZ-66
-  - 🌐 KZ-67
-  - 🌐 KZ-68
-  - 🌐 KZ-69
-  - 🌐 KZ-70
-  - 🌐 KZ-71
-  - 🌐 KZ-72
-  - 🌐 KZ-73
-  - 🌐 KZ-74
-  - 🌐 KZ-75
-  - 🌐 KZ-76
-  - 🌐 KZ-77
-  - 🌐 KZ-78
-  - 🌐 KZ-79
-  - 🌐 KZ-80
-  - 🌐 KZ-81
-  - 🌐 KZ-82
-  - 🌐 KZ-83
-  - 🌐 KZ-84
-  - 🌐 KZ-85
-  - 🌐 KZ-86
-  - 🌐 KZ-87
-  - 🌐 KZ-88
-  - 🌐 KZ-89
-  - 🌐 KZ-90
-  - 🌐 KZ-91
-  - 🌐 KZ-92
-  - 🌐 KZ-93
-  - 🌐 KZ-94
-  - 🌐 KZ-95
-  - 🌐 KZ-96
-  - 🌐 KZ-97
-  - 🌐 KZ-98
-  - 🌐 KZ-99
-  - 🌐 KZ-100
-  - 🌐 KZ-101
-  - 🌐 KZ-102
-  - 🌐 KZ-103
-  - 🌐 KZ-104
-  - 🌐 KZ-105
-  - 🌐 KZ-106
-  - 🌐 KZ-107
-  - 🌐 KZ-108
-  - 🌐 KZ-109
-  - 🌐 KZ-110
-  - 🌐 KZ-111
-  - 🌐 KZ-112
-  - 🌐 KZ-113
-  - 🌐 KZ-114
-  - 🌐 KZ-115
-  - 🌐 KZ-116
-  - 🌐 KZ-117
-  - 🌐 KZ-118
-  - 🌐 KZ-119
-  - 🌐 KZ-120
-  - 🌐 KZ-121
-  - 🌐 KZ-122
-  - 🌐 KZ-123
-  - 🌐 KZ-124
-  - 🌐 KZ-125
-  - 🌐 KZ-126
-  - 🌐 KZ-127
-  - 🌐 KZ-128
-  - 🌐 KZ-129
-  - 🌐 KZ-130
-  - 🌐 KZ-131
-  - 🌐 KZ-132
-  - 🌐 KZ-133
-  - 🌐 KZ-134
+  - 🇰🇿 哈萨克斯坦 01
+  - 🇰🇿 哈萨克斯坦 02
+  - 🇰🇿 哈萨克斯坦 03
+  - 🇰🇿 哈萨克斯坦 04
+  - 🇰🇿 哈萨克斯坦 05
+  - 🇰🇿 哈萨克斯坦 06
+  - 🇰🇿 哈萨克斯坦 07
+  - 🇰🇿 哈萨克斯坦 08
+  - 🇰🇿 哈萨克斯坦 09
+  - 🇰🇿 哈萨克斯坦 10
+  - 🇰🇿 哈萨克斯坦 11
+  - 🇰🇿 哈萨克斯坦 12
+  - 🇰🇿 哈萨克斯坦 13
+  - 🇰🇿 哈萨克斯坦 14
+  - 🇰🇿 哈萨克斯坦 15
 rules:
 - MATCH,PROXY

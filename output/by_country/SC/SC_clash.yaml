@@ -3,198 +3,56 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🌐 SC-01
-  type: vless
-  server: 45.130.125.209
-  port: 80
-  uuid: dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51
-  cipher: auto
-  tls: false
-  servername: de.vpnbase.net
-- name: 🌐 SC-02
-  type: vless
+- type: vless
+  name: 🌐 SC节点 01
   server: 45.130.125.207
   port: 8443
   uuid: 31aa0950-eb19-45ff-94a2-af416deb3b90
   cipher: auto
   tls: true
-  servername: SquarE-saLaD-EbDe.ZDFGVcCfgUUYgGG.wOrKeRS.DEV
-- name: 🌐 SC-03
-  type: vless
+  network: tcp
+  sni: SquarE-saLaD-EbDe.ZDFGVcCfgUUYgGG.wOrKeRS.DEV
+- type: vless
+  name: 🌐 SC节点 02
   server: 154.194.0.123
   port: 443
   uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
   cipher: auto
   tls: true
-  servername: notls.lukongtou.eu.org
-- name: 🌐 SC-04
-  type: ss
-  server: 45.130.125.209
-  port: 80
-  cipher: aes-256-gcm
-  password: "u\x1Eq[y~_58͞u"
-- name: 🌐 SC-05
-  type: ss
-  server: 45.130.125.207
-  port: 8443
-  cipher: aes-256-gcm
-  password: Vty}i5כݿt
-- name: 🌐 SC-06
-  type: ss
-  server: 154.194.0.123
-  port: 443
-  cipher: aes-256-gcm
-  password: zsն~[oM8\
-- name: 🌐 SC-07
-  type: ss
-  server: 45.130.125.209
-  port: 80
-  cipher: aes-256-gcm
-  password: "u\x1Eq[y~_58͞u"
-- name: 🌐 SC-08
-  type: ss
-  server: 45.130.125.207
-  port: 8443
-  cipher: aes-256-gcm
-  password: Vty}i5כݿt
-- name: 🌐 SC-09
-  type: ss
-  server: 154.194.0.123
-  port: 443
-  cipher: aes-256-gcm
-  password: zsն~[oM8\
-- name: 🌐 SC-10
-  type: ss
-  server: 45.130.125.209
-  port: 80
-  cipher: aes-256-gcm
-  password: "u\x1Eq[y~_58͞u"
-- name: 🌐 SC-11
-  type: ss
-  server: 45.130.125.207
-  port: 8443
-  cipher: aes-256-gcm
-  password: Vty}i5כݿt
-- name: 🌐 SC-12
-  type: ss
-  server: 154.194.0.123
-  port: 443
-  cipher: aes-256-gcm
-  password: zsն~[oM8\
-- name: 🌐 SC-13
-  type: ss
-  server: 45.130.125.209
-  port: 80
-  cipher: aes-256-gcm
-  password: "u\x1Eq[y~_58͞u"
-- name: 🌐 SC-14
-  type: ss
-  server: 45.130.125.207
-  port: 8443
-  cipher: aes-256-gcm
-  password: Vty}i5כݿt
-- name: 🌐 SC-15
-  type: ss
-  server: 154.194.0.123
-  port: 443
-  cipher: aes-256-gcm
-  password: zsն~[oM8\
-- name: 🌐 SC-16
-  type: ss
-  server: 45.130.125.209
-  port: 80
-  cipher: aes-256-gcm
-  password: "u\x1Eq[y~_58͞u"
-- name: 🌐 SC-17
-  type: ss
-  server: 45.130.125.207
-  port: 8443
-  cipher: aes-256-gcm
-  password: Vty}i5כݿt
-- name: 🌐 SC-18
-  type: ss
-  server: 154.194.0.123
-  port: 443
-  cipher: aes-256-gcm
-  password: zsն~[oM8\
-- name: 🌐 SC-19
-  type: ss
-  server: 45.137.60.165
-  port: 8443
-  cipher: aes-256-gcm
-  password: "Ǹs׶\x1Cimv"
-- name: 🌐 SC-20
-  type: ss
-  server: 154.194.0.7
-  port: 8443
-  cipher: aes-256-gcm
-  password: ޻m}緷^|nM
-- name: 🌐 SC-21
-  type: ss
-  server: 178.20.215.10
-  port: 443
-  cipher: aes-256-gcm
-  password: "ww\x1C\x7F\x1Aѿ\x1Aiu|o5"
-- name: 🌐 SC-22
-  type: trojan
+  network: tcp
+  sni: notls.lukongtou.eu.org
+- type: trojan
+  name: 🌐 SC节点 03
   server: 45.130.125.160
   port: 443
   password: humanity
   sni: www.calmlunch.com
+- type: vless
+  name: 🌐 SC节点 04
+  server: 45.130.125.209
+  port: 80
+  uuid: dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51
+  cipher: auto
+  tls: false
+  network: tcp
 proxy-groups:
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 SC-01
-  - 🌐 SC-02
-  - 🌐 SC-03
-  - 🌐 SC-04
-  - 🌐 SC-05
-  - 🌐 SC-06
-  - 🌐 SC-07
-  - 🌐 SC-08
-  - 🌐 SC-09
-  - 🌐 SC-10
-  - 🌐 SC-11
-  - 🌐 SC-12
-  - 🌐 SC-13
-  - 🌐 SC-14
-  - 🌐 SC-15
-  - 🌐 SC-16
-  - 🌐 SC-17
-  - 🌐 SC-18
-  - 🌐 SC-19
-  - 🌐 SC-20
-  - 🌐 SC-21
-  - 🌐 SC-22
+  - 🌐 SC节点 01
+  - 🌐 SC节点 02
+  - 🌐 SC节点 03
+  - 🌐 SC节点 04
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - DIRECT
-  - 🌐 SC-01
-  - 🌐 SC-02
-  - 🌐 SC-03
-  - 🌐 SC-04
-  - 🌐 SC-05
-  - 🌐 SC-06
-  - 🌐 SC-07
-  - 🌐 SC-08
-  - 🌐 SC-09
-  - 🌐 SC-10
-  - 🌐 SC-11
-  - 🌐 SC-12
-  - 🌐 SC-13
-  - 🌐 SC-14
-  - 🌐 SC-15
-  - 🌐 SC-16
-  - 🌐 SC-17
-  - 🌐 SC-18
-  - 🌐 SC-19
-  - 🌐 SC-20
-  - 🌐 SC-21
-  - 🌐 SC-22
+  - 🌐 SC节点 01
+  - 🌐 SC节点 02
+  - 🌐 SC节点 03
+  - 🌐 SC节点 04
 rules:
 - MATCH,PROXY

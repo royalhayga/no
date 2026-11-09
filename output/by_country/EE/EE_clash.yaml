@@ -3,1369 +3,181 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🌐 EE-01
-  type: vmess
-  server: 5.101.122.59
-  port: 443
-  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-- name: 🌐 EE-02
-  type: vless
+- type: vless
+  name: 🇪🇪 爱沙尼亚 01
   server: 77.72.85.247
   port: 8443
   uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
   cipher: auto
   tls: false
-  servername: fdghyt.com
-- name: 🌐 EE-03
-  type: vless
+  network: tcp
+  sni: fdghyt.com
+- type: vless
+  name: 🇪🇪 爱沙尼亚 02
   server: 77.72.85.246
   port: 8443
   uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
   cipher: auto
   tls: false
-  servername: fdghyt.com
-- name: 🌐 EE-04
-  type: vless
+  network: tcp
+  sni: fdghyt.com
+- type: vless
+  name: 🇪🇪 爱沙尼亚 03
   server: 194.26.141.148
   port: 8443
   uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
   cipher: auto
   tls: true
-  servername: fdghyt.com
-- name: 🌐 EE-05
-  type: vless
+  network: tcp
+  sni: fdghyt.com
+- type: vless
+  name: 🇪🇪 爱沙尼亚 04
   server: 77.72.85.246
   port: 8443
   uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
   cipher: auto
   tls: true
-  servername: fdghyt.com
-- name: 🌐 EE-06
-  type: vless
+  network: tcp
+  sni: fdghyt.com
+- type: vless
+  name: 🇪🇪 爱沙尼亚 05
   server: 77.72.85.247
   port: 8443
   uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
   cipher: auto
   tls: true
-  servername: fdghyt.com
-- name: 🌐 EE-07
-  type: vless
+  network: tcp
+  sni: fdghyt.com
+- type: vless
+  name: 🇪🇪 爱沙尼亚 06
   server: 194.26.141.148
   port: 8443
   uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
   cipher: auto
   tls: true
-  servername: fdghyt.com
-- name: 🌐 EE-08
-  type: vless
+  network: tcp
+  sni: fdghyt.com
+- type: vless
+  name: 🇪🇪 爱沙尼亚 07
   server: 38.180.163.250
   port: 443
   uuid: 5c5a466e-f2e0-4211-8963-742afac24948
   cipher: auto
   tls: true
-  servername: netmelivip.dpdns.org
-- name: 🌐 EE-09
-  type: vless
+  network: tcp
+  sni: netmelivip.dpdns.org
+- type: vless
+  name: 🇪🇪 爱沙尼亚 08
   server: 86.110.38.108
   port: 443
   uuid: 1b5e85e9-fda3-4738-8ff1-1696b2bc994d
   cipher: auto
   tls: true
-  servername: estonia.whiteconnect.lol
-- name: 🌐 EE-10
-  type: vless
+  network: tcp
+  sni: estonia.whiteconnect.lol
+- type: vless
+  name: 🇪🇪 爱沙尼亚 09
   server: 5.101.114.177
   port: 443
   uuid: 56cba26b-efcb-40d0-838a-d66df2dd516f
   cipher: auto
   tls: true
-  servername: sni.868001.xyz
-- name: 🌐 EE-11
-  type: vless
+  network: tcp
+  sni: sni.868001.xyz
+- type: vless
+  name: 🇪🇪 爱沙尼亚 10
   server: 5.189.254.168
   port: 2053
   uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
   cipher: auto
   tls: true
-  servername: cf3.schzyc.cc.cd
-- name: 🌐 EE-12
-  type: vless
+  network: tcp
+  sni: cf3.schzyc.cc.cd
+- type: vless
+  name: 🇪🇪 爱沙尼亚 11
   server: 185.215.184.31
   port: 8443
   uuid: 631ee34f-4faf-4ad7-b49d-e6f50403cf0e
   cipher: auto
   tls: true
-  servername: anyfile2file.com
-- name: 🌐 EE-13
-  type: vless
+  network: tcp
+  sni: anyfile2file.com
+- type: vless
+  name: 🇪🇪 爱沙尼亚 12
   server: 185.36.141.193
   port: 443
   uuid: ef6c9625-62de-4b9d-b7e2-0d4a9f67a9b2
   cipher: auto
   tls: true
-  servername: sni.ehb.cc.cd
-- name: 🌐 EE-14
-  type: vless
-  server: 38.180.216.110
-  port: 20861
-  uuid: f219800f-9c62-46c9-b518-df996f754b61
-  cipher: auto
-  tls: true
-  servername: amd.com
-- name: 🌐 EE-15
-  type: vless
+  network: tcp
+  sni: sni.ehb.cc.cd
+- type: vless
+  name: 🇪🇪 爱沙尼亚 13
   server: 37.49.224.14
   port: 443
   uuid: be3960db-f339-479a-be7b-c1a130601141
   cipher: auto
   tls: true
-  servername: nimble-heron.cdn.cachefleet.com
-- name: 🌐 EE-16
-  type: vless
+  network: tcp
+  sni: nimble-heron.cdn.cachefleet.com
+- type: vless
+  name: 🇪🇪 爱沙尼亚 14
   server: 37.77.56.218
   port: 443
   uuid: c4854b1a-ec0f-4c5e-940b-f23c8fd39253
   cipher: auto
   tls: true
-  servername: nl-f65f474f6b.meow.ac
-- name: 🌐 EE-17
-  type: vless
+  network: tcp
+  sni: nl-f65f474f6b.meow.ac
+- type: vless
+  name: 🇪🇪 爱沙尼亚 15
   server: 5.45.117.125
   port: 443
   uuid: c7e9c591-2764-423a-afca-efbd010fd396
   cipher: auto
   tls: false
-  servername: freeuse.firta.ru
-- name: 🌐 EE-18
-  type: vless
-  server: 38.180.163.250
-  port: 443
-  uuid: 5c5a466e-f2e0-4211-8963-742afac24948
-  cipher: auto
-  tls: false
-  servername: netmelivip.dpdns.org
-- name: 🌐 EE-19
-  type: vless
-  server: 159.253.23.117
-  port: 443
-  uuid: 5c5a466e-f2e0-4211-8963-742afac24948
-  cipher: auto
-  tls: false
-  servername: netmelivip.dpdns.org
-- name: 🌐 EE-20
-  type: vless
-  server: 176.97.74.90
-  port: 443
-  uuid: 5c5a466e-f2e0-4211-8963-742afac24948
-  cipher: auto
-  tls: false
-  servername: netmelivip.dpdns.org
-- name: 🌐 EE-21
-  type: vless
-  server: 165.231.141.11
-  port: 443
-  uuid: ecad47b0-249e-00ad-adff-e3c8f02b1897
-  cipher: auto
-  tls: true
-  servername: auto.quattro-tech.ru
-- name: 🌐 EE-22
-  type: vless
-  server: 165.231.141.12
-  port: 443
-  uuid: edde565e-41f5-00ad-84ea-7b87a3e84488
-  cipher: auto
-  tls: true
-  servername: auto.quattro-tech.ru
-- name: 🌐 EE-23
-  type: vless
-  server: 5.45.115.162
-  port: 2087
-  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
-  cipher: auto
-  tls: false
-  servername: cf3.schzyc.cc.cd
-- name: 🌐 EE-24
-  type: vless
-  server: 89.150.40.152
-  port: 443
-  uuid: ce069292-c8bf-40dd-a6b1-87818a1e64e9
-  cipher: auto
-  tls: true
-  servername: 3-7ny.pages.dev
-- name: 🌐 EE-25
-  type: vless
-  server: 37.49.228.174
-  port: 443
-  uuid: 64c3ae71-4874-4a05-8d52-73b2fbb8a207
-  cipher: auto
-  tls: true
-  servername: start.ru
-- name: 🌐 EE-26
-  type: vless
-  server: 194.156.26.44
-  port: 443
-  uuid: 492a4ca5-d5b1-49e4-b2bc-5a71bf0de709
-  cipher: auto
-  tls: false
-  servername: PAtiENT-trUTH-C479.fORDGAme200.wORKErs.dEV
-- name: 🌐 EE-27
-  type: vless
-  server: 165.231.177.114
-  port: 443
-  uuid: 70ad3e9c-89e6-4ee3-91c3-7cb10a4e483a
-  cipher: auto
-  tls: true
-  servername: cab-6ac48f09.ferrin.uk
-- name: 🌐 EE-28
-  type: vless
-  server: 165.231.177.50
-  port: 443
-  uuid: 70ad3e9c-89e6-4ee3-91c3-7cb10a4e483a
-  cipher: auto
-  tls: true
-  servername: ''
-- name: 🌐 EE-29
-  type: vless
-  server: 165.231.177.93
-  port: 443
-  uuid: f230254f-d4cd-4d83-8a2d-e83927ef98ac
-  cipher: auto
-  tls: false
-  servername: ''
-- name: 🌐 EE-30
-  type: vless
-  server: 165.231.177.58
-  port: 443
-  uuid: 606a5b23-2c53-4994-b698-b11bb0dc8418
-  cipher: auto
-  tls: true
-  servername: cab-6abb6a21.ferrin.uk
-- name: 🌐 EE-31
-  type: vless
-  server: 165.231.177.59
-  port: 443
-  uuid: f230254f-d4cd-4d83-8a2d-e83927ef98ac
-  cipher: auto
-  tls: false
-  servername: ''
-- name: 🌐 EE-32
-  type: vless
-  server: 165.231.177.75
-  port: 443
-  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
-  cipher: auto
-  tls: false
-  servername: ''
-- name: 🌐 EE-33
-  type: ss
-  server: 38.180.163.250
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-34
-  type: ss
-  server: 86.110.38.108
-  port: 443
-  cipher: aes-256-gcm
-  password: վ^}ַׯzof
-- name: 🌐 EE-35
-  type: ss
-  server: 5.101.114.177
-  port: 443
-  cipher: aes-256-gcm
-  password: "\ekny\eGt\x7F\x1Aw\x7Fg]^"
-- name: 🌐 EE-36
-  type: ss
-  server: 5.189.254.168
-  port: 2053
-  cipher: aes-256-gcm
-  password: "Vik\x1C[V\x7F\x1Eսw\e"
-- name: 🌐 EE-37
-  type: ss
-  server: 185.215.184.31
-  port: 8443
-  cipher: aes-256-gcm
-  password: "}^{~\x1F{o]{Ӎ7q"
-- name: 🌐 EE-38
-  type: ss
-  server: 185.36.141.193
-  port: 443
-  cipher: aes-256-gcm
-  password: "yg^]o\x1Ak"
-- name: 🌐 EE-39
-  type: ss
-  server: 38.180.216.110
-  port: 20861
-  cipher: aes-256-gcm
-  password: "\x7Fm}M\x1Fζ=o|u}�?
-- name: 🌐 EE-40
-  type: ss
-  server: 37.49.224.14
-  port: 443
-  cipher: aes-256-gcm
-  password: "mG[\x7F}ZmsVN^5"
-- name: 🌐 EE-41
-  type: ss
-  server: 37.77.56.218
-  port: 443
-  cipher: aes-256-gcm
-  password: "s9Zy\x1F^\e\x7Fmwnw"
-- name: 🌐 EE-42
-  type: ss
-  server: 5.45.117.125
-  port: 443
-  cipher: aes-256-gcm
-  password: "ssu۾mi\x1Ay]\x1Fw\x7Fz"
-- name: 🌐 EE-43
-  type: ss
-  server: 38.180.163.250
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-44
-  type: ss
-  server: 159.253.23.117
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-45
-  type: ss
-  server: 176.97.74.90
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-46
-  type: ss
-  server: 165.231.141.11
-  port: 443
-  cipher: aes-256-gcm
-  password: "yƝۏ^Fi{w<\x7FM{"
-- name: 🌐 EE-47
-  type: ss
-  server: 165.231.141.12
-  port: 443
-  cipher: aes-256-gcm
-  password: y^^WF;kw<
-- name: 🌐 EE-48
-  type: ss
-  server: 5.45.115.162
-  port: 2087
-  cipher: aes-256-gcm
-  password: "Vik\x1C[V\x7F\x1Eսw\e"
-- name: 🌐 EE-49
-  type: ss
-  server: 37.49.228.174
-  port: 443
-  cipher: aes-256-gcm
-  password: 7i9vv}km;
-- name: 🌐 EE-50
-  type: ss
-  server: 194.156.26.44
-  port: 443
-  cipher: aes-256-gcm
-  password: "ݚƹw׸ofm\x1D{="
-- name: 🌐 EE-51
-  type: ss
-  server: 165.231.177.114
-  port: 443
-  cipher: aes-256-gcm
-  password: F\׺W7Ѯ
-- name: 🌐 EE-52
-  type: ss
-  server: 165.231.177.50
-  port: 443
-  cipher: aes-256-gcm
-  password: F\׺W7Ѯ
-- name: 🌐 EE-53
-  type: ss
-  server: 165.231.177.93
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fm۞\x1Fw\x1D7{۷Ɯ"
-- name: 🌐 EE-54
-  type: ss
-  server: 165.231.177.58
-  port: 443
-  cipher: aes-256-gcm
-  password: N彷wxo|o][oG\|
-- name: 🌐 EE-55
-  type: ss
-  server: 165.231.177.59
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fm۞\x1Fw\x1D7{۷Ɯ"
-- name: 🌐 EE-56
-  type: ss
-  server: 165.231.177.75
-  port: 443
-  cipher: aes-256-gcm
-  password: "ݯtmoֻi[kǽ\x7F"
-- name: 🌐 EE-57
-  type: ss
-  server: 38.180.163.250
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-58
-  type: ss
-  server: 86.110.38.108
-  port: 443
-  cipher: aes-256-gcm
-  password: վ^}ַׯzof
-- name: 🌐 EE-59
-  type: ss
-  server: 5.101.114.177
-  port: 443
-  cipher: aes-256-gcm
-  password: "\ekny\eGt\x7F\x1Aw\x7Fg]^"
-- name: 🌐 EE-60
-  type: ss
-  server: 5.189.254.168
-  port: 2053
-  cipher: aes-256-gcm
-  password: "Vik\x1C[V\x7F\x1Eսw\e"
-- name: 🌐 EE-61
-  type: ss
-  server: 185.215.184.31
-  port: 8443
-  cipher: aes-256-gcm
-  password: "}^{~\x1F{o]{Ӎ7q"
-- name: 🌐 EE-62
-  type: ss
-  server: 185.36.141.193
-  port: 443
-  cipher: aes-256-gcm
-  password: "yg^]o\x1Ak"
-- name: 🌐 EE-63
-  type: ss
-  server: 38.180.216.110
-  port: 20861
-  cipher: aes-256-gcm
-  password: "\x7Fm}M\x1Fζ=o|u}�?
-- name: 🌐 EE-64
-  type: ss
-  server: 37.49.224.14
-  port: 443
-  cipher: aes-256-gcm
-  password: "mG[\x7F}ZmsVN^5"
-- name: 🌐 EE-65
-  type: ss
-  server: 37.77.56.218
-  port: 443
-  cipher: aes-256-gcm
-  password: "s9Zy\x1F^\e\x7Fmwnw"
-- name: 🌐 EE-66
-  type: ss
-  server: 5.45.117.125
-  port: 443
-  cipher: aes-256-gcm
-  password: "ssu۾mi\x1Ay]\x1Fw\x7Fz"
-- name: 🌐 EE-67
-  type: ss
-  server: 38.180.163.250
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-68
-  type: ss
-  server: 159.253.23.117
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-69
-  type: ss
-  server: 176.97.74.90
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-70
-  type: ss
-  server: 165.231.141.11
-  port: 443
-  cipher: aes-256-gcm
-  password: "yƝۏ^Fi{w<\x7FM{"
-- name: 🌐 EE-71
-  type: ss
-  server: 165.231.141.12
-  port: 443
-  cipher: aes-256-gcm
-  password: y^^WF;kw<
-- name: 🌐 EE-72
-  type: ss
-  server: 5.45.115.162
-  port: 2087
-  cipher: aes-256-gcm
-  password: "Vik\x1C[V\x7F\x1Eսw\e"
-- name: 🌐 EE-73
-  type: ss
-  server: 37.49.228.174
-  port: 443
-  cipher: aes-256-gcm
-  password: 7i9vv}km;
-- name: 🌐 EE-74
-  type: ss
-  server: 194.156.26.44
-  port: 443
-  cipher: aes-256-gcm
-  password: "ݚƹw׸ofm\x1D{="
-- name: 🌐 EE-75
-  type: ss
-  server: 165.231.177.114
-  port: 443
-  cipher: aes-256-gcm
-  password: F\׺W7Ѯ
-- name: 🌐 EE-76
-  type: ss
-  server: 165.231.177.50
-  port: 443
-  cipher: aes-256-gcm
-  password: F\׺W7Ѯ
-- name: 🌐 EE-77
-  type: ss
-  server: 165.231.177.93
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fm۞\x1Fw\x1D7{۷Ɯ"
-- name: 🌐 EE-78
-  type: ss
-  server: 165.231.177.58
-  port: 443
-  cipher: aes-256-gcm
-  password: N彷wxo|o][oG\|
-- name: 🌐 EE-79
-  type: ss
-  server: 165.231.177.59
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fm۞\x1Fw\x1D7{۷Ɯ"
-- name: 🌐 EE-80
-  type: ss
-  server: 165.231.177.75
-  port: 443
-  cipher: aes-256-gcm
-  password: "ݯtmoֻi[kǽ\x7F"
-- name: 🌐 EE-81
-  type: ss
-  server: 38.180.163.250
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-82
-  type: ss
-  server: 86.110.38.108
-  port: 443
-  cipher: aes-256-gcm
-  password: վ^}ַׯzof
-- name: 🌐 EE-83
-  type: ss
-  server: 5.101.114.177
-  port: 443
-  cipher: aes-256-gcm
-  password: "\ekny\eGt\x7F\x1Aw\x7Fg]^"
-- name: 🌐 EE-84
-  type: ss
-  server: 5.189.254.168
-  port: 2053
-  cipher: aes-256-gcm
-  password: "Vik\x1C[V\x7F\x1Eսw\e"
-- name: 🌐 EE-85
-  type: ss
-  server: 185.215.184.31
-  port: 8443
-  cipher: aes-256-gcm
-  password: "}^{~\x1F{o]{Ӎ7q"
-- name: 🌐 EE-86
-  type: ss
-  server: 185.36.141.193
-  port: 443
-  cipher: aes-256-gcm
-  password: "yg^]o\x1Ak"
-- name: 🌐 EE-87
-  type: ss
-  server: 38.180.216.110
-  port: 20861
-  cipher: aes-256-gcm
-  password: "\x7Fm}M\x1Fζ=o|u}�?
-- name: 🌐 EE-88
-  type: ss
-  server: 37.49.224.14
-  port: 443
-  cipher: aes-256-gcm
-  password: "mG[\x7F}ZmsVN^5"
-- name: 🌐 EE-89
-  type: ss
-  server: 37.77.56.218
-  port: 443
-  cipher: aes-256-gcm
-  password: "s9Zy\x1F^\e\x7Fmwnw"
-- name: 🌐 EE-90
-  type: ss
-  server: 5.45.117.125
-  port: 443
-  cipher: aes-256-gcm
-  password: "ssu۾mi\x1Ay]\x1Fw\x7Fz"
-- name: 🌐 EE-91
-  type: ss
-  server: 38.180.163.250
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-92
-  type: ss
-  server: 159.253.23.117
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-93
-  type: ss
-  server: 176.97.74.90
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-94
-  type: ss
-  server: 165.231.141.11
-  port: 443
-  cipher: aes-256-gcm
-  password: "yƝۏ^Fi{w<\x7FM{"
-- name: 🌐 EE-95
-  type: ss
-  server: 165.231.141.12
-  port: 443
-  cipher: aes-256-gcm
-  password: y^^WF;kw<
-- name: 🌐 EE-96
-  type: ss
-  server: 5.45.115.162
-  port: 2087
-  cipher: aes-256-gcm
-  password: "Vik\x1C[V\x7F\x1Eսw\e"
-- name: 🌐 EE-97
-  type: ss
-  server: 37.49.228.174
-  port: 443
-  cipher: aes-256-gcm
-  password: 7i9vv}km;
-- name: 🌐 EE-98
-  type: ss
-  server: 194.156.26.44
-  port: 443
-  cipher: aes-256-gcm
-  password: "ݚƹw׸ofm\x1D{="
-- name: 🌐 EE-99
-  type: ss
-  server: 165.231.177.114
-  port: 443
-  cipher: aes-256-gcm
-  password: F\׺W7Ѯ
-- name: 🌐 EE-100
-  type: ss
-  server: 165.231.177.50
-  port: 443
-  cipher: aes-256-gcm
-  password: F\׺W7Ѯ
-- name: 🌐 EE-101
-  type: ss
-  server: 165.231.177.93
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fm۞\x1Fw\x1D7{۷Ɯ"
-- name: 🌐 EE-102
-  type: ss
-  server: 165.231.177.58
-  port: 443
-  cipher: aes-256-gcm
-  password: N彷wxo|o][oG\|
-- name: 🌐 EE-103
-  type: ss
-  server: 165.231.177.59
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fm۞\x1Fw\x1D7{۷Ɯ"
-- name: 🌐 EE-104
-  type: ss
-  server: 165.231.177.75
-  port: 443
-  cipher: aes-256-gcm
-  password: "ݯtmoֻi[kǽ\x7F"
-- name: 🌐 EE-105
-  type: ss
-  server: 38.180.163.250
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-106
-  type: ss
-  server: 86.110.38.108
-  port: 443
-  cipher: aes-256-gcm
-  password: վ^}ַׯzof
-- name: 🌐 EE-107
-  type: ss
-  server: 5.101.114.177
-  port: 443
-  cipher: aes-256-gcm
-  password: "\ekny\eGt\x7F\x1Aw\x7Fg]^"
-- name: 🌐 EE-108
-  type: ss
-  server: 5.189.254.168
-  port: 2053
-  cipher: aes-256-gcm
-  password: "Vik\x1C[V\x7F\x1Eսw\e"
-- name: 🌐 EE-109
-  type: ss
-  server: 185.215.184.31
-  port: 8443
-  cipher: aes-256-gcm
-  password: "}^{~\x1F{o]{Ӎ7q"
-- name: 🌐 EE-110
-  type: ss
-  server: 185.36.141.193
-  port: 443
-  cipher: aes-256-gcm
-  password: "yg^]o\x1Ak"
-- name: 🌐 EE-111
-  type: ss
-  server: 38.180.216.110
-  port: 20861
-  cipher: aes-256-gcm
-  password: "\x7Fm}M\x1Fζ=o|u}�?
-- name: 🌐 EE-112
-  type: ss
-  server: 37.49.224.14
-  port: 443
-  cipher: aes-256-gcm
-  password: "mG[\x7F}ZmsVN^5"
-- name: 🌐 EE-113
-  type: ss
-  server: 37.77.56.218
-  port: 443
-  cipher: aes-256-gcm
-  password: "s9Zy\x1F^\e\x7Fmwnw"
-- name: 🌐 EE-114
-  type: ss
-  server: 5.45.117.125
-  port: 443
-  cipher: aes-256-gcm
-  password: "ssu۾mi\x1Ay]\x1Fw\x7Fz"
-- name: 🌐 EE-115
-  type: ss
-  server: 38.180.163.250
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-116
-  type: ss
-  server: 159.253.23.117
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-117
-  type: ss
-  server: 176.97.74.90
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-118
-  type: ss
-  server: 165.231.141.11
-  port: 443
-  cipher: aes-256-gcm
-  password: "yƝۏ^Fi{w<\x7FM{"
-- name: 🌐 EE-119
-  type: ss
-  server: 165.231.141.12
-  port: 443
-  cipher: aes-256-gcm
-  password: y^^WF;kw<
-- name: 🌐 EE-120
-  type: ss
-  server: 5.45.115.162
-  port: 2087
-  cipher: aes-256-gcm
-  password: "Vik\x1C[V\x7F\x1Eսw\e"
-- name: 🌐 EE-121
-  type: ss
-  server: 37.49.228.174
-  port: 443
-  cipher: aes-256-gcm
-  password: 7i9vv}km;
-- name: 🌐 EE-122
-  type: ss
-  server: 194.156.26.44
-  port: 443
-  cipher: aes-256-gcm
-  password: "ݚƹw׸ofm\x1D{="
-- name: 🌐 EE-123
-  type: ss
-  server: 165.231.177.114
-  port: 443
-  cipher: aes-256-gcm
-  password: F\׺W7Ѯ
-- name: 🌐 EE-124
-  type: ss
-  server: 165.231.177.50
-  port: 443
-  cipher: aes-256-gcm
-  password: F\׺W7Ѯ
-- name: 🌐 EE-125
-  type: ss
-  server: 165.231.177.93
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fm۞\x1Fw\x1D7{۷Ɯ"
-- name: 🌐 EE-126
-  type: ss
-  server: 165.231.177.58
-  port: 443
-  cipher: aes-256-gcm
-  password: N彷wxo|o][oG\|
-- name: 🌐 EE-127
-  type: ss
-  server: 165.231.177.59
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fm۞\x1Fw\x1D7{۷Ɯ"
-- name: 🌐 EE-128
-  type: ss
-  server: 165.231.177.75
-  port: 443
-  cipher: aes-256-gcm
-  password: "ݯtmoֻi[kǽ\x7F"
-- name: 🌐 EE-129
-  type: ss
-  server: 38.180.163.250
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-130
-  type: ss
-  server: 86.110.38.108
-  port: 443
-  cipher: aes-256-gcm
-  password: վ^}ַׯzof
-- name: 🌐 EE-131
-  type: ss
-  server: 5.101.114.177
-  port: 443
-  cipher: aes-256-gcm
-  password: "\ekny\eGt\x7F\x1Aw\x7Fg]^"
-- name: 🌐 EE-132
-  type: ss
-  server: 5.189.254.168
-  port: 2053
-  cipher: aes-256-gcm
-  password: "Vik\x1C[V\x7F\x1Eսw\e"
-- name: 🌐 EE-133
-  type: ss
-  server: 185.215.184.31
-  port: 8443
-  cipher: aes-256-gcm
-  password: "}^{~\x1F{o]{Ӎ7q"
-- name: 🌐 EE-134
-  type: ss
-  server: 185.36.141.193
-  port: 443
-  cipher: aes-256-gcm
-  password: "yg^]o\x1Ak"
-- name: 🌐 EE-135
-  type: ss
-  server: 38.180.216.110
-  port: 20861
-  cipher: aes-256-gcm
-  password: "\x7Fm}M\x1Fζ=o|u}�?
-- name: 🌐 EE-136
-  type: ss
-  server: 37.49.224.14
-  port: 443
-  cipher: aes-256-gcm
-  password: "mG[\x7F}ZmsVN^5"
-- name: 🌐 EE-137
-  type: ss
-  server: 37.77.56.218
-  port: 443
-  cipher: aes-256-gcm
-  password: "s9Zy\x1F^\e\x7Fmwnw"
-- name: 🌐 EE-138
-  type: ss
-  server: 5.45.117.125
-  port: 443
-  cipher: aes-256-gcm
-  password: "ssu۾mi\x1Ay]\x1Fw\x7Fz"
-- name: 🌐 EE-139
-  type: ss
-  server: 159.253.23.117
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-140
-  type: ss
-  server: 176.97.74.90
-  port: 443
-  cipher: aes-256-gcm
-  password: "Z㮞\x7Fgmu޷}6<"
-- name: 🌐 EE-141
-  type: ss
-  server: 165.231.141.11
-  port: 443
-  cipher: aes-256-gcm
-  password: "yƝۏ^Fi{w<\x7FM{"
-- name: 🌐 EE-142
-  type: ss
-  server: 165.231.141.12
-  port: 443
-  cipher: aes-256-gcm
-  password: y^^WF;kw<
-- name: 🌐 EE-143
-  type: ss
-  server: 5.45.115.162
-  port: 2087
-  cipher: aes-256-gcm
-  password: "Vik\x1C[V\x7F\x1Eսw\e"
-- name: 🌐 EE-144
-  type: ss
-  server: 37.49.228.174
-  port: 443
-  cipher: aes-256-gcm
-  password: 7i9vv}km;
-- name: 🌐 EE-145
-  type: ss
-  server: 194.156.26.44
-  port: 443
-  cipher: aes-256-gcm
-  password: "ݚƹw׸ofm\x1D{="
-- name: 🌐 EE-146
-  type: ss
-  server: 165.231.177.114
-  port: 443
-  cipher: aes-256-gcm
-  password: F\׺W7Ѯ
-- name: 🌐 EE-147
-  type: ss
-  server: 165.231.177.50
-  port: 443
-  cipher: aes-256-gcm
-  password: F\׺W7Ѯ
-- name: 🌐 EE-148
-  type: ss
-  server: 165.231.177.93
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fm۞\x1Fw\x1D7{۷Ɯ"
-- name: 🌐 EE-149
-  type: ss
-  server: 165.231.177.58
-  port: 443
-  cipher: aes-256-gcm
-  password: N彷wxo|o][oG\|
-- name: 🌐 EE-150
-  type: ss
-  server: 165.231.177.59
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fm۞\x1Fw\x1D7{۷Ɯ"
-- name: 🌐 EE-151
-  type: ss
-  server: 165.231.177.75
-  port: 443
-  cipher: aes-256-gcm
-  password: "ݯtmoֻi[kǽ\x7F"
-- name: 🌐 EE-152
-  type: ss
-  server: 5.101.117.184
-  port: 443
-  cipher: aes-256-gcm
-  password: "ssu۾mi\x1Ay]\x1Fw\x7Fz"
-- name: 🌐 EE-153
-  type: ss
-  server: 165.231.191.155
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fm۞\x1Fw\x1D7{۷Ɯ"
-- name: 🌐 EE-154
-  type: ss
-  server: 165.231.141.11
-  port: 443
-  cipher: aes-256-gcm
-  password: y^^WF;kw<
-- name: 🌐 EE-155
-  type: ss
-  server: 165.231.161.179
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fm۞\x1Fw\x1D7{۷Ɯ"
-- name: 🌐 EE-156
-  type: ss
-  server: 5.189.254.168
-  port: 443
-  cipher: aes-256-gcm
-  password: "Ǹs׶\x1Cimv"
-- name: 🌐 EE-157
-  type: ss
-  server: 194.156.26.45
-  port: 443
-  cipher: aes-256-gcm
-  password: "ۍ\x1Aѽyf\\k\e\x7Fwy"
-- name: 🌐 EE-158
-  type: trojan
-  server: 109.206.241.10
-  port: 449
-  password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
-  sni: russiapower.accesscam.org
-- name: 🌐 EE-159
-  type: trojan
-  server: 109.206.241.10
-  port: 449
-  password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
-  sni: 109.206.241.10
-- name: 🌐 EE-160
-  type: trojan
-  server: 185.36.141.81
-  port: 443
-  password: humanity
-  sni: www.calmlunch.com
-- name: 🌐 EE-161
-  type: trojan
-  server: 80.77.25.142
-  port: 443
-  password: humanity
-  sni: www.calmlunch.com
+  network: tcp
+  sni: freeuse.firta.ru
 proxy-groups:
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 EE-01
-  - 🌐 EE-02
-  - 🌐 EE-03
-  - 🌐 EE-04
-  - 🌐 EE-05
-  - 🌐 EE-06
-  - 🌐 EE-07
-  - 🌐 EE-08
-  - 🌐 EE-09
-  - 🌐 EE-10
-  - 🌐 EE-11
-  - 🌐 EE-12
-  - 🌐 EE-13
-  - 🌐 EE-14
-  - 🌐 EE-15
-  - 🌐 EE-16
-  - 🌐 EE-17
-  - 🌐 EE-18
-  - 🌐 EE-19
-  - 🌐 EE-20
-  - 🌐 EE-21
-  - 🌐 EE-22
-  - 🌐 EE-23
-  - 🌐 EE-24
-  - 🌐 EE-25
-  - 🌐 EE-26
-  - 🌐 EE-27
-  - 🌐 EE-28
-  - 🌐 EE-29
-  - 🌐 EE-30
-  - 🌐 EE-31
-  - 🌐 EE-32
-  - 🌐 EE-33
-  - 🌐 EE-34
-  - 🌐 EE-35
-  - 🌐 EE-36
-  - 🌐 EE-37
-  - 🌐 EE-38
-  - 🌐 EE-39
-  - 🌐 EE-40
-  - 🌐 EE-41
-  - 🌐 EE-42
-  - 🌐 EE-43
-  - 🌐 EE-44
-  - 🌐 EE-45
-  - 🌐 EE-46
-  - 🌐 EE-47
-  - 🌐 EE-48
-  - 🌐 EE-49
-  - 🌐 EE-50
-  - 🌐 EE-51
-  - 🌐 EE-52
-  - 🌐 EE-53
-  - 🌐 EE-54
-  - 🌐 EE-55
-  - 🌐 EE-56
-  - 🌐 EE-57
-  - 🌐 EE-58
-  - 🌐 EE-59
-  - 🌐 EE-60
-  - 🌐 EE-61
-  - 🌐 EE-62
-  - 🌐 EE-63
-  - 🌐 EE-64
-  - 🌐 EE-65
-  - 🌐 EE-66
-  - 🌐 EE-67
-  - 🌐 EE-68
-  - 🌐 EE-69
-  - 🌐 EE-70
-  - 🌐 EE-71
-  - 🌐 EE-72
-  - 🌐 EE-73
-  - 🌐 EE-74
-  - 🌐 EE-75
-  - 🌐 EE-76
-  - 🌐 EE-77
-  - 🌐 EE-78
-  - 🌐 EE-79
-  - 🌐 EE-80
-  - 🌐 EE-81
-  - 🌐 EE-82
-  - 🌐 EE-83
-  - 🌐 EE-84
-  - 🌐 EE-85
-  - 🌐 EE-86
-  - 🌐 EE-87
-  - 🌐 EE-88
-  - 🌐 EE-89
-  - 🌐 EE-90
-  - 🌐 EE-91
-  - 🌐 EE-92
-  - 🌐 EE-93
-  - 🌐 EE-94
-  - 🌐 EE-95
-  - 🌐 EE-96
-  - 🌐 EE-97
-  - 🌐 EE-98
-  - 🌐 EE-99
-  - 🌐 EE-100
-  - 🌐 EE-101
-  - 🌐 EE-102
-  - 🌐 EE-103
-  - 🌐 EE-104
-  - 🌐 EE-105
-  - 🌐 EE-106
-  - 🌐 EE-107
-  - 🌐 EE-108
-  - 🌐 EE-109
-  - 🌐 EE-110
-  - 🌐 EE-111
-  - 🌐 EE-112
-  - 🌐 EE-113
-  - 🌐 EE-114
-  - 🌐 EE-115
-  - 🌐 EE-116
-  - 🌐 EE-117
-  - 🌐 EE-118
-  - 🌐 EE-119
-  - 🌐 EE-120
-  - 🌐 EE-121
-  - 🌐 EE-122
-  - 🌐 EE-123
-  - 🌐 EE-124
-  - 🌐 EE-125
-  - 🌐 EE-126
-  - 🌐 EE-127
-  - 🌐 EE-128
-  - 🌐 EE-129
-  - 🌐 EE-130
-  - 🌐 EE-131
-  - 🌐 EE-132
-  - 🌐 EE-133
-  - 🌐 EE-134
-  - 🌐 EE-135
-  - 🌐 EE-136
-  - 🌐 EE-137
-  - 🌐 EE-138
-  - 🌐 EE-139
-  - 🌐 EE-140
-  - 🌐 EE-141
-  - 🌐 EE-142
-  - 🌐 EE-143
-  - 🌐 EE-144
-  - 🌐 EE-145
-  - 🌐 EE-146
-  - 🌐 EE-147
-  - 🌐 EE-148
-  - 🌐 EE-149
-  - 🌐 EE-150
-  - 🌐 EE-151
-  - 🌐 EE-152
-  - 🌐 EE-153
-  - 🌐 EE-154
-  - 🌐 EE-155
-  - 🌐 EE-156
-  - 🌐 EE-157
-  - 🌐 EE-158
-  - 🌐 EE-159
-  - 🌐 EE-160
-  - 🌐 EE-161
+  - 🇪🇪 爱沙尼亚 01
+  - 🇪🇪 爱沙尼亚 02
+  - 🇪🇪 爱沙尼亚 03
+  - 🇪🇪 爱沙尼亚 04
+  - 🇪🇪 爱沙尼亚 05
+  - 🇪🇪 爱沙尼亚 06
+  - 🇪🇪 爱沙尼亚 07
+  - 🇪🇪 爱沙尼亚 08
+  - 🇪🇪 爱沙尼亚 09
+  - 🇪🇪 爱沙尼亚 10
+  - 🇪🇪 爱沙尼亚 11
+  - 🇪🇪 爱沙尼亚 12
+  - 🇪🇪 爱沙尼亚 13
+  - 🇪🇪 爱沙尼亚 14
+  - 🇪🇪 爱沙尼亚 15
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - DIRECT
-  - 🌐 EE-01
-  - 🌐 EE-02
-  - 🌐 EE-03
-  - 🌐 EE-04
-  - 🌐 EE-05
-  - 🌐 EE-06
-  - 🌐 EE-07
-  - 🌐 EE-08
-  - 🌐 EE-09
-  - 🌐 EE-10
-  - 🌐 EE-11
-  - 🌐 EE-12
-  - 🌐 EE-13
-  - 🌐 EE-14
-  - 🌐 EE-15
-  - 🌐 EE-16
-  - 🌐 EE-17
-  - 🌐 EE-18
-  - 🌐 EE-19
-  - 🌐 EE-20
-  - 🌐 EE-21
-  - 🌐 EE-22
-  - 🌐 EE-23
-  - 🌐 EE-24
-  - 🌐 EE-25
-  - 🌐 EE-26
-  - 🌐 EE-27
-  - 🌐 EE-28
-  - 🌐 EE-29
-  - 🌐 EE-30
-  - 🌐 EE-31
-  - 🌐 EE-32
-  - 🌐 EE-33
-  - 🌐 EE-34
-  - 🌐 EE-35
-  - 🌐 EE-36
-  - 🌐 EE-37
-  - 🌐 EE-38
-  - 🌐 EE-39
-  - 🌐 EE-40
-  - 🌐 EE-41
-  - 🌐 EE-42
-  - 🌐 EE-43
-  - 🌐 EE-44
-  - 🌐 EE-45
-  - 🌐 EE-46
-  - 🌐 EE-47
-  - 🌐 EE-48
-  - 🌐 EE-49
-  - 🌐 EE-50
-  - 🌐 EE-51
-  - 🌐 EE-52
-  - 🌐 EE-53
-  - 🌐 EE-54
-  - 🌐 EE-55
-  - 🌐 EE-56
-  - 🌐 EE-57
-  - 🌐 EE-58
-  - 🌐 EE-59
-  - 🌐 EE-60
-  - 🌐 EE-61
-  - 🌐 EE-62
-  - 🌐 EE-63
-  - 🌐 EE-64
-  - 🌐 EE-65
-  - 🌐 EE-66
-  - 🌐 EE-67
-  - 🌐 EE-68
-  - 🌐 EE-69
-  - 🌐 EE-70
-  - 🌐 EE-71
-  - 🌐 EE-72
-  - 🌐 EE-73
-  - 🌐 EE-74
-  - 🌐 EE-75
-  - 🌐 EE-76
-  - 🌐 EE-77
-  - 🌐 EE-78
-  - 🌐 EE-79
-  - 🌐 EE-80
-  - 🌐 EE-81
-  - 🌐 EE-82
-  - 🌐 EE-83
-  - 🌐 EE-84
-  - 🌐 EE-85
-  - 🌐 EE-86
-  - 🌐 EE-87
-  - 🌐 EE-88
-  - 🌐 EE-89
-  - 🌐 EE-90
-  - 🌐 EE-91
-  - 🌐 EE-92
-  - 🌐 EE-93
-  - 🌐 EE-94
-  - 🌐 EE-95
-  - 🌐 EE-96
-  - 🌐 EE-97
-  - 🌐 EE-98
-  - 🌐 EE-99
-  - 🌐 EE-100
-  - 🌐 EE-101
-  - 🌐 EE-102
-  - 🌐 EE-103
-  - 🌐 EE-104
-  - 🌐 EE-105
-  - 🌐 EE-106
-  - 🌐 EE-107
-  - 🌐 EE-108
-  - 🌐 EE-109
-  - 🌐 EE-110
-  - 🌐 EE-111
-  - 🌐 EE-112
-  - 🌐 EE-113
-  - 🌐 EE-114
-  - 🌐 EE-115
-  - 🌐 EE-116
-  - 🌐 EE-117
-  - 🌐 EE-118
-  - 🌐 EE-119
-  - 🌐 EE-120
-  - 🌐 EE-121
-  - 🌐 EE-122
-  - 🌐 EE-123
-  - 🌐 EE-124
-  - 🌐 EE-125
-  - 🌐 EE-126
-  - 🌐 EE-127
-  - 🌐 EE-128
-  - 🌐 EE-129
-  - 🌐 EE-130
-  - 🌐 EE-131
-  - 🌐 EE-132
-  - 🌐 EE-133
-  - 🌐 EE-134
-  - 🌐 EE-135
-  - 🌐 EE-136
-  - 🌐 EE-137
-  - 🌐 EE-138
-  - 🌐 EE-139
-  - 🌐 EE-140
-  - 🌐 EE-141
-  - 🌐 EE-142
-  - 🌐 EE-143
-  - 🌐 EE-144
-  - 🌐 EE-145
-  - 🌐 EE-146
-  - 🌐 EE-147
-  - 🌐 EE-148
-  - 🌐 EE-149
-  - 🌐 EE-150
-  - 🌐 EE-151
-  - 🌐 EE-152
-  - 🌐 EE-153
-  - 🌐 EE-154
-  - 🌐 EE-155
-  - 🌐 EE-156
-  - 🌐 EE-157
-  - 🌐 EE-158
-  - 🌐 EE-159
-  - 🌐 EE-160
-  - 🌐 EE-161
+  - 🇪🇪 爱沙尼亚 01
+  - 🇪🇪 爱沙尼亚 02
+  - 🇪🇪 爱沙尼亚 03
+  - 🇪🇪 爱沙尼亚 04
+  - 🇪🇪 爱沙尼亚 05
+  - 🇪🇪 爱沙尼亚 06
+  - 🇪🇪 爱沙尼亚 07
+  - 🇪🇪 爱沙尼亚 08
+  - 🇪🇪 爱沙尼亚 09
+  - 🇪🇪 爱沙尼亚 10
+  - 🇪🇪 爱沙尼亚 11
+  - 🇪🇪 爱沙尼亚 12
+  - 🇪🇪 爱沙尼亚 13
+  - 🇪🇪 爱沙尼亚 14
+  - 🇪🇪 爱沙尼亚 15
 rules:
 - MATCH,PROXY

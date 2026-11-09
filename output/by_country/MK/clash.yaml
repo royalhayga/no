@@ -25,60 +25,30 @@ proxies:
   port: 443
   cipher: aes-256-gcm
   password: ٿvMtx}u
-- name: 🌐 MK-04
-  type: ss
-  server: 195.144.24.166
-  port: 443
-  cipher: aes-256-gcm
-  password: "w}{=<GoO\x1Fum"
 - name: 🌐 MK-05
   type: ss
   server: 195.144.24.145
   port: 443
   cipher: aes-256-gcm
   password: ٿvMtx}u
-- name: 🌐 MK-06
-  type: ss
-  server: 195.144.24.166
-  port: 443
-  cipher: aes-256-gcm
-  password: "w}{=<GoO\x1Fum"
 - name: 🌐 MK-07
   type: ss
   server: 195.144.24.145
   port: 443
   cipher: aes-256-gcm
   password: ٿvMtx}u
-- name: 🌐 MK-08
-  type: ss
-  server: 195.144.24.166
-  port: 443
-  cipher: aes-256-gcm
-  password: "w}{=<GoO\x1Fum"
 - name: 🌐 MK-09
   type: ss
   server: 195.144.24.145
   port: 443
   cipher: aes-256-gcm
   password: ٿvMtx}u
-- name: 🌐 MK-10
-  type: ss
-  server: 195.144.24.166
-  port: 443
-  cipher: aes-256-gcm
-  password: "w}{=<GoO\x1Fum"
 - name: 🌐 MK-11
   type: ss
   server: 195.144.24.145
   port: 443
   cipher: aes-256-gcm
   password: ٿvMtx}u
-- name: 🌐 MK-12
-  type: ss
-  server: 195.144.24.166
-  port: 443
-  cipher: aes-256-gcm
-  password: "w}{=<GoO\x1Fum"
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -88,15 +58,10 @@ proxy-groups:
   - 🌐 MK-01
   - 🌐 MK-02
   - 🌐 MK-03
-  - 🌐 MK-04
   - 🌐 MK-05
-  - 🌐 MK-06
   - 🌐 MK-07
-  - 🌐 MK-08
   - 🌐 MK-09
-  - 🌐 MK-10
   - 🌐 MK-11
-  - 🌐 MK-12
 - name: PROXY
   type: select
   proxies:
@@ -105,14 +70,9 @@ proxy-groups:
   - 🌐 MK-01
   - 🌐 MK-02
   - 🌐 MK-03
-  - 🌐 MK-04
   - 🌐 MK-05
-  - 🌐 MK-06
   - 🌐 MK-07
-  - 🌐 MK-08
   - 🌐 MK-09
-  - 🌐 MK-10
   - 🌐 MK-11
-  - 🌐 MK-12
 rules:
 - MATCH,PROXY

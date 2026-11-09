@@ -1,0 +1,1432 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  - 1.1.1.1
+  - 8.8.8.8
+  nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  - https://doh.pub/dns-query
+log-level: info
+ipv6: false
+external-controller: 0.0.0.0:9090
+proxies: []
+proxy-groups:
+- name: PROXY
+  type: select
+  proxies:
+  - DIRECT
+  - REJECT
+- name: 📺 国内影视
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🛑 广告拦截
+  type: select
+  proxies:
+  - REJECT
+  - DIRECT
+  - PROXY
+- name: 🎓 谷歌学术
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🎵 YouTube Music
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: ▶️ YouTube
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 📁 Google Drive
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🇬 谷歌(CN)
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🌐 谷歌(国际)
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 📺 TVBox代理
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🎬 国外影视
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🟢 OpenAI
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🟣 Claude
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🟣 Anthropic
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🔵 Gemini
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🤖 Copilot
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: ✈️ Telegram
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🥔 PotatoChat
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 💬 KakaoTalk
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 💬 Line
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🟢 Whatsapp
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 👾 Discord
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🐦 Twitter
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 📸 Instagram
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 📘 Facebook
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🧵 Threads
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🤖 Reddit
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🍿 Netflix
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🏰 Disney
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🎧 Spotify
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🎵 TikTok
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🎮 Twitch
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🅿�?PayPal
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 💳 Stripe
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🪙 Binance
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🦆 Duckduckgo
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 📖 Wikipedia
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 📦 Dropbox
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 📦 Dubox
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: ☁️ MEGA
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🎨 Pixiv
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 📌 Pinterest
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🖼�?Imgur
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 📹 Vimeo
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🇬🇧 BBC
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: ✉️ Spark
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 📚 GitBook
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🦉 Duolingo
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 📝 Notion
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🤖 Civitai
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🐳 Docker
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🚀 Vercel
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 📱 Apkpure
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🐙 GitHub
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🏦 国内金融/银行
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🏦 美国银行
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🏦 香港银行
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🏦 英国银行
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🏦 日本银行
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🇸🇬 新加坡银�?
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🇨🇦 加拿大银�?
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🇦🇺 澳大利亚银行
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 💳 虚拟金融/Wise/PayPal
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 📍 IP归属地修�?FakeLocation)
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🍎 Apple Intelligence
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+- name: 🪟 Microsoft
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: ☁️ OneDrive
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🌐 MicrosoftEdge
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🔎 Bing
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🍎 Apple
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🛍�?AppStore
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: ☁️ iCloud
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🎮 Steam
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🎮 Sony
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 📦 Amazon
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🛍�?eBay
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🛍�?Bestbuy
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🛍�?Shopee
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🛍�?Shopify
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🛍�?MOMOShop
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 👜 Gucci
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 📱 Samsung
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🎮 Razer
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🎨 Adobe
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 💳 VISA
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🌐 WIX
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 💼 Zoho
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🎮 Epic
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🎮 PlayStation
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🎮 Nintendo
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🎮 Xbox
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 💻 Intel
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 💻 AMD
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 💻 Nvidia
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 💻 Dell
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 💻 HP
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 🖱�?Logitech
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: �?Speedtest
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - REJECT
+- name: 📥 私有下载/BT
+  type: select
+  proxies:
+  - DIRECT
+  - REJECT
+  - PROXY
+- name: 🐟 漏网之鱼
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - REJECT
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-ads-all.yaml
+    path: ./ruleset/reject.yaml
+    interval: 21600
+  tvbox_cn:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/royalhayga/tvbox-master-aggregator@main/domains_direct.yaml
+    path: ./ruleset/tvbox_cn.yaml
+    interval: 21600
+  tvbox_cn_ip:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    url: https://testingcf.jsdelivr.net/gh/royalhayga/tvbox-master-aggregator@main/ips_direct.yaml
+    path: ./ruleset/tvbox_cn_ip.yaml
+    interval: 21600
+  tvbox_proxy:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/royalhayga/tvbox-master-aggregator@main/domains_proxy.yaml
+    path: ./ruleset/tvbox_proxy.yaml
+    interval: 21600
+  firebase:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/firebase.yaml
+    path: ./ruleset/firebase.yaml
+    interval: 21600
+  scholar:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/google-scholar.yaml
+    path: ./ruleset/scholar.yaml
+    interval: 21600
+  youtube_music:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/youtube.yaml
+    path: ./ruleset/youtube_music.yaml
+    interval: 21600
+  YouTube:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/youtube.yaml
+    path: ./ruleset/YouTube.yaml
+    interval: 21600
+  googledrive:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/google.yaml
+    path: ./ruleset/googledrive.yaml
+    interval: 21600
+  google_cn:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/google-cn.yaml
+    path: ./ruleset/google_cn.yaml
+    interval: 21600
+  Google:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/google.yaml
+    path: ./ruleset/Google.yaml
+    interval: 21600
+  OpenAI:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/openai.yaml
+    path: ./ruleset/OpenAI.yaml
+    interval: 21600
+  claude:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/anthropic.yaml
+    path: ./ruleset/claude.yaml
+    interval: 21600
+  anthropic:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/anthropic.yaml
+    path: ./ruleset/anthropic.yaml
+    interval: 21600
+  gemini:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/google-gemini.yaml
+    path: ./ruleset/gemini.yaml
+    interval: 21600
+  Copilot:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/github-copilot.yaml
+    path: ./ruleset/Copilot.yaml
+    interval: 21600
+  Telegram:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/telegram.yaml
+    path: ./ruleset/Telegram.yaml
+    interval: 21600
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geoip/telegram.yaml
+    path: ./ruleset/telegramcidr.yaml
+    interval: 21600
+  PotatoChat:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/telegram.yaml
+    path: ./ruleset/PotatoChat.yaml
+    interval: 21600
+  KakaoTalk:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/kakao.yaml
+    path: ./ruleset/KakaoTalk.yaml
+    interval: 21600
+  Line:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/line.yaml
+    path: ./ruleset/Line.yaml
+    interval: 21600
+  Whatsapp:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/whatsapp.yaml
+    path: ./ruleset/Whatsapp.yaml
+    interval: 21600
+  Discord:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/discord.yaml
+    path: ./ruleset/Discord.yaml
+    interval: 21600
+  Twitter:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/twitter.yaml
+    path: ./ruleset/Twitter.yaml
+    interval: 21600
+  Instagram:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/instagram.yaml
+    path: ./ruleset/Instagram.yaml
+    interval: 21600
+  Facebook:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/facebook.yaml
+    path: ./ruleset/Facebook.yaml
+    interval: 21600
+  threads:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/threads.yaml
+    path: ./ruleset/threads.yaml
+    interval: 21600
+  Reddit:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/reddit.yaml
+    path: ./ruleset/Reddit.yaml
+    interval: 21600
+  Netflix:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/netflix.yaml
+    path: ./ruleset/Netflix.yaml
+    interval: 21600
+  Disney:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/disney.yaml
+    path: ./ruleset/Disney.yaml
+    interval: 21600
+  Spotify:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/spotify.yaml
+    path: ./ruleset/Spotify.yaml
+    interval: 21600
+  TikTok:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/tiktok.yaml
+    path: ./ruleset/TikTok.yaml
+    interval: 21600
+  Twitch:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/twitch.yaml
+    path: ./ruleset/Twitch.yaml
+    interval: 21600
+  PayPal:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/paypal.yaml
+    path: ./ruleset/PayPal.yaml
+    interval: 21600
+  stripe:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/stripe.yaml
+    path: ./ruleset/stripe.yaml
+    interval: 21600
+  Binance:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/binance.yaml
+    path: ./ruleset/Binance.yaml
+    interval: 21600
+  Duckduckgo:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/duckduckgo.yaml
+    path: ./ruleset/Duckduckgo.yaml
+    interval: 21600
+  Wikipedia:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/wikimedia.yaml
+    path: ./ruleset/Wikipedia.yaml
+    interval: 21600
+  dropbox:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/dropbox.yaml
+    path: ./ruleset/dropbox.yaml
+    interval: 21600
+  Dubox:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/baidu.yaml
+    path: ./ruleset/Dubox.yaml
+    interval: 21600
+  MEGA:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/mega.yaml
+    path: ./ruleset/MEGA.yaml
+    interval: 21600
+  pixiv:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/pixiv.yaml
+    path: ./ruleset/pixiv.yaml
+    interval: 21600
+  Pinterest:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/pinterest.yaml
+    path: ./ruleset/Pinterest.yaml
+    interval: 21600
+  Imgur:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/imgur.yaml
+    path: ./ruleset/Imgur.yaml
+    interval: 21600
+  Vimeo:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/vimeo.yaml
+    path: ./ruleset/Vimeo.yaml
+    interval: 21600
+  BBC:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/bbc.yaml
+    path: ./ruleset/BBC.yaml
+    interval: 21600
+  Spark:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-communication.yaml
+    path: ./ruleset/Spark.yaml
+    interval: 21600
+  GitBook:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/gitbook.yaml
+    path: ./ruleset/GitBook.yaml
+    interval: 21600
+  duolingo:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/duolingo.yaml
+    path: ./ruleset/duolingo.yaml
+    interval: 21600
+  notion:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/notion.yaml
+    path: ./ruleset/notion.yaml
+    interval: 21600
+  civitai:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-ai-!cn.yaml
+    path: ./ruleset/civitai.yaml
+    interval: 21600
+  docker:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/docker.yaml
+    path: ./ruleset/docker.yaml
+    interval: 21600
+  vercel:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/vercel.yaml
+    path: ./ruleset/vercel.yaml
+    interval: 21600
+  apkpure:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/apkpure.yaml
+    path: ./ruleset/apkpure.yaml
+    interval: 21600
+  GitHub:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/github.yaml
+    path: ./ruleset/GitHub.yaml
+    interval: 21600
+  proxy_media:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-media-!cn.yaml
+    path: ./ruleset/proxy_media.yaml
+    interval: 21600
+  Microsoft:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/microsoft.yaml
+    path: ./ruleset/Microsoft.yaml
+    interval: 21600
+  OneDrive:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/onedrive.yaml
+    path: ./ruleset/OneDrive.yaml
+    interval: 21600
+  MicrosoftEdge:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/microsoft.yaml
+    path: ./ruleset/MicrosoftEdge.yaml
+    interval: 21600
+  Bing:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/bing.yaml
+    path: ./ruleset/Bing.yaml
+    interval: 21600
+  Apple:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/apple.yaml
+    path: ./ruleset/Apple.yaml
+    interval: 21600
+  AppStore:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/apple.yaml
+    path: ./ruleset/AppStore.yaml
+    interval: 21600
+  iCloud:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/icloud.yaml
+    path: ./ruleset/iCloud.yaml
+    interval: 21600
+  apple_cn_domain:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/apple-cn.yaml
+    path: ./ruleset/apple_cn_domain.yaml
+    interval: 21600
+  icloud_domain:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/icloud.yaml
+    path: ./ruleset/icloud_domain.yaml
+    interval: 21600
+  Steam:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/steam.yaml
+    path: ./ruleset/Steam.yaml
+    interval: 21600
+  Sony:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/sony.yaml
+    path: ./ruleset/Sony.yaml
+    interval: 21600
+  Amazon:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/amazon.yaml
+    path: ./ruleset/Amazon.yaml
+    interval: 21600
+  eBay:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/ebay.yaml
+    path: ./ruleset/eBay.yaml
+    interval: 21600
+  Bestbuy:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/bestbuy.yaml
+    path: ./ruleset/Bestbuy.yaml
+    interval: 21600
+  Shopee:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/shopee.yaml
+    path: ./ruleset/Shopee.yaml
+    interval: 21600
+  Shopify:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/shopify.yaml
+    path: ./ruleset/Shopify.yaml
+    interval: 21600
+  MOMOShop:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-ecommerce.yaml
+    path: ./ruleset/MOMOShop.yaml
+    interval: 21600
+  Gucci:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/gucci.yaml
+    path: ./ruleset/Gucci.yaml
+    interval: 21600
+  Samsung:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/samsung.yaml
+    path: ./ruleset/Samsung.yaml
+    interval: 21600
+  Razer:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/razer.yaml
+    path: ./ruleset/Razer.yaml
+    interval: 21600
+  Adobe:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/adobe.yaml
+    path: ./ruleset/Adobe.yaml
+    interval: 21600
+  VISA:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/visa.yaml
+    path: ./ruleset/VISA.yaml
+    interval: 21600
+  WIX:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/wix.yaml
+    path: ./ruleset/WIX.yaml
+    interval: 21600
+  Zoho:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/zoho.yaml
+    path: ./ruleset/Zoho.yaml
+    interval: 21600
+  bank_cn:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-bank-cn.yaml
+    path: ./ruleset/bank_cn.yaml
+    interval: 21600
+  bank_us:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/US.yaml
+    path: ./ruleset/bank_us.yaml
+    interval: 21600
+  bank_hk:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/HK.yaml
+    path: ./ruleset/bank_hk.yaml
+    interval: 21600
+  bank_uk:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/UK.yaml
+    path: ./ruleset/bank_uk.yaml
+    interval: 21600
+  bank_jp:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-bank-jp.yaml
+    path: ./ruleset/bank_jp.yaml
+    interval: 21600
+  bank_sg:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/SG.yaml
+    path: ./ruleset/bank_sg.yaml
+    interval: 21600
+  bank_ca:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/CA.yaml
+    path: ./ruleset/bank_ca.yaml
+    interval: 21600
+  bank_au:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Bank/AU.yaml
+    path: ./ruleset/bank_au.yaml
+    interval: 21600
+  virtual_finance:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/VirtualFinance/VirtualFinance.yaml
+    path: ./ruleset/virtual_finance.yaml
+    interval: 21600
+  fakelocation:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/FakeLocation/FakeLocation.yaml
+    path: ./ruleset/fakelocation.yaml
+    interval: 21600
+  apple_ai:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/apple-intelligence.yaml
+    path: ./ruleset/apple_ai.yaml
+    interval: 21600
+  proxy_domain:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/geolocation-!cn.yaml
+    path: ./ruleset/proxy_domain.yaml
+    interval: 21600
+  direct:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/cn.yaml
+    path: ./ruleset/direct.yaml
+    interval: 21600
+  private:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/private.yaml
+    path: ./ruleset/private.yaml
+    interval: 21600
+  cncidr:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geoip/cn.yaml
+    path: ./ruleset/cncidr.yaml
+    interval: 21600
+  lancidr:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geoip/private.yaml
+    path: ./ruleset/lancidr.yaml
+    interval: 21600
+  applications:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-dev.yaml
+    path: ./ruleset/applications.yaml
+    interval: 21600
+  download_pt:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/category-pt.yaml
+    path: ./ruleset/download_pt.yaml
+    interval: 21600
+  gfw:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/gfw.yaml
+    path: ./ruleset/gfw.yaml
+    interval: 21600
+  tld-not-cn:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/bgpeer/rules@main/geo/geosite/tld-!cn.yaml
+    path: ./ruleset/tld-not-cn.yaml
+    interval: 21600
+rules:
+- DOMAIN,umail.eu.org,DIRECT
+- IP-CIDR,45.159.51.56/32,DIRECT,no-resolve
+- IP-CIDR,104.243.24.216/32,DIRECT,no-resolve
+- IP-CIDR,104.225.233.178/32,DIRECT,no-resolve
+- DOMAIN,clash.razord.top,DIRECT
+- DOMAIN,yacd.haishan.me,DIRECT
+- RULE-SET,private,DIRECT
+- GEOIP,LAN,DIRECT,no-resolve
+- RULE-SET,lancidr,DIRECT,no-resolve
+- RULE-SET,tvbox_cn,📺 国内影视
+- RULE-SET,tvbox_cn_ip,📺 国内影视,no-resolve
+- RULE-SET,firebase,🌐 谷歌(国际)
+- RULE-SET,reject,🛑 广告拦截
+- RULE-SET,scholar,🎓 谷歌学术
+- RULE-SET,youtube_music,🎵 YouTube Music
+- RULE-SET,YouTube,▶️ YouTube
+- RULE-SET,googledrive,📁 Google Drive
+- RULE-SET,google_cn,🇬 谷歌(CN)
+- RULE-SET,Google,🌐 谷歌(国际)
+- RULE-SET,tvbox_proxy,📺 TVBox代理
+- RULE-SET,bank_us,🏦 美国银行
+- RULE-SET,bank_hk,🏦 香港银行
+- RULE-SET,bank_uk,🏦 英国银行
+- RULE-SET,bank_jp,🏦 日本银行
+- RULE-SET,bank_sg,🇸🇬 新加坡银�?
+- RULE-SET,bank_ca,🇨🇦 加拿大银�?
+- RULE-SET,bank_au,🇦🇺 澳大利亚银行
+- RULE-SET,virtual_finance,💳 虚拟金融/Wise/PayPal
+- RULE-SET,apple_ai,🍎 Apple Intelligence
+- RULE-SET,fakelocation,📍 IP归属地修�?FakeLocation)
+- RULE-SET,OpenAI,🟢 OpenAI
+- RULE-SET,claude,🟣 Claude
+- RULE-SET,anthropic,🟣 Anthropic
+- RULE-SET,gemini,🔵 Gemini
+- RULE-SET,Copilot,🤖 Copilot
+- RULE-SET,Telegram,✈️ Telegram
+- RULE-SET,telegramcidr,✈️ Telegram,no-resolve
+- RULE-SET,PotatoChat,🥔 PotatoChat
+- RULE-SET,KakaoTalk,💬 KakaoTalk
+- RULE-SET,Line,💬 Line
+- RULE-SET,Whatsapp,🟢 Whatsapp
+- RULE-SET,Discord,👾 Discord
+- RULE-SET,Twitter,🐦 Twitter
+- RULE-SET,Instagram,📸 Instagram
+- RULE-SET,Facebook,📘 Facebook
+- RULE-SET,threads,🧵 Threads
+- RULE-SET,Reddit,🤖 Reddit
+- RULE-SET,Netflix,🍿 Netflix
+- RULE-SET,Disney,🏰 Disney
+- RULE-SET,Spotify,🎧 Spotify
+- RULE-SET,TikTok,🎵 TikTok
+- RULE-SET,Twitch,🎮 Twitch
+- RULE-SET,PayPal,🅿�?PayPal
+- RULE-SET,stripe,💳 Stripe
+- RULE-SET,Binance,🪙 Binance
+- RULE-SET,Duckduckgo,🦆 Duckduckgo
+- RULE-SET,Wikipedia,📖 Wikipedia
+- RULE-SET,dropbox,📦 Dropbox
+- RULE-SET,Dubox,📦 Dubox
+- RULE-SET,MEGA,☁️ MEGA
+- RULE-SET,pixiv,🎨 Pixiv
+- RULE-SET,Pinterest,📌 Pinterest
+- RULE-SET,Imgur,🖼�?Imgur
+- RULE-SET,Vimeo,📹 Vimeo
+- RULE-SET,BBC,🇬🇧 BBC
+- RULE-SET,Spark,✉️ Spark
+- RULE-SET,GitBook,📚 GitBook
+- RULE-SET,duolingo,🦉 Duolingo
+- RULE-SET,notion,📝 Notion
+- RULE-SET,civitai,🤖 Civitai
+- RULE-SET,docker,🐳 Docker
+- RULE-SET,vercel,🚀 Vercel
+- RULE-SET,apkpure,📱 Apkpure
+- RULE-SET,GitHub,🐙 GitHub
+- RULE-SET,proxy_domain,PROXY
+- RULE-SET,bank_cn,🏦 国内金融/银行
+- RULE-SET,Microsoft,🪟 Microsoft
+- RULE-SET,OneDrive,☁️ OneDrive
+- RULE-SET,MicrosoftEdge,🌐 MicrosoftEdge
+- RULE-SET,Bing,🔎 Bing
+- RULE-SET,Apple,🍎 Apple
+- RULE-SET,apple_cn_domain,🍎 Apple
+- RULE-SET,AppStore,🛍�?AppStore
+- RULE-SET,iCloud,☁️ iCloud
+- RULE-SET,icloud_domain,☁️ iCloud
+- RULE-SET,Steam,🎮 Steam
+- RULE-SET,Sony,🎮 Sony
+- RULE-SET,Amazon,📦 Amazon
+- RULE-SET,eBay,🛍�?eBay
+- RULE-SET,Bestbuy,🛍�?Bestbuy
+- RULE-SET,Shopee,🛍�?Shopee
+- RULE-SET,Shopify,🛍�?Shopify
+- RULE-SET,MOMOShop,🛍�?MOMOShop
+- RULE-SET,Gucci,👜 Gucci
+- RULE-SET,Samsung,📱 Samsung
+- RULE-SET,Razer,🎮 Razer
+- RULE-SET,Adobe,🎨 Adobe
+- RULE-SET,VISA,💳 VISA
+- RULE-SET,WIX,🌐 WIX
+- RULE-SET,Zoho,💼 Zoho
+- RULE-SET,download_pt,📥 私有下载/BT
+- RULE-SET,direct,DIRECT
+- RULE-SET,cncidr,DIRECT,no-resolve
+- GEOIP,CN,DIRECT,no-resolve
+- RULE-SET,gfw,PROXY
+- RULE-SET,tld-not-cn,PROXY
+- RULE-SET,proxy_media,🎬 国外影视
+- RULE-SET,applications,PROXY
+- MATCH,🐟 漏网之鱼

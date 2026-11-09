@@ -3,274 +3,71 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🌐 MD-01
-  type: vless
+- type: vless
+  name: 🇲🇩 摩尔多瓦 01
   server: 185.153.198.86
   port: 443
   uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
   cipher: auto
   tls: false
-  servername: free.cndyw.ggff.net
-- name: 🌐 MD-02
-  type: vless
+  network: tcp
+  sni: free.cndyw.ggff.net
+- type: vless
+  name: 🇲🇩 摩尔多瓦 02
   server: 89.35.14.34
   port: 443
   uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
   cipher: auto
   tls: true
-  servername: md5.univesalsrv.com
-- name: 🌐 MD-03
-  type: vless
+  network: tcp
+  sni: md5.univesalsrv.com
+- type: vless
+  name: 🇲🇩 摩尔多瓦 03
   server: 89.35.14.32
   port: 443
   uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
   cipher: auto
   tls: true
-  servername: md3.univesalsrv.com
-- name: 🌐 MD-04
-  type: vless
+  network: tcp
+  sni: md3.univesalsrv.com
+- type: vless
+  name: 🇲🇩 摩尔多瓦 04
   server: 89.35.14.31
   port: 443
   uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
   cipher: auto
   tls: true
-  servername: md2.univesalsrv.com
-- name: 🌐 MD-05
-  type: vless
+  network: tcp
+  sni: md2.univesalsrv.com
+- type: vless
+  name: 🇲🇩 摩尔多瓦 05
   server: 89.35.14.30
   port: 443
   uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
   cipher: auto
   tls: true
-  servername: md1.univesalsrv.com
-- name: 🌐 MD-06
-  type: vless
+  network: tcp
+  sni: md1.univesalsrv.com
+- type: vless
+  name: 🇲🇩 摩尔多瓦 06
   server: 89.35.14.33
   port: 443
   uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
   cipher: auto
   tls: true
-  servername: md4.univesalsrv.com
-- name: 🌐 MD-07
-  type: vless
+  network: tcp
+  sni: md4.univesalsrv.com
+- type: vless
+  name: 🇲🇩 摩尔多瓦 07
   server: 193.233.202.1
   port: 443
   uuid: 838e036b-f229-480b-b0ef-86b1dc711add
   cipher: auto
   tls: true
-  servername: yahoo.com
-- name: 🌐 MD-08
-  type: ss
-  server: 185.153.198.86
-  port: 443
-  cipher: aes-256-gcm
-  password: "Ӈ<ǶѾ}k\egs6"
-- name: 🌐 MD-09
-  type: ss
-  server: 89.35.14.34
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-10
-  type: ss
-  server: 89.35.14.32
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-11
-  type: ss
-  server: 89.35.14.31
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-12
-  type: ss
-  server: 89.35.14.30
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-13
-  type: ss
-  server: 89.35.14.33
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-14
-  type: ss
-  server: 193.233.202.1
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7F\x1E~\x7Fm\eoGuէ]"
-- name: 🌐 MD-15
-  type: ss
-  server: 185.153.198.86
-  port: 443
-  cipher: aes-256-gcm
-  password: "Ӈ<ǶѾ}k\egs6"
-- name: 🌐 MD-16
-  type: ss
-  server: 89.35.14.34
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-17
-  type: ss
-  server: 89.35.14.32
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-18
-  type: ss
-  server: 89.35.14.31
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-19
-  type: ss
-  server: 89.35.14.30
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-20
-  type: ss
-  server: 89.35.14.33
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-21
-  type: ss
-  server: 193.233.202.1
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7F\x1E~\x7Fm\eoGuէ]"
-- name: 🌐 MD-22
-  type: ss
-  server: 185.153.198.86
-  port: 443
-  cipher: aes-256-gcm
-  password: "Ӈ<ǶѾ}k\egs6"
-- name: 🌐 MD-23
-  type: ss
-  server: 89.35.14.34
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-24
-  type: ss
-  server: 89.35.14.32
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-25
-  type: ss
-  server: 89.35.14.31
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-26
-  type: ss
-  server: 89.35.14.30
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-27
-  type: ss
-  server: 89.35.14.33
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-28
-  type: ss
-  server: 193.233.202.1
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7F\x1E~\x7Fm\eoGuէ]"
-- name: 🌐 MD-29
-  type: ss
-  server: 185.153.198.86
-  port: 443
-  cipher: aes-256-gcm
-  password: "Ӈ<ǶѾ}k\egs6"
-- name: 🌐 MD-30
-  type: ss
-  server: 89.35.14.34
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-31
-  type: ss
-  server: 89.35.14.32
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-32
-  type: ss
-  server: 89.35.14.31
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-33
-  type: ss
-  server: 89.35.14.30
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-34
-  type: ss
-  server: 89.35.14.33
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-35
-  type: ss
-  server: 193.233.202.1
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7F\x1E~\x7Fm\eoGuէ]"
-- name: 🌐 MD-36
-  type: ss
-  server: 185.153.198.86
-  port: 443
-  cipher: aes-256-gcm
-  password: "Ӈ<ǶѾ}k\egs6"
-- name: 🌐 MD-37
-  type: ss
-  server: 89.35.14.34
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-38
-  type: ss
-  server: 89.35.14.32
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-39
-  type: ss
-  server: 89.35.14.31
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-40
-  type: ss
-  server: 89.35.14.30
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-41
-  type: ss
-  server: 89.35.14.33
-  port: 443
-  cipher: aes-256-gcm
-  password: Z[m_o
-- name: 🌐 MD-42
-  type: ss
-  server: 193.233.202.1
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7F\x1E~\x7Fm\eoGuէ]"
-- name: 🌐 MD-43
-  type: trojan
+  network: tcp
+  sni: yahoo.com
+- type: trojan
+  name: 🇲🇩 摩尔多瓦 08
   server: 185.223.169.126
   port: 8443
   password: 8r%3C%5B9%27l6hAO%238ZQi
@@ -281,96 +78,26 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 MD-01
-  - 🌐 MD-02
-  - 🌐 MD-03
-  - 🌐 MD-04
-  - 🌐 MD-05
-  - 🌐 MD-06
-  - 🌐 MD-07
-  - 🌐 MD-08
-  - 🌐 MD-09
-  - 🌐 MD-10
-  - 🌐 MD-11
-  - 🌐 MD-12
-  - 🌐 MD-13
-  - 🌐 MD-14
-  - 🌐 MD-15
-  - 🌐 MD-16
-  - 🌐 MD-17
-  - 🌐 MD-18
-  - 🌐 MD-19
-  - 🌐 MD-20
-  - 🌐 MD-21
-  - 🌐 MD-22
-  - 🌐 MD-23
-  - 🌐 MD-24
-  - 🌐 MD-25
-  - 🌐 MD-26
-  - 🌐 MD-27
-  - 🌐 MD-28
-  - 🌐 MD-29
-  - 🌐 MD-30
-  - 🌐 MD-31
-  - 🌐 MD-32
-  - 🌐 MD-33
-  - 🌐 MD-34
-  - 🌐 MD-35
-  - 🌐 MD-36
-  - 🌐 MD-37
-  - 🌐 MD-38
-  - 🌐 MD-39
-  - 🌐 MD-40
-  - 🌐 MD-41
-  - 🌐 MD-42
-  - 🌐 MD-43
+  - 🇲🇩 摩尔多瓦 01
+  - 🇲🇩 摩尔多瓦 02
+  - 🇲🇩 摩尔多瓦 03
+  - 🇲🇩 摩尔多瓦 04
+  - 🇲🇩 摩尔多瓦 05
+  - 🇲🇩 摩尔多瓦 06
+  - 🇲🇩 摩尔多瓦 07
+  - 🇲🇩 摩尔多瓦 08
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - DIRECT
-  - 🌐 MD-01
-  - 🌐 MD-02
-  - 🌐 MD-03
-  - 🌐 MD-04
-  - 🌐 MD-05
-  - 🌐 MD-06
-  - 🌐 MD-07
-  - 🌐 MD-08
-  - 🌐 MD-09
-  - 🌐 MD-10
-  - 🌐 MD-11
-  - 🌐 MD-12
-  - 🌐 MD-13
-  - 🌐 MD-14
-  - 🌐 MD-15
-  - 🌐 MD-16
-  - 🌐 MD-17
-  - 🌐 MD-18
-  - 🌐 MD-19
-  - 🌐 MD-20
-  - 🌐 MD-21
-  - 🌐 MD-22
-  - 🌐 MD-23
-  - 🌐 MD-24
-  - 🌐 MD-25
-  - 🌐 MD-26
-  - 🌐 MD-27
-  - 🌐 MD-28
-  - 🌐 MD-29
-  - 🌐 MD-30
-  - 🌐 MD-31
-  - 🌐 MD-32
-  - 🌐 MD-33
-  - 🌐 MD-34
-  - 🌐 MD-35
-  - 🌐 MD-36
-  - 🌐 MD-37
-  - 🌐 MD-38
-  - 🌐 MD-39
-  - 🌐 MD-40
-  - 🌐 MD-41
-  - 🌐 MD-42
-  - 🌐 MD-43
+  - 🇲🇩 摩尔多瓦 01
+  - 🇲🇩 摩尔多瓦 02
+  - 🇲🇩 摩尔多瓦 03
+  - 🇲🇩 摩尔多瓦 04
+  - 🇲🇩 摩尔多瓦 05
+  - 🇲🇩 摩尔多瓦 06
+  - 🇲🇩 摩尔多瓦 07
+  - 🇲🇩 摩尔多瓦 08
 rules:
 - MATCH,PROXY

@@ -3,166 +3,49 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🌐 AL-01
-  type: vless
+- type: vless
+  name: 🇦🇱 阿尔巴尼亚 01
   server: 103.167.234.26
   port: 443
   uuid: 4b21fbc7-00c2-4665-9788-02153832f9e5
   cipher: auto
   tls: true
-  servername: v2ray.aizgl.com
-- name: 🌐 AL-02
-  type: vless
+  network: tcp
+  sni: v2ray.aizgl.com
+- type: vless
+  name: 🇦🇱 阿尔巴尼亚 02
   server: 31.41.33.28
   port: 443
   uuid: 5dff1842-c02f-4dd4-b1ad-2e597b99dc31
   cipher: auto
   tls: true
-  servername: cdn.oculon.online
-- name: 🌐 AL-03
-  type: vless
+  network: tcp
+  sni: cdn.oculon.online
+- type: vless
+  name: 🇦🇱 阿尔巴尼亚 03
   server: 103.167.234.26
   port: 443
   uuid: c18b978e-1c4e-415c-8bea-07942b563a64
   cipher: auto
   tls: false
-  servername: shuma.ccwu.cc
-- name: 🌐 AL-04
-  type: ss
-  server: 103.167.234.26
-  port: 443
-  cipher: aes-256-gcm
-  password: "ή};G6�?my\x7F׹"
-- name: 🌐 AL-05
-  type: ss
-  server: 31.41.33.28
-  port: 443
-  cipher: aes-256-gcm
-  password: 6sMxoV}}u
-- name: 🌐 AL-06
-  type: ss
-  server: 103.167.234.26
-  port: 443
-  cipher: aes-256-gcm
-  password: "s_\e\x1E\x1E^\\ӿxپzݮ"
-- name: 🌐 AL-07
-  type: ss
-  server: 103.167.234.26
-  port: 443
-  cipher: aes-256-gcm
-  password: "ή};G6�?my\x7F׹"
-- name: 🌐 AL-08
-  type: ss
-  server: 31.41.33.28
-  port: 443
-  cipher: aes-256-gcm
-  password: 6sMxoV}}u
-- name: 🌐 AL-09
-  type: ss
-  server: 103.167.234.26
-  port: 443
-  cipher: aes-256-gcm
-  password: "s_\e\x1E\x1E^\\ӿxپzݮ"
-- name: 🌐 AL-10
-  type: ss
-  server: 103.167.234.26
-  port: 443
-  cipher: aes-256-gcm
-  password: "ή};G6�?my\x7F׹"
-- name: 🌐 AL-11
-  type: ss
-  server: 31.41.33.28
-  port: 443
-  cipher: aes-256-gcm
-  password: 6sMxoV}}u
-- name: 🌐 AL-12
-  type: ss
-  server: 103.167.234.26
-  port: 443
-  cipher: aes-256-gcm
-  password: "s_\e\x1E\x1E^\\ӿxپzݮ"
-- name: 🌐 AL-13
-  type: ss
-  server: 103.167.234.26
-  port: 443
-  cipher: aes-256-gcm
-  password: "ή};G6�?my\x7F׹"
-- name: 🌐 AL-14
-  type: ss
-  server: 31.41.33.28
-  port: 443
-  cipher: aes-256-gcm
-  password: 6sMxoV}}u
-- name: 🌐 AL-15
-  type: ss
-  server: 103.167.234.26
-  port: 443
-  cipher: aes-256-gcm
-  password: "s_\e\x1E\x1E^\\ӿxپzݮ"
-- name: 🌐 AL-16
-  type: ss
-  server: 103.167.234.26
-  port: 443
-  cipher: aes-256-gcm
-  password: "ή};G6�?my\x7F׹"
-- name: 🌐 AL-17
-  type: ss
-  server: 31.41.33.28
-  port: 443
-  cipher: aes-256-gcm
-  password: 6sMxoV}}u
-- name: 🌐 AL-18
-  type: ss
-  server: 103.167.234.26
-  port: 443
-  cipher: aes-256-gcm
-  password: "s_\e\x1E\x1E^\\ӿxپzݮ"
+  network: tcp
+  sni: shuma.ccwu.cc
 proxy-groups:
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 AL-01
-  - 🌐 AL-02
-  - 🌐 AL-03
-  - 🌐 AL-04
-  - 🌐 AL-05
-  - 🌐 AL-06
-  - 🌐 AL-07
-  - 🌐 AL-08
-  - 🌐 AL-09
-  - 🌐 AL-10
-  - 🌐 AL-11
-  - 🌐 AL-12
-  - 🌐 AL-13
-  - 🌐 AL-14
-  - 🌐 AL-15
-  - 🌐 AL-16
-  - 🌐 AL-17
-  - 🌐 AL-18
+  - 🇦🇱 阿尔巴尼亚 01
+  - 🇦🇱 阿尔巴尼亚 02
+  - 🇦🇱 阿尔巴尼亚 03
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - DIRECT
-  - 🌐 AL-01
-  - 🌐 AL-02
-  - 🌐 AL-03
-  - 🌐 AL-04
-  - 🌐 AL-05
-  - 🌐 AL-06
-  - 🌐 AL-07
-  - 🌐 AL-08
-  - 🌐 AL-09
-  - 🌐 AL-10
-  - 🌐 AL-11
-  - 🌐 AL-12
-  - 🌐 AL-13
-  - 🌐 AL-14
-  - 🌐 AL-15
-  - 🌐 AL-16
-  - 🌐 AL-17
-  - 🌐 AL-18
+  - 🇦🇱 阿尔巴尼亚 01
+  - 🇦🇱 阿尔巴尼亚 02
+  - 🇦🇱 阿尔巴尼亚 03
 rules:
 - MATCH,PROXY

@@ -3,8 +3,34 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🌐 TH-01
-  type: vmess
+- type: vless
+  name: 🇹🇭 泰国 01
+  server: 165.154.247.187
+  port: 2053
+  uuid: e4f229c9-bd67-45d4-873b-b85a43a2be54
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: www.amazon.com
+- type: vless
+  name: 🇹🇭 泰国 02
+  server: 43.133.110.81
+  port: 443
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  cipher: auto
+  tls: false
+  network: tcp
+  sni: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+- type: vless
+  name: 🇹🇭 泰国 03
+  server: 103.86.49.57
+  port: 80
+  uuid: 3c52e091-6714-4915-949f-2149fe69951b
+  cipher: auto
+  tls: false
+  network: tcp
+- type: vmess
+  name: 🇹🇭 泰国 04
   server: 119.46.51.45
   port: 37515
   uuid: 9b76bc31-17a5-4454-934a-8d5fb602cd70
@@ -12,242 +38,24 @@ proxies:
   cipher: auto
   tls: false
   network: tcp
-- name: 🌐 TH-02
-  type: vless
-  server: 103.86.49.57
-  port: 80
-  uuid: 3c52e091-6714-4915-949f-2149fe69951b
-  cipher: auto
-  tls: false
-  servername: aIs.SpEeDtEsT.nEt
-- name: 🌐 TH-03
-  type: vless
-  server: 45.144.165.11
-  port: 80
-  uuid: FREE
-  cipher: auto
-  tls: false
-  servername: ''
-- name: 🌐 TH-04
-  type: vless
-  server: 165.154.247.187
-  port: 2053
-  uuid: e4f229c9-bd67-45d4-873b-b85a43a2be54
-  cipher: auto
-  tls: true
-  servername: www.amazon.com
-- name: 🌐 TH-05
-  type: vless
-  server: 43.133.110.81
-  port: 443
-  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-  cipher: auto
-  tls: false
-  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-- name: 🌐 TH-06
-  type: ss
-  server: 103.86.49.57
-  port: 80
-  cipher: aes-256-gcm
-  password: v{Ouxy_^=}[
-- name: 🌐 TH-07
-  type: ss
-  server: 45.144.165.11
-  port: 80
-  cipher: aes-256-gcm
-  password: "\x15\x11\x04"
-- name: 🌐 TH-08
-  type: ss
-  server: 165.154.247.187
-  port: 2053
-  cipher: aes-256-gcm
-  password: '{=m޻xoZvmx'
-- name: 🌐 TH-09
-  type: ss
-  server: 43.133.110.81
-  port: 443
-  cipher: aes-256-gcm
-  password: "뮺ouk9\x7FGov"
-- name: 🌐 TH-10
-  type: ss
-  server: 103.86.49.57
-  port: 80
-  cipher: aes-256-gcm
-  password: v{Ouxy_^=}[
-- name: 🌐 TH-11
-  type: ss
-  server: 45.144.165.11
-  port: 80
-  cipher: aes-256-gcm
-  password: "\x15\x11\x04"
-- name: 🌐 TH-12
-  type: ss
-  server: 165.154.247.187
-  port: 2053
-  cipher: aes-256-gcm
-  password: '{=m޻xoZvmx'
-- name: 🌐 TH-13
-  type: ss
-  server: 43.133.110.81
-  port: 443
-  cipher: aes-256-gcm
-  password: "뮺ouk9\x7FGov"
-- name: 🌐 TH-14
-  type: ss
-  server: 103.86.49.57
-  port: 80
-  cipher: aes-256-gcm
-  password: v{Ouxy_^=}[
-- name: 🌐 TH-15
-  type: ss
-  server: 45.144.165.11
-  port: 80
-  cipher: aes-256-gcm
-  password: "\x15\x11\x04"
-- name: 🌐 TH-16
-  type: ss
-  server: 165.154.247.187
-  port: 2053
-  cipher: aes-256-gcm
-  password: '{=m޻xoZvmx'
-- name: 🌐 TH-17
-  type: ss
-  server: 43.133.110.81
-  port: 443
-  cipher: aes-256-gcm
-  password: "뮺ouk9\x7FGov"
-- name: 🌐 TH-18
-  type: ss
-  server: 103.86.49.57
-  port: 80
-  cipher: aes-256-gcm
-  password: v{Ouxy_^=}[
-- name: 🌐 TH-19
-  type: ss
-  server: 45.144.165.11
-  port: 80
-  cipher: aes-256-gcm
-  password: "\x15\x11\x04"
-- name: 🌐 TH-20
-  type: ss
-  server: 165.154.247.187
-  port: 2053
-  cipher: aes-256-gcm
-  password: '{=m޻xoZvmx'
-- name: 🌐 TH-21
-  type: ss
-  server: 43.133.110.81
-  port: 443
-  cipher: aes-256-gcm
-  password: "뮺ouk9\x7FGov"
-- name: 🌐 TH-22
-  type: ss
-  server: 103.86.49.57
-  port: 80
-  cipher: aes-256-gcm
-  password: v{Ouxy_^=}[
-- name: 🌐 TH-23
-  type: ss
-  server: 103.107.52.106
-  port: 52351
-  cipher: aes-256-gcm
-  password: sxajCTwrlK0zl+zmHpX0p0jXIfatnzlLzWlSQ950L1c=
-- name: 🌐 TH-24
-  type: ss
-  server: 45.144.165.11
-  port: 80
-  cipher: aes-256-gcm
-  password: "\x15\x11\x04"
-- name: 🌐 TH-25
-  type: ss
-  server: 165.154.247.187
-  port: 2053
-  cipher: aes-256-gcm
-  password: '{=m޻xoZvmx'
-- name: 🌐 TH-26
-  type: ss
-  server: 43.133.110.81
-  port: 443
-  cipher: aes-256-gcm
-  password: "뮺ouk9\x7FGov"
-- name: 🌐 TH-27
-  type: ss
-  server: 45.144.165.11
-  port: 80
-  cipher: aes-256-gcm
-  password: "O8w^g\x1DkMz\x1Fۭ]߆"
-- name: 🌐 TH-28
-  type: ss
-  server: 119.59.105.128
-  port: 443
-  cipher: aes-256-gcm
-  password: ӽM55oι^ֶ
 proxy-groups:
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 TH-01
-  - 🌐 TH-02
-  - 🌐 TH-03
-  - 🌐 TH-04
-  - 🌐 TH-05
-  - 🌐 TH-06
-  - 🌐 TH-07
-  - 🌐 TH-08
-  - 🌐 TH-09
-  - 🌐 TH-10
-  - 🌐 TH-11
-  - 🌐 TH-12
-  - 🌐 TH-13
-  - 🌐 TH-14
-  - 🌐 TH-15
-  - 🌐 TH-16
-  - 🌐 TH-17
-  - 🌐 TH-18
-  - 🌐 TH-19
-  - 🌐 TH-20
-  - 🌐 TH-21
-  - 🌐 TH-22
-  - 🌐 TH-23
-  - 🌐 TH-24
-  - 🌐 TH-25
-  - 🌐 TH-26
-  - 🌐 TH-27
-  - 🌐 TH-28
+  - 🇹🇭 泰国 01
+  - 🇹🇭 泰国 02
+  - 🇹🇭 泰国 03
+  - 🇹🇭 泰国 04
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - DIRECT
-  - 🌐 TH-01
-  - 🌐 TH-02
-  - 🌐 TH-03
-  - 🌐 TH-04
-  - 🌐 TH-05
-  - 🌐 TH-06
-  - 🌐 TH-07
-  - 🌐 TH-08
-  - 🌐 TH-09
-  - 🌐 TH-10
-  - 🌐 TH-11
-  - 🌐 TH-12
-  - 🌐 TH-13
-  - 🌐 TH-14
-  - 🌐 TH-15
-  - 🌐 TH-16
-  - 🌐 TH-17
-  - 🌐 TH-18
-  - 🌐 TH-19
-  - 🌐 TH-20
-  - 🌐 TH-21
-  - 🌐 TH-22
-  - 🌐 TH-23
-  - 🌐 TH-24
-  - 🌐 TH-25
-  - 🌐 TH-26
-  - 🌐 TH-27
-  - 🌐 TH-28
+  - 🇹🇭 泰国 01
+  - 🇹🇭 泰国 02
+  - 🇹🇭 泰国 03
+  - 🇹🇭 泰国 04
 rules:
 - MATCH,PROXY

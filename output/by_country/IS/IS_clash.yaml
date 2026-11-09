@@ -3,192 +3,53 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🌐 IS-01
-  type: vless
+- type: vless
+  name: 🇮🇸 冰岛 01
   server: 185.146.234.242
   port: 443
   uuid: b1c31d36-c6b5-414b-88d2-9e24e7bfcca3
   cipher: auto
   tls: true
-  servername: www.nihaoyun.top
-- name: 🌐 IS-02
-  type: vless
+  network: tcp
+  sni: www.nihaoyun.top
+- type: vless
+  name: 🇮🇸 冰岛 02
   server: 185.146.234.242
   port: 443
   uuid: b1c31d36-c6b5-414b-88d2-9e24e7bfcca3
   cipher: auto
   tls: false
-  servername: www.nihaoyun.top
-- name: 🌐 IS-03
-  type: vless
+  network: tcp
+  sni: www.nihaoyun.top
+- type: vless
+  name: 🇮🇸 冰岛 03
   server: 89.147.109.212
   port: 443
   uuid: 36af4874-d6a3-4f7c-82a7-1cb724961b52
   cipher: auto
   tls: false
-  servername: linek.perry.us.kg
-- name: 🌐 IS-04
-  type: vless
+  network: tcp
+  sni: linek.perry.us.kg
+- type: vless
+  name: 🇮🇸 冰岛 04
   server: 151.236.24.54
   port: 443
   uuid: 36af4874-d6a3-4f7c-82a7-1cb724961b52
   cipher: auto
   tls: true
-  servername: linek.perry.us.kg
-- name: 🌐 IS-05
-  type: vless
+  network: tcp
+  sni: linek.perry.us.kg
+- type: vless
+  name: 🇮🇸 冰岛 05
   server: 5.180.43.242
   port: 443
   uuid: 419e8d73-db47-4614-b54b-e707cf7df35c
   cipher: auto
   tls: true
-  servername: ya.ru
-- name: 🌐 IS-06
-  type: ss
-  server: 185.146.234.242
-  port: 443
-  cipher: aes-256-gcm
-  password: "oW7s^\ev{qƷ"
-- name: 🌐 IS-07
-  type: ss
-  server: 185.146.234.242
-  port: 443
-  cipher: aes-256-gcm
-  password: "oW7s^\ev{qƷ"
-- name: 🌐 IS-08
-  type: ss
-  server: 89.147.109.212
-  port: 443
-  cipher: aes-256-gcm
-  password: ߦwfۏzվv
-- name: 🌐 IS-09
-  type: ss
-  server: 151.236.24.54
-  port: 443
-  cipher: aes-256-gcm
-  password: ߦwfۏzվv
-- name: 🌐 IS-10
-  type: ss
-  server: 5.180.43.242
-  port: 443
-  cipher: aes-256-gcm
-  password: "_^u;xo\e{;q\x7F~\\"
-- name: 🌐 IS-11
-  type: ss
-  server: 185.146.234.242
-  port: 443
-  cipher: aes-256-gcm
-  password: "oW7s^\ev{qƷ"
-- name: 🌐 IS-12
-  type: ss
-  server: 185.146.234.242
-  port: 443
-  cipher: aes-256-gcm
-  password: "oW7s^\ev{qƷ"
-- name: 🌐 IS-13
-  type: ss
-  server: 89.147.109.212
-  port: 443
-  cipher: aes-256-gcm
-  password: ߦwfۏzվv
-- name: 🌐 IS-14
-  type: ss
-  server: 151.236.24.54
-  port: 443
-  cipher: aes-256-gcm
-  password: ߦwfۏzվv
-- name: 🌐 IS-15
-  type: ss
-  server: 5.180.43.242
-  port: 443
-  cipher: aes-256-gcm
-  password: "_^u;xo\e{;q\x7F~\\"
-- name: 🌐 IS-16
-  type: ss
-  server: 185.146.234.242
-  port: 443
-  cipher: aes-256-gcm
-  password: "oW7s^\ev{qƷ"
-- name: 🌐 IS-17
-  type: ss
-  server: 185.146.234.242
-  port: 443
-  cipher: aes-256-gcm
-  password: "oW7s^\ev{qƷ"
-- name: 🌐 IS-18
-  type: ss
-  server: 89.147.109.212
-  port: 443
-  cipher: aes-256-gcm
-  password: ߦwfۏzվv
-- name: 🌐 IS-19
-  type: ss
-  server: 151.236.24.54
-  port: 443
-  cipher: aes-256-gcm
-  password: ߦwfۏzվv
-- name: 🌐 IS-20
-  type: ss
-  server: 5.180.43.242
-  port: 443
-  cipher: aes-256-gcm
-  password: "_^u;xo\e{;q\x7F~\\"
-- name: 🌐 IS-21
-  type: ss
-  server: 185.146.234.242
-  port: 443
-  cipher: aes-256-gcm
-  password: "oW7s^\ev{qƷ"
-- name: 🌐 IS-22
-  type: ss
-  server: 185.146.234.242
-  port: 443
-  cipher: aes-256-gcm
-  password: "oW7s^\ev{qƷ"
-- name: 🌐 IS-23
-  type: ss
-  server: 89.147.109.212
-  port: 443
-  cipher: aes-256-gcm
-  password: ߦwfۏzվv
-- name: 🌐 IS-24
-  type: ss
-  server: 151.236.24.54
-  port: 443
-  cipher: aes-256-gcm
-  password: ߦwfۏzվv
-- name: 🌐 IS-25
-  type: ss
-  server: 5.180.43.242
-  port: 443
-  cipher: aes-256-gcm
-  password: "_^u;xo\e{;q\x7F~\\"
-- name: 🌐 IS-26
-  type: ss
-  server: 185.146.234.242
-  port: 443
-  cipher: aes-256-gcm
-  password: "oW7s^\ev{qƷ"
-- name: 🌐 IS-27
-  type: ss
-  server: 89.147.109.212
-  port: 443
-  cipher: aes-256-gcm
-  password: ߦwfۏzվv
-- name: 🌐 IS-28
-  type: ss
-  server: 151.236.24.54
-  port: 443
-  cipher: aes-256-gcm
-  password: ߦwfۏzվv
-- name: 🌐 IS-29
-  type: ss
-  server: 5.180.43.242
-  port: 443
-  cipher: aes-256-gcm
-  password: "_^u;xo\e{;q\x7F~\\"
-- name: 🌐 IS-30
-  type: trojan
+  network: tcp
+  sni: ya.ru
+- type: trojan
+  name: 🇮🇸 冰岛 06
   server: 185.246.191.25
   port: 2096
   password: 8r%3C%5B9%27l6hAO%238ZQi
@@ -199,70 +60,22 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 IS-01
-  - 🌐 IS-02
-  - 🌐 IS-03
-  - 🌐 IS-04
-  - 🌐 IS-05
-  - 🌐 IS-06
-  - 🌐 IS-07
-  - 🌐 IS-08
-  - 🌐 IS-09
-  - 🌐 IS-10
-  - 🌐 IS-11
-  - 🌐 IS-12
-  - 🌐 IS-13
-  - 🌐 IS-14
-  - 🌐 IS-15
-  - 🌐 IS-16
-  - 🌐 IS-17
-  - 🌐 IS-18
-  - 🌐 IS-19
-  - 🌐 IS-20
-  - 🌐 IS-21
-  - 🌐 IS-22
-  - 🌐 IS-23
-  - 🌐 IS-24
-  - 🌐 IS-25
-  - 🌐 IS-26
-  - 🌐 IS-27
-  - 🌐 IS-28
-  - 🌐 IS-29
-  - 🌐 IS-30
+  - 🇮🇸 冰岛 01
+  - 🇮🇸 冰岛 02
+  - 🇮🇸 冰岛 03
+  - 🇮🇸 冰岛 04
+  - 🇮🇸 冰岛 05
+  - 🇮🇸 冰岛 06
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - DIRECT
-  - 🌐 IS-01
-  - 🌐 IS-02
-  - 🌐 IS-03
-  - 🌐 IS-04
-  - 🌐 IS-05
-  - 🌐 IS-06
-  - 🌐 IS-07
-  - 🌐 IS-08
-  - 🌐 IS-09
-  - 🌐 IS-10
-  - 🌐 IS-11
-  - 🌐 IS-12
-  - 🌐 IS-13
-  - 🌐 IS-14
-  - 🌐 IS-15
-  - 🌐 IS-16
-  - 🌐 IS-17
-  - 🌐 IS-18
-  - 🌐 IS-19
-  - 🌐 IS-20
-  - 🌐 IS-21
-  - 🌐 IS-22
-  - 🌐 IS-23
-  - 🌐 IS-24
-  - 🌐 IS-25
-  - 🌐 IS-26
-  - 🌐 IS-27
-  - 🌐 IS-28
-  - 🌐 IS-29
-  - 🌐 IS-30
+  - 🇮🇸 冰岛 01
+  - 🇮🇸 冰岛 02
+  - 🇮🇸 冰岛 03
+  - 🇮🇸 冰岛 04
+  - 🇮🇸 冰岛 05
+  - 🇮🇸 冰岛 06
 rules:
 - MATCH,PROXY

@@ -3,8 +3,80 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🌐 CN-01
-  type: vmess
+- type: vless
+  name: 🌐 CN节点 01
+  server: 45.131.212.231
+  port: 443
+  uuid: 19513b1b-d29a-4f3e-ba9a-888261e4e048
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: sellflow.org
+- type: vless
+  name: 🌐 CN节点 02
+  server: 118.26.59.85
+  port: 443
+  uuid: cdc86ade-9bc3-41eb-a7b9-879130378820
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: www.bing.com
+- type: vless
+  name: 🌐 CN节点 03
+  server: 103.112.71.83
+  port: 443
+  uuid: f82332b2-dc8c-4196-ac12-f276e37e278a
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: test.bridge.anti-zapret.com
+- type: vless
+  name: 🌐 CN节点 04
+  server: 45.131.212.231
+  port: 443
+  uuid: 19513b1b-d29a-4f3e-ba9a-888261e4e048
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: sellflow.org
+- type: vless
+  name: 🌐 CN节点 05
+  server: 213.182.216.5
+  port: 8443
+  uuid: d92cf13b-7fb9-4d40-8507-cbaf29cdc8ae
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: aliusfilms.ru
+- type: vless
+  name: 🌐 CN节点 06
+  server: 185.242.247.44
+  port: 443
+  uuid: 454431fc-71e2-42b1-b375-5b55dd06666a
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: example.org
+- type: vless
+  name: 🌐 CN节点 07
+  server: 103.115.18.54
+  port: 443
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  cipher: auto
+  tls: false
+  network: tcp
+  sni: cdn8848.776676.xyz
+- type: vless
+  name: 🌐 CN节点 08
+  server: 45.137.43.138
+  port: 443
+  uuid: 92f33eb3-8f05-469f-98a0-95e902fd9dce
+  cipher: auto
+  tls: true
+  network: tcp
+  sni: gem10.hutsharing.com
+- type: vmess
+  name: 🌐 CN节点 09
   server: 112.132.215.108
   port: 50002
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
@@ -12,17 +84,17 @@ proxies:
   cipher: auto
   tls: false
   network: tcp
-- name: 🌐 CN-02
-  type: vmess
+- type: vmess
+  name: 🌐 CN节点 10
   server: 36.139.117.41
   port: 50011
   uuid: 1235431b-b6b8-4add-bff4-a6d71bcc4d71
   alterId: 0
-  cipher: None
+  cipher: none
   tls: false
   network: tcp
-- name: 🌐 CN-03
-  type: vmess
+- type: vmess
+  name: 🌐 CN节点 11
   server: 39.108.113.127
   port: 10086
   uuid: fde10e39-48bb-4dcf-b3ba-71d711323a54
@@ -30,8 +102,9 @@ proxies:
   cipher: auto
   tls: false
   network: ws
-- name: 🌐 CN-04
-  type: vmess
+  path: /
+- type: vmess
+  name: 🌐 CN节点 12
   server: 124.222.189.225
   port: 80
   uuid: a8c9ad5b-1f58-4234-b5fe-a895bee9a047
@@ -39,8 +112,9 @@ proxies:
   cipher: auto
   tls: false
   network: ws
-- name: 🌐 CN-05
-  type: vmess
+  path: /
+- type: vmess
+  name: 🌐 CN节点 13
   server: 106.52.57.86
   port: 10001
   uuid: f56b9a92-47d4-4d6e-b828-1aa3e96dae65
@@ -48,378 +122,43 @@ proxies:
   cipher: auto
   tls: false
   network: tcp
-- name: 🌐 CN-06
-  type: vless
-  server: 45.131.212.231
-  port: 443
-  uuid: 19513b1b-d29a-4f3e-ba9a-888261e4e048
-  cipher: auto
-  tls: true
-  servername: sellflow.org
-- name: 🌐 CN-07
-  type: vless
-  server: 118.26.59.85
-  port: 443
-  uuid: cdc86ade-9bc3-41eb-a7b9-879130378820
-  cipher: auto
-  tls: true
-  servername: www.bing.com
-- name: 🌐 CN-08
-  type: vless
-  server: 103.112.71.83
-  port: 443
-  uuid: f82332b2-dc8c-4196-ac12-f276e37e278a
-  cipher: auto
-  tls: true
-  servername: test.bridge.anti-zapret.com
-- name: 🌐 CN-09
-  type: vless
-  server: 45.131.212.231
-  port: 443
-  uuid: 19513b1b-d29a-4f3e-ba9a-888261e4e048
-  cipher: auto
-  tls: true
-  servername: sellflow.org
-- name: 🌐 CN-10
-  type: vless
-  server: 213.182.216.5
-  port: 8443
-  uuid: d92cf13b-7fb9-4d40-8507-cbaf29cdc8ae
-  cipher: auto
-  tls: true
-  servername: aliusfilms.ru
-- name: 🌐 CN-11
-  type: vless
-  server: 185.242.247.44
-  port: 443
-  uuid: 454431fc-71e2-42b1-b375-5b55dd06666a
-  cipher: auto
-  tls: true
-  servername: example.org
-- name: 🌐 CN-12
-  type: vless
-  server: 103.115.18.54
-  port: 443
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  cipher: auto
-  tls: false
-  servername: cdn8848.776676.xyz
-- name: 🌐 CN-13
-  type: vless
-  server: 45.137.43.138
-  port: 443
-  uuid: 92f33eb3-8f05-469f-98a0-95e902fd9dce
-  cipher: auto
-  tls: true
-  servername: gem10.hutsharing.com
-- name: 🌐 CN-14
-  type: ss
-  server: 45.131.212.231
-  port: 443
-  cipher: aes-256-gcm
-  password: uݽ[woZmZ6W{N<
-- name: 🌐 CN-15
-  type: ss
-  server: 118.26.59.85
-  port: 443
-  cipher: aes-256-gcm
-  password: q<^7WkuMʹ
-- name: 🌐 CN-16
-  type: ss
-  server: 103.112.71.83
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fͷfu\x1C_ziv\x7Fn{~ۿ\x1A"
-- name: 🌐 CN-17
-  type: ss
-  server: 45.131.212.231
-  port: 443
-  cipher: aes-256-gcm
-  password: uݽ[woZmZ6W{N<
-- name: 🌐 CN-18
-  type: ss
-  server: 213.182.216.5
-  port: 8443
-  cipher: aes-256-gcm
-  password: "wݜ\x7F]4;q\x1Dsƞ"
-- name: 🌐 CN-19
-  type: ss
-  server: 103.115.18.54
-  port: 443
-  cipher: aes-256-gcm
-  password: "w~6w]^w7o~n\x1AoWi"
-- name: 🌐 CN-20
-  type: ss
-  server: 45.137.43.138
-  port: 443
-  cipher: aes-256-gcm
-  password: g9_ƴg
-- name: 🌐 CN-21
-  type: ss
-  server: 45.131.212.231
-  port: 443
-  cipher: aes-256-gcm
-  password: uݽ[woZmZ6W{N<
-- name: 🌐 CN-22
-  type: ss
-  server: 118.26.59.85
-  port: 443
-  cipher: aes-256-gcm
-  password: q<^7WkuMʹ
-- name: 🌐 CN-23
-  type: ss
-  server: 103.112.71.83
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fͷfu\x1C_ziv\x7Fn{~ۿ\x1A"
-- name: 🌐 CN-24
-  type: ss
-  server: 45.131.212.231
-  port: 443
-  cipher: aes-256-gcm
-  password: uݽ[woZmZ6W{N<
-- name: 🌐 CN-25
-  type: ss
-  server: 213.182.216.5
-  port: 8443
-  cipher: aes-256-gcm
-  password: "wݜ\x7F]4;q\x1Dsƞ"
-- name: 🌐 CN-26
-  type: ss
-  server: 103.115.18.54
-  port: 443
-  cipher: aes-256-gcm
-  password: "w~6w]^w7o~n\x1AoWi"
-- name: 🌐 CN-27
-  type: ss
-  server: 45.137.43.138
-  port: 443
-  cipher: aes-256-gcm
-  password: g9_ƴg
-- name: 🌐 CN-28
-  type: ss
-  server: 45.131.212.231
-  port: 443
-  cipher: aes-256-gcm
-  password: uݽ[woZmZ6W{N<
-- name: 🌐 CN-29
-  type: ss
-  server: 118.26.59.85
-  port: 443
-  cipher: aes-256-gcm
-  password: q<^7WkuMʹ
-- name: 🌐 CN-30
-  type: ss
-  server: 103.112.71.83
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fͷfu\x1C_ziv\x7Fn{~ۿ\x1A"
-- name: 🌐 CN-31
-  type: ss
-  server: 45.131.212.231
-  port: 443
-  cipher: aes-256-gcm
-  password: uݽ[woZmZ6W{N<
-- name: 🌐 CN-32
-  type: ss
-  server: 213.182.216.5
-  port: 8443
-  cipher: aes-256-gcm
-  password: "wݜ\x7F]4;q\x1Dsƞ"
-- name: 🌐 CN-33
-  type: ss
-  server: 103.115.18.54
-  port: 443
-  cipher: aes-256-gcm
-  password: "w~6w]^w7o~n\x1AoWi"
-- name: 🌐 CN-34
-  type: ss
-  server: 45.137.43.138
-  port: 443
-  cipher: aes-256-gcm
-  password: g9_ƴg
-- name: 🌐 CN-35
-  type: ss
-  server: 45.131.212.231
-  port: 443
-  cipher: aes-256-gcm
-  password: uݽ[woZmZ6W{N<
-- name: 🌐 CN-36
-  type: ss
-  server: 118.26.59.85
-  port: 443
-  cipher: aes-256-gcm
-  password: q<^7WkuMʹ
-- name: 🌐 CN-37
-  type: ss
-  server: 103.112.71.83
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fͷfu\x1C_ziv\x7Fn{~ۿ\x1A"
-- name: 🌐 CN-38
-  type: ss
-  server: 45.131.212.231
-  port: 443
-  cipher: aes-256-gcm
-  password: uݽ[woZmZ6W{N<
-- name: 🌐 CN-39
-  type: ss
-  server: 213.182.216.5
-  port: 8443
-  cipher: aes-256-gcm
-  password: "wݜ\x7F]4;q\x1Dsƞ"
-- name: 🌐 CN-40
-  type: ss
-  server: 103.115.18.54
-  port: 443
-  cipher: aes-256-gcm
-  password: "w~6w]^w7o~n\x1AoWi"
-- name: 🌐 CN-41
-  type: ss
-  server: 45.137.43.138
-  port: 443
-  cipher: aes-256-gcm
-  password: g9_ƴg
-- name: 🌐 CN-42
-  type: ss
-  server: 45.131.212.231
-  port: 443
-  cipher: aes-256-gcm
-  password: uݽ[woZmZ6W{N<
-- name: 🌐 CN-43
-  type: ss
-  server: 118.26.59.85
-  port: 443
-  cipher: aes-256-gcm
-  password: q<^7WkuMʹ
-- name: 🌐 CN-44
-  type: ss
-  server: 103.112.71.83
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Fͷfu\x1C_ziv\x7Fn{~ۿ\x1A"
-- name: 🌐 CN-45
-  type: ss
-  server: 213.182.216.5
-  port: 8443
-  cipher: aes-256-gcm
-  password: "wݜ\x7F]4;q\x1Dsƞ"
-- name: 🌐 CN-46
-  type: ss
-  server: 103.115.18.54
-  port: 443
-  cipher: aes-256-gcm
-  password: "w~6w]^w7o~n\x1AoWi"
-- name: 🌐 CN-47
-  type: ss
-  server: 45.137.43.138
-  port: 443
-  cipher: aes-256-gcm
-  password: g9_ƴg
+  path: /
 proxy-groups:
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 CN-01
-  - 🌐 CN-02
-  - 🌐 CN-03
-  - 🌐 CN-04
-  - 🌐 CN-05
-  - 🌐 CN-06
-  - 🌐 CN-07
-  - 🌐 CN-08
-  - 🌐 CN-09
-  - 🌐 CN-10
-  - 🌐 CN-11
-  - 🌐 CN-12
-  - 🌐 CN-13
-  - 🌐 CN-14
-  - 🌐 CN-15
-  - 🌐 CN-16
-  - 🌐 CN-17
-  - 🌐 CN-18
-  - 🌐 CN-19
-  - 🌐 CN-20
-  - 🌐 CN-21
-  - 🌐 CN-22
-  - 🌐 CN-23
-  - 🌐 CN-24
-  - 🌐 CN-25
-  - 🌐 CN-26
-  - 🌐 CN-27
-  - 🌐 CN-28
-  - 🌐 CN-29
-  - 🌐 CN-30
-  - 🌐 CN-31
-  - 🌐 CN-32
-  - 🌐 CN-33
-  - 🌐 CN-34
-  - 🌐 CN-35
-  - 🌐 CN-36
-  - 🌐 CN-37
-  - 🌐 CN-38
-  - 🌐 CN-39
-  - 🌐 CN-40
-  - 🌐 CN-41
-  - 🌐 CN-42
-  - 🌐 CN-43
-  - 🌐 CN-44
-  - 🌐 CN-45
-  - 🌐 CN-46
-  - 🌐 CN-47
+  - 🌐 CN节点 01
+  - 🌐 CN节点 02
+  - 🌐 CN节点 03
+  - 🌐 CN节点 04
+  - 🌐 CN节点 05
+  - 🌐 CN节点 06
+  - 🌐 CN节点 07
+  - 🌐 CN节点 08
+  - 🌐 CN节点 09
+  - 🌐 CN节点 10
+  - 🌐 CN节点 11
+  - 🌐 CN节点 12
+  - 🌐 CN节点 13
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - DIRECT
-  - 🌐 CN-01
-  - 🌐 CN-02
-  - 🌐 CN-03
-  - 🌐 CN-04
-  - 🌐 CN-05
-  - 🌐 CN-06
-  - 🌐 CN-07
-  - 🌐 CN-08
-  - 🌐 CN-09
-  - 🌐 CN-10
-  - 🌐 CN-11
-  - 🌐 CN-12
-  - 🌐 CN-13
-  - 🌐 CN-14
-  - 🌐 CN-15
-  - 🌐 CN-16
-  - 🌐 CN-17
-  - 🌐 CN-18
-  - 🌐 CN-19
-  - 🌐 CN-20
-  - 🌐 CN-21
-  - 🌐 CN-22
-  - 🌐 CN-23
-  - 🌐 CN-24
-  - 🌐 CN-25
-  - 🌐 CN-26
-  - 🌐 CN-27
-  - 🌐 CN-28
-  - 🌐 CN-29
-  - 🌐 CN-30
-  - 🌐 CN-31
-  - 🌐 CN-32
-  - 🌐 CN-33
-  - 🌐 CN-34
-  - 🌐 CN-35
-  - 🌐 CN-36
-  - 🌐 CN-37
-  - 🌐 CN-38
-  - 🌐 CN-39
-  - 🌐 CN-40
-  - 🌐 CN-41
-  - 🌐 CN-42
-  - 🌐 CN-43
-  - 🌐 CN-44
-  - 🌐 CN-45
-  - 🌐 CN-46
-  - 🌐 CN-47
+  - 🌐 CN节点 01
+  - 🌐 CN节点 02
+  - 🌐 CN节点 03
+  - 🌐 CN节点 04
+  - 🌐 CN节点 05
+  - 🌐 CN节点 06
+  - 🌐 CN节点 07
+  - 🌐 CN节点 08
+  - 🌐 CN节点 09
+  - 🌐 CN节点 10
+  - 🌐 CN节点 11
+  - 🌐 CN节点 12
+  - 🌐 CN节点 13
 rules:
 - MATCH,PROXY

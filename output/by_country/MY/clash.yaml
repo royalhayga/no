@@ -3,254 +3,88 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🌐 MY-01
-  type: vmess
-  server: 47.250.135.244
-  port: 10000
-  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-- name: 🌐 MY-02
-  type: vmess
-  server: 47.250.135.244
-  port: 10000
-  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-- name: 🌐 MY-03
-  type: vless
-  server: 45.195.69.230
-  port: 80
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  cipher: auto
-  tls: false
-  servername: platform103.halalkhor.info
-- name: 🌐 MY-04
-  type: vless
-  server: 166.88.35.245
-  port: 80
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  cipher: auto
-  tls: false
-  servername: platform117.halalkhor.info
-- name: 🌐 MY-05
-  type: vless
-  server: 155.254.60.222
-  port: 80
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  cipher: auto
-  tls: false
-  servername: platform106.halalkhor.info
-- name: 🌐 MY-06
-  type: vless
+- type: vless
+  name: 🇲🇾 马来西亚 01
   server: 216.173.67.59
   port: 443
   uuid: d342d11e-d224-4463-b982-532309285094
   cipher: auto
   tls: true
-  servername: ccc.010304.xyz
-- name: 🌐 MY-07
-  type: ss
-  server: 45.195.69.230
-  port: 80
-  cipher: aes-256-gcm
-  password: "{]\x7Fuo]=׎{x"
-- name: 🌐 MY-08
-  type: ss
-  server: 166.88.35.245
-  port: 80
-  cipher: aes-256-gcm
-  password: "{]\x7Fuo]=׎{x"
-- name: 🌐 MY-09
-  type: ss
-  server: 155.254.60.222
-  port: 80
-  cipher: aes-256-gcm
-  password: "{]\x7Fuo]=׎{x"
-- name: 🌐 MY-10
-  type: ss
-  server: 216.173.67.59
-  port: 443
-  cipher: aes-256-gcm
-  password: w~6w]^wm㎷o6}ݼOx
-- name: 🌐 MY-11
-  type: ss
-  server: 45.195.69.230
-  port: 80
-  cipher: aes-256-gcm
-  password: "{]\x7Fuo]=׎{x"
-- name: 🌐 MY-12
-  type: ss
-  server: 166.88.35.245
-  port: 80
-  cipher: aes-256-gcm
-  password: "{]\x7Fuo]=׎{x"
-- name: 🌐 MY-13
-  type: ss
-  server: 155.254.60.222
-  port: 80
-  cipher: aes-256-gcm
-  password: "{]\x7Fuo]=׎{x"
-- name: 🌐 MY-14
-  type: ss
-  server: 216.173.67.59
-  port: 443
-  cipher: aes-256-gcm
-  password: w~6w]^wm㎷o6}ݼOx
-- name: 🌐 MY-15
-  type: ss
-  server: 45.195.69.230
-  port: 80
-  cipher: aes-256-gcm
-  password: "{]\x7Fuo]=׎{x"
-- name: 🌐 MY-16
-  type: ss
-  server: 166.88.35.245
-  port: 80
-  cipher: aes-256-gcm
-  password: "{]\x7Fuo]=׎{x"
-- name: 🌐 MY-17
-  type: ss
-  server: 155.254.60.222
-  port: 80
-  cipher: aes-256-gcm
-  password: "{]\x7Fuo]=׎{x"
-- name: 🌐 MY-18
-  type: ss
-  server: 216.173.67.59
-  port: 443
-  cipher: aes-256-gcm
-  password: w~6w]^wm㎷o6}ݼOx
-- name: 🌐 MY-19
-  type: ss
-  server: 45.195.69.230
-  port: 80
-  cipher: aes-256-gcm
-  password: "{]\x7Fuo]=׎{x"
-- name: 🌐 MY-20
-  type: ss
-  server: 166.88.35.245
-  port: 80
-  cipher: aes-256-gcm
-  password: "{]\x7Fuo]=׎{x"
-- name: 🌐 MY-21
-  type: ss
-  server: 155.254.60.222
-  port: 80
-  cipher: aes-256-gcm
-  password: "{]\x7Fuo]=׎{x"
-- name: 🌐 MY-22
-  type: ss
-  server: 216.173.67.59
-  port: 443
-  cipher: aes-256-gcm
-  password: w~6w]^wm㎷o6}ݼOx
-- name: 🌐 MY-23
-  type: ss
-  server: 45.195.69.230
-  port: 80
-  cipher: aes-256-gcm
-  password: "{]\x7Fuo]=׎{x"
-- name: 🌐 MY-24
-  type: ss
-  server: 166.88.35.245
-  port: 80
-  cipher: aes-256-gcm
-  password: "{]\x7Fuo]=׎{x"
-- name: 🌐 MY-25
-  type: ss
-  server: 155.254.60.222
-  port: 80
-  cipher: aes-256-gcm
-  password: "{]\x7Fuo]=׎{x"
-- name: 🌐 MY-26
-  type: ss
-  server: 216.173.67.59
-  port: 443
-  cipher: aes-256-gcm
-  password: w~6w]^wm㎷o6}ݼOx
-- name: 🌐 MY-27
-  type: ss
-  server: 103.91.64.242
-  port: 10005
-  cipher: aes-256-gcm
-  password: "ۮv\x1EwxMxk߮_onk^"
-- name: 🌐 MY-28
-  type: trojan
+  network: tcp
+  sni: ccc.010304.xyz
+- type: trojan
+  name: 🇲🇾 马来西亚 02
   server: 47.250.84.25
   port: 443
   password: 5931134d1cde66bf83a54acdfebe7ab2
   sni: moltbot.doctoroyy.net
+- type: vless
+  name: 🇲🇾 马来西亚 03
+  server: 45.195.69.230
+  port: 80
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  cipher: auto
+  tls: false
+  network: tcp
+- type: vless
+  name: 🇲🇾 马来西亚 04
+  server: 166.88.35.245
+  port: 80
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  cipher: auto
+  tls: false
+  network: tcp
+- type: vless
+  name: 🇲🇾 马来西亚 05
+  server: 155.254.60.222
+  port: 80
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  cipher: auto
+  tls: false
+  network: tcp
+- type: vmess
+  name: 🇲🇾 马来西亚 06
+  server: 47.250.135.244
+  port: 10000
+  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+- type: vmess
+  name: 🇲🇾 马来西亚 07
+  server: 47.250.135.244
+  port: 10000
+  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  path: /
 proxy-groups:
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 MY-01
-  - 🌐 MY-02
-  - 🌐 MY-03
-  - 🌐 MY-04
-  - 🌐 MY-05
-  - 🌐 MY-06
-  - 🌐 MY-07
-  - 🌐 MY-08
-  - 🌐 MY-09
-  - 🌐 MY-10
-  - 🌐 MY-11
-  - 🌐 MY-12
-  - 🌐 MY-13
-  - 🌐 MY-14
-  - 🌐 MY-15
-  - 🌐 MY-16
-  - 🌐 MY-17
-  - 🌐 MY-18
-  - 🌐 MY-19
-  - 🌐 MY-20
-  - 🌐 MY-21
-  - 🌐 MY-22
-  - 🌐 MY-23
-  - 🌐 MY-24
-  - 🌐 MY-25
-  - 🌐 MY-26
-  - 🌐 MY-27
-  - 🌐 MY-28
+  - 🇲🇾 马来西亚 01
+  - 🇲🇾 马来西亚 02
+  - 🇲🇾 马来西亚 03
+  - 🇲🇾 马来西亚 04
+  - 🇲🇾 马来西亚 05
+  - 🇲🇾 马来西亚 06
+  - 🇲🇾 马来西亚 07
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - DIRECT
-  - 🌐 MY-01
-  - 🌐 MY-02
-  - 🌐 MY-03
-  - 🌐 MY-04
-  - 🌐 MY-05
-  - 🌐 MY-06
-  - 🌐 MY-07
-  - 🌐 MY-08
-  - 🌐 MY-09
-  - 🌐 MY-10
-  - 🌐 MY-11
-  - 🌐 MY-12
-  - 🌐 MY-13
-  - 🌐 MY-14
-  - 🌐 MY-15
-  - 🌐 MY-16
-  - 🌐 MY-17
-  - 🌐 MY-18
-  - 🌐 MY-19
-  - 🌐 MY-20
-  - 🌐 MY-21
-  - 🌐 MY-22
-  - 🌐 MY-23
-  - 🌐 MY-24
-  - 🌐 MY-25
-  - 🌐 MY-26
-  - 🌐 MY-27
-  - 🌐 MY-28
+  - 🇲🇾 马来西亚 01
+  - 🇲🇾 马来西亚 02
+  - 🇲🇾 马来西亚 03
+  - 🇲🇾 马来西亚 04
+  - 🇲🇾 马来西亚 05
+  - 🇲🇾 马来西亚 06
+  - 🇲🇾 马来西亚 07
 rules:
 - MATCH,PROXY

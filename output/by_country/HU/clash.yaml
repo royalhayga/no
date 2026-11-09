@@ -3,530 +3,139 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🌐 HU-01
-  type: vless
+- type: vless
+  name: 🇭🇺 匈牙利 01
   server: 37.221.210.113
   port: 8443
   uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
   cipher: auto
   tls: false
-  servername: free.cndyw.ggff.net
-- name: 🌐 HU-02
-  type: vless
+  network: tcp
+  sni: free.cndyw.ggff.net
+- type: vless
+  name: 🇭🇺 匈牙利 02
   server: 217.13.104.154
   port: 443
   uuid: e908b2be-1a22-41ec-8f28-a2a842c5471a
   cipher: auto
   tls: true
-  servername: travel.yandex.ru
-- name: 🌐 HU-03
-  type: vless
+  network: tcp
+  sni: travel.yandex.ru
+- type: vless
+  name: 🇭🇺 匈牙利 03
   server: 217.13.104.149
   port: 443
   uuid: 74b6eee7-898d-4f32-9987-a035210ec5e2
   cipher: auto
   tls: true
-  servername: travel.yandex.ru
-- name: 🌐 HU-04
-  type: vless
+  network: tcp
+  sni: travel.yandex.ru
+- type: vless
+  name: 🇭🇺 匈牙利 04
   server: 217.13.105.1
   port: 443
   uuid: cf35aef1-cf24-488f-a952-3bfd14c15b48
   cipher: auto
   tls: true
-  servername: eh.vk.com
-- name: 🌐 HU-05
-  type: vless
+  network: tcp
+  sni: eh.vk.com
+- type: vless
+  name: 🇭🇺 匈牙利 05
   server: 217.13.104.154
   port: 443
   uuid: cf1a37bc-140b-4a3a-a18c-10c9f87eaad6
   cipher: auto
   tls: true
-  servername: travel.yandex.ru
-- name: 🌐 HU-06
-  type: vless
+  network: tcp
+  sni: travel.yandex.ru
+- type: vless
+  name: 🇭🇺 匈牙利 06
   server: 217.13.105.4
   port: 443
   uuid: 87b47efd-34a7-4271-a544-0b8f9feb115c
   cipher: auto
   tls: true
-  servername: m.vkvideo.cs7777.vk.ru
-- name: 🌐 HU-07
-  type: vless
+  network: tcp
+  sni: m.vkvideo.cs7777.vk.ru
+- type: vless
+  name: 🇭🇺 匈牙利 07
   server: 185.187.72.117
   port: 443
   uuid: d5b52d85-714e-4b3c-95cd-ca0cbfba35c3
   cipher: auto
   tls: true
-  servername: hu.locklance.lol
-- name: 🌐 HU-08
-  type: vless
+  network: tcp
+  sni: hu.locklance.lol
+- type: vless
+  name: 🇭🇺 匈牙利 08
   server: 37.221.210.113
   port: 443
   uuid: 0250424c-ae75-4b6b-890f-3fe26fae36c3
   cipher: auto
   tls: false
-  servername: hk.152568.xyz
-- name: 🌐 HU-09
-  type: vless
+  network: tcp
+  sni: hk.152568.xyz
+- type: vless
+  name: 🇭🇺 匈牙利 09
   server: 45.9.168.211
   port: 443
   uuid: 7de5e70d-b95e-4019-affb-636151647b52
   cipher: auto
   tls: true
-  servername: mzone.hu.3cloudhost.com
-- name: 🌐 HU-10
-  type: ss
-  server: 37.221.210.113
-  port: 8443
-  cipher: aes-256-gcm
-  password: "Ӈ<ǶѾ}k\egs6"
-- name: 🌐 HU-11
-  type: ss
-  server: 217.13.104.154
-  port: 443
-  cipher: aes-256-gcm
-  password: '{<ofխWkfg9Z'
-- name: 🌐 HU-12
-  type: ss
-  server: 217.13.104.149
-  port: 443
-  cipher: aes-256-gcm
-  password: "y\x1D;kM]\x1Es"
-- name: 🌐 HU-13
-  type: ss
-  server: 217.13.105.1
-  port: 443
-  cipher: aes-256-gcm
-  password: "qiq\x1Fkvݷׇ5<"
-- name: 🌐 HU-14
-  type: ss
-  server: 217.13.104.154
-  port: 443
-  cipher: aes-256-gcm
-  password: "qZ߶׍\ek_\x1CG=\x7Fiz"
-- name: 🌐 HU-15
-  type: ss
-  server: 217.13.105.4
-  port: 443
-  cipher: aes-256-gcm
-  password: "߆nk8ѿ\x1F^\\"
-- name: 🌐 HU-16
-  type: ss
-  server: 185.187.72.117
-  port: 443
-  cipher: aes-256-gcm
-  password: "w9^\x1E\x1Dq\x1Cmߗ7"
-- name: 🌐 HU-17
-  type: ss
-  server: 37.221.210.113
-  port: 443
-  cipher: aes-256-gcm
-  password: "ntn\x1Ciᾛ\x1Fߧ7"
-- name: 🌐 HU-18
-  type: ss
-  server: 45.9.168.211
-  port: 443
-  cipher: aes-256-gcm
-  password: "׹{\x1Do^M}i~^v"
-- name: 🌐 HU-19
-  type: ss
-  server: 37.221.210.113
-  port: 8443
-  cipher: aes-256-gcm
-  password: "Ӈ<ǶѾ}k\egs6"
-- name: 🌐 HU-20
-  type: ss
-  server: 217.13.104.154
-  port: 443
-  cipher: aes-256-gcm
-  password: '{<ofխWkfg9Z'
-- name: 🌐 HU-21
-  type: ss
-  server: 217.13.104.149
-  port: 443
-  cipher: aes-256-gcm
-  password: "y\x1D;kM]\x1Es"
-- name: 🌐 HU-22
-  type: ss
-  server: 217.13.105.1
-  port: 443
-  cipher: aes-256-gcm
-  password: "qiq\x1Fkvݷׇ5<"
-- name: 🌐 HU-23
-  type: ss
-  server: 217.13.104.154
-  port: 443
-  cipher: aes-256-gcm
-  password: "qZ߶׍\ek_\x1CG=\x7Fiz"
-- name: 🌐 HU-24
-  type: ss
-  server: 217.13.105.4
-  port: 443
-  cipher: aes-256-gcm
-  password: "߆nk8ѿ\x1F^\\"
-- name: 🌐 HU-25
-  type: ss
-  server: 185.187.72.117
-  port: 443
-  cipher: aes-256-gcm
-  password: "w9^\x1E\x1Dq\x1Cmߗ7"
-- name: 🌐 HU-26
-  type: ss
-  server: 37.221.210.113
-  port: 443
-  cipher: aes-256-gcm
-  password: "ntn\x1Ciᾛ\x1Fߧ7"
-- name: 🌐 HU-27
-  type: ss
-  server: 45.9.168.211
-  port: 443
-  cipher: aes-256-gcm
-  password: "׹{\x1Do^M}i~^v"
-- name: 🌐 HU-28
-  type: ss
-  server: 37.221.210.113
-  port: 8443
-  cipher: aes-256-gcm
-  password: "Ӈ<ǶѾ}k\egs6"
-- name: 🌐 HU-29
-  type: ss
-  server: 217.13.104.154
-  port: 443
-  cipher: aes-256-gcm
-  password: '{<ofխWkfg9Z'
-- name: 🌐 HU-30
-  type: ss
-  server: 217.13.104.149
-  port: 443
-  cipher: aes-256-gcm
-  password: "y\x1D;kM]\x1Es"
-- name: 🌐 HU-31
-  type: ss
-  server: 217.13.105.1
-  port: 443
-  cipher: aes-256-gcm
-  password: "qiq\x1Fkvݷׇ5<"
-- name: 🌐 HU-32
-  type: ss
-  server: 217.13.104.154
-  port: 443
-  cipher: aes-256-gcm
-  password: "qZ߶׍\ek_\x1CG=\x7Fiz"
-- name: 🌐 HU-33
-  type: ss
-  server: 217.13.105.4
-  port: 443
-  cipher: aes-256-gcm
-  password: "߆nk8ѿ\x1F^\\"
-- name: 🌐 HU-34
-  type: ss
-  server: 185.187.72.117
-  port: 443
-  cipher: aes-256-gcm
-  password: "w9^\x1E\x1Dq\x1Cmߗ7"
-- name: 🌐 HU-35
-  type: ss
-  server: 37.221.210.113
-  port: 443
-  cipher: aes-256-gcm
-  password: "ntn\x1Ciᾛ\x1Fߧ7"
-- name: 🌐 HU-36
-  type: ss
-  server: 45.9.168.211
-  port: 443
-  cipher: aes-256-gcm
-  password: "׹{\x1Do^M}i~^v"
-- name: 🌐 HU-37
-  type: ss
-  server: 37.221.210.113
-  port: 8443
-  cipher: aes-256-gcm
-  password: "Ӈ<ǶѾ}k\egs6"
-- name: 🌐 HU-38
-  type: ss
-  server: 217.13.104.154
-  port: 443
-  cipher: aes-256-gcm
-  password: '{<ofխWkfg9Z'
-- name: 🌐 HU-39
-  type: ss
-  server: 217.13.104.149
-  port: 443
-  cipher: aes-256-gcm
-  password: "y\x1D;kM]\x1Es"
-- name: 🌐 HU-40
-  type: ss
-  server: 217.13.105.1
-  port: 443
-  cipher: aes-256-gcm
-  password: "qiq\x1Fkvݷׇ5<"
-- name: 🌐 HU-41
-  type: ss
-  server: 217.13.104.154
-  port: 443
-  cipher: aes-256-gcm
-  password: "qZ߶׍\ek_\x1CG=\x7Fiz"
-- name: 🌐 HU-42
-  type: ss
-  server: 217.13.105.4
-  port: 443
-  cipher: aes-256-gcm
-  password: "߆nk8ѿ\x1F^\\"
-- name: 🌐 HU-43
-  type: ss
-  server: 185.187.72.117
-  port: 443
-  cipher: aes-256-gcm
-  password: "w9^\x1E\x1Dq\x1Cmߗ7"
-- name: 🌐 HU-44
-  type: ss
-  server: 37.221.210.113
-  port: 443
-  cipher: aes-256-gcm
-  password: "ntn\x1Ciᾛ\x1Fߧ7"
-- name: 🌐 HU-45
-  type: ss
-  server: 45.9.168.211
-  port: 443
-  cipher: aes-256-gcm
-  password: "׹{\x1Do^M}i~^v"
-- name: 🌐 HU-46
-  type: ss
-  server: 37.221.210.113
-  port: 8443
-  cipher: aes-256-gcm
-  password: "Ӈ<ǶѾ}k\egs6"
-- name: 🌐 HU-47
-  type: ss
-  server: 217.13.104.154
-  port: 443
-  cipher: aes-256-gcm
-  password: '{<ofխWkfg9Z'
-- name: 🌐 HU-48
-  type: ss
-  server: 217.13.104.149
-  port: 443
-  cipher: aes-256-gcm
-  password: "y\x1D;kM]\x1Es"
-- name: 🌐 HU-49
-  type: ss
-  server: 217.13.105.1
-  port: 443
-  cipher: aes-256-gcm
-  password: "qiq\x1Fkvݷׇ5<"
-- name: 🌐 HU-50
-  type: ss
-  server: 217.13.104.154
-  port: 443
-  cipher: aes-256-gcm
-  password: "qZ߶׍\ek_\x1CG=\x7Fiz"
-- name: 🌐 HU-51
-  type: ss
-  server: 217.13.105.4
-  port: 443
-  cipher: aes-256-gcm
-  password: "߆nk8ѿ\x1F^\\"
-- name: 🌐 HU-52
-  type: ss
-  server: 185.187.72.117
-  port: 443
-  cipher: aes-256-gcm
-  password: "w9^\x1E\x1Dq\x1Cmߗ7"
-- name: 🌐 HU-53
-  type: ss
-  server: 37.221.210.113
-  port: 443
-  cipher: aes-256-gcm
-  password: "ntn\x1Ciᾛ\x1Fߧ7"
-- name: 🌐 HU-54
-  type: ss
-  server: 45.9.168.211
-  port: 443
-  cipher: aes-256-gcm
-  password: "׹{\x1Do^M}i~^v"
-- name: 🌐 HU-55
-  type: ss
-  server: 185.187.72.117
-  port: 443
-  cipher: aes-256-gcm
-  password: ѭvZ{n5ᾷkMծZ�?
-- name: 🌐 HU-56
-  type: ss
-  server: 217.13.104.154
-  port: 443
-  cipher: aes-256-gcm
-  password: "y\x1D;kM]\x1Es"
-- name: 🌐 HU-57
-  type: ss
-  server: 217.13.104.149
-  port: 443
-  cipher: aes-256-gcm
-  password: "y;׮;f=}o\x1Dg"
-- name: 🌐 HU-58
-  type: ss
-  server: 37.221.208.37
-  port: 443
-  cipher: aes-256-gcm
-  password: ׷tӞ|iw]v
-- name: 🌐 HU-59
-  type: ss
-  server: 38.180.225.181
-  port: 443
-  cipher: aes-256-gcm
-  password: "yg^]o\x1Ak"
-- name: 🌐 HU-60
-  type: trojan
+  network: tcp
+  sni: mzone.hu.3cloudhost.com
+- type: trojan
+  name: 🇭🇺 匈牙利 10
   server: 185.225.68.232
   port: 443
   password: humanity
   sni: www.calmlunch.com
-- name: 🌐 HU-61
-  type: trojan
-  server: 46.29.142.57
-  port: 4443
-  password: C0ldyfh-vpnjantit.com
-  sni: hu2.vpnjantit.com
-- name: 🌐 HU-62
-  type: trojan
+- type: trojan
+  name: 🇭🇺 匈牙利 11
   server: 180.149.37.38
   port: 8443
   password: 8r%3C%5B9%27l6hAO%238ZQi
   sni: Koma-YT.PAGeS.Dev
+- type: trojan
+  name: 🇭🇺 匈牙利 12
+  server: 46.29.142.57
+  port: 4443
+  password: C0ldyfh-vpnjantit.com
+  sni: hu2.vpnjantit.com
 proxy-groups:
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 HU-01
-  - 🌐 HU-02
-  - 🌐 HU-03
-  - 🌐 HU-04
-  - 🌐 HU-05
-  - 🌐 HU-06
-  - 🌐 HU-07
-  - 🌐 HU-08
-  - 🌐 HU-09
-  - 🌐 HU-10
-  - 🌐 HU-11
-  - 🌐 HU-12
-  - 🌐 HU-13
-  - 🌐 HU-14
-  - 🌐 HU-15
-  - 🌐 HU-16
-  - 🌐 HU-17
-  - 🌐 HU-18
-  - 🌐 HU-19
-  - 🌐 HU-20
-  - 🌐 HU-21
-  - 🌐 HU-22
-  - 🌐 HU-23
-  - 🌐 HU-24
-  - 🌐 HU-25
-  - 🌐 HU-26
-  - 🌐 HU-27
-  - 🌐 HU-28
-  - 🌐 HU-29
-  - 🌐 HU-30
-  - 🌐 HU-31
-  - 🌐 HU-32
-  - 🌐 HU-33
-  - 🌐 HU-34
-  - 🌐 HU-35
-  - 🌐 HU-36
-  - 🌐 HU-37
-  - 🌐 HU-38
-  - 🌐 HU-39
-  - 🌐 HU-40
-  - 🌐 HU-41
-  - 🌐 HU-42
-  - 🌐 HU-43
-  - 🌐 HU-44
-  - 🌐 HU-45
-  - 🌐 HU-46
-  - 🌐 HU-47
-  - 🌐 HU-48
-  - 🌐 HU-49
-  - 🌐 HU-50
-  - 🌐 HU-51
-  - 🌐 HU-52
-  - 🌐 HU-53
-  - 🌐 HU-54
-  - 🌐 HU-55
-  - 🌐 HU-56
-  - 🌐 HU-57
-  - 🌐 HU-58
-  - 🌐 HU-59
-  - 🌐 HU-60
-  - 🌐 HU-61
-  - 🌐 HU-62
+  - 🇭🇺 匈牙利 01
+  - 🇭🇺 匈牙利 02
+  - 🇭🇺 匈牙利 03
+  - 🇭🇺 匈牙利 04
+  - 🇭🇺 匈牙利 05
+  - 🇭🇺 匈牙利 06
+  - 🇭🇺 匈牙利 07
+  - 🇭🇺 匈牙利 08
+  - 🇭🇺 匈牙利 09
+  - 🇭🇺 匈牙利 10
+  - 🇭🇺 匈牙利 11
+  - 🇭🇺 匈牙利 12
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - DIRECT
-  - 🌐 HU-01
-  - 🌐 HU-02
-  - 🌐 HU-03
-  - 🌐 HU-04
-  - 🌐 HU-05
-  - 🌐 HU-06
-  - 🌐 HU-07
-  - 🌐 HU-08
-  - 🌐 HU-09
-  - 🌐 HU-10
-  - 🌐 HU-11
-  - 🌐 HU-12
-  - 🌐 HU-13
-  - 🌐 HU-14
-  - 🌐 HU-15
-  - 🌐 HU-16
-  - 🌐 HU-17
-  - 🌐 HU-18
-  - 🌐 HU-19
-  - 🌐 HU-20
-  - 🌐 HU-21
-  - 🌐 HU-22
-  - 🌐 HU-23
-  - 🌐 HU-24
-  - 🌐 HU-25
-  - 🌐 HU-26
-  - 🌐 HU-27
-  - 🌐 HU-28
-  - 🌐 HU-29
-  - 🌐 HU-30
-  - 🌐 HU-31
-  - 🌐 HU-32
-  - 🌐 HU-33
-  - 🌐 HU-34
-  - 🌐 HU-35
-  - 🌐 HU-36
-  - 🌐 HU-37
-  - 🌐 HU-38
-  - 🌐 HU-39
-  - 🌐 HU-40
-  - 🌐 HU-41
-  - 🌐 HU-42
-  - 🌐 HU-43
-  - 🌐 HU-44
-  - 🌐 HU-45
-  - 🌐 HU-46
-  - 🌐 HU-47
-  - 🌐 HU-48
-  - 🌐 HU-49
-  - 🌐 HU-50
-  - 🌐 HU-51
-  - 🌐 HU-52
-  - 🌐 HU-53
-  - 🌐 HU-54
-  - 🌐 HU-55
-  - 🌐 HU-56
-  - 🌐 HU-57
-  - 🌐 HU-58
-  - 🌐 HU-59
-  - 🌐 HU-60
-  - 🌐 HU-61
-  - 🌐 HU-62
+  - 🇭🇺 匈牙利 01
+  - 🇭🇺 匈牙利 02
+  - 🇭🇺 匈牙利 03
+  - 🇭🇺 匈牙利 04
+  - 🇭🇺 匈牙利 05
+  - 🇭🇺 匈牙利 06
+  - 🇭🇺 匈牙利 07
+  - 🇭🇺 匈牙利 08
+  - 🇭🇺 匈牙利 09
+  - 🇭🇺 匈牙利 10
+  - 🇭🇺 匈牙利 11
+  - 🇭🇺 匈牙利 12
 rules:
 - MATCH,PROXY

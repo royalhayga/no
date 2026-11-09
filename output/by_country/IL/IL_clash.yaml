@@ -3,716 +3,173 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🌐 IL-01
-  type: vless
+- type: vless
+  name: 🇮🇱 以色列 01
   server: 185.253.75.119
   port: 443
   uuid: d342d11e-d224-4463-b982-532309285094
   cipher: auto
   tls: true
-  servername: ccc.010304.xyz
-- name: 🌐 IL-02
-  type: vless
+  network: tcp
+  sni: ccc.010304.xyz
+- type: vless
+  name: 🇮🇱 以色列 02
   server: 185.95.231.156
   port: 443
   uuid: 1f8cf47a-b66a-4916-979f-26edfcf44eea
   cipher: auto
   tls: false
-  servername: www.apple.com
-- name: 🌐 IL-03
-  type: vless
+  network: tcp
+  sni: www.apple.com
+- type: vless
+  name: 🇮🇱 以色列 03
   server: 185.253.75.119
   port: 443
   uuid: d342d11e-d224-4463-b982-532309285094
   cipher: auto
   tls: true
-  servername: ccc.010304.xyz
-- name: 🌐 IL-04
-  type: vless
+  network: tcp
+  sni: ccc.010304.xyz
+- type: vless
+  name: 🇮🇱 以色列 04
   server: 185.95.231.156
   port: 443
   uuid: 1f8cf47a-b66a-4916-979f-26edfcf44eea
   cipher: auto
   tls: true
-  servername: www.apple.com
-- name: 🌐 IL-05
-  type: vless
+  network: tcp
+  sni: www.apple.com
+- type: vless
+  name: 🇮🇱 以色列 05
   server: 45.140.204.49
   port: 443
   uuid: fc833984-8a5e-4825-a333-c5eb248aeee2
   cipher: auto
   tls: true
-  servername: ''
-- name: 🌐 IL-06
-  type: vless
-  server: 195.211.24.49
-  port: 48932
-  uuid: 8584983e-e4ac-4fd9-96b9-7f4db8dc5790
-  cipher: auto
-  tls: true
-  servername: www.nvidia.com
-- name: 🌐 IL-07
-  type: vless
+  network: tcp
+- type: vless
+  name: 🇮🇱 以色列 06
   server: 83.143.106.4
   port: 443
   uuid: adf1fac3-cf57-ff40-574c-cf514457eb3f
   cipher: auto
   tls: true
-  servername: res.cdn.office.net
-- name: 🌐 IL-08
-  type: vless
+  network: tcp
+  sni: res.cdn.office.net
+- type: vless
+  name: 🇮🇱 以色列 07
   server: 5.188.94.5
   port: 443
   uuid: 4352f2a7-d620-474e-9249-e866774a2c81
   cipher: auto
   tls: false
-  servername: gcore.com
-- name: 🌐 IL-09
-  type: vless
+  network: tcp
+  sni: gcore.com
+- type: vless
+  name: 🇮🇱 以色列 08
   server: 64.176.166.143
   port: 443
   uuid: 43488128-319e-f480-64ea-0acdc712e2a8
   cipher: auto
   tls: true
-  servername: store.steampowered.com
-- name: 🌐 IL-10
-  type: vless
+  network: tcp
+  sni: store.steampowered.com
+- type: vless
+  name: 🇮🇱 以色列 09
   server: 83.143.106.9
   port: 8443
   uuid: 3f9f2bda-0b9c-8469-7381-a73de2255619
   cipher: auto
   tls: true
-  servername: res.cdn.office.net
-- name: 🌐 IL-11
-  type: vless
+  network: tcp
+  sni: res.cdn.office.net
+- type: vless
+  name: 🇮🇱 以色列 10
   server: 83.143.106.6
   port: 443
   uuid: 69db54f1-a8a6-d3d5-3b21-48af845aed08
   cipher: auto
   tls: true
-  servername: res.cdn.office.net
-- name: 🌐 IL-12
-  type: vless
+  network: tcp
+  sni: res.cdn.office.net
+- type: vless
+  name: 🇮🇱 以色列 11
   server: 83.143.106.5
   port: 8443
   uuid: 69db54f1-a8a6-d3d5-3b21-48af845aed08
   cipher: auto
   tls: true
-  servername: res.cdn.office.net
-- name: 🌐 IL-13
-  type: vless
+  network: tcp
+  sni: res.cdn.office.net
+- type: vless
+  name: 🇮🇱 以色列 12
   server: 45.140.205.2
   port: 443
   uuid: c795bdd5-0460-42bd-927b-fbff154d2ab5
   cipher: auto
   tls: true
-  servername: promo.ch.iki-servers.com
-- name: 🌐 IL-14
-  type: vless
+  network: tcp
+  sni: promo.ch.iki-servers.com
+- type: trojan
+  name: 🇮🇱 以色列 13
+  server: 5.178.96.130
+  port: 2053
+  password: 8r%3C%5B9%27l6hAO%238ZQi
+  sni: Koma-YT.PAGeS.Dev
+- type: trojan
+  name: 🇮🇱 以色列 14
+  server: 5.178.96.130
+  port: 8443
+  password: 8r%3C%5B9%27l6hAO%238ZQi
+  sni: Koma-YT.PAGeS.Dev
+- type: vless
+  name: 🇮🇱 以色列 15
   server: 195.211.24.49
   port: 443
   uuid: 8584983e-e4ac-4fd9-96b9-7f4db8dc5790
   cipher: auto
   tls: false
-  servername: ''
-- name: 🌐 IL-15
-  type: ss
-  server: 185.253.75.119
-  port: 443
-  cipher: aes-256-gcm
-  password: w~6w]^wm㎷o6}ݼOx
-- name: 🌐 IL-16
-  type: ss
-  server: 185.95.231.156
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Foz_ۧ}"
-- name: 🌐 IL-17
-  type: ss
-  server: 185.253.75.119
-  port: 443
-  cipher: aes-256-gcm
-  password: w~6w]^wm㎷o6}ݼOx
-- name: 🌐 IL-18
-  type: ss
-  server: 185.95.231.156
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Foz_ۧ}"
-- name: 🌐 IL-19
-  type: ss
-  server: 45.140.204.49
-  port: 443
-  cipher: aes-256-gcm
-  password: "}78^͹k}sۏ\x1Ay"
-- name: 🌐 IL-20
-  type: ss
-  server: 195.211.24.49
-  port: 48932
-  cipher: aes-256-gcm
-  password: "8{}\x1Do\\t"
-- name: 🌐 IL-21
-  type: ss
-  server: 83.143.106.4
-  port: 443
-  cipher: aes-256-gcm
-  password: "i}7q{}4\x1Cqu{y"
-- name: 🌐 IL-22
-  type: ss
-  server: 5.188.94.5
-  port: 443
-  cipher: aes-256-gcm
-  password: "~v\x7Ffw\x1En={κ\x1A5"
-- name: 🌐 IL-23
-  type: ss
-  server: 64.176.166.143
-  port: 443
-  cipher: aes-256-gcm
-  password: "~<]_^\x7F4뇚ѧ\x1Dsv{f"
-- name: 🌐 IL-24
-  type: ss
-  server: 83.143.106.9
-  port: 8443
-  cipher: aes-256-gcm
-  password: "_ٷZѿ\\\x7F5k{m}"
-- name: 🌐 IL-25
-  type: ss
-  server: 83.143.106.6
-  port: 443
-  cipher: aes-256-gcm
-  password: '[kƺwwyݽƟZy<'
-- name: 🌐 IL-26
-  type: ss
-  server: 83.143.106.5
-  port: 8443
-  cipher: aes-256-gcm
-  password: '[kƺwwyݽƟZy<'
-- name: 🌐 IL-27
-  type: ss
-  server: 45.140.205.2
-  port: 443
-  cipher: aes-256-gcm
-  password: "symyӎfn}מ\x1D٦"
-- name: 🌐 IL-28
-  type: ss
-  server: 195.211.24.49
-  port: 443
-  cipher: aes-256-gcm
-  password: "8{}\x1Do\\t"
-- name: 🌐 IL-29
-  type: ss
-  server: 185.253.75.119
-  port: 443
-  cipher: aes-256-gcm
-  password: w~6w]^wm㎷o6}ݼOx
-- name: 🌐 IL-30
-  type: ss
-  server: 185.95.231.156
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Foz_ۧ}"
-- name: 🌐 IL-31
-  type: ss
-  server: 185.253.75.119
-  port: 443
-  cipher: aes-256-gcm
-  password: w~6w]^wm㎷o6}ݼOx
-- name: 🌐 IL-32
-  type: ss
-  server: 185.95.231.156
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Foz_ۧ}"
-- name: 🌐 IL-33
-  type: ss
-  server: 45.140.204.49
-  port: 443
-  cipher: aes-256-gcm
-  password: "}78^͹k}sۏ\x1Ay"
-- name: 🌐 IL-34
-  type: ss
-  server: 195.211.24.49
-  port: 48932
-  cipher: aes-256-gcm
-  password: "8{}\x1Do\\t"
-- name: 🌐 IL-35
-  type: ss
-  server: 83.143.106.4
-  port: 443
-  cipher: aes-256-gcm
-  password: "i}7q{}4\x1Cqu{y"
-- name: 🌐 IL-36
-  type: ss
-  server: 5.188.94.5
-  port: 443
-  cipher: aes-256-gcm
-  password: "~v\x7Ffw\x1En={κ\x1A5"
-- name: 🌐 IL-37
-  type: ss
-  server: 64.176.166.143
-  port: 443
-  cipher: aes-256-gcm
-  password: "~<]_^\x7F4뇚ѧ\x1Dsv{f"
-- name: 🌐 IL-38
-  type: ss
-  server: 83.143.106.9
-  port: 8443
-  cipher: aes-256-gcm
-  password: "_ٷZѿ\\\x7F5k{m}"
-- name: 🌐 IL-39
-  type: ss
-  server: 83.143.106.6
-  port: 443
-  cipher: aes-256-gcm
-  password: '[kƺwwyݽƟZy<'
-- name: 🌐 IL-40
-  type: ss
-  server: 83.143.106.5
-  port: 8443
-  cipher: aes-256-gcm
-  password: '[kƺwwyݽƟZy<'
-- name: 🌐 IL-41
-  type: ss
-  server: 45.140.205.2
-  port: 443
-  cipher: aes-256-gcm
-  password: "symyӎfn}מ\x1D٦"
-- name: 🌐 IL-42
-  type: ss
-  server: 195.211.24.49
-  port: 443
-  cipher: aes-256-gcm
-  password: "8{}\x1Do\\t"
-- name: 🌐 IL-43
-  type: ss
-  server: 185.253.75.119
-  port: 443
-  cipher: aes-256-gcm
-  password: w~6w]^wm㎷o6}ݼOx
-- name: 🌐 IL-44
-  type: ss
-  server: 185.95.231.156
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Foz_ۧ}"
-- name: 🌐 IL-45
-  type: ss
-  server: 185.253.75.119
-  port: 443
-  cipher: aes-256-gcm
-  password: w~6w]^wm㎷o6}ݼOx
-- name: 🌐 IL-46
-  type: ss
-  server: 185.95.231.156
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Foz_ۧ}"
-- name: 🌐 IL-47
-  type: ss
-  server: 45.140.204.49
-  port: 443
-  cipher: aes-256-gcm
-  password: "}78^͹k}sۏ\x1Ay"
-- name: 🌐 IL-48
-  type: ss
-  server: 195.211.24.49
-  port: 48932
-  cipher: aes-256-gcm
-  password: "8{}\x1Do\\t"
-- name: 🌐 IL-49
-  type: ss
-  server: 83.143.106.4
-  port: 443
-  cipher: aes-256-gcm
-  password: "i}7q{}4\x1Cqu{y"
-- name: 🌐 IL-50
-  type: ss
-  server: 5.188.94.5
-  port: 443
-  cipher: aes-256-gcm
-  password: "~v\x7Ffw\x1En={κ\x1A5"
-- name: 🌐 IL-51
-  type: ss
-  server: 64.176.166.143
-  port: 443
-  cipher: aes-256-gcm
-  password: "~<]_^\x7F4뇚ѧ\x1Dsv{f"
-- name: 🌐 IL-52
-  type: ss
-  server: 83.143.106.9
-  port: 8443
-  cipher: aes-256-gcm
-  password: "_ٷZѿ\\\x7F5k{m}"
-- name: 🌐 IL-53
-  type: ss
-  server: 83.143.106.6
-  port: 443
-  cipher: aes-256-gcm
-  password: '[kƺwwyݽƟZy<'
-- name: 🌐 IL-54
-  type: ss
-  server: 83.143.106.5
-  port: 8443
-  cipher: aes-256-gcm
-  password: '[kƺwwyݽƟZy<'
-- name: 🌐 IL-55
-  type: ss
-  server: 45.140.205.2
-  port: 443
-  cipher: aes-256-gcm
-  password: "symyӎfn}מ\x1D٦"
-- name: 🌐 IL-56
-  type: ss
-  server: 195.211.24.49
-  port: 443
-  cipher: aes-256-gcm
-  password: "8{}\x1Do\\t"
-- name: 🌐 IL-57
-  type: ss
-  server: 185.253.75.119
-  port: 443
-  cipher: aes-256-gcm
-  password: w~6w]^wm㎷o6}ݼOx
-- name: 🌐 IL-58
-  type: ss
-  server: 185.95.231.156
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Foz_ۧ}"
-- name: 🌐 IL-59
-  type: ss
-  server: 185.253.75.119
-  port: 443
-  cipher: aes-256-gcm
-  password: w~6w]^wm㎷o6}ݼOx
-- name: 🌐 IL-60
-  type: ss
-  server: 185.95.231.156
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Foz_ۧ}"
-- name: 🌐 IL-61
-  type: ss
-  server: 45.140.204.49
-  port: 443
-  cipher: aes-256-gcm
-  password: "}78^͹k}sۏ\x1Ay"
-- name: 🌐 IL-62
-  type: ss
-  server: 195.211.24.49
-  port: 48932
-  cipher: aes-256-gcm
-  password: "8{}\x1Do\\t"
-- name: 🌐 IL-63
-  type: ss
-  server: 83.143.106.4
-  port: 443
-  cipher: aes-256-gcm
-  password: "i}7q{}4\x1Cqu{y"
-- name: 🌐 IL-64
-  type: ss
-  server: 5.188.94.5
-  port: 443
-  cipher: aes-256-gcm
-  password: "~v\x7Ffw\x1En={κ\x1A5"
-- name: 🌐 IL-65
-  type: ss
-  server: 64.176.166.143
-  port: 443
-  cipher: aes-256-gcm
-  password: "~<]_^\x7F4뇚ѧ\x1Dsv{f"
-- name: 🌐 IL-66
-  type: ss
-  server: 83.143.106.9
-  port: 8443
-  cipher: aes-256-gcm
-  password: "_ٷZѿ\\\x7F5k{m}"
-- name: 🌐 IL-67
-  type: ss
-  server: 83.143.106.6
-  port: 443
-  cipher: aes-256-gcm
-  password: '[kƺwwyݽƟZy<'
-- name: 🌐 IL-68
-  type: ss
-  server: 83.143.106.5
-  port: 8443
-  cipher: aes-256-gcm
-  password: '[kƺwwyݽƟZy<'
-- name: 🌐 IL-69
-  type: ss
-  server: 45.140.205.2
-  port: 443
-  cipher: aes-256-gcm
-  password: "symyӎfn}מ\x1D٦"
-- name: 🌐 IL-70
-  type: ss
-  server: 195.211.24.49
-  port: 443
-  cipher: aes-256-gcm
-  password: "8{}\x1Do\\t"
-- name: 🌐 IL-71
-  type: ss
-  server: 185.253.75.119
-  port: 443
-  cipher: aes-256-gcm
-  password: w~6w]^wm㎷o6}ݼOx
-- name: 🌐 IL-72
-  type: ss
-  server: 185.95.231.156
-  port: 443
-  cipher: aes-256-gcm
-  password: "\x7Foz_ۧ}"
-- name: 🌐 IL-73
-  type: ss
-  server: 45.140.204.49
-  port: 443
-  cipher: aes-256-gcm
-  password: "}78^͹k}sۏ\x1Ay"
-- name: 🌐 IL-74
-  type: ss
-  server: 195.211.24.49
-  port: 48932
-  cipher: aes-256-gcm
-  password: "8{}\x1Do\\t"
-- name: 🌐 IL-75
-  type: ss
-  server: 83.143.106.4
-  port: 443
-  cipher: aes-256-gcm
-  password: "i}7q{}4\x1Cqu{y"
-- name: 🌐 IL-76
-  type: ss
-  server: 5.188.94.5
-  port: 443
-  cipher: aes-256-gcm
-  password: "~v\x7Ffw\x1En={κ\x1A5"
-- name: 🌐 IL-77
-  type: ss
-  server: 64.176.166.143
-  port: 443
-  cipher: aes-256-gcm
-  password: "~<]_^\x7F4뇚ѧ\x1Dsv{f"
-- name: 🌐 IL-78
-  type: ss
-  server: 83.143.106.9
-  port: 8443
-  cipher: aes-256-gcm
-  password: "_ٷZѿ\\\x7F5k{m}"
-- name: 🌐 IL-79
-  type: ss
-  server: 83.143.106.6
-  port: 443
-  cipher: aes-256-gcm
-  password: '[kƺwwyݽƟZy<'
-- name: 🌐 IL-80
-  type: ss
-  server: 83.143.106.5
-  port: 8443
-  cipher: aes-256-gcm
-  password: '[kƺwwyݽƟZy<'
-- name: 🌐 IL-81
-  type: ss
-  server: 45.140.205.2
-  port: 443
-  cipher: aes-256-gcm
-  password: "symyӎfn}מ\x1D٦"
-- name: 🌐 IL-82
-  type: ss
-  server: 195.211.24.49
-  port: 443
-  cipher: aes-256-gcm
-  password: "8{}\x1Do\\t"
-- name: 🌐 IL-83
-  type: trojan
-  server: 5.178.96.130
-  port: 2053
-  password: 8r%3C%5B9%27l6hAO%238ZQi
-  sni: Koma-YT.PAGeS.Dev
-- name: 🌐 IL-84
-  type: trojan
-  server: 5.178.96.130
-  port: 8443
-  password: 8r%3C%5B9%27l6hAO%238ZQi
-  sni: Koma-YT.PAGeS.Dev
+  network: tcp
 proxy-groups:
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 IL-01
-  - 🌐 IL-02
-  - 🌐 IL-03
-  - 🌐 IL-04
-  - 🌐 IL-05
-  - 🌐 IL-06
-  - 🌐 IL-07
-  - 🌐 IL-08
-  - 🌐 IL-09
-  - 🌐 IL-10
-  - 🌐 IL-11
-  - 🌐 IL-12
-  - 🌐 IL-13
-  - 🌐 IL-14
-  - 🌐 IL-15
-  - 🌐 IL-16
-  - 🌐 IL-17
-  - 🌐 IL-18
-  - 🌐 IL-19
-  - 🌐 IL-20
-  - 🌐 IL-21
-  - 🌐 IL-22
-  - 🌐 IL-23
-  - 🌐 IL-24
-  - 🌐 IL-25
-  - 🌐 IL-26
-  - 🌐 IL-27
-  - 🌐 IL-28
-  - 🌐 IL-29
-  - 🌐 IL-30
-  - 🌐 IL-31
-  - 🌐 IL-32
-  - 🌐 IL-33
-  - 🌐 IL-34
-  - 🌐 IL-35
-  - 🌐 IL-36
-  - 🌐 IL-37
-  - 🌐 IL-38
-  - 🌐 IL-39
-  - 🌐 IL-40
-  - 🌐 IL-41
-  - 🌐 IL-42
-  - 🌐 IL-43
-  - 🌐 IL-44
-  - 🌐 IL-45
-  - 🌐 IL-46
-  - 🌐 IL-47
-  - 🌐 IL-48
-  - 🌐 IL-49
-  - 🌐 IL-50
-  - 🌐 IL-51
-  - 🌐 IL-52
-  - 🌐 IL-53
-  - 🌐 IL-54
-  - 🌐 IL-55
-  - 🌐 IL-56
-  - 🌐 IL-57
-  - 🌐 IL-58
-  - 🌐 IL-59
-  - 🌐 IL-60
-  - 🌐 IL-61
-  - 🌐 IL-62
-  - 🌐 IL-63
-  - 🌐 IL-64
-  - 🌐 IL-65
-  - 🌐 IL-66
-  - 🌐 IL-67
-  - 🌐 IL-68
-  - 🌐 IL-69
-  - 🌐 IL-70
-  - 🌐 IL-71
-  - 🌐 IL-72
-  - 🌐 IL-73
-  - 🌐 IL-74
-  - 🌐 IL-75
-  - 🌐 IL-76
-  - 🌐 IL-77
-  - 🌐 IL-78
-  - 🌐 IL-79
-  - 🌐 IL-80
-  - 🌐 IL-81
-  - 🌐 IL-82
-  - 🌐 IL-83
-  - 🌐 IL-84
+  - 🇮🇱 以色列 01
+  - 🇮🇱 以色列 02
+  - 🇮🇱 以色列 03
+  - 🇮🇱 以色列 04
+  - 🇮🇱 以色列 05
+  - 🇮🇱 以色列 06
+  - 🇮🇱 以色列 07
+  - 🇮🇱 以色列 08
+  - 🇮🇱 以色列 09
+  - 🇮🇱 以色列 10
+  - 🇮🇱 以色列 11
+  - 🇮🇱 以色列 12
+  - 🇮🇱 以色列 13
+  - 🇮🇱 以色列 14
+  - 🇮🇱 以色列 15
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - DIRECT
-  - 🌐 IL-01
-  - 🌐 IL-02
-  - 🌐 IL-03
-  - 🌐 IL-04
-  - 🌐 IL-05
-  - 🌐 IL-06
-  - 🌐 IL-07
-  - 🌐 IL-08
-  - 🌐 IL-09
-  - 🌐 IL-10
-  - 🌐 IL-11
-  - 🌐 IL-12
-  - 🌐 IL-13
-  - 🌐 IL-14
-  - 🌐 IL-15
-  - 🌐 IL-16
-  - 🌐 IL-17
-  - 🌐 IL-18
-  - 🌐 IL-19
-  - 🌐 IL-20
-  - 🌐 IL-21
-  - 🌐 IL-22
-  - 🌐 IL-23
-  - 🌐 IL-24
-  - 🌐 IL-25
-  - 🌐 IL-26
-  - 🌐 IL-27
-  - 🌐 IL-28
-  - 🌐 IL-29
-  - 🌐 IL-30
-  - 🌐 IL-31
-  - 🌐 IL-32
-  - 🌐 IL-33
-  - 🌐 IL-34
-  - 🌐 IL-35
-  - 🌐 IL-36
-  - 🌐 IL-37
-  - 🌐 IL-38
-  - 🌐 IL-39
-  - 🌐 IL-40
-  - 🌐 IL-41
-  - 🌐 IL-42
-  - 🌐 IL-43
-  - 🌐 IL-44
-  - 🌐 IL-45
-  - 🌐 IL-46
-  - 🌐 IL-47
-  - 🌐 IL-48
-  - 🌐 IL-49
-  - 🌐 IL-50
-  - 🌐 IL-51
-  - 🌐 IL-52
-  - 🌐 IL-53
-  - 🌐 IL-54
-  - 🌐 IL-55
-  - 🌐 IL-56
-  - 🌐 IL-57
-  - 🌐 IL-58
-  - 🌐 IL-59
-  - 🌐 IL-60
-  - 🌐 IL-61
-  - 🌐 IL-62
-  - 🌐 IL-63
-  - 🌐 IL-64
-  - 🌐 IL-65
-  - 🌐 IL-66
-  - 🌐 IL-67
-  - 🌐 IL-68
-  - 🌐 IL-69
-  - 🌐 IL-70
-  - 🌐 IL-71
-  - 🌐 IL-72
-  - 🌐 IL-73
-  - 🌐 IL-74
-  - 🌐 IL-75
-  - 🌐 IL-76
-  - 🌐 IL-77
-  - 🌐 IL-78
-  - 🌐 IL-79
-  - 🌐 IL-80
-  - 🌐 IL-81
-  - 🌐 IL-82
-  - 🌐 IL-83
-  - 🌐 IL-84
+  - 🇮🇱 以色列 01
+  - 🇮🇱 以色列 02
+  - 🇮🇱 以色列 03
+  - 🇮🇱 以色列 04
+  - 🇮🇱 以色列 05
+  - 🇮🇱 以色列 06
+  - 🇮🇱 以色列 07
+  - 🇮🇱 以色列 08
+  - 🇮🇱 以色列 09
+  - 🇮🇱 以色列 10
+  - 🇮🇱 以色列 11
+  - 🇮🇱 以色列 12
+  - 🇮🇱 以色列 13
+  - 🇮🇱 以色列 14
+  - 🇮🇱 以色列 15
 rules:
 - MATCH,PROXY
