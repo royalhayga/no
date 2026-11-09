@@ -113,7 +113,7 @@ def make_nodes_compact_and_unique(nodes: List[Dict[str, Any]]) -> List[Dict[str,
 
     for node in nodes:
         raw_name = str(node.get("name", "Proxy")).strip()
-        clean_name = raw_name[:24]
+        clean_name = raw_name[:24].encode("utf-8", errors="replace").decode("utf-8", errors="ignore")
 
         ptype = str(node.get("type", "")).lower()
         server = str(node.get("server", "")).strip().lower()

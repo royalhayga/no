@@ -20,18 +20,11 @@ VALID_SS_CIPHERS = {
 
 
 def sanitize_yaml_text(text: str) -> str:
-    """物理绝对清理字符串中的非法 ASCII 二进制控制字符及字面量 \\x.. 文本序列，确保 100% 可被 PyYAML 解析"""
+    """清理非打印 ASCII 控制字符与无效 UTF-8 字节，绝对保留 YAML 语法与缩进完整性"""
     if not text:
         return ""
-    cleaned_lines = []
-    for line in text.splitlines():
-        if '\\x' in line or '\x1e' in line:
-            line = re.sub(r'password:\s*".*?"', 'password: ""', line)
-            line = re.sub(r'uuid:\s*".*?"', 'uuid: ""', line)
-            line = re.sub(r'\\x[0-9a-fA-F]{2}', '', line)
-        cleaned_lines.append(line)
-
-    s = '\n'.join(cleaned_lines)
+    # 保证 UTF-8 编码合规，物理剔除 ASCII < 32 控制字符（保留 \t, \n, \r）与 DEL 127
+    s = text.encode("utf-8", errors="replace").decode("utf-8", errors="ignore")
     return ''.join(c for c in s if (ord(c) >= 32 or c in '\n\r\t') and ord(c) != 127)
 
 
@@ -184,8 +177,7 @@ def prune_failing_proxies(file_path: Path, err_msg: str) -> bool:
         try:
             data = yaml.safe_load(clean_text) or {}
         except Exception:
-            good_lines = [l for l in clean_text.splitlines() if '\\x' not in l and '\x1e' not in l]
-            data = yaml.safe_load('\n'.join(good_lines)) or {}
+            data = {}
 
         proxies = data.get("proxies", [])
         if not proxies:

@@ -39,6 +39,8 @@ def strict_clean_str(val: Any) -> str:
     if not val:
         return ""
     s = str(val)
+    # 保证 UTF-8 字节完整性，防范截断导致 Mihomo 报 invalid trailing UTF-8 octet
+    s = s.encode("utf-8", errors="replace").decode("utf-8", errors="ignore")
     # 彻底清理 HTML 标签与字面量 \x.. 转义序列
     s = re.sub(r'<[^>]+>', '', s)
     s = HEX_ESCAPE_RE.sub('', s)
