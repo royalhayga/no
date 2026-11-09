@@ -20,10 +20,10 @@ VALID_SS_CIPHERS = {
 
 
 def is_clean_val(v: Any) -> bool:
-    """绝杀拦截：任何包含反斜杠、私有区 Unicode (E000-F8FF, F0000+) 或控制字符的属性，直接判死刑！"""
+    """绝杀拦截：任何包含反斜杠、\\ufffd 替代符、单双引号、私有区 Unicode (E000-F8FF, F0000+) 或控制字符的属性，直接判死刑！"""
     if not isinstance(v, str):
         return True
-    if "\\" in v:
+    if "\\" in v or "\ufffd" in v or "'" in v or '"' in v:
         return False
     for c in v:
         o = ord(c)
@@ -70,11 +70,29 @@ def is_strictly_valid_proxy(p: dict) -> bool:
     return True
 
 
+def recover_valid_proxies_from_yaml_text(text: str) -> list[dict]:
+    """若整份 YAML 语法崩塌，按 '- name:' 正则分块解析单节点，只回收 100% 语法正确的干净节点"""
+    proxies = []
+    blocks = re.split(r'\n(?=\s*-\s+(?:name|type):)', text)
+    for block in blocks:
+        block = block.strip()
+        if not block.startswith('-'):
+            continue
+        try:
+            parsed = yaml.safe_load(block)
+            if isinstance(parsed, list) and len(parsed) > 0 and isinstance(parsed[0], dict):
+                p = parsed[0]
+                if is_strictly_valid_proxy(p):
+                    proxies.append(p)
+        except Exception:
+            pass
+    return proxies
+
+
 def sanitize_yaml_text(text: str) -> str:
     """清理非打印 ASCII 控制字符与无效 UTF-8 字节，绝对保留 YAML 语法与缩进完整性"""
     if not text:
         return ""
-    # 保证 UTF-8 编码合规，物理剔除 ASCII < 32 控制字符（保留 \t, \n, \r）与 DEL 127
     s = text.encode("utf-8", errors="replace").decode("utf-8", errors="ignore")
     return ''.join(c for c in s if (ord(c) >= 32 or c in '\n\r\t') and ord(c) != 127)
 
@@ -87,9 +105,14 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
         try:
             data = yaml.safe_load(clean_text)
         except Exception:
-            # 容错兜底：若包含极个别坏节点导致解析失败，物理剔除包含反斜杠 \ 或损坏私有区字符的坏行
-            good_lines = [l for l in clean_text.splitlines() if '\\' not in l and not any((0xE000 <= ord(c) <= 0xF8FF or ord(c) >= 0xF0000) for c in l)]
-            data = yaml.safe_load('\n'.join(good_lines))
+            # 容错兜底：若整份 YAML 解析失败，通过按节点块分块安全回收
+            good_proxies = recover_valid_proxies_from_yaml_text(clean_text)
+            data = {
+                "mode": "rule",
+                "proxies": good_proxies,
+                "proxy-groups": [{"name": "PROXY", "type": "select", "proxies": [p["name"] for p in good_proxies if isinstance(p, dict) and p.get("name")]}],
+                "rules": ["MATCH,PROXY"]
+            }
 
         if not isinstance(data, dict):
             return None
@@ -210,8 +233,8 @@ def prune_failing_proxies(file_path: Path, err_msg: str) -> bool:
         try:
             data = yaml.safe_load(clean_text) or {}
         except Exception:
-            good_lines = [l for l in clean_text.splitlines() if '\\' not in l and not any((0xE000 <= ord(c) <= 0xF8FF or ord(c) >= 0xF0000) for c in l)]
-            data = yaml.safe_load('\n'.join(good_lines)) or {}
+            good_proxies = recover_valid_proxies_from_yaml_text(clean_text)
+            data = {"mode": "rule", "proxies": good_proxies, "proxy-groups": [{"name": "PROXY", "type": "select", "proxies": [p["name"] for p in good_proxies if isinstance(p, dict) and p.get("name")]}], "rules": ["MATCH,PROXY"]}
 
         proxies = data.get("proxies", [])
         if not proxies:

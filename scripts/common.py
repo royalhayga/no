@@ -35,12 +35,12 @@ HEX_ESCAPE_RE = re.compile(r'\\x[0-9a-fA-F]{2}')
 
 
 def strict_clean_str(val: Any) -> str:
-    """根本性白名单净化字符串：物理剥离 ASCII 0-31 所有控制字符、字面量 \\x.. 转义序列及 HTML 标签"""
+    """根本性白名单净化字符串：物理剥离 ASCII 0-31 所有控制字符、字面量 \\x.. 转义序列、\\ufffd 替代符及 HTML 标签"""
     if not val:
         return ""
     s = str(val)
-    # 保证 UTF-8 字节完整性，防范截断导致 Mihomo 报 invalid trailing UTF-8 octet
-    s = s.encode("utf-8", errors="replace").decode("utf-8", errors="ignore")
+    # 保证 UTF-8 字节完整性，剥离 \ufffd 乱码替代符与反斜杠
+    s = s.replace("\ufffd", "").replace("\\", "").encode("utf-8", errors="replace").decode("utf-8", errors="ignore")
     # 彻底清理 HTML 标签与字面量 \x.. 转义序列
     s = re.sub(r'<[^>]+>', '', s)
     s = HEX_ESCAPE_RE.sub('', s)
@@ -51,10 +51,10 @@ def strict_clean_str(val: Any) -> str:
 
 
 def is_clean_val(v: Any) -> bool:
-    """严格绝杀判断：绝不允许任何反斜杠、私有区 Unicode (E000-F8FF) 或控制字符存在"""
+    """绝杀拦截：任何包含反斜杠、\\ufffd 替代符、私有区 Unicode (E000-F8FF) 或控制字符的属性，直接判死刑！"""
     if not isinstance(v, str):
         return True
-    if "\\" in v:
+    if "\\" in v or "\ufffd" in v or "'" in v or '"' in v:
         return False
     for c in v:
         o = ord(c)
