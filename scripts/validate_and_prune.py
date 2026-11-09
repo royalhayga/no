@@ -19,6 +19,57 @@ VALID_SS_CIPHERS = {
 }
 
 
+def is_clean_val(v: Any) -> bool:
+    """绝杀拦截：任何包含反斜杠、私有区 Unicode (E000-F8FF, F0000+) 或控制字符的属性，直接判死刑！"""
+    if not isinstance(v, str):
+        return True
+    if "\\" in v:
+        return False
+    for c in v:
+        o = ord(c)
+        if (o < 32 and c not in "\n\r\t") or o == 127 or (0xE000 <= o <= 0xF8FF) or o >= 0xF0000:
+            return False
+    return True
+
+
+def is_strictly_valid_proxy(p: dict) -> bool:
+    """100% 零容忍绝杀死判：只要代理节点包含任何坏属性、坏字符、坏反斜杠，直接彻底物理剔除！"""
+    if not isinstance(p, dict):
+        return False
+
+    server = str(p.get("server", "")).strip()
+    if not server or not is_clean_val(server) or server.lower() in ["localhost", "0.0.0.0", "127.0.0.1"]:
+        return False
+
+    for k, v in p.items():
+        if isinstance(v, str) and not is_clean_val(v):
+            return False
+
+    ptype = str(p.get("type", "")).lower().strip()
+    if ptype not in ["ss", "vmess", "vless", "trojan", "hysteria2", "hy2", "tuic"]:
+        return False
+
+    if ptype == "ss":
+        pwd = str(p.get("password", "")).strip()
+        cipher = str(p.get("cipher", "")).lower().strip()
+        if not pwd or not cipher or cipher not in VALID_SS_CIPHERS:
+            return False
+    elif ptype in ["vmess", "vless"]:
+        uuid = str(p.get("uuid", "")).strip()
+        if not uuid or len(uuid) < 8:
+            return False
+    elif ptype == "trojan":
+        pwd = str(p.get("password", "")).strip()
+        if not pwd:
+            return False
+    elif ptype in ["hysteria2", "hy2"]:
+        auth = str(p.get("auth") or p.get("password", "")).strip()
+        if not auth:
+            return False
+
+    return True
+
+
 def sanitize_yaml_text(text: str) -> str:
     """清理非打印 ASCII 控制字符与无效 UTF-8 字节，绝对保留 YAML 语法与缩进完整性"""
     if not text:
@@ -36,8 +87,8 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
         try:
             data = yaml.safe_load(clean_text)
         except Exception:
-            # 容错兜底：若包含极个别坏节点，二次剔除坏行
-            good_lines = [l for l in clean_text.splitlines() if '\\x' not in l and '\x1e' not in l]
+            # 容错兜底：若包含极个别坏节点导致解析失败，物理剔除包含反斜杠 \ 或损坏私有区字符的坏行
+            good_lines = [l for l in clean_text.splitlines() if '\\' not in l and not any((0xE000 <= ord(c) <= 0xF8FF or ord(c) >= 0xF0000) for c in l)]
             data = yaml.safe_load('\n'.join(good_lines))
 
         if not isinstance(data, dict):
@@ -58,40 +109,22 @@ def auto_repair_clash_structure(file_path: Path) -> dict | None:
         seen_names = set()
 
         for p in data["proxies"]:
-            if not isinstance(p, dict):
+            # 100% 零容忍绝杀拦截：坏属性节点直接彻底丢弃！
+            if not is_strictly_valid_proxy(p):
                 continue
+
             ptype = str(p.get("type", "")).lower().strip()
-            server = str(p.get("server", "")).strip()
-
-            if not server:
-                continue
-
-            # 过滤含有损坏二进制控制字符的字段
-            is_corrupt = False
-            for k, v in list(p.items()):
-                if isinstance(v, str):
-                    clean_v = sanitize_yaml_text(v)
-                    p[k] = clean_v
-                    if any(ord(c) < 32 and c not in '\n\r\t' for c in v):
-                        is_corrupt = True
-            if is_corrupt:
-                continue
 
             # VMess 必填 key 'alterId' 补齐与 cipher 修复
             if ptype == "vmess":
                 p["alterId"] = int(p.get("alterId", 0))
                 if not p.get("cipher") or str(p.get("cipher")).strip() == "":
                     p["cipher"] = "auto"
-                # 移除 VLESS / VMess 不属于该协议的冗余字段
                 if "password" in p:
                     del p["password"]
             elif ptype == "vless":
                 if "password" in p:
                     del p["password"]
-
-            # SS 非法加密算法剔除
-            if ptype == "ss" and str(p.get("cipher", "")).lower() not in VALID_SS_CIPHERS:
-                continue
 
             # 自动唯一定义节点名称
             base_name = str(p.get("name") or "Node").strip()
@@ -177,7 +210,8 @@ def prune_failing_proxies(file_path: Path, err_msg: str) -> bool:
         try:
             data = yaml.safe_load(clean_text) or {}
         except Exception:
-            data = {}
+            good_lines = [l for l in clean_text.splitlines() if '\\' not in l and not any((0xE000 <= ord(c) <= 0xF8FF or ord(c) >= 0xF0000) for c in l)]
+            data = yaml.safe_load('\n'.join(good_lines)) or {}
 
         proxies = data.get("proxies", [])
         if not proxies:
@@ -192,6 +226,14 @@ def prune_failing_proxies(file_path: Path, err_msg: str) -> bool:
             if 0 <= idx < len(proxies):
                 indices_to_remove.add(idx)
 
+        # 匹配报错日志中的行号 (例如: line 43503, column 13)
+        for match in re.finditer(r"line\s+(\d+)", err_msg):
+            line_num = int(match.group(1))
+            approx_idx = max(0, (line_num - 15) // 10)
+            for offset in range(-3, 4):
+                if 0 <= approx_idx + offset < len(proxies):
+                    indices_to_remove.add(approx_idx + offset)
+
         # 匹配: proxy 'xxx' is the duplicate name
         for match in re.finditer(r"proxy\s+'?([^']+)'?\s+is the duplicate name", err_msg):
             names_to_remove.add(match.group(1).strip())
@@ -201,13 +243,13 @@ def prune_failing_proxies(file_path: Path, err_msg: str) -> bool:
             names_to_remove.add(match.group(1).strip())
 
         for i, p in enumerate(proxies):
-            if isinstance(p, dict) and p.get("name") in names_to_remove:
+            if not is_strictly_valid_proxy(p) or (isinstance(p, dict) and p.get("name") in names_to_remove):
                 indices_to_remove.add(i)
 
         if not indices_to_remove:
             return False
 
-        data["proxies"] = [p for i, p in enumerate(proxies) if i not in indices_to_remove]
+        data["proxies"] = [p for i, p in enumerate(proxies) if i not in indices_to_remove and is_strictly_valid_proxy(p)]
         with open(file_path, "w", encoding="utf-8") as f:
             yaml.safe_dump(data, f, allow_unicode=True, sort_keys=False)
         print(f"[PRUNE OK] Dynamically removed {len(indices_to_remove)} failing proxies from {file_path.name}", flush=True)

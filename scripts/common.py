@@ -50,11 +50,23 @@ def strict_clean_str(val: Any) -> str:
     return re.sub(r'\s+', ' ', s).strip()
 
 
+def is_clean_val(v: Any) -> bool:
+    """严格绝杀判断：绝不允许任何反斜杠、私有区 Unicode (E000-F8FF) 或控制字符存在"""
+    if not isinstance(v, str):
+        return True
+    if "\\" in v:
+        return False
+    for c in v:
+        o = ord(c)
+        if (o < 32 and c not in "\n\r\t") or o == 127 or (0xE000 <= o <= 0xF8FF) or o >= 0xF0000:
+            return False
+    return True
+
+
 def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     """
-    100% 根本性构造净化节点数据：
-    1. 彻底白名单重构字段，拒绝任何非 Mihomo 规范字段渗入。
-    2. 校验 IP、端口、密码/UUID 的绝对合法性，拒绝任何带反斜杠或损坏凭据。
+    100% 零容忍白名单构造净化节点：
+    只要包含任何反斜杠、私有区/坏 Unicode、控制字符或非标准凭据，直接绝对剔除！
     """
     if not isinstance(node, dict):
         return None
@@ -62,7 +74,7 @@ def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     ntype = strict_clean_str(node.get("type")).lower()
     server = strict_clean_str(node.get("server")).rstrip(".")
 
-    if not server or server.lower() in ["localhost", "0.0.0.0", "127.0.0.1"] or "\\" in server:
+    if not server or server.lower() in ["localhost", "0.0.0.0", "127.0.0.1"] or not is_clean_val(server):
         return None
 
     # Internal BOGON IP check
@@ -84,12 +96,14 @@ def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         return None
 
     name = strict_clean_str(node.get("name")) or "Node"
+    if not is_clean_val(name):
+        return None
 
     # 根据节点类型，精准纯净白名单构造字典，绝不保留多余的污染字段 (如 VLESS 带有 password)
     if ntype == "ss":
         cipher = strict_clean_str(node.get("cipher")).lower()
         pwd = strict_clean_str(node.get("password"))
-        if not pwd or not cipher or cipher not in VALID_SS_CIPHERS or "\\" in pwd:
+        if not pwd or not cipher or cipher not in VALID_SS_CIPHERS or not is_clean_val(pwd) or not is_clean_val(cipher):
             return None
         if not re.match(r"^[a-z0-9_-]+$", cipher):
             return None
@@ -103,7 +117,7 @@ def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         }
     elif ntype == "vmess":
         uuid = strict_clean_str(node.get("uuid"))
-        if not uuid or "\\" in uuid or len(uuid) < 8 or any(ord(c) > 126 for c in uuid):
+        if not uuid or len(uuid) < 8 or not is_clean_val(uuid) or any(ord(c) > 126 for c in uuid):
             return None
         clean_node = {
             "type": "vmess",
@@ -116,16 +130,16 @@ def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
             "tls": bool(node.get("tls")),
             "network": strict_clean_str(node.get("network")) or "tcp"
         }
-        if node.get("sni"):
+        if node.get("sni") and is_clean_val(node.get("sni")):
             clean_node["sni"] = strict_clean_str(node.get("sni"))
-        if node.get("host"):
+        if node.get("host") and is_clean_val(node.get("host")):
             clean_node["host"] = strict_clean_str(node.get("host"))
-        if node.get("path"):
+        if node.get("path") and is_clean_val(node.get("path")):
             clean_node["path"] = strict_clean_str(node.get("path"))
         return clean_node
     elif ntype == "vless":
         uuid = strict_clean_str(node.get("uuid"))
-        if not uuid or "\\" in uuid or len(uuid) < 8 or any(ord(c) > 126 for c in uuid):
+        if not uuid or len(uuid) < 8 or not is_clean_val(uuid) or any(ord(c) > 126 for c in uuid):
             return None
         clean_node = {
             "type": "vless",
@@ -137,16 +151,16 @@ def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
             "tls": bool(node.get("tls")),
             "network": strict_clean_str(node.get("network")) or "tcp"
         }
-        if node.get("sni"):
+        if node.get("sni") and is_clean_val(node.get("sni")):
             clean_node["sni"] = strict_clean_str(node.get("sni"))
-        if node.get("host"):
+        if node.get("host") and is_clean_val(node.get("host")):
             clean_node["host"] = strict_clean_str(node.get("host"))
-        if node.get("path"):
+        if node.get("path") and is_clean_val(node.get("path")):
             clean_node["path"] = strict_clean_str(node.get("path"))
         return clean_node
     elif ntype == "trojan":
         pwd = strict_clean_str(node.get("password"))
-        if not pwd or "\\" in pwd:
+        if not pwd or not is_clean_val(pwd):
             return None
         clean_node = {
             "type": "trojan",
@@ -155,12 +169,12 @@ def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
             "port": port,
             "password": pwd
         }
-        if node.get("sni"):
+        if node.get("sni") and is_clean_val(node.get("sni")):
             clean_node["sni"] = strict_clean_str(node.get("sni"))
         return clean_node
     elif ntype in ["hysteria2", "hy2"]:
         auth = strict_clean_str(node.get("auth") or node.get("password"))
-        if not auth or "\\" in auth:
+        if not auth or not is_clean_val(auth):
             return None
         clean_node = {
             "type": "hysteria2",
@@ -171,7 +185,7 @@ def sanitize_node(node: Dict[str, Any]) -> Optional[Dict[str, Any]]:
             "password": auth,
             "tls": True
         }
-        if node.get("sni"):
+        if node.get("sni") and is_clean_val(node.get("sni")):
             clean_node["sni"] = strict_clean_str(node.get("sni"))
         return clean_node
 
