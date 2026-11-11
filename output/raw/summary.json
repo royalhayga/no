@@ -1,13 +1,13 @@
 {
   "stage": "Stage 1 - Raw Aggregation",
-  "generated_at": "2026-11-11T04:02:12.645141+00:00",
-  "total_nodes": 541764,
+  "generated_at": "2026-11-11T19:12:57.280794+00:00",
+  "total_nodes": 544387,
   "protocol_breakdown": {
-    "ss": 182587,
-    "vless": 236359,
-    "vmess": 29484,
-    "trojan": 72681,
-    "hysteria2": 20653
+    "ss": 183309,
+    "vless": 237024,
+    "vmess": 29842,
+    "trojan": 73094,
+    "hysteria2": 21118
   },
   "extra": {
     "sources": [
@@ -22,16 +22,6 @@
         "found_nodes": 0
       },
       {
-        "source": "free-nodes-sr",
-        "path": "/home/runner/work/no/no/ref/free-nodes-sr",
-        "found_nodes": 5
-      },
-      {
-        "source": "tolinkshare2.github.io",
-        "path": "/home/runner/work/no/no/ref/tolinkshare2.github.io",
-        "found_nodes": 0
-      },
-      {
         "source": "toshare5.github.io",
         "path": "/home/runner/work/no/no/ref/toshare5.github.io",
         "found_nodes": 0
@@ -42,8 +32,8 @@
         "found_nodes": 0
       },
       {
-        "source": "FreeProxies",
-        "path": "/home/runner/work/no/no/ref/FreeProxies",
+        "source": "tolinkshare2.github.io",
+        "path": "/home/runner/work/no/no/ref/tolinkshare2.github.io",
         "found_nodes": 0
       },
       {
@@ -52,13 +42,18 @@
         "found_nodes": 0
       },
       {
+        "source": "free-nodes-sr",
+        "path": "/home/runner/work/no/no/ref/free-nodes-sr",
+        "found_nodes": 2
+      },
+      {
         "source": "share-daily_node",
         "path": "/home/runner/work/no/no/ref/node",
         "found_nodes": 9
       },
       {
-        "source": "toml66l_fanqiang",
-        "path": "/home/runner/work/no/no/ref/toml66l_fanqiang",
+        "source": "FreeProxies",
+        "path": "/home/runner/work/no/no/ref/FreeProxies",
         "found_nodes": 0
       },
       {
@@ -72,29 +67,19 @@
         "found_nodes": 0
       },
       {
-        "source": "FreeSubsCheck",
-        "path": "/home/runner/work/no/no/ref/FreeSubsCheck",
-        "found_nodes": 935
-      },
-      {
         "source": "jichang",
         "path": "/home/runner/work/no/no/ref/jichang",
         "found_nodes": 0
       },
       {
-        "source": "free-vpn-clash-aggregator",
-        "path": "/home/runner/work/no/no/ref/free-vpn-clash-aggregator",
-        "found_nodes": 496
+        "source": "toml66l_fanqiang",
+        "path": "/home/runner/work/no/no/ref/toml66l_fanqiang",
+        "found_nodes": 0
       },
       {
-        "source": "proxypool",
-        "path": "/home/runner/work/no/no/ref/proxypool",
-        "found_nodes": 147
-      },
-      {
-        "source": "AutoScrapeFreeNodes",
-        "path": "/home/runner/work/no/no/ref/AutoScrapeFreeNodes",
-        "found_nodes": 1026
+        "source": "FreeSubsCheck",
+        "path": "/home/runner/work/no/no/ref/FreeSubsCheck",
+        "found_nodes": 908
       },
       {
         "source": "globe-probe",
@@ -102,34 +87,49 @@
         "found_nodes": 0
       },
       {
+        "source": "free-vpn-clash-aggregator",
+        "path": "/home/runner/work/no/no/ref/free-vpn-clash-aggregator",
+        "found_nodes": 495
+      },
+      {
+        "source": "proxypool",
+        "path": "/home/runner/work/no/no/ref/proxypool",
+        "found_nodes": 140
+      },
+      {
         "source": "SubCrawler",
         "path": "/home/runner/work/no/no/ref/SubCrawler",
         "found_nodes": 6
       },
       {
-        "source": "dljdsjq",
-        "path": "/home/runner/work/no/no/ref/dljdsjq",
-        "found_nodes": 20210
+        "source": "AutoScrapeFreeNodes",
+        "path": "/home/runner/work/no/no/ref/AutoScrapeFreeNodes",
+        "found_nodes": 1026
       },
       {
         "source": "Free-servers",
         "path": "/home/runner/work/no/no/ref/Free-servers",
-        "found_nodes": 493
+        "found_nodes": 508
+      },
+      {
+        "source": "dljdsjq",
+        "path": "/home/runner/work/no/no/ref/dljdsjq",
+        "found_nodes": 19757
       },
       {
         "source": "daily_free_vpn",
         "path": "/home/runner/work/no/no/ref/daily_free_vpn",
-        "found_nodes": 1856
-      },
-      {
-        "source": "v2rayfree",
-        "path": "/home/runner/work/no/no/ref/v2rayfree",
-        "found_nodes": 1767
+        "found_nodes": 4968
       },
       {
         "source": "mafly",
         "path": "/home/runner/work/no/no/ref/mafly",
         "found_nodes": 584
+      },
+      {
+        "source": "v2rayfree",
+        "path": "/home/runner/work/no/no/ref/v2rayfree",
+        "found_nodes": 1754
       },
       {
         "source": "NiceVPN",
