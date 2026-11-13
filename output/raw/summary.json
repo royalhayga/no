@@ -1,24 +1,24 @@
 {
   "stage": "Stage 1 - Raw Aggregation",
-  "generated_at": "2026-11-13T04:25:06.836192+00:00",
-  "total_nodes": 558814,
+  "generated_at": "2026-11-13T19:05:17.995062+00:00",
+  "total_nodes": 558617,
   "protocol_breakdown": {
-    "vless": 242121,
-    "vmess": 30773,
-    "ss": 190354,
-    "trojan": 74143,
-    "hysteria2": 21423
+    "vless": 241704,
+    "ss": 190470,
+    "vmess": 30711,
+    "trojan": 74317,
+    "hysteria2": 21415
   },
   "extra": {
     "sources": [
       {
-        "source": "vpngate",
-        "path": "/home/runner/work/no/no/ref/vpngate",
+        "source": "fanqiang",
+        "path": "/home/runner/work/no/no/ref/fanqiang",
         "found_nodes": 0
       },
       {
-        "source": "fanqiang",
-        "path": "/home/runner/work/no/no/ref/fanqiang",
+        "source": "vpngate",
+        "path": "/home/runner/work/no/no/ref/vpngate",
         "found_nodes": 0
       },
       {
@@ -32,6 +32,11 @@
         "found_nodes": 0
       },
       {
+        "source": "FreeProxies",
+        "path": "/home/runner/work/no/no/ref/FreeProxies",
+        "found_nodes": 0
+      },
+      {
         "source": "tolinkshare2.github.io",
         "path": "/home/runner/work/no/no/ref/tolinkshare2.github.io",
         "found_nodes": 0
@@ -39,27 +44,7 @@
       {
         "source": "free-nodes-sr",
         "path": "/home/runner/work/no/no/ref/free-nodes-sr",
-        "found_nodes": 8
-      },
-      {
-        "source": "VPS-dajianjiedian",
-        "path": "/home/runner/work/no/no/ref/VPS-dajianjiedian",
-        "found_nodes": 0
-      },
-      {
-        "source": "FreeProxies",
-        "path": "/home/runner/work/no/no/ref/FreeProxies",
-        "found_nodes": 0
-      },
-      {
-        "source": "freevpn",
-        "path": "/home/runner/work/no/no/ref/freevpn",
-        "found_nodes": 0
-      },
-      {
-        "source": "toml66l_fanqiang",
-        "path": "/home/runner/work/no/no/ref/toml66l_fanqiang",
-        "found_nodes": 0
+        "found_nodes": 3
       },
       {
         "source": "fee-based",
@@ -69,12 +54,27 @@
       {
         "source": "share-daily_node",
         "path": "/home/runner/work/no/no/ref/node",
-        "found_nodes": 21
+        "found_nodes": 9
+      },
+      {
+        "source": "freevpn",
+        "path": "/home/runner/work/no/no/ref/freevpn",
+        "found_nodes": 0
       },
       {
         "source": "FreeSubsCheck",
         "path": "/home/runner/work/no/no/ref/FreeSubsCheck",
-        "found_nodes": 960
+        "found_nodes": 890
+      },
+      {
+        "source": "toml66l_fanqiang",
+        "path": "/home/runner/work/no/no/ref/toml66l_fanqiang",
+        "found_nodes": 0
+      },
+      {
+        "source": "VPS-dajianjiedian",
+        "path": "/home/runner/work/no/no/ref/VPS-dajianjiedian",
+        "found_nodes": 0
       },
       {
         "source": "jichang",
@@ -82,24 +82,19 @@
         "found_nodes": 0
       },
       {
-        "source": "proxypool",
-        "path": "/home/runner/work/no/no/ref/proxypool",
-        "found_nodes": 150
-      },
-      {
         "source": "free-vpn-clash-aggregator",
         "path": "/home/runner/work/no/no/ref/free-vpn-clash-aggregator",
         "found_nodes": 495
       },
       {
-        "source": "SubCrawler",
-        "path": "/home/runner/work/no/no/ref/SubCrawler",
-        "found_nodes": 6
+        "source": "proxypool",
+        "path": "/home/runner/work/no/no/ref/proxypool",
+        "found_nodes": 150
       },
       {
-        "source": "AutoScrapeFreeNodes",
-        "path": "/home/runner/work/no/no/ref/AutoScrapeFreeNodes",
-        "found_nodes": 1026
+        "source": "daily_free_vpn",
+        "path": "/home/runner/work/no/no/ref/daily_free_vpn",
+        "found_nodes": 1763
       },
       {
         "source": "globe-probe",
@@ -107,29 +102,34 @@
         "found_nodes": 0
       },
       {
+        "source": "AutoScrapeFreeNodes",
+        "path": "/home/runner/work/no/no/ref/AutoScrapeFreeNodes",
+        "found_nodes": 1026
+      },
+      {
+        "source": "SubCrawler",
+        "path": "/home/runner/work/no/no/ref/SubCrawler",
+        "found_nodes": 6
+      },
+      {
         "source": "dljdsjq",
         "path": "/home/runner/work/no/no/ref/dljdsjq",
-        "found_nodes": 26955
+        "found_nodes": 27566
       },
       {
         "source": "Free-servers",
         "path": "/home/runner/work/no/no/ref/Free-servers",
-        "found_nodes": 487
-      },
-      {
-        "source": "daily_free_vpn",
-        "path": "/home/runner/work/no/no/ref/daily_free_vpn",
-        "found_nodes": 2234
+        "found_nodes": 479
       },
       {
         "source": "v2rayfree",
         "path": "/home/runner/work/no/no/ref/v2rayfree",
-        "found_nodes": 1783
+        "found_nodes": 1772
       },
       {
         "source": "mafly",
         "path": "/home/runner/work/no/no/ref/mafly",
-        "found_nodes": 584
+        "found_nodes": 474
       },
       {
         "source": "NiceVPN",
@@ -149,7 +149,7 @@
       {
         "source": "mianfeijiedian",
         "path": "/home/runner/work/no/no/ref/mianfeijiedian",
-        "found_nodes": 326273
+        "found_nodes": 326152
       }
     ]
   }
